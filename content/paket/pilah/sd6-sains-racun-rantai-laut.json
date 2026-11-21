@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-rantai-laut",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -134,13 +134,13 @@
       "id": "ikanmas",
       "labelKey": "i-ikanmas",
       "bin": "pilihan",
-      "emoji": "🐡"
+      "emoji": "🐟"
     },
     {
       "id": "pecuk",
       "labelKey": "i-pecuk",
       "bin": "pilihan",
-      "emoji": "🐦‍⬛"
+      "emoji": "🐦"
     },
     {
       "id": "lumut",

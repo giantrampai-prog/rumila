@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-dekat-jauh-jalan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -44,7 +44,7 @@
       "t-pesawat": "Pesawat lepas landas di bandara",
       "pesawat-1": "anak di anjungan pengamatan tepi landasan",
       "pesawat-2": "anak di parkiran bandara",
-      "pesawat-3": "anak di jalan dekat bandara",
+      "pesawat-3": "anak di pasar di tengah kota",
       "pesawat-4": "anak di lapangan di kota sebelah",
       "t-kambing": "Kambing mengembik di kandang",
       "kambing-1": "anak di depan kandang",
@@ -98,7 +98,7 @@
       "t-pesawat": "A plane takes off at the airport",
       "pesawat-1": "a child on the viewing deck beside the runway",
       "pesawat-2": "a child in the airport car park",
-      "pesawat-3": "a child on a road near the airport",
+      "pesawat-3": "a child at a market in the town centre",
       "pesawat-4": "a child in a field in the next town",
       "t-kambing": "A goat bleats in its pen",
       "kambing-1": "a child in front of the pen",

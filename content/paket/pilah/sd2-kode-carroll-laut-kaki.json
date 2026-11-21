@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-laut-kaki",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -76,23 +76,19 @@
   "bins": [
     {
       "id": "laut-kaki",
-      "labelKey": "bin-laut-kaki",
-      "emoji": "🦀"
+      "labelKey": "bin-laut-kaki"
     },
     {
       "id": "laut-tanpa",
-      "labelKey": "bin-laut-tanpa",
-      "emoji": "🐟"
+      "labelKey": "bin-laut-tanpa"
     },
     {
       "id": "darat-kaki",
-      "labelKey": "bin-darat-kaki",
-      "emoji": "🐄"
+      "labelKey": "bin-darat-kaki"
     },
     {
       "id": "darat-tanpa",
-      "labelKey": "bin-darat-tanpa",
-      "emoji": "🐍"
+      "labelKey": "bin-darat-tanpa"
     }
   ],
   "items": [

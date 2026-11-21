@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tumbuhan-bukit-berbunga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.02"
@@ -69,7 +69,7 @@
     {
       "id": "bunga",
       "labelKey": "b-bunga",
-      "emoji": "🌺",
+      "emoji": "💐",
       "color": "#f8bbd0"
     },
     {

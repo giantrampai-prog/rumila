@@ -1,6 +1,6 @@
 {
   "id": "sains-bekerja-dulu-di-taman",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -101,7 +101,6 @@
       "promptKey": "t-1",
       "choices": [
         "kaki",
-        "paru",
         "otak"
       ],
       "correct": "kaki"
@@ -121,7 +120,6 @@
       "promptKey": "t-3",
       "choices": [
         "kaki",
-        "paru",
         "otak"
       ],
       "correct": "kaki"

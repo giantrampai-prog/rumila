@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -486,7 +486,7 @@
         {
           "id": "bersih-akuarium-6",
           "labelKey": "bersih-akuarium-6",
-          "emoji": "🍤"
+          "emoji": "🦐"
         },
         {
           "id": "bersih-akuarium-7",

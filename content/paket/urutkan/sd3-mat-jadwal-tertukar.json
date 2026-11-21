@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-jadwal-tertukar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -62,7 +62,7 @@
       "j9": "Kegiatan perpustakaan",
       "s41": "10.10 pinjam buku",
       "s42": "10.25 dengar dongeng",
-      "s43": "11.00 menggambar tokoh",
+      "s43": "11.00 menggambar karakter cerita",
       "s44": "11.40 kembalikan buku",
       "s45": "11.55 pulang",
       "j10": "Les musik",
@@ -138,7 +138,7 @@
       "j9": "Library visit",
       "s41": "10.10 borrow a book",
       "s42": "10.25 listen to a story",
-      "s43": "11.00 draw a character",
+      "s43": "11.00 draw a story character",
       "s44": "11.40 return the book",
       "s45": "11.55 go home",
       "j10": "Music lesson",

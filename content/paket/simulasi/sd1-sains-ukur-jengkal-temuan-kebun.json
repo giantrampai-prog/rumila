@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-jengkal-temuan-kebun",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Ukur Batang dan Daun dengan Jengkal",
+      "judul": "Ukur Temuan Kebun dengan Jengkal",
       "instruksi": "Taruh jengkal rapat dari ujung ke ujung, lalu hitung jengkalnya.",
       "daunpisang": "sobekan daun pisang",
       "rantingbesar": "ranting besar",
@@ -27,7 +27,7 @@
       "bungamatahari": "tangkai bunga matahari"
     },
     "en": {
-      "judul": "Measure Stems and Leaves in Spans",
+      "judul": "Measure Garden Finds in Spans",
       "instruksi": "Put hand spans end to end with no gaps, then count the spans.",
       "daunpisang": "piece of banana leaf",
       "rantingbesar": "big branch",

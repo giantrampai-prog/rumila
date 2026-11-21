@@ -1,6 +1,6 @@
 {
   "id": "sains-hidup-tak-hidup-halaman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -64,7 +64,7 @@
     {
       "id": "takhidup",
       "labelKey": "takhidup",
-      "emoji": "🪨"
+      "emoji": "🧱"
     }
   ],
   "items": [

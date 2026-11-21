@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-larut-atau-tidak",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -69,7 +69,7 @@
     {
       "id": "tidak",
       "labelKey": "b-tidak",
-      "emoji": "🪨",
+      "emoji": "👀",
       "color": "#d7ccc8"
     }
   ],

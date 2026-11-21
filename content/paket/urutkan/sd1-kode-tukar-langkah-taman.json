@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -25,8 +25,8 @@
       "layang-5": "layang-layang naik",
       "layang-6": "layang-layang terbang tinggi",
       "t-kolase": "Membuat kolase",
-      "kolase-1": "gunting kertas warna",
-      "kolase-2": "susun potongannya",
+      "kolase-1": "gambar bentuk di kertas warna",
+      "kolase-2": "gunting mengikuti gambarnya",
       "kolase-3": "oles lem di belakangnya",
       "kolase-4": "tempel di kertas gambar",
       "kolase-5": "tunggu lemnya kering",
@@ -106,8 +106,8 @@
       "layang-5": "the kite rises",
       "layang-6": "the kite flies high",
       "t-kolase": "Making a collage",
-      "kolase-1": "cut coloured paper",
-      "kolase-2": "arrange the pieces",
+      "kolase-1": "draw shapes on coloured paper",
+      "kolase-2": "cut along the lines",
       "kolase-3": "put glue on the back",
       "kolase-4": "stick them on drawing paper",
       "kolase-5": "wait for the glue to dry",
@@ -301,12 +301,12 @@
         {
           "id": "kolase-1",
           "labelKey": "kolase-1",
-          "emoji": "✂️"
+          "emoji": "✏️"
         },
         {
           "id": "kolase-2",
           "labelKey": "kolase-2",
-          "emoji": "🧩"
+          "emoji": "✂️"
         },
         {
           "id": "kolase-3",

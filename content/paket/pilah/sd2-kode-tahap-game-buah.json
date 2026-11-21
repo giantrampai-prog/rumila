@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-buah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "bin-buat": "buat",
       "bin-uji": "uji",
       "bin-perbaiki": "perbaiki",
-      "i-r-tokoh": "tentukan tokohnya: keranjang",
+      "i-r-tokoh": "tentukan karakternya: keranjang",
       "i-r-sketsa": "gambar layar game di kertas",
       "i-r-buah": "tentukan buah apa saja yang jatuh",
       "i-r-aturan": "tulis aturan: buah busuk mengurangi skor",

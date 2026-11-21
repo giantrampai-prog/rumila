@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-pemisah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -103,7 +103,7 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "ayakan",
-      "emoji": "🔮"
+      "emoji": "🔵"
     },
     {
       "id": "batu",

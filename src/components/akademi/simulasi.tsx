@@ -44,7 +44,7 @@ function useSamping() {
 
 function visualItem(x: Item | undefined, label?: string): VisualSpec {
   if (!x) return { emoji: "❓", label };
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label };
 }
 
 /** Robot pemandu + balon kalimat (ketuk untuk dibacakan). */

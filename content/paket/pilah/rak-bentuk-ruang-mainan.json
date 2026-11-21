@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-mainan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Bentuk Mainan",
-      "instruksi": "Taruh tiap mainan di rak yang bentuknya sama: bola, kubus, atau tabung.",
+      "instruksi": "Taruh tiap mainan di rak yang bentuknya sama.",
       "bola": "bola",
       "kubus": "kubus",
       "tabung": "tabung",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Toy Shape Shelf",
-      "instruksi": "Put each toy on the shelf with the same shape: sphere, cube or cylinder.",
+      "instruksi": "Put each toy on the shelf with the same shape.",
       "bola": "sphere",
       "kubus": "cube",
       "tabung": "cylinder",
@@ -72,12 +72,12 @@
     {
       "id": "kubus",
       "labelKey": "kubus",
-      "emoji": "🎲"
+      "emoji": "🧊"
     },
     {
       "id": "tabung",
       "labelKey": "tabung",
-      "emoji": "🥫"
+      "emoji": "🧻"
     }
   ],
   "items": [

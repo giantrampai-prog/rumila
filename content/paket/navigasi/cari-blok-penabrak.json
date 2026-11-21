@@ -1,6 +1,6 @@
 {
   "id": "cari-blok-penabrak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Cari Blok Penabrak",
-      "instruksi": "Baca programnya, cari blok yang membuat robot menabrak, lalu ganti."
+      "instruksi": "Lihat programnya, cari blok yang membuat robot menabrak, lalu ganti."
     },
     "en": {
       "judul": "Find the Crashing Block",
-      "instruksi": "Read the program, find the block that makes the robot crash, then change it."
+      "instruksi": "Look at the program, find the block that makes the robot crash, then change it."
     }
   },
   "knobs": {

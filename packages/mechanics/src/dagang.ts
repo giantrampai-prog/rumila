@@ -93,8 +93,12 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
     }
     case "hitung": {
       // knob bernama maxCount atau itemsMax (paket TK menamai knobnya itemsMax)
-      const maxCount = Math.max(1, Math.floor(knobs.maxCount ?? knobs.itemsMax ?? rule.itemsMax));
-      const target = acakInt(r, 1, maxCount);
+      // Rentang [itemsMin, maks]: paket "11–20" tidak boleh memberi 7 benda. Maks minimal itemsMin + 4 (dibatasi
+      // customerRule.itemsMax) supaya knob awal yang sama dengan itemsMin tidak membuat jawabannya selalu sama.
+      const knobMaks = Math.max(1, Math.floor(knobs.maxCount ?? knobs.itemsMax ?? rule.itemsMax));
+      const bawah = Math.min(Math.max(1, rule.itemsMin ?? 1), knobMaks);
+      const maxCount = Math.max(knobMaks, Math.min(bawah + 4, Math.max(knobMaks, rule.itemsMax)));
+      const target = acakInt(r, bawah, maxCount);
       const good = satuBarang();
       ronde.benda = new Array<string>(target).fill(good);
       ronde.tersedia = { [good]: target };

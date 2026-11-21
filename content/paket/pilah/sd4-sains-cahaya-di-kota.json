@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-cahaya-di-kota",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -83,7 +83,8 @@
       "labelKey": "i-kunang",
       "bin": "sumber",
       "emoji": "🪲",
-      "color": "#fff176"
+      "color": "#fff176",
+      "latar": true
     },
     {
       "id": "lampumerah",
@@ -144,7 +145,8 @@
       "labelKey": "i-tvmati",
       "bin": "pantul",
       "emoji": "📺",
-      "color": "#424242"
+      "color": "#424242",
+      "latar": true
     }
   ],
   "pilihan": []

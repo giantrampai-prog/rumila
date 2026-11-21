@@ -1,6 +1,6 @@
 {
   "id": "sains-benda-dibuat-dari-apa",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-gembok": "gembok",
       "i-koin": "uang koin",
       "i-akuarium": "dinding akuarium supaya ikan terlihat",
-      "i-kacamobil": "kaca depan mobil",
+      "i-jendela": "kaca jendela",
       "i-teropong": "lensa teropong",
       "b-plastik": "plastik",
       "i-sikatgigi": "gagang sikat gigi",
@@ -41,7 +41,7 @@
       "i-gembok": "padlock",
       "i-koin": "coins",
       "i-akuarium": "fish tank walls so the fish can be seen",
-      "i-kacamobil": "car windscreen",
+      "i-jendela": "window glass",
       "i-teropong": "telescope lens",
       "b-plastik": "plastic",
       "i-sikatgigi": "toothbrush handle",
@@ -141,10 +141,10 @@
       "color": "#b3e5fc"
     },
     {
-      "id": "kacamobil",
-      "labelKey": "i-kacamobil",
+      "id": "jendela",
+      "labelKey": "i-jendela",
       "bin": "kaca",
-      "emoji": "🚗"
+      "emoji": "🪟"
     },
     {
       "id": "teropong",

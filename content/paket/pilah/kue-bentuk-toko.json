@@ -1,6 +1,6 @@
 {
   "id": "kue-bentuk-toko",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -79,7 +79,7 @@
       "labelKey": "lingkaran",
       "bin": "lingkaran",
       "shape": "circle",
-      "color": "#fff3e0",
+      "color": "#d9a066",
       "scale": 1.0
     },
     {
@@ -103,7 +103,7 @@
       "labelKey": "segitiga",
       "bin": "segitiga",
       "shape": "triangle",
-      "color": "#fff3e0",
+      "color": "#d9a066",
       "scale": 1.0
     },
     {
@@ -127,7 +127,7 @@
       "labelKey": "kotak",
       "bin": "kotak",
       "shape": "square",
-      "color": "#fff3e0",
+      "color": "#d9a066",
       "scale": 1.0
     },
     {

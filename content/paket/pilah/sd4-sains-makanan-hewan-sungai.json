@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-makanan-hewan-sungai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -183,7 +183,7 @@
       "id": "gagak",
       "labelKey": "i-gagak",
       "bin": "omnivora",
-      "emoji": "🐦‍⬛"
+      "emoji": "🐦"
     },
     {
       "id": "manusia",

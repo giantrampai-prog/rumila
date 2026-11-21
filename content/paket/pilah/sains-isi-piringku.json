@@ -1,6 +1,6 @@
 {
   "id": "sains-isi-piringku",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,19 +78,19 @@
     {
       "id": "nasi",
       "labelKey": "nasi",
-      "emoji": "🍚",
+      "emoji": "🌾",
       "color": "#fff8e1"
     },
     {
       "id": "lauk",
       "labelKey": "lauk",
-      "emoji": "🍗",
+      "emoji": "🍳",
       "color": "#ffccbc"
     },
     {
       "id": "sayur",
       "labelKey": "sayur",
-      "emoji": "🥬",
+      "emoji": "🥗",
       "color": "#c8e6c9"
     },
     {

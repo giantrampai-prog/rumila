@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -152,8 +152,9 @@
         {
           "id": "kepompong",
           "labelKey": "kupu-kepompong",
-          "emoji": "🛡️",
-          "color": "#a1887f"
+          "shape": "rect",
+          "color": "#a1887f",
+          "scale": 0.7
         },
         {
           "id": "kupu",
@@ -243,7 +244,9 @@
         {
           "id": "kepompong",
           "labelKey": "semut-kepompong",
-          "emoji": "🥜"
+          "shape": "rect",
+          "color": "#f5e6c8",
+          "scale": 0.6
         },
         {
           "id": "semut",

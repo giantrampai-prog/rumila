@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-batuan-tepi-sungai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.01"
@@ -77,7 +77,7 @@
     {
       "id": "metamorf",
       "labelKey": "b-metamorf",
-      "emoji": "🌀",
+      "emoji": "🔥",
       "color": "#e1bee7"
     }
   ],

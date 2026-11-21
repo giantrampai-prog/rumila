@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-kelompok-hewan-penipu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -88,7 +88,7 @@
     {
       "id": "burung",
       "labelKey": "b-burung",
-      "emoji": "🪶",
+      "emoji": "🐦",
       "color": "#fff8e1"
     },
     {
@@ -100,13 +100,13 @@
     {
       "id": "reptil",
       "labelKey": "b-reptil",
-      "emoji": "🦎",
+      "emoji": "🐊",
       "color": "#f1f8e9"
     },
     {
       "id": "amfibi",
       "labelKey": "b-amfibi",
-      "emoji": "🐸",
+      "emoji": "💦",
       "color": "#e0f2f1"
     },
     {
@@ -165,7 +165,8 @@
       "labelKey": "i-belut",
       "bin": "ikan",
       "emoji": "🐍",
-      "color": "#6d4c41"
+      "color": "#6d4c41",
+      "latar": true
     },
     {
       "id": "penyu",

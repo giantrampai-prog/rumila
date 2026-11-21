@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-safari",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hewan Jauh, Tempat Mana?",
-      "instruksi": "Robot bertemu hewan dari jauh: antar ke darat, air, atau udara.",
+      "instruksi": "Robot bertemu hewan dari jauh: antar tiap hewan ke tempat hidupnya.",
       "darat": "darat",
       "air": "air",
       "udara": "udara",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Faraway Animals, Which Home?",
-      "instruksi": "Robot meets animals from far away: take each to land, water, or sky.",
+      "instruksi": "Robot meets animals from far away: take each animal to where it lives.",
       "darat": "land",
       "air": "water",
       "udara": "sky",

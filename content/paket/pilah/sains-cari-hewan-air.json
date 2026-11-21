@@ -1,6 +1,6 @@
 {
   "id": "sains-cari-hewan-air",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,6 @@
       "i-ikanbadut": "ikan badut",
       "i-paus": "paus",
       "i-lumba": "lumba-lumba",
-      "i-ubur": "ubur-ubur",
       "i-cumi": "cumi-cumi",
       "i-hiu": "hiu",
       "i-udang": "udang",
@@ -39,7 +38,8 @@
       "t7": "Mana hewan yang hidup di air?",
       "t8": "Mana hewan yang hidup di air?",
       "t9": "Mana hewan yang hidup di air?",
-      "t10": "Mana hewan yang hidup di air?"
+      "t10": "Mana hewan yang hidup di air?",
+      "i-buntal": "ikan buntal"
     },
     "en": {
       "judul": "Find the Water Animal",
@@ -49,7 +49,6 @@
       "i-ikanbadut": "clownfish",
       "i-paus": "whale",
       "i-lumba": "dolphin",
-      "i-ubur": "jellyfish",
       "i-cumi": "squid",
       "i-hiu": "shark",
       "i-udang": "shrimp",
@@ -72,7 +71,8 @@
       "t7": "Which animal lives in water?",
       "t8": "Which animal lives in water?",
       "t9": "Which animal lives in water?",
-      "t10": "Which animal lives in water?"
+      "t10": "Which animal lives in water?",
+      "i-buntal": "pufferfish"
     }
   },
   "knobs": {
@@ -121,10 +121,10 @@
       "emoji": "🐬"
     },
     {
-      "id": "ubur",
-      "labelKey": "i-ubur",
+      "id": "buntal",
+      "labelKey": "i-buntal",
       "bin": "pilihan",
-      "emoji": "🪼"
+      "emoji": "🐡"
     },
     {
       "id": "cumi",
@@ -250,11 +250,11 @@
       "id": "r5",
       "promptKey": "t5",
       "choices": [
-        "ubur",
+        "buntal",
         "elang",
         "kambing"
       ],
-      "correct": "ubur"
+      "correct": "buntal"
     },
     {
       "id": "r6",

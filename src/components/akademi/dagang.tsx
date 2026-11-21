@@ -47,8 +47,8 @@ const EMOJI_BARANG: Record<string, string> = {
 
 function visualGood(g: Good | undefined, id: string): VisualSpec {
   if (!g) return { emoji: EMOJI_BARANG[id] ?? "🛍️" };
-  const { emoji, color, scale, shape, width, angka } = g;
-  return { emoji: emoji ?? (shape ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width, angka };
+  const { emoji, color, scale, shape, width, angka, latar } = g;
+  return { emoji: emoji ?? (shape ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width, angka, latar };
 }
 
 function visualUang(nilai: number): VisualSpec & { label: string } {
@@ -56,9 +56,9 @@ function visualUang(nilai: number): VisualSpec & { label: string } {
   // koin seribu emas tanpa latar; koin < 1000 berlatar perak supaya beda dari seribu
   if (nilai === KOIN) return { emoji: "🪙", color: "#ffd23f", label };
   if (nilai < KOIN) return { emoji: "🪙", color: "#cfd4dc", label, latar: true };
-  // uang kertas: 💵 sama untuk semua pecahan, jadi warna pecahan digambar sebagai latar
+  // uang kertas rupiah: lembaran berwarna khas pecahan dengan nominalnya (bukan 💵 dolar)
   const warna: Record<number, string> = { 2000: "#cfd4dc", 5000: "#b5835a", 10000: "#9b7bd6", 20000: "#7ec8a0", 50000: "#6ab0e8", 100000: "#e88a8a" };
-  return { emoji: "💵", color: warna[nilai] ?? "#cfd4dc", label, latar: true };
+  return { shape: "uang", color: warna[nilai] ?? "#cfd4dc", angka: label, label };
 }
 
 function formatRibuan(n: number) {

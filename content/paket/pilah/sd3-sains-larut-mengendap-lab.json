@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-mengendap-lab",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Larut atau Mengendap?",
-      "instruksi": "Tiap benda dimasukkan ke segelas air lalu diaduk. Taruh ke rak larut (hilang dari pandangan) atau tidak larut (tetap terlihat atau mengendap).",
+      "instruksi": "Tiap benda dimasukkan ke segelas air lalu diaduk. Taruh ke rak larut (butirannya hilang, walau airnya bisa berwarna) atau tidak larut (butirannya tetap terlihat atau mengendap).",
       "b-larut": "larut",
       "b-tidak": "tidak larut",
       "i-kopi": "kopi bubuk instan",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Dissolve or Settle?",
-      "instruksi": "Each thing is put in a glass of water and stirred. Put it on the dissolves shelf (disappears from view) or the does-not-dissolve shelf (still seen or sinks to the bottom).",
+      "instruksi": "Each thing is put in a glass of water and stirred. Put it on the dissolves shelf (the bits disappear, even if the water changes colour) or the does-not-dissolve shelf (the bits can still be seen or sink to the bottom).",
       "b-larut": "dissolves",
       "b-tidak": "does not dissolve",
       "i-kopi": "instant coffee powder",

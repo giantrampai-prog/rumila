@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-rak-tujuh-bahan-sekolah",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -94,7 +94,7 @@
     {
       "id": "kertas",
       "labelKey": "b-kertas",
-      "emoji": "📄",
+      "emoji": "📜",
       "color": "#fffde7"
     },
     {
@@ -106,7 +106,7 @@
     {
       "id": "batu",
       "labelKey": "b-batu",
-      "emoji": "🪨",
+      "emoji": "⛰️",
       "color": "#e0e0e0"
     },
     {
@@ -118,7 +118,7 @@
     {
       "id": "logam",
       "labelKey": "b-logam",
-      "emoji": "🔩",
+      "emoji": "⚙️",
       "color": "#cfd8dc"
     },
     {

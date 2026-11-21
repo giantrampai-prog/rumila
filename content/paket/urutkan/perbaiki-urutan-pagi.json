@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -212,7 +212,7 @@
         {
           "id": "sisir-2",
           "labelKey": "sisir-2",
-          "emoji": "🪮"
+          "emoji": "💇"
         },
         {
           "id": "sisir-3",

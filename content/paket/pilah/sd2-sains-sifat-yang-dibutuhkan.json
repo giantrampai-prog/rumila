@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,13 +74,13 @@
     {
       "id": "kedap",
       "labelKey": "b-kedap",
-      "emoji": "☂️",
+      "emoji": "🚫",
       "color": "#ede7f6"
     },
     {
       "id": "tembus",
       "labelKey": "b-tembus",
-      "emoji": "🔍",
+      "emoji": "👀",
       "color": "#e1f5fe"
     },
     {

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet-bengkel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -107,7 +107,8 @@
       "labelKey": "i-panci",
       "bin": "tidak",
       "emoji": "🍳",
-      "color": "#cfd8dc"
+      "color": "#cfd8dc",
+      "latar": true
     },
     {
       "id": "pipa",
@@ -120,7 +121,8 @@
       "labelKey": "i-gelang",
       "bin": "tidak",
       "emoji": "⭕",
-      "color": "#e0e0e0"
+      "color": "#e0e0e0",
+      "latar": true
     },
     {
       "id": "lonceng",
@@ -133,7 +135,8 @@
       "labelKey": "i-sendokplastik",
       "bin": "tidak",
       "emoji": "🥄",
-      "color": "#ffcc80"
+      "color": "#ffcc80",
+      "latar": true
     },
     {
       "id": "uangkertas",

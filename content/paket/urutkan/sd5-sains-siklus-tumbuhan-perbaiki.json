@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -45,7 +45,7 @@
       "pepaya-kecambah": "biji berkecambah",
       "pepaya-tumbuh": "pohon pepaya muda tumbuh berdaun lebar",
       "pepaya-bunga": "bunga pepaya putih mekar di batang",
-      "pepaya-serbuk": "ngengat membawa serbuk sari ke kepala putik",
+      "pepaya-serbuk": "kupu-kupu dan ngengat membawa serbuk sari ke kepala putik",
       "pepaya-buah": "bakal buah membesar jadi pepaya",
       "pepaya-baru": "pepaya dibelah: penuh biji hitam baru",
       "s-rambutan": "Siklus hidup rambutan",
@@ -85,7 +85,7 @@
       "kacanghijau-tumbuh": "tanaman kacang hijau tumbuh berdaun",
       "kacanghijau-bunga": "bunga kuning kecil mekar",
       "kacanghijau-serbuk": "serbuk sari menempel di kepala putik",
-      "kacanghijau-buah": "polong hitam tumbuh berisi biji hijau baru",
+      "kacanghijau-buah": "polong tumbuh berisi biji hijau baru",
       "s-nangka": "Siklus hidup nangka",
       "nangka-biji": "biji nangka ditanam",
       "nangka-kecambah": "biji berkecambah",
@@ -133,7 +133,7 @@
       "pepaya-kecambah": "the seeds sprout",
       "pepaya-tumbuh": "a young papaya tree grows broad leaves",
       "pepaya-bunga": "white papaya flowers open on the trunk",
-      "pepaya-serbuk": "moths carry pollen to the stigma",
+      "pepaya-serbuk": "butterflies and moths carry pollen to the stigma",
       "pepaya-buah": "the ovary swells into a papaya",
       "pepaya-baru": "the papaya is cut open: full of new black seeds",
       "s-rambutan": "Life cycle of a rambutan tree",
@@ -173,7 +173,7 @@
       "kacanghijau-tumbuh": "the mung bean plant grows leaves",
       "kacanghijau-bunga": "small yellow flowers open",
       "kacanghijau-serbuk": "pollen sticks to the stigma",
-      "kacanghijau-buah": "dark pods grow with new green seeds",
+      "kacanghijau-buah": "pods grow with new green seeds",
       "s-nangka": "Life cycle of a jackfruit tree",
       "nangka-biji": "a jackfruit seed is planted",
       "nangka-kecambah": "the seed sprouts",

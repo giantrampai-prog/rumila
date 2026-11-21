@@ -1,6 +1,6 @@
 {
   "id": "sains-siap-keluar-payung-topi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,6 @@
       "i-hujan": "hujan turun",
       "i-petir": "hujan dan petir",
       "i-tetes": "tetes hujan jatuh",
-      "i-cipratan": "cipratan air hujan",
       "i-gerimis": "gerimis rintik-rintik"
     },
     "en": {
@@ -37,7 +36,6 @@
       "i-hujan": "rain is falling",
       "i-petir": "rain and lightning",
       "i-tetes": "raindrops falling",
-      "i-cipratan": "splashes of rainwater",
       "i-gerimis": "light drizzle"
     }
   },
@@ -115,12 +113,6 @@
       "labelKey": "i-tetes",
       "bin": "payung",
       "emoji": "💧"
-    },
-    {
-      "id": "cipratan",
-      "labelKey": "i-cipratan",
-      "bin": "payung",
-      "emoji": "💦"
     },
     {
       "id": "gerimis",

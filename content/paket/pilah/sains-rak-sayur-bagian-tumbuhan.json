@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-sayur-bagian-tumbuhan",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sayur dari Bagian Mana?",
-      "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun, tomat ke buah.",
+      "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.",
       "akar": "akar",
       "daun": "daun",
       "i-wortel": "wortel",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Which Part Is the Veggie?",
-      "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf, tomato to fruit.",
+      "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf.",
       "akar": "root",
       "daun": "leaf",
       "i-wortel": "carrot",
@@ -99,8 +99,8 @@
       "id": "lobak",
       "labelKey": "i-lobak",
       "bin": "akar",
-      "emoji": "🥕",
-      "color": "#f5f5f5"
+      "color": "#e9e2d0",
+      "shape": "akar"
     },
     {
       "id": "bayam",

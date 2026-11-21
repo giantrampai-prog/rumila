@@ -1,6 +1,6 @@
 {
   "id": "sains-hitung-kaki-peternakan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,17 +14,17 @@
       "b-dua": "dua kaki",
       "b-empat": "empat kaki",
       "i-kalkun": "kalkun",
-      "i-angsa": "angsa",
       "i-jago": "ayam jago",
-      "i-merpati": "merpati",
       "i-merak": "burung merak",
       "i-burunghantu": "burung hantu",
       "i-kuda": "kuda",
       "i-kerbau": "kerbau",
       "i-domba": "domba",
-      "i-kelinci": "kelinci",
       "i-rusa": "rusa",
-      "i-tikus": "tikus"
+      "i-bebek": "bebek",
+      "i-beo": "burung beo",
+      "i-sapi": "sapi",
+      "i-anjing": "anjing"
     },
     "en": {
       "judul": "Count the Animal Legs",
@@ -32,17 +32,17 @@
       "b-dua": "two legs",
       "b-empat": "four legs",
       "i-kalkun": "turkey",
-      "i-angsa": "goose",
       "i-jago": "rooster",
-      "i-merpati": "pigeon",
       "i-merak": "peacock",
       "i-burunghantu": "owl",
       "i-kuda": "horse",
       "i-kerbau": "water buffalo",
       "i-domba": "sheep",
-      "i-kelinci": "rabbit",
       "i-rusa": "deer",
-      "i-tikus": "mouse"
+      "i-bebek": "duck",
+      "i-beo": "parrot",
+      "i-sapi": "cow",
+      "i-anjing": "dog"
     }
   },
   "knobs": {
@@ -81,10 +81,10 @@
       "emoji": "🦃"
     },
     {
-      "id": "angsa",
-      "labelKey": "i-angsa",
+      "id": "beo",
+      "labelKey": "i-beo",
       "bin": "dua",
-      "emoji": "🦢"
+      "emoji": "🦜"
     },
     {
       "id": "jago",
@@ -93,10 +93,10 @@
       "emoji": "🐓"
     },
     {
-      "id": "merpati",
-      "labelKey": "i-merpati",
+      "id": "bebek",
+      "labelKey": "i-bebek",
       "bin": "dua",
-      "emoji": "🕊️"
+      "emoji": "🦆"
     },
     {
       "id": "merak",
@@ -129,10 +129,10 @@
       "emoji": "🐑"
     },
     {
-      "id": "kelinci",
-      "labelKey": "i-kelinci",
+      "id": "sapi",
+      "labelKey": "i-sapi",
       "bin": "empat",
-      "emoji": "🐇"
+      "emoji": "🐂"
     },
     {
       "id": "rusa",
@@ -141,10 +141,10 @@
       "emoji": "🦌"
     },
     {
-      "id": "tikus",
-      "labelKey": "i-tikus",
+      "id": "anjing",
+      "labelKey": "i-anjing",
       "bin": "empat",
-      "emoji": "🐁"
+      "emoji": "🐕"
     }
   ],
   "pilihan": []

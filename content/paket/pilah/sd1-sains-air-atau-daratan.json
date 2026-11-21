@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-air-atau-daratan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -63,13 +63,13 @@
     {
       "id": "air",
       "labelKey": "b-air",
-      "emoji": "🌊",
+      "emoji": "💧",
       "color": "#e1f5fe"
     },
     {
       "id": "darat",
       "labelKey": "b-darat",
-      "emoji": "⛰️",
+      "emoji": "🗺️",
       "color": "#efebe9"
     }
   ],

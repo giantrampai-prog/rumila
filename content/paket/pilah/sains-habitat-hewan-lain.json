@@ -1,6 +1,6 @@
 {
   "id": "sains-habitat-hewan-lain",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -102,28 +102,32 @@
       "labelKey": "i-rubahgurun",
       "bin": "gurun",
       "emoji": "🦊",
-      "color": "#ffe0b2"
+      "color": "#ffe0b2",
+      "latar": true
     },
     {
       "id": "landakgurun",
       "labelKey": "i-landakgurun",
       "bin": "gurun",
       "emoji": "🦔",
-      "color": "#ffe0b2"
+      "color": "#ffe0b2",
+      "latar": true
     },
     {
       "id": "beluga",
       "labelKey": "i-beluga",
       "bin": "es",
       "emoji": "🐋",
-      "color": "#eceff1"
+      "color": "#eceff1",
+      "latar": true
     },
     {
       "id": "rusakutub",
       "labelKey": "i-rusakutub",
       "bin": "es",
       "emoji": "🦌",
-      "color": "#e1f5fe"
+      "color": "#e1f5fe",
+      "latar": true
     },
     {
       "id": "burungbeo",
@@ -166,14 +170,16 @@
       "labelKey": "i-burunghantusalju",
       "bin": "es",
       "emoji": "🦉",
-      "color": "#ffffff"
+      "color": "#ffffff",
+      "latar": true
     },
     {
       "id": "serigalakutub",
       "labelKey": "i-serigalakutub",
       "bin": "es",
       "emoji": "🐺",
-      "color": "#ffffff"
+      "color": "#ffffff",
+      "latar": true
     }
   ],
   "pilihan": []

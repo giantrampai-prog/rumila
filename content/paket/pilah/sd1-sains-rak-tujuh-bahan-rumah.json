@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-rak-tujuh-bahan-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "i-ulekan": "ulekan batu",
       "i-kerikil": "kerikil",
       "i-kursi": "kursi kayu",
-      "i-sendokkayu": "sendok kayu",
+      "i-sendokkayu": "sumpit kayu",
       "i-kunci": "kunci",
       "i-panci": "wajan",
       "i-botol": "botol plastik",
@@ -54,7 +54,7 @@
       "i-ulekan": "stone pestle",
       "i-kerikil": "pebbles",
       "i-kursi": "wooden chair",
-      "i-sendokkayu": "wooden spoon",
+      "i-sendokkayu": "wooden chopsticks",
       "i-kunci": "key",
       "i-panci": "metal frying pan",
       "i-botol": "plastic bottle",
@@ -100,7 +100,7 @@
     {
       "id": "batu",
       "labelKey": "b-batu",
-      "emoji": "🪨",
+      "emoji": "⛰️",
       "color": "#e0e0e0"
     },
     {
@@ -118,13 +118,13 @@
     {
       "id": "plastik",
       "labelKey": "b-plastik",
-      "emoji": "🧴",
+      "emoji": "♻️",
       "color": "#ffe0b2"
     },
     {
       "id": "kaca",
       "labelKey": "b-kaca",
-      "emoji": "🥛",
+      "emoji": "🪟",
       "color": "#e1f5fe"
     }
   ],
@@ -189,8 +189,7 @@
       "id": "sendokkayu",
       "labelKey": "i-sendokkayu",
       "bin": "kayu",
-      "emoji": "🥄",
-      "color": "#a1887f"
+      "emoji": "🥢"
     },
     {
       "id": "kunci",

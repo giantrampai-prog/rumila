@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-dapur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,13 +16,13 @@
       "tabung": "tabung",
       "melon": "melon",
       "jeruk": "jeruk",
-      "bilyar": "bola bilyar",
       "es": "es batu",
       "kado": "kotak kado",
       "gelas": "gelas",
       "kaleng": "kaleng",
       "lilin": "lilin",
-      "tisu": "gulungan tisu"
+      "tisu": "gulungan tisu",
+      "tomat": "tomat"
     },
     "en": {
       "judul": "Kitchen Shape Shelf",
@@ -32,13 +32,13 @@
       "tabung": "cylinder",
       "melon": "melon",
       "jeruk": "orange",
-      "bilyar": "billiard ball",
       "es": "ice cube",
       "kado": "gift box",
       "gelas": "cup",
       "kaleng": "can",
       "lilin": "candle",
-      "tisu": "paper roll"
+      "tisu": "paper roll",
+      "tomat": "tomato"
     }
   },
   "knobs": {
@@ -77,7 +77,7 @@
     {
       "id": "tabung",
       "labelKey": "tabung",
-      "emoji": "🥫"
+      "emoji": "🛢️"
     }
   ],
   "items": [
@@ -94,10 +94,10 @@
       "emoji": "🍊"
     },
     {
-      "id": "bilyar",
-      "labelKey": "bilyar",
+      "id": "tomat",
+      "labelKey": "tomat",
       "bin": "bola",
-      "emoji": "🎱"
+      "emoji": "🍅"
     },
     {
       "id": "es",

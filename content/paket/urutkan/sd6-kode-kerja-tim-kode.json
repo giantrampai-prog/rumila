@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-kerja-tim-kode",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -62,7 +62,7 @@
       "s8-2": "simpan gambar baru di folder aset",
       "s8-3": "tulis kode untuk memanggil gambar yang sudah disimpan",
       "s8-4": "jalankan game: gambar muncul",
-      "s8-5": "commit: 'tambah gambar tokoh'",
+      "s8-5": "commit: 'tambah gambar karakter'",
       "s8-6": "kirim ke repositori tim (push)",
       "s9": "Bergabung ke proyek tim",
       "s9-1": "salin repositori ke komputermu (clone)",

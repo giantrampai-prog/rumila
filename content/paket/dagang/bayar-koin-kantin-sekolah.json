@@ -1,6 +1,6 @@
 {
   "id": "bayar-koin-kantin-sekolah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "sate": "sate",
       "pastel": "pastel",
       "tehmanis": "teh manis",
-      "nasikuning": "nasi kuning"
+      "nasikotak": "nasi kotak"
     },
     "en": {
       "judul": "Canteen Snacks",
@@ -24,7 +24,7 @@
       "sate": "satay",
       "pastel": "pastry puff",
       "tehmanis": "sweet tea",
-      "nasikuning": "yellow rice"
+      "nasikotak": "boxed rice"
     }
   },
   "knobs": {
@@ -72,10 +72,10 @@
       "emoji": "🍵"
     },
     {
-      "id": "nasikuning",
-      "labelKey": "nasikuning",
+      "id": "nasikotak",
+      "labelKey": "nasikotak",
       "price": 5000,
-      "emoji": "🍛"
+      "emoji": "🍱"
     }
   ],
   "customerRule": {

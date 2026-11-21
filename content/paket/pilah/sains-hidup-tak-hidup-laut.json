@@ -1,6 +1,6 @@
 {
   "id": "sains-hidup-tak-hidup-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -64,7 +64,7 @@
     {
       "id": "takhidup",
       "labelKey": "takhidup",
-      "emoji": "🪨"
+      "emoji": "🧱"
     }
   ],
   "items": [

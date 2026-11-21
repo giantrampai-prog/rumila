@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-air-atau-daratan-dari-pesawat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -61,7 +61,7 @@
     {
       "id": "air",
       "labelKey": "b-air",
-      "emoji": "🌊",
+      "emoji": "🚤",
       "color": "#e1f5fe"
     },
     {

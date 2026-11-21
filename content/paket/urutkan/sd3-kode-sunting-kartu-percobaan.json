@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -237,7 +237,7 @@
         {
           "id": "gunung-1",
           "labelKey": "gunung-1",
-          "emoji": "🧺"
+          "emoji": "🧴"
         },
         {
           "id": "gunung-2",

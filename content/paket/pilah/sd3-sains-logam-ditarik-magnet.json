@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -105,21 +105,24 @@
       "labelKey": "i-sekrup",
       "bin": "tarik",
       "emoji": "🔩",
-      "color": "#78909c"
+      "color": "#78909c",
+      "latar": true
     },
     {
       "id": "bautbesi",
       "labelKey": "i-bautbesi",
       "bin": "tarik",
       "emoji": "⚙️",
-      "color": "#90a4ae"
+      "color": "#90a4ae",
+      "latar": true
     },
     {
       "id": "kalengalu",
       "labelKey": "i-kalengalu",
       "bin": "tidak",
       "emoji": "🥫",
-      "color": "#cfd8dc"
+      "color": "#cfd8dc",
+      "latar": true
     },
     {
       "id": "foil",
@@ -133,7 +136,8 @@
       "labelKey": "i-kabel",
       "bin": "tidak",
       "emoji": "🪢",
-      "color": "#d84315"
+      "color": "#d84315",
+      "latar": true
     },
     {
       "id": "cincin",
@@ -146,14 +150,16 @@
       "labelKey": "i-kuningan",
       "bin": "tidak",
       "emoji": "🔑",
-      "color": "#fbc02d"
+      "color": "#fbc02d",
+      "latar": true
     },
     {
       "id": "kayu",
       "labelKey": "i-kayu",
       "bin": "tidak",
       "emoji": "🥄",
-      "color": "#a1887f"
+      "color": "#a1887f",
+      "latar": true
     }
   ],
   "pilihan": []

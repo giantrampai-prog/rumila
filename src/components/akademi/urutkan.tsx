@@ -23,7 +23,7 @@ type Langkah = RondeUrutkan["shown"][number];
 const SOROT = "#ffd23f";
 
 function visual(x: Langkah, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px); disembunyikan di mode ujian. */

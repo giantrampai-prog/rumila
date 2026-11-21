@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-data-janggal-kelas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYELIDIKAN.01"
@@ -378,7 +378,7 @@
       "id": "pakai",
       "labelKey": "i-pakai",
       "bin": "pilihan",
-      "emoji": "✅"
+      "emoji": "📝"
     },
     {
       "id": "hapussemua",
@@ -396,7 +396,7 @@
       "id": "pastibenar",
       "labelKey": "i-pastibenar",
       "bin": "pilihan",
-      "emoji": "💯"
+      "emoji": "1️⃣"
     },
     {
       "id": "alatsempurna",

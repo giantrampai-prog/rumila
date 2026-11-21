@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jenis-tanah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.TANAH.01"
@@ -65,7 +65,7 @@
     {
       "id": "liat",
       "labelKey": "b-liat",
-      "emoji": "🏺",
+      "emoji": "🫳",
       "color": "#bcaaa4"
     },
     {

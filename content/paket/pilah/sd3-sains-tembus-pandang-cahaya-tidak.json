@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-pandang-cahaya-tidak",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tembus Pandang, Tembus Cahaya, atau Tidak?",
-      "instruksi": "Bayangkan menyinari tiap benda dengan senter. Benda di baliknya terlihat jelas, buram, atau tidak terlihat? Taruh ke raknya.",
+      "instruksi": "Bayangkan menyinari tiap benda dengan senter. Seberapa jelas benda di baliknya terlihat? Taruh ke rak yang cocok.",
       "b-pandang": "tembus pandang (terlihat jelas)",
       "b-tidak": "tidak tembus cahaya (gelap)",
       "b-cahaya": "tembus cahaya (buram)",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "Transparent, Translucent, or Opaque?",
-      "instruksi": "Imagine shining a torch at each thing. Is what is behind it clear, blurry, or hidden? Put it on its shelf.",
+      "instruksi": "Imagine shining a torch at each thing. How clearly can you see what is behind it? Put it on the matching shelf.",
       "b-pandang": "transparent (see clearly)",
       "b-tidak": "opaque (dark)",
       "b-cahaya": "translucent (blurry)",

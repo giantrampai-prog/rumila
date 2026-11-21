@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-pantul-atau-bias",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.CAHAYA.01"
@@ -63,13 +63,13 @@
     {
       "id": "pantul",
       "labelKey": "b-pantul",
-      "emoji": "🪞",
+      "emoji": "↩️",
       "color": "#e1f5fe"
     },
     {
       "id": "bias",
       "labelKey": "b-bias",
-      "emoji": "🔍",
+      "emoji": "↘️",
       "color": "#f3e5f5"
     }
   ],

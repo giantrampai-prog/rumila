@@ -83,7 +83,7 @@ function mainkanNada(urutan: (string | null)[], frek: (id: string) => number, on
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk. */
 function visual(x: ItemPola, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px), sama gayanya dengan presenter lain; disembunyikan di mode ujian. */

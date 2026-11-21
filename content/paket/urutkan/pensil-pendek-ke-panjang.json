@@ -1,6 +1,6 @@
 {
   "id": "pensil-pendek-ke-panjang",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,10 +11,6 @@
     "id": {
       "judul": "Mainan Pendek ke Panjang",
       "instruksi": "Robot menjajarkan kendaraan mainan. Susun dari yang paling pendek ke yang paling panjang.",
-      "pendek": "pendek",
-      "sedang": "sedang",
-      "panjang": "panjang",
-      "terpanjang": "paling panjang",
       "t-kereta": "Kereta: pendek ke panjang",
       "t-bus": "Bus: pendek ke panjang",
       "t-truk": "Truk: pendek ke panjang",
@@ -24,15 +20,21 @@
       "t-mobil": "Mobil: pendek ke panjang",
       "t-traktor": "Traktor: pendek ke panjang",
       "t-bajaj": "Bajaj: pendek ke panjang",
-      "t-minibus": "Mobil van: pendek ke panjang"
+      "t-minibus": "Mobil van: pendek ke panjang",
+      "n-kereta": "kereta",
+      "n-bus": "bus",
+      "n-truk": "truk",
+      "n-pemadam": "mobil pemadam",
+      "n-ambulans": "ambulans",
+      "n-keretauap": "kereta uap",
+      "n-mobil": "mobil",
+      "n-traktor": "traktor",
+      "n-bajaj": "bajaj",
+      "n-minibus": "mobil van"
     },
     "en": {
       "judul": "Toys Short to Long",
       "instruksi": "Robot is lining up toy vehicles. Put them from the shortest to the longest.",
-      "pendek": "short",
-      "sedang": "medium",
-      "panjang": "long",
-      "terpanjang": "longest",
       "t-kereta": "Trains: short to long",
       "t-bus": "Buses: short to long",
       "t-truk": "Trucks: short to long",
@@ -42,7 +44,17 @@
       "t-mobil": "Cars: short to long",
       "t-traktor": "Tractors: short to long",
       "t-bajaj": "Auto rickshaws: short to long",
-      "t-minibus": "Vans: short to long"
+      "t-minibus": "Vans: short to long",
+      "n-kereta": "Trains",
+      "n-bus": "Buses",
+      "n-truk": "Trucks",
+      "n-pemadam": "Fire engines",
+      "n-ambulans": "Ambulances",
+      "n-keretauap": "Steam trains",
+      "n-mobil": "Cars",
+      "n-traktor": "Tractors",
+      "n-bajaj": "Auto rickshaws",
+      "n-minibus": "Vans"
     }
   },
   "knobs": {
@@ -66,25 +78,25 @@
       "steps": [
         {
           "id": "kereta-1",
-          "labelKey": "pendek",
+          "labelKey": "n-kereta",
           "emoji": "🚃",
           "width": 1
         },
         {
           "id": "kereta-2",
-          "labelKey": "sedang",
+          "labelKey": "n-kereta",
           "emoji": "🚃",
           "width": 1.3
         },
         {
           "id": "kereta-3",
-          "labelKey": "panjang",
+          "labelKey": "n-kereta",
           "emoji": "🚃",
           "width": 1.7
         },
         {
           "id": "kereta-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-kereta",
           "emoji": "🚃",
           "width": 2.2
         }
@@ -96,25 +108,25 @@
       "steps": [
         {
           "id": "bus-1",
-          "labelKey": "pendek",
+          "labelKey": "n-bus",
           "emoji": "🚌",
           "width": 1
         },
         {
           "id": "bus-2",
-          "labelKey": "sedang",
+          "labelKey": "n-bus",
           "emoji": "🚌",
           "width": 1.3
         },
         {
           "id": "bus-3",
-          "labelKey": "panjang",
+          "labelKey": "n-bus",
           "emoji": "🚌",
           "width": 1.7
         },
         {
           "id": "bus-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-bus",
           "emoji": "🚌",
           "width": 2.2
         }
@@ -126,19 +138,19 @@
       "steps": [
         {
           "id": "truk-1",
-          "labelKey": "pendek",
+          "labelKey": "n-truk",
           "emoji": "🚚",
           "width": 1
         },
         {
           "id": "truk-2",
-          "labelKey": "sedang",
+          "labelKey": "n-truk",
           "emoji": "🚚",
           "width": 1.4
         },
         {
           "id": "truk-3",
-          "labelKey": "panjang",
+          "labelKey": "n-truk",
           "emoji": "🚚",
           "width": 2
         }
@@ -150,19 +162,19 @@
       "steps": [
         {
           "id": "pemadam-1",
-          "labelKey": "pendek",
+          "labelKey": "n-pemadam",
           "emoji": "🚒",
           "width": 1
         },
         {
           "id": "pemadam-2",
-          "labelKey": "sedang",
+          "labelKey": "n-pemadam",
           "emoji": "🚒",
           "width": 1.4
         },
         {
           "id": "pemadam-3",
-          "labelKey": "panjang",
+          "labelKey": "n-pemadam",
           "emoji": "🚒",
           "width": 2
         }
@@ -174,19 +186,19 @@
       "steps": [
         {
           "id": "ambulans-1",
-          "labelKey": "pendek",
+          "labelKey": "n-ambulans",
           "emoji": "🚑",
           "width": 1
         },
         {
           "id": "ambulans-2",
-          "labelKey": "sedang",
+          "labelKey": "n-ambulans",
           "emoji": "🚑",
           "width": 1.4
         },
         {
           "id": "ambulans-3",
-          "labelKey": "panjang",
+          "labelKey": "n-ambulans",
           "emoji": "🚑",
           "width": 2
         }
@@ -198,25 +210,25 @@
       "steps": [
         {
           "id": "keretauap-1",
-          "labelKey": "pendek",
+          "labelKey": "n-keretauap",
           "emoji": "🚂",
           "width": 1
         },
         {
           "id": "keretauap-2",
-          "labelKey": "sedang",
+          "labelKey": "n-keretauap",
           "emoji": "🚂",
           "width": 1.3
         },
         {
           "id": "keretauap-3",
-          "labelKey": "panjang",
+          "labelKey": "n-keretauap",
           "emoji": "🚂",
           "width": 1.7
         },
         {
           "id": "keretauap-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-keretauap",
           "emoji": "🚂",
           "width": 2.2
         }
@@ -228,19 +240,19 @@
       "steps": [
         {
           "id": "mobil-1",
-          "labelKey": "pendek",
+          "labelKey": "n-mobil",
           "emoji": "🚗",
           "width": 1
         },
         {
           "id": "mobil-2",
-          "labelKey": "sedang",
+          "labelKey": "n-mobil",
           "emoji": "🚗",
           "width": 1.4
         },
         {
           "id": "mobil-3",
-          "labelKey": "panjang",
+          "labelKey": "n-mobil",
           "emoji": "🚗",
           "width": 2
         }
@@ -252,19 +264,19 @@
       "steps": [
         {
           "id": "traktor-1",
-          "labelKey": "pendek",
+          "labelKey": "n-traktor",
           "emoji": "🚜",
           "width": 1
         },
         {
           "id": "traktor-2",
-          "labelKey": "sedang",
+          "labelKey": "n-traktor",
           "emoji": "🚜",
           "width": 1.4
         },
         {
           "id": "traktor-3",
-          "labelKey": "panjang",
+          "labelKey": "n-traktor",
           "emoji": "🚜",
           "width": 2
         }
@@ -276,19 +288,19 @@
       "steps": [
         {
           "id": "bajaj-1",
-          "labelKey": "pendek",
+          "labelKey": "n-bajaj",
           "emoji": "🛺",
           "width": 1
         },
         {
           "id": "bajaj-2",
-          "labelKey": "sedang",
+          "labelKey": "n-bajaj",
           "emoji": "🛺",
           "width": 1.4
         },
         {
           "id": "bajaj-3",
-          "labelKey": "panjang",
+          "labelKey": "n-bajaj",
           "emoji": "🛺",
           "width": 2
         }
@@ -300,25 +312,25 @@
       "steps": [
         {
           "id": "minibus-1",
-          "labelKey": "pendek",
+          "labelKey": "n-minibus",
           "emoji": "🚐",
           "width": 1
         },
         {
           "id": "minibus-2",
-          "labelKey": "sedang",
+          "labelKey": "n-minibus",
           "emoji": "🚐",
           "width": 1.3
         },
         {
           "id": "minibus-3",
-          "labelKey": "panjang",
+          "labelKey": "n-minibus",
           "emoji": "🚐",
           "width": 1.7
         },
         {
           "id": "minibus-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-minibus",
           "emoji": "🚐",
           "width": 2.2
         }

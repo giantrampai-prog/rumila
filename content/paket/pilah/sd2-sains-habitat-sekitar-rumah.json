@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-sekitar-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -136,8 +136,9 @@
       "id": "berudu",
       "labelKey": "i-berudu",
       "bin": "kolam",
-      "emoji": "⚫",
-      "scale": 0.5
+      "shape": "berudu",
+      "color": "#3d4f3a",
+      "scale": 0.8
     },
     {
       "id": "teratai",
@@ -161,7 +162,8 @@
       "id": "akar",
       "labelKey": "i-akar",
       "bin": "tanah",
-      "emoji": "🌾"
+      "shape": "akar",
+      "color": "#8d6e63"
     }
   ],
   "pilihan": []

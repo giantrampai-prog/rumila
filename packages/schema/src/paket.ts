@@ -45,6 +45,8 @@ const Visual = {
   angka: z.string().min(1).max(8).optional(),
   /** lebar relatif untuk benda memanjang (ular, pensil) */
   width: z.number().min(0.25).max(4).optional(),
+  /** gambar `color` sebagai latar bulat di belakang emoji (warna pembeda, mis. rubah kutub putih); bawaan: hanya bila emoji itu muncul dengan ≥ 2 warna di paket */
+  latar: z.boolean().optional(),
 };
 
 const Base = {

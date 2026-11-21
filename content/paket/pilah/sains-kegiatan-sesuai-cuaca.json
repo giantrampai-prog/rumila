@@ -1,6 +1,6 @@
 {
   "id": "sains-kegiatan-sesuai-cuaca",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Main Apa Hari Ini?",
-      "instruksi": "Taruh kartu kegiatan ke papan cuaca yang cocok: layang-layang ke berangin, payung ke hujan.",
+      "instruksi": "Taruh kartu kegiatan ke papan cuaca yang cocok: payung ke hujan.",
       "cerah": "cerah",
       "hujan": "hujan",
       "angin": "berangin",
@@ -19,14 +19,14 @@
       "i-eskrim": "matahari terik, makan es krim di taman",
       "i-payung": "hujan turun, pakai payung",
       "i-berteduh": "hujan deras, berteduh di rumah",
-      "i-jashujan": "hujan turun, pakai jas hujan",
       "i-layang": "angin kencang, waktunya main layang-layang",
       "i-kincir": "angin bertiup, lonceng angin berbunyi",
-      "i-layar": "angin kencang, perahu layar melaju"
+      "i-layar": "angin kencang, perahu layar melaju",
+      "i-sepatubot": "hujan turun, pakai sepatu bot"
     },
     "en": {
       "judul": "What Shall We Do Today?",
-      "instruksi": "Put each activity card on the matching weather board: kite to windy, umbrella to rainy.",
+      "instruksi": "Put each activity card on the matching weather board: umbrella to rainy.",
       "cerah": "sunny",
       "hujan": "rainy",
       "angin": "windy",
@@ -35,10 +35,10 @@
       "i-eskrim": "hot sun, eat ice cream in the park",
       "i-payung": "rain is falling, use an umbrella",
       "i-berteduh": "heavy rain, shelter at home",
-      "i-jashujan": "rain is falling, wear a raincoat",
       "i-layang": "strong wind, time to fly a kite",
       "i-kincir": "the wind blows, the wind chimes ring",
-      "i-layar": "strong wind, the sailboat speeds along"
+      "i-layar": "strong wind, the sailboat speeds along",
+      "i-sepatubot": "rain is falling, wear rain boots"
     }
   },
   "knobs": {
@@ -111,11 +111,10 @@
       "emoji": "🏠"
     },
     {
-      "id": "jashujan",
-      "labelKey": "i-jashujan",
+      "id": "sepatubot",
+      "labelKey": "i-sepatubot",
       "bin": "hujan",
-      "emoji": "🧥",
-      "color": "#ffee58"
+      "emoji": "🥾"
     },
     {
       "id": "layang",

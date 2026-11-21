@@ -1,6 +1,6 @@
 {
   "id": "sains-siang-malam-di-kebun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,12 +15,12 @@
       "malam": "malam",
       "i-jemur": "menjemur baju",
       "i-kupu": "kupu-kupu di bunga",
-      "i-siram": "menyiram tanaman pagi",
       "i-kacamata": "pakai kacamata hitam",
       "i-kunang": "kunang-kunang menyala",
-      "i-lampu": "lampu teras menyala",
-      "i-piyama": "pakai piyama",
-      "i-kelelawar": "kelelawar terbang"
+      "i-lampu": "lampion menyala",
+      "i-piyama": "tidur di kasur",
+      "i-kelelawar": "kelelawar terbang",
+      "i-pelangi": "pelangi di langit"
     },
     "en": {
       "judul": "The Garden by Day and Night",
@@ -29,12 +29,12 @@
       "malam": "night",
       "i-jemur": "hanging laundry in the sun",
       "i-kupu": "butterfly on a flower",
-      "i-siram": "watering plants in the morning",
       "i-kacamata": "wearing sunglasses",
       "i-kunang": "glowing fireflies",
-      "i-lampu": "porch lamp on",
-      "i-piyama": "putting on pyjamas",
-      "i-kelelawar": "bats flying"
+      "i-lampu": "glowing lantern",
+      "i-piyama": "sleeping in bed",
+      "i-kelelawar": "bats flying",
+      "i-pelangi": "a rainbow in the sky"
     }
   },
   "knobs": {
@@ -79,10 +79,10 @@
       "emoji": "🦋"
     },
     {
-      "id": "siram",
-      "labelKey": "i-siram",
+      "id": "pelangi",
+      "labelKey": "i-pelangi",
       "bin": "siang",
-      "emoji": "🪴"
+      "emoji": "🌈"
     },
     {
       "id": "kacamata",

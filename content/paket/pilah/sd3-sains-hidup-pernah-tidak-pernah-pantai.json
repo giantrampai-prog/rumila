@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hidup-pernah-tidak-pernah-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -84,7 +84,7 @@
     {
       "id": "tidak",
       "labelKey": "b-tidak",
-      "emoji": "🪨",
+      "emoji": "🧱",
       "color": "#e0e0e0"
     }
   ],

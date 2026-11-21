@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penutup-tubuh-kebun-binatang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -88,7 +88,7 @@
     {
       "id": "sisik",
       "labelKey": "b-sisik",
-      "emoji": "🐟",
+      "emoji": "🐉",
       "color": "#e0f2f1"
     },
     {
