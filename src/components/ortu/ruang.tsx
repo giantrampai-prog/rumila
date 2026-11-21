@@ -188,6 +188,7 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
         <>
           <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Belum ada profil anak. Daftarkan anak di bawah ini, lalu anak bisa masuk dengan PIN-nya sendiri.</p>
           <AnggotaRumah />
+          <LanggananKeluarga />
         </>
       ) : (
         <>
