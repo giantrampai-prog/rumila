@@ -167,3 +167,57 @@ export function usePeranAkademi(memberId: string): PeranAkademi {
   useEffect(() => setP(peranAkademi(memberId)), [memberId, versi]);
   return p;
 }
+
+/* ---------------- tanggal lahir anak (objek JSON yang sama, ikut sinkron game_save) ---------------- */
+
+const ISO_TANGGAL = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Tanggal lahir anak "YYYY-MM-DD"; null bila belum diisi wali. */
+export function tanggalLahirAnak(memberId: string): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const v = JSON.parse(localStorage.getItem(LEVEL_ANAK_KEY(memberId)) ?? "{}") as { lahir?: unknown };
+    return typeof v?.lahir === "string" && ISO_TANGGAL.test(v.lahir) ? v.lahir : null;
+  } catch {
+    return null;
+  }
+}
+
+export function setTanggalLahirAnak(memberId: string, lahir: string | null) {
+  if (typeof window === "undefined") return;
+  if (lahir !== null && !ISO_TANGGAL.test(lahir)) return;
+  try {
+    let prev: Record<string, unknown> = {};
+    try {
+      prev = JSON.parse(localStorage.getItem(LEVEL_ANAK_KEY(memberId)) ?? "{}") ?? {};
+    } catch {}
+    const { lahir: _lama, ...sisa } = prev;
+    void _lama;
+    localStorage.setItem(LEVEL_ANAK_KEY(memberId), JSON.stringify(lahir ? { ...sisa, lahir } : sisa));
+  } catch {}
+  for (const fn of pendengarBahasa) {
+    try {
+      fn(memberId);
+    } catch (e) {
+      console.error("[akademi] pendengar tanggal lahir gagal", e);
+    }
+  }
+}
+
+/** Hook: tanggal lahir satu anak, ikut berubah saat diubah atau sinkron akun. */
+export function useTanggalLahirAnak(memberId: string): string | null {
+  const versi = useProfilAkademiVersi();
+  const [v, setV] = useState<string | null>(null);
+  useEffect(() => setV(tanggalLahirAnak(memberId)), [memberId, versi]);
+  return v;
+}
+
+/** Umur dalam tahun & bulan penuh pada tanggal `pada`; null bila tanggal tidak sah atau di masa depan. */
+export function umurDari(lahir: string, pada: Date = new Date()): { tahun: number; bulan: number } | null {
+  if (!ISO_TANGGAL.test(lahir)) return null;
+  const [y, m, d] = lahir.split("-").map(Number);
+  let bulan = (pada.getFullYear() - y) * 12 + (pada.getMonth() + 1 - m);
+  if (pada.getDate() < d) bulan--;
+  if (bulan < 0) return null;
+  return { tahun: Math.floor(bulan / 12), bulan: bulan % 12 };
+}

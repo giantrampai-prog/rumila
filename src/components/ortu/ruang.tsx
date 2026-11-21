@@ -14,7 +14,12 @@ import { RaporAnak } from "@/components/akademi/portal/rapor";
 import { ProfilBerpikirOrtu } from "@/components/ortu/profil-berpikir";
 import { hapusFoto, unggahFoto, useFotoAnak } from "@/lib/akademi/foto";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, PAKET, anakRumah, levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, anakRumah, levelAnak, setTanggalLahirAnak, umurDari, useProfilAkademiVersi, useTanggalLahirAnak } from "@/lib/akademi/konten";
+import { BUKU_PRINT_CSS, BukuSertifikat } from "@/components/akademi/buku-sertifikat";
+import { LAMBANG } from "@/components/akademi/portal/tangga";
+import { nomorInduk, tahunMasuk } from "@/lib/akademi/kartu-pelajar";
+import { snapshotSertifikat } from "@/lib/akademi/sertifikat-inti";
+import { penilaianKampus, snapshotPraktik } from "@/lib/akademi/praktik-kampus";
 import { proyeksi } from "@/lib/akademi/mastery";
 import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta";
 import { sinkronSiswa } from "@/lib/akademi/siswa";
@@ -195,7 +200,7 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
               );
             })}
           </div>
-          <nav className="no-print -mx-1 flex gap-1 overflow-x-auto px-1" aria-label="Bagian laporan">
+          <nav className="no-print -mx-1 flex gap-1 overflow-x-auto px-1 md:flex-wrap md:overflow-visible" aria-label="Bagian laporan">
             {TAB.map(([id, label, ikon]) => (
               <button key={id} onClick={() => setTab(id)} className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13px] font-extrabold" style={{ background: tab === id ? "#0786eb" : "#fff", color: tab === id ? "#fff" : INK }}>
                 <Icon name={ikon} size={18} /> {label}
@@ -216,8 +221,9 @@ function Bagian({ anak, tab }: { anak: Member; tab: Tab }) {
   if (tab === "sertifikat")
     return (
       <div className="flex flex-col gap-4">
-        {!lihat && <FotoSertifikat anak={anak} />}
-        <LemariPiagam anak={anak} lihat={lihat} onLihat={setLihat} tertanam />
+        {!lihat && <KartuIdentitas anak={anak} />}
+        {!lihat && <ContohSertifikat anak={anak} onLihat={() => setLihat("contoh")} />}
+        {lihat === "contoh" ? <BukuContoh anak={anak} onTutup={() => setLihat(null)} /> : <LemariPiagam anak={anak} lihat={lihat} onLihat={setLihat} tertanam />}
       </div>
     );
   if (tab === "ujian") return <DaftarUjian anak={anak} />;
@@ -260,10 +266,18 @@ function SedangDisiapkan() {
   );
 }
 
-/* ---------------- foto untuk buku sertifikat ---------------- */
+/* ---------------- identitas siswa & contoh sertifikat ---------------- */
 
-function FotoSertifikat({ anak }: { anak: Member }) {
+/** Data diri anak untuk buku sertifikat: foto, nama, tanggal lahir & umur, NIS, jenjang & lencana pangkat. */
+function KartuIdentitas({ anak }: { anak: Member }) {
   const foto = useFotoAnak(anak.id);
+  const lahir = useTanggalLahirAnak(anak.id);
+  const { hasil, jenjang, modul, semester } = usePenghargaan(anak.id);
+  const level = levelAnak(anak.id);
+  const lv = levelMeta(level);
+  const { ikon, warna } = LAMBANG[level];
+  const umur = lahir ? umurDari(lahir) : null;
+  const nis = nomorInduk(anak.id, tahunMasuk(hasil));
   const [sibuk, setSibuk] = useState(false);
   const [pesan, setPesan] = useState<string | null>(null);
   const pilih = async (f: File | undefined) => {
@@ -279,29 +293,134 @@ function FotoSertifikat({ anak }: { anak: Member }) {
       setSibuk(false);
     }
   };
+  const hariIni = new Date().toISOString().slice(0, 10);
   return (
-    <section className={`${KARTU} flex flex-wrap items-center gap-4 p-4`}>
-      <span className="flex h-24 w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#efe6d0] text-[11px] font-extrabold text-ink-3">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        {foto ? <img src={foto} alt={`Foto ${anak.name}`} className="h-full w-full object-cover" /> : "3 × 4"}
-      </span>
-      <div className="min-w-0 flex-1">
-        <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>Foto untuk sertifikat</h3>
-        <p className="text-[13px] font-bold text-ink-3">Foto wajah tegak, latar polos. Disimpan privat untuk keluarga; tidak tampil di halaman verifikasi publik.</p>
-        {pesan && <p className="mt-1 text-[13px] font-bold text-[#0567c2]">{pesan}</p>}
+    <section className={`${KARTU} overflow-hidden`}>
+      <div className="flex items-center gap-2 px-4 py-2.5 text-white" style={{ background: `linear-gradient(135deg, ${warna[0]}, ${warna[1]})` }}>
+        <Icon name="badge" size={20} />
+        <span style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}>Kartu Identitas Siswa</span>
+        <span className="ml-auto text-[12px] font-extrabold opacity-90">Dipakai di buku sertifikat</span>
       </div>
-      <div className="flex gap-2">
-        <label htmlFor={`foto-${anak.id}`} className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full px-4 text-[13px] font-extrabold text-white" style={{ background: "#0786eb", opacity: sibuk ? 0.6 : 1 }}>
-          <Icon name="add_a_photo" size={18} /> {sibuk ? "Mengunggah…" : foto ? "Ganti foto" : "Unggah foto"}
-        </label>
-        <input id={`foto-${anak.id}`} type="file" accept="image/*" className="sr-only" disabled={sibuk} onChange={(e) => void pilih(e.target.files?.[0])} />
-        {foto && (
-          <button onClick={() => void hapusFoto(anak.id)} className="inline-flex h-10 items-center rounded-full bg-[#f6f0e6] px-4 text-[13px] font-extrabold">
-            Hapus
-          </button>
-        )}
+      <div className="flex flex-wrap items-start gap-4 p-4">
+        <div className="flex flex-col items-center gap-2">
+          <span className="flex h-28 w-[84px] shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-[#efe6d0] text-[11px] font-extrabold text-ink-3" style={{ boxShadow: "inset 0 0 0 2px #e6dccd" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {foto ? <img src={foto} alt={`Foto ${anak.name}`} className="h-full w-full object-cover" /> : "Pas foto 3 × 4"}
+          </span>
+          <label htmlFor={`foto-${anak.id}`} className="inline-flex h-8 cursor-pointer items-center gap-1 rounded-full px-3 text-[12px] font-extrabold text-white" style={{ background: "#0786eb", opacity: sibuk ? 0.6 : 1 }}>
+            <Icon name="add_a_photo" size={15} /> {sibuk ? "Mengunggah…" : foto ? "Ganti" : "Unggah"}
+          </label>
+          <input id={`foto-${anak.id}`} type="file" accept="image/*" className="sr-only" disabled={sibuk} onChange={(e) => void pilih(e.target.files?.[0])} />
+          {foto && (
+            <button onClick={() => void hapusFoto(anak.id)} className="text-[12px] font-extrabold text-ink-3 underline">
+              Hapus foto
+            </button>
+          )}
+        </div>
+        <div className="flex min-w-[220px] flex-1 flex-col gap-3">
+          <div className="flex items-center gap-3">
+            <div className="min-w-0 flex-1">
+              <h3 className="leading-tight" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>{anak.name}</h3>
+              <p className="text-[13px] font-bold text-ink-3">NIS {nis}</p>
+            </div>
+            <span title={`Lencana pangkat ${lv.pangkat}`} className="flex size-16 shrink-0 flex-col items-center justify-center rounded-full text-white" style={{ background: `radial-gradient(circle at 35% 30%, ${warna[0]}, ${warna[1]})`, boxShadow: `0 4px 0 ${warna[1]}55, inset 0 0 0 3px #ffffff66` }}>
+              <Icon name={ikon} size={28} />
+              <span className="text-[9px] font-black tracking-wide uppercase">{lv.pangkat}</span>
+            </span>
+          </div>
+          <dl className="grid grid-cols-2 gap-2 text-[13px] sm:grid-cols-4">
+            <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
+              <dt className="text-[11px] font-extrabold text-ink-3 uppercase">Tanggal lahir</dt>
+              <dd>
+                <input
+                  type="date"
+                  aria-label={`Tanggal lahir ${anak.name}`}
+                  value={lahir ?? ""}
+                  max={hariIni}
+                  onChange={(e) => setTanggalLahirAnak(anak.id, e.target.value || null)}
+                  className="mt-0.5 w-full bg-transparent text-[14px] font-extrabold outline-none"
+                />
+              </dd>
+            </div>
+            <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
+              <dt className="text-[11px] font-extrabold text-ink-3 uppercase">Umur</dt>
+              <dd className="mt-0.5 text-[14px] font-extrabold">{umur ? `${umur.tahun} tahun${umur.bulan ? ` ${umur.bulan} bulan` : ""}` : "isi tanggal lahir"}</dd>
+            </div>
+            <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
+              <dt className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang</dt>
+              <dd className="mt-0.5 text-[14px] font-extrabold">
+                {lv.lokal} · {lv.nama}
+              </dd>
+            </div>
+            <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
+              <dt className="text-[11px] font-extrabold text-ink-3 uppercase">Penghargaan</dt>
+              <dd className="mt-0.5 text-[14px] font-extrabold">
+                {jenjang.length} jenjang · {semester.length} semester · {modul.length} modul
+              </dd>
+            </div>
+          </dl>
+          <p className="text-[12.5px] font-bold text-ink-3">
+            Foto dan tanggal lahir disimpan privat untuk keluarga dan tercetak di buku sertifikat; tidak tampil di halaman verifikasi publik.
+          </p>
+          {pesan && <p className="text-[13px] font-bold text-[#0567c2]">{pesan}</p>}
+        </div>
       </div>
     </section>
+  );
+}
+
+/** Data buku sertifikat contoh untuk jenjang aktif: kemajuan anak saat ini, bertanda DRAFT. */
+function useContoh(anak: Member) {
+  const events = useEvents(anak.id);
+  const level = levelAnak(anak.id);
+  const snapshot = useMemo(() => {
+    const dasar = snapshotSertifikat(proyeksi(events, KOMPETENSI), KOMPETENSI, level);
+    const praktik = snapshotPraktik(penilaianKampus(events, KOMPETENSI, level));
+    return praktik ? { ...dasar, praktik } : dasar;
+  }, [events, level]);
+  return { level, snapshot, issuedAt: new Date().toISOString() };
+}
+
+function ContohSertifikat({ anak, onLihat }: { anak: Member; onLihat: () => void }) {
+  const foto = useFotoAnak(anak.id);
+  const lahir = useTanggalLahirAnak(anak.id);
+  const { jenjang } = usePenghargaan(anak.id);
+  const { level, snapshot, issuedAt } = useContoh(anak);
+  if (jenjang.some((s) => s.level === level)) return null; // sertifikat jenjang ini sudah terbit: lihat di Lemari Piagam
+  const lv = levelMeta(level);
+  return (
+    <section className={`${KARTU} flex flex-col gap-3 p-4`}>
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="min-w-0 flex-1">
+          <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>Contoh Sertifikat {lv.lokal}</h3>
+          <p className="text-[13px] font-bold text-ink-3">
+            Begini sertifikat {anak.name} nanti. Isinya mengikuti kemajuan saat ini ({snapshot.dikuasai} dari {snapshot.total} kompetensi inti dikuasai); sertifikat asli terbit setelah lulus Ujian Akhir.
+          </p>
+        </div>
+        <button onClick={onLihat} className="inline-flex h-10 items-center gap-1.5 rounded-full px-4 text-[13px] font-extrabold text-white" style={{ background: "#0786eb" }}>
+          <Icon name="menu_book" size={18} /> Lihat buku contoh
+        </button>
+      </div>
+      <BukuSertifikat nama={anak.name} level={level} kode="CONTOH" issuedAt={issuedAt} snapshot={snapshot} foto={foto} lahir={lahir} draft hanya="sertifikat" />
+    </section>
+  );
+}
+
+function BukuContoh({ anak, onTutup }: { anak: Member; onTutup: () => void }) {
+  const foto = useFotoAnak(anak.id);
+  const lahir = useTanggalLahirAnak(anak.id);
+  const { level, snapshot, issuedAt } = useContoh(anak);
+  return (
+    <div className="sertifikat-root flex flex-col gap-4">
+      <style>{BUKU_PRINT_CSS}</style>
+      <div className="no-print flex items-center gap-2">
+        <button onClick={onTutup} aria-label="Kembali" className="flex size-10 items-center justify-center rounded-full bg-white">
+          <Icon name="arrow_back" size={22} />
+        </button>
+        <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>Buku Sertifikat · Contoh (DRAFT)</h2>
+      </div>
+      <BukuSertifikat nama={anak.name} level={level} kode="CONTOH" issuedAt={issuedAt} snapshot={snapshot} foto={foto} lahir={lahir} draft />
+    </div>
   );
 }
 
