@@ -5,6 +5,20 @@ const nextConfig: NextConfig = {
   distDir: process.env.RUMILA_DIST_DIR || ".next",
   // Izinkan membuka dev server dari perangkat lain di jaringan lokal (tablet/HP), mis. http://192.168.1.8:3000
   allowedDevOrigins: ["192.168.*.*", "10.*.*.*", "*.local"],
+  // Kampus RINOYA: menu lama /beranda/<menu> kini gedung di dalam Academy. Bookmark & tombol lama tetap jalan.
+  async redirects() {
+    const alih: Record<string, string> = {
+      edukasi: "/akademi",
+      angkasa: "/akademi/lab",
+      coding: "/akademi/komputer",
+      game: "/akademi/taman",
+      doa: "/akademi/musala",
+      ibadah: "/akademi/musala",
+      keluarga: "/orang-tua?tab=keluarga",
+      kesehatan: "/orang-tua?tab=keluarga",
+    };
+    return Object.entries(alih).map(([menu, tujuan]) => ({ source: `/beranda/${menu}`, destination: tujuan, permanent: false }));
+  },
   // Aset besar (model 3D, tekstur, rekaman suara, gambar): disimpan di cache browser & CDN 1 hari, lalu
   // diperbarui diam-diam di latar hingga 30 hari — dibuka ulang tanpa unduh/cek ulang ke server.
   async headers() {

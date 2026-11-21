@@ -413,7 +413,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
       {/* atas: kembali · keranjang · tur & katalog */}
       <div className={`pointer-events-none absolute ${tour ? 'hidden' : ''}`} style={{ inset: 0 }}>
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3 sm:p-5" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))' }}>
-        <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/beranda/angkasa')} />
+        <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/akademi/lab')} />
         <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-1.5 shadow-[0_4px_0_rgba(11,37,69,.12)]">
           <span className="flex size-10 items-center justify-center rounded-full" style={{ background: 'linear-gradient(155deg,#ffe46b,#ffbe0b 60%)' }}>
             <Icon name="shopping_basket" size={24} className="text-[#8a5a12]" />

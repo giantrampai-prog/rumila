@@ -482,7 +482,7 @@ export function RestoGame() {
       {/* HUD atas */}
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-2 sm:p-3" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
         <div className="pointer-events-auto flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
-          <button aria-label="Keluar" onClick={() => router.push('/beranda/game')} className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_0_rgba(0,0,0,.2)] active:scale-90 sm:size-12">
+          <button aria-label="Keluar" onClick={() => router.push('/akademi/taman')} className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_0_rgba(0,0,0,.2)] active:scale-90 sm:size-12">
             <Icon name="arrow_back" size={26} />
           </button>
           <div className="min-w-0 rounded-[14px] px-2.5 py-1 text-white sm:rounded-[16px] sm:px-3 sm:py-1.5" style={{ background: WOOD, boxShadow: '0 3px 0 #5a3418' }}>

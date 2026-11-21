@@ -216,7 +216,7 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   const back = () => {
     if (state.isolation) return viewer.current?.motion(null), dispatch({ type: 'back' });
     if (selected) return dispatch({ type: 'patch', patch: { selectedId: null } });
-    router.push('/beranda/angkasa');
+    router.push('/akademi/lab');
   };
   const busy = !!state.isolation || !!selected;
 

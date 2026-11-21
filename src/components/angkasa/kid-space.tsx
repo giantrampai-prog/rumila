@@ -622,7 +622,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   const back = () => {
     if (st.mode === "tur") return endTour();
     if (st.mode !== "tata-surya") return home();
-    router.push("/beranda/angkasa");
+    router.push("/akademi/lab");
   };
 
   const tour = st.mode === "tur";

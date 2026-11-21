@@ -1,7 +1,7 @@
 "use client";
 
 // Ruang Orang Tua: dibuka dengan PIN admin rumah. Per anak: Ringkasan · Rapor · Ujian & Tes · Sertifikat ·
-// Profil Berpikir. Terkunci lagi otomatis setelah 15 menit atau lewat tombol Kunci.
+// Profil Berpikir · Keluarga & Kesehatan. Terkunci lagi otomatis setelah 15 menit atau lewat tombol Kunci.
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -20,6 +20,7 @@ import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta"
 import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { NAMA_UJIAN, predikat, type HasilUjian } from "@/lib/akademi/ujian";
 import { adminBerPin, bukaDenganPin, ruangTerbuka, sisaKunci, tutupRuang } from "@/lib/ortu";
+import { daftarDisiapkan } from "@/lib/kampus";
 import { useRumila, type Member } from "@/lib/store";
 
 const INK = "#0b2545";
@@ -30,6 +31,7 @@ const TAB = [
   ["ujian", "Ujian & Tes", "quiz"],
   ["sertifikat", "Sertifikat", "workspace_premium"],
   ["berpikir", "Profil Berpikir", "psychology"],
+  ["keluarga", "Keluarga & Kesehatan", "family_restroom"],
 ] as const;
 type Tab = (typeof TAB)[number][0];
 
@@ -127,6 +129,11 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
   const anak = useMemo(() => anakRumah(members), [members, versi]);
   const [anakId, setAnakId] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("ringkasan");
+  // /beranda/keluarga & /beranda/kesehatan lama dialihkan ke ?tab=keluarga
+  useEffect(() => {
+    const t = new URLSearchParams(window.location.search).get("tab");
+    if (TAB.some(([id]) => id === t)) setTab(t as Tab);
+  }, []);
   const terpilih = anak.find((m) => m.id === anakId) ?? anak[0];
 
   return (
@@ -185,7 +192,41 @@ function Bagian({ anak, tab }: { anak: Member; tab: Tab }) {
     );
   if (tab === "ujian") return <DaftarUjian anak={anak} />;
   if (tab === "berpikir") return <ProfilBerpikirOrtu anak={anak} />;
+  if (tab === "keluarga") return <SedangDisiapkan />;
   return <Ringkasan anak={anak} />;
+}
+
+/* ---------------- keluarga, kesehatan & yang sedang disiapkan ---------------- */
+
+/** Alat keluarga/kesehatan dan kartu kampus yang belum berisi: tidak tampil di layar anak, dicatat di sini. */
+function SedangDisiapkan() {
+  const daftar = daftarDisiapkan();
+  return (
+    <div className="flex flex-col gap-4">
+      <p className={`${KARTU} p-4 text-[14px] font-bold text-ink-2`}>
+        Alat keluarga dan kesehatan kini ada di Ruang Orang Tua. Kegiatan yang belum berisi tidak tampil di layar anak, dan otomatis muncul di gedung kampusnya begitu siap.
+      </p>
+      {daftar.map(({ tempat, alat }) => (
+        <section key={tempat} className={`${KARTU} flex flex-col gap-3 p-4`}>
+          <h2 className="flex items-center justify-between gap-2" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+            {tempat}
+            <span className="rounded-full bg-[#fff0da] px-2.5 py-0.5 text-[12px] font-extrabold text-[#a34a00]">Sedang disiapkan · {alat.length}</span>
+          </h2>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {alat.map((t) => (
+              <li key={t.id} className="flex items-start gap-2.5 rounded-[14px] bg-[#f4f7fb] p-2.5">
+                <Icon name={t.icon} size={22} />
+                <span className="min-w-0">
+                  <span className="block text-[14px] font-extrabold">{t.name}</span>
+                  <span className="block text-[12.5px] font-bold text-ink-3">{t.desc}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
 }
 
 /* ---------------- foto untuk buku sertifikat ---------------- */

@@ -4,7 +4,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, type ReactNode } from "react";
 import { installUiSounds } from "@/lib/sfx";
 import { pasangQuestBukti } from "@/lib/akademi/quest";
-import { getFolder, type PermKey, type Tool } from "@/lib/catalog";
+import { type PermKey, type Tool } from "@/lib/catalog";
+import { RUTE_ALAT } from "@/lib/kampus";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { can, useHydrated, useMe, useRumila, useUI } from "@/lib/store";
 import { KidFrame, KidHeader } from "./kid";
@@ -16,9 +17,12 @@ function requiredPerm(path: string): PermKey | null {
   if (["/jelajah-tubuh", "/buah-buahan", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual"].some((r) => path.startsWith(r))) return "angkasa";
   if (path.startsWith("/resto") || path.startsWith("/ular-tangga")) return "game";
   if (path.startsWith("/koding")) return "coding";
+  // gedung kampus: izin menu lama tetap berlaku (Musala memeriksa izinnya sendiri: Doa, Ibadah, atau Lab 3D)
+  if (path.startsWith("/akademi/lab")) return "angkasa";
+  if (path.startsWith("/akademi/komputer")) return "coding";
+  if (path.startsWith("/akademi/taman")) return "game";
+  if (path.startsWith("/akademi/musala")) return null;
   if (path.startsWith("/akademi")) return "edukasi";
-  const m = path.match(/^\/beranda\/([^/]+)/);
-  if (m) return (getFolder(m[1])?.id as PermKey) ?? null;
   return null;
 }
 
@@ -103,33 +107,9 @@ export function useOpenTool() {
   const me = useMe();
   return (t: Tool) => {
     if (!can(me, t.folder)) return;
-    if (t.id === "edukasi-buah") {
-      router.push("/buah-buahan");
-      return;
-    }
-    if (t.id === "edukasi6" || t.id === "edukasi2") {
-      router.push("/jelajah-tubuh");
-      return;
-    }
-    // Jelajah Angkasa 3D + pintasan dari alat Angkasa lama (progres tetap satu: angkasa6, tidak diduplikasi).
-    const angkasa: Record<string, string> = {
-      angkasa6: "/jelajah-angkasa",
-      angkasa0: "/jelajah-angkasa",
-      angkasa1: "/jelajah-angkasa?obj=moon",
-      angkasa3: "/roket",
-      "petualangan-laut": "/laut",
-      "petualangan-bumi": "/bumi",
-      "petualangan-umroh": "/umroh-virtual",
-      "game-resto": "/resto",
-      "game-ular": "/ular-tangga",
-      "koding-langkah": "/koding/langkah",
-      "koding-pola": "/koding/pola",
-      "koding-ulangi": "/koding/ulangi",
-      "koding-kalau": "/koding/kalau",
-      "koding-jurus": "/koding/jurus",
-    };
-    if (angkasa[t.id]) {
-      router.push(angkasa[t.id]);
+    const rute = RUTE_ALAT[t.id];
+    if (rute) {
+      router.push(rute);
       return;
     }
     openSheet({ kind: "app", toolId: t.id });
