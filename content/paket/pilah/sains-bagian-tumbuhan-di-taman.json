@@ -1,6 +1,6 @@
 {
   "id": "sains-bagian-tumbuhan-di-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -32,7 +32,7 @@
       "t-daun1": "Angin meniup daun sampai jatuh ke tanah. Mana daunnya?",
       "t-daun2": "Ulat suka makan bagian tumbuhan yang hijau dan lebar. Mana daunnya?",
       "t-daun3": "Di rumput ada daun kecil bertiga. Sentuh daunnya!",
-      "t-bunga1": "Lebah mencari madu di bagian yang berwarna-warni. Mana bunganya?",
+      "t-bunga1": "Lebah mengisap sari bunga di bagian yang berwarna-warni. Mana bunganya?",
       "t-bunga2": "Bunga besar berwarna kuning ini menghadap ke matahari. Sentuh bunganya!",
       "t-bunga3": "Bunga ini harum dan batangnya berduri. Mana bunganya?",
       "t-bunga4": "Taman penuh warna karena tulip mekar. Mana bunganya?"

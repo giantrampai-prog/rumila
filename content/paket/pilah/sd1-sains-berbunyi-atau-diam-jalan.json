@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-berbunyi-atau-diam-jalan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -115,7 +115,8 @@
       "id": "kentongan",
       "labelKey": "i-kentongan",
       "bin": "bunyi",
-      "emoji": "🎋"
+      "shape": "rect",
+      "color": "#a1887f"
     },
     {
       "id": "burungkicau",
@@ -134,8 +135,8 @@
       "id": "tiang",
       "labelKey": "i-tiang",
       "bin": "diam",
-      "emoji": "🏮",
-      "color": "#bdbdbd"
+      "color": "#bdbdbd",
+      "shape": "rect"
     },
     {
       "id": "pohon",

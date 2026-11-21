@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hewan-tumbuh-besar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -121,9 +121,9 @@
     "steps": {
       "min": 3,
       "max": 4,
-      "default": 3,
+      "default": 4,
       "step": 1,
-      "keterangan": "jumlah tahap: 3 → 4"
+      "keterangan": "jumlah tahap: 3 → 4 (4 = lengkap sampai dewasa; 3 memotong tahap terakhir)"
     }
   },
   "assets": [],

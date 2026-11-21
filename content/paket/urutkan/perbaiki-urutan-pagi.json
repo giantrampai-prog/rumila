@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -14,10 +14,10 @@
       "pagi": "Pagi hari",
       "mandi": "Robot mandi",
       "bangun": "bangun tidur",
-      "gosok": "gosok gigi",
+      "kasur": "rapikan kasur",
       "sarapan": "sarapan",
       "berangkat": "berangkat",
-      "handuk": "ambil handuk",
+      "baju": "siapkan baju ganti",
       "siram": "siram badan",
       "sabun": "pakai sabun",
       "bilas": "bilas sampai bersih",
@@ -62,10 +62,10 @@
       "pagi": "The morning",
       "mandi": "The robot's bath",
       "bangun": "wake up",
-      "gosok": "brush teeth",
+      "kasur": "make the bed",
       "sarapan": "breakfast",
       "berangkat": "head out",
-      "handuk": "get the towel",
+      "baju": "get clean clothes ready",
       "siram": "pour water",
       "sabun": "soap up",
       "bilas": "rinse clean",
@@ -130,9 +130,9 @@
           "emoji": "🌅"
         },
         {
-          "id": "gosok",
-          "labelKey": "gosok",
-          "emoji": "🪥"
+          "id": "kasur",
+          "labelKey": "kasur",
+          "emoji": "🛏️"
         },
         {
           "id": "sarapan",
@@ -151,9 +151,9 @@
       "titleKey": "mandi",
       "steps": [
         {
-          "id": "handuk",
-          "labelKey": "handuk",
-          "emoji": "🧺"
+          "id": "baju",
+          "labelKey": "baju",
+          "emoji": "👕"
         },
         {
           "id": "siram",

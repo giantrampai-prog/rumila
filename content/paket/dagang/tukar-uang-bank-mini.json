@@ -1,6 +1,6 @@
 {
   "id": "tukar-uang-bank-mini",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bank Mini",
-      "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
+      "instruksi": "Robot jadi petugas bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
       "duaribu": "uang dua ribu",
       "limaribu": "uang lima ribu",
       "sepuluhribu": "uang sepuluh ribu"

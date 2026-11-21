@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,12 +10,12 @@
   "locale": {
     "id": {
       "judul": "Angka Pembuka Peti Pantai",
-      "instruksi": "Ada peti kayu terdampar di pantai. Telusuri angka 1 sampai 5 dengan jarimu mengikuti panah supaya petinya terbuka.",
+      "instruksi": "Ada peti terdampar di pantai. Telusuri angkanya dengan jarimu mengikuti panah supaya peti terbuka.",
       "peti-kayu": "peti kayu"
     },
     "en": {
       "judul": "Beach Crate Numbers",
-      "instruksi": "A wooden crate washed up on the beach. Trace the numbers 1 to 5 with your finger, following the arrows, to open it.",
+      "instruksi": "A crate washed up on the beach. Trace its number with your finger, following the arrows, to open it.",
       "peti-kayu": "wooden crate"
     }
   },

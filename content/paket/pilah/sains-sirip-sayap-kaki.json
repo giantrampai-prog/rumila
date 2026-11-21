@@ -1,6 +1,6 @@
 {
   "id": "sains-sirip-sayap-kaki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,8 +22,7 @@
       "i-kelelawar": "kelelawar",
       "i-kucing": "kucing",
       "i-sapi": "sapi",
-      "i-gajah": "gajah",
-      "i-burung": "burung terbang"
+      "i-gajah": "gajah"
     },
     "en": {
       "judul": "Fins, Wings, or Legs?",
@@ -39,8 +38,7 @@
       "i-kelelawar": "bat",
       "i-kucing": "cat",
       "i-sapi": "cow",
-      "i-gajah": "elephant",
-      "i-burung": "flying bird"
+      "i-gajah": "elephant"
     }
   },
   "knobs": {
@@ -56,7 +54,7 @@
       "max": 9,
       "default": 6,
       "step": 1,
-      "keterangan": "jumlah hewan per putaran; burung (sayap dan kaki) baru muncul di 8–9 hewan"
+      "keterangan": "jumlah hewan per putaran; burung (sayap dan kaki) tidak dipakai"
     }
   },
   "assets": [],
@@ -71,14 +69,14 @@
       "emoji": "🐟"
     },
     {
-      "id": "sayap",
-      "labelKey": "sayap",
-      "emoji": "🪶"
-    },
-    {
       "id": "kaki",
       "labelKey": "kaki",
       "emoji": "🐾"
+    },
+    {
+      "id": "sayap",
+      "labelKey": "sayap",
+      "emoji": "🪶"
     }
   ],
   "items": [
@@ -135,12 +133,6 @@
       "labelKey": "i-gajah",
       "bin": "kaki",
       "emoji": "🐘"
-    },
-    {
-      "id": "burung",
-      "labelKey": "i-burung",
-      "bin": "sayap",
-      "emoji": "🐦"
     }
   ],
   "pilihan": []

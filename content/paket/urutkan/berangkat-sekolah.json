@@ -1,6 +1,6 @@
 {
   "id": "berangkat-sekolah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -56,7 +56,7 @@
     },
     "en": {
       "judul": "Off to School",
-      "instruksi": "Put the pictures in order so getting to school the right way.",
+      "instruksi": "Put the pictures in order to get to school the right way.",
       "sekolah": "Robot goes to school",
       "teh": "Making warm tea",
       "seragam": "put on uniform",

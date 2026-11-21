@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-safari",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Hewan Besar, Tempat Mana?",
+      "judul": "Hewan Jauh, Tempat Mana?",
       "instruksi": "Robot bertemu hewan dari jauh: antar ke darat, air, atau udara.",
       "darat": "darat",
       "air": "air",
@@ -22,10 +22,10 @@
       "i-udang": "udang",
       "i-elang": "elang",
       "i-burunghantu": "burung hantu",
-      "i-capung": "capung"
+      "i-lebah": "lebah"
     },
     "en": {
-      "judul": "Big Animals, Which Home?",
+      "judul": "Faraway Animals, Which Home?",
       "instruksi": "Robot meets animals from far away: take each to land, water, or sky.",
       "darat": "land",
       "air": "water",
@@ -38,7 +38,7 @@
       "i-udang": "shrimp",
       "i-elang": "eagle",
       "i-burunghantu": "owl",
-      "i-capung": "dragonfly"
+      "i-lebah": "bee"
     }
   },
   "knobs": {
@@ -132,10 +132,10 @@
       "emoji": "🦉"
     },
     {
-      "id": "capung",
-      "labelKey": "i-capung",
+      "id": "lebah",
+      "labelKey": "i-lebah",
       "bin": "udara",
-      "emoji": "🪰"
+      "emoji": "🐝"
     }
   ],
   "pilihan": []

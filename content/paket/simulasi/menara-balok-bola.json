@@ -1,6 +1,6 @@
 {
   "id": "menara-balok-bola",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Menara Balok dan Bola",
-      "instruksi": "Bangun menara empat tingkat, ketuk benda yang bisa ditumpuk.",
+      "instruksi": "Bangun menara, ketuk benda yang bisa ditumpuk.",
       "kubus": "kubus",
       "kotak": "kotak",
       "buku": "buku",
@@ -21,7 +21,7 @@
     },
     "en": {
       "judul": "Block and Ball Tower",
-      "instruksi": "Build a four-level tower; tap the things that can be stacked.",
+      "instruksi": "Build a tower; tap the things that can be stacked.",
       "kubus": "cube",
       "kotak": "box",
       "buku": "book",
@@ -53,12 +53,54 @@
   "world": "ruang-main",
   "mode": "menara",
   "items": [
-    { "id": "kubus", "labelKey": "kubus", "role": "benda", "value": 1, "emoji": "🧊" },
-    { "id": "kotak", "labelKey": "kotak", "role": "benda", "value": 1, "emoji": "📦" },
-    { "id": "buku", "labelKey": "buku", "role": "benda", "value": 1, "emoji": "📕" },
-    { "id": "kaleng", "labelKey": "kaleng", "role": "benda", "value": 2, "emoji": "🥫" },
-    { "id": "bola-sepak", "labelKey": "bola-sepak", "role": "benda", "value": 0, "emoji": "⚽" },
-    { "id": "bola-basket", "labelKey": "bola-basket", "role": "benda", "value": 0, "emoji": "🏀" },
-    { "id": "bola-tenis", "labelKey": "bola-tenis", "role": "benda", "value": 0, "emoji": "🎾" }
+    {
+      "id": "kubus",
+      "labelKey": "kubus",
+      "role": "benda",
+      "value": 1,
+      "emoji": "🧊"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "kotak",
+      "role": "benda",
+      "value": 1,
+      "emoji": "📦"
+    },
+    {
+      "id": "buku",
+      "labelKey": "buku",
+      "role": "benda",
+      "value": 1,
+      "emoji": "📕"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "kaleng",
+      "role": "benda",
+      "value": 2,
+      "emoji": "🥫"
+    },
+    {
+      "id": "bola-sepak",
+      "labelKey": "bola-sepak",
+      "role": "benda",
+      "value": 0,
+      "emoji": "⚽"
+    },
+    {
+      "id": "bola-basket",
+      "labelKey": "bola-basket",
+      "role": "benda",
+      "value": 0,
+      "emoji": "🏀"
+    },
+    {
+      "id": "bola-tenis",
+      "labelKey": "bola-tenis",
+      "role": "benda",
+      "value": 0,
+      "emoji": "🎾"
+    }
   ]
 }

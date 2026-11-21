@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-sehari-hari-pasar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -119,7 +119,8 @@
       "id": "tempe",
       "labelKey": "i-tempe",
       "bin": "piring",
-      "emoji": "🍢"
+      "shape": "rect",
+      "color": "#e6c27a"
     },
     {
       "id": "semangka",

@@ -1,6 +1,6 @@
 {
   "id": "sains-kegiatan-sesuai-cuaca",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-berteduh": "berteduh di rumah",
       "i-jashujan": "pakai jas hujan",
       "i-layang": "main layang-layang",
-      "i-kincir": "main kincir angin",
+      "i-kincir": "main lonceng angin",
       "i-layar": "naik perahu layar"
     },
     "en": {
@@ -37,7 +37,7 @@
       "i-berteduh": "sheltering indoors",
       "i-jashujan": "wearing a raincoat",
       "i-layang": "flying a kite",
-      "i-kincir": "playing with a pinwheel",
+      "i-kincir": "playing with wind chimes",
       "i-layar": "sailing a boat"
     }
   },

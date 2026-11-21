@@ -1,6 +1,6 @@
 {
   "id": "grid-4x4-dua-belokan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Program Delapan Blok",
+      "judul": "Program Sampai Delapan Blok",
       "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
     },
     "en": {
-      "judul": "Eight-Block Program",
+      "judul": "Programs of Up to Eight Blocks",
       "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
     }
   },

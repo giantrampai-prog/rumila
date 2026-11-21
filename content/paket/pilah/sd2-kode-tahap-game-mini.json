@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-mini",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-ask-a-friend-to-try-it": "minta teman mencoba",
       "i-change-the-wrong-block": "ganti blok yang salah",
       "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat",
-      "i-choose-the-background-colors": "pilih warna latar",
+      "i-list-the-characters-needed": "tulis daftar tokoh yang dibutuhkan",
       "i-draw-a-map-of-the-level": "gambar peta level",
       "i-decide-which-enemy-to-avoid": "tentukan musuh yang harus dihindari",
       "i-put-in-the-background-picture": "pasang gambar latar",
@@ -56,7 +56,7 @@
       "i-ask-a-friend-to-try-it": "ask a friend to try it",
       "i-change-the-wrong-block": "change the wrong block",
       "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast",
-      "i-choose-the-background-colors": "choose the background colors",
+      "i-list-the-characters-needed": "write a list of the characters you need",
       "i-draw-a-map-of-the-level": "draw a map of the level",
       "i-decide-which-enemy-to-avoid": "decide which enemy to avoid",
       "i-put-in-the-background-picture": "put in the background picture",
@@ -173,10 +173,10 @@
       "emoji": "🐢"
     },
     {
-      "id": "choose-the-background-colors",
-      "labelKey": "i-choose-the-background-colors",
+      "id": "list-the-characters-needed",
+      "labelKey": "i-list-the-characters-needed",
       "bin": "rancang",
-      "emoji": "🎨"
+      "emoji": "🗒️"
     },
     {
       "id": "draw-a-map-of-the-level",

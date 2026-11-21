@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-cahaya-di-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -161,8 +161,8 @@
       "id": "tirai",
       "labelKey": "i-tirai",
       "bin": "cahaya",
-      "emoji": "🪟",
-      "color": "#f8bbd0"
+      "color": "#f8bbd0",
+      "shape": "rect"
     }
   ],
   "pilihan": []

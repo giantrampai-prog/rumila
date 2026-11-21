@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-sudut-segitiga-rangka-atap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -70,6 +70,10 @@
       "c45": "273°",
       "c46": "87°",
       "c47": "103°",
+      "q13": "Segitiga sama kaki, sudut puncaknya 40°. Tiap sudut kakinya …",
+      "c48": "140°",
+      "q14": "Segitiga sama kaki, satu sudut kakinya 65°. Sudut puncaknya …",
+      "c49": "115°",
       "pilihan": "pilihan"
     },
     "en": {
@@ -134,6 +138,10 @@
       "c45": "273°",
       "c46": "87°",
       "c47": "103°",
+      "q13": "An isosceles triangle has a top angle of 40°. Each base angle is …",
+      "c48": "140°",
+      "q14": "An isosceles triangle has a base angle of 65°. The top angle is …",
+      "c49": "115°",
       "pilihan": "choices"
     }
   },
@@ -392,6 +400,16 @@
       "id": "c47",
       "labelKey": "c47",
       "bin": "pilihan"
+    },
+    {
+      "id": "c48",
+      "labelKey": "c48",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c49",
+      "labelKey": "c49",
+      "bin": "pilihan"
     }
   ],
   "pilihan": [
@@ -526,6 +544,28 @@
         "c47"
       ],
       "correct": "c44"
+    },
+    {
+      "id": "r13",
+      "promptKey": "q13",
+      "choices": [
+        "c28",
+        "c48",
+        "c27",
+        "c24"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r14",
+      "promptKey": "q14",
+      "choices": [
+        "c27",
+        "c49",
+        "c4",
+        "c25"
+      ],
+      "correct": "c27"
     }
   ]
 }

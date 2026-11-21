@@ -1,6 +1,6 @@
 {
   "id": "bendera-jalan-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Dua Rak Lewat Bendera",
-      "instruksi": "Jalan ke bintang di kota ini berbelok melewati gedung, dan rak cuma muat empat blok: pilih petak bendera, lalu buat program ke bendera dan dari bendera ke bintang."
+      "instruksi": "Rak cuma muat empat blok: pilih petak bendera, lalu buat dua program."
     },
     "en": {
       "judul": "Two Racks via the Flag",
-      "instruksi": "The road to the star winds around city buildings, and the rack holds only four blocks: choose a flag square, then program to the flag and from the flag to the star."
+      "instruksi": "The rack only holds four blocks: choose a flag square, then build two programs."
     }
   },
   "knobs": {

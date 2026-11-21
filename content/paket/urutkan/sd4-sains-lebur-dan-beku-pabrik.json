@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lebur-dan-beku-pabrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Lebur dan Beku di Pabrik",
+      "judul": "Lebur dan Beku di Sekitar Kita",
       "instruksi": "Susun langkah-langkah mencair dan membeku dari awal sampai akhir. Ingat, zatnya tetap sama walau wujudnya berubah.",
       "t-kaca": "Pecahan kaca dibuat jadi botol",
       "kaca-a": "pecahan kaca padat dikumpulkan",
@@ -63,7 +63,7 @@
       "puncak-d": "siang hari es mencair lagi jadi air"
     },
     "en": {
-      "judul": "Melting and Freezing at the Factory",
+      "judul": "Melting and Freezing All Around",
       "instruksi": "Put the melting and freezing steps in order from start to finish. Remember, the substance stays the same even when its state changes.",
       "t-kaca": "Broken glass made into bottles",
       "kaca-a": "solid pieces of glass are collected",

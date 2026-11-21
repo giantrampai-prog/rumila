@@ -1,6 +1,6 @@
 {
   "id": "jengkal-benda-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "peta": "peta dinding",
       "kursi": "kursi",
       "papan-nama": "papan nama",
-      "pianika": "keyboard musik",
+      "pianika": "piano mainan",
       "sapu": "sapu"
     },
     "en": {
@@ -39,7 +39,7 @@
       "peta": "wall map",
       "kursi": "chair",
       "papan-nama": "name board",
-      "pianika": "music keyboard",
+      "pianika": "toy piano",
       "sapu": "broom"
     }
   },

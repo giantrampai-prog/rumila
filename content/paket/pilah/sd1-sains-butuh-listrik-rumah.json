@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -96,7 +96,8 @@
       "id": "kulkas",
       "labelKey": "i-kulkas",
       "bin": "listrik",
-      "emoji": "🧊"
+      "shape": "rect",
+      "color": "#eceff1"
     },
     {
       "id": "senter",

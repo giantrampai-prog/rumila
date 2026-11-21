@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bayar-pas-toko-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "g-kue-potong": "kue potong",
       "g-pai": "pai buah",
       "g-donat-sekotak": "donat sekotak",
-      "g-croissant": "croissant",
+      "g-croissant": "kroisan",
       "g-puding": "puding",
       "g-kue-kering": "kue kering setoples",
       "g-kue-bulan": "kue bulan",

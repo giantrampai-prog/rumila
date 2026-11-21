@@ -1,6 +1,6 @@
 {
   "id": "sains-habitat-hewan-lain",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,18 +15,18 @@
       "es": "es",
       "hutan": "hutan",
       "terumbu": "terumbu karang",
-      "i-kalajengking": "kalajengking",
-      "i-ular": "ular pasir",
-      "i-anjinglaut": "anjing laut",
       "i-rusakutub": "rusa kutub",
       "i-burungbeo": "burung beo",
       "i-gorila": "gorila",
       "i-kepiting": "kepiting karang",
-      "i-cumi": "cumi-cumi",
-      "i-untaduapunuk": "unta berpunuk dua",
-      "i-kadal": "kadal gurun",
-      "i-penguin": "penguin",
-      "i-beruangkutub": "beruang kutub"
+      "i-cumi": "cumi karang",
+      "i-rubahgurun": "rubah gurun",
+      "i-landakgurun": "landak gurun",
+      "i-kumbanggurun": "kumbang gurun",
+      "i-beluga": "paus beluga",
+      "i-burunghantusalju": "burung hantu salju",
+      "i-serigalakutub": "serigala kutub",
+      "i-macantutul": "macan tutul"
     },
     "en": {
       "judul": "Animal Homes Around the World",
@@ -35,18 +35,18 @@
       "es": "ice",
       "hutan": "forest",
       "terumbu": "coral reef",
-      "i-kalajengking": "scorpion",
-      "i-ular": "sand snake",
-      "i-anjinglaut": "seal",
       "i-rusakutub": "reindeer",
       "i-burungbeo": "parrot",
       "i-gorila": "gorilla",
       "i-kepiting": "reef crab",
-      "i-cumi": "squid",
-      "i-untaduapunuk": "two-humped camel",
-      "i-kadal": "desert lizard",
-      "i-penguin": "penguin",
-      "i-beruangkutub": "polar bear"
+      "i-cumi": "reef squid",
+      "i-rubahgurun": "fennec fox",
+      "i-landakgurun": "desert hedgehog",
+      "i-kumbanggurun": "desert beetle",
+      "i-beluga": "beluga whale",
+      "i-burunghantusalju": "snowy owl",
+      "i-serigalakutub": "arctic wolf",
+      "i-macantutul": "leopard"
     }
   },
   "knobs": {
@@ -98,23 +98,25 @@
   ],
   "items": [
     {
-      "id": "kalajengking",
-      "labelKey": "i-kalajengking",
+      "id": "rubahgurun",
+      "labelKey": "i-rubahgurun",
       "bin": "gurun",
-      "emoji": "🦂"
-    },
-    {
-      "id": "ular",
-      "labelKey": "i-ular",
-      "bin": "gurun",
-      "emoji": "🐍",
+      "emoji": "🦊",
       "color": "#ffe0b2"
     },
     {
-      "id": "anjinglaut",
-      "labelKey": "i-anjinglaut",
+      "id": "landakgurun",
+      "labelKey": "i-landakgurun",
+      "bin": "gurun",
+      "emoji": "🦔",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "beluga",
+      "labelKey": "i-beluga",
       "bin": "es",
-      "emoji": "🦭"
+      "emoji": "🐋",
+      "color": "#eceff1"
     },
     {
       "id": "rusakutub",
@@ -148,29 +150,30 @@
       "emoji": "🦑"
     },
     {
-      "id": "untaduapunuk",
-      "labelKey": "i-untaduapunuk",
+      "id": "macantutul",
+      "labelKey": "i-macantutul",
+      "bin": "hutan",
+      "emoji": "🐆"
+    },
+    {
+      "id": "kumbanggurun",
+      "labelKey": "i-kumbanggurun",
       "bin": "gurun",
-      "emoji": "🐫"
+      "emoji": "🪲"
     },
     {
-      "id": "kadal",
-      "labelKey": "i-kadal",
-      "bin": "gurun",
-      "emoji": "🦎"
-    },
-    {
-      "id": "penguin",
-      "labelKey": "i-penguin",
+      "id": "burunghantusalju",
+      "labelKey": "i-burunghantusalju",
       "bin": "es",
-      "emoji": "🐧",
-      "color": "#e1f5fe"
+      "emoji": "🦉",
+      "color": "#ffffff"
     },
     {
-      "id": "beruangkutub",
-      "labelKey": "i-beruangkutub",
+      "id": "serigalakutub",
+      "labelKey": "i-serigalakutub",
       "bin": "es",
-      "emoji": "🐻‍❄️"
+      "emoji": "🐺",
+      "color": "#ffffff"
     }
   ],
   "pilihan": []

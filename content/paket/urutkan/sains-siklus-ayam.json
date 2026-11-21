@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-ayam",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Telur Jadi Ayam",
-      "instruksi": "Susun gambar dari telur, anak ayam, sampai ayam dewasa.",
+      "instruksi": "Susun gambar sesuai urutan hidupnya, dari yang paling awal.",
       "s-ayam": "Siklus hidup ayam",
       "ayam-telur": "telur",
       "ayam-retak": "telur retak, menetas",
@@ -24,11 +24,6 @@
       "jago-telur": "telur",
       "jago-anak": "anak ayam",
       "jago-dewasa": "ayam jago",
-      "t-induk": "Induk ayam",
-      "induk-induk": "induk ayam bertelur",
-      "induk-telur": "telur",
-      "induk-retak": "telur retak, menetas",
-      "induk-anak": "anak ayam",
       "t-bebek-menetas": "Bebek menetas",
       "bebek-menetas-telur": "telur bebek",
       "bebek-menetas-retak": "telur retak, menetas",
@@ -46,10 +41,6 @@
       "jago-kecil-retak": "baru menetas",
       "jago-kecil-anak": "anak ayam",
       "jago-kecil-dewasa": "ayam jago",
-      "t-bebek-induk": "Induk bebek",
-      "bebek-induk-induk": "induk bebek bertelur",
-      "bebek-induk-telur": "telur bebek",
-      "bebek-induk-anak": "anak bebek kecil",
       "t-bebek-besar": "Anak bebek besar",
       "bebek-besar-retak": "baru menetas",
       "bebek-besar-anak": "anak bebek kecil",
@@ -57,7 +48,7 @@
     },
     "en": {
       "judul": "Egg to Chicken",
-      "instruksi": "Put the pictures in order: egg, chick, then grown chicken.",
+      "instruksi": "Put the pictures in life-cycle order, starting from the earliest.",
       "s-ayam": "Chicken life cycle",
       "ayam-telur": "egg",
       "ayam-retak": "egg cracks and hatches",
@@ -71,11 +62,6 @@
       "jago-telur": "egg",
       "jago-anak": "chick",
       "jago-dewasa": "rooster",
-      "t-induk": "The mother hen",
-      "induk-induk": "the hen lays an egg",
-      "induk-telur": "egg",
-      "induk-retak": "the egg cracks and hatches",
-      "induk-anak": "chick",
       "t-bebek-menetas": "A duckling hatches",
       "bebek-menetas-telur": "duck egg",
       "bebek-menetas-retak": "the egg cracks and hatches",
@@ -93,10 +79,6 @@
       "jago-kecil-retak": "just hatched",
       "jago-kecil-anak": "chick",
       "jago-kecil-dewasa": "rooster",
-      "t-bebek-induk": "The mother duck",
-      "bebek-induk-induk": "the duck lays an egg",
-      "bebek-induk-telur": "duck egg",
-      "bebek-induk-anak": "little duckling",
       "t-bebek-besar": "The duckling gets big",
       "bebek-besar-retak": "just hatched",
       "bebek-besar-anak": "little duckling",
@@ -195,36 +177,6 @@
           "labelKey": "jago-dewasa",
           "emoji": "🐓",
           "scale": 1.4
-        }
-      ]
-    },
-    {
-      "id": "induk",
-      "titleKey": "t-induk",
-      "steps": [
-        {
-          "id": "induk",
-          "labelKey": "induk-induk",
-          "emoji": "🐔",
-          "scale": 1.4
-        },
-        {
-          "id": "telur",
-          "labelKey": "induk-telur",
-          "emoji": "🥚",
-          "scale": 0.8
-        },
-        {
-          "id": "retak",
-          "labelKey": "induk-retak",
-          "emoji": "🐣",
-          "scale": 0.9
-        },
-        {
-          "id": "anak",
-          "labelKey": "induk-anak",
-          "emoji": "🐥",
-          "scale": 1
         }
       ]
     },
@@ -329,31 +281,6 @@
           "labelKey": "jago-kecil-dewasa",
           "emoji": "🐓",
           "scale": 1.4
-        }
-      ]
-    },
-    {
-      "id": "bebek-induk",
-      "titleKey": "t-bebek-induk",
-      "steps": [
-        {
-          "id": "induk",
-          "labelKey": "bebek-induk-induk",
-          "emoji": "🦆",
-          "scale": 1.4
-        },
-        {
-          "id": "telur",
-          "labelKey": "bebek-induk-telur",
-          "emoji": "🥚",
-          "scale": 0.8,
-          "color": "#c8e6c9"
-        },
-        {
-          "id": "anak",
-          "labelKey": "bebek-induk-anak",
-          "emoji": "🐤",
-          "scale": 1
         }
       ]
     },

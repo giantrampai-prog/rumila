@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jenis-batuan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.01"
@@ -16,7 +16,7 @@
       "i-granit": "granit: kristal besar berbintik",
       "i-basalt": "basalt: gelap, dari lava yang cepat dingin",
       "i-apung": "batu apung: ringan dan penuh lubang udara",
-      "i-obsidian": "obsidian: hitam mengkilap seperti kaca",
+      "i-obsidian": "obsidian: hitam mengilap seperti kaca",
       "i-pasir": "batu pasir: butir pasir terasa kasar",
       "i-kapur": "batu kapur: sering berisi fosil kerang",
       "i-serpih": "batu serpih: lapisan lumpur tipis",

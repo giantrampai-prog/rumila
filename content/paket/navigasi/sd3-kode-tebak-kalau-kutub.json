@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tebak-kalau-kutub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tebak Kalau di Lapangan Es",
-      "instruksi": "Program robot kutub menaruh kalau di dalam ulangi. Sebelum tiap langkah, tunjuk petak tujuannya: ada bongkahan di depan berarti lompat dua petak."
+      "instruksi": "Program robot kutub menaruh kalau di dalam ulangi. Sebelum tiap langkah, tunjuk petak tujuannya: ada bongkahan es di depan berarti lompat dua petak."
     },
     "en": {
       "judul": "Guess the If on the Ice Field",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pemburu-dan-penghindar-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.02"
@@ -15,7 +15,7 @@
       "i-hiu": "hiu: penciuman sangat tajam, mencium darah dari jauh",
       "i-elang": "elang laut: penglihatan tajam melihat ikan dari ketinggian",
       "i-labalaba": "laba-laba: membuat jaring lengket",
-      "i-bunglon": "bunglon: lidah panjang lengket untuk menangkap serangga",
+      "i-katak": "katak: lidah panjang lengket untuk menangkap serangga",
       "i-harimau": "harimau: loreng menyamarkannya saat mengintai",
       "i-ularbisa": "ular kobra: taring berbisa untuk melumpuhkan",
       "i-burunghantu": "burung hantu: terbang tanpa suara di malam hari",
@@ -23,7 +23,7 @@
       "i-buntal": "ikan buntal: menggembung jadi bola berduri",
       "i-cicak": "cicak: memutuskan ekornya saat ditangkap",
       "i-belalang": "belalang daun: bentuk dan warnanya seperti daun",
-      "i-rusa": "rusa: berlari zig-zag saat dikejar",
+      "i-rusa": "rusa: berlari zigzag saat dikejar",
       "i-kurakura": "kura-kura: menarik kepala ke dalam tempurung",
       "i-ulat": "ulat: punya bercak seperti mata besar untuk menakuti"
     },
@@ -35,7 +35,7 @@
       "i-hiu": "shark: a very keen sense of smell, can smell blood from far away",
       "i-elang": "sea eagle: sharp eyes that spot fish from high up",
       "i-labalaba": "spider: spins a sticky web",
-      "i-bunglon": "chameleon: a long sticky tongue to catch insects",
+      "i-katak": "frog: a long sticky tongue to catch insects",
       "i-harimau": "tiger: stripes hide it while it stalks",
       "i-ularbisa": "cobra: venomous fangs to stop its catch",
       "i-burunghantu": "owl: flies silently at night",
@@ -97,10 +97,10 @@
       "emoji": "🕸️"
     },
     {
-      "id": "bunglon",
-      "labelKey": "i-bunglon",
+      "id": "katak",
+      "labelKey": "i-katak",
       "bin": "pemangsa",
-      "emoji": "🦎"
+      "emoji": "🐸"
     },
     {
       "id": "harimau",

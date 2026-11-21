@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-sifat-segi-empat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "c4": "tidak ada sisi sejajar",
       "q2": "Sifat mana yang dimiliki persegi panjang tetapi tidak dimiliki jajargenjang biasa?",
       "c5": "sisi berhadapan sejajar",
-      "c6": "sisi berhadapan sama",
+      "c6": "sisi berhadapan sama panjang",
       "q3": "Sifat mana yang benar untuk SEMUA jajargenjang?",
       "c7": "diagonal tegak lurus",
       "q4": "Sifat mana yang benar untuk SEMUA layang-layang?",
@@ -57,7 +57,7 @@
       "c4": "no parallel sides",
       "q2": "Which property does a rectangle have that an ordinary parallelogram does not?",
       "c5": "opposite sides parallel",
-      "c6": "opposite sides equal",
+      "c6": "opposite sides equal in length",
       "q3": "Which property is true for EVERY parallelogram?",
       "c7": "perpendicular diagonals",
       "q4": "Which property is true for EVERY kite?",

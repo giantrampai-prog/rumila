@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-kupu-kupu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -26,7 +26,7 @@
       "bunga-ulat": "ulat makan daun",
       "bunga-kepompong": "kepompong menggantung",
       "bunga-kupu": "kupu-kupu keluar",
-      "bunga-bunga": "hinggap di bunga"
+      "bunga-telur": "telur kecil di daun"
     },
     "en": {
       "judul": "Caterpillar to Butterfly",
@@ -46,7 +46,7 @@
       "bunga-ulat": "caterpillar eats leaves",
       "bunga-kepompong": "hanging cocoon",
       "bunga-kupu": "the butterfly comes out",
-      "bunga-bunga": "lands on a flower"
+      "bunga-telur": "tiny egg on a leaf"
     }
   },
   "knobs": {
@@ -82,8 +82,10 @@
         {
           "id": "kepompong",
           "labelKey": "kupu-kepompong",
-          "emoji": "🛡️",
-          "color": "#a1887f"
+          "color": "#8d6e63",
+          "shape": "rect",
+          "scale": 1.1,
+          "width": 0.55
         },
         {
           "id": "kupu",
@@ -118,8 +120,10 @@
         {
           "id": "kepompong",
           "labelKey": "gemuk-kepompong",
-          "emoji": "🛡️",
-          "color": "#a1887f"
+          "color": "#8d6e63",
+          "shape": "rect",
+          "scale": 1.1,
+          "width": 0.55
         },
         {
           "id": "kupu",
@@ -134,6 +138,11 @@
       "titleKey": "t-bunga",
       "steps": [
         {
+          "id": "telur",
+          "labelKey": "bunga-telur",
+          "emoji": "🍃"
+        },
+        {
           "id": "ulat",
           "labelKey": "bunga-ulat",
           "emoji": "🐛"
@@ -141,19 +150,16 @@
         {
           "id": "kepompong",
           "labelKey": "bunga-kepompong",
-          "emoji": "🛡️",
-          "color": "#a1887f"
+          "color": "#8d6e63",
+          "shape": "rect",
+          "scale": 1.1,
+          "width": 0.55
         },
         {
           "id": "kupu",
           "labelKey": "bunga-kupu",
           "emoji": "🦋",
           "scale": 1.2
-        },
-        {
-          "id": "bunga",
-          "labelKey": "bunga-bunga",
-          "emoji": "🌸"
         }
       ]
     }

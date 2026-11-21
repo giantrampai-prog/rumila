@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-pemisah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,10 +18,9 @@
       "i-kacang": "beras + kacang merah",
       "i-kelereng": "tepung + kelereng",
       "i-batu": "pasir halus + batu kecil",
-      "i-paku": "pasir + paku besi",
+      "i-paku": "manik-manik plastik + mur baja kecil",
       "i-klip": "kancing plastik + klip baja",
       "i-serbuk": "pasir + serbuk besi",
-      "i-jepit": "serbuk kayu + jepit rambut besi",
       "i-pasirair": "air + pasir",
       "i-teh": "air teh + ampas daun teh",
       "i-lumpur": "air + tanah",
@@ -37,10 +36,9 @@
       "i-kacang": "rice + red beans",
       "i-kelereng": "flour + marbles",
       "i-batu": "fine sand + small stones",
-      "i-paku": "sand + iron nails",
+      "i-paku": "plastic beads + small steel nuts",
       "i-klip": "plastic buttons + steel clips",
       "i-serbuk": "sand + iron filings",
-      "i-jepit": "sawdust + steel hair grips",
       "i-pasirair": "water + sand",
       "i-teh": "tea + tea leaves",
       "i-lumpur": "water + soil",
@@ -72,8 +70,8 @@
     {
       "id": "ayakan",
       "labelKey": "b-ayakan",
-      "emoji": "🥅",
-      "color": "#fff8e1"
+      "color": "#bcaaa4",
+      "shape": "circle"
     },
     {
       "id": "magnet",
@@ -84,8 +82,8 @@
     {
       "id": "saring",
       "labelKey": "b-saring",
-      "emoji": "🧻",
-      "color": "#e1f5fe"
+      "color": "#fafafa",
+      "shape": "square"
     }
   ],
   "items": [
@@ -130,12 +128,6 @@
       "labelKey": "i-serbuk",
       "bin": "magnet",
       "emoji": "⚫"
-    },
-    {
-      "id": "jepit",
-      "labelKey": "i-jepit",
-      "bin": "magnet",
-      "emoji": "🪮"
     },
     {
       "id": "pasirair",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-data-janggal-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYELIDIKAN.01"
@@ -70,7 +70,7 @@
       "p-r10": "Dodi menemukan satu hasil janggal di catatannya. Sebaiknya ia…",
       "p-r11": "Mengapa mengukur satu kali saja kurang bisa dipercaya?",
       "p-r12": "Air di panci yang sama sekali mendidih dalam 12 menit, padahal biasanya 4 menit. Penyebab yang mungkin adalah…",
-      "p-r13": "Hasil kelereng tadi 2,1 detik, 2,0 detik, dan 2,2 detik. Perbedaan kecil seperti ini…"
+      "p-r13": "Lama kelereng menggelinding diukur: 2,1 detik, 2,0 detik, dan 2,2 detik. Perbedaan kecil seperti ini…"
     },
     "en": {
       "judul": "The Class Experiment Notebook",
@@ -135,7 +135,7 @@
       "p-r10": "Dodi finds one odd result in his notes. He should…",
       "p-r11": "Why is measuring only once not very trustworthy?",
       "p-r12": "Water in the same pan once took 12 minutes to boil instead of the usual 4. A likely cause is…",
-      "p-r13": "The marble results were 2.1, 2.0 and 2.2 seconds. Small differences like these are…"
+      "p-r13": "A marble's rolling time was measured: 2.1, 2.0 and 2.2 seconds. Small differences like these are…"
     }
   },
   "knobs": {},

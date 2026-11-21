@@ -1,6 +1,6 @@
 {
   "id": "tombol-ajaib-kamar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "tombol-biru": "tombol biru",
       "tombol-kuning": "tombol kuning",
       "lampu": "lampu",
-      "kipas": "kipas angin",
+      "televisi": "televisi",
       "radio": "radio"
     },
     "en": {
@@ -25,7 +25,7 @@
       "tombol-biru": "blue button",
       "tombol-kuning": "yellow button",
       "lampu": "lamp",
-      "kipas": "fan",
+      "televisi": "television",
       "radio": "radio"
     }
   },
@@ -72,10 +72,10 @@
       "emoji": "💡"
     },
     {
-      "labelKey": "kipas",
-      "id": "kipas",
+      "labelKey": "televisi",
+      "id": "televisi",
       "role": "alat",
-      "emoji": "🌀"
+      "emoji": "📺"
     },
     {
       "labelKey": "radio",

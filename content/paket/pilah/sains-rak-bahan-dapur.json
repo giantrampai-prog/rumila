@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "i-sendokkayu": "sendok kayu",
       "i-talenan": "talenan kayu",
       "i-kaleng": "kaleng",
-      "i-panci": "panci",
+      "i-panci": "wajan",
       "i-botolplastik": "botol plastik",
       "i-sedotan": "sedotan plastik",
       "i-gelaskaca": "gelas kaca",
@@ -38,7 +38,7 @@
       "i-sendokkayu": "wooden spoon",
       "i-talenan": "wooden cutting board",
       "i-kaleng": "tin can",
-      "i-panci": "metal pot",
+      "i-panci": "metal frying pan",
       "i-botolplastik": "plastic bottle",
       "i-sedotan": "plastic straw",
       "i-gelaskaca": "glass cup",

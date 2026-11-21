@@ -1,6 +1,7 @@
 // Mekanik dagang: sembilan mode (ambil, hitung, subitasi, bayar, kembalian, tukar, gabung, sisa, lengkapi).
 // Satu buatRonde dengan switch mode; field yang tidak relevan diisi nilai kosong ([], {}, 0).
 // Knob yang dibaca bila ada: itemsMax, kinds, maxCount, harga (ribuan rupiah), pengurang, target, flashMs; kalau tidak, pakai customerRule.
+// gabung: tiap kelompok ∈ [itemsMin, itemsMax]; sisa: awal ∈ [2, maxCount|itemsMax], dua barang = benda + penanda.
 
 import type { PaketDagang } from "@akademi/schema";
 import { acak, acakInt, pilihSatu, rng } from "./rng";
@@ -49,9 +50,20 @@ function buatPesanan(p: PaketDagang, knobs: Knobs, r: () => number): { pesanan: 
   return { pesanan, harga, itemsMax };
 }
 
-/** Harga ronde: knob `harga` (ribuan rupiah) menang; kalau tidak, dari pesanan. */
+/**
+ * Harga ronde: knob `harga` (ribuan rupiah) menang; kalau tidak, dari pesanan (jumlah `price`).
+ * Catatan QC: dengan knob harga, `price` barang tidak dipakai. Mengikat harga ke `price` membuat variasi soal tinggal
+ * sebanyak barang ber-price di sekitar knob (audit soal-berulang-satu-sesi), jadi perilaku ini dipertahankan.
+ */
 function hargaRonde(knobs: Knobs, dariPesanan: number): number {
   return knobs.harga !== undefined ? Math.max(1, Math.floor(knobs.harga)) * KOIN : dariPesanan;
+}
+
+/** sisa: paket berisi tepat dua barang = [benda, penanda] (ikan + pelet, kue + lilin); selain itu benda diundi dan penandanya benda itu sendiri. */
+function bendaSisa(p: PaketDagang, r: () => number): { benda: string; penanda: string } {
+  if (p.goods.length === 2) return { benda: p.goods[0].id, penanda: p.goods[1].id };
+  const benda = pilihSatu(p.goods, r).id;
+  return { benda, penanda: benda };
 }
 
 export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): RondeDagang {
@@ -129,22 +141,29 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "gabung": {
+      // tiap kelompok di [itemsMin, itemsMax] (knob itemsMax menang atas customerRule), jumlah ≤ batas (target)
       const batas = Math.max(2, Math.floor(knobs.target ?? rule.target ?? 10));
-      const a = acakInt(r, 1, batas - 1);
-      const b = acakInt(r, 1, batas - a);
+      const kecil = Math.min(Math.max(1, rule.itemsMin), Math.floor(batas / 2));
+      const besar = Math.max(kecil, Math.min(Math.floor(knobs.itemsMax ?? rule.itemsMax), batas - kecil));
+      const a = acakInt(r, kecil, besar);
+      const b = acakInt(r, kecil, Math.max(kecil, Math.min(besar, batas - a)));
       const good = satuBarang();
       ronde.kelompok = [a, b]; ronde.target = a + b; ronde.strip = [0, batas];
       ronde.tersedia = { [good]: batas };
       return ronde;
     }
     case "sisa": {
-      const batas = Math.max(2, Math.floor(knobs.maxCount ?? rule.target ?? 10));
+      // jumlah awal di [2, batas]; batas = knob maxCount atau itemsMax (paket TK menamai knobnya itemsMax), lalu customerRule.target.
+      // Batas bawah sengaja 2 (bukan itemsMin): [itemsMin, itemsMax] = [5, 7] × pengurang 1–2 hanya 6 soal per sesi.
+      const batas = Math.max(2, Math.floor(knobs.maxCount ?? knobs.itemsMax ?? rule.target ?? 10));
       const awal = acakInt(r, 2, batas);
       const pengurangMax = knobs.pengurang !== undefined ? Math.min(Math.floor(knobs.pengurang), awal - 1) : awal - 1;
       const diambil = acakInt(r, 1, Math.max(1, pengurangMax));
-      const good = satuBarang();
+      const { benda, penanda } = bendaSisa(p, r);
       ronde.kelompok = [awal, diambil]; ronde.target = awal - diambil; ronde.strip = [0, awal];
-      ronde.tersedia = { [good]: awal };
+      ronde.tersedia = { [benda]: awal };
+      // yang ditaruh anak: penanda × sisa (presenter menggambar penanda dari sini)
+      ronde.pesanan = [{ goodId: penanda, qty: awal - diambil }];
       return ronde;
     }
   }

@@ -1,6 +1,6 @@
 {
   "id": "sains-intip-tembus-pandang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-papan": "papan kayu",
       "i-buku": "buku tebal",
       "i-piring": "piring keramik",
-      "i-selimut": "selimut tebal"
+      "i-selimut": "kasur tebal"
     },
     "en": {
       "judul": "Peek: Can You See Through?",
@@ -42,7 +42,7 @@
       "i-papan": "wooden board",
       "i-buku": "thick book",
       "i-piring": "ceramic plate",
-      "i-selimut": "thick blanket"
+      "i-selimut": "thick mattress"
     }
   },
   "knobs": {
@@ -102,7 +102,8 @@
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "tembus",
-      "emoji": "🧊"
+      "shape": "rect",
+      "color": "#e1f5fe"
     },
     {
       "id": "gelembung",

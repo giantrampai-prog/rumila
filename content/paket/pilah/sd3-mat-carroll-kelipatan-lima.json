@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-carroll-kelipatan-lima",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Diagram Carroll Kelipatan 5",
-      "instruksi": "Kel. 5 = kelipatan 5 (satuannya 0 atau 5); bukan = bukan kelipatan 5. Genap bersatuan 0, 2, 4, 6, 8. Taruh di kotak yang cocok dua-duanya.",
-      "b-kelt-5-genap": "kel. 5 · genap",
-      "b-kelt-5-ganjil": "kel. 5 · ganjil",
-      "b-bukan-genap": "bukan · genap",
-      "b-bukan-ganjil": "bukan · ganjil",
+      "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, 8. Taruh di kotak yang cocok untuk keduanya.",
+      "b-kelt-5-genap": "kelipatan 5, genap",
+      "b-kelt-5-ganjil": "kelipatan 5, ganjil",
+      "b-bukan-genap": "bukan kelipatan 5, genap",
+      "b-bukan-ganjil": "bukan kelipatan 5, ganjil",
       "i-10": "10",
       "i-40": "40",
       "i-100": "100",
@@ -38,11 +38,11 @@
     },
     "en": {
       "judul": "Multiples of 5 Carroll Diagram",
-      "instruksi": "×5 means a multiple of 5 (ones digit 0 or 5). Even numbers end in 0, 2, 4, 6 or 8. Put each number in the box that fits both.",
-      "b-kelt-5-genap": "×5 · even",
-      "b-kelt-5-ganjil": "×5 · odd",
-      "b-bukan-genap": "not ×5 · even",
-      "b-bukan-ganjil": "not ×5 · odd",
+      "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Put each number in the box that fits both.",
+      "b-kelt-5-genap": "multiple of 5, even",
+      "b-kelt-5-ganjil": "multiple of 5, odd",
+      "b-bukan-genap": "not a multiple of 5, even",
+      "b-bukan-ganjil": "not a multiple of 5, odd",
       "i-10": "10",
       "i-40": "40",
       "i-100": "100",
@@ -90,23 +90,19 @@
   "bins": [
     {
       "id": "lima-genap",
-      "labelKey": "b-kelt-5-genap",
-      "emoji": "🖐️"
+      "labelKey": "b-kelt-5-genap"
     },
     {
       "id": "lima-ganjil",
-      "labelKey": "b-kelt-5-ganjil",
-      "emoji": "✋"
+      "labelKey": "b-kelt-5-ganjil"
     },
     {
       "id": "bukan-genap",
-      "labelKey": "b-bukan-genap",
-      "emoji": "🔵"
+      "labelKey": "b-bukan-genap"
     },
     {
       "id": "bukan-ganjil",
-      "labelKey": "b-bukan-ganjil",
-      "emoji": "🟠"
+      "labelKey": "b-bukan-ganjil"
     }
   ],
   "items": [

@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bentuk di Taman",
-      "instruksi": "Robot sedang piknik di taman. Dengarkan bentuk yang disebut, lalu sentuh benda di dekat robot yang bentuknya itu.",
+      "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di taman yang bentuknya sama.",
       "pilihan": "pilihan",
       "roda": "roda sepeda",
       "frisbee": "piring terbang",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Shapes in the Park",
-      "instruksi": "The robot is having a picnic in the park. Listen to the shape, then touch the thing near the robot with that shape.",
+      "instruksi": "Listen to the shape, then touch the thing in the park with the same shape.",
       "pilihan": "choices",
       "roda": "bike wheel",
       "frisbee": "flying disc",

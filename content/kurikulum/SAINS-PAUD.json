@@ -24,7 +24,8 @@
       "core": true,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Pengenalan nama bagian tubuh (reseptif). Dunia: Jelajah Tubuh, lapisan kulit; instruksi audio 'Mana hidungnya?', anak menyentuh bagian itu pada tubuh 3D (cari). Variasi ucap: tokoh menunjuk bagian, anak menyebut namanya. Jebakan: tangan vs jari, mulut vs gigi — mulai 6 bagian besar. Knob: jumlah bagian 4 → 8 (tambah perut, lutut). Kamus belum punya kode untuk bagian tubuh (EYFS tidak punya ELG khusus; Cambridge EY UWs belum ada di kamus), dibiarkan kosong."
     },
@@ -360,7 +361,8 @@
       ],
       "core": false,
       "mechanics": [
-        "cari"
+        "cari",
+        "pilah"
       ],
       "catatan": "Mekanik cari di dunia 3D: Bawah Laut (ikan, penyu, karang hidup) atau Kebun Buah (pohon, buah di pohon). Dunia harus menyediakan benda tak hidup sebagai pengecoh yang bisa disentuh: jangkar, botol, batu, pagar. Bukti: 3 sentuhan pada makhluk hidup dengan paling banyak 1 kesalahan. Jebakan: karang dianggap batu — untuk PAUD jangan jadikan karang target. Pengaya. Knob: 3 → 5 target, jumlah pengecoh."
     },
@@ -395,7 +397,8 @@
       "core": true,
       "mechanics": [
         "simulasi",
-        "cari"
+        "cari",
+        "pilah"
       ],
       "catatan": "Simulasi: anak memegang ember makanan/air dan menyentuh benda di kebun. Makhluk hidup bereaksi (ayam makan, bunga mekar); batu dan mobil mainan tidak bereaksi dan makanan terbuang. Bukti: ember diberikan ke semua yang hidup tanpa memberi ke yang tak hidup. Beda dengan .01: anak menerapkan ciri 'butuh makan/minum', bukan sekadar memilah kartu. Jebakan: boneka kelinci — tampilkan jahitan/kancing supaya jelas mainan. Knob: 3 → 6 sasaran."
     }

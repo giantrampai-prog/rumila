@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-rantai-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -152,7 +152,7 @@
       "id": "ikanbesar",
       "labelKey": "i-ikanbesar",
       "bin": "pilihan",
-      "emoji": "🐋"
+      "emoji": "🐟"
     },
     {
       "id": "manusia",

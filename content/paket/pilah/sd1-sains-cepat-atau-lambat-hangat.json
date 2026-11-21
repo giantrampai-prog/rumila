@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-cepat-atau-lambat-hangat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cepat atau Lambat Berubah?",
-      "instruksi": "Tebak dulu: taruh ke rak cepat hangat-kering-meleleh, atau ke rak lambat.",
+      "instruksi": "Tebak dulu: mana yang cepat berubah kena Matahari, mana yang lambat? Taruh ke raknya.",
       "b-cepat": "cepat hangat, kering, atau meleleh",
       "b-lambat": "lambat berubah",
       "i-esmatahari": "es batu di bawah terik Matahari",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Changes Fast or Slow?",
-      "instruksi": "Predict first: put each on the warms-dries-melts-fast shelf or the slow shelf.",
+      "instruksi": "Guess first: which things change quickly in the Sun, and which change slowly? Put them on their shelf.",
       "b-cepat": "warms, dries, or melts fast",
       "b-lambat": "changes slowly",
       "i-esmatahari": "ice cube in strong sunshine",

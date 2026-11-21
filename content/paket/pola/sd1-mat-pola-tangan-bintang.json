@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-pola-tangan-bintang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pola",
   "competencyIds": [
@@ -40,9 +40,9 @@
     "distractor": {
       "min": 0,
       "max": 1,
-      "default": 1,
+      "default": 0,
       "step": 1,
-      "keterangan": "pengecoh di palet: 1 → 0"
+      "keterangan": "pengecoh di palet: 0 → 1"
     }
   },
   "assets": [],

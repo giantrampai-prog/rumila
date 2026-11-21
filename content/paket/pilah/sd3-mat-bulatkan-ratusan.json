@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-bulatkan-ratusan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ke Ratusan Terdekat",
-      "instruksi": "Lihat angka puluhannya. 50 ke atas pulang ke ratusan berikutnya.",
+      "instruksi": "Lihat angka puluhannya. Puluhan 5 ke atas naik ke ratusan berikutnya.",
       "b-100": "100",
       "b-200": "200",
       "b-300": "300",
@@ -74,7 +74,7 @@
     },
     "en": {
       "judul": "To the Nearest Hundred",
-      "instruksi": "Look at the tens digit. 50 or more goes up to the next hundred.",
+      "instruksi": "Look at the tens digit. A tens digit of 5 or more goes up to the next hundred.",
       "b-100": "100",
       "b-200": "200",
       "b-300": "300",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,10 +20,10 @@
       "i-atap": "genting atap",
       "i-jendela": "jendela",
       "i-kacamata": "kacamata",
-      "i-toples": "toples kue",
+      "i-toples": "toples kaca",
       "i-ban": "ban sepeda",
       "i-karetgelang": "karet gelang",
-      "i-selang": "selang",
+      "i-selang": "tali jemuran",
       "i-handuk": "handuk",
       "i-kainpel": "kain pel",
       "i-popokkain": "lap dapur"
@@ -40,10 +40,10 @@
       "i-atap": "roof tile",
       "i-jendela": "window",
       "i-kacamata": "glasses",
-      "i-toples": "biscuit jar",
+      "i-toples": "glass jar",
       "i-ban": "bike tyre",
       "i-karetgelang": "rubber band",
-      "i-selang": "hose",
+      "i-selang": "clothesline",
       "i-handuk": "towel",
       "i-kainpel": "floor cloth",
       "i-popokkain": "kitchen cloth"
@@ -150,8 +150,7 @@
       "id": "selang",
       "labelKey": "i-selang",
       "bin": "lentur",
-      "emoji": "🟢",
-      "color": "#66bb6a"
+      "emoji": "🪢"
     },
     {
       "id": "handuk",
@@ -170,7 +169,8 @@
       "id": "popokkain",
       "labelKey": "i-popokkain",
       "bin": "serap",
-      "emoji": "🧻"
+      "shape": "rect",
+      "color": "#ffcc80"
     }
   ],
   "pilihan": []

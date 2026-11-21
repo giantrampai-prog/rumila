@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-harta",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -21,11 +21,11 @@
   },
   "knobs": {
     "max": {
-      "min": 1,
-      "max": 9,
-      "default": 9,
+      "min": 5,
+      "max": 5,
+      "default": 5,
       "step": 1,
-      "keterangan": "angka terbesar yang diacak (1 sampai max; max ≥ 6 ikut angka 0)"
+      "keterangan": "angka yang diacak selalu 1 sampai 5 (sesuai kompetensi)"
     },
     "panah": {
       "min": 0,

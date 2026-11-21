@@ -1,6 +1,6 @@
 {
   "id": "sains-biji-sampai-berbunga",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,10 +21,6 @@
       "kacang-tunas": "tunas kecil",
       "kacang-daun": "berdaun lebat",
       "kacang-bunga": "berbunga",
-      "t-tulip": "Tulip tumbuh",
-      "tulip-biji": "biji di tanah",
-      "tulip-tunas": "tunas kecil",
-      "tulip-bunga": "berbunga",
       "t-mawar": "Mawar tumbuh",
       "mawar-biji": "biji di tanah",
       "mawar-tunas": "tunas kecil",
@@ -53,7 +49,11 @@
       "kacangtanah-biji": "biji kacang tanah",
       "kacangtanah-tunas": "tunas kecil",
       "kacangtanah-daun": "berdaun banyak",
-      "kacangtanah-bunga": "berbunga kuning"
+      "kacangtanah-bunga": "berbunga kuning",
+      "kenikir-biji": "biji di tanah",
+      "kenikir-tunas": "tunas kecil",
+      "kenikir-bunga": "berbunga",
+      "t-kenikir": "Kenikir tumbuh"
     },
     "en": {
       "judul": "From Seed to Flower",
@@ -68,10 +68,6 @@
       "kacang-tunas": "little sprout",
       "kacang-daun": "lots of leaves",
       "kacang-bunga": "flowering",
-      "t-tulip": "A tulip grows",
-      "tulip-biji": "seed in the soil",
-      "tulip-tunas": "a little sprout",
-      "tulip-bunga": "it blooms",
       "t-mawar": "A rose grows",
       "mawar-biji": "seed in the soil",
       "mawar-tunas": "a little sprout",
@@ -100,7 +96,11 @@
       "kacangtanah-biji": "a peanut seed",
       "kacangtanah-tunas": "a little sprout",
       "kacangtanah-daun": "lots of leaves",
-      "kacangtanah-bunga": "yellow flowers bloom"
+      "kacangtanah-bunga": "yellow flowers bloom",
+      "kenikir-biji": "seed in the soil",
+      "kenikir-tunas": "a little sprout",
+      "kenikir-bunga": "it blooms",
+      "t-kenikir": "A cosmos plant grows"
     }
   },
   "knobs": {
@@ -179,25 +179,25 @@
       ]
     },
     {
-      "id": "tulip",
-      "titleKey": "t-tulip",
+      "id": "kenikir",
+      "titleKey": "t-kenikir",
       "steps": [
         {
           "id": "biji",
-          "labelKey": "tulip-biji",
+          "labelKey": "kenikir-biji",
           "emoji": "🌰",
           "scale": 0.6
         },
         {
           "id": "tunas",
-          "labelKey": "tulip-tunas",
+          "labelKey": "kenikir-tunas",
           "emoji": "🌱",
           "scale": 0.8
         },
         {
           "id": "bunga",
-          "labelKey": "tulip-bunga",
-          "emoji": "🌷",
+          "labelKey": "kenikir-bunga",
+          "emoji": "🌼",
           "scale": 1.3
         }
       ]

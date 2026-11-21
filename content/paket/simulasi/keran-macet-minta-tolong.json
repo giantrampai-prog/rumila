@@ -1,6 +1,6 @@
 {
   "id": "keran-macet-minta-tolong",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Alat Macet, Minta Tolong",
+      "judul": "Alat di Rumah Tidak Bekerja",
       "instruksi": "Robot mau pakai alat di rumah. Ketuk alatnya supaya bekerja.",
       "keran": "keran",
       "lampu": "lampu",
@@ -25,7 +25,7 @@
       "laptop": "laptop"
     },
     "en": {
-      "judul": "It's Stuck, Ask for Help",
+      "judul": "The Home Gadget Won't Work",
       "instruksi": "The robot wants to use something at home. Tap it to make it work.",
       "keran": "tap",
       "lampu": "lamp",

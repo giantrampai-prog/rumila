@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penutup-tubuh-kebun-binatang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "i-ular": "ular piton",
       "i-arwana": "ikan arwana",
       "i-katakpohon": "katak pohon",
-      "i-salamander": "salamander"
+      "i-salamander": "katak sawah"
     },
     "en": {
       "judul": "Animal Coverings at the Zoo",
@@ -48,7 +48,7 @@
       "i-ular": "python",
       "i-arwana": "arowana",
       "i-katakpohon": "tree frog",
-      "i-salamander": "salamander"
+      "i-salamander": "paddy frog"
     }
   },
   "knobs": {
@@ -177,8 +177,8 @@
       "id": "salamander",
       "labelKey": "i-salamander",
       "bin": "lembap",
-      "emoji": "🦎",
-      "color": "#ff7043"
+      "emoji": "🐸",
+      "color": "#558b2f"
     }
   ],
   "pilihan": []

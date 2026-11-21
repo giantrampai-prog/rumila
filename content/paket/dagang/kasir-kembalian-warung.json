@@ -1,6 +1,6 @@
 {
   "id": "kasir-kembalian-warung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "susu": "susu",
       "roti": "roti",
       "telur": "telur",
-      "minyak": "minyak goreng"
+      "selai": "selai"
     },
     "en": {
       "judul": "Change at the Shop",
@@ -24,7 +24,7 @@
       "susu": "milk",
       "roti": "bread",
       "telur": "eggs",
-      "minyak": "cooking oil"
+      "selai": "jam"
     }
   },
   "knobs": {
@@ -74,8 +74,8 @@
       "emoji": "🥚"
     },
     {
-      "id": "minyak",
-      "labelKey": "minyak",
+      "id": "selai",
+      "labelKey": "selai",
       "price": 9000,
       "emoji": "🫙"
     }

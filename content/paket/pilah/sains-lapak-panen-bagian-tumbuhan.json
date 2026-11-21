@@ -1,6 +1,6 @@
 {
   "id": "sains-lapak-panen-bagian-tumbuhan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -137,7 +137,7 @@
       "id": "kemangi",
       "labelKey": "i-kemangi",
       "bin": "daun",
-      "emoji": "☘️"
+      "emoji": "🌿"
     },
     {
       "id": "wortel",

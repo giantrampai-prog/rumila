@@ -1,6 +1,6 @@
 {
   "id": "ulangi-tiga-ke-kanan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Repeat Three Times",
-      "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so robot reaches the star."
+      "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so the robot reaches the star."
     }
   },
   "knobs": {

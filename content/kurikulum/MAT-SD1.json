@@ -322,7 +322,8 @@
       ],
       "core": true,
       "mechanics": [
-        "pilah"
+        "pilah",
+        "simulasi"
       ],
       "catatan": "Piring berisi 2–20 benda (genap) dipilah ke rak angka setengahnya. Anak boleh membagi dua-dua dalam kepala atau memakai dobel (dobel 6 = 12, jadi setengah 12 = 6). Jebakan: menaruh 12 di rak 12 (menghitung semua). Knob: rak 5 → 10."
     },

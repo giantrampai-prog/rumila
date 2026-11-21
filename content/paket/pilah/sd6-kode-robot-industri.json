@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-robot-industri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -39,7 +39,7 @@
       "c19": "sangat tepat (presisi)",
       "c20": "bisa merasa bosan",
       "c21": "tidak butuh program",
-      "q7": "Robot memasang baut pada ponsel sampai ukuran sepersekian milimeter. Ini menunjukkan robot…",
+      "q7": "Robot memasang baut kecil pada ponsel dengan ketepatan sepersekian milimeter. Ini menunjukkan robot…",
       "c22": "memprogram, memeriksa, dan merawat robot",
       "c23": "tidak ada sama sekali",
       "c24": "menjadi robot",
@@ -92,7 +92,7 @@
       "c19": "very precise",
       "c20": "able to feel bored",
       "c21": "in no need of a program",
-      "q7": "Robots fit screws in phones to a fraction of a millimetre. This shows robots are…",
+      "q7": "Robots fit small screws in phones with an accuracy of a fraction of a millimetre. This shows robots are…",
       "c22": "program, check and maintain the robots",
       "c23": "nothing at all",
       "c24": "become robots",

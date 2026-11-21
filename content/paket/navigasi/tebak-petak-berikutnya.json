@@ -1,6 +1,6 @@
 {
   "id": "tebak-petak-berikutnya",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Guess the Next Square",
-      "instruksi": "Before each block runs, point to the square where robot will stand, then press step."
+      "instruksi": "Before each block runs, point to the square where the robot will stand, then press step."
     }
   },
   "knobs": {

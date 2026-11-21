@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-roda-mesin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Roda dan Mesin",
-      "instruksi": "Jawab dua pertanyaan untuk tiap kendaraan: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+      "instruksi": "Jawab dua pertanyaan untuk tiap benda: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
       "bin-roda-mesin": "roda · mesin",
       "bin-roda-tanpa": "roda · tanpa mesin",
       "bin-tanpa-mesin": "tanpa roda · mesin",
@@ -20,7 +20,7 @@
       "i-motorbike": "sepeda motor",
       "i-truck": "truk",
       "i-bicycle": "sepeda",
-      "i-kick-scooter": "skuter",
+      "i-kick-scooter": "skuter dorong",
       "i-skateboard": "papan luncur",
       "i-shopping-cart": "troli belanja",
       "i-motorboat": "perahu motor",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "Wheels and Engine Boxes",
-      "instruksi": "Answer two questions for each vehicle: wheels? engine? Then put it in the matching box.",
+      "instruksi": "Answer two questions for each thing: wheels? engine? Then put it in the matching box.",
       "bin-roda-mesin": "wheels · engine",
       "bin-roda-tanpa": "wheels · no engine",
       "bin-tanpa-mesin": "no wheels · engine",

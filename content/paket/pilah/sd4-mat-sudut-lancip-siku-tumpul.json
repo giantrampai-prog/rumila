@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-sudut-lancip-siku-tumpul",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,7 @@
       "i9": "90°",
       "i10": "jam 3",
       "i11": "jam 9",
-      "i12": "¼ putar",
+      "i12": "¼ putaran",
       "i13": "91°",
       "i14": "120°",
       "i15": "150°",

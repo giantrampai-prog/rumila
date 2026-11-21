@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,10 +15,10 @@
       "b-tanpa": "tanpa listrik",
       "i-komputer": "komputer",
       "i-belistrik": "bel listrik",
-      "i-kalkulator": "kalkulator",
+      "i-printer": "printer",
       "i-robot": "mainan robot berbaterai",
       "i-pengeras": "pengeras suara",
-      "i-pompa": "pompa air",
+      "i-proyektor": "proyektor",
       "i-pensil": "pensil",
       "i-penggaris": "penggaris",
       "i-sepeda": "sepeda",
@@ -33,10 +33,10 @@
       "b-tanpa": "no electricity",
       "i-komputer": "computer",
       "i-belistrik": "electric bell",
-      "i-kalkulator": "calculator",
+      "i-printer": "printer",
       "i-robot": "battery toy robot",
       "i-pengeras": "loudspeaker",
-      "i-pompa": "water pump",
+      "i-proyektor": "projector",
       "i-pensil": "pencil",
       "i-penggaris": "ruler",
       "i-sepeda": "bicycle",
@@ -87,10 +87,10 @@
       "emoji": "🔔"
     },
     {
-      "id": "kalkulator",
-      "labelKey": "i-kalkulator",
+      "id": "printer",
+      "labelKey": "i-printer",
       "bin": "listrik",
-      "emoji": "🧮"
+      "emoji": "🖨️"
     },
     {
       "id": "robot",
@@ -105,10 +105,10 @@
       "emoji": "📢"
     },
     {
-      "id": "pompa",
-      "labelKey": "i-pompa",
+      "id": "proyektor",
+      "labelKey": "i-proyektor",
       "bin": "listrik",
-      "emoji": "🚰"
+      "emoji": "📽️"
     },
     {
       "id": "pensil",
@@ -138,7 +138,7 @@
       "id": "peluit",
       "labelKey": "i-peluit",
       "bin": "tanpa",
-      "emoji": "🎵"
+      "emoji": "😗"
     },
     {
       "id": "bola",

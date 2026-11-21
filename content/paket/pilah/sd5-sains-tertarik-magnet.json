@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tertarik-magnet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.MAGNET.01"
@@ -124,13 +124,17 @@
       "id": "foil",
       "labelKey": "i-foil",
       "bin": "tidak",
-      "emoji": "🥈"
+      "shape": "rect",
+      "color": "#cfd8dc"
     },
     {
       "id": "tembaga",
       "labelKey": "i-tembaga",
       "bin": "tidak",
-      "emoji": "🧵"
+      "shape": "rect",
+      "color": "#b87333",
+      "width": 3,
+      "scale": 0.6
     },
     {
       "id": "kuningan",
@@ -142,13 +146,17 @@
       "id": "emas",
       "labelKey": "i-emas",
       "bin": "tidak",
-      "emoji": "💛"
+      "shape": "circle",
+      "color": "#ffd54f",
+      "scale": 0.7
     },
     {
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "tidak",
-      "emoji": "🥄"
+      "shape": "rect",
+      "color": "#4fc3f7",
+      "scale": 0.6
     },
     {
       "id": "kayu",

@@ -1,6 +1,6 @@
 {
   "id": "siang-dan-malam",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -14,10 +14,10 @@
       "makan": "Makan siang robot",
       "tidur": "Robot tidur malam",
       "cuci": "cuci tangan",
-      "ambil": "ambil piring",
+      "cuci-piring": "cuci piring",
       "santap": "makan",
       "habis": "piring kosong",
-      "sikat": "sikat gigi",
+      "bangun-pagi": "bangun pagi",
       "piyama": "pakai piyama",
       "lampu": "matikan lampu",
       "bobo": "tidur",
@@ -61,10 +61,10 @@
       "makan": "The robot's lunch",
       "tidur": "The robot's bedtime",
       "cuci": "wash hands",
-      "ambil": "get a plate",
+      "cuci-piring": "wash the dishes",
       "santap": "eat",
       "habis": "empty plate",
-      "sikat": "brush teeth",
+      "bangun-pagi": "wake up in the morning",
       "piyama": "put on pyjamas",
       "lampu": "turn off the light",
       "bobo": "sleep",
@@ -128,11 +128,6 @@
           "emoji": "🧼"
         },
         {
-          "id": "ambil",
-          "labelKey": "ambil",
-          "emoji": "🍽️"
-        },
-        {
           "id": "santap",
           "labelKey": "santap",
           "emoji": "🍚"
@@ -141,6 +136,11 @@
           "id": "habis",
           "labelKey": "habis",
           "emoji": "✨"
+        },
+        {
+          "id": "cuci-piring",
+          "labelKey": "cuci-piring",
+          "emoji": "🧽"
         }
       ]
     },
@@ -149,11 +149,6 @@
       "titleKey": "tidur",
       "steps": [
         {
-          "id": "sikat",
-          "labelKey": "sikat",
-          "emoji": "🪥"
-        },
-        {
           "id": "piyama",
           "labelKey": "piyama",
           "emoji": "👕"
@@ -161,12 +156,17 @@
         {
           "id": "lampu",
           "labelKey": "lampu",
-          "emoji": "🌙"
+          "emoji": "💡"
         },
         {
           "id": "bobo",
           "labelKey": "bobo",
           "emoji": "😴"
+        },
+        {
+          "id": "bangun",
+          "labelKey": "bangun-pagi",
+          "emoji": "🌅"
         }
       ]
     },

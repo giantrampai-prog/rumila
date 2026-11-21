@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-sambungan-perangkat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "i-gitar-kabel": "gitar listrik dengan kabel",
       "i-tv-antena": "televisi dengan kabel antena",
       "i-joystick-kabel": "stik game berkabel",
-      "i-lampu": "lampu belajar dengan kabel listrik",
+      "i-mouse-kabel": "mouse dengan kabel ke laptop",
       "i-drone": "drone mainan dengan remot",
       "i-mobil-remot": "mobil remot kontrol",
       "i-walkie": "walkie-talkie",
@@ -39,7 +39,7 @@
       "i-gitar-kabel": "electric guitar with a cable",
       "i-tv-antena": "TV with an aerial cable",
       "i-joystick-kabel": "wired joystick",
-      "i-lampu": "desk lamp with a power cable",
+      "i-mouse-kabel": "mouse with a cable to the laptop",
       "i-drone": "toy drone with a remote",
       "i-mobil-remot": "remote-control car",
       "i-walkie": "walkie-talkie",
@@ -114,10 +114,10 @@
       "emoji": "🕹️"
     },
     {
-      "id": "lampu",
-      "labelKey": "i-lampu",
+      "id": "mouse-kabel",
+      "labelKey": "i-mouse-kabel",
       "bin": "kabel",
-      "emoji": "💡"
+      "emoji": "🖱️"
     },
     {
       "id": "drone",

@@ -1,6 +1,6 @@
 {
   "id": "sains-isi-piringku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Isi Piringku",
       "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
-      "nasi": "nasi",
+      "nasi": "nasi dan makanan pokok",
       "lauk": "lauk",
       "sayur": "sayur",
       "buah": "buah",
@@ -33,7 +33,7 @@
     "en": {
       "judul": "Fill My Plate",
       "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
-      "nasi": "rice",
+      "nasi": "rice and staple foods",
       "lauk": "protein",
       "sayur": "vegetables",
       "buah": "fruit",

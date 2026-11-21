@@ -1,6 +1,6 @@
 {
   "id": "ular-pendek-ke-panjang",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ular Pendek ke Panjang",
-      "instruksi": "Susun ular dari yang paling pendek ke yang paling panjang.",
+      "instruksi": "Susun benda dari yang paling pendek ke yang paling panjang.",
       "ular": "Ular: pendek ke panjang",
       "cacing": "Cacing: pendek ke panjang",
       "pendek": "pendek",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Snakes Short to Long",
-      "instruksi": "Line up the snakes from the shortest to the longest.",
+      "instruksi": "Line up the things from the shortest to the longest.",
       "ular": "Snakes: short to long",
       "cacing": "Worms: short to long",
       "pendek": "short",

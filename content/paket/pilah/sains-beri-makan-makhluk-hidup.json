@@ -1,6 +1,6 @@
 {
   "id": "sains-beri-makan-makhluk-hidup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,8 +23,8 @@
       "i-boneka": "boneka",
       "i-kerikil": "kerikil",
       "i-ember": "ember",
-      "i-sekop": "sekop",
-      "i-layangan": "layang-layang"
+      "i-layangan": "layang-layang",
+      "i-sarungtangan": "sarung tangan kebun"
     },
     "en": {
       "judul": "Feeding Time",
@@ -41,8 +41,8 @@
       "i-boneka": "doll",
       "i-kerikil": "pebble",
       "i-ember": "bucket",
-      "i-sekop": "shovel",
-      "i-layangan": "kite"
+      "i-layangan": "kite",
+      "i-sarungtangan": "garden gloves"
     }
   },
   "knobs": {
@@ -135,10 +135,10 @@
       "emoji": "🪣"
     },
     {
-      "id": "sekop",
-      "labelKey": "i-sekop",
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
       "bin": "tidak",
-      "emoji": "⛏️"
+      "emoji": "🧤"
     },
     {
       "id": "layangan",

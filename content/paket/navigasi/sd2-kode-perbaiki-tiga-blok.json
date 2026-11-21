@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perbaiki-tiga-blok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -19,9 +19,9 @@
   },
   "knobs": {
     "panjang": {
-      "min": 4,
+      "min": 7,
       "max": 8,
-      "default": 4,
+      "default": 7,
       "step": 1,
       "keterangan": "jumlah perintah terpendek ke bintang (dokumentasi; soal dipilih acak dari semua peta)"
     }
@@ -79,81 +79,6 @@
       ],
       "fixes": 3,
       "rackSlots": 7
-    },
-    {
-      "id": "tiga-salah-5-02",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 1,
-        "y": 1,
-        "dir": "S"
-      },
-      "goal": {
-        "x": 3,
-        "y": 3
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 5
-    },
-    {
-      "id": "tiga-salah-6-03",
-      "w": 6,
-      "h": 5,
-      "start": {
-        "x": 1,
-        "y": 3,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
     },
     {
       "id": "tiga-salah-7-04",
@@ -243,120 +168,6 @@
       "rackSlots": 8
     },
     {
-      "id": "tiga-salah-5-06",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 3,
-        "y": 4,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 1,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 5
-    },
-    {
-      "id": "tiga-salah-6-07",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 1,
-        "y": 4,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 3,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
-    },
-    {
-      "id": "tiga-salah-6-08",
-      "w": 6,
-      "h": 5,
-      "start": {
-        "x": 4,
-        "y": 2,
-        "dir": "S"
-      },
-      "goal": {
-        "x": 1,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
-    },
-    {
       "id": "tiga-salah-8-09",
       "w": 7,
       "h": 6,
@@ -402,159 +213,6 @@
       "rackSlots": 8
     },
     {
-      "id": "tiga-salah-5-10",
-      "w": 5,
-      "h": 5,
-      "start": {
-        "x": 1,
-        "y": 3,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 5
-    },
-    {
-      "id": "tiga-salah-6-11",
-      "w": 6,
-      "h": 5,
-      "start": {
-        "x": 1,
-        "y": 1,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 3
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
-    },
-    {
-      "id": "tiga-salah-6-12",
-      "w": 7,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 2,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 5,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
-    },
-    {
-      "id": "tiga-salah-6-13",
-      "w": 4,
-      "h": 7,
-      "start": {
-        "x": 2,
-        "y": 1,
-        "dir": "S"
-      },
-      "goal": {
-        "x": 1,
-        "y": 5
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 6
-    },
-    {
       "id": "tiga-salah-7-14",
       "w": 5,
       "h": 7,
@@ -595,39 +253,6 @@
       ],
       "fixes": 3,
       "rackSlots": 7
-    },
-    {
-      "id": "tiga-salah-4-15",
-      "w": 6,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 1,
-        "dir": "S"
-      },
-      "goal": {
-        "x": 4,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 4,
-      "program": [
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 4
     },
     {
       "id": "tiga-salah-7-16",
@@ -672,39 +297,6 @@
       "rackSlots": 7
     },
     {
-      "id": "tiga-salah-4-17",
-      "w": 6,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 2,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 4,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 4,
-      "program": [
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
-        }
-      ],
-      "fixes": 3,
-      "rackSlots": 4
-    },
-    {
       "id": "tiga-salah-7-18",
       "w": 5,
       "h": 7,
@@ -735,6 +327,306 @@
         },
         {
           "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 7
+    },
+    {
+      "id": "tiga-salah-7-01-cermin",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 7
+    },
+    {
+      "id": "tiga-salah-7-04-cermin",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 7
+    },
+    {
+      "id": "tiga-salah-8-05-cermin",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 8
+    },
+    {
+      "id": "tiga-salah-8-09-cermin",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 8
+    },
+    {
+      "id": "tiga-salah-7-14-cermin",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 7
+    },
+    {
+      "id": "tiga-salah-7-16-cermin",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3,
+      "rackSlots": 7
+    },
+    {
+      "id": "tiga-salah-7-18-cermin",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
         },
         {
           "cmd": "maju"

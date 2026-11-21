@@ -1,6 +1,6 @@
 {
   "id": "jungkat-jungkit-berat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -47,20 +47,20 @@
   "mode": "timbangan",
   "items": [
     {
-      "labelKey": "batu",
-      "id": "batu",
-      "role": "benda",
-      "emoji": "🪨",
-      "value": 9,
-      "scale": 0.8
-    },
-    {
       "labelKey": "semangka",
       "id": "semangka",
       "role": "benda",
       "emoji": "🍉",
-      "value": 8,
+      "value": 9,
       "scale": 1.6
+    },
+    {
+      "labelKey": "batu",
+      "id": "batu",
+      "role": "benda",
+      "emoji": "🪨",
+      "value": 8,
+      "scale": 0.8
     },
     {
       "labelKey": "buku",

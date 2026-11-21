@@ -1,6 +1,6 @@
 {
   "id": "cari-blok-penabrak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Cari Blok Penabrak",
-      "instruksi": "Sebelum menekan jalan, baca programnya dan cari blok yang akan membuat robot menabrak dinding, lalu ganti blok itu supaya robot sampai bintang."
+      "instruksi": "Baca programnya, cari blok yang membuat robot menabrak, lalu ganti."
     },
     "en": {
       "judul": "Find the Crashing Block",
-      "instruksi": "Before pressing run, read the program and find the block that will make the robot crash into a wall, then change that block so the robot reaches the star."
+      "instruksi": "Read the program, find the block that makes the robot crash, then change it."
     }
   },
   "knobs": {

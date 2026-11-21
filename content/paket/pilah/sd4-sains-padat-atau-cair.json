@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-padat-atau-cair",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.01"
@@ -96,7 +96,10 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "padat",
-      "emoji": "🍚"
+      "shape": "circle",
+      "color": "#e0e0e0",
+      "scale": 0.4,
+      "count": 6
     },
     {
       "id": "tepung",

@@ -1,6 +1,6 @@
 {
   "id": "sains-keranjang-indra-pasar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,12 +10,11 @@
   "locale": {
     "id": {
       "judul": "Indra di Pasar",
-      "instruksi": "Robot jalan-jalan di pasar: taruh tiap benda ke indra yang dipakainya.",
+      "instruksi": "Robot jalan-jalan di pasar: taruh tiap benda ke indra yang memakainya.",
       "mata": "mata",
       "telinga": "telinga",
       "hidung": "hidung",
       "lidah": "lidah",
-      "i-balon": "balon warna-warni",
       "i-lukisan": "lukisan",
       "i-terompet": "terompet",
       "i-gitar": "gitar",
@@ -27,7 +26,7 @@
       "papanharga": "papan harga",
       "lonceng": "lonceng toko",
       "pengeras": "penjual berteriak",
-      "bawang": "bawang putih",
+      "bawang": "bau bawang putih",
       "permen": "permen manis",
       "cermin": "cermin",
       "lampu": "lampu terang",
@@ -40,12 +39,11 @@
     },
     "en": {
       "judul": "Senses at the Market",
-      "instruksi": "Robot strolls the market: put each thing with the sense it uses.",
+      "instruksi": "Robot strolls the market: put each thing with the sense that uses it.",
       "mata": "eye",
       "telinga": "ear",
       "hidung": "nose",
       "lidah": "tongue",
-      "i-balon": "colourful balloons",
       "i-lukisan": "painting",
       "i-terompet": "trumpet",
       "i-gitar": "guitar",
@@ -57,7 +55,7 @@
       "papanharga": "price sign",
       "lonceng": "shop bell",
       "pengeras": "seller shouting",
-      "bawang": "garlic",
+      "bawang": "garlic smell",
       "permen": "sweet lollipop",
       "cermin": "mirror",
       "lampu": "bright lamp",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tugas-bagian-bunga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.01"
@@ -19,7 +19,7 @@
       "i-tangkaiputik": "tangkai putik",
       "i-bakalbuah": "bakal buah (ovarium)",
       "i-benangsari": "benang sari (stamen)",
-      "i-putik": "putik (karpel)",
+      "i-putik": "putik (pistil)",
       "p-r1": "Bagian berwarna cerah dan harum yang menarik lebah datang.",
       "p-r2": "Bagian di ujung benang yang menghasilkan serbuk kuning halus untuk penyerbukan.",
       "p-r3": "Bagian lengket paling atas di tengah bunga yang menangkap serbuk kuning dari bunga lain.",
@@ -43,7 +43,7 @@
       "i-tangkaiputik": "style",
       "i-bakalbuah": "ovary",
       "i-benangsari": "stamen",
-      "i-putik": "carpel",
+      "i-putik": "pistil",
       "p-r1": "The bright, sweet-smelling part that attracts bees.",
       "p-r2": "The part at the tip of the thread that makes the fine yellow powder used in pollination.",
       "p-r3": "The sticky top part in the middle of the flower that catches yellow powder from other flowers.",
@@ -104,7 +104,9 @@
       "id": "tangkaiputik",
       "labelKey": "i-tangkaiputik",
       "bin": "pilihan",
-      "emoji": "➖"
+      "shape": "rect",
+      "color": "#81c784",
+      "scale": 0.6
     },
     {
       "id": "bakalbuah",

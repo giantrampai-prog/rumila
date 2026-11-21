@@ -1,6 +1,6 @@
 {
   "id": "sains-antar-ke-lapisan-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "t-7": "Hiu goblin berenang pelan di laut yang gelap dan dalam. Antar ke mana?",
       "t-8": "Kutu laut raksasa merayap di dasar laut dalam yang gelap. Antar ke mana?",
       "t-9": "Ikan siput palung hidup di tempat paling dalam di seluruh laut. Antar ke mana?",
-      "t-10": "Amfipoda raksasa, udang kecil pucat dari dasar palung. Antar ke mana?",
+      "t-10": "Hewan mirip udang berwarna pucat hidup di dasar palung. Antar ke mana?",
       "t-11": "Teripang bening hidup di lubang laut yang paling dalam. Antar ke mana?"
     },
     "en": {
@@ -43,7 +43,7 @@
       "t-7": "The goblin shark swims slowly in the dark, deep sea. Where does it go?",
       "t-8": "The giant isopod crawls on the dark deep-sea floor. Where does it go?",
       "t-9": "The trench snailfish lives in the deepest place in the whole ocean. Where does it go?",
-      "t-10": "The giant amphipod is a small pale shrimp from the trench floor. Where does it go?",
+      "t-10": "A pale shrimp-like animal lives on the trench floor. Where does it go?",
       "t-11": "A see-through sea cucumber lives in the deepest hole in the sea. Where does it go?"
     }
   },

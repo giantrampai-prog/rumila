@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-tanda-reaksi-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.02"
@@ -21,10 +21,10 @@
       "i-teh": "teh menjadi lebih terang setelah diberi perasan jeruk nipis",
       "i-alpukat": "alpukat yang dibelah lama-lama menjadi cokelat",
       "i-kubis": "air rebusan kubis ungu menjadi merah saat diberi cuka",
-      "i-roti": "roti tawar dipanggang menjadi cokelat",
       "i-kompos": "bagian dalam tumpukan kompos sisa sayur terasa hangat",
       "i-epoksi": "lem dua tabung (epoksi) dicampur lalu terasa hangat",
-      "i-pemanas": "kantong pemanas makanan instan menjadi panas setelah diberi air"
+      "i-pemanas": "kantong pemanas makanan instan menjadi panas setelah diberi air",
+      "i-pisang": "irisan pisang lama-lama menjadi cokelat"
     },
     "en": {
       "judul": "Chemistry in the Kitchen",
@@ -40,10 +40,10 @@
       "i-teh": "tea turns lighter after lime juice is squeezed in",
       "i-alpukat": "a cut avocado slowly turns brown",
       "i-kubis": "purple cabbage water turns red when vinegar is added",
-      "i-roti": "white bread turns brown when toasted",
       "i-kompos": "the inside of a vegetable compost heap feels warm",
       "i-epoksi": "two-tube epoxy glue gets warm after mixing",
-      "i-pemanas": "an instant food heater pouch gets hot after water is added"
+      "i-pemanas": "an instant food heater pouch gets hot after water is added",
+      "i-pisang": "banana slices slowly turn brown"
     }
   },
   "knobs": {
@@ -131,10 +131,10 @@
       "emoji": "🥬"
     },
     {
-      "id": "roti",
-      "labelKey": "i-roti",
+      "id": "pisang",
+      "labelKey": "i-pisang",
       "bin": "warna",
-      "emoji": "🍞"
+      "emoji": "🍌"
     },
     {
       "id": "kompos",

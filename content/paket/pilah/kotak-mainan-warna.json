@@ -1,6 +1,6 @@
 {
   "id": "kotak-mainan-warna",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -33,7 +33,7 @@
       "anakayam": "anak ayam"
     },
     "en": {
-      "judul": "Color Toy Boxes",
+      "judul": "Colour Toy Boxes",
       "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
       "merah": "red",
       "biru": "blue",

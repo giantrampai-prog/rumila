@@ -1,6 +1,6 @@
 {
   "id": "sains-layu-atau-segar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Layu atau Tetap Segar?",
-      "instruksi": "Lihat di mana tiap tanaman berada dan dengarkan keadaannya. Taruh ke rak akan layu atau tetap segar sebelum hari berganti.",
+      "instruksi": "Lihat tempat tiap tanaman. Taruh ke rak akan layu beberapa hari lagi, atau tetap segar.",
       "b-layu": "akan layu",
       "b-segar": "tetap segar",
       "i-ember": "bunga ditutup ember terbalik",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Wilt or Stay Fresh?",
-      "instruksi": "See where each plant is and listen to how it is kept. Put it on the will-wilt shelf or the stays-fresh shelf before the day changes.",
+      "instruksi": "Look at where each plant is. Put it on the will-wilt-in-a-few-days shelf or the stays-fresh shelf.",
       "b-layu": "will wilt",
       "b-segar": "stays fresh",
       "i-ember": "flower covered by an upside-down bucket",

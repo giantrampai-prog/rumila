@@ -1,6 +1,6 @@
 {
   "id": "lengkapi-koin-lima-kantin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap Lima di Kantin",
-      "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
+      "judul": "Pas Lima di Kantin",
+      "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya pas lima.",
       "nasikuning": "nasi kuning",
       "eskrim": "es krim"
     },

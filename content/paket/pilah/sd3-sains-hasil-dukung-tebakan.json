@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hasil-dukung-tebakan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Do the Results Support the Prediction?",
-      "instruksi": "Listen to the prediction and the result. Do they match or not?",
+      "instruksi": "Listen to the prediction and the result. Does the result support it or not?",
       "pilihan": "choices",
       "i-dukung": "supports the prediction",
       "i-tidak": "does not support it",
@@ -43,15 +43,7 @@
       "t-kecambah": "Prediction: watered seeds sprout faster. Result: the watered seeds sprouted first."
     }
   },
-  "knobs": {
-    "itemCount": {
-      "min": 2,
-      "max": 4,
-      "default": 3,
-      "step": 1,
-      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,

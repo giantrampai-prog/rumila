@@ -1,6 +1,6 @@
 {
   "id": "mana-bola-warna",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,7 @@
       "tAbu": "Mana yang abu-abu?"
     },
     "en": {
-      "judul": "Which Color Ball?",
+      "judul": "Which Colour Ball?",
       "instruksi": "Listen to the colour, then touch the ball of that colour.",
       "pilihan": "choices",
       "tMerah": "Which one is red?",

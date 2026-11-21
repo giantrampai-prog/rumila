@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-rak-tujuh-bahan-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -29,7 +29,7 @@
       "i-kursi": "kursi kayu",
       "i-sendokkayu": "sendok kayu",
       "i-kunci": "kunci",
-      "i-panci": "panci",
+      "i-panci": "wajan",
       "i-botol": "botol plastik",
       "i-sedotan": "sedotan",
       "i-gelas": "gelas kaca",
@@ -56,7 +56,7 @@
       "i-kursi": "wooden chair",
       "i-sendokkayu": "wooden spoon",
       "i-kunci": "key",
-      "i-panci": "metal pot",
+      "i-panci": "metal frying pan",
       "i-botol": "plastic bottle",
       "i-sedotan": "straw",
       "i-gelas": "glass cup",

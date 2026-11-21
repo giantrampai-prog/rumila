@@ -1,6 +1,6 @@
 {
   "id": "jari-pembeli-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "dagang",
   "competencyIds": [
@@ -12,7 +12,7 @@
       "judul": "Jari Pembeli Kue",
       "instruksi": "Pembeli kue mengacungkan jari sebentar: ambil kue sebanyak jarinya.",
       "donat": "donat",
-      "kuecangkir": "kue cangkir"
+      "kuecangkir": "kue mangkuk"
     },
     "en": {
       "judul": "Cake Buyer's Fingers",

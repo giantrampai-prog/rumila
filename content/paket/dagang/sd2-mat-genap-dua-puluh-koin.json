@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-genap-dua-puluh-koin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,16 +9,16 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap Dua Puluh Koin",
+      "judul": "Lengkapi Dua Puluh Koin",
       "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya dua puluh koin: tambahkan kekurangannya.",
       "g-buku-tulis": "buku tulis",
-      "g-kotak-pensil": "kotak pensil"
+      "g-kotak-pensil": "krayon"
     },
     "en": {
       "judul": "Make Twenty Coins",
       "instruksi": "The shopper shows their coins for a moment. The price is twenty coins: add what is missing.",
       "g-buku-tulis": "exercise book",
-      "g-kotak-pensil": "pencil case"
+      "g-kotak-pensil": "crayons"
     }
   },
   "knobs": {},
@@ -43,7 +43,7 @@
       "id": "pensil",
       "labelKey": "g-kotak-pensil",
       "price": 20000,
-      "emoji": "✏️"
+      "emoji": "🖍️"
     }
   ],
   "customerRule": {

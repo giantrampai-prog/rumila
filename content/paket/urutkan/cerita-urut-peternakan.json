@@ -1,6 +1,6 @@
 {
   "id": "cerita-urut-peternakan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cerita Urut dari Peternakan",
-      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar peternakan, lalu tekan Ceritakan supaya robot bercerita.",
+      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar peternakan. Setelah itu tekan Ceritakan.",
       "t-ayam": "Memberi makan ayam",
       "ayam-jagung": "ambil jagung",
       "ayam-tabur": "tabur jagung",
@@ -28,9 +28,9 @@
       "domba-cukur": "cukur bulunya",
       "domba-benang": "bulu jadi benang",
       "t-kuda": "Merawat kuda",
-      "kuda-sikat": "sikat bulu kuda",
       "kuda-wortel": "beri wortel",
-      "kuda-tunggang": "naik kuda",
+      "kuda-kunyah": "kuda mengunyah",
+      "kuda-kenyang": "kuda kenyang",
       "t-kambing": "Memberi minum kambing",
       "kambing-isi": "isi air di keran",
       "kambing-tuang": "tuang ke wadah",
@@ -39,10 +39,10 @@
       "menetas-telur": "induk mengerami telur",
       "menetas-retak": "telur retak",
       "menetas-keluar": "anak ayam keluar",
-      "t-jerami": "Menyiapkan jerami",
+      "t-jerami": "Menyiapkan rumput",
       "jerami-potong": "potong rumput",
-      "jerami-ikat": "ikat jadi jerami",
-      "jerami-makan": "sapi makan jerami",
+      "jerami-ikat": "ikat rumput",
+      "jerami-makan": "sapi makan rumput",
       "t-bebek": "Bebek ke kolam",
       "bebek-buka": "buka pintu kandang",
       "bebek-jalan": "bebek berjalan berbaris",
@@ -52,9 +52,9 @@
       "anjing-isi": "isi makanan",
       "anjing-makan": "anjing makan",
       "t-kelinci": "Merawat kelinci",
-      "kelinci-bersih": "bersihkan kandang",
-      "kelinci-sayur": "beri sayur",
-      "kelinci-elus": "elus kelinci",
+      "kelinci-taruh": "taruh sayur di kandang",
+      "kelinci-dekat": "kelinci mendekat",
+      "kelinci-makan": "kelinci makan sayur",
       "t-panen": "Panen apel",
       "panen-tangga": "pasang tangga",
       "panen-petik": "petik apel",
@@ -62,7 +62,7 @@
     },
     "en": {
       "judul": "Farm Stories in Order",
-      "instruksi": "Put the first, then, and last labels under the farm pictures, then press Tell so the robot tells the story.",
+      "instruksi": "Put the first, then, and last labels under the farm pictures. After that, press Tell.",
       "t-ayam": "Feeding the chickens",
       "ayam-jagung": "get some corn",
       "ayam-tabur": "scatter the corn",
@@ -80,9 +80,9 @@
       "domba-cukur": "shear its wool",
       "domba-benang": "the wool becomes yarn",
       "t-kuda": "Caring for the horse",
-      "kuda-sikat": "brush the horse",
       "kuda-wortel": "give it a carrot",
-      "kuda-tunggang": "ride the horse",
+      "kuda-kunyah": "the horse chews",
+      "kuda-kenyang": "the horse is full",
       "t-kambing": "Giving the goat a drink",
       "kambing-isi": "fill water at the tap",
       "kambing-tuang": "pour it into the trough",
@@ -91,10 +91,10 @@
       "menetas-telur": "the hen sits on the egg",
       "menetas-retak": "the egg cracks",
       "menetas-keluar": "the chick comes out",
-      "t-jerami": "Preparing the hay",
+      "t-jerami": "Preparing grass",
       "jerami-potong": "cut the grass",
-      "jerami-ikat": "tie it into hay",
-      "jerami-makan": "the cow eats the hay",
+      "jerami-ikat": "tie the grass",
+      "jerami-makan": "the cow eats the grass",
       "t-bebek": "Ducks to the pond",
       "bebek-buka": "open the pen door",
       "bebek-jalan": "the ducks walk in a line",
@@ -104,9 +104,9 @@
       "anjing-isi": "fill it with food",
       "anjing-makan": "the dog eats",
       "t-kelinci": "Caring for the rabbit",
-      "kelinci-bersih": "clean the hutch",
-      "kelinci-sayur": "give it vegetables",
-      "kelinci-elus": "pet the rabbit",
+      "kelinci-taruh": "put vegetables in the hutch",
+      "kelinci-dekat": "the rabbit comes closer",
+      "kelinci-makan": "the rabbit eats the vegetables",
       "t-panen": "Picking apples",
       "panen-tangga": "set up the ladder",
       "panen-petik": "pick the apples",
@@ -217,18 +217,18 @@
       "titleKey": "t-kuda",
       "steps": [
         {
-          "id": "kuda-sikat",
-          "labelKey": "kuda-sikat",
-          "emoji": "🪮"
-        },
-        {
           "id": "kuda-wortel",
           "labelKey": "kuda-wortel",
           "emoji": "🥕"
         },
         {
-          "id": "kuda-tunggang",
-          "labelKey": "kuda-tunggang",
+          "id": "kuda-kunyah",
+          "labelKey": "kuda-kunyah",
+          "emoji": "😋"
+        },
+        {
+          "id": "kuda-kenyang",
+          "labelKey": "kuda-kenyang",
           "emoji": "🐴"
         }
       ]
@@ -343,19 +343,19 @@
       "titleKey": "t-kelinci",
       "steps": [
         {
-          "id": "kelinci-bersih",
-          "labelKey": "kelinci-bersih",
-          "emoji": "🧹"
-        },
-        {
-          "id": "kelinci-sayur",
-          "labelKey": "kelinci-sayur",
+          "id": "kelinci-taruh",
+          "labelKey": "kelinci-taruh",
           "emoji": "🥬"
         },
         {
-          "id": "kelinci-elus",
-          "labelKey": "kelinci-elus",
+          "id": "kelinci-dekat",
+          "labelKey": "kelinci-dekat",
           "emoji": "🐰"
+        },
+        {
+          "id": "kelinci-makan",
+          "labelKey": "kelinci-makan",
+          "emoji": "😋"
         }
       ]
     },

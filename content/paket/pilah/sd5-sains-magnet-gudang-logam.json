@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-magnet-gudang-logam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.MAGNET.01"
@@ -84,13 +84,17 @@
       "id": "tutupbotol",
       "labelKey": "i-tutupbotol",
       "bin": "tertarik",
-      "emoji": "🍾"
+      "shape": "circle",
+      "color": "#bdbdbd",
+      "scale": 0.5
     },
     {
       "id": "staples",
       "labelKey": "i-staples",
       "bin": "tertarik",
-      "emoji": "📎"
+      "shape": "rect",
+      "color": "#9e9e9e",
+      "scale": 0.4
     },
     {
       "id": "obeng",
@@ -162,7 +166,9 @@
       "id": "penghapus",
       "labelKey": "i-penghapus",
       "bin": "tidak",
-      "emoji": "🧽"
+      "shape": "rect",
+      "color": "#f48fb1",
+      "scale": 0.7
     },
     {
       "id": "pensil",

@@ -10,7 +10,9 @@
 //                pilihan kembar dalam satu soal, peta robot tak terpecahkan / melebihi slot,
 //                soal berulang dalam satu sesi (10 ronde)
 //   ujian      : modul/semester/jenjang yang soal ujiannya tidak bisa disusun
-// WARNING     : paket hampir kembar (isi ≥ 80% sama untuk kompetensi sama), instruksi kembar, kompetensi dengan
+//   teks       : kunci locale id/en tidak seimbang
+// WARNING     : ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
+//                paket hampir kembar (isi ≥ 80% sama untuk kompetensi sama), instruksi kembar, kompetensi dengan
 //                1 paket saja (Ulangan Modul jadi monoton), paket lintas jenjang.
 
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
@@ -193,6 +195,44 @@ for (const [cid, list] of perKomp) {
     }
 }
 
+/* ---------------- teks yang dilihat/didengar anak ---------------- */
+// Ejaan tidak baku (KBBI/EYD) yang sering muncul; pola kata utuh, huruf kecil.
+const EJAAN: [RegExp, string][] = [
+  [/\bpraktek/i, "praktik"], [/\bnafas/i, "napas"], [/\bresiko/i, "risiko"], [/\bdimana\b/i, "di mana"], [/\bkemana\b/i, "ke mana"],
+  [/\bdisini\b|\bdisana\b/i, "di sini / di sana"], [/\bmerubah/i, "mengubah"], [/\bantri\b/i, "antre"], [/\bsekedar/i, "sekadar"],
+  [/\bjaman\b/i, "zaman"], [/\bijin\b/i, "izin"], [/\bapotik/i, "apotek"], [/\bhembus/i, "embus"], [/\bnasehat/i, "nasihat"],
+  [/\bsilahkan/i, "silakan"], [/\bjadual/i, "jadwal"], [/\btehnik/i, "teknik"], [/\bsistim/i, "sistem"], [/\bnampak/i, "tampak"],
+  [/\b(?:diatas|dibawah|didepan|dibelakang|didalam|diluar|disamping|ditengah|diantara)\b/i, "di + tempat ditulis terpisah"],
+  [/\b(?:keatas|kebawah|kedepan|kebelakang|kekiri|kekanan|kedalam)\b/i, "ke + arah ditulis terpisah"],
+  [/\b(?:udah|gak|nggak|ngga|tau)\b/i, "kata tidak baku"], [/\bcabe\b/i, "cabai"], [/\bsupir/i, "sopir"], [/\bkadaluarsa|kadarluarsa/i, "kedaluwarsa"],
+  [/\baktifitas|kreatifitas/i, "aktivitas / kreativitas"], [/\bseksama/i, "saksama"], [/\bmerk\b/i, "merek"], [/\bhutang/i, "utang"],
+  [/\bmilyar|trilyun/i, "miliar / triliun"], [/\bcentimeter|centi meter|senti meter/i, "sentimeter"], [/\bcelcius/i, "Celsius"],
+  [/\b(?:kupu|laba|kura|ubur|biri|cumi|paru|kunang|buah|sayur|hewan|benda) (?:kupu|laba|kura|ubur|biri|cumi|paru|kunang|buahan|sayuran|hewan|benda)\b/i, "kata ulang pakai tanda hubung"],
+  [/[,!?]{2,}|\.\.(?!\.)/, "tanda baca ganda"],
+];
+// Batas kata instruksi (dibacakan suara): PAUD–TK pendek, SD bertahap.
+const BATAS_KATA: Record<string, number> = { PAUD: 18, TKA: 18, TKB: 20, SD1: 26, SD2: 28, SD3: 36, SD4: 36, SD5: 40, SD6: 40 };
+for (const { p } of paket) {
+  for (const bhs of ["id", "en"] as const) {
+    const lain = bhs === "id" ? "en" : "id";
+    for (const k of Object.keys(p.locale[bhs])) if (!(k in p.locale[lain])) lapor("ERROR", "locale-kunci-hilang", p.id, `kunci "${k}" ada di ${bhs} tetapi tidak di ${lain}`);
+  }
+  for (const [k, v] of Object.entries(p.locale.id)) {
+    if (v !== v.trim()) lapor("WARNING", "teks-spasi-ujung", p.id, `locale.id.${k}`);
+    for (const [re, saran] of EJAAN) if (re.test(v)) lapor("WARNING", "ejaan-tidak-baku", p.id, `locale.id.${k} "${v.slice(0, 80)}" → ${saran}`);
+  }
+  const ins = p.locale.id[p.instructionKey] ?? "";
+  const kata = ins.split(/\s+/).filter(Boolean).length;
+  const batas = BATAS_KATA[p.level] ?? 40;
+  if (kata > batas) lapor("WARNING", "instruksi-terlalu-panjang", p.id, `${kata} kata (batas ${p.level} ${batas}): "${ins.slice(0, 90)}…"`);
+}
+for (const c of kompetensi) for (const [re, saran] of EJAAN) if (re.test(c.statement.id)) lapor("WARNING", "ejaan-tidak-baku", c.id, `pernyataan "${c.statement.id.slice(0, 80)}" → ${saran}`);
+// mekanik pembukti di kurikulum harus memuat mekanik paket yang benar-benar melatihnya
+for (const { p } of paket) for (const cid of p.competencyIds) {
+  const c = kIdx.get(cid);
+  if (c && !(c.mechanics as string[]).includes(p.mechanic)) lapor("WARNING", "mekanik-kompetensi-tak-cocok", p.id, `${cid} mencantumkan mekanik ${c.mechanics.join("/")}, paket memakai ${p.mechanic}`);
+}
+
 /* ---------------- kompetensi ↔ paket ---------------- */
 
 for (const c of kompetensi) {
@@ -288,6 +328,13 @@ for (const { p } of paket) {
       const lab = r.ronde.choices.map((c) => tampakItem(p, c as unknown as Record<string, unknown>));
       if (new Set(lab).size !== lab.length) catat("pilihan-tampak-kembar", `seed ${s}: pilihan ${ids.join(",")} ada yang tampak sama persis`);
       if (!ids.includes(r.ronde.correct)) catat("jawaban-tak-tersedia", `seed ${s}: jawaban ${r.ronde.correct} tidak ada di pilihan`);
+    }
+    // ronde kelompok tidak boleh lebih kecil dari batas bawah knob itemCount bila stok bin aktif mencukupi
+    if (r.mechanic === "pilah" && r.ronde.mode === "kelompok" && p.generatif && p.knobs?.itemCount) {
+      const aktif = new Set(r.ronde.bins.map((b) => b.id));
+      const stok = (p as { items: { bin: string }[] }).items.filter((i) => aktif.has(i.bin)).length;
+      const min = Math.min(stok, p.knobs.itemCount.min, k.itemCount ?? Infinity);
+      if (r.ronde.items.length < min) catat("ronde-kurang-item", `seed ${s}: ${r.ronde.items.length} item, knob itemCount min ${p.knobs.itemCount.min}`);
     }
     if (r.mechanic === "simulasi" && r.ronde.mode === "jam-baca" && !r.ronde.options.includes(r.ronde.target)) catat("jawaban-tak-tersedia", `seed ${s}: jam ${r.ronde.target} tidak ada di pilihan`);
     if (r.mechanic === "simulasi" && r.ronde.mode === "jam-baca" && new Set(r.ronde.options).size !== r.ronde.options.length) catat("pilihan-kembar", `seed ${s}: ${r.ronde.options.join(",")}`);

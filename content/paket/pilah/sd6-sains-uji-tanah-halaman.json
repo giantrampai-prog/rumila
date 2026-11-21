@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-uji-tanah-halaman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.TANAH.01"
@@ -14,14 +14,14 @@
       "b-pasir": "tanah berpasir",
       "b-humus": "tanah humus",
       "i-pita": "basah, digulung bisa menjadi pita panjang tanpa putus",
-      "i-licin": "permukaannya licin mengkilap saat digosok basah",
+      "i-licin": "permukaannya licin mengilap saat digosok basah",
       "i-sepatu": "menempel tebal di sepatu saat hujan",
       "i-bongkah": "bongkahan keringnya keras seperti batu",
       "i-bata": "dipakai sebagai bahan batu bata merah",
       "i-derak": "terasa berderak kasar saat digosok di telapak tangan",
       "i-lup": "butirnya terlihat jelas satu per satu dengan kaca pembesar",
       "i-cepatkering": "pot cepat kering lagi setelah disiram",
-      "i-tidaklengket": "tidak menempel di tangan saat kering",
+      "i-tidaklengket": "walau basah, tidak lengket di tangan",
       "i-gembur": "gembur dan lembut seperti remah kue",
       "i-daunbusuk": "terbentuk dari daun-daun membusuk di lantai hutan",
       "i-jamur": "ada jamur kecil dan banyak serangga tanah",
@@ -41,7 +41,7 @@
       "i-derak": "feels gritty and crunchy when rubbed in your palm",
       "i-lup": "each grain is clearly seen with a magnifying glass",
       "i-cepatkering": "the pot dries out again soon after watering",
-      "i-tidaklengket": "it does not stick to your hands when dry",
+      "i-tidaklengket": "even when wet, it does not stick to your hands",
       "i-gembur": "loose and soft like cake crumbs",
       "i-daunbusuk": "formed from rotting leaves on the forest floor",
       "i-jamur": "there are tiny mushrooms and lots of soil bugs",

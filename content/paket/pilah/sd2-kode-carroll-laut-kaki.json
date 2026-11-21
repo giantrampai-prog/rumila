@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-laut-kaki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,6 @@
       "i-ayam": "ayam",
       "i-gajah": "gajah",
       "i-ular": "ular",
-      "i-siput": "siput kebun",
       "i-cacing": "cacing tanah"
     },
     "en": {
@@ -49,7 +48,6 @@
       "i-ayam": "chicken",
       "i-gajah": "elephant",
       "i-ular": "snake",
-      "i-siput": "garden snail",
       "i-cacing": "earthworm"
     }
   },
@@ -169,12 +167,6 @@
       "labelKey": "i-ular",
       "bin": "darat-tanpa",
       "emoji": "🐍"
-    },
-    {
-      "id": "siput",
-      "labelKey": "i-siput",
-      "bin": "darat-tanpa",
-      "emoji": "🐌"
     },
     {
       "id": "cacing",

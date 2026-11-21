@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-urut-desimal-persen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -51,7 +51,7 @@
       "s7-3": "1/2",
       "s7-4": "70%",
       "s7-5": "0,9",
-      "s8": "Isi lima botol (liter)",
+      "s8": "Bagian lima botol yang sudah terisi",
       "s8-1": "0,2",
       "s8-2": "1/4",
       "s8-3": "1/2",
@@ -113,7 +113,7 @@
       "s7-3": "1/2",
       "s7-4": "70%",
       "s7-5": "0.9",
-      "s8": "Five bottles (litres)",
+      "s8": "Parts of five bottles already filled",
       "s8-1": "0.2",
       "s8-2": "1/4",
       "s8-3": "1/2",

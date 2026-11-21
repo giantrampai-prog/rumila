@@ -35,7 +35,8 @@ function itemAktif(p: PaketPilah, bins: Bin[], knobs: Knobs, r: () => number): I
   const diminta = knobs.itemCount !== undefined ? Math.max(1, Math.floor(knobs.itemCount)) : diacak.length;
   // Paling banyak separuh stok per ronde, supaya dua ronde berturut-turut bisa memakai benda yang berbeda
   // (anak merasa "dobel" bila benda yang sama terus muncul). Minimal tetap bins+1 / 3 benda; stok kecil tidak dipotong.
-  const bawah = Math.max(bins.length + 1, 3);
+  // …dan tidak pernah di bawah batas bawah knob itemCount paket (kalau stok cukup), supaya ronde tidak lebih kecil dari yang dijanjikan.
+  const bawah = Math.max(bins.length + 1, 3, Math.floor(p.knobs?.itemCount?.min ?? 0));
   const batas = kandidat.length >= 2 * bawah ? Math.max(bawah, Math.min(diminta, Math.floor(kandidat.length / 2))) : diminta;
   if (batas >= diacak.length) return diacak;
   // satu wakil per bin dulu, sisanya diisi dari yang tersisa

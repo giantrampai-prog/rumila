@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-terang-atau-redup",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.03"
@@ -19,7 +19,7 @@
       "p-r3": "Dari tiga baterai berderet, satu dilepas dan rangkaian disambung lagi. Lampunya jadi…",
       "p-r4": "Tiga lampu berderet dengan satu baterai. Satu lampu dilepas dan celahnya disambung kabel. Lampu yang tersisa jadi…",
       "p-r5": "Dua lampu berderet. Kawat di dalam satu lampu putus. Lampu yang lain…",
-      "p-r6": "Baterai yang baru diganti baterai lama yang hampir habis. Lampunya jadi…",
+      "p-r6": "Baterai baru dilepas, lalu diganti baterai lama yang hampir habis. Lampunya jadi…",
       "p-r7": "Rangkaian seri dengan dua lampu. Sakelarnya dibuka. Lampunya…",
       "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…",
       "p-r9": "Satu lampu dengan satu baterai. Satu kabel dilepas dari baterai sehingga ada celah. Lampunya…",
@@ -39,7 +39,7 @@
       "p-r3": "One of three cells in a row is removed and the circuit is joined again. The lamp becomes…",
       "p-r4": "Three lamps in a row with one cell. One lamp is removed and the gap is joined with wire. The other lamps become…",
       "p-r5": "Two lamps in a row. The wire inside one lamp breaks. The other lamp…",
-      "p-r6": "A new cell is swapped for an old, nearly flat one. The lamp becomes…",
+      "p-r6": "The new cell is taken out and replaced with an old, nearly flat one. The lamp becomes…",
       "p-r7": "A series circuit with two lamps. The switch is opened. The lamps…",
       "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…",
       "p-r9": "One bulb with one battery. One wire is taken off the battery, leaving a gap. The bulb…",

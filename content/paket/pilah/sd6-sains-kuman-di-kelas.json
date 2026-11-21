@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-kuman-di-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYAKIT.01"
@@ -130,7 +130,7 @@
       "id": "botol",
       "labelKey": "i-botol",
       "bin": "sebar",
-      "emoji": "🍼"
+      "emoji": "🥤"
     },
     {
       "id": "jajan",

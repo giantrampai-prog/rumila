@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tinggi-nyaring-bunyi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNYI.01"
@@ -78,13 +78,13 @@
       "id": "tinggi",
       "labelKey": "i-tinggi",
       "bin": "pilihan",
-      "emoji": "🎵"
+      "emoji": "🔼"
     },
     {
       "id": "rendah",
       "labelKey": "i-rendah",
       "bin": "pilihan",
-      "emoji": "🎶"
+      "emoji": "🔽"
     },
     {
       "id": "nyaring",

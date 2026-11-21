@@ -244,6 +244,41 @@ describe("dagang", () => {
     expect(nilaiDagang(s, { keranjang: { [good]: s.target } }).benar).toBe(true);
     expect(nilaiDagang(s, { keranjang: { [good]: s.target + 1 } }).benar).toBe(false);
   });
+  it("gabung: tiap kelompok di [itemsMin, itemsMax] (knob menang), jumlah ≤ target", () => {
+    const pk = mode("gabung", { customerRule: { ...p.customerRule, itemsMin: 2, itemsMax: 6, target: 10 } });
+    for (let seed = 0; seed < 60; seed++) {
+      const [a, b] = buatRondeDagang(pk, { itemsMax: 3, target: 10 }, seed).kelompok;
+      expect([a, b].every(n => n >= 2 && n <= 3)).toBe(true);
+      const [c, d] = buatRondeDagang(pk, { itemsMax: 6, target: 10 }, seed).kelompok;
+      expect([c, d].every(n => n >= 2 && n <= 6)).toBe(true);
+      expect(c + d).toBeLessThanOrEqual(10);
+      // tanpa knob itemsMax: customerRule.itemsMax
+      const [e, f] = buatRondeDagang(pk, {}, seed).kelompok;
+      expect(Math.max(e, f)).toBeLessThanOrEqual(6);
+    }
+    expect(new Set(Array.from({ length: 60 }, (_, s) => buatRondeDagang(pk, { itemsMax: 6 }, s).kelompok.join("+"))).size).toBeGreaterThan(8);
+  });
+  it("sisa: awal di [2, knob itemsMax|maxCount]; dua barang = benda + penanda", () => {
+    const duaBarang = [
+      { id: "kue", labelKey: "kue", price: 1000, emoji: "🧁" },
+      { id: "lilin", labelKey: "lilin", price: 1000, emoji: "🕯️" },
+    ];
+    const pk = mode("sisa", { goods: duaBarang, customerRule: { ...p.customerRule, itemsMin: 5, itemsMax: 10, target: 10 } });
+    for (let seed = 0; seed < 40; seed++) {
+      const r = buatRondeDagang(pk, { itemsMax: 7, pengurang: 2 }, seed);
+      expect(r.kelompok[0]).toBeGreaterThanOrEqual(2);
+      expect(r.kelompok[0]).toBeLessThanOrEqual(7);
+      expect(r.kelompok[1]).toBeLessThanOrEqual(2);
+      expect(r.tersedia).toEqual({ kue: r.kelompok[0] });
+      expect(r.pesanan).toEqual([{ goodId: "lilin", qty: r.target }]);
+      expect(nilaiDagang(r, { keranjang: { lilin: r.target } }).benar).toBe(true);
+    }
+    // maxCount (paket SD) tetap dibaca; lebih dari dua barang → benda diundi, penanda = benda itu
+    const s = buatRondeDagang(mode("sisa"), { maxCount: 14 }, 9);
+    const benda = Object.keys(s.tersedia)[0];
+    expect(s.pesanan).toEqual([{ goodId: benda, qty: s.target }]);
+    expect(s.kelompok[0]).toBeLessThanOrEqual(14);
+  });
   it("semua mode deterministik lewat buatRonde", () => {
     for (const m of ["ambil", "hitung", "subitasi", "bayar", "kembalian", "tukar", "gabung", "sisa", "lengkapi"] as const) {
       const pk = mode(m, uangPecahan);

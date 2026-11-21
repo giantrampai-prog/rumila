@@ -1,6 +1,6 @@
 {
   "id": "sains-siang-malam-di-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -82,7 +82,7 @@
       "id": "siram",
       "labelKey": "i-siram",
       "bin": "siang",
-      "emoji": "🚿"
+      "emoji": "🪴"
     },
     {
       "id": "kacamata",
@@ -106,7 +106,7 @@
       "id": "piyama",
       "labelKey": "i-piyama",
       "bin": "malam",
-      "emoji": "🥱"
+      "emoji": "🛌"
     },
     {
       "id": "kelelawar",

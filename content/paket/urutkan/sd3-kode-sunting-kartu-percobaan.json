@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -17,7 +17,7 @@
       "gunung-3": "tuang cuka ke dalam botol",
       "gunung-4": "busa meluap keluar botol",
       "gunung-5": "amati busanya sampai berhenti",
-      "gunung-6": "catat yang terjadi",
+      "gunung-6": "catat yang terjadi selagi busa masih ada",
       "gunung-7": "cuci botol dan nampan",
       "gunung-8": "simpan alat di lemari",
       "t-unggah": "Mengumpulkan tugas lewat aplikasi",
@@ -25,10 +25,10 @@
       "unggah-2": "buka aplikasi kelas",
       "unggah-3": "pilih tugas dari guru",
       "unggah-4": "tekan tombol unggah",
-      "unggah-5": "potret gambarmu",
-      "unggah-6": "tekan kirim",
-      "unggah-7": "tanda terkirim muncul",
-      "unggah-8": "guru memberi nilai",
+      "unggah-5": "kamera di aplikasi terbuka",
+      "unggah-6": "potret gambarmu",
+      "unggah-7": "tekan kirim",
+      "unggah-8": "tanda terkirim muncul",
       "t-nasi-goreng": "Membuat nasi goreng",
       "nasi-goreng-1": "tuang minyak ke wajan",
       "nasi-goreng-2": "panaskan minyak di atas kompor",
@@ -59,10 +59,10 @@
       "t-kapal": "Naik kapal laut",
       "kapal-1": "beli tiket di pelabuhan",
       "kapal-2": "tunggu di ruang tunggu",
-      "kapal-3": "kapal merapat",
+      "kapal-3": "petugas memanggil penumpang naik",
       "kapal-4": "naik lewat tangga kapal",
-      "kapal-5": "cari tempat duduk",
-      "kapal-6": "kapal berlayar",
+      "kapal-5": "cari tempat duduk sesuai tiket",
+      "kapal-6": "kapal berangkat setelah semua duduk",
       "kapal-7": "kapal sampai di pelabuhan tujuan",
       "kapal-8": "turun dari kapal",
       "t-ban": "Menambal ban sepeda",
@@ -70,16 +70,16 @@
       "ban-2": "keluarkan ban dalam",
       "ban-3": "cari lubangnya",
       "ban-4": "tambal lubangnya",
-      "ban-5": "masukkan lagi ban dalam",
+      "ban-5": "masukkan lagi ban dalam lalu pompa",
       "ban-6": "pasang roda",
-      "ban-7": "pompa ban",
+      "ban-7": "putar roda untuk cek tidak goyang",
       "ban-8": "coba kayuh sepeda",
       "t-cerita": "Menulis cerita di komputer",
       "cerita-1": "nyalakan komputer",
       "cerita-2": "buka aplikasi pengolah kata",
       "cerita-3": "ketik judul cerita",
       "cerita-4": "ketik isi cerita",
-      "cerita-5": "simpan berkasnya",
+      "cerita-5": "periksa ejaan ceritamu",
       "cerita-6": "tekan cetak",
       "cerita-7": "ambil kertas dari printer",
       "cerita-8": "kumpulkan ke guru",
@@ -87,7 +87,7 @@
       "es-lilin-1": "campur sirup dengan air",
       "es-lilin-2": "tuang ke plastik es",
       "es-lilin-3": "ikat plastiknya",
-      "es-lilin-4": "masukkan ke lemari es beku",
+      "es-lilin-4": "masukkan ke bagian pembeku kulkas",
       "es-lilin-5": "tunggu semalam",
       "es-lilin-6": "keluarkan es lilin",
       "es-lilin-7": "gunting ujung plastik",
@@ -97,9 +97,9 @@
       "pot-botol-2": "potong botol jadi dua",
       "pot-botol-3": "isi bagian bawah dengan tanah",
       "pot-botol-4": "tanam bibit cabai",
-      "pot-botol-5": "siram sedikit air",
-      "pot-botol-6": "taruh di dekat jendela",
-      "pot-botol-7": "tunggu beberapa minggu",
+      "pot-botol-5": "siram lalu taruh di dekat jendela",
+      "pot-botol-6": "tunggu sampai bunga cabai muncul",
+      "pot-botol-7": "tunggu bunganya jadi cabai merah",
       "pot-botol-8": "petik cabainya",
       "t-sop": "Memasak sayur sop",
       "sop-1": "cuci sayurannya",
@@ -107,7 +107,7 @@
       "sop-3": "masukkan ke panci berisi air",
       "sop-4": "rebus sampai empuk",
       "sop-5": "tambahkan garam",
-      "sop-6": "cicipi kuahnya",
+      "sop-6": "aduk sampai garam larut",
       "sop-7": "matikan kompor",
       "sop-8": "tuang sop ke mangkuk"
     },
@@ -120,7 +120,7 @@
       "gunung-3": "pour vinegar into the bottle",
       "gunung-4": "foam bubbles out of the bottle",
       "gunung-5": "watch the foam until it stops",
-      "gunung-6": "write down what happened",
+      "gunung-6": "write down what happened while the foam is still there",
       "gunung-7": "wash the bottle and tray",
       "gunung-8": "put the tools in the cupboard",
       "t-unggah": "Handing in work through an app",
@@ -128,10 +128,10 @@
       "unggah-2": "open the class app",
       "unggah-3": "choose the teacher's assignment",
       "unggah-4": "press the upload button",
-      "unggah-5": "take a photo of your drawing",
-      "unggah-6": "press send",
-      "unggah-7": "the sent mark appears",
-      "unggah-8": "the teacher gives a mark",
+      "unggah-5": "the camera in the app opens",
+      "unggah-6": "take a photo of your drawing",
+      "unggah-7": "press send",
+      "unggah-8": "the sent mark appears",
       "t-nasi-goreng": "Making fried rice",
       "nasi-goreng-1": "pour oil into the wok",
       "nasi-goreng-2": "heat the oil on the stove",
@@ -162,10 +162,10 @@
       "t-kapal": "Taking a ship",
       "kapal-1": "buy a ticket at the port",
       "kapal-2": "wait in the waiting room",
-      "kapal-3": "the ship docks",
+      "kapal-3": "the officer calls passengers to board",
       "kapal-4": "climb the ship's stairs",
-      "kapal-5": "find a seat",
-      "kapal-6": "the ship sails",
+      "kapal-5": "find the seat on your ticket",
+      "kapal-6": "the ship leaves once everyone is seated",
       "kapal-7": "the ship reaches the next port",
       "kapal-8": "get off the ship",
       "t-ban": "Fixing a flat bike tyre",
@@ -173,16 +173,16 @@
       "ban-2": "pull out the inner tube",
       "ban-3": "find the hole",
       "ban-4": "patch the hole",
-      "ban-5": "put the inner tube back",
+      "ban-5": "put the inner tube back and pump it up",
       "ban-6": "fit the wheel",
-      "ban-7": "pump up the tyre",
+      "ban-7": "spin the wheel to check it does not wobble",
       "ban-8": "test ride the bike",
       "t-cerita": "Writing a story on a computer",
       "cerita-1": "turn on the computer",
       "cerita-2": "open the word processor",
       "cerita-3": "type the story title",
       "cerita-4": "type the story",
-      "cerita-5": "save the file",
+      "cerita-5": "check the spelling of your story",
       "cerita-6": "press print",
       "cerita-7": "take the paper from the printer",
       "cerita-8": "hand it to the teacher",
@@ -190,7 +190,7 @@
       "es-lilin-1": "mix syrup with water",
       "es-lilin-2": "pour it into ice bags",
       "es-lilin-3": "tie the bags",
-      "es-lilin-4": "put them in the freezer",
+      "es-lilin-4": "put them in the freezer part of the fridge",
       "es-lilin-5": "wait overnight",
       "es-lilin-6": "take out the ice lollies",
       "es-lilin-7": "snip the end of the bag",
@@ -200,9 +200,9 @@
       "pot-botol-2": "cut the bottle in two",
       "pot-botol-3": "fill the bottom half with soil",
       "pot-botol-4": "plant a chilli seedling",
-      "pot-botol-5": "water it a little",
-      "pot-botol-6": "put it near a window",
-      "pot-botol-7": "wait a few weeks",
+      "pot-botol-5": "water it, then put it near a window",
+      "pot-botol-6": "wait until chilli flowers appear",
+      "pot-botol-7": "wait for the flowers to turn into red chillies",
       "pot-botol-8": "pick the chillies",
       "t-sop": "Cooking vegetable soup",
       "sop-1": "wash the vegetables",
@@ -210,7 +210,7 @@
       "sop-3": "put them in a pot of water",
       "sop-4": "boil until soft",
       "sop-5": "add salt",
-      "sop-6": "taste the soup",
+      "sop-6": "stir until the salt dissolves",
       "sop-7": "turn off the stove",
       "sop-8": "pour the soup into bowls"
     }
@@ -303,22 +303,22 @@
         {
           "id": "unggah-5",
           "labelKey": "unggah-5",
-          "emoji": "📷"
+          "emoji": "📸"
         },
         {
           "id": "unggah-6",
           "labelKey": "unggah-6",
-          "emoji": "📤"
+          "emoji": "📷"
         },
         {
           "id": "unggah-7",
           "labelKey": "unggah-7",
-          "emoji": "✅"
+          "emoji": "📤"
         },
         {
           "id": "unggah-8",
           "labelKey": "unggah-8",
-          "emoji": "💯"
+          "emoji": "✅"
         }
       ]
     },
@@ -477,7 +477,7 @@
         {
           "id": "kapal-3",
           "labelKey": "kapal-3",
-          "emoji": "🚢"
+          "emoji": "📢"
         },
         {
           "id": "kapal-4",
@@ -492,7 +492,7 @@
         {
           "id": "kapal-6",
           "labelKey": "kapal-6",
-          "emoji": "🌊"
+          "emoji": "🚢"
         },
         {
           "id": "kapal-7",
@@ -533,7 +533,7 @@
         {
           "id": "ban-5",
           "labelKey": "ban-5",
-          "emoji": "↩️"
+          "emoji": "💨"
         },
         {
           "id": "ban-6",
@@ -543,7 +543,7 @@
         {
           "id": "ban-7",
           "labelKey": "ban-7",
-          "emoji": "💨"
+          "emoji": "🔄"
         },
         {
           "id": "ban-8",
@@ -559,7 +559,7 @@
         {
           "id": "cerita-1",
           "labelKey": "cerita-1",
-          "emoji": "⏻"
+          "emoji": "🖥️"
         },
         {
           "id": "cerita-2",
@@ -579,7 +579,7 @@
         {
           "id": "cerita-5",
           "labelKey": "cerita-5",
-          "emoji": "💾"
+          "emoji": "🔍"
         },
         {
           "id": "cerita-6",
@@ -676,17 +676,17 @@
         {
           "id": "pot-botol-6",
           "labelKey": "pot-botol-6",
-          "emoji": "🪟"
+          "emoji": "🌼"
         },
         {
           "id": "pot-botol-7",
           "labelKey": "pot-botol-7",
-          "emoji": "📅"
+          "emoji": "🌶️"
         },
         {
           "id": "pot-botol-8",
           "labelKey": "pot-botol-8",
-          "emoji": "🌶️"
+          "emoji": "🧺"
         }
       ]
     },

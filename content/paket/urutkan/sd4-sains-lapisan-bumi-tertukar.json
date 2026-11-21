@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lapisan-bumi-tertukar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,23 +10,27 @@
   "locale": {
     "id": {
       "judul": "Lapisan Bumi yang Tertukar",
-      "instruksi": "Dua lapisan Bumi tertukar. Tukar sekali supaya urutannya benar sesuai arah perjalanan.",
+      "instruksi": "Dua lapisan Bumi tertukar. Tukar sekali supaya urutannya benar sesuai arah di judul.",
       "x-kerak": "kerak: kulit tipis berisi gunung, tanah, dan dasar laut",
       "x-mantel": "mantel: lapisan paling tebal dari batuan panas yang lunak",
       "x-intiluar": "inti luar: besi dan nikel yang cair",
       "x-intidalam": "inti dalam: bola besi dan nikel padat di pusat",
       "t-turun-penuh": "Bor raksasa menembus dari permukaan ke pusat Bumi",
-      "t-naik-penuh": "Kapsul naik dari pusat Bumi ke permukaan"
+      "t-naik-penuh": "Kapsul naik dari pusat Bumi ke permukaan",
+      "t-turun-lapis": "Urutkan dari lapisan paling luar ke paling dalam",
+      "t-naik-lapis": "Urutkan dari lapisan paling dalam ke paling luar"
     },
     "en": {
       "judul": "Mixed-Up Layers of the Earth",
-      "instruksi": "Two of the Earth's layers are swapped. Swap them once so the order matches the direction of travel.",
+      "instruksi": "Two of the Earth's layers are swapped. Swap them once so the order matches the direction in the title.",
       "x-kerak": "crust: a thin skin with mountains, soil, and the sea floor",
       "x-mantel": "mantle: the thickest layer, of hot, soft rock",
       "x-intiluar": "outer core: liquid iron and nickel",
       "x-intidalam": "inner core: a solid ball of iron and nickel at the centre",
       "t-turun-penuh": "A giant drill goes from the surface to the centre of the Earth",
-      "t-naik-penuh": "A capsule rises from the centre of the Earth to the surface"
+      "t-naik-penuh": "A capsule rises from the centre of the Earth to the surface",
+      "t-turun-lapis": "Order the layers from the outermost to the innermost",
+      "t-naik-lapis": "Order the layers from the innermost to the outermost"
     }
   },
   "knobs": {},
@@ -106,7 +110,7 @@
     },
     {
       "id": "turun-tanpa-inti-dalam",
-      "titleKey": "t-turun-penuh",
+      "titleKey": "t-turun-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -133,7 +137,7 @@
     },
     {
       "id": "turun-tanpa-kerak",
-      "titleKey": "t-turun-penuh",
+      "titleKey": "t-turun-lapis",
       "steps": [
         {
           "id": "mantel",
@@ -160,7 +164,7 @@
     },
     {
       "id": "turun-tanpa-mantel",
-      "titleKey": "t-turun-penuh",
+      "titleKey": "t-turun-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -187,7 +191,7 @@
     },
     {
       "id": "turun-tanpa-inti-luar",
-      "titleKey": "t-turun-penuh",
+      "titleKey": "t-turun-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -214,7 +218,7 @@
     },
     {
       "id": "naik-tanpa-kerak",
-      "titleKey": "t-naik-penuh",
+      "titleKey": "t-naik-lapis",
       "steps": [
         {
           "id": "intidalam",
@@ -241,7 +245,7 @@
     },
     {
       "id": "naik-tanpa-inti-dalam",
-      "titleKey": "t-naik-penuh",
+      "titleKey": "t-naik-lapis",
       "steps": [
         {
           "id": "intiluar",
@@ -268,7 +272,7 @@
     },
     {
       "id": "naik-tanpa-mantel",
-      "titleKey": "t-naik-penuh",
+      "titleKey": "t-naik-lapis",
       "steps": [
         {
           "id": "intidalam",
@@ -295,7 +299,7 @@
     },
     {
       "id": "naik-tanpa-inti-luar",
-      "titleKey": "t-naik-penuh",
+      "titleKey": "t-naik-lapis",
       "steps": [
         {
           "id": "intidalam",

@@ -1,6 +1,6 @@
 {
   "id": "sains-suara-siapa-di-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-kuda": "kuda",
       "t-lebah": "Siapa yang berbunyi nguuung nguuung?",
       "t-jangkrik": "Siapa yang berbunyi krik krik krik?",
-      "t-tokek": "Siapa yang berbunyi tokek! tokek!?",
+      "t-tokek": "Siapa yang berbunyi tokek, tokek?",
       "t-nyamuk": "Siapa yang berbunyi ngiiing?",
       "t-ular": "Siapa yang berbunyi sssss?",
       "t-tikus": "Siapa yang berbunyi cit cit?",
@@ -50,7 +50,7 @@
       "i-kuda": "horse",
       "t-lebah": "Who goes bzzz bzzz?",
       "t-jangkrik": "Who goes chirp chirp chirp?",
-      "t-tokek": "Who goes to-kek! to-kek!?",
+      "t-tokek": "Who goes to-kek, to-kek?",
       "t-nyamuk": "Who goes eeeeeee?",
       "t-ular": "Who goes hisss?",
       "t-tikus": "Who goes squeak squeak?",
@@ -134,7 +134,8 @@
       "id": "gagak",
       "labelKey": "i-gagak",
       "bin": "pilihan",
-      "emoji": "🐦‍⬛"
+      "emoji": "🐦",
+      "color": "#212121"
     },
     {
       "id": "kuda",

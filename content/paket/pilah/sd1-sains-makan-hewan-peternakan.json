@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peternakan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "i-bungamatahari": "bunga matahari",
       "i-murbei": "daun murbei",
       "i-kubis": "daun kubis",
-      "i-semanggi": "daun semanggi",
+      "i-semanggi": "rumput gajah",
       "i-nasi": "sisa nasi",
       "i-jangkrik": "jangkrik",
       "i-bungasepatu": "bunga sepatu",
@@ -44,7 +44,7 @@
       "i-bungamatahari": "sunflower",
       "i-murbei": "mulberry leaf",
       "i-kubis": "cabbage leaf",
-      "i-semanggi": "clover leaves",
+      "i-semanggi": "elephant grass",
       "i-nasi": "leftover rice",
       "i-jangkrik": "cricket",
       "i-bungasepatu": "hibiscus flower",
@@ -151,7 +151,8 @@
       "id": "semanggi",
       "labelKey": "i-semanggi",
       "bin": "sapi",
-      "emoji": "🍀"
+      "emoji": "🌿",
+      "color": "#558b2f"
     },
     {
       "id": "nasi",

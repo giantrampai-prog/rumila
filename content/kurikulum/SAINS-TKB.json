@@ -26,7 +26,8 @@
       "core": true,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Dunia: Jelajah Tubuh, lapisan organ. Instruksi audio 'Mana paru-parunya?'; anak memutar tubuh 3D dan menyentuh organ itu. Variasi ucap: organ berdenyut/menyala, anak menyebut namanya. Jebakan: perut (lambung) vs usus, jantung di kiri vs tengah — mulai 4 organ besar. Knob: 4 → 6 organ (tambah usus, ginjal). Kamus belum punya kode untuk organ tubuh (Cambridge Primary Science 1 'parts of the human body' belum ada di kamus; EYFS tidak punya ELG khusus) — dibiarkan kosong."
     },
@@ -85,7 +86,8 @@
       "core": false,
       "mechanics": [
         "cari",
-        "simulasi"
+        "simulasi",
+        "pilah"
       ],
       "catatan": "Ronde pengantar: tokoh melakukan kegiatan (lari, angkat tas, tarik napas, makan, membaca) dan bagian yang bekerja menyala di Jelajah Tubuh — ini pengajaran, belum bukti. Ronde bukti: kegiatan diumumkan ('Sekarang tokoh akan lari'), anak menyentuh bagian tubuh 3D (cari) SEBELUM animasi jalan; lalu kegiatan dimainkan dan bagian yang sebenarnya menyala, sehingga cocok/tidaknya terlihat sendiri. Bukti sah hanya bila sentuhan dibuat sebelum animasi. Jebakan: lari → jantung juga benar; terima satu dari dua jawaban yang ditandai sah. Pengaya. Knob: 3 → 5 kegiatan. Ide lain untuk PO: 'tulang melindungi organ' (tengkorak–otak, rusuk–jantung). Tanpa kode kerangka di kamus. [Tinjauan 24 Okt 2026: dari pilah kartu (mencocokkan fakta) menjadi tebak-lalu-lihat di tubuh 3D.]"
     },
@@ -155,7 +157,8 @@
       "core": true,
       "mechanics": [
         "simulasi",
-        "dagang"
+        "dagang",
+        "pilah"
       ],
       "catatan": "Simulasi piring 'Isi Piringku': empat bagian piring bergambar samar; anak menyeret satu item ke tiap bagian dari meja berisi 8–10 pilihan termasuk pengecoh (permen, soda). Bukti: tiap bagian terisi dengan kelompok yang tepat; pengecoh tidak di piring. Jebakan: buah ditaruh di bagian sayur — bagian berikon warna berbeda. Knob: 3 → 4 bagian; jumlah pengecoh."
     },
@@ -189,7 +192,8 @@
       ],
       "core": false,
       "mechanics": [
-        "dagang"
+        "dagang",
+        "pilah"
       ],
       "catatan": "Dagang lintas pelajaran: pedagang menjual buah dari Kebun Buah, sayur potong (wortel, timun), dan jajanan; anak punya 5 koin. Kemampuan yang dinilai di sini hanya SATU: isi keranjang termasuk kelompok sehari-hari. Membayar pas adalah konteks dari MAT.TKA.UANG-KENAL.02 dan dicatat terpisah sebagai bukti Matematika, bukan syarat lulus kompetensi ini. Jebakan: permen paling murah — godaan sengaja; jus kemasan manis dikira buah. Pengaya. Knob: uang 3 → 5 koin; jumlah jajanan pengecoh. [Tinjauan 24 Okt 2026: 'dengan uang terbatas' dilepas dari statement supaya satu kemampuan; bahasa 'sehat' diganti 'sehari-hari' konsisten dengan .01.]"
     },
@@ -267,7 +271,8 @@
       ],
       "core": true,
       "mechanics": [
-        "simulasi"
+        "simulasi",
+        "pilah"
       ],
       "catatan": "Simulasi merawat 5–7 'hari' singkat: tiap hari anak memilih siram/tidak dan tirai buka/tutup; tanaman tumbuh bila keduanya terpenuhi, layu bila salah satu kurang dua hari berturut-turut. Satu kemampuan: memenuhi kebutuhan tumbuhan. Bukti: tanaman berbunga di akhir dengan paling banyak 1 hari lalai. Jebakan: menyiram berlebihan — pada knob lanjut, air berlebih membuat daun menguning. Knob: jumlah hari 5 → 7; tambah variabel air berlebih."
     },
@@ -373,7 +378,8 @@
       "core": false,
       "mechanics": [
         "cari",
-        "navigasi"
+        "navigasi",
+        "pilah"
       ],
       "catatan": "Mekanik cari di dunia 3D Bawah Laut penuh (terumbu sampai palung). Instruksi: 'Cari hewan yang tinggal di laut dalam yang gelap'; anak menyelam ke lapisan itu dan menyentuh hewan yang memang berasal dari sana (ikan lentera, bukan ikan badut). Bukti: hewan yang disentuh termasuk daftar lapisan itu. Jebakan: hewan berenang melintas lapisan — kunci hewan pada lapisannya untuk aktivitas ini. Pengaya. Knob: 2 → 3 lapisan."
     },
@@ -436,7 +442,8 @@
       "core": true,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Dunia: Jelajah Angkasa. Instruksi audio 'Mana Bumi?'; anak mengarahkan pandangan/terbang dan menyentuh benda langit itu. Pengecoh: Mars (merah), bintang lain. Variasi ucap: benda disorot, anak menyebut namanya. Jebakan: Bulan vs Bumi dari jauh sama-sama bulat — jaga skala dan warna (biru-hijau vs abu). Knob: 3 target → 5 (tambah Mars, bintang). Kamus belum punya kode untuk benda langit (EYFS ELG tidak spesifik; Cambridge Primary Science 'Earth in space' belum ada di kamus) — dibiarkan kosong."
     },
@@ -465,7 +472,8 @@
       "core": false,
       "mechanics": [
         "simulasi",
-        "urutkan"
+        "urutkan",
+        "pilah"
       ],
       "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Ide lain untuk PO: mengurutkan ukuran Matahari > Bumi > Bulan (urutkan). Tanpa kode kerangka di kamus."
     },
@@ -500,7 +508,8 @@
       ],
       "core": true,
       "mechanics": [
-        "simulasi"
+        "simulasi",
+        "pilah"
       ],
       "catatan": "Simulasi: bola Bumi dengan penanda rumah/kota dan lampu Matahari tetap; anak memutar Bumi sampai penanda berada di sisi terang (siang) atau gelap (malam) sesuai permintaan. Bukti: penanda di belahan yang benar saat tombol 'pas' ditekan. Jebakan: anak memindahkan Matahari — Matahari dikunci. Knob: siang saja → siang/malam bergantian; 1 → 2 penanda ('rumah siang, rumah seberang malam')."
     },

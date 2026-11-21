@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -48,6 +48,7 @@
       "hiu-mati": "hiu purba mati dan tenggelam ke dasar laut",
       "hiu-timbun": "tertimbun pasir dan lumpur",
       "hiu-busuk": "bagian lunak hancur, gigi yang keras tertinggal",
+      "hiu-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "hiu-mineral": "mineral menggantikan gigi itu",
       "hiu-pantai": "ombak mengikis batuan, gigi fosil ditemukan di pantai",
       "s-mamut": "Fosil gajah purba",
@@ -125,6 +126,7 @@
       "hiu-mati": "an ancient shark dies and sinks to the sea floor",
       "hiu-timbun": "it is buried by sand and mud",
       "hiu-busuk": "the soft parts break down; the hard teeth are left",
+      "hiu-tekan": "layers pile up and press into sedimentary rock",
       "hiu-mineral": "minerals replace the tooth",
       "hiu-pantai": "waves wear the rock away and the fossil tooth is found on a beach",
       "s-mamut": "Ancient elephant fossil",
@@ -402,6 +404,11 @@
           "id": "busuk",
           "labelKey": "hiu-busuk",
           "emoji": "🦷"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "hiu-tekan",
+          "emoji": "📚"
         },
         {
           "id": "mineral",

@@ -332,7 +332,8 @@
       ],
       "core": true,
       "mechanics": [
-        "cari"
+        "cari",
+        "pilah"
       ],
       "catatan": "Dari bentuk abstrak ke benda nyata: jam dinding, atap rumah, jendela. Instruksi audio menyebut satu bentuk per putaran. Jebakan: benda dengan dua bentuk (rumah = kotak + segitiga); hindari di PAUD."
     },
@@ -359,7 +360,8 @@
       "core": true,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Pengenalan nama warna (reseptif) sebelum memilah. Instruksi audio: 'Mana yang merah?'. Empat benda sejenis beda warna. Belum ada kode kerangka internasional untuk pengenalan warna; dibiarkan kosong daripada memaksakan."
     },

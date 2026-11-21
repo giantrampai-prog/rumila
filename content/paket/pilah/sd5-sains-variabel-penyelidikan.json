@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-variabel-penyelidikan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENYELIDIKAN.01"
@@ -96,7 +96,10 @@
       "id": "banyakgula",
       "labelKey": "i-banyakgula",
       "bin": "pilihan",
-      "emoji": "🍚"
+      "shape": "circle",
+      "color": "#e0e0e0",
+      "scale": 0.4,
+      "count": 6
     },
     {
       "id": "tinggipapan",

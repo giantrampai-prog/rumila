@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-kelompok-hewan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -30,7 +30,7 @@
       "i-buaya": "buaya",
       "i-kadal": "kadal",
       "i-katak": "katak",
-      "i-salamander": "salamander",
+      "i-salamander": "kodok",
       "i-semut": "semut",
       "i-lebah": "lebah",
       "i-kupu": "kupu-kupu"
@@ -57,7 +57,7 @@
       "i-buaya": "crocodile",
       "i-kadal": "lizard",
       "i-katak": "frog",
-      "i-salamander": "salamander",
+      "i-salamander": "toad",
       "i-semut": "ant",
       "i-lebah": "bee",
       "i-kupu": "butterfly"
@@ -207,8 +207,8 @@
       "id": "salamander",
       "labelKey": "i-salamander",
       "bin": "amfibi",
-      "emoji": "🦎",
-      "color": "#ff7043"
+      "emoji": "🐸",
+      "color": "#5d4037"
     },
     {
       "id": "semut",

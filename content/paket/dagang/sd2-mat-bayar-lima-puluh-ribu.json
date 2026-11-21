@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bayar-lima-puluh-ribu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "dagang",
   "competencyIds": [
@@ -16,11 +16,11 @@
       "g-bola": "bola",
       "g-buku-cerita": "buku cerita",
       "g-topi": "topi",
-      "g-kaos": "kaos",
+      "g-kaos": "kaus",
       "g-payung": "payung",
       "g-boneka": "boneka",
       "g-puzzle": "puzzle",
-      "g-kotak-pensil": "kotak pensil",
+      "g-kotak-pensil": "krayon",
       "g-kotak-jus": "kotak jus",
       "g-jam-weker": "jam weker"
     },
@@ -36,7 +36,7 @@
       "g-payung": "umbrella",
       "g-boneka": "teddy bear",
       "g-puzzle": "jigsaw",
-      "g-kotak-pensil": "pencil case",
+      "g-kotak-pensil": "crayons",
       "g-kotak-jus": "juice box",
       "g-jam-weker": "alarm clock"
     }
@@ -115,7 +115,7 @@
       "id": "pensil",
       "labelKey": "g-kotak-pensil",
       "price": 12000,
-      "emoji": "✏️"
+      "emoji": "🖍️"
     },
     {
       "id": "jus",

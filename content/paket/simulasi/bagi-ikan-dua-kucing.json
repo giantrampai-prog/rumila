@@ -1,6 +1,6 @@
 {
   "id": "bagi-ikan-dua-kucing",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -28,15 +28,15 @@
   "knobs": {
     "max": {
       "min": 4,
-      "max": 12,
-      "default": 12,
+      "max": 8,
+      "default": 8,
       "step": 2,
-      "keterangan": "jumlah ikan terbanyak yang dibagi (target genap 2/4/…/12 sampai max)"
+      "keterangan": "jumlah ikan terbanyak yang dibagi (target genap 2/4/6/8 sampai max, tidak lebih dari 8 sesuai kompetensi)"
     }
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 8,
   "world": "rumah",
   "mode": "bagi",
   "items": [

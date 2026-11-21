@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-bumi-bulan-orbit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUMI-ORBIT.01"
@@ -90,7 +90,7 @@
       "id": "setahun",
       "labelKey": "i-setahun",
       "bin": "pilihan",
-      "emoji": "📅"
+      "emoji": "🗓️"
     },
     {
       "id": "sehari",
@@ -102,7 +102,7 @@
       "id": "sebulan",
       "labelKey": "i-sebulan",
       "bin": "pilihan",
-      "emoji": "🗓️"
+      "emoji": "📅"
     },
     {
       "id": "bulan",
@@ -132,7 +132,9 @@
       "id": "elips",
       "labelKey": "i-elips",
       "bin": "pilihan",
-      "emoji": "⬭"
+      "shape": "circle",
+      "color": "#90caf9",
+      "width": 1.6
     },
     {
       "id": "kotak",

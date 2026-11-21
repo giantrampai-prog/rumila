@@ -1,6 +1,6 @@
 {
   "id": "piring-kue-lebih-banyak",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -38,7 +38,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 9,
   "world": "kebun-pasar",
   "mode": "pilih",
   "bins": [
@@ -232,9 +232,9 @@
       "promptKey": "tBanyak",
       "choices": [
         "mangkuk-1",
-        "mangkuk-2"
+        "mangkuk-4"
       ],
-      "correct": "mangkuk-2"
+      "correct": "mangkuk-4"
     },
     {
       "id": "r10",
@@ -267,10 +267,10 @@
       "id": "r13",
       "promptKey": "tBanyak",
       "choices": [
-        "donat-2",
-        "donat-1"
+        "donat-5",
+        "donat-2"
       ],
-      "correct": "donat-2"
+      "correct": "donat-5"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil-perbaiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -35,7 +35,7 @@
       "pakis-gugur": "daun pakis purba gugur ke rawa",
       "pakis-timbun": "daun tertutup lumpur halus",
       "pakis-batu": "lumpur menumpuk dan memadat menjadi batu",
-      "pakis-cetak": "daun hancur, tetapi cetakannya tertinggal di batu",
+      "pakis-cetak": "daun hancur, cetakannya tertinggal di lumpur",
       "pakis-singkap": "batu dibelah, cetakan daun pakis terlihat",
       "s-bulubabi": "Fosil bulu babi",
       "bulubabi-mati": "bulu babi purba mati di laut dangkal",
@@ -106,7 +106,7 @@
       "pakis-gugur": "an ancient fern leaf falls into a swamp",
       "pakis-timbun": "the leaf is covered in fine mud",
       "pakis-batu": "the mud piles up and hardens into rock",
-      "pakis-cetak": "the leaf breaks down but its print stays in the rock",
+      "pakis-cetak": "the leaf breaks down; its print stays in the mud",
       "pakis-singkap": "the rock is split and the fern print can be seen",
       "s-bulubabi": "A sea urchin fossil",
       "bulubabi-mati": "an ancient sea urchin dies in shallow sea",
@@ -291,14 +291,14 @@
           "emoji": "🟫"
         },
         {
-          "id": "batu",
-          "labelKey": "pakis-batu",
-          "emoji": "🪨"
-        },
-        {
           "id": "cetak",
           "labelKey": "pakis-cetak",
           "emoji": "🍂"
+        },
+        {
+          "id": "batu",
+          "labelKey": "pakis-batu",
+          "emoji": "🪨"
         },
         {
           "id": "singkap",

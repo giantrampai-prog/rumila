@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-algoritma",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -58,7 +58,7 @@
       "remote-2": "keluarkan baterai lama",
       "remote-3": "masukkan baterai baru",
       "remote-4": "tutup lagi",
-      "remote-5": "arahkan ke TV",
+      "remote-5": "arahkan remote yang sudah tertutup ke TV",
       "remote-6": "tekan tombol daya",
       "remote-7": "TV menyala",
       "t-pesan-makanan": "Memesan makanan lewat aplikasi",
@@ -72,8 +72,8 @@
       "pesan-makanan-8": "makan bersama keluarga",
       "t-pesawat": "Naik pesawat",
       "pesawat-1": "bawa koper ke bandara",
-      "pesawat-2": "lapor dan ambil tiket naik",
-      "pesawat-3": "lewati pemeriksaan keamanan",
+      "pesawat-2": "lapor dan ambil pas naik pesawat",
+      "pesawat-3": "lewati pemeriksaan keamanan menuju ruang tunggu",
       "pesawat-4": "tunggu di ruang tunggu",
       "pesawat-5": "naik ke pesawat",
       "pesawat-6": "pasang sabuk pengaman",
@@ -148,7 +148,7 @@
       "remote-2": "take out the old batteries",
       "remote-3": "put in new batteries",
       "remote-4": "close it again",
-      "remote-5": "point it at the TV",
+      "remote-5": "point the closed remote at the TV",
       "remote-6": "press the power button",
       "remote-7": "the TV turns on",
       "t-pesan-makanan": "Ordering food on an app",
@@ -163,7 +163,7 @@
       "t-pesawat": "Taking a plane",
       "pesawat-1": "take your suitcase to the airport",
       "pesawat-2": "check in and get a boarding pass",
-      "pesawat-3": "go through the security check",
+      "pesawat-3": "go through the security check to the departure lounge",
       "pesawat-4": "wait in the departure lounge",
       "pesawat-5": "board the plane",
       "pesawat-6": "fasten your seat belt",
@@ -426,7 +426,7 @@
         {
           "id": "remote-1",
           "labelKey": "remote-1",
-          "emoji": "📡"
+          "emoji": "🪛"
         },
         {
           "id": "remote-2",

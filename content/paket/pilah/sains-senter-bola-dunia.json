@@ -1,6 +1,6 @@
 {
   "id": "sains-senter-bola-dunia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Senter dan Bola Dunia",
-      "instruksi": "Robot menyorot bola dunia dengan senter seperti Matahari. Sisi yang kena cahaya sedang siang. Dengarkan, lalu sentuh jawabannya.",
+      "instruksi": "Senter menyinari bola dunia seperti Matahari. Sisi yang terang sedang siang. Dengarkan, lalu sentuh jawabannya.",
       "pilihan": "pilihan",
       "i-layang": "anak bermain layang-layang",
       "i-sekolah": "anak berangkat sekolah",
@@ -37,7 +37,7 @@
     },
     "en": {
       "judul": "Flashlight and Globe",
-      "instruksi": "The robot shines a flashlight on a globe like the Sun. The lit side has daytime. Listen, then touch the answer.",
+      "instruksi": "A flashlight shines on the globe like the Sun. The bright side has daytime. Listen, then touch the answer.",
       "pilihan": "choices",
       "i-layang": "children flying kites",
       "i-sekolah": "children going to school",

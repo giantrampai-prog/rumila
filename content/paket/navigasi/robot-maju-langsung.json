@@ -1,6 +1,6 @@
 {
   "id": "robot-maju-langsung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Robot Step by Step",
-      "instruksi": "Press 'forward' one at a time until robot stands on the star."
+      "instruksi": "Press 'forward' one at a time until the robot stands on the star."
     }
   },
   "knobs": {

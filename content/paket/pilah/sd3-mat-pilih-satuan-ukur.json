@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-pilih-satuan-ukur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "i-panjang-bus": "panjang bus",
       "i-jarak-terbang-antarkota": "jarak terbang antarkota",
       "i-perjalanan-kereta-antarkota": "perjalanan kereta antarkota",
-      "i-jalan-mendaki-gunung": "jalan mendaki gunung",
+      "i-jalan-mendaki-gunung": "jarak jalan kaki ke puncak gunung",
       "i-berat-koin": "berat koin",
       "i-berat-telur": "berat telur",
       "i-berat-surat": "berat surat",
@@ -60,7 +60,7 @@
       "i-panjang-bus": "length of a bus",
       "i-jarak-terbang-antarkota": "flight between cities",
       "i-perjalanan-kereta-antarkota": "train trip between cities",
-      "i-jalan-mendaki-gunung": "hike up a mountain",
+      "i-jalan-mendaki-gunung": "walking distance to a mountain top",
       "i-berat-koin": "mass of a coin",
       "i-berat-telur": "mass of an egg",
       "i-berat-surat": "mass of a letter",
@@ -259,7 +259,7 @@
       "id": "galon",
       "labelKey": "i-air-galon",
       "bin": "l",
-      "emoji": "🫙"
+      "emoji": "💧"
     },
     {
       "id": "akuarium",

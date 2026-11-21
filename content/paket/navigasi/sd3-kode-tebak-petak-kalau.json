@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tebak-petak-kalau",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Guess the If Jump",
-      "instruksi": "Before each step, point to where robot will land: a rock means a two-square jump."
+      "instruksi": "Before each step, point to where the robot will land: a rock means a two-square jump."
     }
   },
   "knobs": {

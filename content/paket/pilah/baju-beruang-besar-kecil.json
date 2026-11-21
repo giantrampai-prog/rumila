@@ -1,6 +1,6 @@
 {
   "id": "baju-beruang-besar-kecil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Baju Beruang",
-      "instruksi": "Beruang besar dan beruang kecil mau berpakaian: sentuh yang diminta.",
+      "instruksi": "Beruang besar dan beruang kecil sedang bersiap: sentuh barang yang diminta.",
       "pilihan": "pilihan",
       "baju": "baju",
       "topi": "topi",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Bear Outfits",
-      "instruksi": "Big bear and little bear are getting dressed: touch the one asked for.",
+      "instruksi": "Big bear and little bear are getting ready: touch the thing asked for.",
       "pilihan": "choices",
       "baju": "shirt",
       "topi": "hat",

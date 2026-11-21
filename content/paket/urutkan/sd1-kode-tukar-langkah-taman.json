@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -337,7 +337,7 @@
         {
           "id": "nasi-1",
           "labelKey": "nasi-1",
-          "emoji": "🍚"
+          "emoji": "🌾"
         },
         {
           "id": "nasi-2",
@@ -481,7 +481,7 @@
         {
           "id": "jemur-1",
           "labelKey": "jemur-1",
-          "emoji": "🧺"
+          "emoji": "🪣"
         },
         {
           "id": "jemur-2",

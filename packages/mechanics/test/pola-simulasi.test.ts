@@ -214,6 +214,22 @@ describe("simulasi timbangan & alat", () => {
       expect(t.correctId).toBe(kecil.id);
     }
   });
+  it("timbangan: tipuan=0 tidak pernah memunculkan pasangan tipuan; tanpa knob semua pasangan", () => {
+    // kelapa (4, besar) vs balon & buku = pasangan biasa; sisanya pasangan tipuan (yang besar justru lebih ringan)
+    const p = paketSim("timbangan", [...BENDA_BERAT, { id: "kelapa", labelKey: "kelapa", role: "benda", value: 4, scale: 1.5 }]);
+    const tipuan = (items: { value?: number; scale?: number }[]) => {
+      const [a, b] = items;
+      const besar = (a.scale ?? 1) > (b.scale ?? 1) ? a : (b.scale ?? 1) > (a.scale ?? 1) ? b : null;
+      return !!besar && (besar.value ?? 0) < ((besar === a ? b : a).value ?? 0);
+    };
+    for (let seed = 0; seed < 80; seed++) {
+      expect(tipuan(buatRondeSimulasi(p, { tipuan: 0 }, seed).items)).toBe(false);
+      expect(tipuan(buatRondeSimulasi(p, { tipuan: 1 }, seed).items)).toBe(true);
+    }
+    expect(Array.from({ length: 80 }, (_, s) => tipuan(buatRondeSimulasi(p, {}, s).items)).some(Boolean)).toBe(true);
+    // semua pasangan tipuan → tipuan=0 tetap punya soal
+    expect(buatRondeSimulasi(paketSim("timbangan", BENDA_BERAT), { tipuan: 0 }, 1).items).toHaveLength(2);
+  });
   it("alat: hewan value 1 → penggaris-kubus, 2 → timbangan", () => {
     const p = paketSim("alat", ALAT);
     const dilihat = new Set<string>();

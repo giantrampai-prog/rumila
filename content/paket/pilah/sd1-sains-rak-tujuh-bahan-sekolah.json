@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-rak-tujuh-bahan-sekolah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -182,8 +182,8 @@
       "id": "rak",
       "labelKey": "i-rak",
       "bin": "kayu",
-      "emoji": "🗄️",
-      "color": "#a1887f"
+      "color": "#a1887f",
+      "shape": "rect"
     },
     {
       "id": "paku",

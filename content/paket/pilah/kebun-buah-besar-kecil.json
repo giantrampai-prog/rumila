@@ -1,6 +1,6 @@
 {
   "id": "kebun-buah-besar-kecil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Buah Besar Kecil",
-      "instruksi": "Di kebun ada dua buah yang sama: sentuh yang lebih besar atau lebih kecil sesuai permintaan.",
+      "instruksi": "Di kebun ada dua benda yang sama: sentuh yang lebih besar atau lebih kecil sesuai permintaan.",
       "pilihan": "pilihan",
       "semangka": "semangka",
       "labu": "labu",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Big and Small Fruit",
-      "instruksi": "Two of the same fruit grow in the garden: touch the bigger or smaller one as asked.",
+      "instruksi": "Two of the same thing are in the garden: touch the bigger or smaller one as asked.",
       "pilihan": "choices",
       "semangka": "watermelon",
       "labu": "pumpkin",

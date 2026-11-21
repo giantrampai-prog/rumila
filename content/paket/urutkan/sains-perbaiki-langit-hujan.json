@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-langit-hujan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "sawah-cerah": "cerah di sawah",
       "sawah-mendung": "awan tebal di atas sawah",
       "sawah-hujan": "hujan mengairi sawah",
-      "s-sekolah": "Pulang sekolah",
+      "s-sekolah": "Berangkat sekolah",
       "sekolah-cerah": "cerah saat berangkat",
       "sekolah-mendung": "langit jadi gelap",
       "sekolah-hujan": "hujan, payung dibuka",
@@ -71,7 +71,7 @@
       "sawah-cerah": "sunny over the rice field",
       "sawah-mendung": "thick clouds over the field",
       "sawah-hujan": "rain waters the field",
-      "s-sekolah": "Going home from school",
+      "s-sekolah": "Going to school",
       "sekolah-cerah": "sunny in the morning",
       "sekolah-mendung": "the sky turns dark",
       "sekolah-hujan": "rain, umbrellas open",

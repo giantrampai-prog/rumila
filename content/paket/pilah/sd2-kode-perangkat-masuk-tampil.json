@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perangkat-masuk-tampil",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "i-tv": "layar televisi",
       "i-layar-laptop": "layar laptop",
       "i-earphone": "earphone",
-      "i-toa": "pengeras suara",
+      "i-speaker": "speaker komputer",
       "i-struk": "printer struk kasir",
       "i-proyektor": "proyektor"
     },
@@ -40,7 +40,7 @@
       "i-tv": "TV screen",
       "i-layar-laptop": "laptop screen",
       "i-earphone": "earphones",
-      "i-toa": "loudspeaker",
+      "i-speaker": "computer speaker",
       "i-struk": "receipt printer",
       "i-proyektor": "projector"
     }
@@ -128,10 +128,10 @@
       "emoji": "🎧"
     },
     {
-      "id": "toa",
-      "labelKey": "i-toa",
+      "id": "speaker",
+      "labelKey": "i-speaker",
       "bin": "tampil",
-      "emoji": "📢"
+      "emoji": "🔊"
     },
     {
       "id": "struk",

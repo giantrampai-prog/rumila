@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tumbuhan-bukit-berbunga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.02"
@@ -144,13 +144,13 @@
       "id": "tanduk",
       "labelKey": "i-tanduk",
       "bin": "tidak",
-      "emoji": "🦌"
+      "emoji": "🌿"
     },
     {
       "id": "ekorkuda",
       "labelKey": "i-ekorkuda",
       "bin": "tidak",
-      "emoji": "🎋"
+      "emoji": "🌿"
     },
     {
       "id": "lumuthati",
@@ -162,7 +162,7 @@
       "id": "lumuttembok",
       "labelKey": "i-lumuttembok",
       "bin": "tidak",
-      "emoji": "🧱"
+      "emoji": "🟩"
     },
     {
       "id": "damar",

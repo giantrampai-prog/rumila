@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-garis-simetri-bangun-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "i11": "belah ketupat",
       "i12": "oval",
       "i13": "angka 0",
-      "i14": "angka 8",
+      "i14": "persegi panjang 6 × 3 cm",
       "i15": "persegi panjang 5 × 2 cm"
     },
     "en": {
@@ -49,7 +49,7 @@
       "i11": "rhombus",
       "i12": "oval",
       "i13": "the digit 0",
-      "i14": "the digit 8",
+      "i14": "rectangle 6 × 3 cm",
       "i15": "rectangle 5 × 2 cm"
     }
   },
@@ -127,8 +127,7 @@
     {
       "id": "satu-9",
       "labelKey": "i9",
-      "bin": "satu",
-      "emoji": "🏠"
+      "bin": "satu"
     },
     {
       "id": "satu-10",

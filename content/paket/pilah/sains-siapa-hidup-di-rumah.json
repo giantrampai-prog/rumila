@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-hidup-di-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -313,7 +313,7 @@
       "promptKey": "t-ikan2",
       "choices": [
         "ikan",
-        "jam",
+        "kunci",
         "sofa"
       ],
       "correct": "ikan"

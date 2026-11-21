@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-benda-atau-bahan-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -126,8 +126,8 @@
       "id": "logam",
       "labelKey": "i-logam",
       "bin": "bahan",
-      "emoji": "⚙️",
-      "color": "#90a4ae"
+      "color": "#90a4ae",
+      "shape": "square"
     },
     {
       "id": "bukutulis",

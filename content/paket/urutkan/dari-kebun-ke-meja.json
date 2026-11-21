@@ -1,6 +1,6 @@
 {
   "id": "dari-kebun-ke-meja",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dari Kebun ke Meja",
-      "instruksi": "Susun gambar supaya ceritanya urut dari menanam sampai memanen.",
+      "instruksi": "Susun gambar supaya ceritanya urut dari kebun sampai ke meja makan.",
       "tanam": "Menanam apel",
       "sayur": "Memasak sayur",
       "biji": "tanam biji",
@@ -18,7 +18,7 @@
       "bunga": "bunga mekar",
       "buah": "buah matang",
       "panen": "panen ke keranjang",
-      "cuci": "cuci sayur",
+      "beli": "beli sayur",
       "potong": "potong sayur",
       "masak": "masak di panci",
       "sajikan": "sajikan di piring",
@@ -50,7 +50,7 @@
       "t-wortel": "Cerita wortel",
       "wortel-tanam": "tanam biji wortel",
       "wortel-cabut": "cabut wortel",
-      "wortel-cuci": "cuci wortel",
+      "wortel-siram": "siram setiap hari",
       "wortel-potong": "potong wortel",
       "wortel-sup": "masak sup",
       "t-kentang": "Cerita kentang",
@@ -71,7 +71,7 @@
     },
     "en": {
       "judul": "From Garden to Table",
-      "instruksi": "Put the pictures in order, from planting to harvest.",
+      "instruksi": "Put the pictures in order so the story goes from the garden to the dinner table.",
       "tanam": "Growing an apple",
       "sayur": "Cooking vegetables",
       "biji": "plant the seed",
@@ -79,7 +79,7 @@
       "bunga": "blossom",
       "buah": "ripe fruit",
       "panen": "harvest into the basket",
-      "cuci": "wash the vegetables",
+      "beli": "buy the vegetables",
       "potong": "chop them",
       "masak": "cook in the pot",
       "sajikan": "serve on a plate",
@@ -111,7 +111,7 @@
       "t-wortel": "The carrot story",
       "wortel-tanam": "plant carrot seeds",
       "wortel-cabut": "pull up the carrot",
-      "wortel-cuci": "wash the carrot",
+      "wortel-siram": "water it every day",
       "wortel-potong": "cut the carrot",
       "wortel-sup": "cook soup",
       "t-kentang": "The potato story",
@@ -182,9 +182,9 @@
       "titleKey": "sayur",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "cuci",
-          "emoji": "🥬"
+          "id": "beli",
+          "labelKey": "beli",
+          "emoji": "🛒"
         },
         {
           "id": "potong",
@@ -343,14 +343,14 @@
           "emoji": "🌱"
         },
         {
+          "id": "siram",
+          "labelKey": "wortel-siram",
+          "emoji": "💧"
+        },
+        {
           "id": "cabut",
           "labelKey": "wortel-cabut",
           "emoji": "🥕"
-        },
-        {
-          "id": "cuci",
-          "labelKey": "wortel-cuci",
-          "emoji": "💧"
         },
         {
           "id": "potong",

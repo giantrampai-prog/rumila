@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pisahkan-campuran",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,7 +72,8 @@
       "id": "ayakan",
       "labelKey": "i-ayakan",
       "bin": "pilihan",
-      "emoji": "🥅"
+      "shape": "circle",
+      "color": "#bcaaa4"
     },
     {
       "id": "magnet",
@@ -84,7 +85,8 @@
       "id": "saring",
       "labelKey": "i-saring",
       "bin": "pilihan",
-      "emoji": "🧻"
+      "shape": "square",
+      "color": "#fafafa"
     }
   ],
   "pilihan": [
@@ -103,7 +105,6 @@
       "promptKey": "t-paku",
       "choices": [
         "magnet",
-        "ayakan",
         "saring"
       ],
       "correct": "magnet"
@@ -183,8 +184,7 @@
       "promptKey": "t-jepit",
       "choices": [
         "magnet",
-        "saring",
-        "ayakan"
+        "saring"
       ],
       "correct": "magnet"
     },

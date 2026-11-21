@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-jalan-makanan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.01"
@@ -16,6 +16,7 @@
       "cerna-lambung": "lambung: diaduk dengan cairan asam",
       "cerna-usushalus": "usus halus: sari makanan diserap ke darah",
       "cerna-ususbesar": "usus besar: air diserap",
+      "cerna-rektum": "rektum: sisa ditampung sebentar",
       "cerna-anus": "anus: sisa dikeluarkan",
       "s-roti": "Perjalanan sepotong roti",
       "roti-kerongkongan": "kerongkongan: roti yang sudah lumat didorong turun",
@@ -26,6 +27,7 @@
       "roti-anus": "anus: sisa roti dikeluarkan",
       "s-pisang": "Perjalanan sebuah pisang",
       "pisang-mulut": "mulut: pisang dikunyah dan dibasahi ludah",
+      "pisang-kerongkongan": "kerongkongan: pisang yang sudah lumat didorong turun",
       "pisang-lambung": "lambung: pisang diaduk dengan cairan asam",
       "pisang-usushalus": "usus halus: sari pisang diserap ke darah",
       "pisang-ususbesar": "usus besar: air diserap dari sisa pisang",
@@ -34,6 +36,7 @@
       "s-telur": "Perjalanan sebutir telur rebus",
       "telur-mulut": "mulut: telur dikunyah dan dibasahi ludah",
       "telur-kerongkongan": "kerongkongan: telur yang sudah lumat didorong turun",
+      "telur-lambung": "lambung: telur diaduk dengan cairan asam",
       "telur-usushalus": "usus halus: sari telur diserap ke darah",
       "telur-ususbesar": "usus besar: air diserap dari sisa telur",
       "telur-rektum": "rektum: sisa telur ditampung sebentar",
@@ -42,6 +45,7 @@
       "bayam-mulut": "mulut: bayam dikunyah dan dibasahi ludah",
       "bayam-kerongkongan": "kerongkongan: bayam yang sudah lumat didorong turun",
       "bayam-lambung": "lambung: bayam diaduk dengan cairan asam",
+      "bayam-usushalus": "usus halus: sari bayam diserap ke darah",
       "bayam-ususbesar": "usus besar: air diserap dari sisa bayam",
       "bayam-rektum": "rektum: sisa bayam ditampung sebentar",
       "bayam-anus": "anus: sisa bayam dikeluarkan",
@@ -53,12 +57,15 @@
       "apel-anus": "anus: sisa apel dikeluarkan",
       "s-sate": "Perjalanan setusuk sate",
       "sate-kerongkongan": "kerongkongan: sate yang sudah lumat didorong turun",
+      "sate-lambung": "lambung: sate diaduk dengan cairan asam",
       "sate-usushalus": "usus halus: sari sate diserap ke darah",
       "sate-ususbesar": "usus besar: air diserap dari sisa sate",
       "sate-rektum": "rektum: sisa sate ditampung sebentar",
       "sate-anus": "anus: sisa sate dikeluarkan",
       "s-jagung": "Perjalanan sebatang jagung rebus",
       "jagung-mulut": "mulut: jagung dikunyah dan dibasahi ludah",
+      "jagung-kerongkongan": "kerongkongan: jagung yang sudah lumat didorong turun",
+      "jagung-lambung": "lambung: jagung diaduk dengan cairan asam",
       "jagung-usushalus": "usus halus: sari jagung diserap ke darah",
       "jagung-ususbesar": "usus besar: air diserap dari sisa jagung",
       "jagung-rektum": "rektum: sisa jagung ditampung sebentar",
@@ -66,19 +73,23 @@
       "s-ikan": "Perjalanan sepotong ikan goreng",
       "ikan-kerongkongan": "kerongkongan: ikan yang sudah lumat didorong turun",
       "ikan-lambung": "lambung: ikan diaduk dengan cairan asam",
+      "ikan-usushalus": "usus halus: sari ikan diserap ke darah",
       "ikan-ususbesar": "usus besar: air diserap dari sisa ikan",
       "ikan-rektum": "rektum: sisa ikan ditampung sebentar",
       "ikan-anus": "anus: sisa ikan dikeluarkan",
       "s-tempe": "Perjalanan sepotong tempe",
       "tempe-mulut": "mulut: tempe dikunyah dan dibasahi ludah",
+      "tempe-kerongkongan": "kerongkongan: tempe yang sudah lumat didorong turun",
       "tempe-lambung": "lambung: tempe diaduk dengan cairan asam",
       "tempe-usushalus": "usus halus: sari tempe diserap ke darah",
+      "tempe-ususbesar": "usus besar: air diserap dari sisa tempe",
       "tempe-rektum": "rektum: sisa tempe ditampung sebentar",
       "tempe-anus": "anus: sisa tempe dikeluarkan",
       "s-kentang": "Perjalanan sebuah kentang rebus",
       "kentang-kerongkongan": "kerongkongan: kentang yang sudah lumat didorong turun",
       "kentang-lambung": "lambung: kentang diaduk dengan cairan asam",
       "kentang-usushalus": "usus halus: sari kentang diserap ke darah",
+      "kentang-ususbesar": "usus besar: air diserap dari sisa kentang",
       "kentang-rektum": "rektum: sisa kentang ditampung sebentar",
       "kentang-anus": "anus: sisa kentang dikeluarkan"
     },
@@ -91,6 +102,7 @@
       "cerna-lambung": "stomach: churned with acid",
       "cerna-usushalus": "small intestine: nutrients absorbed into the blood",
       "cerna-ususbesar": "large intestine: water absorbed",
+      "cerna-rektum": "rectum: waste is stored for a while",
       "cerna-anus": "anus: waste leaves the body",
       "s-roti": "The journey of a slice of bread",
       "roti-kerongkongan": "oesophagus: the mashed bread is pushed down",
@@ -101,6 +113,7 @@
       "roti-anus": "anus: the waste leaves the body",
       "s-pisang": "The journey of a banana",
       "pisang-mulut": "mouth: the banana is chewed and wetted with saliva",
+      "pisang-kerongkongan": "oesophagus: the mashed banana is pushed down",
       "pisang-lambung": "stomach: the banana is churned with acid",
       "pisang-usushalus": "small intestine: nutrients from the banana pass into the blood",
       "pisang-ususbesar": "large intestine: water is taken back from what is left",
@@ -109,6 +122,7 @@
       "s-telur": "The journey of a boiled egg",
       "telur-mulut": "mouth: the egg is chewed and wetted with saliva",
       "telur-kerongkongan": "oesophagus: the mashed egg is pushed down",
+      "telur-lambung": "stomach: the egg is churned with acid",
       "telur-usushalus": "small intestine: nutrients from the egg pass into the blood",
       "telur-ususbesar": "large intestine: water is taken back from what is left",
       "telur-rektum": "rectum: the waste is stored for a while",
@@ -117,6 +131,7 @@
       "bayam-mulut": "mouth: the spinach is chewed and wetted with saliva",
       "bayam-kerongkongan": "oesophagus: the mashed spinach is pushed down",
       "bayam-lambung": "stomach: the spinach is churned with acid",
+      "bayam-usushalus": "small intestine: nutrients from the spinach pass into the blood",
       "bayam-ususbesar": "large intestine: water is taken back from what is left",
       "bayam-rektum": "rectum: the waste is stored for a while",
       "bayam-anus": "anus: the waste leaves the body",
@@ -128,12 +143,15 @@
       "apel-anus": "anus: the waste leaves the body",
       "s-sate": "The journey of a stick of satay",
       "sate-kerongkongan": "oesophagus: the mashed satay is pushed down",
+      "sate-lambung": "stomach: the satay is churned with acid",
       "sate-usushalus": "small intestine: nutrients from the satay pass into the blood",
       "sate-ususbesar": "large intestine: water is taken back from what is left",
       "sate-rektum": "rectum: the waste is stored for a while",
       "sate-anus": "anus: the waste leaves the body",
       "s-jagung": "The journey of a boiled corn cob",
       "jagung-mulut": "mouth: the corn is chewed and wetted with saliva",
+      "jagung-kerongkongan": "oesophagus: the mashed corn is pushed down",
+      "jagung-lambung": "stomach: the corn is churned with acid",
       "jagung-usushalus": "small intestine: nutrients from the corn pass into the blood",
       "jagung-ususbesar": "large intestine: water is taken back from what is left",
       "jagung-rektum": "rectum: the waste is stored for a while",
@@ -141,19 +159,23 @@
       "s-ikan": "The journey of a piece of fried fish",
       "ikan-kerongkongan": "oesophagus: the mashed fish is pushed down",
       "ikan-lambung": "stomach: the fish is churned with acid",
+      "ikan-usushalus": "small intestine: nutrients from the fish pass into the blood",
       "ikan-ususbesar": "large intestine: water is taken back from what is left",
       "ikan-rektum": "rectum: the waste is stored for a while",
       "ikan-anus": "anus: the waste leaves the body",
       "s-tempe": "The journey of a piece of tempeh",
       "tempe-mulut": "mouth: the tempeh is chewed and wetted with saliva",
+      "tempe-kerongkongan": "oesophagus: the mashed tempeh is pushed down",
       "tempe-lambung": "stomach: the tempeh is churned with acid",
       "tempe-usushalus": "small intestine: nutrients from the tempeh pass into the blood",
+      "tempe-ususbesar": "large intestine: water is taken back from what is left",
       "tempe-rektum": "rectum: the waste is stored for a while",
       "tempe-anus": "anus: the waste leaves the body",
       "s-kentang": "The journey of a boiled potato",
       "kentang-kerongkongan": "oesophagus: the mashed potato is pushed down",
       "kentang-lambung": "stomach: the potato is churned with acid",
       "kentang-usushalus": "small intestine: nutrients from the potato pass into the blood",
+      "kentang-ususbesar": "large intestine: water is taken back from what is left",
       "kentang-rektum": "rectum: the waste is stored for a while",
       "kentang-anus": "anus: the waste leaves the body"
     }
@@ -206,6 +228,13 @@
           "shape": "rect",
           "color": "#ce93d8",
           "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "cerna-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
         },
         {
           "id": "anus",
@@ -266,6 +295,11 @@
           "emoji": "👄"
         },
         {
+          "id": "kerongkongan",
+          "labelKey": "pisang-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
           "id": "lambung",
           "labelKey": "pisang-lambung",
           "shape": "circle",
@@ -313,6 +347,12 @@
           "emoji": "⬇️"
         },
         {
+          "id": "lambung",
+          "labelKey": "telur-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
           "id": "usushalus",
           "labelKey": "telur-usushalus",
           "shape": "rect",
@@ -358,6 +398,12 @@
           "labelKey": "bayam-lambung",
           "shape": "circle",
           "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "bayam-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
         },
         {
           "id": "ususbesar",
@@ -427,6 +473,12 @@
           "emoji": "⬇️"
         },
         {
+          "id": "lambung",
+          "labelKey": "sate-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
           "id": "usushalus",
           "labelKey": "sate-usushalus",
           "shape": "rect",
@@ -461,6 +513,17 @@
           "id": "mulut",
           "labelKey": "jagung-mulut",
           "emoji": "👄"
+        },
+        {
+          "id": "kerongkongan",
+          "labelKey": "jagung-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "jagung-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
         },
         {
           "id": "usushalus",
@@ -505,6 +568,12 @@
           "color": "#ffab91"
         },
         {
+          "id": "usushalus",
+          "labelKey": "ikan-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
           "id": "ususbesar",
           "labelKey": "ikan-ususbesar",
           "shape": "rect",
@@ -535,6 +604,11 @@
           "emoji": "👄"
         },
         {
+          "id": "kerongkongan",
+          "labelKey": "tempe-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
           "id": "lambung",
           "labelKey": "tempe-lambung",
           "shape": "circle",
@@ -545,6 +619,13 @@
           "labelKey": "tempe-usushalus",
           "shape": "rect",
           "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "tempe-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
         },
         {
           "id": "rektum",
@@ -580,6 +661,13 @@
           "labelKey": "kentang-usushalus",
           "shape": "rect",
           "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "kentang-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
         },
         {
           "id": "rektum",

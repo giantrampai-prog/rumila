@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-sederhanakan-pecahan-resep",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Resep yang Disederhanakan",
-      "instruksi": "Bagi pembilang dan penyebut dengan FPB-nya sampai tidak bisa dibagi lagi. Taruh di rak bentuk paling sederhana.",
+      "instruksi": "Bagi pembilang dan penyebut dengan FPB-nya, maka pecahan langsung menjadi paling sederhana. Taruh di raknya.",
       "b-duapertiga": "2/3",
       "b-empatperlima": "4/5",
       "b-tigaperdelapan": "3/8",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "Simplified Recipes",
-      "instruksi": "Divide top and bottom by their HCF until you cannot divide any more. Put it on the simplest-form shelf.",
+      "instruksi": "Divide top and bottom by their HCF, and the fraction is straight away in simplest form. Put it on its shelf.",
       "b-duapertiga": "2/3",
       "b-empatperlima": "4/5",
       "b-tigaperdelapan": "3/8",

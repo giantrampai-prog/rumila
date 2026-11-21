@@ -1,6 +1,6 @@
 {
   "id": "mana-dulu-alam",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -29,11 +29,11 @@
       "t_katak": "Cerita katak",
       "s_katak_berudu": "berudu",
       "s_katak_katak": "katak",
-      "t_pagi": "Cerita pagi",
-      "s_pagi_malam": "malam",
-      "s_pagi_pagi": "pagi",
+      "t_es": "Cerita es",
+      "s_es_batu": "es batu",
+      "s_es_cair": "es mencair",
       "t_bunga2": "Cerita bunga",
-      "s_bunga2_kuncup": "kuncup",
+      "s_bunga2_kuncup": "tunas bunga",
       "s_bunga2_mekar": "bunga mekar",
       "t_kelapa": "Cerita kelapa",
       "s_kelapa_pohon": "kelapa di pohon",
@@ -63,12 +63,12 @@
       "t_katak": "The frog",
       "s_katak_berudu": "tadpole",
       "s_katak_katak": "frog",
-      "t_pagi": "The morning",
-      "s_pagi_malam": "night",
-      "s_pagi_pagi": "morning",
+      "t_es": "Ice story",
+      "s_es_batu": "an ice cube",
+      "s_es_cair": "the ice melts",
       "t_bunga2": "The flower",
-      "s_bunga2_kuncup": "bud",
-      "s_bunga2_mekar": "bloomed flower",
+      "s_bunga2_kuncup": "a flower sprout",
+      "s_bunga2_mekar": "the flower blooms",
       "t_kelapa": "The coconut",
       "s_kelapa_pohon": "coconut on the tree",
       "s_kelapa_jatuh": "coconut on the ground",
@@ -190,18 +190,18 @@
       ]
     },
     {
-      "id": "pagi",
-      "titleKey": "t_pagi",
+      "id": "es",
+      "titleKey": "t_es",
       "steps": [
         {
-          "id": "malam",
-          "labelKey": "s_pagi_malam",
-          "emoji": "🌙"
+          "id": "batu",
+          "labelKey": "s_es_batu",
+          "emoji": "🧊"
         },
         {
-          "id": "pagi",
-          "labelKey": "s_pagi_pagi",
-          "emoji": "🌅"
+          "id": "cair",
+          "labelKey": "s_es_cair",
+          "emoji": "💧"
         }
       ]
     },
@@ -212,12 +212,12 @@
         {
           "id": "kuncup",
           "labelKey": "s_bunga2_kuncup",
-          "emoji": "🌷"
+          "emoji": "🌱"
         },
         {
           "id": "mekar",
           "labelKey": "s_bunga2_mekar",
-          "emoji": "🌺"
+          "emoji": "🌷"
         }
       ]
     },

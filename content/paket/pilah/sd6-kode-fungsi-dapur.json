@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-fungsi-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "q2": "def tambah_gula(x): return x + 3. Berapa tambah_gula(tambah_gula(2))?",
       "c7": "12",
       "c8": "7",
-      "q3": "def iris(): iris tomat 4 kali. Program: ulangi 3 kali: iris(). Berapa irisan dibuat?",
+      "q3": "def iris(): iris tomat 4 kali. Program: ulangi 3 kali: iris(). Berapa kali pisau mengiris?",
       "c9": "20",
       "c10": "10",
       "c11": "25",
@@ -57,7 +57,7 @@
       "q2": "def add_sugar(x): return x + 3. What is add_sugar(add_sugar(2))?",
       "c7": "12",
       "c8": "7",
-      "q3": "def slice(): slice the tomato 4 times. Program: repeat 3 times: slice(). How many slices are made?",
+      "q3": "def slice(): slice the tomato 4 times. Program: repeat 3 times: slice(). How many cuts are made?",
       "c9": "20",
       "c10": "10",
       "c11": "25",

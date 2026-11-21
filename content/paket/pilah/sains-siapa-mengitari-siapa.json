@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-mengitari-siapa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siapa Mengitari Siapa?",
-      "instruksi": "Kita membuat model tata surya kecil di kelas. Dengarkan pertanyaannya: siapa di tengah, siapa yang mengitari. Lalu sentuh jawabannya.",
+      "instruksi": "Dengarkan, lalu sentuh siapa di tengah atau siapa yang mengitari.",
       "pilihan": "pilihan",
       "i-matahari": "Matahari",
       "i-bumi": "Bumi",
@@ -22,7 +22,7 @@
       "t-5": "Siapa yang mengitari Matahari sambil membawa Bulan?",
       "t-6": "Matahari sudah di tengah, Bumi di lintasannya. Bola kecil yang berputar di dekat Bumi adalah…",
       "t-7": "Benda yang diam di tengah dan dikitari Bumi adalah…",
-      "t-8": "Bulan selalu dekat dengan… dan mengitarinya.",
+      "t-8": "Bulan selalu dekat dan mengitari…",
       "t-9": "Lintasan kecil di sekeliling Bumi kita pasang untuk…",
       "t-10": "Lintasan besar di sekeliling Matahari kita pasang untuk…",
       "t-11": "Yang paling besar dan menjadi pusat model adalah…",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Who Goes Around Whom?",
-      "instruksi": "We are making a small solar system model in class. Listen: who is in the middle, and who goes around? Then touch the answer.",
+      "instruksi": "Listen, then touch who is in the middle or who goes around.",
       "pilihan": "choices",
       "i-matahari": "the Sun",
       "i-bumi": "Earth",
@@ -42,7 +42,7 @@
       "t-5": "Who goes around the Sun while taking the Moon along?",
       "t-6": "The Sun is in the middle and Earth is on its path. The small ball circling near Earth is…",
       "t-7": "The one that stays in the middle while Earth goes around it is…",
-      "t-8": "The Moon always stays close to… and goes around it.",
+      "t-8": "The Moon always stays close to and goes around…",
       "t-9": "The small path around Earth is for…",
       "t-10": "The big path around the Sun is for…",
       "t-11": "The biggest one, at the centre of the model, is…",

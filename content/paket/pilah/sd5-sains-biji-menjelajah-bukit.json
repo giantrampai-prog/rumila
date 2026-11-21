@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-menjelajah-bukit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -8,7 +8,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Biji Menyeberangi Sungai",
+      "judul": "Biji Menjelajah",
       "instruksi": "Lihat bentuk buah atau bijinya, lalu taruh di cara biji itu tersebar.",
       "b-angin": "terbawa angin",
       "b-hewan": "dibawa hewan",
@@ -25,13 +25,13 @@
       "i-ketapang": "buah ketapang berongga udara, mengapung di laut",
       "i-pandan": "buah pandan laut mengapung terbawa ombak",
       "i-nyamplung": "buah nyamplung bulat mengapung di sungai",
-      "i-teratai": "biji teratai lepas dari polongnya dan hanyut di kolam",
-      "i-pletekan": "buah pletekan pecah melontarkan biji saat kena air",
+      "i-keben": "buah keben (butun) bergabus, mengapung di laut",
+      "i-pletekan": "buah pletekan pecah sendiri dan melontarkan biji",
       "i-jarak": "buah jarak kering pecah dan melontarkan biji",
       "i-lamtoro": "polong lamtoro kering terbelah dan memuntir"
     },
     "en": {
-      "judul": "Seeds Across the River",
+      "judul": "Seeds on the Move",
       "instruksi": "Look at the shape of the fruit or seed, then put it with the way it spreads.",
       "b-angin": "carried by wind",
       "b-hewan": "carried by animals",
@@ -48,8 +48,8 @@
       "i-ketapang": "sea almond fruit with air pockets, floating at sea",
       "i-pandan": "screwpine fruit floating on the waves",
       "i-nyamplung": "round Alexandrian laurel fruit floating down a river",
-      "i-teratai": "lotus seed falling from its pod and drifting on a pond",
-      "i-pletekan": "popping-pod fruit that flings seeds when wet",
+      "i-keben": "corky keben (sea poison tree) fruit floating on the sea",
+      "i-pletekan": "popping-pod fruit that bursts by itself and flings its seeds",
       "i-jarak": "dry castor fruit that splits and shoots out seeds",
       "i-lamtoro": "dry leucaena pod that splits and twists open"
     }
@@ -163,16 +163,16 @@
       "emoji": "🟤"
     },
     {
-      "id": "teratai",
-      "labelKey": "i-teratai",
+      "id": "keben",
+      "labelKey": "i-keben",
       "bin": "air",
-      "emoji": "🪷"
+      "emoji": "🌰"
     },
     {
       "id": "pletekan",
       "labelKey": "i-pletekan",
       "bin": "letup",
-      "emoji": "💦"
+      "emoji": "🪻"
     },
     {
       "id": "jarak",

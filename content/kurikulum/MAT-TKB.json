@@ -138,7 +138,8 @@
       "core": false,
       "mechanics": [
         "dagang",
-        "cari"
+        "cari",
+        "simulasi"
       ],
       "catatan": "Pembeli minta 'sekitar segini' sambil menunjuk keranjang penuh; benda tampil 2 detik, anak menggeser penanda di garis 0–20, lalu dihitung bersama sebagai umpan balik. Bukti dari posisi penanda saja. Jebakan: benda bertumpuk tampak lebih sedikit. Knob: lama tampil 3 → 1,5 detik, jumlah 8 → 20. Pengaya."
     },
@@ -296,7 +297,8 @@
       "core": false,
       "mechanics": [
         "pilah",
-        "rawat"
+        "rawat",
+        "simulasi"
       ],
       "catatan": "Dua anak kucing, 6 ikan; bagi adil. Bukti: kedua piring sama. Benih setengah. Pengaya."
     },
@@ -713,7 +715,8 @@
       "core": true,
       "mechanics": [
         "rawat",
-        "dagang"
+        "dagang",
+        "pilah"
       ],
       "catatan": "Bukan pertanyaan audio: situasi game yang menuntut membaca piktogram. Putaran bergantian: tukang antar minta rak paling sedikit diisi; pemborong minta kolom paling banyak. Bukti: rak yang dipilih benar. Jebakan: dua kolom hampir sama. Knob: 3 → 4 kolom, selisih 2 → 1."
     }

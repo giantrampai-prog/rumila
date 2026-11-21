@@ -50,9 +50,12 @@ function visualGood(g: Good | undefined, id: string): VisualSpec {
 
 function visualUang(nilai: number): VisualSpec & { label: string } {
   const label = formatRibuan(nilai);
-  if (nilai <= KOIN) return { emoji: "🪙", color: "#ffd23f", label };
+  // koin seribu emas tanpa latar; koin < 1000 berlatar perak supaya beda dari seribu
+  if (nilai === KOIN) return { emoji: "🪙", color: "#ffd23f", label };
+  if (nilai < KOIN) return { emoji: "🪙", color: "#cfd4dc", label, latar: true };
+  // uang kertas: 💵 sama untuk semua pecahan, jadi warna pecahan digambar sebagai latar
   const warna: Record<number, string> = { 2000: "#cfd4dc", 5000: "#b5835a", 10000: "#9b7bd6", 20000: "#7ec8a0", 50000: "#6ab0e8", 100000: "#e88a8a" };
-  return { emoji: "💵", color: warna[nilai] ?? "#cfd4dc", label };
+  return { emoji: "💵", color: warna[nilai] ?? "#cfd4dc", label, latar: true };
 }
 
 function formatRibuan(n: number) {
@@ -835,11 +838,29 @@ function ModeGabung(c: Ctx) {
 
 /* ---------------- sisa ---------------- */
 
+/** Tema adegan sisa per dunia paket. `kolam` = adegan ikan asli (kolam biru, 🎣 ditangkap, kabut, ember pelet). */
+interface TemaSisa {
+  latar: string; ditangkap: string; tutupIkon: string; tutup: string; wadah: string; wadahIkon: string; tombol: string; ikonTombol: string;
+  /** kata kerja pengambilan (ditangkap/dibeli/dipetik/diambil) */
+  kerja: string;
+}
+const TEMA_SISA: Record<string, TemaSisa> = {
+  kolam: { latar: "radial-gradient(ellipse at 50% 40%,#9fdcff,#3fa9e8)", ditangkap: "🎣", tutupIkon: "🌫️", tutup: "Kolam tertutup kabut", wadah: "Piring", wadahIkon: "🍽️", tombol: "Beri makan", ikonTombol: "set_meal", kerja: "ditangkap" },
+  "toko-kue": { latar: "radial-gradient(ellipse at 50% 40%,#fff7ec,#f6d7b0)", ditangkap: "🛍️", tutupIkon: "🧺", tutup: "Piring ditutup", wadah: "Taruh di sini", wadahIkon: "🍽️", tombol: "Selesai", ikonTombol: "check", kerja: "dibeli" },
+  kebun: { latar: "radial-gradient(ellipse at 50% 40%,#d9f2c4,#9ccc65)", ditangkap: "🧺", tutupIkon: "🍃", tutup: "Bedeng ditutup daun", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: "dipetik" },
+};
+const TEMA_SISA_UMUM: TemaSisa = { latar: "radial-gradient(ellipse at 50% 40%,#fffaf0,#f1dcb4)", ditangkap: "✋", tutupIkon: "📦", tutup: "Kotak ditutup", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: "diambil" };
+
 function ModeSisa(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, wajah } = c;
+  const { paket, ronde, onJawab, hasil, terkunci, wajah, nama, visual } = c;
   const [awal, diambil] = ronde.kelompok;
+  // benda utama dari mesin (tersedia), penanda = yang ditaruh anak (pesanan); paket lama tanpa pesanan → penanda = benda
+  const benda = Object.keys(ronde.tersedia)[0] ?? "";
+  const penanda = ronde.pesanan[0]?.goodId ?? benda;
+  const kolam = paket.world === "kolam";
+  const tema = TEMA_SISA[paket.world ?? ""] ?? TEMA_SISA_UMUM;
   const [fase, setFase] = useState<"kolam" | "tangkap" | "kabut">("kolam");
-  const [pelet, setPelet] = useState(0);
+  const [taruh, setTaruh] = useState(0);
   const { hint, bantu } = useBantu(c.onHint);
   useEffect(() => {
     const t1 = setTimeout(() => { setFase("tangkap"); sfx.plop(); }, 1300);
@@ -847,51 +868,57 @@ function ModeSisa(c: Ctx) {
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
   const pos = useMemo(() => posisiBenda(awal), [awal]);
-  const teks = `Ada ${awal} ikan di kolam. ${diambil} ikan ditangkap. Beri makan ikan yang tersisa, satu pelet untuk satu ikan.`;
+  const nb = nama(benda), np = nama(penanda);
+  const vBenda = visual(benda), vPenanda = visual(penanda);
+  const teks = kolam
+    ? `Ada ${awal} ${nb} di kolam. ${diambil} ${nb} ditangkap. Beri makan ${nb} yang tersisa, satu ${np} untuk satu ${nb}.`
+    : penanda === benda
+      ? `Ada ${awal} ${nb}. ${diambil} ${nb} ${tema.kerja}. Taruh ${np} sebanyak yang tersisa.`
+      : `Ada ${awal} ${nb}. ${diambil} ${nb} ${tema.kerja}. Taruh ${np} sebanyak ${nb} yang tersisa, satu ${np} untuk satu ${nb}.`;
 
   return (
     <Kunci terkunci={terkunci}>
       <Pembeli
         wajah={wajah} teksUcap={teks} hasil={hasil}
-        balon={<div className="flex flex-wrap items-center gap-1"><BarisPesanan v={{ emoji: "🐟" }} qty={awal} label="ikan" /><span style={{ ...Tebal, fontSize: 20 }}>−</span><BarisPesanan v={{ emoji: "🎣" }} qty={diambil} label="ditangkap" /><span style={{ ...Tebal, fontSize: 20 }}>= ?</span></div>}
-        jawabanBenar={`${awal} − ${diambil} = ${ronde.target} ikan`}
+        balon={<div className="flex flex-wrap items-center gap-1"><BarisPesanan v={vBenda} qty={awal} label={nb} /><span style={{ ...Tebal, fontSize: 20 }}>−</span><BarisPesanan v={{ emoji: tema.ditangkap }} qty={diambil} label={tema.kerja} /><span style={{ ...Tebal, fontSize: 20 }}>= ?</span></div>}
+        jawabanBenar={`${awal} − ${diambil} = ${ronde.target} ${nb}`}
       />
       <Lapak>
-        <div className="relative overflow-hidden rounded-[18px]" style={{ height: awal <= 5 ? 150 : awal <= 10 ? 200 : 250, background: "radial-gradient(ellipse at 50% 40%,#9fdcff,#3fa9e8)", boxShadow: "inset 0 4px 0 rgba(0,0,0,.08)" }} aria-label={fase === "kabut" ? "Kolam tertutup kabut" : `${fase === "kolam" ? awal : awal - diambil} ikan di kolam`}>
+        <div className="relative overflow-hidden rounded-[18px]" style={{ height: awal <= 5 ? 150 : awal <= 10 ? 200 : 250, background: tema.latar, boxShadow: "inset 0 4px 0 rgba(0,0,0,.08)" }} aria-label={fase === "kabut" ? tema.tutup : `${fase === "kolam" ? awal : awal - diambil} ${nb}`}>
           {Array.from({ length: awal }, (_, i) => {
-            const ditangkap = i >= awal - diambil;
+            const pergi = i >= awal - diambil;
             return (
-              <span key={i} className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-700" style={{ ...pos[i], fontSize: 34, lineHeight: 1, opacity: ditangkap && fase !== "kolam" ? 0 : 1, transform: ditangkap && fase !== "kolam" ? "translate(-50%,-150%) scale(.4)" : undefined }} aria-hidden>🐟</span>
+              <span key={i} className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-700" style={{ ...pos[i], lineHeight: 1, opacity: pergi && fase !== "kolam" ? 0 : 1, transform: pergi && fase !== "kolam" ? "translate(-50%,-150%) scale(.4)" : undefined }} aria-hidden><Benda v={vBenda} size={awal > 10 ? 32 : 40} /></span>
             );
           })}
-          {fase === "tangkap" && <span className="akademi-pop absolute top-2 right-3" style={{ fontSize: 40 }} aria-hidden>🎣</span>}
+          {fase === "tangkap" && <span className="akademi-pop absolute top-2 right-3" style={{ fontSize: 40 }} aria-hidden>{tema.ditangkap}</span>}
           <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-700" style={{ background: "repeating-radial-gradient(circle at 30% 50%, rgba(255,255,255,.95) 0 18px, rgba(240,246,255,.92) 18px 36px)", opacity: fase === "kabut" && !(hint || hasil) ? 1 : 0, pointerEvents: "none" }} aria-hidden>
-            <span style={{ ...Tebal, fontSize: 20, opacity: 0.6 }}>🌫️ Berapa ikan tersisa?</span>
+            <span style={{ ...Tebal, fontSize: 20, opacity: 0.6 }}>{tema.tutupIkon} Berapa {nb} tersisa?</span>
           </div>
         </div>
       </Lapak>
       <div className="grid grid-cols-[auto_1fr] gap-2">
         <button
           type="button"
-          onClick={() => { if (fase === "kabut" && pelet < awal) { sfx.pick(); setPelet((n) => n + 1); } }}
+          onClick={() => { if (fase === "kabut" && taruh < awal) { sfx.pick(); setTaruh((n) => n + 1); } }}
           disabled={terkunci || fase !== "kabut"}
-          aria-label="Ember pelet, ketuk untuk ambil satu"
-          className={`flex min-h-24 min-w-24 flex-col items-center justify-center rounded-[22px] active:scale-95 disabled:opacity-60 ${hint && pelet < ronde.target ? "akademi-bounce" : ""}`}
+          aria-label={`Ambil satu ${np}`}
+          className={`flex min-h-24 min-w-24 flex-col items-center justify-center rounded-[22px] active:scale-95 disabled:opacity-60 ${hint && taruh < ronde.target ? "akademi-bounce" : ""}`}
           style={{ background: "linear-gradient(180deg,#9aa5b5,#6d7a8d)", boxShadow: "0 5px 0 #3f4958", color: "#fff", fontFamily: BALOO, fontWeight: 800, fontSize: 14 }}
         >
-          <span style={{ fontSize: 40, lineHeight: 1 }}>🪣</span>
-          <span>🟤 Pelet</span>
+          {kolam ? <span style={{ fontSize: 40, lineHeight: 1 }}>🪣</span> : <Benda v={vPenanda} size={40} />}
+          <span className="flex items-center gap-1">{kolam && <Benda v={vPenanda} size={16} />}{np}</span>
         </button>
         <Keranjang
-          ikon="🍽️" judul="Piring"
-          kosong="Ketuk ember untuk menaruh pelet"
-          isi={Array.from({ length: pelet }, (_, k) => ({ key: String(k), v: { emoji: "🟤" } }))}
-          onKembali={() => { sfx.plop(); setPelet((n) => Math.max(0, n - 1)); }}
+          ikon={tema.wadahIkon} judul={tema.wadah}
+          kosong={`Ketuk untuk menaruh ${np}`}
+          isi={Array.from({ length: taruh }, (_, k) => ({ key: String(k), v: vPenanda }))}
+          onKembali={() => { sfx.plop(); setTaruh((n) => Math.max(0, n - 1)); }}
         />
       </div>
       <div className="flex gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { pelet } }); }} disabled={terkunci || fase !== "kabut" || pelet === 0}><Icon name="set_meal" size={26} /> Beri makan</TombolBesar>
+        <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [penanda]: taruh } }); }} disabled={terkunci || fase !== "kabut" || taruh === 0}><Icon name={tema.ikonTombol} size={26} /> {tema.tombol}</TombolBesar>
       </div>
     </Kunci>
   );

@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-jam-setengah-pagi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jam Setengah: Pagi",
-      "instruksi": "Setengah 4 artinya setengah jalan menuju pukul 4, yaitu 3.30. Taruh tiap jam di raknya.",
+      "instruksi": "Setengah 7 artinya setengah jalan menuju pukul 7, yaitu 6.30. Taruh tiap jam di raknya.",
       "b-pukul-6": "pukul 6",
       "b-setengah-7": "setengah 7",
       "b-pukul-7": "pukul 7",
@@ -44,7 +44,7 @@
     },
     "en": {
       "judul": "Half Past: Morning",
-      "instruksi": "Look at both hands. Half past 3 is 3:30. Put each clock on its shelf.",
+      "instruksi": "Look at both hands. Half past 6 is 6:30. Put each clock on its shelf.",
       "b-pukul-6": "6 o'clock",
       "b-setengah-7": "half past 6",
       "b-pukul-7": "7 o'clock",

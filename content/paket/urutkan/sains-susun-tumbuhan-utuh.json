@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -58,13 +58,12 @@
       "t-mangga": "Pohon mangga dari bawah ke atas",
       "mangga-akar": "akar di dalam tanah",
       "mangga-batang": "batang pohon",
-      "mangga-ranting": "ranting",
-      "mangga-daun": "daun rimbun di atas",
+      "mangga-daun": "daun rimbun",
       "t-cemara": "Pohon cemara dari bawah ke atas",
       "cemara-akar": "akar di dalam tanah",
       "cemara-batang": "batang pohon",
-      "cemara-ranting": "ranting",
-      "cemara-daun": "daun jarum di atas"
+      "cemara-daun": "daun jarum di atas",
+      "mangga-bunga": "bunga mangga di pucuk"
     },
     "en": {
       "judul": "Build the Whole Plant",
@@ -116,13 +115,12 @@
       "t-mangga": "Mango tree from bottom to top",
       "mangga-akar": "root under the soil",
       "mangga-batang": "tree trunk",
-      "mangga-ranting": "branches",
-      "mangga-daun": "leafy top",
+      "mangga-daun": "leafy branches",
       "t-cemara": "Pine tree from bottom to top",
       "cemara-akar": "root under the soil",
       "cemara-batang": "tree trunk",
-      "cemara-ranting": "branches",
-      "cemara-daun": "needle leaves on top"
+      "cemara-daun": "needle leaves on top",
+      "mangga-bunga": "mango flowers at the top"
     }
   },
   "knobs": {
@@ -394,14 +392,14 @@
           "emoji": "🪵"
         },
         {
-          "id": "ranting",
-          "labelKey": "mangga-ranting",
-          "emoji": "🌿"
-        },
-        {
           "id": "daun",
           "labelKey": "mangga-daun",
-          "emoji": "🌳"
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "mangga-bunga",
+          "emoji": "🌼"
         }
       ]
     },
@@ -419,11 +417,6 @@
           "id": "batang",
           "labelKey": "cemara-batang",
           "emoji": "🪵"
-        },
-        {
-          "id": "ranting",
-          "labelKey": "cemara-ranting",
-          "emoji": "🌿"
         },
         {
           "id": "daun",

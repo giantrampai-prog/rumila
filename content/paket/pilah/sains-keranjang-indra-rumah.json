@@ -1,6 +1,6 @@
 {
   "id": "sains-keranjang-indra-rumah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Keranjang Pancaindra",
+      "judul": "Keranjang Indra",
       "instruksi": "Taruh tiap benda ke indra yang memakainya: lampu ke mata, lonceng ke telinga.",
       "mata": "mata",
       "telinga": "telinga",
@@ -42,7 +42,7 @@
       "i-madu": "madu manis"
     },
     "en": {
-      "judul": "Five-Sense Baskets",
+      "judul": "Sense Baskets",
       "instruksi": "Put each thing with the sense that uses it: the lamp with the eye, the bell with the ear.",
       "mata": "eye",
       "telinga": "ear",

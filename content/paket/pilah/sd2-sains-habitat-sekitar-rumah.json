@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-sekitar-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,9 +15,8 @@
       "b-pohon": "pohon",
       "b-kolam": "kolam",
       "b-tanah": "dalam tanah",
-      "i-kelabang": "kelabang",
-      "i-kumbang": "kumbang tanah",
-      "i-lumut": "lumut",
+      "i-kelabang": "siput di bawah batu lembap",
+      "i-kumbang": "kumbang yang bersembunyi di bawah batu",
       "i-burung": "burung di sarang",
       "i-tupai": "tupai",
       "i-ulat": "ulat di daun",
@@ -35,9 +34,8 @@
       "b-pohon": "tree",
       "b-kolam": "pond",
       "b-tanah": "in the soil",
-      "i-kelabang": "centipede",
-      "i-kumbang": "ground beetle",
-      "i-lumut": "moss",
+      "i-kelabang": "snail under a damp stone",
+      "i-kumbang": "beetle hiding under a stone",
       "i-burung": "bird in a nest",
       "i-tupai": "squirrel",
       "i-ulat": "caterpillar on a leaf",
@@ -101,7 +99,7 @@
       "id": "kelabang",
       "labelKey": "i-kelabang",
       "bin": "batu",
-      "emoji": "🐛",
+      "emoji": "🐌",
       "color": "#8d6e63"
     },
     {
@@ -109,12 +107,6 @@
       "labelKey": "i-kumbang",
       "bin": "batu",
       "emoji": "🪲"
-    },
-    {
-      "id": "lumut",
-      "labelKey": "i-lumut",
-      "bin": "batu",
-      "emoji": "🌱"
     },
     {
       "id": "burung",

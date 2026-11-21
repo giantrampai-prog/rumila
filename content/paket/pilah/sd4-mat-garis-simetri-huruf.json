@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-garis-simetri-huruf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -201,10 +201,7 @@
     {
       "id": "i21",
       "labelKey": "i21",
-      "bin": "satu",
-      "scale": 0.5,
-      "shape": "triangle",
-      "color": "#fd861d"
+      "bin": "satu"
     }
   ]
 }

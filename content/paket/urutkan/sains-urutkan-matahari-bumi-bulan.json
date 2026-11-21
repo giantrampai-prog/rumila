@@ -1,6 +1,6 @@
 {
   "id": "sains-urutkan-matahari-bumi-bulan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -12,25 +12,23 @@
       "judul": "Paling Besar ke Paling Kecil di Langit",
       "instruksi": "Susun benda langit dari yang paling besar ke paling kecil: Matahari, Bumi, lalu Bulan.",
       "s-besar": "Dari paling besar",
-      "s-kecil": "Dari paling kecil",
       "besar-matahari": "Matahari paling besar",
       "besar-bumi": "Bumi",
       "besar-bulan": "Bulan paling kecil",
-      "kecil-bulan": "Bulan paling kecil",
-      "kecil-bumi": "Bumi",
-      "kecil-matahari": "Matahari paling besar"
+      "polos-matahari": "Matahari",
+      "polos-bumi": "Bumi",
+      "polos-bulan": "Bulan"
     },
     "en": {
       "judul": "Biggest to Smallest in the Sky",
       "instruksi": "Put the space objects in order from biggest to smallest: Sun, Earth, then Moon.",
       "s-besar": "From the biggest",
-      "s-kecil": "From the smallest",
       "besar-matahari": "the Sun, the biggest",
       "besar-bumi": "Earth",
       "besar-bulan": "the Moon, the smallest",
-      "kecil-bulan": "the Moon, the smallest",
-      "kecil-bumi": "Earth",
-      "kecil-matahari": "the Sun, the biggest"
+      "polos-matahari": "the Sun",
+      "polos-bumi": "Earth",
+      "polos-bulan": "the Moon"
     }
   },
   "knobs": {
@@ -39,7 +37,7 @@
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "selalu tiga benda: Matahari, Bumi, Bulan; urutan kedua membalik arah (kecil ke besar)"
+      "keterangan": "selalu tiga benda: Matahari, Bumi, Bulan; satu arah saja, dari paling besar ke paling kecil"
     }
   },
   "assets": [],
@@ -74,27 +72,27 @@
       ]
     },
     {
-      "id": "kecil",
-      "titleKey": "s-kecil",
+      "id": "besar-polos",
+      "titleKey": "s-besar",
       "steps": [
         {
-          "id": "bulan",
-          "labelKey": "kecil-bulan",
-          "emoji": "🌕",
-          "scale": 0.5,
-          "color": "#263238"
+          "id": "matahari",
+          "labelKey": "polos-matahari",
+          "emoji": "🌞",
+          "scale": 2
         },
         {
           "id": "bumi",
-          "labelKey": "kecil-bumi",
-          "emoji": "🌍",
+          "labelKey": "polos-bumi",
+          "emoji": "🌏",
           "scale": 1
         },
         {
-          "id": "matahari",
-          "labelKey": "kecil-matahari",
-          "emoji": "☀️",
-          "scale": 2
+          "id": "bulan",
+          "labelKey": "polos-bulan",
+          "emoji": "🌕",
+          "scale": 0.5,
+          "color": "#263238"
         }
       ]
     }

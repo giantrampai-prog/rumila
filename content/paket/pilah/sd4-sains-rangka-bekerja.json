@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rangka-bekerja",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rangka Sedang Bekerja",
-      "instruksi": "Dengarkan kejadian di taman, lalu sentuh tugas rangka yang paling terlihat di situ.",
+      "instruksi": "Dengarkan kejadiannya, lalu sentuh tugas rangka yang paling terlihat di situ.",
       "b-pilihan": "pilihan",
       "i-lindungi": "melindungi organ",
       "i-topang": "menopang tubuh",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "The Skeleton at Work",
-      "instruksi": "Listen to what happens in the park, then touch the skeleton's job that shows most clearly.",
+      "instruksi": "Listen to what happens, then touch the skeleton's job that shows most clearly.",
       "b-pilihan": "choices",
       "i-lindungi": "protecting organs",
       "i-topang": "supporting the body",
