@@ -1,35 +1,50 @@
 "use client";
 
 // Ruang Orang Tua → Langganan. Harga per keluarga (rumah), paket & rekening diatur owner di admin Kampus
-// (pulaurinoya.com/admin → Kampus Rinoya → Harga & paket). Pembayaran sementara MANUAL: orang tua memilih paket
+// (pulaurinoya.com/admin → Kampus Rinoya → Harga & paket): satu paket dasar 1 anak + add-on per anak tambahan,
+// periode bulan/3 bulan/6 bulan/tahun, harga coret di semua tier. Pembayaran sementara MANUAL: orang tua memilih paket
 // dan periode, mentransfer jumlah persis (harga + kode unik 3 digit agar mudah dicocokkan di mutasi), lalu
 // mengirim bukti transfer ke bucket privat `bukti-bayar`. Owner menerima/menolak di menu Pembayaran;
 // begitu diterima, `akademi_status_langganan` mengembalikan `aktif_sampai`. Harga dihitung ulang di trigger DB.
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { supabase } from "@/lib/supabase/client";
 import { useCloud } from "@/lib/supabase/family";
+import { useRumila } from "@/lib/store";
+import { anakRumah } from "@/lib/akademi/konten";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.06)]";
 const TOMBOL = "inline-flex h-11 items-center justify-center gap-1.5 rounded-full px-5 text-[14px] font-extrabold transition-transform active:scale-95 disabled:opacity-50";
 
-type Periode = "bulan" | "semester" | "tahun";
-const PERIODE: [Periode, string, string][] = [
-  ["bulan", "Bulanan", "/bulan"],
-  ["semester", "Per semester", "/6 bulan"],
-  ["tahun", "Tahunan", "/tahun"],
+type Periode = "bulan" | "triwulan" | "semester" | "tahun";
+const PERIODE: [Periode, string, string, number][] = [
+  ["bulan", "Bulanan", "/bulan", 1],
+  ["triwulan", "3 bulan", "/3 bulan", 3],
+  ["semester", "6 bulan", "/6 bulan", 6],
+  ["tahun", "Tahunan", "/tahun", 12],
 ];
-type Paket = { id: string; nama: string; deskripsi: string | null; maks_anak: number; harga_bulan: number | null; harga_semester: number | null; harga_tahun: number | null; unggulan: boolean };
+type Tarif = { harga?: number; coret?: number; tambah?: number; tambah_coret?: number };
+type Paket = { id: string; nama: string; deskripsi: string | null; maks_anak: number; tarif: Partial<Record<Periode, Tarif>>; label_promo: string | null; unggulan: boolean };
 type Atur = { bank: string; no_rekening: string; atas_nama: string; trial_hari: number; kode_unik: boolean; catatan: string | null };
-type Bayar = { id: string; paket_id: string; periode: Periode; jumlah: number; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; bukti_path: string | null; dibuat_at: string; sampai: string | null };
+type Bayar = { id: string; paket_id: string; periode: Periode; anak_tambahan: number; jumlah: number; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; bukti_path: string | null; dibuat_at: string; sampai: string | null };
 type Status = { trial_sampai: string; aktif_sampai: string | null; paket_id: string | null; periode: Periode | null; menunggu: number } | null;
 
 export const rupiah = (n: number) => "Rp" + n.toLocaleString("id-ID");
 const tgl = (iso: string) => new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
-const hargaDari = (p: Paket, per: Periode) => (per === "bulan" ? p.harga_bulan : per === "semester" ? p.harga_semester : p.harga_tahun);
+const tarifDari = (p: Paket, per: Periode): Tarif => p.tarif?.[per] ?? {};
+const hargaDari = (p: Paket, per: Periode) => tarifDari(p, per).harga ?? null;
+/** Total satu periode untuk `anak` anak (1 = dasar saja). */
+const totalDari = (p: Paket, per: Periode, anak: number) => {
+  const t = tarifDari(p, per);
+  if (!t.harga) return null;
+  const n = Math.max(0, anak - 1);
+  return { harga: t.harga + (t.tambah ?? 0) * n, coret: (t.coret ?? t.harga) + (t.tambah_coret ?? t.tambah ?? 0) * n };
+};
+const namaPeriode = (per: Periode) => PERIODE.find(([id]) => id === per)?.[1] ?? per;
+const anakTeks = (n: number) => `${n} anak`;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /** Kecilkan foto bukti (sisi panjang 1400 px, JPEG) supaya hemat kuota HP. */
@@ -46,6 +61,8 @@ async function siapkanBukti(file: File): Promise<Blob> {
 function pesanGalat(m: string) {
   if (/paket_tidak_tersedia/.test(m)) return "Paket ini sedang tidak dijual. Muat ulang halaman.";
   if (/periode_tidak_tersedia/.test(m)) return "Periode ini tidak tersedia untuk paket tersebut.";
+  if (/anak_terlalu_banyak/.test(m)) return "Jumlah anak melebihi batas paket.";
+  if (/addon_tidak_tersedia/.test(m)) return "Tambahan anak belum tersedia untuk periode ini.";
   if (/relation .* does not exist|schema cache/i.test(m)) return "Langganan belum dibuka di server.";
   return m;
 }
@@ -57,16 +74,19 @@ export function LanggananKeluarga() {
   const [riwayat, setRiwayat] = useState<Bayar[]>([]);
   const [status, setStatus] = useState<Status>(null);
   const [err, setErr] = useState("");
-  const [pilih, setPilih] = useState<{ paket: Paket; periode: Periode } | null>(null);
+  const [pilih, setPilih] = useState<{ paket: Paket; periode: Periode; anak: number } | null>(null);
+  const members = useRumila((s) => s.members);
+  const anakDiRumah = useMemo(() => Math.max(1, anakRumah(members).length), [members]);
+  const [anakPilih, setAnak] = useState<number | null>(null);
   const [periode, setPeriode] = useState<Periode>("bulan");
 
   const muat = useCallback(async () => {
     if (!familyId || !UUID.test(familyId)) return;
     const sb = supabase();
     const [p, a, r, s] = await Promise.all([
-      sb.from("akademi_paket").select("id,nama,deskripsi,maks_anak,harga_bulan,harga_semester,harga_tahun,unggulan").order("urut"),
+      sb.from("akademi_paket").select("id,nama,deskripsi,maks_anak,tarif,label_promo,unggulan").order("urut"),
       sb.from("akademi_bayar_atur").select("bank,no_rekening,atas_nama,trial_hari,kode_unik,catatan").maybeSingle(),
-      sb.from("akademi_bayar").select("id,paket_id,periode,jumlah,status,alasan,bukti_path,dibuat_at,sampai").eq("family_id", familyId).order("dibuat_at", { ascending: false }).limit(20),
+      sb.from("akademi_bayar").select("id,paket_id,periode,anak_tambahan,jumlah,status,alasan,bukti_path,dibuat_at,sampai").eq("family_id", familyId).order("dibuat_at", { ascending: false }).limit(20),
       sb.rpc("akademi_status_langganan", { fid: familyId }),
     ]);
     const g = p.error || a.error || r.error || s.error;
@@ -103,7 +123,7 @@ export function LanggananKeluarga() {
       ) : (
         <section className={`${KARTU} flex flex-col gap-4 p-4 sm:p-5`}>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>Pilih paket</h2>
+            <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>Pilih lama langganan</h2>
             {periodeAda.length > 1 && (
               <div className="flex gap-1 rounded-full bg-[#f4f7fb] p-1" role="tablist" aria-label="Periode">
                 {periodeAda.map(([id, label]) => (
@@ -114,32 +134,58 @@ export function LanggananKeluarga() {
               </div>
             )}
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3">
             {dijual.map((p) => {
-              const h = hargaDari(p, periode);
-              const hb = p.harga_bulan;
-              const hemat = h && hb && periode !== "bulan" ? Math.round((1 - h / (hb * (periode === "tahun" ? 12 : 6))) * 100) : 0;
+              const anak = Math.min(p.maks_anak, anakPilih ?? anakDiRumah);
+              const t = tarifDari(p, periode);
+              const tot = totalDari(p, periode, anak);
+              const bln = PERIODE.find(([id]) => id === periode)![3];
+              const hemat = tot && tot.coret > tot.harga ? Math.round((1 - tot.harga / tot.coret) * 100) : 0;
               return (
-                <div key={p.id} className="flex flex-col gap-3 rounded-[18px] border-2 p-4" style={{ borderColor: p.unggulan ? "#0786eb" : "#eef2f7" }}>
-                  <div className="flex items-start justify-between gap-2">
+                <div key={p.id} className="flex flex-col gap-3 rounded-[18px] border-2 p-4 sm:p-5" style={{ borderColor: p.unggulan ? "#0786eb" : "#eef2f7" }}>
+                  <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <h3 style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800 }}>{p.nama}</h3>
-                      <p className="text-[13px] font-bold text-ink-3">{p.maks_anak === 1 ? "1 anak" : `Sampai ${p.maks_anak} anak`}</p>
+                      <h3 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>{p.nama}</h3>
+                      {p.deskripsi && <p className="text-[13.5px] font-semibold text-ink-2">{p.deskripsi}</p>}
                     </div>
-                    {p.unggulan && <span className="rounded-full bg-[#e3f1fd] px-2.5 py-0.5 text-[12px] font-extrabold text-[#0567c2]">Paling pas</span>}
+                    {p.label_promo && <span className="rounded-full bg-[#fdecee] px-2.5 py-0.5 text-[12px] font-extrabold text-[#c0283a]">{p.label_promo}</span>}
                   </div>
-                  {p.deskripsi && <p className="text-[13.5px] font-semibold text-ink-2">{p.deskripsi}</p>}
-                  {h ? (
-                    <p className="flex items-baseline gap-1">
-                      <span style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800 }}>{rupiah(h)}</span>
-                      <span className="text-[13px] font-bold text-ink-3">{PERIODE.find(([id]) => id === periode)![2]}</span>
-                      {hemat > 0 && <span className="ml-auto rounded-full bg-[#e6f7f3] px-2 py-0.5 text-[12px] font-extrabold text-[#0b7a6b]">Hemat {hemat}%</span>}
-                    </p>
+                  {p.maks_anak > 1 && (
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-[13.5px] font-extrabold">Jumlah anak</span>
+                      <div className="flex items-center gap-1 rounded-full bg-[#f4f7fb] p-1">
+                        <button aria-label="Kurangi anak" disabled={anak <= 1} onClick={() => setAnak(anak - 1)} className="flex size-9 items-center justify-center rounded-full bg-white disabled:opacity-40">
+                          <Icon name="remove" size={18} />
+                        </button>
+                        <span className="w-8 text-center text-[16px] font-extrabold tabular-nums">{anak}</span>
+                        <button aria-label="Tambah anak" disabled={anak >= p.maks_anak || (anak > 1 && !t.tambah) || (anak === 1 && !t.tambah)} onClick={() => setAnak(anak + 1)} className="flex size-9 items-center justify-center rounded-full bg-white disabled:opacity-40">
+                          <Icon name="add" size={18} />
+                        </button>
+                      </div>
+                      {t.tambah ? <span className="text-[12.5px] font-bold text-ink-3">anak ke-2 dst. +{rupiah(t.tambah)}{PERIODE.find(([id]) => id === periode)![2]}</span> : null}
+                    </div>
+                  )}
+                  {tot ? (
+                    <div className="flex flex-wrap items-end gap-x-3 gap-y-1">
+                      <div>
+                        {tot.coret > tot.harga && <p className="text-[14px] font-bold text-ink-3 line-through tabular-nums">{rupiah(tot.coret)}</p>}
+                        <p className="flex items-baseline gap-1">
+                          <span className="tabular-nums" style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: "#c0283a" }}>{rupiah(tot.harga)}</span>
+                          <span className="text-[13px] font-bold text-ink-3">{PERIODE.find(([id]) => id === periode)![2]}</span>
+                        </p>
+                      </div>
+                      {hemat > 0 && <span className="mb-2 rounded-full bg-[#e6f7f3] px-2.5 py-0.5 text-[12.5px] font-extrabold text-[#0b7a6b]">Hemat {hemat}%</span>}
+                      <p className="w-full text-[12.5px] font-bold text-ink-3">
+                        {anakTeks(anak)}
+                        {bln > 1 ? ` · setara ${rupiah(Math.round(tot.harga / bln / 100) * 100)}/bulan` : ""}
+                        {anak > 1 && t.tambah ? ` · ${rupiah(t.harga!)} + ${anak - 1} × ${rupiah(t.tambah)}` : ""}
+                      </p>
+                    </div>
                   ) : (
                     <p className="text-[13px] font-bold text-ink-3">Tidak tersedia untuk periode ini.</p>
                   )}
-                  <button disabled={!h} onClick={() => setPilih({ paket: p, periode })} className={`${TOMBOL} mt-auto text-white`} style={{ background: "#0786eb" }}>
-                    Pilih {p.nama}
+                  <button disabled={!tot} onClick={() => setPilih({ paket: p, periode, anak })} className={`${TOMBOL} mt-auto text-white`} style={{ background: "#0786eb" }}>
+                    Langganan {namaPeriode(periode).toLowerCase()}
                   </button>
                 </div>
               );
@@ -210,15 +256,15 @@ function Baris({ label, nilai, besar, onSalin, tersalin }: { label: string; nila
   );
 }
 
-function Konfirmasi({ pilihan, atur, familyId, onBatal, onTerkirim }: { pilihan: { paket: Paket; periode: Periode }; atur: Atur | null; familyId: string; onBatal: () => void; onTerkirim: () => void }) {
-  const harga = hargaDari(pilihan.paket, pilihan.periode)!;
+function Konfirmasi({ pilihan, atur, familyId, onBatal, onTerkirim }: { pilihan: { paket: Paket; periode: Periode; anak: number }; atur: Atur | null; familyId: string; onBatal: () => void; onTerkirim: () => void }) {
+  const harga = totalDari(pilihan.paket, pilihan.periode, pilihan.anak)!.harga;
   const [kode] = useState(() => (atur?.kode_unik ? 100 + Math.floor(Math.random() * 900) : 0));
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const buat = async () => {
     setBusy(true);
     setErr("");
-    const { error } = await supabase().from("akademi_bayar").insert({ family_id: familyId, paket_id: pilihan.paket.id, periode: pilihan.periode, harga, kode_unik: kode, jumlah: harga + kode });
+    const { error } = await supabase().from("akademi_bayar").insert({ family_id: familyId, paket_id: pilihan.paket.id, periode: pilihan.periode, anak_tambahan: pilihan.anak - 1, harga, kode_unik: kode, jumlah: harga + kode });
     setBusy(false);
     if (error) setErr(pesanGalat(error.message));
     else onTerkirim();
@@ -226,7 +272,7 @@ function Konfirmasi({ pilihan, atur, familyId, onBatal, onTerkirim }: { pilihan:
   return (
     <section className={`${KARTU} flex flex-col gap-4 p-4 sm:p-5`}>
       <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
-        {pilihan.paket.nama} · {PERIODE.find(([id]) => id === pilihan.periode)![1]}
+        {pilihan.paket.nama} · {namaPeriode(pilihan.periode)} · {anakTeks(pilihan.anak)}
       </h2>
       <p className="text-[14px] font-semibold text-ink-2">Setelah kamu lanjut, transfer ke rekening berikut lalu kirim foto bukti transfernya. Langganan aktif begitu pembayaran kami terima (biasanya di hari yang sama).</p>
       <Rekening atur={atur} jumlah={harga + kode} />
@@ -277,7 +323,7 @@ function Tagihan({ bayar, atur, paket, familyId, onBerubah }: { bayar: Bayar; at
     <section className={`${KARTU} flex flex-col gap-4 p-4 sm:p-5`}>
       <div className="flex flex-wrap items-center gap-2">
         <h2 className="flex-1" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
-          {nama} · {PERIODE.find(([id]) => id === bayar.periode)?.[1]}
+          {nama} · {namaPeriode(bayar.periode)} · {anakTeks(1 + (bayar.anak_tambahan ?? 0))}
         </h2>
         <span className="rounded-full bg-[#fff0da] px-2.5 py-0.5 text-[12px] font-extrabold text-[#a34a00]">{bayar.bukti_path ? "Sedang diperiksa" : "Menunggu transfer"}</span>
       </div>
@@ -314,7 +360,7 @@ function Riwayat({ riwayat, paket }: { riwayat: Bayar[]; paket: Paket[] }) {
           return (
             <li key={b.id} className="flex flex-wrap items-center gap-2 py-2.5 text-[13.5px]">
               <span className="min-w-0 flex-1 font-bold">
-                {paket.find((p) => p.id === b.paket_id)?.nama ?? b.paket_id} · {PERIODE.find(([id]) => id === b.periode)?.[1]}
+                {paket.find((p) => p.id === b.paket_id)?.nama ?? b.paket_id} · {namaPeriode(b.periode)} · {anakTeks(1 + (b.anak_tambahan ?? 0))}
                 <span className="block text-[12.5px] font-semibold text-ink-3">
                   {tgl(b.dibuat_at)}
                   {b.status === "diterima" && b.sampai ? ` · aktif sampai ${tgl(b.sampai)}` : ""}
