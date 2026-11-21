@@ -89,8 +89,11 @@ function Runner({ paket }: { paket: ContentPack }) {
   const riwayat = useRef<string[]>([]);
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [hint, setHint] = useState(false);
-  /** 0 = percobaan pertama ronde ini, 1 = kesempatan kedua setelah salah */
+  /** jumlah salah di soal ini (0 = percobaan pertama); anak tetap di soal sampai benar */
   const [percobaan, setPercobaan] = useState(0);
+  /** Bantu yang memotong jatah; Bantu gratis (setelah salah 2x) dicatat terpisah, sekali per soal */
+  const [bantuTerpakai, setBantuTerpakai] = useState(0);
+  const [gratisTerpakai, setGratisTerpakai] = useState(false);
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
   const [beruntun, setBeruntun] = useState({ benar: 0, salah: 0 });
   const [selesai, setSelesai] = useState(false);
@@ -132,13 +135,18 @@ function Runner({ paket }: { paket: ContentPack }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const sisaBantu = Math.max(0, BATAS_BANTU - skor.hint);
+  // Jatah Bantu 3 per permainan. Setelah salah 2x di soal yang sama, ada 1 Bantu gratis (tidak memotong jatah)
+  // supaya anak yang tetap di soal sampai benar tidak macet.
+  const gratisTersedia = percobaan >= 2 && !gratisTerpakai;
+  const sisaBantu = Math.max(gratisTersedia ? 1 : 0, BATAS_BANTU - bantuTerpakai);
   const onHint = () => {
     if (sisaBantu <= 0) return;
+    if (gratisTersedia) setGratisTerpakai(true);
+    else setBantuTerpakai((n) => n + 1);
     setHint(true);
     setSkor((s) => ({ ...s, hint: s.hint + 1 }));
     sfxAkademi.ambil();
-    catatEvent({ learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "hint", payload: { ronde: idx } });
+    catatEvent({ learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "hint", payload: { ronde: idx, gratis: gratisTersedia } });
   };
 
   const onJawab = (j: Jawaban) => {
@@ -154,7 +162,7 @@ function Runner({ paket }: { paket: ContentPack }) {
       learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "attempt",
       payload: { itemId: `${paket.id}#${idx}`, correct: h.benar, hintUsed: hint, latencyMs, knobs, competencyIds: kompetensiIds, detail: { mode: (paket as { mode?: string }).mode ?? (paket as { execMode?: string }).execMode, percobaan: percobaan + 1, ...h.detail } },
     });
-    // Nilai, bintang, dan tingkat kesulitan dihitung dari percobaan PERTAMA saja; kesempatan kedua untuk belajar.
+    // Nilai, bintang, dan tingkat kesulitan dihitung dari percobaan PERTAMA saja; percobaan berikutnya untuk belajar.
     const pertama = percobaan === 0;
     const skorBaru = pertama ? { ...skor, benar: skor.benar + (h.benar ? 1 : 0), salah: skor.salah + (h.benar ? 0 : 1) } : skor;
     setSkor(skorBaru);
@@ -166,17 +174,18 @@ function Runner({ paket }: { paket: ContentPack }) {
       setBeruntun(b);
       setKnobs(k);
     }
-    // Salah pertama: soal yang sama diulang dari awal (presenter dipasang ulang), tidak pindah soal.
-    if (!h.benar && pertama) {
+    // Latihan: salah = tetap di soal yang sama (presenter dipasang ulang) sampai benar. Ujian punya alur sendiri.
+    if (!h.benar) {
       setTimeout(() => {
         setHasil(null);
-        setPercobaan(1);
+        setPercobaan((n) => n + 1);
         mulaiRonde.current = Date.now();
       }, JEDA_UMPAN_BALIK);
       return;
     }
     setTimeout(() => {
       setPercobaan(0);
+      setGratisTerpakai(false);
       const next = idx + 1;
       if (next >= total) {
         catatEvent({
@@ -193,7 +202,7 @@ function Runner({ paket }: { paket: ContentPack }) {
       mulaiRonde.current = Date.now();
       riwayat.current.push(kunciRonde(ronde));
       setRonde(buatRondeBaru(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current));
-    }, h.benar ? JEDA_UMPAN_BALIK : JEDA_UMPAN_BALIK + 900);
+    }, JEDA_UMPAN_BALIK);
   };
 
   if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={() => router.replace(`/akademi/main/${paket.id}?u=${Date.now()}`)} onKembali={() => router.push("/akademi")} />;
@@ -213,7 +222,7 @@ function Runner({ paket }: { paket: ContentPack }) {
         </LatarWarnaProvider>
         </SisaBantuProvider>
       </div>
-      {hasil && <UmpanBalik key={`umpan-${idx}-${percobaan}`} benar={hasil.benar} beruntun={streak} lanjut={!hasil.benar && percobaan > 0} />}
+      {hasil && <UmpanBalik key={`umpan-${idx}-${percobaan}`} benar={hasil.benar} beruntun={streak} pakaiBantu={!hasil.benar && percobaan >= 1 && (!gratisTerpakai || bantuTerpakai < BATAS_BANTU)} />}
     </LayarAktivitas>
   );
 }

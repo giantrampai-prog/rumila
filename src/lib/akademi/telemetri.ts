@@ -3,6 +3,7 @@
 // Dipakai halaman /akademi/telemetri untuk menemukan paket yang terlalu mudah/sukar,
 // titik berhenti, waktu reaksi (median latensi), dan sebaran penguasaan per kompetensi (slice-1 langkah 11).
 
+import { percobaanUlang } from "./percobaan";
 import type { Competency, ContentPack, GameEvent, LevelId, TrackId } from "@akademi/schema";
 import { proyeksi, type Status } from "./mastery";
 
@@ -94,7 +95,7 @@ interface Percobaan {
 }
 
 function bacaAttempt(e: GameEvent): Percobaan | null {
-  if (e.type !== "attempt") return null;
+  if (e.type !== "attempt" || percobaanUlang(e)) return null;
   const p = e.payload as { correct?: unknown; hintUsed?: unknown; latencyMs?: unknown; knobs?: unknown; competencyIds?: unknown };
   const knobs = p.knobs && typeof p.knobs === "object" && !Array.isArray(p.knobs) ? (p.knobs as Record<string, unknown>) : null;
   const knobAngka: Record<string, number> = {};
