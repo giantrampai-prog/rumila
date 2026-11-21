@@ -15,6 +15,7 @@ import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { terbitkan } from "@/lib/akademi/sertifikat";
+import { alasanKunci } from "@/lib/akademi/akses";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { proyeksi } from "@/lib/akademi/mastery";
@@ -74,6 +75,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
 
   const target = peta.sekarang ?? peta.pemantapan;
   const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;
+  const alasan = alasanKunci(peta, bahasa === "en" ? "en" : "id");
   const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
 
   return (
@@ -112,7 +114,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
             <div key={sm.ke} className="flex flex-col gap-3">
               <KepalaSemester sm={sm} aktif={peta.semesterAktif === sm.ke} ujianLulus={peta.semesterLulus[sm.ke - 1]} />
               {sm.unit.map((u) => (
-                <Unit key={`${u.track}-${u.id}`} u={u} urutan={peta.unit.indexOf(u)} unitAktif={unitAktif} bahasa={bahasa} events={events} level={level} />
+                <Unit key={`${u.track}-${u.id}`} u={u} urutan={peta.unit.indexOf(u)} unitAktif={unitAktif} bahasa={bahasa} events={events} level={level} alasan={alasan} />
               ))}
             </div>
           ),
@@ -203,12 +205,13 @@ const LENGKUNG = 52;
 const SLOT = 92; // tinggi tetap tiap titik misi (px) agar garis penghubung bisa digambar
 const geserTitik = (i: number, n: number, arah: number) => (n < 2 ? 0 : Math.round(arah * LENGKUNG * Math.sin((Math.PI * i) / (n - 1))));
 
-function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; urutan: number; unitAktif?: string; bahasa: BahasaAnak; events: Events; level: LevelId }) {
+function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: UnitPeta; urutan: number; unitAktif?: string; bahasa: BahasaAnak; events: Events; level: LevelId; alasan: string }) {
   const c = TRACK_WARNA[u.track];
   const [l, m, d] = PLAY[c];
   const w = WARNA_LENCANA[u.lencana];
   const selesai = u.misi.filter((x) => x.selesai).length;
   const semuaKunci = u.misi.every((x) => x.terkunci);
+  const adaKunci = u.misi.some((x) => x.terkunci);
   const tinta = tintaPada(c);
   const arah = urutan % 2 === 0 ? 1 : -1;
   // hiasan di sisi luar lengkungan; label misi di sisi dalam (ke arah tengah) supaya selalu ada ruang di HP
@@ -253,6 +256,12 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; ur
           <Icon name="workspace_premium" size={20} />
         </span>
       </div>
+      {adaKunci && (
+        <p className="mx-auto mt-3 flex w-fit max-w-full items-center gap-1.5 rounded-full bg-[#f3ece2] px-3.5 py-1.5 text-[13px] font-extrabold text-[#76695a]">
+          <Icon name="lock" size={16} />
+          <span className="min-w-0">{bahasa === "en" ? "Locked." : "Terkunci."} {alasan}</span>
+        </p>
+      )}
       <ol className="relative mb-3 mt-6 flex flex-col items-center" style={{ height: tinggi }}>
         <svg aria-hidden className="pointer-events-none absolute left-1/2 top-0 overflow-visible" width={1} height={tinggi}>
           <path d={garis(n - 1)} fill="none" stroke="#e6dccd" strokeWidth={10} strokeLinecap="round" strokeDasharray="0.1 18" />

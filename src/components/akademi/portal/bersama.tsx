@@ -219,9 +219,28 @@ export function IkonMekanik({ mekanik, size = 44 }: { mekanik: string; size?: nu
 }
 
 /** Tombol aktivitas besar (≥56px): ikon mekanik netral, judul, label mekanik, ⭐ bila pernah selesai, ▶ di kanan. */
-export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesai?: boolean }) {
+export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack; selesai?: boolean; /** alasan terkunci (peta jenjang); tombol tidak bisa ditekan */ kunci?: string }) {
   const me = useMe();
   const bahasa = useBahasaAnak(me.id);
+  if (kunci)
+    return (
+      <div
+        aria-label={`${judulPaket(p, bahasa)}: terkunci. ${kunci}`}
+        className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-[#f6f1e9] py-2 pr-2.5 pl-2.5"
+        style={{ boxShadow: "inset 0 0 0 1.5px #ece4d8" }}
+      >
+        <span className="opacity-50"><IkonMekanik mekanik={p.mechanic} /></span>
+        <span className="min-w-0 flex-1">
+          <span className="block truncate leading-tight" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: "#8a7d6b" }}>
+            {judulPaket(p, bahasa)}
+          </span>
+          <span className="mt-0.5 block text-[12px] font-extrabold text-[#8a7d6b]">{kunci}</span>
+        </span>
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ece4d8] text-[#a99c8a]">
+          <Icon name="lock" size={20} />
+        </span>
+      </div>
+    );
   return (
     <Link
       href={`/akademi/main/${p.id}`}

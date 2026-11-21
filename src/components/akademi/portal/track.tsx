@@ -14,7 +14,8 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, levelAnak, paketUntuk, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { useMe } from "@/lib/store";
-import { questUntuk } from "@/lib/akademi/quest";
+import { useAksesAkademi } from "@/lib/akademi/peta-anak";
+import type { Akses } from "@/lib/akademi/akses";
 import { IkonStatus, INK, KepalaWarna, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, TombolAktivitas, isTrackId, levelMeta, paketSelesai, trackMeta } from "./bersama";
 
 export interface UnitGrup {
@@ -48,6 +49,7 @@ export function TrackView({ track }: { track: string }) {
   useEffect(() => setLevel(levelAnak(me.id)), [me.id]);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
   const selesai = useMemo(() => paketSelesai(events), [events]);
+  const { akses } = useAksesAkademi(me.id);
 
   if (!isTrackId(track) || !TRACK_SLICE.includes(track)) {
     return (
@@ -71,7 +73,7 @@ export function TrackView({ track }: { track: string }) {
     <div className="mx-auto flex w-full max-w-[720px] flex-col gap-5">
       <KepalaWarna c={warna} icon={TRACK_IKON[track]} judul={t.nama[bahasa]} sub={sub} />
       {LEVEL_SLICE.map((lv) => (
-        <Jenjang key={lv} lv={lv} track={track} jenjangAnak={lv === level} tantangan={levelIndex(lv) > idxAnak} peng={peng} selesai={selesai} bahasa={bahasa} />
+        <Jenjang key={lv} lv={lv} track={track} jenjangAnak={lv === level} tantangan={levelIndex(lv) > idxAnak} peng={peng} selesai={selesai} bahasa={bahasa} akses={akses} />
       ))}
     </div>
   );
@@ -95,7 +97,7 @@ function JudulJenjang({ lv, jenjangAnak }: { lv: LevelId; jenjangAnak: boolean }
   );
 }
 
-function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: { lv: LevelId; track: TrackId; jenjangAnak: boolean; tantangan: boolean; peng: Record<string, Penguasaan>; selesai: Set<string>; bahasa: BahasaAnak }) {
+function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa, akses }: { lv: LevelId; track: TrackId; jenjangAnak: boolean; tantangan: boolean; peng: Record<string, Penguasaan>; selesai: Set<string>; bahasa: BahasaAnak; akses: (p: ContentPack) => Akses }) {
   const unit = unitUntuk(track, lv, KOMPETENSI, bahasa);
   const [, m] = PLAY[TRACK_WARNA[track]];
 
@@ -105,7 +107,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: {
     ) : (
       <ol className="flex flex-col gap-4">
         {unit.map((u, i) => (
-          <KartuUnit key={u.id} u={u} nomor={i + 1} peng={peng} selesai={selesai} warna={m} bahasa={bahasa} />
+          <KartuUnit key={u.id} u={u} nomor={i + 1} peng={peng} selesai={selesai} warna={m} bahasa={bahasa} akses={akses} />
         ))}
       </ol>
     );
@@ -127,7 +129,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: {
         </span>
         <span className="min-w-0 flex-1">
           <JudulJenjang lv={lv} jenjangAnak={false} />
-          <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">Tantangan — ketuk untuk buka</span>
+          <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">Jenjang berikutnya — ketuk untuk melihat isinya</span>
         </span>
         <Icon name="expand_more" size={28} className="shrink-0 text-ink-3 transition-transform group-open:rotate-180" />
       </summary>
@@ -138,7 +140,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: {
 
 /* ---------------- unit ---------------- */
 
-function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; nomor: number; peng: Record<string, Penguasaan>; selesai: Set<string>; warna: string; bahasa: BahasaAnak }) {
+function KartuUnit({ u, nomor, peng, selesai, warna, bahasa, akses }: { u: UnitGrup; nomor: number; peng: Record<string, Penguasaan>; selesai: Set<string>; warna: string; bahasa: BahasaAnak; akses: (p: ContentPack) => Akses }) {
   return (
     <li className="flex flex-col gap-3 rounded-[24px] bg-white p-3.5 shadow-[0_4px_0_rgba(11,37,69,.08)] sm:p-4">
       <div className="flex items-center gap-3">
@@ -152,17 +154,16 @@ function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; no
       </div>
       <ol className="flex flex-col gap-3">
         {u.kompetensi.map((c, i) => (
-          <BarisKompetensi key={c.id} c={c} peng={peng} selesai={selesai} terakhir={i === u.kompetensi.length - 1} bahasa={bahasa} />
+          <BarisKompetensi key={c.id} c={c} peng={peng} selesai={selesai} terakhir={i === u.kompetensi.length - 1} bahasa={bahasa} akses={akses} />
         ))}
       </ol>
     </li>
   );
 }
 
-function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency; peng: Record<string, Penguasaan>; selesai: Set<string>; terakhir: boolean; bahasa: BahasaAnak }) {
+function BarisKompetensi({ c, peng, selesai, terakhir, bahasa, akses }: { c: Competency; peng: Record<string, Penguasaan>; selesai: Set<string>; terakhir: boolean; bahasa: BahasaAnak; akses: (p: ContentPack) => Akses }) {
   const status = peng[c.id]?.status ?? "belum";
   const paket = paketKompetensi(c, bahasa);
-  const quest = questUntuk(c.id);
   const prasyaratBelum = c.prereq.some((id) => (peng[id]?.status ?? "belum") === "belum");
   return (
     <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#fff0da] pb-3"}`}>
@@ -174,29 +175,14 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency
           {prasyaratBelum && <span aria-label="Ada kompetensi sebelumnya yang belum berkembang" title="Ada kompetensi sebelumnya yang belum berkembang" className="ml-1.5 inline-block size-2 rounded-full bg-[#c9bfd8] align-middle" />}
         </p>
       </div>
-      {paket.length === 0 && quest.length === 0 ? (
+      {paket.length === 0 ? (
         <span className="pl-[38px] text-[13px] font-extrabold text-[#b3a6c4]">Aktivitas segera</span>
       ) : (
         <div className="flex flex-col gap-2 sm:pl-[38px]">
-          {paket.map((p) => (
-            <TombolAktivitas key={p.id} p={p} selesai={selesai.has(p.id)} />
-          ))}
-          {quest.map((q) => (
-            <Link
-              key={q.toolId + q.competencyId}
-              href={q.href}
-              className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white px-3 py-2 shadow-[0_4px_0_rgba(11,37,69,.08)] transition-transform active:scale-[.98]"
-            >
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full" style={{ background: "#e4e7f0", color: "#3a4670" }}>
-                <Icon name="explore" size={24} />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, color: INK }}>{q.judul[bahasa] ?? q.judul.id}</span>
-                <span className="block text-[12px] font-extrabold text-ink-3">Quest · Dunia 3D</span>
-              </span>
-              <Icon name="play_arrow" size={26} className="text-[#fd861d]" />
-            </Link>
-          ))}
+          {paket.map((p) => {
+            const a = akses(p);
+            return <TombolAktivitas key={p.id} p={p} selesai={selesai.has(p.id)} kunci={a.boleh ? undefined : a.alasan} />;
+          })}
         </div>
       )}
     </li>
