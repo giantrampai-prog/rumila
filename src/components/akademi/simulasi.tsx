@@ -13,7 +13,7 @@ import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
-import { useModeUjian } from "./mode-ujian";
+import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
 import { Wadah } from "./wadah";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 
@@ -172,18 +172,20 @@ function TombolBesar({ children, onClick, disabled, warna = "#22b573", bayang = 
 function TombolBantu({ onClick, disabled, label = "Bantu" }: { onClick: () => void; disabled?: boolean; label?: string }) {
   const { skala } = usePanggung();
   const st = useSkalaTeks();
+  const sisa = useSisaBantu();
   if (useModeUjian()) return null;
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled}
-      aria-label={label}
-      className="flex min-h-14 min-w-14 shrink-0 items-center justify-center gap-1 self-center rounded-[20px] bg-white px-3 text-[#8a5a00] active:scale-95 disabled:opacity-50"
+      disabled={disabled || sisa === 0}
+      aria-label={sisa === null ? label : `${label}, sisa ${sisa}`}
+      className="relative flex min-h-14 min-w-14 shrink-0 items-center justify-center gap-1 self-center rounded-[20px] bg-white px-3 text-[#8a5a00] active:scale-95 disabled:opacity-50"
       style={{ minHeight: 56 * skala, minWidth: 56 * skala, boxShadow: `${BAYANG}, inset 0 0 0 2px ${KUNING}`, fontFamily: BALOO, fontWeight: 800, fontSize: 15 * st }}
     >
       <Icon name="lightbulb" size={Math.round(30 * st)} />
       <span className="hidden sm:inline">{label}</span>
+      <LencanaSisa sisa={sisa} />
     </button>
   );
 }
