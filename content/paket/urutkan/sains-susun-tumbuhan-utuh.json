@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -345,7 +345,7 @@
         {
           "id": "bunga",
           "labelKey": "teratai-bunga",
-          "emoji": "🪷"
+          "emoji": "🌸"
         }
       ]
     },

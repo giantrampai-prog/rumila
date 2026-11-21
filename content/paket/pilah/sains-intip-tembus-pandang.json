@@ -1,6 +1,6 @@
 {
   "id": "sains-intip-tembus-pandang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -84,7 +84,7 @@
       "id": "toples",
       "labelKey": "i-toples",
       "bin": "tembus",
-      "emoji": "🫙"
+      "emoji": "🥛"
     },
     {
       "id": "kacamata",
@@ -109,7 +109,7 @@
       "id": "gelembung",
       "labelKey": "i-gelembung",
       "bin": "tembus",
-      "emoji": "🫧"
+      "emoji": "🧼"
     },
     {
       "id": "kardus",

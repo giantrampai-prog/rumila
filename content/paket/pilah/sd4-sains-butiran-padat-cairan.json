@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-butiran-padat-cairan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -136,7 +136,7 @@
       "id": "cuka",
       "labelKey": "i-cuka",
       "bin": "cair",
-      "emoji": "🫙"
+      "emoji": "🧴"
     },
     {
       "id": "kayuputih",

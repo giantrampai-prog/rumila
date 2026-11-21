@@ -1,6 +1,6 @@
 {
   "id": "sains-antar-ke-lapisan-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,7 +72,7 @@
       "id": "terumbu",
       "labelKey": "i-terumbu",
       "bin": "pilihan",
-      "emoji": "🪸"
+      "emoji": "🐠"
     },
     {
       "id": "dalam",

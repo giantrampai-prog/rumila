@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-kubus-temuan-kebun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -92,9 +92,9 @@
       "id": "buncis",
       "labelKey": "buncis",
       "role": "benda",
-      "emoji": "🫛",
       "value": 8,
-      "width": 3.2
+      "width": 3.2,
+      "emoji": "🥒"
     },
     {
       "id": "jagung",

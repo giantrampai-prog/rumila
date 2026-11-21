@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-tanaman-tumbuh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -307,7 +307,7 @@
         {
           "id": "biji",
           "labelKey": "kacangpanjang-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "tunas",
@@ -334,7 +334,7 @@
         {
           "id": "biji",
           "labelKey": "buncis-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "tunas",
@@ -361,8 +361,8 @@
         {
           "id": "biji",
           "labelKey": "kacanghijau-biji",
-          "emoji": "🫘",
-          "color": "#66bb6a"
+          "color": "#66bb6a",
+          "emoji": "🥜"
         },
         {
           "id": "tunas",

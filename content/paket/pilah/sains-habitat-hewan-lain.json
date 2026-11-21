@@ -1,6 +1,6 @@
 {
   "id": "sains-habitat-hewan-lain",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -92,8 +92,8 @@
     {
       "id": "terumbu",
       "labelKey": "terumbu",
-      "emoji": "🪸",
-      "color": "#b3e5fc"
+      "color": "#b3e5fc",
+      "emoji": "🐠"
     }
   ],
   "items": [

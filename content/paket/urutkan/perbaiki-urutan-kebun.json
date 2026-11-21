@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-kebun",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -123,7 +123,7 @@
         {
           "id": "gali",
           "labelKey": "gali",
-          "emoji": "🪏"
+          "emoji": "⛏️"
         },
         {
           "id": "taruh",

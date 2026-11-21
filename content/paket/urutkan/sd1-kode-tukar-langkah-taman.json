@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -193,7 +193,7 @@
         {
           "id": "telur-1",
           "labelKey": "telur-1",
-          "emoji": "🫗"
+          "emoji": "🧴"
         },
         {
           "id": "telur-2",
@@ -280,7 +280,7 @@
         {
           "id": "perosotan-4",
           "labelKey": "perosotan-4",
-          "emoji": "🛝"
+          "emoji": "⛷️"
         },
         {
           "id": "perosotan-5",
@@ -414,7 +414,7 @@
         {
           "id": "akuarium-2",
           "labelKey": "akuarium-2",
-          "emoji": "🫗"
+          "emoji": "💧"
         },
         {
           "id": "akuarium-3",

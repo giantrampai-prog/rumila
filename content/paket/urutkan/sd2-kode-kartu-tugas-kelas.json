@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -297,7 +297,7 @@
         {
           "id": "baterai-1",
           "labelKey": "baterai-1",
-          "emoji": "🪫"
+          "emoji": "🔋"
         },
         {
           "id": "baterai-2",

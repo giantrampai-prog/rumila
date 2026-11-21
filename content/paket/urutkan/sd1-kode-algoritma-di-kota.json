@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-di-kota",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -203,7 +203,7 @@
         {
           "id": "celengan-4",
           "labelKey": "celengan-4",
-          "emoji": "🫙"
+          "emoji": "🐷"
         },
         {
           "id": "celengan-5",
@@ -301,7 +301,7 @@
         {
           "id": "ikan-1",
           "labelKey": "ikan-1",
-          "emoji": "🫙"
+          "emoji": "🥣"
         },
         {
           "id": "ikan-2",

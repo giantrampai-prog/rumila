@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-rawat-atau-rusak-sungai-pantai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -110,7 +110,7 @@
       "id": "karang",
       "labelKey": "i-karang",
       "bin": "rusak",
-      "emoji": "🪸"
+      "emoji": "🐠"
     },
     {
       "id": "limbah",

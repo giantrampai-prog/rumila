@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-dapur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -131,7 +131,7 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "cair",
-      "emoji": "🫗"
+      "emoji": "🧴"
     },
     {
       "id": "madu",
@@ -151,13 +151,13 @@
       "id": "uap",
       "labelKey": "i-uap",
       "bin": "gas",
-      "emoji": "🫙"
+      "emoji": "🏺"
     },
     {
       "id": "gelembungsoda",
       "labelKey": "i-gelembungsoda",
       "bin": "gas",
-      "emoji": "🫧"
+      "emoji": "🥤"
     },
     {
       "id": "udarabalon",

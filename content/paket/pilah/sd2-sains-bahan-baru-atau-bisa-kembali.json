@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -104,13 +104,13 @@
       "id": "yoghurt",
       "labelKey": "i-yoghurt",
       "bin": "baru",
-      "emoji": "🫙"
+      "emoji": "🥛"
     },
     {
       "id": "tempe",
       "labelKey": "i-tempe",
       "bin": "baru",
-      "emoji": "🫘"
+      "emoji": "🥜"
     },
     {
       "id": "es",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-susun-pola-pengamatan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -137,8 +137,8 @@
         {
           "id": "a",
           "labelKey": "kecambah-a",
-          "emoji": "🫘",
-          "scale": 0.6
+          "scale": 0.6,
+          "emoji": "🥜"
         },
         {
           "id": "b",

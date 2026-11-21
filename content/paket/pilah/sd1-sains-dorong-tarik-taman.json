@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-dorong-tarik-taman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -65,8 +65,8 @@
     {
       "id": "tarik",
       "labelKey": "b-tarik",
-      "emoji": "🫴",
-      "color": "#fff3e0"
+      "color": "#fff3e0",
+      "emoji": "⬅️"
     }
   ],
   "items": [

@@ -1,6 +1,6 @@
 {
   "id": "menara-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -87,7 +87,7 @@
       "id": "toples",
       "labelKey": "toples",
       "role": "benda",
-      "emoji": "🫙",
+      "emoji": "🍯",
       "value": 2
     },
     {

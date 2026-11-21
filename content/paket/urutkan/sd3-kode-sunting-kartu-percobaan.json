@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -247,7 +247,7 @@
         {
           "id": "gunung-3",
           "labelKey": "gunung-3",
-          "emoji": "🫗"
+          "emoji": "🧪"
         },
         {
           "id": "gunung-4",
@@ -329,7 +329,7 @@
         {
           "id": "nasi-goreng-1",
           "labelKey": "nasi-goreng-1",
-          "emoji": "🫗"
+          "emoji": "🧴"
         },
         {
           "id": "nasi-goreng-2",
@@ -436,7 +436,7 @@
         {
           "id": "bolu-4",
           "labelKey": "bolu-4",
-          "emoji": "🫗"
+          "emoji": "🥣"
         },
         {
           "id": "bolu-5",
@@ -610,7 +610,7 @@
         {
           "id": "es-lilin-2",
           "labelKey": "es-lilin-2",
-          "emoji": "🫗"
+          "emoji": "🥣"
         },
         {
           "id": "es-lilin-3",
@@ -697,7 +697,7 @@
         {
           "id": "sop-1",
           "labelKey": "sop-1",
-          "emoji": "🫗"
+          "emoji": "💧"
         },
         {
           "id": "sop-2",

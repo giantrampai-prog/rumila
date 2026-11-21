@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gerak-taman-kota",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,12 +72,12 @@
     {
       "id": "gelinding",
       "labelKey": "b-gelinding",
-      "emoji": "🛞"
+      "emoji": "⭕"
     },
     {
       "id": "luncur",
       "labelKey": "b-luncur",
-      "emoji": "🛝"
+      "emoji": "⛷️"
     },
     {
       "id": "putar",

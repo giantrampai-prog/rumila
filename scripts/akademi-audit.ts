@@ -234,6 +234,21 @@ for (const { p } of paket) {
   const ins = p.locale.id[p.instructionKey] ?? "";
   if (ins && !PERINTAH.test(ins)) lapor("WARNING", "instruksi-tanpa-perintah", p.id, `instruksi tidak menyebut apa yang harus dilakukan anak: "${ins.slice(0, 90)}"`);
 }
+// emoji Unicode 14+ (2021 ke atas) tampil kotak kosong di Android 12 ke bawah: pakai emoji lama atau `shape`
+const EMOJI_BARU = /[\u{1FAE0}-\u{1FAE9}\u{1F979}\u{1FAF1}-\u{1FAF8}\u{1FAAA}-\u{1FAAF}\u{1FA7B}\u{1FA7C}\u{1F6DC}-\u{1F6DF}\u{1FAD7}-\u{1FADF}\u{1FAB7}-\u{1FABF}\u{1F9CC}\u{1FAC3}-\u{1FAC6}\u{1F7F0}\u{1FACE}\u{1FACF}\u{1FA75}-\u{1FA77}\u{1FA87}-\u{1FA89}\u{1FA8F}]|🐦‍⬛|🍋‍🟩|🍄‍🟫|🐦‍🔥|⛓️‍💥/u;
+for (const { p } of paket) {
+  const temu = new Set<string>();
+  const jelajah = (o: unknown) => {
+    if (Array.isArray(o)) return o.forEach(jelajah);
+    if (!o || typeof o !== "object") return;
+    for (const [k, v] of Object.entries(o)) {
+      if (k === "emoji" && typeof v === "string" && EMOJI_BARU.test(v)) temu.add(v);
+      else if (v && typeof v === "object") jelajah(v);
+    }
+  };
+  jelajah(p);
+  if (temu.size) lapor("ERROR", "emoji-terlalu-baru", p.id, `${[...temu].join(" ")} (Unicode 14+) tampil kotak kosong di Android lama`);
+}
 // soal pilih: dua pilihan yang NILAINYA sama walau tulisannya beda (1/2 dan 0,5; 50% dan 1/2; 3 dan 3,0) = kembar makna,
 // anak bisa benar dengan jawaban yang dinilai salah
 const nilaiLabel = (t: string): number | null => {

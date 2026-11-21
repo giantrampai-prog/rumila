@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lebur-dan-beku-pabrik",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -152,7 +152,7 @@
         {
           "id": "c",
           "labelKey": "kaca-c",
-          "emoji": "🫗"
+          "emoji": "💧"
         },
         {
           "id": "d",
@@ -178,7 +178,7 @@
         {
           "id": "c",
           "labelKey": "besi-c",
-          "emoji": "🫗"
+          "emoji": "💧"
         },
         {
           "id": "d",
@@ -206,7 +206,7 @@
         {
           "id": "c",
           "labelKey": "plastik-c",
-          "emoji": "🫗"
+          "emoji": "💧"
         },
         {
           "id": "d",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-uji-larut-laboratorium",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -135,7 +135,7 @@
       "id": "kacang",
       "labelKey": "i-kacang",
       "bin": "tidak",
-      "emoji": "🫘"
+      "emoji": "🥜"
     },
     {
       "id": "lilin",

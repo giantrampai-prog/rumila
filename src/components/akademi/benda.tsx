@@ -13,7 +13,7 @@ export interface VisualSpec {
   count?: number;
   /** jumlah kolom kisi saat count > 1; bawaan ⌈√count⌉ */
   kolom?: number;
-  shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu" | "belah-ketupat" | "koin" | "uang" | "akar";
+  shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu" | "belah-ketupat" | "koin" | "uang" | "akar" | "badan" | "ubur-ubur";
   width?: number;
   /** teks angka pendek (≤ 8 karakter) di atas bentuk; koin & uang menampilkannya sebagai nominal */
   angka?: string;
@@ -119,7 +119,7 @@ function Uang({ color, size, width = 1, angka }: { color: string; size: number; 
 function Bentuk({ shape, color, size, width = 1, angka }: { shape: NonNullable<VisualSpec["shape"]>; color?: string; size: number; width?: number; angka?: string }) {
   if (shape === "koin") return <Koin color={color ?? warnaKoin(angka)} size={size * width} angka={angka} />;
   if (shape === "uang") return <Uang color={color ?? "#7ec8a0"} size={size} width={width} angka={angka} />;
-  const warna = color ?? (shape === "akar" ? "#8a5a2b" : "#0786eb");
+  const warna = color ?? (shape === "akar" ? "#8a5a2b" : shape === "badan" ? "#f2c29b" : shape === "ubur-ubur" ? "#b98ce0" : "#0786eb");
   const w = size * width, h = shape === "rect" ? size * 0.42 : size;
   const gambar = <BentukDasar shape={shape} color={warna} size={size} width={width} />;
   if (!angka) return gambar;
@@ -173,6 +173,31 @@ function BentukDasar({ shape, color, size, width = 1 }: { shape: NonNullable<Vis
           <path d="M30 34 Q24 40 22 50" strokeWidth="2" />
           <path d="M72 38 Q78 44 80 54" strokeWidth="2" />
         </g>
+      </svg>
+    );
+  // badan (batang tubuh) tanpa kepala, lengan, kaki, dan tanpa baju: leher, bahu, dada, pusar, pinggul
+  if (shape === "badan")
+    return (
+      <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden data-bentuk="badan">
+        <rect x="42" y="2" width="16" height="14" rx="5" fill={color} />
+        <path d="M22 18 Q50 10 78 18 Q86 22 84 34 L76 60 Q74 86 68 96 L32 96 Q26 86 24 60 L16 34 Q14 22 22 18 Z" fill={color} />
+        <path d="M22 18 Q50 10 78 18 Q86 22 84 34 L76 60 Q74 86 68 96 L32 96 Q26 86 24 60 L16 34 Q14 22 22 18 Z" fill="none" stroke="#0b2545" strokeOpacity="0.25" strokeWidth="2.5" />
+        <path d="M36 36 Q42 40 48 36 M52 36 Q58 40 64 36" stroke="#0b2545" strokeOpacity="0.3" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+        <circle cx="50" cy="66" r="2.6" fill="#0b2545" opacity="0.35" />
+      </svg>
+    );
+  // ubur-ubur (🪼 baru ada di Unicode 15, kotak kosong di Android lama): payung + tentakel bergelombang
+  if (shape === "ubur-ubur")
+    return (
+      <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden data-bentuk="ubur-ubur">
+        <g stroke={color} strokeWidth="4" strokeLinecap="round" fill="none" opacity="0.85">
+          <path d="M30 52 Q24 64 32 74 Q38 84 30 96" />
+          <path d="M44 54 Q38 68 46 78 Q52 88 44 98" />
+          <path d="M56 54 Q62 68 54 78 Q48 88 56 98" />
+          <path d="M70 52 Q76 64 68 74 Q62 84 70 96" />
+        </g>
+        <path d="M14 52 Q14 10 50 8 Q86 10 86 52 Q78 58 68 52 Q59 58 50 52 Q41 58 32 52 Q22 58 14 52 Z" fill={color} />
+        <ellipse cx="38" cy="26" rx="10" ry="6" fill="#fff" opacity="0.45" />
       </svg>
     );
   if (shape === "berudu")

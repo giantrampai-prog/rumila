@@ -1,6 +1,6 @@
 {
   "id": "sains-rawat-tanaman-berbunga",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -133,7 +133,7 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "tidak",
-      "emoji": "🫗"
+      "emoji": "🧴"
     },
     {
       "id": "injak",

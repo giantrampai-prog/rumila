@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jenis-batuan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.01"
@@ -98,7 +98,7 @@
       "id": "apung",
       "labelKey": "i-apung",
       "bin": "beku",
-      "emoji": "🫧"
+      "emoji": "🧽"
     },
     {
       "id": "obsidian",

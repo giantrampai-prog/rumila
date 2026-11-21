@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-mana-dulu-bahan-baru",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -222,7 +222,7 @@
         {
           "id": "akhir",
           "labelKey": "susu-akhir",
-          "emoji": "🫙"
+          "emoji": "🥣"
         }
       ]
     },
@@ -249,7 +249,7 @@
         {
           "id": "awal",
           "labelKey": "kedelai-awal",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "akhir",

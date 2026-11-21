@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -135,7 +135,7 @@
       "id": "teratai",
       "labelKey": "i-teratai",
       "bin": "kolam",
-      "emoji": "🪷"
+      "emoji": "🌸"
     },
     {
       "id": "katak",
@@ -177,7 +177,7 @@
       "id": "karang",
       "labelKey": "i-karang",
       "bin": "laut",
-      "emoji": "🪸"
+      "emoji": "🐠"
     },
     {
       "id": "gurita",

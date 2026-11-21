@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-yang-bekerja",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -197,7 +197,7 @@
       "id": "gelembung",
       "labelKey": "i-gelembung",
       "bin": "paru",
-      "emoji": "🫧"
+      "emoji": "🧼"
     },
     {
       "id": "saksofon",

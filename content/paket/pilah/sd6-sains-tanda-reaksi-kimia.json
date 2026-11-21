@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-tanda-reaksi-kimia",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.02"
@@ -84,7 +84,7 @@
       "id": "cukasoda",
       "labelKey": "i-cukasoda",
       "bin": "gas",
-      "emoji": "🫧"
+      "emoji": "🧼"
     },
     {
       "id": "tablet",

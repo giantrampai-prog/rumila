@@ -1,6 +1,6 @@
 {
   "id": "sains-lapisan-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -65,8 +65,8 @@
     {
       "id": "terumbu",
       "labelKey": "terumbu",
-      "emoji": "🪸",
-      "color": "#ffe0b2"
+      "color": "#ffe0b2",
+      "emoji": "🐚"
     },
     {
       "id": "dalam",
@@ -129,7 +129,7 @@
       "id": "ubur",
       "labelKey": "i-ubur",
       "bin": "dalam",
-      "emoji": "🪼"
+      "shape": "ubur-ubur"
     },
     {
       "id": "sungut",

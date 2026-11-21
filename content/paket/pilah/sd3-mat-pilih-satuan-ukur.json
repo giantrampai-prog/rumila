@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-pilih-satuan-ukur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -259,7 +259,7 @@
       "id": "galon",
       "labelKey": "i-air-galon",
       "bin": "l",
-      "emoji": "🫙"
+      "emoji": "🚰"
     },
     {
       "id": "akuarium",

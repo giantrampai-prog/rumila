@@ -137,12 +137,18 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       const boleh = pecahan.filter(d => d <= batas);
       const pakai = boleh.length ? boleh : pecahan.length ? [pecahan[0]] : [10000];
       const maksLembar = Math.min(4, Math.max(1, rule.itemsMax));
-      let lembar: number[] = [pilihSatu(pakai, r)];
-      for (let coba = 0; coba < 12; coba++) {
-        const calon = Array.from({ length: acakInt(r, 1, maksLembar) }, () => pilihSatu(pakai, r));
-        if (calon.reduce((a, b) => a + b, 0) <= Math.max(batas, pakai[0])) { lembar = calon; break; }
-      }
-      lembar.sort((a, b) => b - a);
+      // semua kombinasi lembar (1..maksLembar, urut menurun) yang totalnya ≤ batas, lalu pilih satu secara merata:
+      // undian coba-coba hampir tak pernah memberi 4 × dua ribu, sehingga soal di satu sesi berulang
+      const plafon = Math.max(batas, pakai[0]);
+      const urut = [...pakai].sort((a, b) => b - a);
+      const kombinasi: number[][] = [];
+      const susun = (mulai: number, isi: number[], jumlah: number) => {
+        if (isi.length) kombinasi.push([...isi]);
+        if (isi.length === maksLembar) return;
+        for (let i = mulai; i < urut.length; i++) if (jumlah + urut[i] <= plafon) susun(i, [...isi, urut[i]], jumlah + urut[i]);
+      };
+      susun(0, [], 0);
+      const lembar = kombinasi.length ? pilihSatu(kombinasi, r) : [pakai[0]];
       const dibayar = lembar.reduce((a, b) => a + b, 0);
       const target = Math.round(dibayar / KOIN);
       ronde.lembar = lembar; ronde.dibayar = dibayar; ronde.target = target; ronde.harga = dibayar;

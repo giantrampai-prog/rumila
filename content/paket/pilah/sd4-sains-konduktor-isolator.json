@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-konduktor-isolator",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.02"
@@ -154,7 +154,7 @@
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "isolator",
-      "emoji": "🫙"
+      "emoji": "🥛"
     },
     {
       "id": "tali",

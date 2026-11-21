@@ -1,6 +1,6 @@
 {
   "id": "sains-ciri-tubuh-dan-habitat",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -113,7 +113,7 @@
       "id": "insang",
       "labelKey": "i-insang",
       "bin": "air",
-      "emoji": "🫧"
+      "emoji": "🐟"
     },
     {
       "id": "punuk",

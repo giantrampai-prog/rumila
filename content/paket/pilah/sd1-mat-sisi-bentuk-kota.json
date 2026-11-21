@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-sisi-bentuk-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -151,7 +151,7 @@
       "id": "roda",
       "labelKey": "i-roda",
       "bin": "lengkung",
-      "emoji": "🛞"
+      "emoji": "⭕"
     },
     {
       "id": "donat",
