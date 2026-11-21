@@ -31,3 +31,14 @@ describe("peran profil", () => {
     expect(anakRumah([ayah, siswaSendiri, kakak, nenek]).map((m) => m.id)).toEqual(["s", "k"]);
   });
 });
+
+describe("umurDari", () => {
+  it("menghitung tahun dan bulan penuh", async () => {
+    const { umurDari } = await import("../konten");
+    expect(umurDari("2020-03-12", new Date(2026, 10, 21))).toEqual({ tahun: 6, bulan: 8 });
+    expect(umurDari("2020-11-22", new Date(2026, 10, 21))).toEqual({ tahun: 5, bulan: 11 });
+    expect(umurDari("2020-11-21", new Date(2026, 10, 21))).toEqual({ tahun: 6, bulan: 0 });
+    expect(umurDari("2030-01-01", new Date(2026, 10, 21))).toBeNull();
+    expect(umurDari("12-03-2020", new Date(2026, 10, 21))).toBeNull();
+  });
+});

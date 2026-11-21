@@ -3,6 +3,7 @@
 // Lemari Piagam: daftar semua penghargaan satu anak + penampil satu dokumen (dengan Cetak/PDF untuk A4).
 // Sumber: sertifikat jenjang (akademi_certificate) dan hasil ujian (akademi_ujian) → piagam modul & sertifikat semester.
 
+import { useTanggalLahirAnak } from "@/lib/akademi/konten";
 import { useEffect, useMemo, type ReactNode } from "react";
 import { levelMeta } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
@@ -40,6 +41,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
   const satuSemester = jenis === "semester" ? semester.find((m) => m.sessionId === sesi) : undefined;
   const satuJenjang = jenis === "jenjang" ? jenjang.find((m) => m.code === sesi) : undefined;
   const foto = useFotoAnak(anak.id);
+  const lahir = useTanggalLahirAnak(anak.id);
 
   if (satuModul || satuSemester || satuJenjang)
     return (
@@ -53,7 +55,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
             <h1 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>{satuModul ? "Piagam Modul" : satuSemester ? "Sertifikat Semester" : "Sertifikat Kenaikan Jenjang"}</h1>
           </div>
           {satuJenjang ? (
-            <BukuSertifikat nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} foto={foto} pending={satuJenjang.pending} />
+            <BukuSertifikat nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} foto={foto} lahir={lahir} pending={satuJenjang.pending} />
           ) : (
             <div className="flex justify-center">{satuModul ? <PiagamModulKartu nama={anak.name} p={satuModul} /> : <SertifikatSemesterKartu nama={anak.name} s={satuSemester!} />}</div>
           )}

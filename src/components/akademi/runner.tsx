@@ -10,7 +10,8 @@ import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
-import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { useBacksound } from "@/lib/akademi/backsound";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { useMe } from "@/lib/store";
@@ -86,6 +87,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
   const [beruntun, setBeruntun] = useState({ benar: 0, salah: 0 });
   const [selesai, setSelesai] = useState(false);
+  // backsound sesuai jenjang anak; diam di layar selesai (dan tidak ada di Ruang Ujian)
+  const musik = useBacksound(learnerId, levelAnak(learnerId), !selesai);
   const mulai = useRef(Date.now());
   const mulaiRonde = useRef(Date.now());
   const total = paket.rounds;
@@ -170,7 +173,7 @@ function Runner({ paket }: { paket: ContentPack }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} musik={musik}>
       <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
         <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
