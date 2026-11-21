@@ -267,7 +267,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
                   style={{ minHeight: 46 * sk, minWidth: 46 * sk, pointerEvents: kunci ? "none" : undefined }}
                 />
               ))}
-              {isi.length === 0 && <span className="w-full text-center" style={{ fontSize: 24 * sk, opacity: 0.45 }}>⬇</span>}
+              {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: 30 * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap }}>↓</span>}
             </Wadah>
           );
         })}

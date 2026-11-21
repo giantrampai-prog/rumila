@@ -92,7 +92,6 @@ export function LayarAktivitas({
     if (dariSini && window.history.length > 1) router.back();
     else router.push(kembaliKe);
   };
-  const gelap = dunia === "laut" || dunia === "hutan" || dunia === "angkasa";
   return (
     <div className="relative min-h-dvh" style={{ fontFamily: NUNITO, color: INK }}>
       <LatarDunia dunia={dunia} />
@@ -104,7 +103,7 @@ export function LayarAktivitas({
           <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95">
             <Icon name="arrow_back" size={24} />
           </button>
-          <div className="min-w-0 flex-1 rounded-[16px] px-3 py-1.5" style={{ background: gelap ? "rgba(255,255,255,.92)" : "rgba(255,255,255,.55)" }}>
+          <div className="min-w-0 flex-1 rounded-[16px] px-3 py-1.5" style={{ background: "rgba(255,255,255,.94)", boxShadow: "0 3px 0 rgba(11,37,69,.08)" }}>
             <div className="truncate" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1 }}>{judul}</div>
             <div className="mt-1 flex gap-1" aria-label={`Ronde ${ronde} dari ${total}`}>
               {Array.from({ length: total }, (_, k) => (

@@ -233,7 +233,7 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
   return (
     <ModeUjianProvider value={true}>
       <LayarAktivitas judul={`${latihan ? "Latihan " : ""}${NAMA_UJIAN[jenis]} · ${judul}`} ronde={idx + 1} total={soal.length} instruksi={instruksi} onUcap={ucap} kembaliKe={kembaliKe} dunia={duniaPaket(paket)}>
-        <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center py-1">
+        <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
           <LatarWarnaProvider paket={paket}>
           {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}

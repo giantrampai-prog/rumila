@@ -171,7 +171,7 @@ function Runner({ paket }: { paket: ContentPack }) {
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
     <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)}>
-      <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center py-1">
+      <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
         <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}

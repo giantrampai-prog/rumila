@@ -98,12 +98,12 @@ export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ lab
       className={`relative flex flex-col p-2 transition-transform ${className}`}
       style={{ ...b, boxShadow: `${b.boxShadow}${ring && ring !== "transparent" ? `, 0 0 0 4px ${ring}` : ""}`, padding: `${10 * skala}px ${12 * skala}px ${16 * skala}px`, gap: 8 * skala, ...style }}
     >
-      <div className="flex items-center justify-center gap-2 self-center rounded-full bg-white/95 px-3 py-1 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16 * skala, lineHeight: 1.1, maxWidth: "100%" }}>
+      <div className="flex items-center justify-center gap-2 self-center rounded-full bg-white px-3 py-1 text-[#0b2545] shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16 * skala, lineHeight: 1.1, maxWidth: "100%" }}>
         {label}
       </div>
       <div
         className="flex flex-1 flex-wrap content-center items-center justify-center gap-1 rounded-[14px] px-1.5 py-1"
-        style={{ minHeight: minIsi * skala, background: hijau ? "rgba(230,248,239,.92)" : "rgba(255,255,255,.34)", boxShadow: "inset 0 4px 10px rgba(0,0,0,.14)" }}
+        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : "rgba(255,255,255,.88)", border: `3px dashed ${hijau ? "#22b573" : tema.wadahGelap}`, boxShadow: "inset 0 3px 8px rgba(0,0,0,.10)" }}
       >
         {children}
       </div>

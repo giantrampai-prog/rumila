@@ -11,6 +11,8 @@ import type { JawabanPola, RondePola } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
+import { usePanggung } from "./dunia";
+import { useModeUjian } from "./mode-ujian";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondePola, JawabanPola, PaketPola>;
@@ -83,8 +85,9 @@ function visual(x: ItemPola, t: (k: string) => string): VisualSpec {
   return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
 }
 
-/** Tombol "Bantu" kecil (≥56px), sama gayanya dengan presenter lain. */
+/** Tombol "Bantu" kecil (≥56px), sama gayanya dengan presenter lain; disembunyikan di mode ujian. */
 function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
+  if (useModeUjian()) return null;
   return (
     <button
       type="button"
@@ -104,17 +107,41 @@ function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: bo
 
 /** Tombol aksi besar (≥56px) warna ungu/hijau. */
 function TombolBesar({ children, onClick, disabled, warna = UNGU, className = "" }: { children: ReactNode; onClick: () => void; disabled?: boolean; warna?: string; className?: string }) {
+  const sk = Math.min(usePanggung().skala, 1.3);
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`flex h-14 min-w-[56px] items-center justify-center gap-2 rounded-full px-6 text-white transition-transform active:translate-y-0.5 disabled:opacity-40 ${className}`}
-      style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 900, background: warna, boxShadow: "0 5px 0 rgba(11,37,69,.18)" }}
+      className={`flex min-w-[56px] items-center justify-center gap-2 rounded-full px-6 text-white transition-transform active:translate-y-0.5 disabled:opacity-40 ${className}`}
+      style={{ height: 56 * sk, fontFamily: BALOO, fontSize: 20 * sk, fontWeight: 900, background: warna, boxShadow: "0 5px 0 rgba(11,37,69,.18)" }}
     >
       {children}
     </button>
   );
+}
+
+/* ---------------- tata letak ---------------- */
+
+/**
+ * Sisi kotak persegi terbesar (base..maks) untuk `n` kotak ber-wrap dalam lebar×tinggi, tanpa menambah jumlah baris
+ * dibanding kotak seukuran `base`. Di HP (sempit) praktis sama dengan ukuran lama; di tablet kotak membesar.
+ */
+function sisiMuat(lebar: number, tinggi: number, n: number, base: number, maks: number, gap: number, bebasBaris = false): number {
+  if (lebar <= 0 || n <= 0) return base;
+  // layar tegak: boleh tambah baris asal kotak lebih besar dan muat di tinggi yang tersedia
+  if (bebasBaris && tinggi > 0) {
+    for (let s = Math.floor(maks); s > base; s -= 2) {
+      const pb = Math.max(1, Math.min(n, Math.floor((lebar + gap) / (s + gap))));
+      const b = Math.ceil(n / pb);
+      if (pb * s + gap * (pb - 1) <= lebar && b * s + gap * (b - 1) <= tinggi) return s;
+    }
+  }
+  const perBaris = Math.max(1, Math.min(n, Math.floor((lebar + gap) / (base + gap))));
+  const baris = Math.ceil(n / perBaris);
+  const dariLebar = (lebar - gap * (perBaris - 1)) / perBaris;
+  const dariTinggi = tinggi > 0 ? (tinggi - gap * (baris - 1)) / baris : base;
+  return Math.round(Math.max(base, Math.min(maks, dariLebar, dariTinggi)));
 }
 
 /* ---------------- presenter ---------------- */
@@ -287,33 +314,47 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
 
   const semuaTerisi = urutan.length > 0 && urutan.every((x) => x !== null);
   const hiasan = mode === "cipta" && !!hasil?.benar;
-  const slotPx = urutan.length > 9 ? 56 : urutan.length > 6 ? 64 : 72;
-  const kartuPx = palette.length > 5 ? 64 : 72;
+  const { tema, skala: sk, w, h } = usePanggung();
+  const gap = Math.round(8 * sk);
+  const lebarDalam = w > 0 ? w - 24 * sk - 6 : 0;
+  // palet: benda membesar mengikuti lebar & tinggi panggung (±16% tinggi), tanpa pindah baris
+  const basePalet = palette.length > 5 ? 64 : 72;
+  const lebarKartu = sisiMuat(lebarDalam, 0, palette.length, (basePalet + 16) * sk, 200 * sk, gap);
+  const kartuPx = Math.round(Math.max(basePalet * sk, Math.min((lebarKartu - 16 * sk) * 0.8, h > 0 ? h * 0.16 : 0, 130)));
+  const barisPalet = Math.ceil(palette.length / Math.max(1, Math.floor((lebarDalam + gap) / (lebarKartu + gap)) || 1));
+  const tinggiPalet = barisPalet * (kartuPx + 16 + 20 * sk) + 24 * sk + (mode === "cipta" ? 60 * sk : 0);
+  // kalung mengisi sisa tinggi: panggung − judul − palet − baris aksi − jarak − padding kalung
+  const tinggiKalung = h > 0 ? h - 58 * Math.min(sk, 1.3) - tinggiPalet - 56 * Math.min(sk, 1.3) - 3 * 12 - 32 * sk - (hiasan ? 36 * sk : 0) : 0;
+  const baseSlot = urutan.length > 9 ? 56 : urutan.length > 6 ? 64 : 72;
+  const tegak = w > 0 && h > w;
+  const slotPx = sisiMuat(lebarDalam, tegak ? tinggiKalung - 16 : tinggiKalung, urutan.length, baseSlot * sk, 150, gap, tegak);
 
   const judul =
     mode === "lanjut" ? "Lanjutkan polanya!" : mode === "perbaiki" ? "Ada yang tertukar. Betulkan satu!" : fasePilih ? `Pilih ${butuhPilih} benda untuk polamu` : "Susun polamu berulang-ulang";
 
   return (
-    <div className="flex flex-col gap-3" style={{ color: INK }}>
+    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.15 }}>
+        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 22 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
           {judul}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>
 
-      {/* kalung / pagar */}
+      {/* kalung / pagar: rak bertema dunia, mengisi sisa tinggi panggung */}
       <div
-        className={`relative rounded-[26px] px-3 py-4 ${hiasan ? "akademi-pop" : ""}`}
+        className={`relative flex flex-1 flex-col justify-center ${hiasan ? "akademi-pop" : ""}`}
         style={{
-          background: hiasan ? "linear-gradient(180deg,#fff6d6,#ffe7a3)" : "rgba(255,255,255,.7)",
-          boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : "0 4px 0 rgba(11,37,69,.08)",
+          borderRadius: 26 * sk,
+          padding: `${16 * sk}px ${12 * sk}px`,
+          background: hiasan ? "linear-gradient(180deg,#fff6d6,#ffe7a3)" : `linear-gradient(180deg,rgba(255,255,255,.2),transparent 40%), ${tema.wadahWarna}`,
+          boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : `inset 0 -${Math.round(10 * sk)}px 0 ${tema.wadahGelap}66, 0 6px 0 ${tema.wadahGelap}`,
         }}
       >
         {/* tali kalung di belakang kotak */}
-        <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 h-1 -translate-y-1/2 rounded-full" style={{ background: hiasan ? EMAS : "rgba(11,37,69,.12)" }} />
-        <div className="relative flex flex-wrap items-center justify-center gap-2">
+        <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-full" style={{ height: Math.max(4, 5 * sk), background: hiasan ? EMAS : tema.wadahGelap }} />
+        <div className="relative flex flex-wrap items-center justify-center" style={{ gap }}>
           {urutan.map((id, i) => {
             const item = id !== null ? palette.find((p) => p.id === id) : undefined;
             const asli = slotAsli(i);
@@ -334,12 +375,15 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 style={{
                   width: slotPx,
                   height: slotPx,
-                  borderRadius: 18,
-                  background: kosong ? "rgba(255,255,255,.55)" : benar === true ? "#e6f8ef" : benar === false ? "#ffe9ec" : "#fff",
-                  border: kosong ? `3px dashed ${dipilih ? UNGU : disorot ? SOROT : "rgba(11,37,69,.3)"}` : "3px solid transparent",
-                  boxShadow: kosong ? (ring !== "transparent" && !dipilih && !disorot ? `0 0 0 3px ${ring}` : undefined) : `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`,
+                  borderRadius: 18 * sk,
+                  // slot kosong tetap nyaris putih bergaris putus tegas supaya terlihat jelas di dunia gelap
+                  background: kosong ? "rgba(255,255,255,.9)" : benar === true ? "#e6f8ef" : benar === false ? "#ffe9ec" : "#fff",
+                  border: kosong ? `3px dashed ${dipilih ? UNGU : disorot ? SOROT : tema.wadahGelap}` : "3px solid transparent",
+                  boxShadow: kosong
+                    ? `inset 0 4px 10px rgba(0,0,0,.14)${ring !== "transparent" && !dipilih && !disorot ? `, 0 0 0 3px ${ring}` : ""}`
+                    : `0 4px 0 rgba(0,0,0,.18), 0 0 0 3px ${ring}`,
                   transform: berbunyi ? "scale(1.14)" : dipilih ? "scale(1.08)" : undefined,
-                  opacity: asli ? 0.92 : 1,
+
                   cursor: bisaKetuk ? "pointer" : "default",
                   animationDelay: hiasan ? `${i * 60}ms` : undefined,
                   touchAction: "manipulation",
@@ -348,27 +392,27 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 {item ? (
                   <Benda v={visual(item, t)} size={slotPx * 0.68} />
                 ) : (
-                  <span style={{ fontFamily: BALOO, fontSize: slotPx * 0.5, fontWeight: 900, color: dipilih ? UNGU : "rgba(11,37,69,.4)", lineHeight: 1 }}>?</span>
+                  <span style={{ fontFamily: BALOO, fontSize: slotPx * 0.5, fontWeight: 900, color: dipilih ? UNGU : tema.wadahGelap, lineHeight: 1 }}>?</span>
                 )}
               </button>
             );
           })}
         </div>
         {hiasan && (
-          <div className="akademi-fade mt-3 text-center" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 900 }}>
+          <div className="akademi-fade mt-3 text-center" style={{ fontFamily: BALOO, fontSize: 20 * Math.min(sk, 1.3), fontWeight: 900, color: INK }}>
             Hiasanmu jadi! 🎉
           </div>
         )}
       </div>
 
       {/* palette */}
-      <div className="rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]">
+      <div style={{ borderRadius: 24 * sk, padding: 12 * sk, background: tema.panel, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` }}>
         {mode === "cipta" && !fasePilih && !kunci && (
-          <div className="mb-2 text-center" style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, opacity: 0.7 }}>
+          <div className="mb-2 text-center" style={{ fontFamily: BALOO, fontSize: 15 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
             Ketuk benda terpilih untuk mengisi · ketuk kotak untuk mengosongkan
           </div>
         )}
-        <div className="flex flex-wrap items-stretch justify-center gap-2">
+        <div className="flex flex-wrap items-stretch justify-center" style={{ gap }}>
           {palette.map((p) => {
             const terpilihCipta = mode === "cipta" && bendaCipta.includes(p.id);
             const redup = mode === "cipta" && !fasePilih && !terpilihCipta;
@@ -378,16 +422,19 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 key={p.id}
                 v={visual(p, t)}
                 size={kartuPx}
+                labelSize={Math.round(Math.min(20, 13 * Math.max(sk, kartuPx / 72)))}
                 selected={terpilihCipta && fasePilih}
                 dim={redup}
                 onClick={() => ketukPalette(p.id)}
-                className={`min-h-[72px] min-w-[72px] ${disorot ? "akademi-bounce" : ""}`}
+                className={disorot ? "akademi-bounce" : ""}
                 style={{
+                  minWidth: 72 * sk,
+                  minHeight: 72 * sk,
                   boxShadow: disorot
                     ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}`
                     : terpilihCipta && !fasePilih
                       ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${UNGU}`
-                      : undefined,
+                      : `0 4px 0 rgba(11,37,69,.12), 0 0 0 2px ${tema.aksen}44`,
                   pointerEvents: kunci ? "none" : undefined,
                 }}
               />
@@ -396,7 +443,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
         </div>
         {mode === "cipta" && !fasePilih && !kunci && (
           <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5">
-            <span style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, opacity: 0.6 }}>Terpilih:</span>
+            <span style={{ fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>Terpilih:</span>
             {bendaCipta.map((id) => {
               const item = palette.find((p) => p.id === id);
               return item ? (
@@ -405,10 +452,10 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                   type="button"
                   onClick={() => lepasBendaCipta(id)}
                   aria-label="Lepas benda"
-                  className="flex h-10 items-center gap-1 rounded-full bg-white px-2 shadow-[0_3px_0_rgba(11,37,69,.1)] active:translate-y-0.5"
-                  style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800 }}
+                  className="flex items-center gap-1 rounded-full bg-white px-2 active:translate-y-0.5"
+                  style={{ height: 40 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK, boxShadow: `0 3px 0 rgba(11,37,69,.1), 0 0 0 2px ${tema.aksen}44` }}
                 >
-                  <Benda v={visual(item, t)} size={24} /> ✕
+                  <Benda v={visual(item, t)} size={24 * Math.min(sk, 1.3)} /> ✕
                 </button>
               ) : null;
             })}
@@ -420,7 +467,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
       <div className="flex flex-wrap items-center justify-center gap-3">
         {mode === "perbaiki" && (
           <>
-            <span className="flex h-10 items-center rounded-full bg-white/80 px-3" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, opacity: 0.8 }}>
+            <span className="flex items-center rounded-full bg-white px-3 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ height: 40 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
               Diubah: {ubah}
             </span>
             <TombolBesar onClick={() => kirim(urutan)} disabled={kunci} warna={BENAR}>
@@ -446,8 +493,8 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
             onClick={() => putar(urutan)}
             disabled={sedangMain}
             aria-label="Dengar pola"
-            className="flex h-14 items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
-            style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}
+            className="flex items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
+            style={{ height: 56 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 18 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}
           >
             Dengar ♪
           </button>
