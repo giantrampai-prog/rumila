@@ -19,9 +19,12 @@ import { proyeksi } from "@/lib/akademi/mastery";
 import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta";
 import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { NAMA_UJIAN, predikat, type HasilUjian } from "@/lib/akademi/ujian";
-import { adminBerPin, bukaDenganPin, ruangTerbuka, sisaKunci, tutupRuang } from "@/lib/ortu";
+import { adminBerPin, bukaDenganPin, bukaRuang, ruangTerbuka, sisaKunci, tutupRuang } from "@/lib/ortu";
+import { isOrangTua, profilTerbuka } from "@/lib/profil";
+import { BuatPin, LupaPin } from "@/components/pin-pad";
+import { AnggotaRumah } from "@/components/ortu/anggota";
 import { daftarDisiapkan } from "@/lib/kampus";
-import { useRumila, type Member } from "@/lib/store";
+import { useMe, useRumila, type Member } from "@/lib/store";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.06)]";
@@ -31,6 +34,7 @@ const TAB = [
   ["ujian", "Ujian & Tes", "quiz"],
   ["sertifikat", "Sertifikat", "workspace_premium"],
   ["berpikir", "Profil Berpikir", "psychology"],
+  ["anggota", "Anggota & PIN", "manage_accounts"],
   ["keluarga", "Keluarga & Kesehatan", "family_restroom"],
 ] as const;
 type Tab = (typeof TAB)[number][0];
@@ -38,7 +42,12 @@ type Tab = (typeof TAB)[number][0];
 export function RuangOrangTua() {
   const members = useRumila((s) => s.members);
   const [buka, setBuka] = useState(false);
-  useEffect(() => setBuka(ruangTerbuka()), []);
+  const me = useMe();
+  // Orang tua yang baru masuk ke profilnya dengan PIN tidak perlu mengetik PIN lagi.
+  useEffect(() => {
+    if (!ruangTerbuka() && isOrangTua(me) && !!me.pin && profilTerbuka(me.id)) bukaRuang();
+    setBuka(ruangTerbuka());
+  }, [me]);
   // kunci otomatis saat waktu habis
   useEffect(() => {
     if (!buka) return;
@@ -60,7 +69,9 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
   const [pin, setPin] = useState("");
   const [pesan, setPesan] = useState<string | null>(null);
   const [sibuk, setSibuk] = useState(false);
+  const [lupa, setLupa] = useState(false);
   const adaPin = adminBerPin(members).length > 0;
+  const pemilik = adminBerPin(members)[0] ?? members.find((m) => m.admin);
 
   useEffect(() => {
     if (pin.length !== 4) return;
@@ -74,6 +85,19 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
   }, [pin, members, onBuka]);
 
   const tekan = (d: string) => !sibuk && setPin((p) => (p.length < 4 ? p + d : p));
+  if (pemilik && (lupa || !adaPin))
+    return (
+      <div className="mx-auto mt-6 flex w-full max-w-[380px] flex-col items-center gap-4">
+        <Link href="/beranda" className="self-start text-[14px] font-extrabold text-ink-3">
+          ← Kembali
+        </Link>
+        {lupa ? (
+          <LupaPin m={pemilik} onSelesai={() => (bukaRuang(), onBuka())} onBatal={() => setLupa(false)} />
+        ) : (
+          <BuatPin m={pemilik} jenis="angka" judul={`Buat PIN orang tua untuk ${pemilik.name}`} onSelesai={() => (bukaRuang(), onBuka())} />
+        )}
+      </div>
+    );
   return (
     <div className="mx-auto mt-6 flex w-full max-w-[360px] flex-col items-center gap-5 text-center">
       <Link href="/beranda" className="self-start text-[14px] font-extrabold text-ink-3">
@@ -113,6 +137,9 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
               ),
             )}
           </div>
+          <button onClick={() => setLupa(true)} className="text-[14px] font-extrabold text-[#0567c2]">
+            Lupa PIN?
+          </button>
         </>
       ) : (
         <p className={`${KARTU} p-4 text-[14px] font-bold text-ink-3`}>Buka Pengaturan → pilih profil Ayah/Ibu (admin) → pasang PIN 4 angka. Setelah itu Ruang Orang Tua bisa dibuka dengan PIN tersebut.</p>
@@ -151,7 +178,10 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
         </button>
       </header>
       {!terpilih ? (
-        <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Belum ada profil anak. Tambahkan anggota rumah lalu tandai sebagai anak di Pengaturan.</p>
+        <>
+          <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Belum ada profil anak. Daftarkan anak di bawah ini, lalu anak bisa masuk dengan PIN-nya sendiri.</p>
+          <AnggotaRumah />
+        </>
       ) : (
         <>
           <div className="no-print flex flex-wrap gap-2" role="tablist" aria-label="Pilih anak">
@@ -193,6 +223,7 @@ function Bagian({ anak, tab }: { anak: Member; tab: Tab }) {
   if (tab === "ujian") return <DaftarUjian anak={anak} />;
   if (tab === "berpikir") return <ProfilBerpikirOrtu anak={anak} />;
   if (tab === "keluarga") return <SedangDisiapkan />;
+  if (tab === "anggota") return <AnggotaRumah />;
   return <Ringkasan anak={anak} />;
 }
 

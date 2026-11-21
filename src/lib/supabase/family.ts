@@ -12,6 +12,7 @@ import { useRumila, useUI, type Activity, type Member } from "@/lib/store";
 import { friendlyError, supabase } from "./client";
 import { pullSaves, stopSaveSync } from "./saves";
 import { tarikEvents } from "@/lib/akademi/jejak";
+import { setPeranAkademi } from "@/lib/akademi/konten";
 
 export type CloudStatus = "loading" | "noSession" | "noFamily" | "ready" | "error";
 
@@ -67,6 +68,9 @@ export async function loadFamily(): Promise<CloudStatus> {
         .limit(5000),
     ]);
     for (const r of [fam, mem, act]) if (r.error) throw r.error;
+    // Kolom profil (migrasi 20261121100000) dibaca terpisah: rumah tetap terbuka bila migrasi belum dijalankan.
+    const profil = await sb.from("member").select("id, avatar, peran, jenis_pin").eq("family_id", fid);
+    const profilById = new Map((profil.error ? [] : (profil.data ?? [])).map((p) => [p.id as string, p]));
     // izin hanya untuk anggota rumah ini (pakai kunci utama member_id, tidak memindai rumah lain)
     const ids = (mem.data ?? []).map((m) => m.id);
     const perm = ids.length ? await sb.from("member_permission").select("member_id, key").in("member_id", ids) : { data: [], error: null };
@@ -79,7 +83,12 @@ export async function loadFamily(): Promise<CloudStatus> {
       admin: m.is_admin,
       perms: (perm.data ?? []).filter((p) => p.member_id === m.id).map((p) => p.key as PermKey),
       pin: m.has_pin ? PIN_SET : undefined,
+      avatar: (profilById.get(m.id)?.avatar as string | null) ?? undefined,
+      peran: (profilById.get(m.id)?.peran as Member["peran"] | null) ?? undefined,
+      jenisPin: (profilById.get(m.id)?.jenis_pin as Member["jenisPin"] | null) ?? "angka",
     }));
+    // peran di server menjadi sumber; penanda lama di perangkat disamakan supaya Rapor/Lab ikut
+    for (const m of members) if (m.peran) setPeranAkademi(m.id, m.peran);
     const activity: Activity[] = (act.data ?? []).map((a) => ({
       id: a.id,
       memberId: a.member_id,
@@ -153,6 +162,9 @@ export async function setPin(memberId: string, pin: string | null) {
   paused = false;
 }
 
+/** Tunggu semua perubahan anggota yang sudah diantrekan selesai ditulis ke server. */
+export const tungguSinkron = () => queue;
+
 export async function signOutAccount() {
   await supabase().auth.signOut();
   paused = true;
@@ -192,10 +204,16 @@ function syncMembers(next: Member[], prev: Member[], fid: string) {
         must(await sb.from("member").insert({ id: m.id, family_id: fid, name: m.name, color_key: m.c, sort: i }));
         if (m.perms.length) must(await sb.from("member_permission").insert(m.perms.map((key) => ({ member_id: m.id, key }))));
       });
+      // kolom profil terpisah: bila migrasi profil belum ada, anggota & izinnya tetap tersimpan
+      if (m.avatar || m.peran || (m.jenisPin && m.jenisPin !== "angka"))
+        enqueue(async () => void must(await sb.from("member").update({ avatar: m.avatar ?? null, peran: m.peran ?? null, jenis_pin: m.jenisPin ?? "angka" }).eq("id", m.id)));
       return;
     }
     if (old.name !== m.name || old.c !== m.c) {
       enqueue(async () => void must(await sb.from("member").update({ name: m.name, color_key: m.c }).eq("id", m.id)));
+    }
+    if (old.avatar !== m.avatar || old.peran !== m.peran || (old.jenisPin ?? "angka") !== (m.jenisPin ?? "angka")) {
+      enqueue(async () => void must(await sb.from("member").update({ avatar: m.avatar ?? null, peran: m.peran ?? null, jenis_pin: m.jenisPin ?? "angka" }).eq("id", m.id)));
     }
     const add = m.perms.filter((k) => !old.perms.includes(k));
     const del = old.perms.filter((k) => !m.perms.includes(k));

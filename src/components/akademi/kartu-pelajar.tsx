@@ -10,6 +10,9 @@ import { Icon } from "@/components/ui";
 import { useFotoAnak } from "@/lib/akademi/foto";
 import { formatIpk, hitungIpk, nomorInduk, tahunMasuk } from "@/lib/akademi/kartu-pelajar";
 import { useUjian } from "@/lib/akademi/ujian-klien";
+import { WajahKarakter } from "@/components/avatar-karakter";
+import { AVATAR_AWAL, bacaAvatar } from "@/lib/avatar";
+import { PLAY } from "@/lib/catalog";
 import type { Member } from "@/lib/store";
 
 const INK = "#0b2545";
@@ -66,7 +69,11 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
         {/* foto */}
         <div className="flex shrink-0 flex-col items-center gap-[1.4cqw]" style={{ width: "25%" }}>
           <div className="w-full overflow-hidden rounded-[2cqw] border-[.6cqw] border-white bg-[#e3f1fd] shadow-[0_2px_0_rgba(11,37,69,.12)]" style={{ aspectRatio: "3 / 4" }}>
-            {foto ? (
+            {me.avatar ? (
+              <svg viewBox="12 10 76 90" className="size-full" style={{ background: `linear-gradient(160deg, ${PLAY[me.c][0]}, ${PLAY[me.c][1]})` }}>
+                <WajahKarakter b={bacaAvatar(me.avatar) ?? AVATAR_AWAL} baju={PLAY[me.c][2]} />
+              </svg>
+            ) : foto ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={foto} alt="" className="size-full object-cover" />
             ) : (

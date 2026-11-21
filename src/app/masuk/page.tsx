@@ -8,8 +8,10 @@ import { CAT, PLAY } from "@/lib/catalog";
 import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { AccountStage, SetupStage } from "./account";
+import { PilihProfil } from "./pilih-profil";
+import { bukaProfil, profilTerbuka } from "@/lib/profil";
 
-// Layar masuk: akun → langsung ke beranda (tanpa pilih profil & PIN).
+// Layar masuk: akun rumah → "Siapa yang belajar?" → PIN profil → beranda.
 
 const PI = "#0b2545";
 
@@ -33,16 +35,19 @@ function Masuk() {
   const theme: Theme = "playful";
   const play = theme === "playful";
   const meId = useRumila((s) => s.meId);
+  const signedIn = useRumila((s) => s.signedIn);
   const router = useRouter();
-  // Tanpa pilih profil & PIN: setelah akun masuk langsung ke beranda
-  // (profil terakhir dipakai, atau Admin). Ganti profil lewat avatar di beranda.
-  const who = members.find((m) => m.id === meId) ?? members.find((m) => m.admin) ?? members[0] ?? null;
-  const whoId = who?.id;
+  const [masuk, setMasuk] = useState<Member | null>(null);
+  // Profil masih terbuka di tab ini (belum 30 menit diam) → langsung ke beranda.
   useEffect(() => {
-    if (!ready || cloud.status !== "ready" || !whoId) return;
-    signIn(whoId);
+    if (ready && cloud.status === "ready" && signedIn && profilTerbuka(meId)) router.replace("/beranda");
+  }, [ready, cloud.status, signedIn, meId, router]);
+  const pilih = (m: Member) => {
+    bukaProfil(m.id);
+    signIn(m.id);
+    setMasuk(m);
     router.replace("/beranda");
-  }, [ready, cloud.status, whoId, signIn, router]);
+  };
 
   return (
     <div
@@ -80,8 +85,10 @@ function Masuk() {
             Coba lagi
           </button>
         </div>
-      ) : who ? (
-        <Loading member={who} theme={theme} />
+      ) : masuk ? (
+        <Loading member={masuk} theme={theme} />
+      ) : members.length ? (
+        <PilihProfil members={members} onMasuk={pilih} />
       ) : null}
     </div>
   );

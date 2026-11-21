@@ -9,7 +9,8 @@ import { Icon } from "@/components/ui";
 import { CAT, MEMBER_COLORS, PLAY, type ColorKey } from "@/lib/catalog";
 import { friendlyError, supabase } from "@/lib/supabase/client";
 import { createFamily, signOutAccount } from "@/lib/supabase/family";
-import type { Theme } from "@/lib/store";
+import { useRumila, type Theme } from "@/lib/store";
+import { setPeranAkademi } from "@/lib/akademi/konten";
 
 const PI = "#0b2545";
 const NV = "#1F3044";
@@ -208,13 +209,15 @@ export function AccountStage({ theme }: { theme: Theme }) {
 
 export function SetupStage({ theme, email }: { theme: Theme; email: string | null }) {
   const L = useLook(theme);
+  // Orang tua membuat rumah keluarga; siswa (mis. 12 tahun) boleh mendaftar sendiri dan langsung belajar.
+  const [siswa, setSiswa] = useState(false);
   const [family, setFamily] = useState("");
   const [name, setName] = useState("");
   const [c, setC] = useState<ColorKey>("indigo");
   const [pin, setPinVal] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-  const ok = family.trim() && name.trim() && (pin === "" || /^\d{4}$/.test(pin));
+  const ok = (siswa || family.trim()) && name.trim() && /^\d{4}$/.test(pin);
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -222,7 +225,14 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
     setErr("");
     setBusy(true);
     try {
-      await createFamily(family.trim(), name.trim(), c, pin || null);
+      const status = await createFamily(siswa ? name.trim() : family.trim(), name.trim(), c, pin);
+      if (siswa && status === "ready") {
+        const saya = useRumila.getState().members.find((m) => m.admin);
+        if (saya) {
+          setPeranAkademi(saya.id, "anak");
+          useRumila.getState().updateMember(saya.id, { peran: "anak" });
+        }
+      }
     } catch (e) {
       setErr(friendlyError(e));
       setBusy(false);
@@ -232,12 +242,31 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
   return (
     <div className="anim-fade relative flex w-full max-w-[460px] flex-col gap-5 bg-white px-7 pt-8 pb-7" style={L.card}>
       <div className="text-center">
-        <h1 style={L.title}>Buat rumah keluargamu</h1>
+        <h1 style={L.title}>{siswa ? "Daftar sebagai siswa" : "Buat rumah keluargamu"}</h1>
         <p className="mt-1.5" style={{ color: L.muted, fontWeight: 600, fontSize: 14 }}>
-          Kamu jadi <b style={{ color: L.ink }}>Admin</b> dan bisa menambah anggota setelah ini.
+          {siswa ? "Langsung belajar. Orang tua bisa ikut bergabung kapan saja lewat Ruang Orang Tua." : "Setelah ini, daftarkan anak di Ruang Orang Tua. Anak masuk cukup dengan PIN."}
         </p>
       </div>
+      <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Saya mendaftar sebagai">
+        {([
+          [false, "Saya orang tua", "family_restroom"],
+          [true, "Saya siswa", "school"],
+        ] as const).map(([v, label, ikon]) => (
+          <button
+            key={label}
+            type="button"
+            role="radio"
+            aria-checked={siswa === v}
+            onClick={() => setSiswa(v)}
+            className="flex items-center justify-center gap-1.5 rounded-[16px] border-2 py-2.5 text-[14px] font-extrabold"
+            style={{ borderColor: siswa === v ? "#0567c2" : "#f0e4d2", background: siswa === v ? "#e3f1fd" : "#fff", color: L.ink }}
+          >
+            <Icon name={ikon} size={20} /> {label}
+          </button>
+        ))}
+      </div>
       <form onSubmit={submit} className="flex flex-col gap-3.5">
+        {!siswa && (
         <Field label="Nama rumah" muted={L.muted}>
           <div className="flex items-center gap-2" style={{ ...L.input, padding: "0 14px" }}>
             <span style={{ color: L.muted, fontWeight: 700 }}>Rumah</span>
@@ -252,6 +281,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
             />
           </div>
         </Field>
+        )}
         <Field label="Nama panggilanmu" muted={L.muted}>
           <input
             required
@@ -259,7 +289,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
             value={name}
             onChange={(e) => setName(e.target.value)}
             style={L.input}
-            placeholder="Misal: Ayah, Bunda, Mama"
+            placeholder={siswa ? "Misal: Raka" : "Misal: Ayah, Bunda, Mama"}
           />
         </Field>
         <div className="flex flex-col gap-2">
@@ -282,7 +312,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
             })}
           </div>
         </div>
-        <Field label="PIN profil (opsional, 4 angka)" muted={L.muted}>
+        <Field label={siswa ? "PIN masuk (4 angka)" : "PIN orang tua (4 angka)"} muted={L.muted}>
           <input
             inputMode="numeric"
             autoComplete="off"
@@ -290,7 +320,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
             value={pin}
             onChange={(e) => setPinVal(e.target.value.replace(/\D/g, "").slice(0, 4))}
             style={{ ...L.input, letterSpacing: pin ? ".5em" : undefined }}
-            placeholder="Kunci profilmu dari anak-anak"
+            placeholder={siswa ? "Dipakai setiap kali masuk" : "Kunci profilmu dari anak-anak"}
           />
         </Field>
         <ErrorLine msg={err} />
@@ -300,7 +330,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
           className="mt-1 transition-transform active:translate-y-[3px] disabled:opacity-50"
           style={L.primary}
         >
-          {busy ? "Menyiapkan rumah…" : "Masukkan ke rumah"}
+          {busy ? "Menyiapkan…" : siswa ? "Mulai belajar" : "Masukkan ke rumah"}
         </button>
       </form>
       <p className="text-center" style={{ fontSize: 13, fontWeight: 600, color: L.muted }}>

@@ -6,6 +6,7 @@
 // - Terbuka 15 menit per tab (sessionStorage); 5 kali salah → terkunci 5 menit (localStorage).
 
 import { PIN_SET, verifyPin } from "@/lib/supabase/family";
+import { isOrangTua } from "@/lib/profil";
 import type { Member } from "@/lib/store";
 
 const KUNCI_BUKA = "rinoya-ortu-buka";
@@ -22,7 +23,14 @@ const aman = <T,>(fn: () => T, cadangan: T): T => {
   }
 };
 
-export const adminBerPin = (members: Member[]) => members.filter((m) => m.admin && !!m.pin);
+/** Profil yang PIN-nya membuka Ruang Orang Tua: orang tua ber-PIN; rumah yang didaftarkan siswa sendiri memakai PIN admin. */
+export const adminBerPin = (members: Member[]) => {
+  const ortu = members.filter((m) => isOrangTua(m) && !!m.pin);
+  return ortu.length ? ortu : members.filter((m) => m.admin && !!m.pin);
+};
+
+/** Tandai Ruang Orang Tua terbuka (mis. orang tua baru saja masuk ke profilnya dengan PIN). */
+export const bukaRuang = () => aman(() => sessionStorage.setItem(KUNCI_BUKA, String(Date.now())), undefined);
 
 export function ruangTerbuka(sekarang = Date.now()): boolean {
   const t = Number(aman(() => sessionStorage.getItem(KUNCI_BUKA), null) ?? 0);
@@ -61,7 +69,7 @@ export async function bukaDenganPin(members: Member[], pin: string): Promise<Has
   }
   if (cocok) {
     tulisGagal({ n: 0, sampai: 0 });
-    aman(() => sessionStorage.setItem(KUNCI_BUKA, String(Date.now())), undefined);
+    bukaRuang();
     return { ok: true };
   }
   const g = bacaGagal();

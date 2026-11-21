@@ -7,6 +7,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { tintaPada } from "@/lib/brand";
+import { AvatarKarakter } from "@/components/avatar-karakter";
+import { bacaAvatar } from "@/lib/avatar";
 import { ALL_TOOLS, CAT, FOLDERS, PLAY, canonicalToolId, getTool, matchesTool, type ColorKey, type Folder, type PermKey, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
 import { can, useMe, useRumila, useUI, type Member, type Theme } from "@/lib/store";
@@ -110,6 +112,7 @@ function tagStyle(c: ColorKey, theme: Theme): CSSProperties {
 /** Avatar anggota sesuai tema: Modern = lingkaran + ring tint; Playful = gradien glossy + bayangan tebal. */
 export function MemberAvatar({ m, size, theme }: { m: Member; size: number; theme: Theme }) {
   const initial = m.name.replace(/^(Kak|Dek|Om|Tante) /, "")[0]?.toUpperCase() ?? "?";
+  if (m.avatar && bacaAvatar(m.avatar)) return <AvatarKarakter id={m.avatar} c={m.c} size={size} flat={theme === "modern"} />;
   if (theme === "modern") {
     const [tint, main] = CAT[m.c];
     return (

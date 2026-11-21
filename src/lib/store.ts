@@ -18,6 +18,12 @@ export interface Member {
   perms: PermKey[];
   /** PIN 4 angka (demo, disimpan polos). Fase Supabase: simpan pin_hash, verifikasi di server. */
   pin?: string;
+  /** avatar karakter, mis. "k1-r3-w0-a0" (lib/avatar.ts); kosong = lingkaran inisial */
+  avatar?: string;
+  /** peran di server; kosong = ikut penanda lama di perangkat (non-admin = anak) */
+  peran?: "anak" | "dewasa";
+  /** PIN angka (bawaan) atau PIN gambar untuk PAUD–TK */
+  jenisPin?: "angka" | "gambar";
 }
 
 export type Theme = "playful" | "modern";
@@ -82,7 +88,9 @@ interface State {
   signIn: (id: string) => void;
   signOut: () => void;
   switchMember: (id: string) => void;
-  addMember: (name: string, c: ColorKey) => string;
+  addMember: (name: string, c: ColorKey, extra?: Partial<Pick<Member, "avatar" | "peran" | "jenisPin">>) => string;
+  /** ubah nama, warna, avatar, peran, atau jenis PIN satu anggota */
+  updateMember: (id: string, patch: Partial<Pick<Member, "name" | "c" | "avatar" | "peran" | "jenisPin">>) => void;
   togglePerm: (id: string, key: PermKey) => void;
   setPerms: (id: string, perms: PermKey[]) => void;
   makeAdmin: (id: string) => void;
@@ -115,11 +123,12 @@ export const useRumila = create<State>()(
       signIn: (id) => set({ meId: id, signedIn: true }),
       signOut: () => set({ signedIn: false }),
       switchMember: (id) => set({ meId: id }),
-      addMember: (name, c) => {
+      addMember: (name, c, extra) => {
         const id = uuid(); // UUID: sama dengan id baris di Supabase
-        set((s) => ({ members: [...s.members, { id, name, c, admin: false, perms: KID_PRESET }] }));
+        set((s) => ({ members: [...s.members, { id, name, c, admin: false, perms: KID_PRESET, ...extra }] }));
         return id;
       },
+      updateMember: (id, patch) => set((s) => ({ members: s.members.map((m) => (m.id === id ? { ...m, ...patch } : m)) })),
       togglePerm: (id, key) =>
         set((s) => ({
           members: s.members.map((m) =>
@@ -233,7 +242,7 @@ export function useMe() {
 // ---------- UI (tidak dipersist) ----------
 
 export type SheetState =
-  { kind: "members" } | { kind: "add" } | { kind: "edit"; memberId: string } | { kind: "app"; toolId: string } | null;
+  { kind: "members" } | { kind: "add" } | { kind: "edit"; memberId: string } | { kind: "avatar"; memberId: string } | { kind: "app"; toolId: string } | null;
 
 interface UIState {
   sheet: SheetState;

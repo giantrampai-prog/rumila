@@ -6,6 +6,7 @@ import { installUiSounds } from "@/lib/sfx";
 import { pasangQuestBukti } from "@/lib/akademi/quest";
 import { type PermKey, type Tool } from "@/lib/catalog";
 import { RUTE_ALAT } from "@/lib/kampus";
+import { profilTerbuka, sentuhProfil, tutupProfil } from "@/lib/profil";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { can, useHydrated, useMe, useRumila, useUI } from "@/lib/store";
 import { KidFrame, KidHeader } from "./kid";
@@ -55,6 +56,31 @@ function Ready({ children }: { children: ReactNode }) {
   const need = requiredPerm(path);
   const allowed = !need || can(me, need);
   const lastMe = useRef(me.id);
+  // Kunci profil: belum memilih profil + PIN di tab ini, atau 30 menit diam → kembali ke "Siapa yang belajar?".
+  const terbuka = profilTerbuka(me.id);
+  useEffect(() => {
+    const cek = () => {
+      if (!profilTerbuka(me.id)) {
+        tutupProfil();
+        router.replace("/masuk");
+      }
+    };
+    cek();
+    let terakhir = 0;
+    const sentuh = () => {
+      if (Date.now() - terakhir < 15_000) return;
+      terakhir = Date.now();
+      sentuhProfil();
+    };
+    const t = setInterval(cek, 60_000);
+    window.addEventListener("pointerdown", sentuh);
+    window.addEventListener("keydown", sentuh);
+    return () => {
+      clearInterval(t);
+      window.removeEventListener("pointerdown", sentuh);
+      window.removeEventListener("keydown", sentuh);
+    };
+  }, [me.id, router]);
 
   useEffect(() => {
     const switched = lastMe.current !== me.id;
@@ -66,7 +92,7 @@ function Ready({ children }: { children: ReactNode }) {
     }
   }, [allowed, me.id, router, showToast]);
 
-  const page = allowed ? children : null;
+  const page = allowed && terbuka ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
   if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/ujian", "/akademi/penempatan", "/akademi/piagam", "/orang-tua", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))

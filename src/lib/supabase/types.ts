@@ -163,6 +163,9 @@ export type Database = {
           name: string;
           pin_hash: string | null;
           sort: number;
+          avatar: string | null;
+          peran: string | null;
+          jenis_pin: string;
         };
         Insert: {
           color_key: string;
@@ -174,6 +177,9 @@ export type Database = {
           name: string;
           pin_hash?: string | null;
           sort?: number;
+          avatar?: string | null;
+          peran?: string | null;
+          jenis_pin?: string;
         };
         Update: {
           color_key?: string;
@@ -185,6 +191,9 @@ export type Database = {
           name?: string;
           pin_hash?: string | null;
           sort?: number;
+          avatar?: string | null;
+          peran?: string | null;
+          jenis_pin?: string;
         };
         Relationships: [];
       };

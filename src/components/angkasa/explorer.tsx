@@ -939,7 +939,7 @@ export function Explorer({
             aria-label="Ganti profil"
             className="flex min-h-11 items-center gap-2 rounded-full bg-[#F4EEFF] py-1 pr-2.5 pl-1 text-sm font-extrabold text-ink"
           >
-            <Avatar name={me.name} c={me.c} size={30} />
+            <Avatar name={me.name} c={me.c} size={30} avatar={me.avatar} />
             <span className="max-sm:hidden">{me.name}</span>
             <Icon name="expand_more" size={18} />
           </button>
