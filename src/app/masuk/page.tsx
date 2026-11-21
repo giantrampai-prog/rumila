@@ -9,7 +9,7 @@ import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { AccountStage, SetupStage } from "./account";
 import { PilihProfil } from "./pilih-profil";
-import { LatarPulau } from "./latar-pulau";
+import { LatarKampus } from "./latar-kampus";
 import { bukaProfil, profilTerbuka } from "@/lib/profil";
 
 // Layar masuk: akun rumah → "Siapa yang belajar?" → PIN profil → beranda.
@@ -55,7 +55,7 @@ function Masuk() {
       className={`fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-5 py-8 ${ready && play ? "bg-[#cdeeff]" : "bg-page"}`}
       style={{ fontFamily: play ? NUNITO : PJ }}
     >
-      {ready && (play ? <LatarPulau /> : (
+      {ready && (play ? <LatarKampus /> : (
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-[220px] -left-[200px] size-[560px] rounded-full bg-[#FF7F67] opacity-[.14] blur-[100px]" />
           <div className="absolute -right-[180px] -bottom-[180px] size-[520px] rounded-full bg-[#52B8A8] opacity-[.15] blur-[100px]" />
