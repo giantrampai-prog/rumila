@@ -89,6 +89,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   const riwayat = useRef<string[]>([]);
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [hint, setHint] = useState(false);
+  /** 0 = percobaan pertama ronde ini, 1 = kesempatan kedua setelah salah */
+  const [percobaan, setPercobaan] = useState(0);
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
   const [beruntun, setBeruntun] = useState({ benar: 0, salah: 0 });
   const [selesai, setSelesai] = useState(false);
@@ -150,17 +152,31 @@ function Runner({ paket }: { paket: ContentPack }) {
     else sfxAkademi.salah();
     catatEvent({
       learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "attempt",
-      payload: { itemId: `${paket.id}#${idx}`, correct: h.benar, hintUsed: hint, latencyMs, knobs, competencyIds: kompetensiIds, detail: { mode: (paket as { mode?: string }).mode ?? (paket as { execMode?: string }).execMode, ...h.detail } },
+      payload: { itemId: `${paket.id}#${idx}`, correct: h.benar, hintUsed: hint, latencyMs, knobs, competencyIds: kompetensiIds, detail: { mode: (paket as { mode?: string }).mode ?? (paket as { execMode?: string }).execMode, percobaan: percobaan + 1, ...h.detail } },
     });
-    const skorBaru = { ...skor, benar: skor.benar + (h.benar ? 1 : 0), salah: skor.salah + (h.benar ? 0 : 1) };
+    // Nilai, bintang, dan tingkat kesulitan dihitung dari percobaan PERTAMA saja; kesempatan kedua untuk belajar.
+    const pertama = percobaan === 0;
+    const skorBaru = pertama ? { ...skor, benar: skor.benar + (h.benar ? 1 : 0), salah: skor.salah + (h.benar ? 0 : 1) } : skor;
     setSkor(skorBaru);
-    const b = h.benar ? { benar: beruntun.benar + 1, salah: 0 } : { benar: 0, salah: beruntun.salah + 1 };
     let k = knobs;
-    if (b.benar >= 2) { k = geserKnob(paket, knobs, 1); b.benar = 0; }
-    if (b.salah >= 2) { k = geserKnob(paket, knobs, -1); b.salah = 0; }
-    setBeruntun(b);
-    setKnobs(k);
+    if (pertama) {
+      const b = h.benar ? { benar: beruntun.benar + 1, salah: 0 } : { benar: 0, salah: beruntun.salah + 1 };
+      if (b.benar >= 2) { k = geserKnob(paket, knobs, 1); b.benar = 0; }
+      if (b.salah >= 2) { k = geserKnob(paket, knobs, -1); b.salah = 0; }
+      setBeruntun(b);
+      setKnobs(k);
+    }
+    // Salah pertama: soal yang sama diulang dari awal (presenter dipasang ulang), tidak pindah soal.
+    if (!h.benar && pertama) {
+      setTimeout(() => {
+        setHasil(null);
+        setPercobaan(1);
+        mulaiRonde.current = Date.now();
+      }, JEDA_UMPAN_BALIK);
+      return;
+    }
     setTimeout(() => {
+      setPercobaan(0);
       const next = idx + 1;
       if (next >= total) {
         catatEvent({
@@ -177,7 +193,7 @@ function Runner({ paket }: { paket: ContentPack }) {
       mulaiRonde.current = Date.now();
       riwayat.current.push(kunciRonde(ronde));
       setRonde(buatRondeBaru(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current));
-    }, JEDA_UMPAN_BALIK);
+    }, h.benar ? JEDA_UMPAN_BALIK : JEDA_UMPAN_BALIK + 900);
   };
 
   if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={() => router.replace(`/akademi/main/${paket.id}?u=${Date.now()}`)} onKembali={() => router.push("/akademi")} />;
@@ -185,7 +201,7 @@ function Runner({ paket }: { paket: ContentPack }) {
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
     <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} musik={musik}>
-      <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
+      <div key={`${idx}-${percobaan}`} className="akademi-fade flex flex-1 flex-col justify-center">
         <SisaBantuProvider value={sisaBantu}>
         <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
@@ -197,7 +213,7 @@ function Runner({ paket }: { paket: ContentPack }) {
         </LatarWarnaProvider>
         </SisaBantuProvider>
       </div>
-      {hasil && <UmpanBalik key={`umpan-${idx}`} benar={hasil.benar} beruntun={streak} />}
+      {hasil && <UmpanBalik key={`umpan-${idx}-${percobaan}`} benar={hasil.benar} beruntun={streak} lanjut={!hasil.benar && percobaan > 0} />}
     </LayarAktivitas>
   );
 }

@@ -199,5 +199,6 @@ export const sfxAkademi = {
 /** Kalimat pujian & penyemangat (teks layar, tidak dibacakan): diacak supaya tidak monoton. */
 export const PUJIAN = ["Hebat!", "Pintar!", "Keren!", "Betul sekali!", "Mantap!", "Luar biasa!", "Jempol!", "Kamu bisa!"];
 export const PUJIAN_BERUNTUN = ["Beruntun!", "Tidak terhentikan!", "Juara!", "Wah, hebat terus!"];
-export const SEMANGAT = ["Hampir!", "Coba lagi, ya", "Tidak apa-apa!", "Pelan-pelan saja", "Ayo, kamu pasti bisa"];
+/** Salah pertama: soal diulang sekali, jadi semua kalimat mengajak mencoba lagi. */
+export const SEMANGAT = ["Hampir! Coba sekali lagi", "Coba sekali lagi, ya", "Pelan-pelan, coba lagi", "Ayo, kamu pasti bisa!"];
 export const acakKata = acak;
