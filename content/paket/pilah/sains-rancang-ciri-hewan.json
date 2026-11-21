@@ -1,6 +1,6 @@
 {
   "id": "sains-rancang-ciri-hewan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rancang Hewan yang Betah",
-      "instruksi": "Tokoh merancang hewan untuk taman satwa. Dengarkan tempat hidupnya, lalu pilih ciri tubuh yang membuat hewan itu betah.",
+      "instruksi": "Sari merancang hewan untuk taman satwa. Dengarkan tempat hidupnya, lalu pilih ciri tubuh yang membuat hewan itu betah.",
       "pilihan": "pilihan",
       "i-kakiberbulu": "telapak kaki berbulu supaya tidak licin di es",
       "i-sayapsirip": "sayap pendek seperti sirip untuk berenang di air es",
@@ -39,7 +39,7 @@
     },
     "en": {
       "judul": "Design an Animal That Fits",
-      "instruksi": "The character designs animals for the zoo. Listen to where the animal lives, then pick the body feature that helps it live there.",
+      "instruksi": "Sari designs animals for the zoo. Listen to where the animal lives, then pick the body feature that helps it live there.",
       "pilihan": "choices",
       "i-kakiberbulu": "furry paws so it does not slip on ice",
       "i-sayapsirip": "short flipper wings for swimming in icy water",

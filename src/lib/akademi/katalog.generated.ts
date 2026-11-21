@@ -183403,7 +183403,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bekerja-dulu-di-taman",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183413,43 +183413,43 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bagian Mana yang Akan Bekerja?",
-        "instruksi": "Tokoh mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang akan paling bekerja.",
+        "instruksi": "Budi mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang akan paling bekerja.",
         "pilihan": "pilihan",
         "i-kaki": "otot kaki",
         "i-lengan": "otot lengan",
         "i-paru": "paru-paru",
         "i-otak": "otak",
-        "t-1": "Tokoh mau lompat tali. Bagian mana yang bekerja?",
-        "t-2": "Tokoh mau berlari mengejar layang-layang. Bagian mana yang bekerja?",
-        "t-3": "Tokoh mau naik tangga perosotan satu per satu. Bagian mana yang bekerja?",
-        "t-4": "Tokoh mau menarik napas dalam sebelum bernyanyi. Bagian mana yang bekerja?",
-        "t-5": "Tokoh mau menghirup wangi bunga dalam-dalam. Bagian mana yang bekerja?",
-        "t-6": "Tokoh mau meniup kincir angin kertas. Bagian mana yang bekerja?",
-        "t-7": "Tokoh mau mendorong ayunan teman dengan tangan. Bagian mana yang bekerja?",
-        "t-8": "Tokoh mau bergelantungan di palang taman. Bagian mana yang bekerja?",
-        "t-9": "Tokoh mau mengangkat ember berisi pasir. Bagian mana yang bekerja?",
-        "t-10": "Tokoh mau menghitung bunga di taman. Bagian mana yang bekerja?",
-        "t-11": "Tokoh mau mengingat jalan pulang dari taman. Bagian mana yang bekerja?"
+        "t-1": "Budi mau lompat tali. Bagian mana yang bekerja?",
+        "t-2": "Budi mau berlari mengejar layang-layang. Bagian mana yang bekerja?",
+        "t-3": "Budi mau naik tangga perosotan satu per satu. Bagian mana yang bekerja?",
+        "t-4": "Budi mau menarik napas dalam sebelum bernyanyi. Bagian mana yang bekerja?",
+        "t-5": "Budi mau menghirup wangi bunga dalam-dalam. Bagian mana yang bekerja?",
+        "t-6": "Budi mau meniup kincir angin kertas. Bagian mana yang bekerja?",
+        "t-7": "Budi mau mendorong ayunan teman dengan tangan. Bagian mana yang bekerja?",
+        "t-8": "Budi mau bergelantungan di palang taman. Bagian mana yang bekerja?",
+        "t-9": "Budi mau mengangkat ember berisi pasir. Bagian mana yang bekerja?",
+        "t-10": "Budi mau menghitung bunga di taman. Bagian mana yang bekerja?",
+        "t-11": "Budi mau mengingat jalan pulang dari taman. Bagian mana yang bekerja?"
       },
       "en": {
         "judul": "Which Part Will Work?",
-        "instruksi": "The character wants to play in the park. Listen to what it will do, then touch the body part that will work the most.",
+        "instruksi": "Budi wants to play in the park. Listen to what he will do, then touch the body part that will work the most.",
         "pilihan": "choices",
         "i-kaki": "leg muscles",
         "i-lengan": "arm muscles",
         "i-paru": "lungs",
         "i-otak": "brain",
-        "t-1": "The character wants to skip rope. Which part works?",
-        "t-2": "The character wants to run after a kite. Which part works?",
-        "t-3": "The character wants to climb the slide steps one by one. Which part works?",
-        "t-4": "The character wants to take a deep breath before singing. Which part works?",
-        "t-5": "The character wants to breathe in a flower's smell deeply. Which part works?",
-        "t-6": "The character wants to blow a paper pinwheel. Which part works?",
-        "t-7": "The character wants to push a friend's swing with its hands. Which part works?",
-        "t-8": "The character wants to hang from the monkey bars. Which part works?",
-        "t-9": "The character wants to lift a bucket of sand. Which part works?",
-        "t-10": "The character wants to count the flowers in the park. Which part works?",
-        "t-11": "The character wants to remember the way home from the park. Which part works?"
+        "t-1": "Budi wants to skip rope. Which part works?",
+        "t-2": "Budi wants to run after a kite. Which part works?",
+        "t-3": "Budi wants to climb the slide steps one by one. Which part works?",
+        "t-4": "Budi wants to take a deep breath before singing. Which part works?",
+        "t-5": "Budi wants to breathe in a flower's smell deeply. Which part works?",
+        "t-6": "Budi wants to blow a paper pinwheel. Which part works?",
+        "t-7": "Budi wants to push a friend's swing with his hands. Which part works?",
+        "t-8": "Budi wants to hang from the monkey bars. Which part works?",
+        "t-9": "Budi wants to lift a bucket of sand. Which part works?",
+        "t-10": "Budi wants to count the flowers in the park. Which part works?",
+        "t-11": "Budi wants to remember the way home from the park. Which part works?"
       }
     },
     "knobs": {
@@ -194232,7 +194232,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rancang-ciri-hewan",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194242,7 +194242,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rancang Hewan yang Betah",
-        "instruksi": "Tokoh merancang hewan untuk taman satwa. Dengarkan tempat hidupnya, lalu pilih ciri tubuh yang membuat hewan itu betah.",
+        "instruksi": "Sari merancang hewan untuk taman satwa. Dengarkan tempat hidupnya, lalu pilih ciri tubuh yang membuat hewan itu betah.",
         "pilihan": "pilihan",
         "i-kakiberbulu": "telapak kaki berbulu supaya tidak licin di es",
         "i-sayapsirip": "sayap pendek seperti sirip untuk berenang di air es",
@@ -194271,7 +194271,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Design an Animal That Fits",
-        "instruksi": "The character designs animals for the zoo. Listen to where the animal lives, then pick the body feature that helps it live there.",
+        "instruksi": "Sari designs animals for the zoo. Listen to where the animal lives, then pick the body feature that helps it live there.",
         "pilihan": "choices",
         "i-kakiberbulu": "furry paws so it does not slip on ice",
         "i-sayapsirip": "short flipper wings for swimming in icy water",
@@ -194675,7 +194675,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-senam-tunjuk-tubuh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194696,17 +194696,17 @@ export const PAKET_RAW: unknown[] = [
         "i-lengan": "lengan",
         "i-jari": "jari",
         "t-mata1": "Ayo senam! Tunjuk mata, lalu kedipkan.",
-        "t-mata2": "Tokoh melihat burung terbang. Tunjuk matanya!",
+        "t-mata2": "Dina melihat burung terbang. Tunjuk matanya!",
         "t-hidung1": "Ayo senam! Tunjuk hidung, lalu tarik napas.",
-        "t-hidung2": "Tokoh mencium bunga yang harum. Tunjuk hidungnya!",
+        "t-hidung2": "Dina mencium bunga yang harum. Tunjuk hidungnya!",
         "t-telinga1": "Ayo senam! Tarik telinga pelan-pelan.",
-        "t-telinga2": "Tokoh mendengar musik. Tunjuk telinganya!",
+        "t-telinga2": "Dina mendengar musik. Tunjuk telinganya!",
         "t-mulut1": "Ayo senam! Buka mulut lebar-lebar, aaa!",
-        "t-mulut2": "Tokoh makan pisang. Tunjuk mulutnya!",
+        "t-mulut2": "Dina makan pisang. Tunjuk mulutnya!",
         "t-tangan1": "Ayo senam! Lambaikan tangan ke kiri dan ke kanan.",
-        "t-tangan2": "Tokoh bertepuk tangan. Tunjuk tangannya!",
+        "t-tangan2": "Dina bertepuk tangan. Tunjuk tangannya!",
         "t-kaki1": "Ayo senam! Hentakkan kaki, satu, dua!",
-        "t-kaki2": "Tokoh menendang bola. Tunjuk kakinya!"
+        "t-kaki2": "Dina menendang bola. Tunjuk kakinya!"
       },
       "en": {
         "judul": "Point-and-Move Exercise",
@@ -194721,17 +194721,17 @@ export const PAKET_RAW: unknown[] = [
         "i-lengan": "arm",
         "i-jari": "finger",
         "t-mata1": "Let's exercise! Point to the eyes, then blink.",
-        "t-mata2": "The character watches a bird fly. Point to the eyes!",
+        "t-mata2": "Dina watches a bird fly. Point to the eyes!",
         "t-hidung1": "Let's exercise! Point to the nose, then breathe in.",
-        "t-hidung2": "The character smells a sweet flower. Point to the nose!",
+        "t-hidung2": "Dina smells a sweet flower. Point to the nose!",
         "t-telinga1": "Let's exercise! Gently pull the ears.",
-        "t-telinga2": "The character hears music. Point to the ear!",
+        "t-telinga2": "Dina hears music. Point to the ear!",
         "t-mulut1": "Let's exercise! Open the mouth wide, aaah!",
-        "t-mulut2": "The character eats a banana. Point to the mouth!",
+        "t-mulut2": "Dina eats a banana. Point to the mouth!",
         "t-tangan1": "Let's exercise! Wave the hands left and right.",
-        "t-tangan2": "The character claps. Point to the hand!",
+        "t-tangan2": "Dina claps. Point to the hand!",
         "t-kaki1": "Let's exercise! Stamp the legs, one, two!",
-        "t-kaki2": "The character kicks a ball. Point to the leg!"
+        "t-kaki2": "Dina kicks a ball. Point to the leg!"
       }
     },
     "knobs": {
