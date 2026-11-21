@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-bagi-dua-toko-buku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cari Buku dengan Bagi Dua",
-      "instruksi": "Di toko buku, rak sudah urut. Cek kartu tengah dulu (kalau jumlahnya genap, ambil tengah kiri), lalu buang separuh yang tidak mungkin berisi yang dicari.",
+      "instruksi": "Di toko buku, rak sudah urut. Cek kartu tengah dulu (kalau jumlahnya genap, ambil tengah kiri), buang separuh yang tidak mungkin berisi yang dicari, lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "18",
       "c2": "31",
@@ -56,7 +56,7 @@
     },
     "en": {
       "judul": "Finding Books by Halving",
-      "instruksi": "In the bookshop the shelf is already sorted. Check the middle card first (if the count is even, take the left middle), then drop the half that can't hold what you want.",
+      "instruksi": "In the bookshop the shelf is already sorted. Check the middle card first (if the count is even, take the left middle), drop the half that can't hold what you want, then choose the answer.",
       "pilihan": "choices",
       "c1": "18",
       "c2": "31",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-perangkat-terhubung",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "i3": "lampu pintar yang diatur lewat aplikasi",
       "i4": "mesin parkir yang mengirim data ke aplikasi",
       "i5": "speaker pintar yang menjawab pertanyaan",
-      "i6": "meteran listrik pintar",
+      "i6": "meteran listrik pintar yang mengirim catatan pemakaian ke kantor listrik",
       "i7": "mobil yang mengirim lokasinya ke aplikasi",
       "i8": "kalkulator saku",
       "i9": "senter",
@@ -38,7 +38,7 @@
       "i3": "smart lamp controlled by an app",
       "i4": "parking machine that sends data to an app",
       "i5": "smart speaker that answers questions",
-      "i6": "smart electricity meter",
+      "i6": "smart electricity meter that sends usage readings to the power company",
       "i7": "car that sends its location to an app",
       "i8": "pocket calculator",
       "i9": "torch",

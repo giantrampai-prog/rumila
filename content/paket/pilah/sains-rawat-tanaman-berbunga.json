@@ -1,6 +1,6 @@
 {
   "id": "sains-rawat-tanaman-berbunga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-kardus": "ditutup kardus terus",
       "i-minyak": "disiram minyak goreng",
       "i-injak": "diinjak-injak",
-      "i-cabut": "dicabut setiap hari"
+      "i-cabut": "tanamannya dicabut dari pot"
     },
     "en": {
       "judul": "Care Until It Blooms",
@@ -42,7 +42,7 @@
       "i-kardus": "covered with a box all the time",
       "i-minyak": "watered with cooking oil",
       "i-injak": "stepped on",
-      "i-cabut": "pulled up every day"
+      "i-cabut": "the plant is pulled out of its pot"
     }
   },
   "knobs": {

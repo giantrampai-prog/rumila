@@ -1,6 +1,6 @@
 {
   "id": "sains-senam-tunjuk-tubuh",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,17 +21,17 @@
       "i-lengan": "lengan",
       "i-jari": "jari",
       "t-mata1": "Ayo senam! Tunjuk mata, lalu kedipkan.",
-      "t-mata2": "Dina melihat burung terbang. Tunjuk matanya!",
+      "t-mata2": "Dina melihat burung dengan mata. Tunjuk matanya!",
       "t-hidung1": "Ayo senam! Tunjuk hidung, lalu tarik napas.",
-      "t-hidung2": "Dina mencium bunga yang harum. Tunjuk hidungnya!",
-      "t-telinga1": "Ayo senam! Tarik telinga pelan-pelan.",
-      "t-telinga2": "Dina mendengar musik. Tunjuk telinganya!",
-      "t-mulut1": "Ayo senam! Buka mulut lebar-lebar, aaa!",
-      "t-mulut2": "Dina makan pisang. Tunjuk mulutnya!",
-      "t-tangan1": "Ayo senam! Lambaikan tangan ke kiri dan ke kanan.",
+      "t-hidung2": "Dina mencium bunga dengan hidung. Tunjuk hidungnya!",
+      "t-telinga1": "Ayo senam! Tunjuk telinga, lalu tarik pelan-pelan.",
+      "t-telinga2": "Dina mendengar musik dengan telinga. Tunjuk telinganya!",
+      "t-mulut1": "Ayo senam! Tunjuk mulut, lalu buka lebar-lebar, aaa!",
+      "t-mulut2": "Dina menggigit pisang dengan mulut. Tunjuk mulutnya!",
+      "t-tangan1": "Ayo senam! Tunjuk tangan, lalu lambaikan ke kiri dan ke kanan.",
       "t-tangan2": "Dina bertepuk tangan. Tunjuk tangannya!",
-      "t-kaki1": "Ayo senam! Hentakkan kaki, satu, dua!",
-      "t-kaki2": "Dina menendang bola. Tunjuk kakinya!"
+      "t-kaki1": "Ayo senam! Tunjuk kaki, lalu hentakkan, satu, dua!",
+      "t-kaki2": "Dina menendang bola dengan kaki. Tunjuk kakinya!"
     },
     "en": {
       "judul": "Point-and-Move Exercise",
@@ -46,17 +46,17 @@
       "i-lengan": "arm",
       "i-jari": "finger",
       "t-mata1": "Let's exercise! Point to the eyes, then blink.",
-      "t-mata2": "Dina watches a bird fly. Point to the eyes!",
+      "t-mata2": "Dina watches a bird with her eyes. Point to the eyes!",
       "t-hidung1": "Let's exercise! Point to the nose, then breathe in.",
-      "t-hidung2": "Dina smells a sweet flower. Point to the nose!",
-      "t-telinga1": "Let's exercise! Gently pull the ears.",
-      "t-telinga2": "Dina hears music. Point to the ear!",
-      "t-mulut1": "Let's exercise! Open the mouth wide, aaah!",
-      "t-mulut2": "Dina eats a banana. Point to the mouth!",
-      "t-tangan1": "Let's exercise! Wave the hands left and right.",
+      "t-hidung2": "Dina smells a flower with her nose. Point to the nose!",
+      "t-telinga1": "Let's exercise! Point to the ears, then gently pull them.",
+      "t-telinga2": "Dina hears music with her ears. Point to the ear!",
+      "t-mulut1": "Let's exercise! Point to the mouth, then open it wide, aaah!",
+      "t-mulut2": "Dina bites a banana with her mouth. Point to the mouth!",
+      "t-tangan1": "Let's exercise! Point to the hands, then wave them left and right.",
       "t-tangan2": "Dina claps. Point to the hand!",
-      "t-kaki1": "Let's exercise! Stamp the legs, one, two!",
-      "t-kaki2": "Dina kicks a ball. Point to the leg!"
+      "t-kaki1": "Let's exercise! Point to the legs, then stamp them, one, two!",
+      "t-kaki2": "Dina kicks a ball with her foot. Point to the leg!"
     }
   },
   "knobs": {

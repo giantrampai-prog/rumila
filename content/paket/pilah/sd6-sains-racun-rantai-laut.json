@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-rantai-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Racun di Rantai Laut dan Sungai",
-      "instruksi": "Baca rantai makanannya, lalu perkirakan siapa yang paling banyak menumpuk racun atau apa akibatnya bila satu makhluk hilang.",
+      "instruksi": "Baca rantai makanannya, lalu sentuh jawaban yang paling masuk akal tentang penumpukan racun atau akibat bila satu makhluk hilang.",
       "b-pilihan": "pilihan",
       "i-fito": "fitoplankton",
       "i-udang": "udang kecil",
@@ -31,11 +31,11 @@
       "i-sekali": "ia hanya makan satu kali seumur hidup",
       "i-berenang": "ia berenang paling cepat",
       "p-r1": "Limbah merkuri masuk laut: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling banyak menumpuk merkuri?",
-      "p-r2": "Rantai yang sama: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling sedikit menumpuk merkuri?",
+      "p-r2": "Limbah merkuri masuk laut: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling sedikit menumpuk merkuri?",
       "p-r3": "Mengapa ikan tongkol menumpuk racun lebih banyak daripada ikan teri?",
       "p-r4": "Pestisida masuk danau: kutu air → ikan mas → burung pecuk. Siapa yang paling banyak menumpuk pestisida?",
-      "p-r5": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang paling terancam?",
-      "p-r6": "Rantai sungai yang sama: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang pertama menyerap merkuri?",
+      "p-r5": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang paling banyak menumpuk merkuri?",
+      "p-r6": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang pertama menyerap merkuri?",
       "p-r7": "Tikus sawah memakan umpan racun, lalu seekor burung hantu memakan banyak tikus itu. Siapa yang paling banyak menumpuk racun?",
       "p-r8": "Di laut ini, ikan teri dimakan ikan tongkol. Bila nelayan menangkap hampir semua ikan tongkol, ikan teri kemungkinan…",
       "p-r9": "Bila fitoplankton banyak yang mati karena limbah, udang kecil yang memakannya kemungkinan…",
@@ -45,7 +45,7 @@
     },
     "en": {
       "judul": "Poison in Sea and River Chains",
-      "instruksi": "Read the food chain, then predict who builds up the most poison or what happens when one living thing disappears.",
+      "instruksi": "Read the food chain, then touch the most sensible answer about poison building up or what happens when one living thing disappears.",
       "b-pilihan": "choices",
       "i-fito": "phytoplankton",
       "i-udang": "small shrimp",
@@ -67,11 +67,11 @@
       "i-sekali": "it eats only once in its life",
       "i-berenang": "it swims the fastest",
       "p-r1": "Mercury waste enters the sea: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the most mercury?",
-      "p-r2": "Same chain: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the least mercury?",
+      "p-r2": "Mercury waste enters the sea: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the least mercury?",
       "p-r3": "Why does tuna build up more poison than anchovy?",
       "p-r4": "Pesticide gets into a lake: water flea → carp → cormorant. Who builds up the most pesticide?",
-      "p-r5": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who is most at risk?",
-      "p-r6": "Same river chain: river algae → small fish → big predatory fish → people. Who takes in the mercury first?",
+      "p-r5": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who builds up the most mercury?",
+      "p-r6": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who takes in the mercury first?",
       "p-r7": "Field rats eat poison bait, then an owl eats many of those rats. Who builds up the most poison?",
       "p-r8": "In this sea, anchovies are eaten by tuna. If fishers catch almost all the tuna, the anchovies will probably…",
       "p-r9": "If much of the phytoplankton dies from waste, the small shrimp that eat it will probably…",

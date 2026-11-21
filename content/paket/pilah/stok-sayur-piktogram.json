@@ -1,6 +1,6 @@
 {
   "id": "stok-sayur-piktogram",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,8 +16,8 @@
       "jagung": "jagung",
       "tomat": "tomat",
       "terong": "terong",
-      "tSedikit": "Tukang antar datang. Rak mana yang paling sedikit, supaya diisi?",
-      "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
+      "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
+      "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
     },
     "en": {
       "judul": "Shop Vegetable Stock",
@@ -28,7 +28,7 @@
       "tomat": "tomatoes",
       "terong": "eggplants",
       "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
-      "tBanyak": "The wholesaler is here. Which shelf has the most, so they can buy it all?"
+      "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
     }
   },
   "knobs": {

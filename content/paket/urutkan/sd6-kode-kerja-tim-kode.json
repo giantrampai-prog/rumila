@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-kerja-tim-kode",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -35,7 +35,7 @@
       "s4-1": "dua orang mengubah baris yang sama",
       "s4-2": "git menandai bentrok (conflict)",
       "s4-3": "diskusikan versi mana yang dipakai",
-      "s4-4": "rapikan baris yang bentrok",
+      "s4-4": "setelah sepakat, rapikan baris yang bentrok",
       "s4-5": "commit hasil gabungan",
       "s5": "Memulai proyek",
       "s5-1": "buat folder proyek",
@@ -67,7 +67,7 @@
       "s9": "Bergabung ke proyek tim",
       "s9-1": "salin repositori ke komputermu (clone)",
       "s9-2": "baca petunjuk di README",
-      "s9-3": "pasang yang dibutuhkan program",
+      "s9-3": "pasang yang diminta petunjuk itu",
       "s9-4": "jalankan program untuk mencoba",
       "s9-5": "setelah program jalan, buat cabang pertamamu (branch)",
       "s10": "Cabang yang tertinggal",
@@ -79,7 +79,7 @@
       "s11": "Membagi tugas tim",
       "s11-1": "tim memecah proyek jadi tugas kecil",
       "s11-2": "tiap orang memilih satu tugas",
-      "s11-3": "tiap orang membuat cabang sendiri",
+      "s11-3": "tiap orang membuat cabang untuk tugasnya",
       "s11-4": "tiap orang mengerjakan dan menguji tugasnya",
       "s11-5": "semua cabang digabung ke versi utama"
     },
@@ -110,7 +110,7 @@
       "s4-1": "two people change the same line",
       "s4-2": "git marks a conflict",
       "s4-3": "discuss which version to keep",
-      "s4-4": "tidy the clashing lines",
+      "s4-4": "once you agree, tidy the clashing lines",
       "s4-5": "commit the merged result",
       "s5": "Starting a project",
       "s5-1": "make a project folder",
@@ -142,7 +142,7 @@
       "s9": "Joining a team project",
       "s9-1": "copy the repository to your computer (clone)",
       "s9-2": "read the instructions in the README",
-      "s9-3": "install what the program needs",
+      "s9-3": "install what those instructions ask for",
       "s9-4": "run the program to try it",
       "s9-5": "once the program runs, make your first branch",
       "s10": "A branch that fell behind",
@@ -154,7 +154,7 @@
       "s11": "Sharing out team tasks",
       "s11-1": "the team splits the project into small tasks",
       "s11-2": "each person picks one task",
-      "s11-3": "each person makes their own branch",
+      "s11-3": "each person makes a branch for their task",
       "s11-4": "each person does and tests their task",
       "s11-5": "all branches are merged into the main version"
     }

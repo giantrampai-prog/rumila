@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gerak-taman-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,12 +10,12 @@
   "locale": {
     "id": {
       "judul": "Bergerak di Taman Kota",
-      "instruksi": "Lihat cara tiap benda bergerak. Taruh ke rak menggelinding, meluncur, atau berputar di tempat.",
+      "instruksi": "Lihat cara tiap benda bergerak, lalu taruh ke rak cara geraknya.",
       "b-gelinding": "menggelinding",
       "b-luncur": "meluncur",
       "b-putar": "berputar di tempat",
       "i-tenis": "bola tenis menuruni jalan miring",
-      "i-kaleng": "kaleng bulat tergeletak di papan miring",
+      "i-kaleng": "kaleng bulat menuruni papan miring",
       "i-semangka": "semangka jatuh di jalan menurun",
       "i-boling": "bola boling di lintasan",
       "i-seluncur": "anak berseluncur di arena es",
@@ -29,12 +29,12 @@
     },
     "en": {
       "judul": "Moving in the City Park",
-      "instruksi": "Look at how each thing moves. Put it on the rolling, sliding, or spinning-on-the-spot shelf.",
+      "instruksi": "Look at how each thing moves, then put it on the shelf for the way it moves.",
       "b-gelinding": "rolls",
       "b-luncur": "slides",
       "b-putar": "spins on the spot",
       "i-tenis": "a tennis ball going down a ramp",
-      "i-kaleng": "a round can lying on a sloping board",
+      "i-kaleng": "a round can going down a sloping board",
       "i-semangka": "a watermelon on a downhill path",
       "i-boling": "a bowling ball on the lane",
       "i-seluncur": "a child skating on an ice rink",

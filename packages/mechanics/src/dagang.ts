@@ -1,6 +1,6 @@
 // Mekanik dagang: sembilan mode (ambil, hitung, subitasi, bayar, kembalian, tukar, gabung, sisa, lengkapi).
 // Satu buatRonde dengan switch mode; field yang tidak relevan diisi nilai kosong ([], {}, 0).
-// Knob yang dibaca bila ada: itemsMax, kinds, maxCount, harga (ribuan rupiah), pengurang, target, flashMs; kalau tidak, pakai customerRule.
+// Knob yang dibaca bila ada: itemsMax, kinds, maxCount, harga (ribuan rupiah), pecahan (bayar), pengurang, target, flashMs; kalau tidak, pakai customerRule.
 // gabung: tiap kelompok ∈ [itemsMin, itemsMax]; sisa: awal ∈ [2, maxCount|itemsMax], dua barang = benda + penanda.
 
 import type { PaketDagang } from "@akademi/schema";
@@ -92,7 +92,8 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "hitung": {
-      const maxCount = Math.max(1, Math.floor(knobs.maxCount ?? rule.itemsMax));
+      // knob bernama maxCount atau itemsMax (paket TK menamai knobnya itemsMax)
+      const maxCount = Math.max(1, Math.floor(knobs.maxCount ?? knobs.itemsMax ?? rule.itemsMax));
       const target = acakInt(r, 1, maxCount);
       const good = satuBarang();
       ronde.benda = new Array<string>(target).fill(good);
@@ -101,7 +102,7 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "subitasi": {
-      const maxCount = Math.max(1, Math.floor(knobs.maxCount ?? 3));
+      const maxCount = Math.max(1, Math.floor(knobs.maxCount ?? knobs.itemsMax ?? 3));
       const target = acakInt(r, 1, maxCount);
       const good = satuBarang();
       ronde.tersedia = { [good]: maxCount + 2 };
@@ -112,7 +113,9 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
     case "bayar": {
       const { pesanan, harga: dariPesanan } = buatPesanan(p, knobs, r);
       const harga = hargaRonde(knobs, dariPesanan);
-      ronde.pesanan = pesananSesuaiHarga(p, knobs, harga, pesanan, r); ronde.harga = harga; ronde.laci = laciDari(denoms);
+      // knob pecahan: jenis pecahan di laci (terkecil dulu); pecahan terkecil selalu ada supaya harga bulat tetap bisa dibayar
+      const jenis = knobs.pecahan !== undefined ? denoms.slice(0, Math.max(1, Math.floor(knobs.pecahan))) : denoms;
+      ronde.pesanan = pesananSesuaiHarga(p, knobs, harga, pesanan, r); ronde.harga = harga; ronde.laci = laciDari(jenis);
       return ronde;
     }
     case "kembalian": {

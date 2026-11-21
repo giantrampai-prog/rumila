@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-sudut-gunting",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Garis Lurus di Sekitar Kita",
-      "instruksi": "Benda-benda ini membentuk garis lurus, jadi sudut-sudutnya berjumlah 180°. Sentuh sudut x.",
+      "instruksi": "Di tiap soal, sudut-sudut di sepanjang garis lurus berjumlah 180°. Hitung sudut x, lalu sentuh jawabannya.",
       "q1": "Tangga bersandar di lantai datar, sudutnya dengan lantai 54°. Sudut di sisi lainnya x = …",
       "c1": "126°",
       "c2": "306°",
@@ -74,7 +74,7 @@
     },
     "en": {
       "judul": "Straight Lines Around Us",
-      "instruksi": "These objects make a straight line, so their angles add up to 180°. Touch angle x.",
+      "instruksi": "In each question, the angles along a straight line add up to 180°. Work out angle x, then touch the answer.",
       "q1": "A ladder stands on a flat floor at 54° to the floor. The angle on the other side is x = …",
       "c1": "126°",
       "c2": "306°",

@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-wadah-halaman-isi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Siapa Muat Paling Banyak?",
+      "judul": "Mana yang Muat Paling Banyak?",
       "instruksi": "Kalau semua diisi air sampai penuh, wadah mana yang airnya paling sedikit? Susun sampai yang airnya paling banyak.",
       "j-isi-sedikit-banyak": "Isi paling sedikit ke paling banyak",
       "s-sendok": "sendok",
@@ -20,7 +20,7 @@
       "s-tong": "tong air"
     },
     "en": {
-      "judul": "Who Can Hold the Most Water?",
+      "judul": "Which Holds the Most Water?",
       "instruksi": "If every container is filled with water to the top, which holds the least? Line them up to the one that holds the most.",
       "j-isi-sedikit-banyak": "Holds least to holds most",
       "s-sendok": "spoon",

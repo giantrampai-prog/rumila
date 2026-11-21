@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-dekat-jauh-jalan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -17,9 +17,9 @@
       "sirene-3": "anak di ujung jalan",
       "sirene-4": "anak di lapangan di kampung sebelah",
       "t-kereta": "Kereta api membunyikan klakson",
-      "kereta-1": "anak di peron stasiun",
-      "kereta-2": "anak di parkiran stasiun",
-      "kereta-3": "anak di pasar dekat stasiun",
+      "kereta-1": "anak di peron, di samping kereta",
+      "kereta-2": "anak di ujung peron",
+      "kereta-3": "anak di parkiran stasiun",
       "kereta-4": "anak di lapangan sekolah yang jauh",
       "t-terompet": "Kakak meniup terompet di halaman",
       "terompet-1": "anak di samping kakak",
@@ -48,7 +48,7 @@
       "pesawat-4": "anak di lapangan di kota sebelah",
       "t-kambing": "Kambing mengembik di kandang",
       "kambing-1": "anak di depan kandang",
-      "kambing-2": "anak di halaman belakang",
+      "kambing-2": "anak beberapa langkah dari kandang",
       "kambing-3": "anak di jalan depan rumah",
       "kambing-4": "anak di sawah jauh dari kandang",
       "t-alarm": "Jam weker berdering di meja teras",
@@ -58,9 +58,9 @@
       "alarm-4": "anak di ujung gang",
       "t-kucing": "Kucing mengeong di atas pagar",
       "kucing-1": "anak di bawah pagar",
-      "kucing-2": "anak di tengah halaman",
-      "kucing-3": "anak di teras",
-      "kucing-4": "anak di ujung jalan"
+      "kucing-2": "anak beberapa langkah dari pagar",
+      "kucing-3": "anak di ujung jalan",
+      "kucing-4": "anak di lapangan kampung sebelah"
     },
     "en": {
       "judul": "Who Hears It Loudest?",
@@ -71,9 +71,9 @@
       "sirene-3": "a child at the end of the street",
       "sirene-4": "a child in the field in the next village",
       "t-kereta": "A train sounds its horn",
-      "kereta-1": "a child on the station platform",
-      "kereta-2": "a child in the station car park",
-      "kereta-3": "a child at the market near the station",
+      "kereta-1": "a child on the platform next to the train",
+      "kereta-2": "a child at the far end of the platform",
+      "kereta-3": "a child in the station car park",
       "kereta-4": "a child in the playground of a faraway school",
       "t-terompet": "Big brother blows a trumpet in the yard",
       "terompet-1": "a child next to big brother",
@@ -102,7 +102,7 @@
       "pesawat-4": "a child in a field in the next town",
       "t-kambing": "A goat bleats in its pen",
       "kambing-1": "a child in front of the pen",
-      "kambing-2": "a child in the back yard",
+      "kambing-2": "a child a few steps from the pen",
       "kambing-3": "a child on the road in front of the house",
       "kambing-4": "a child in a rice field far from the pen",
       "t-alarm": "An alarm clock rings on the porch table",
@@ -112,9 +112,9 @@
       "alarm-4": "a child at the end of the lane",
       "t-kucing": "A cat meows on top of the fence",
       "kucing-1": "a child right below the fence",
-      "kucing-2": "a child in the middle of the yard",
-      "kucing-3": "a child on the porch",
-      "kucing-4": "a child at the end of the street"
+      "kucing-2": "a child a few steps from the fence",
+      "kucing-3": "a child at the end of the street",
+      "kucing-4": "a child in a field in the next village"
     }
   },
   "knobs": {

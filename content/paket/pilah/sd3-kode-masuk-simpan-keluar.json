@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-masuk-simpan-keluar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -49,11 +49,11 @@
   },
   "knobs": {
     "binCount": {
-      "min": 2,
+      "min": 3,
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = ulang memasukkan/mengeluarkan (SD 2), 3 = tambah kotak menyimpan"
+      "keterangan": "tetap 3 kotak supaya sesuai instruksi (2 kotak tidak dipakai)"
     },
     "itemCount": {
       "min": 6,

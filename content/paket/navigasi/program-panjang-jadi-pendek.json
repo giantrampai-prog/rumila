@@ -1,6 +1,6 @@
 {
   "id": "program-panjang-jadi-pendek",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Program Jadi Pendek",
-      "instruksi": "Program robot ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
+      "instruksi": "Program robot ini panjang: susun ulang memakai blok ulangi supaya muat di rak dan jalannya tetap sama."
     },
     "en": {
       "judul": "Shorten the Program",
-      "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and the robot walks the same path."
+      "instruksi": "This program is long: rebuild it with a repeat block so it fits the rack and the robot walks the same path."
     }
   },
   "knobs": {

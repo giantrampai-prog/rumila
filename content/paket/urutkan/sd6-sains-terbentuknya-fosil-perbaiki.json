@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil-perbaiki",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -44,7 +44,7 @@
       "capung-mati": "capung purba jatuh ke danau dan mati",
       "capung-timbun": "tubuhnya tertutup lumpur yang sangat halus",
       "capung-batu": "lapisan lumpur menekan dan menjadi batu serpih",
-      "capung-cetak": "bentuk sayapnya terekam di batu",
+      "capung-cetak": "kini bentuk sayapnya terekam di batu serpih",
       "capung-singkap": "ahli fosil membelah batu serpih dan menemukannya",
       "s-kepiting": "Fosil kepiting purba",
       "kepiting-mati": "kepiting purba mati di muara",
@@ -108,7 +108,7 @@
       "capung-mati": "an ancient dragonfly falls into a lake and dies",
       "capung-timbun": "its body is covered by very fine mud",
       "capung-batu": "the mud layers press down and become shale",
-      "capung-cetak": "the shape of its wings is recorded in the rock",
+      "capung-cetak": "now the shape of its wings is recorded in the shale",
       "capung-singkap": "a fossil hunter splits the shale and finds it",
       "s-kepiting": "An ancient crab fossil",
       "kepiting-mati": "an ancient crab dies in an estuary",

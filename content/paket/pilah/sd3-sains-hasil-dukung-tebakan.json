@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hasil-dukung-tebakan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hasilnya Mendukung Tebakan?",
-      "instruksi": "Dengarkan tebakan dan hasilnya. Mendukung atau tidak?",
+      "instruksi": "Dengarkan tebakan dan hasilnya. Apakah hasilnya mendukung tebakan? Sentuh jawabanmu.",
       "pilihan": "pilihan",
       "i-dukung": "mendukung tebakan",
       "i-tidak": "tidak mendukung",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Do the Results Support the Prediction?",
-      "instruksi": "Listen to the prediction and the result. Does the result support it or not?",
+      "instruksi": "Listen to the prediction and the result. Does the result support the prediction? Touch your answer.",
       "pilihan": "choices",
       "i-dukung": "supports the prediction",
       "i-tidak": "does not support it",

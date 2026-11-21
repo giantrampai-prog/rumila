@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-cari-satu-satu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cari Satu per Satu",
-      "instruksi": "Komputer mencari dengan membuka kartu satu per satu dari kiri sampai ketemu: hitung berapa kartu yang dibuka.",
+      "instruksi": "Komputer mencari dengan membuka kartu satu per satu dari kiri sampai ketemu: hitung berapa kartu yang dibuka, lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "4",
       "c2": "7",
@@ -39,7 +39,7 @@
     },
     "en": {
       "judul": "Search One by One",
-      "instruksi": "The computer searches by turning over cards one at a time from the left until it finds the one: count the cards it turns over.",
+      "instruksi": "The computer searches by turning over cards one at a time from the left until it finds the one: count the cards it turns over, then choose the answer.",
       "pilihan": "choices",
       "c1": "4",
       "c2": "7",

@@ -294,7 +294,7 @@
       "mechanics": [
         "urutkan"
       ],
-      "catatan": "Urutan perubahan alam, bukan urutan kegiatan: awan datang → langit gelap → hujan turun. Umpan balik: setelah disusun, langit beranimasi; kalau terbalik, hujan turun dari langit cerah terlihat aneh. Jebakan: anak menyusun mendung → cerah → hujan; beri petunjuk visual awan makin tebal. Pengaya. Knob: 3 → 4 gambar (tambah pelangi setelah hujan)."
+      "catatan": "Urutan perubahan alam, bukan urutan kegiatan: awan datang → langit gelap → hujan turun. Umpan balik: setelah disusun, langit beranimasi; kalau terbalik, hujan turun dari langit cerah terlihat aneh. Jebakan: anak menyusun mendung → cerah → hujan; beri petunjuk visual awan makin tebal. Pengaya. Knob: 3 → 4 gambar (tambah satu tahap di tengah, mis. angin membawa awan); gambar pertama (cerah) dan terakhir (hujan) selalu tampil."
     },
     {
       "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.01",

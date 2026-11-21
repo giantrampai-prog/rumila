@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-otot-tarik-ulur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Otot Tarik-Ulur",
-      "instruksi": "Dengarkan gerakannya. Tunjuk otot yang mengerut, atau katakan apa yang terjadi pada pasangannya.",
+      "instruksi": "Dengarkan gerakannya, lalu sentuh jawabannya: otot yang mengerut, keadaan otot pasangannya, atau gerak lengannya.",
       "b-pilihan": "pilihan",
       "i-biseps": "otot depan lengan atas (biseps)",
       "i-trisep": "otot belakang lengan atas (triseps)",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Muscles Pull and Relax",
-      "instruksi": "Listen to the movement. Point to the muscle that contracts, or say what happens to its partner.",
+      "instruksi": "Listen to the movement, then touch the answer: the muscle that contracts, what its partner muscle does, or how the arm moves.",
       "b-pilihan": "choices",
       "i-biseps": "front upper-arm muscle (biceps)",
       "i-trisep": "back upper-arm muscle (triceps)",

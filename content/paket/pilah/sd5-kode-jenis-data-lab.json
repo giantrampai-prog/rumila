@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-jenis-data-lab",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Catatan Data Laboratorium",
-      "instruksi": "Di laboratorium, tiap catatan punya jenis data: angka, teks (bertanda kutip), atau benar/salah (hasil perbandingan). Seret tiap nilai ke jenisnya.",
+      "instruksi": "Di laboratorium, tiap catatan punya jenis data: angka, teks (bertanda kutip), atau benar/salah (hasil perbandingan; == artinya 'sama dengan?'). Seret tiap nilai ke jenisnya.",
       "bin-angka": "angka",
       "bin-teks": "teks",
       "bin-bool": "benar/salah",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "Lab Data Notes",
-      "instruksi": "In the lab, every note has a data type: number, text (in quotes), or true/false (the result of a comparison). Drag each value to its type.",
+      "instruksi": "In the lab, every note has a data type: number, text (in quotes), or true/false (the result of a comparison; == means 'equal to?'). Drag each value to its type.",
       "bin-angka": "number",
       "bin-teks": "text",
       "bin-bool": "true/false",
@@ -55,11 +55,11 @@
   },
   "knobs": {
     "binCount": {
-      "min": 2,
+      "min": 3,
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = angka vs teks; 3 = tambah benar/salah"
+      "keterangan": "tetap 3 kotak supaya sesuai instruksi (2 kotak tidak dipakai)"
     },
     "itemCount": {
       "min": 6,

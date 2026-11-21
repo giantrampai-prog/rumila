@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-segi-banyak-beraturan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Beraturan atau Tidak?",
-      "instruksi": "Beraturan artinya semua sisi sama panjang dan semua sudut sama besar. Pilah tiap bangun.",
+      "instruksi": "Beraturan artinya semua sisi sama panjang dan semua sudut sama besar. Taruh tiap bangun di rak beraturan atau tidak beraturan.",
       "b-beraturan": "beraturan",
       "b-tidak-beraturan": "tidak beraturan",
       "i-persegi": "persegi",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Regular or Irregular?",
-      "instruksi": "Regular means all sides are the same length and all angles are the same size. Sort each shape.",
+      "instruksi": "Regular means all sides are the same length and all angles are the same size. Put each shape on the regular or irregular shelf.",
       "b-beraturan": "regular",
       "b-tidak-beraturan": "irregular",
       "i-persegi": "square",

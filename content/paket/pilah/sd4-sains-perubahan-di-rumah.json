@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-perubahan-di-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Perubahan di Rumah",
-      "instruksi": "Amati perubahan di rumah. Apakah zatnya hanya berubah wujud, atau terbentuk zat baru lewat reaksi kimia?",
+      "instruksi": "Amati perubahan di rumah, lalu taruh tiap kartu: zatnya hanya berubah wujud, atau terbentuk zat baru lewat reaksi kimia?",
       "b-fisika": "hanya berubah wujud",
       "b-kimia": "jadi zat baru (reaksi kimia)",
       "i-uap": "air mendidih jadi uap",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Changes Around the House",
-      "instruksi": "Look at the changes around the house. Does the substance only change state, or is a new substance made by a chemical reaction?",
+      "instruksi": "Look at the changes around the house, then place each card: does the substance only change state, or is a new substance made by a chemical reaction?",
       "b-fisika": "only changes state",
       "b-kimia": "makes a new substance (chemical reaction)",
       "i-uap": "boiling water turns to steam",

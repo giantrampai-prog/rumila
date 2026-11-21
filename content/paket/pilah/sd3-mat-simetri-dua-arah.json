@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-simetri-dua-arah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Lipat Tegak, Lipat Mendatar",
-      "instruksi": "Bayangkan garis lipat tegak (dari atas ke bawah), lalu garis lipat mendatar (dari kiri ke kanan). Di garis mana kedua bagian huruf pas?",
+      "instruksi": "Bayangkan garis lipat tegak (dari atas ke bawah), lalu garis lipat mendatar (dari kiri ke kanan). Di garis mana kedua bagian huruf pas? Taruh tiap huruf di raknya.",
       "b-garis-tegak": "garis tegak",
       "b-garis-mendatar": "garis mendatar",
       "b-keduanya": "keduanya",
@@ -43,7 +43,7 @@
     },
     "en": {
       "judul": "Fold Up, Fold Across",
-      "instruksi": "Imagine an up-down fold line, then a side-to-side fold line. On which line do both halves of the letter match?",
+      "instruksi": "Imagine an up-down fold line, then a side-to-side fold line. On which line do both halves of the letter match? Put each letter on its shelf.",
       "b-garis-tegak": "vertical line",
       "b-garis-mendatar": "horizontal line",
       "b-keduanya": "both",

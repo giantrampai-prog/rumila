@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-jadwal-tertukar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -41,7 +41,7 @@
       "s23": "09.50 masukkan oven",
       "s24": "10.35 angkat kue",
       "s25": "11.15 hias kue",
-      "j6": "Sore di rumah",
+      "j6": "Siang dan sore di rumah",
       "s26": "13.30 makan siang",
       "s27": "14.00 tidur siang",
       "s28": "15.15 mengerjakan PR",

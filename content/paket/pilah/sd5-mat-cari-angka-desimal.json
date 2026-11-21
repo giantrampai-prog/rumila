@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-cari-angka-desimal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Detektif Desimal",
-      "instruksi": "Temukan angka di tempat yang ditanya: persepuluhan tepat di kanan koma, perseratusan di sebelahnya.",
+      "instruksi": "Cari angka di tempat yang ditanya. Puluhan dan satuan ada di kiri koma; persepuluhan tepat di kanan koma, perseratusan di sebelahnya. Sentuh angkanya.",
       "q1": "Pada 19,52, angka di tempat puluhan adalah …",
       "c1": "1",
       "c2": "9",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Decimal Detective",
-      "instruksi": "Find the digit in the place asked for: tenths are just right of the point, hundredths next to them.",
+      "instruksi": "Find the digit in the place asked for. Tens and ones are left of the point; tenths are just right of it, hundredths next to them. Touch the digit.",
       "q1": "In 19.52, the digit in the tens place is …",
       "c1": "1",
       "c2": "9",

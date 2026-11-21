@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pemangsa-atau-mangsa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.02"
@@ -19,7 +19,7 @@
       "i-senyap": "langkah tanpa suara saat mengendap",
       "i-matasamping": "mata di samping kepala untuk melihat sekeliling",
       "i-telinga": "telinga besar yang bisa diputar",
-      "i-kawanan": "berkumpul dalam kawanan besar",
+      "i-kawanan": "berkumpul dalam kawanan besar agar ada yang berjaga",
       "i-duri": "duri atau cangkang keras",
       "i-racun": "warna mencolok tanda beracun",
       "i-menggulung": "menggulung jadi bola bersisik keras"
@@ -36,7 +36,7 @@
       "i-senyap": "silent steps while stalking",
       "i-matasamping": "eyes on the sides of the head to see all around",
       "i-telinga": "big ears that can turn",
-      "i-kawanan": "staying together in a big herd",
+      "i-kawanan": "staying together in a big herd so someone keeps watch",
       "i-duri": "spines or a hard shell",
       "i-racun": "bright colours that warn of poison",
       "i-menggulung": "rolling up into a hard, scaly ball"

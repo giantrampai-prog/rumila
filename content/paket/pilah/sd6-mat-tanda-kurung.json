@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-tanda-kurung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kurung Dulu",
-      "instruksi": "Kerjakan yang di dalam kurung dulu, lalu kali dan bagi, baru tambah dan kurang.",
+      "instruksi": "Kerjakan yang di dalam kurung dulu, lalu kali dan bagi, baru tambah dan kurang. Sentuh hasilnya.",
       "q1": "(3 + 4) × 5 = …",
       "c1": "35",
       "c2": "23",
@@ -61,7 +61,7 @@
     },
     "en": {
       "judul": "Brackets First",
-      "instruksi": "Work out the brackets first, then multiply and divide, then add and subtract.",
+      "instruksi": "Work out the brackets first, then multiply and divide, then add and subtract. Touch the answer.",
       "q1": "(3 + 4) × 5 = …",
       "c1": "35",
       "c2": "23",

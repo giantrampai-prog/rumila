@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-nama-gaya",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.GAYA.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Gaya Apa Itu?",
-      "instruksi": "Baca kejadiannya, lalu sentuh gaya yang paling berperan.",
+      "instruksi": "Baca kejadiannya, lalu sentuh jawaban yang tepat tentang gaya yang bekerja.",
       "b-pilihan": "pilihan",
       "i-gravitasi": "gravitasi",
       "i-gesek": "gaya gesek",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Which Force Is It?",
-      "instruksi": "Read what happens, then touch the force that matters most.",
+      "instruksi": "Read what happens, then touch the right answer about the forces at work.",
       "b-pilihan": "choices",
       "i-gravitasi": "gravity",
       "i-gesek": "friction",

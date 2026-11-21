@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-larik-nampan-kue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -119,14 +119,16 @@
       "labelKey": "i-2-baris-kue-mangkuk-4",
       "bin": "x2-4",
       "emoji": "🧁",
-      "count": 8
+      "count": 8,
+      "kolom": 4
     },
     {
       "id": "x2-4-donat",
       "labelKey": "i-2-baris-donat-4",
       "bin": "x2-4",
       "emoji": "🍩",
-      "count": 8
+      "count": 8,
+      "kolom": 4
     },
     {
       "id": "x2-4-tambah",
@@ -139,14 +141,16 @@
       "labelKey": "i-3-baris-kue-mangkuk-2",
       "bin": "x3-2",
       "emoji": "🧁",
-      "count": 6
+      "count": 6,
+      "kolom": 2
     },
     {
       "id": "x3-2-donat",
       "labelKey": "i-3-baris-donat-2",
       "bin": "x3-2",
       "emoji": "🍩",
-      "count": 6
+      "count": 6,
+      "kolom": 2
     },
     {
       "id": "x3-2-tambah",
@@ -159,14 +163,16 @@
       "labelKey": "i-2-baris-kue-mangkuk-5",
       "bin": "x2-5",
       "emoji": "🧁",
-      "count": 10
+      "count": 10,
+      "kolom": 5
     },
     {
       "id": "x2-5-donat",
       "labelKey": "i-2-baris-donat-5",
       "bin": "x2-5",
       "emoji": "🍩",
-      "count": 10
+      "count": 10,
+      "kolom": 5
     },
     {
       "id": "x2-5-tambah",
@@ -179,14 +185,16 @@
       "labelKey": "i-4-baris-kue-mangkuk-3",
       "bin": "x4-3",
       "emoji": "🧁",
-      "count": 12
+      "count": 12,
+      "kolom": 3
     },
     {
       "id": "x4-3-donat",
       "labelKey": "i-4-baris-donat-3",
       "bin": "x4-3",
       "emoji": "🍩",
-      "count": 12
+      "count": 12,
+      "kolom": 3
     },
     {
       "id": "x4-3-tambah",
@@ -199,14 +207,16 @@
       "labelKey": "i-3-baris-kue-mangkuk-5",
       "bin": "x3-5",
       "emoji": "🧁",
-      "count": 15
+      "count": 15,
+      "kolom": 5
     },
     {
       "id": "x3-5-donat",
       "labelKey": "i-3-baris-donat-5",
       "bin": "x3-5",
       "emoji": "🍩",
-      "count": 15
+      "count": 15,
+      "kolom": 5
     },
     {
       "id": "x3-5-tambah",
@@ -219,14 +229,16 @@
       "labelKey": "i-5-baris-kue-mangkuk-4",
       "bin": "x5-4",
       "emoji": "🧁",
-      "count": 20
+      "count": 20,
+      "kolom": 4
     },
     {
       "id": "x5-4-donat",
       "labelKey": "i-5-baris-donat-4",
       "bin": "x5-4",
       "emoji": "🍩",
-      "count": 20
+      "count": 20,
+      "kolom": 4
     },
     {
       "id": "x5-4-tambah",

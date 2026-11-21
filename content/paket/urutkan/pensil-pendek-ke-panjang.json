@@ -1,6 +1,6 @@
 {
   "id": "pensil-pendek-ke-panjang",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Mainan Pendek ke Panjang",
-      "instruksi": "Robot menjajarkan mobil-mobilan. Susun dari yang paling pendek ke yang paling panjang.",
+      "instruksi": "Robot menjajarkan kendaraan mainan. Susun dari yang paling pendek ke yang paling panjang.",
       "pendek": "pendek",
       "sedang": "sedang",
       "panjang": "panjang",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Toys Short to Long",
-      "instruksi": "Robot is lining up toy cars. Put them from the shortest to the longest.",
+      "instruksi": "Robot is lining up toy vehicles. Put them from the shortest to the longest.",
       "pendek": "short",
       "sedang": "medium",
       "panjang": "long",

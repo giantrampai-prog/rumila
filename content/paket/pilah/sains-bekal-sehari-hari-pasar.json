@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-sehari-hari-pasar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Belanja Piring Sehari-hari",
-      "instruksi": "Robot belanja di pasar: makanan sehari-hari ke piring, jajanan sesekali ke toples.",
+      "instruksi": "Robot belanja di pasar: taruh makanan sehari-hari ke piring, jajanan sesekali ke toples.",
       "piring": "piring sehari-hari",
       "toples": "toples sesekali",
       "i-apel": "apel",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Shopping for the Everyday Plate",
-      "instruksi": "Robot shops at the market: everyday food to the plate, once-in-a-while treats to the jar.",
+      "instruksi": "Robot shops at the market: put everyday food on the plate and once-in-a-while treats in the jar.",
       "piring": "everyday plate",
       "toples": "once-in-a-while jar",
       "i-apel": "apple",

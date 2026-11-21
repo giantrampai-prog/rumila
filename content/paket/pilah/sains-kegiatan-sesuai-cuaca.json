@@ -1,6 +1,6 @@
 {
   "id": "sains-kegiatan-sesuai-cuaca",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,15 +14,15 @@
       "cerah": "cerah",
       "hujan": "hujan",
       "angin": "berangin",
-      "i-jemur": "menjemur baju",
-      "i-renang": "berenang di kolam",
-      "i-eskrim": "makan es krim di taman",
-      "i-payung": "pakai payung",
-      "i-berteduh": "berteduh di rumah",
-      "i-jashujan": "pakai jas hujan",
-      "i-layang": "main layang-layang",
-      "i-kincir": "main lonceng angin",
-      "i-layar": "naik perahu layar"
+      "i-jemur": "matahari terik, jemur baju",
+      "i-renang": "hari cerah dan panas, berenang di kolam",
+      "i-eskrim": "matahari terik, makan es krim di taman",
+      "i-payung": "hujan turun, pakai payung",
+      "i-berteduh": "hujan deras, berteduh di rumah",
+      "i-jashujan": "hujan turun, pakai jas hujan",
+      "i-layang": "angin kencang, waktunya main layang-layang",
+      "i-kincir": "angin bertiup, lonceng angin berbunyi",
+      "i-layar": "angin kencang, perahu layar melaju"
     },
     "en": {
       "judul": "What Shall We Do Today?",
@@ -30,15 +30,15 @@
       "cerah": "sunny",
       "hujan": "rainy",
       "angin": "windy",
-      "i-jemur": "drying laundry",
-      "i-renang": "swimming in the pool",
-      "i-eskrim": "eating ice cream in the park",
-      "i-payung": "using an umbrella",
-      "i-berteduh": "sheltering indoors",
-      "i-jashujan": "wearing a raincoat",
-      "i-layang": "flying a kite",
-      "i-kincir": "playing with wind chimes",
-      "i-layar": "sailing a boat"
+      "i-jemur": "hot sun, hang out the laundry",
+      "i-renang": "a hot sunny day, swim in the pool",
+      "i-eskrim": "hot sun, eat ice cream in the park",
+      "i-payung": "rain is falling, use an umbrella",
+      "i-berteduh": "heavy rain, shelter at home",
+      "i-jashujan": "rain is falling, wear a raincoat",
+      "i-layang": "strong wind, time to fly a kite",
+      "i-kincir": "the wind blows, the wind chimes ring",
+      "i-layar": "strong wind, the sailboat speeds along"
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Susun Tumbuhan Utuh",
-      "instruksi": "Susun potongan dari bawah tanah ke pucuk: akar, batang, daun, lalu bunga.",
+      "instruksi": "Susun potongan dari bawah tanah ke pucuk: akar, batang, daun, lalu bunga bila ada.",
       "s-bungamatahari": "Bunga matahari dari bawah ke atas",
       "bungamatahari-akar": "akar di dalam tanah",
       "bungamatahari-batang": "batang di atas tanah",
@@ -54,7 +54,7 @@
       "padi-akar": "akar di dalam tanah",
       "padi-batang": "batang padi",
       "padi-daun": "daun panjang",
-      "padi-bulir": "malai padi di pucuk",
+      "padi-bulir": "bunga padi di pucuk",
       "t-mangga": "Pohon mangga dari bawah ke atas",
       "mangga-akar": "akar di dalam tanah",
       "mangga-batang": "batang pohon",
@@ -67,7 +67,7 @@
     },
     "en": {
       "judul": "Build the Whole Plant",
-      "instruksi": "Stack the pieces from under the ground to the top: root, stem, leaf, then flower.",
+      "instruksi": "Stack the pieces from under the ground to the top: root, stem, leaf, then flower if there is one.",
       "s-bungamatahari": "Sunflower from bottom to top",
       "bungamatahari-akar": "root under the soil",
       "bungamatahari-batang": "stem above the soil",
@@ -111,7 +111,7 @@
       "padi-akar": "root under the soil",
       "padi-batang": "rice stalk",
       "padi-daun": "long leaves",
-      "padi-bulir": "rice ears at the top",
+      "padi-bulir": "rice flowers at the top",
       "t-mangga": "Mango tree from bottom to top",
       "mangga-akar": "root under the soil",
       "mangga-batang": "tree trunk",

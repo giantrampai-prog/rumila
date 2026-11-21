@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-ulangi-batu-sungai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tiga Pola Batu di Sungai",
-      "instruksi": "Jalur batu di sungai punya tiga ruas dengan pola berbeda. Temukan pola tiap ruas, tulis tiap pola dengan satu blok ulangi, dan belok di antaranya."
+      "instruksi": "Jalur di tepi sungai ini punya tiga ruas dengan pola batu yang berbeda. Temukan pola tiap ruas, tulis tiap pola dengan satu blok ulangi, dan belok di antaranya."
     },
     "en": {
       "judul": "Three Stone Patterns in the River",
-      "instruksi": "The river stone path has three parts with different patterns. Find each part's pattern, write each one with a repeat block, and turn in between."
+      "instruksi": "This riverside path has three parts with different rock patterns. Find each part's pattern, write each one with a repeat block, and turn in between."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-satuan-waktu-tertukar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -54,23 +54,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         }
       ]
     },
@@ -80,23 +76,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         }
       ]
     },
@@ -106,23 +98,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         },
         {
           "id": "tahun",
-          "labelKey": "s-tahun",
-          "emoji": "🎆"
+          "labelKey": "s-tahun"
         }
       ]
     },
@@ -132,23 +120,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         }
       ]
     },
@@ -158,23 +142,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         },
         {
           "id": "tahun",
-          "labelKey": "s-tahun",
-          "emoji": "🎆"
+          "labelKey": "s-tahun"
         }
       ]
     },
@@ -184,23 +164,19 @@
       "steps": [
         {
           "id": "detik",
-          "labelKey": "s-detik",
-          "emoji": "⏱️"
+          "labelKey": "s-detik"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         },
         {
           "id": "tahun",
-          "labelKey": "s-tahun",
-          "emoji": "🎆"
+          "labelKey": "s-tahun"
         }
       ]
     },
@@ -210,23 +186,19 @@
       "steps": [
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         }
       ]
     },
@@ -236,23 +208,19 @@
       "steps": [
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         }
       ]
     },
@@ -262,23 +230,19 @@
       "steps": [
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         }
       ]
     },
@@ -288,23 +252,19 @@
       "steps": [
         {
           "id": "menit",
-          "labelKey": "s-menit",
-          "emoji": "⏳"
+          "labelKey": "s-menit"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         },
         {
           "id": "tahun",
-          "labelKey": "s-tahun",
-          "emoji": "🎆"
+          "labelKey": "s-tahun"
         }
       ]
     },
@@ -314,23 +274,19 @@
       "steps": [
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "hari",
-          "labelKey": "s-hari",
-          "emoji": "☀️"
+          "labelKey": "s-hari"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         }
       ]
     },
@@ -340,23 +296,19 @@
       "steps": [
         {
           "id": "jam",
-          "labelKey": "s-jam",
-          "emoji": "🕐"
+          "labelKey": "s-jam"
         },
         {
           "id": "minggu",
-          "labelKey": "s-minggu",
-          "emoji": "📅"
+          "labelKey": "s-minggu"
         },
         {
           "id": "bulan",
-          "labelKey": "s-bulan",
-          "emoji": "🌙"
+          "labelKey": "s-bulan"
         },
         {
           "id": "tahun",
-          "labelKey": "s-tahun",
-          "emoji": "🎆"
+          "labelKey": "s-tahun"
         }
       ]
     }

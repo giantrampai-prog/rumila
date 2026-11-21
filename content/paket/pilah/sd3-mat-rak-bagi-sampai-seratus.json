@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-rak-bagi-sampai-seratus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bagi Sampai Seratus",
-      "instruksi": "75 ÷ 3 artinya berapa kali tiga menjadi 75. Taruh tiap kartu di rak hasilnya.",
+      "instruksi": "75 ÷ 3 artinya: 3 dikali berapa supaya jadi 75? Taruh tiap kartu di rak hasilnya.",
       "b-6": "6",
       "b-7": "7",
       "b-8": "8",
@@ -63,7 +63,7 @@
     },
     "en": {
       "judul": "Dividing Up to 100",
-      "instruksi": "75 ÷ 3 asks how many threes make 75. Put each card on its answer shelf.",
+      "instruksi": "75 ÷ 3 asks: 3 times what makes 75? Put each card on its answer shelf.",
       "b-6": "6",
       "b-7": "7",
       "b-8": "8",

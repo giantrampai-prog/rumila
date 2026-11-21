@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tebak-petak-kalau",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tebak Lompatan Kalau",
-      "instruksi": "Sebelum tiap langkah, tunjuk petak tujuan robot: ada batu berarti lompat dua petak."
+      "instruksi": "Sebelum tiap langkah, ketuk petak tujuan robot: ada batu di depan berarti lompat dua petak, tanpa batu maju satu petak, dan blok belok berarti robot tetap di petaknya."
     },
     "en": {
       "judul": "Guess the If Jump",
-      "instruksi": "Before each step, point to where the robot will land: a rock means a two-square jump."
+      "instruksi": "Before each step, tap where the robot will land: a rock ahead means a two-square jump, no rock means one square forward, and a turn block means the robot stays on its square."
     }
   },
   "knobs": {

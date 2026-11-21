@@ -465,7 +465,7 @@ function ModeAmbil(c: Ctx) {
               <div key={id} className="flex items-center gap-2 overflow-x-auto rounded-[16px] px-2 py-1" style={{ background: sorot ? "rgba(255,210,63,.55)" : "rgba(255,255,255,.22)" }}>
                 <span className="w-16 shrink-0 text-white" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 14, textShadow: "0 1px 0 rgba(0,0,0,.3)" }}>{nama(id)}</span>
                 {Array.from({ length: sisa }, (_, k) => (
-                  <KartuBenda key={k} v={visual(id)} size={44} onClick={() => ambil(id)} className={`min-h-14 min-w-14 shrink-0 ${sorot && k < kurang(id) ? "akademi-bounce" : ""}`} />
+                  <KartuBenda key={k} v={visual(id)} size={44} keterangan={false} onClick={() => ambil(id)} className={`min-h-14 min-w-14 shrink-0 ${sorot && k < kurang(id) ? "akademi-bounce" : ""}`} />
                 ))}
                 {sisa === 0 && <span className="text-white/80 text-[13px] font-bold">habis</span>}
               </div>
@@ -540,7 +540,7 @@ function ModeSubitasi(c: Ctx) {
       <Lapak>
         <div className="flex flex-wrap justify-center gap-2">
           {Array.from({ length: tersedia - jumlah }, (_, k) => (
-            <KartuBenda key={k} v={visual(id)} size={48} onClick={() => { if (sudahLihat && !tampil) { sfx.pick(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" />
+            <KartuBenda key={k} v={visual(id)} size={48} keterangan={false} onClick={() => { if (sudahLihat && !tampil) { sfx.pick(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" />
           ))}
         </div>
       </Lapak>

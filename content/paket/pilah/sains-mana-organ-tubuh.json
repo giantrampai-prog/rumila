@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-organ-tubuh",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Mana Organnya?",
+      "judul": "Bagian di Dalam Tubuh",
       "instruksi": "Dengarkan nama bagian di dalam tubuh, lalu sentuh gambarnya.",
       "pilihan": "pilihan",
       "i-jantung": "jantung",
@@ -30,7 +30,7 @@
       "t-otot2": "Mana ototnya?"
     },
     "en": {
-      "judul": "Where Is That Organ?",
+      "judul": "Parts Inside the Body",
       "instruksi": "Listen to the body part inside the body, then touch its picture.",
       "pilihan": "choices",
       "i-jantung": "heart",

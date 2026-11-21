@@ -1,6 +1,6 @@
 {
   "id": "kotak-mainan-warna",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Mainan Warna",
-      "instruksi": "Bantu robot merapikan balok mainan: masukkan tiap mainan ke kotak yang warnanya sama.",
+      "instruksi": "Bantu robot merapikan mainan: masukkan tiap mainan ke kotak yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
       "kuning": "kuning",
@@ -23,7 +23,7 @@
     },
     "en": {
       "judul": "Colour Toy Boxes",
-      "instruksi": "Help robot tidy the toy blocks: put each toy into the box with the same colour.",
+      "instruksi": "Help robot tidy the toys: put each toy into the box with the same colour.",
       "merah": "red",
       "biru": "blue",
       "kuning": "yellow",

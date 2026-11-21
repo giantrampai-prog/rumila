@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-genap-ganjil-tiga-bilangan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Genap atau Ganjil: Dua dan Tiga Bilangan",
-      "instruksi": "Lihat angka satuan tiap bilangan. Tanpa menghitung, apakah hasilnya genap atau ganjil?",
+      "instruksi": "Lihat angka satuan tiap bilangan. Tanpa menghitung, apakah hasilnya genap atau ganjil? Taruh di raknya.",
       "b-genap": "hasil genap",
       "b-ganjil": "hasil ganjil",
       "i1": "115 − 21",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "Even or Odd: Two and Three Numbers",
-      "instruksi": "Look at the ones digit of each number. Without calculating, is the result even or odd?",
+      "instruksi": "Look at the ones digit of each number. Without calculating, is the result even or odd? Put it on its shelf.",
       "b-genap": "even result",
       "b-ganjil": "odd result",
       "i1": "115 − 21",

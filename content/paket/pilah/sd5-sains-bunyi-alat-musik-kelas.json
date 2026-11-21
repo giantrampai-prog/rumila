@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-bunyi-alat-musik-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNYI.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Orkes Kelas Lima",
-      "instruksi": "Alat musik di kelas diubah sedikit. Tebak bunyinya jadi bagaimana.",
+      "instruksi": "Alat musik di kelas diubah sedikit. Sentuh perkiraanmu: bunyinya jadi bagaimana?",
       "b-pilihan": "pilihan",
       "i-tinggi": "nada lebih tinggi",
       "i-rendah": "nada lebih rendah",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "The Year Five Band",
-      "instruksi": "The class instruments are changed a little. Predict how the sound changes.",
+      "instruksi": "The class instruments are changed a little. Touch your prediction: how does the sound change?",
       "b-pilihan": "choices",
       "i-tinggi": "higher pitch",
       "i-rendah": "lower pitch",

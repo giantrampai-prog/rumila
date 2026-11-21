@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-jam-dinding-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jam Dinding Kelas",
-      "instruksi": "Jarum panjang menunjukkan menit. Loncat lima-lima dari angka 12: angka 1 = 5 menit, angka 2 = 10 menit, dan seterusnya.",
+      "instruksi": "Jarum panjang menunjukkan menit. Loncat lima-lima dari angka 12: angka 1 = 5 menit, angka 2 = 10 menit. Sentuh jawaban yang benar.",
       "i-m35": "35 menit",
       "i-m7": "7 menit",
       "i-m30": "30 menit",
@@ -58,7 +58,7 @@
     },
     "en": {
       "judul": "Classroom Wall Clock",
-      "instruksi": "The long hand shows the minutes. Skip count by fives from 12: the 1 means 5 minutes, the 2 means 10 minutes, and so on.",
+      "instruksi": "The long hand shows the minutes. Skip count by fives from 12: the 1 means 5 minutes, the 2 means 10 minutes. Tap the right answer.",
       "i-m35": "35 minutes",
       "i-m7": "7 minutes",
       "i-m30": "30 minutes",
@@ -122,203 +122,174 @@
       "id": "m35",
       "labelKey": "i-m35",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m7",
       "labelKey": "i-m7",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m30",
       "labelKey": "i-m30",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m15",
       "labelKey": "i-m15",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m3",
       "labelKey": "i-m3",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m20",
       "labelKey": "i-m20",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m45",
       "labelKey": "i-m45",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m9",
       "labelKey": "i-m9",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m40",
       "labelKey": "i-m40",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m55",
       "labelKey": "i-m55",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m11",
       "labelKey": "i-m11",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m50",
       "labelKey": "i-m50",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m25",
       "labelKey": "i-m25",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m5",
       "labelKey": "i-m5",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m8",
       "labelKey": "i-m8",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m10",
       "labelKey": "i-m10",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m2",
       "labelKey": "i-m2",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m6",
       "labelKey": "i-m6",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "m4",
       "labelKey": "i-m4",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a5",
       "labelKey": "i-a5",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a4",
       "labelKey": "i-a4",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a6",
       "labelKey": "i-a6",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a8",
       "labelKey": "i-a8",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a7",
       "labelKey": "i-a7",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a9",
       "labelKey": "i-a9",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a3",
       "labelKey": "i-a3",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a2",
       "labelKey": "i-a2",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a10",
       "labelKey": "i-a10",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     },
     {
       "id": "a11",
       "labelKey": "i-a11",
       "bin": "pilihan",
-      "emoji": "🕰️",
       "scale": 0.7
     }
   ],

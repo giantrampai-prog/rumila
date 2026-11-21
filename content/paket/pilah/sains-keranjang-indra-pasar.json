@@ -1,6 +1,6 @@
 {
   "id": "sains-keranjang-indra-pasar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "i-gitar": "gitar",
       "i-mawar": "bunga mawar",
       "i-parfum": "minyak wangi",
-      "i-eskrim": "es krim",
+      "i-eskrim": "es krim manis",
       "i-madu": "madu manis",
       "lampion": "lampion menyala",
       "papanharga": "papan harga",
@@ -34,7 +34,7 @@
       "gendang": "gendang",
       "melati": "bunga melati",
       "pandan": "daun pandan wangi",
-      "cokelat": "cokelat",
+      "cokelat": "cokelat manis",
       "garam": "garam asin"
     },
     "en": {
@@ -49,7 +49,7 @@
       "i-gitar": "guitar",
       "i-mawar": "rose",
       "i-parfum": "perfume",
-      "i-eskrim": "ice cream",
+      "i-eskrim": "sweet ice cream",
       "i-madu": "sweet honey",
       "lampion": "glowing lantern",
       "papanharga": "price sign",
@@ -63,7 +63,7 @@
       "gendang": "drum",
       "melati": "jasmine",
       "pandan": "fragrant pandan leaf",
-      "cokelat": "chocolate",
+      "cokelat": "sweet chocolate",
       "garam": "salt"
     }
   },

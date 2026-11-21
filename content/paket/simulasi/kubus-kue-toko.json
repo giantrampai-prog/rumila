@@ -1,6 +1,6 @@
 {
   "id": "kubus-kue-toko",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ukur Kue dengan Kubus",
-      "instruksi": "Di toko kue, letakkan kue di atas penggaris kubus mulai dari kubus pertama, lalu sebutkan berapa kubus panjangnya.",
+      "instruksi": "Di toko kue, hitung kubus yang ada tepat di bawah jajanan itu, lalu sentuh angkanya.",
       "ceri-manis": "ceri manis",
       "permen": "permen",
       "kue-kering": "kue kering",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Measure Treats in Cubes",
-      "instruksi": "At the cake shop, lay the treat on the cube ruler starting at the first cube, then say how many cubes long it is.",
+      "instruksi": "At the cake shop, count the cubes right under the treat, then touch the number.",
       "ceri-manis": "sweet cherry",
       "permen": "candy",
       "kue-kering": "cookie",

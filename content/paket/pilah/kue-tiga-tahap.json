@@ -1,6 +1,6 @@
 {
   "id": "kue-tiga-tahap",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -28,7 +28,7 @@
       "i-garam": "tambah sejumput garam",
       "i-madu": "tuang madu ke adonan",
       "i-waktu": "atur waktu oven",
-      "i-sarungtangan": "pakai sarung tangan oven",
+      "i-sarungtangan": "angkat loyang dari oven",
       "i-tunggu": "tunggu kue mengembang",
       "i-cupcake": "kue mangkuk matang"
     },
@@ -52,7 +52,7 @@
       "i-garam": "add a pinch of salt",
       "i-madu": "pour honey into the batter",
       "i-waktu": "set the oven timer",
-      "i-sarungtangan": "put on oven mitts",
+      "i-sarungtangan": "take the tin out of the oven",
       "i-tunggu": "wait for the cake to rise",
       "i-cupcake": "baked cupcake"
     }

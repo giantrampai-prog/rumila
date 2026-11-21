@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-kubik-bintang-angkasa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "q5": "Bintang bernomor 125 termasuk bilangan …",
       "q6": "Bintang bernomor 90 termasuk bilangan …",
       "q7": "Bintang bernomor 81 termasuk bilangan …",
-      "q8": "Planet mana yang nomornya bilangan kubik?",
+      "q8": "Bintang mana yang nomornya bilangan kubik?",
       "c5": "27",
       "c6": "9",
       "c7": "18",
@@ -64,7 +64,7 @@
       "q5": "The star numbered 125 is a …",
       "q6": "The star numbered 90 is a …",
       "q7": "The star numbered 81 is a …",
-      "q8": "Which planet has a cube number?",
+      "q8": "Which star has a cube number?",
       "c5": "27",
       "c6": "9",
       "c7": "18",

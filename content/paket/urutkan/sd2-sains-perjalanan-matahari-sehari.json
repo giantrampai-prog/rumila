@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perjalanan-matahari-sehari",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -119,7 +119,7 @@
       "max": 4,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah kartu: 3 → 4 (4 = lengkap sampai sore; 3 memotong kartu terakhir)"
+      "keterangan": "jumlah kartu: 3 → 4 (4 = lengkap; 3 membuang kartu tengah, pagi dan sore selalu tampil)"
     }
   },
   "assets": [],
@@ -127,6 +127,7 @@
   "rounds": 10,
   "world": "halaman",
   "mode": "susun",
+  "potong": "tengah",
   "sequences": [
     {
       "id": "langit",

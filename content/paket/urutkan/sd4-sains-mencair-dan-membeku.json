@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-mencair-dan-membeku",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.02"
@@ -122,7 +122,7 @@
       "max": 4,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah langkah: 3 → 4"
+      "keterangan": "jumlah langkah: 3 → 4; dipotong di tengah, jadi langkah awal dan akhir selalu tampil"
     }
   },
   "assets": [],
@@ -131,6 +131,7 @@
   "world": "dapur",
   "mechanic": "urutkan",
   "mode": "susun",
+  "potong": "tengah",
   "sequences": [
     {
       "id": "mencair",

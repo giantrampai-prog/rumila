@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-tugas-bagian-tumbuhan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "i-simpan": "menyimpan makanan seperti wortel",
       "i-angkut": "membawa air naik ke daun",
       "i-tegak": "menopang tumbuhan tetap tegak",
-      "i-warna": "air berwarna naik di seledri",
+      "i-warna": "jalan air berwarna menuju kelopak krisan putih",
       "i-masak": "membuat makanan dengan cahaya",
       "i-kuning": "menguning bila lama di tempat gelap",
       "i-lebah": "didatangi lebah dan kupu-kupu",
@@ -38,7 +38,7 @@
       "i-simpan": "stores food, like a carrot",
       "i-angkut": "carries water up to the leaves",
       "i-tegak": "holds the plant upright",
-      "i-warna": "coloured water rising in celery",
+      "i-warna": "the path coloured water takes up to a white chrysanthemum",
       "i-masak": "makes food using light",
       "i-kuning": "turns yellow after long in the dark",
       "i-lebah": "visited by bees and butterflies",
@@ -127,7 +127,7 @@
       "id": "warna",
       "labelKey": "i-warna",
       "bin": "batang",
-      "emoji": "🥬"
+      "emoji": "🌼"
     },
     {
       "id": "masak",

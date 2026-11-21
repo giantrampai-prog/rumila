@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-keliling-dan-luas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -48,7 +48,7 @@
       "c28": "6 cm",
       "q8": "Keliling persegi 40 cm. Panjang sisinya …",
       "c29": "4 cm",
-      "q9": "Dua kamar: 3 m × 4 m dan 2 m × 4 m. Luas keduanya …",
+      "q9": "Dua kamar: 3 m × 4 m dan 2 m × 4 m. Jumlah luas kedua kamar …",
       "c30": "20 m²",
       "c31": "13 m²",
       "c32": "24 m²",

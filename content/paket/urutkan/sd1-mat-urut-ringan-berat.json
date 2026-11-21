@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urut-ringan-berat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -139,9 +139,9 @@
           "scale": 1.0
         },
         {
-          "id": "sepeda",
-          "labelKey": "s-sepeda",
-          "emoji": "🚲",
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
           "scale": 1.0
         }
       ]
@@ -163,9 +163,9 @@
           "scale": 1.0
         },
         {
-          "id": "sepeda",
-          "labelKey": "s-sepeda",
-          "emoji": "🚲",
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
           "scale": 1.0
         },
         {

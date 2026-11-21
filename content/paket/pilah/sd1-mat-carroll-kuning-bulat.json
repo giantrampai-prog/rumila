@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-carroll-kuning-bulat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Kuning dan Bulat",
-      "instruksi": "Benda ini kuning atau bukan? Bulat atau bersudut? Cari kotak yang cocok untuk dua-duanya.",
+      "instruksi": "Tiap benda: kuning atau bukan? Bulat atau bersudut? Taruh di kotak yang cocok untuk dua-duanya.",
       "b-kuning-bulat": "kuning · bulat",
       "b-kuning-sudut": "kuning · bersudut",
       "b-lain-bulat": "bukan kuning · bulat",
@@ -25,7 +25,7 @@
       "i-buku-kuning": "buku kuning",
       "i-bola": "bola sepak",
       "i-lingkaran-biru": "lingkaran biru",
-      "i-jeruk": "jeruk",
+      "i-tomat": "tomat",
       "i-lingkaran-hijau": "lingkaran hijau",
       "i-persegi-merah": "persegi merah",
       "i-segitiga-biru": "segitiga biru",
@@ -34,7 +34,7 @@
     },
     "en": {
       "judul": "Yellow and Round Boxes",
-      "instruksi": "Is it yellow or not? Is it round or does it have corners? Find the box that matches both.",
+      "instruksi": "For each object: yellow or not? Round or with corners? Put it in the box that matches both.",
       "b-kuning-bulat": "yellow · round",
       "b-kuning-sudut": "yellow · corners",
       "b-lain-bulat": "not yellow · round",
@@ -49,7 +49,7 @@
       "i-buku-kuning": "yellow book",
       "i-bola": "football",
       "i-lingkaran-biru": "blue circle",
-      "i-jeruk": "orange",
+      "i-tomat": "tomato",
       "i-lingkaran-hijau": "green circle",
       "i-persegi-merah": "red square",
       "i-segitiga-biru": "blue triangle",
@@ -168,10 +168,10 @@
       "emoji": "🔵"
     },
     {
-      "id": "jeruk",
-      "labelKey": "i-jeruk",
+      "id": "tomat",
+      "labelKey": "i-tomat",
       "bin": "lain-bulat",
-      "emoji": "🍊"
+      "emoji": "🍅"
     },
     {
       "id": "lingkaran-hijau",

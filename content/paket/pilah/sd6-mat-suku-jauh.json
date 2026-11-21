@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-suku-jauh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Suku yang Jauh",
-      "instruksi": "Cari aturan posisi ke suku (misalnya 3 × posisi + 2), lalu hitung suku yang ditanya.",
+      "instruksi": "Cari aturan posisi ke suku (misalnya 3 × posisi + 2), lalu hitung suku yang ditanya. Sentuh jawabannya.",
       "q1": "1, 6, 11, 16, … Suku ke-42 adalah …",
       "c1": "206",
       "c2": "210",
@@ -71,7 +71,7 @@
     },
     "en": {
       "judul": "Far-Away Terms",
-      "instruksi": "Find the position-to-term rule (for example 3 × position + 2), then work out the term asked for.",
+      "instruksi": "Find the position-to-term rule (for example 3 × position + 2), then work out the term asked for. Touch the answer.",
       "q1": "1, 6, 11, 16, … The 42th term is …",
       "c1": "206",
       "c2": "210",

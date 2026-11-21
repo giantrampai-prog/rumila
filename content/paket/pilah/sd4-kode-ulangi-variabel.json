@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-ulangi-variabel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -37,7 +37,7 @@
       "q8": "x = 0; ulangi 3 kali: x = x + 2. Sesudah ulangi selesai: x = x + 1.  Berapa x?",
       "q9": "total = 1; ulangi 2 kali: total = total + 4.  Berapa total?",
       "q10": "x = 0; ulangi ? kali: x = x + 4.  Supaya akhirnya x = 20, isi ? dengan angka berapa?",
-      "q11": "a = 1; ulangi 2 kali: a = a + 1, lalu a = a * 2.  Berapa a?",
+      "q11": "a = 1; ulangi 2 kali, tiap putaran: a = a + 1 lalu a = a * 2.  Berapa a?",
       "q12": "langkah = 0; ulangi 6 kali: langkah = langkah + 2.  Berapa langkah?"
     },
     "en": {
@@ -69,7 +69,7 @@
       "q8": "x = 0; repeat 3 times: x = x + 2. After the repeat ends: x = x + 1.  What is x?",
       "q9": "total = 1; repeat 2 times: total = total + 4.  What is total?",
       "q10": "x = 0; repeat ? times: x = x + 4.  So that x ends at 20, which number goes in ?",
-      "q11": "a = 1; repeat 2 times: a = a + 1, then a = a * 2.  What is a?",
+      "q11": "a = 1; repeat 2 times, each turn: a = a + 1 then a = a * 2.  What is a?",
       "q12": "steps = 0; repeat 6 times: steps = steps + 2.  What is steps?"
     }
   },

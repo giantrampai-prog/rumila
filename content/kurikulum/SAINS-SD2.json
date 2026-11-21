@@ -146,7 +146,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Aksi: menyeret makhluk ke kartu habitat. Lanjutan TKB HEWAN-HABITAT.01 (hanya hewan; tidak dicantumkan sebagai prasyarat karena batas brief): kini tumbuhan ikut dipilah, sehingga anak melihat tiap habitat punya hewan DAN tumbuhan sendiri. Paket kedua memakai habitat kecil di sekitar rumah (bawah batu, pohon, kolam, tanah). Jebakan: penguin ke kutub, bukan laut; jamur ke hutan lembap; cacing ke tanah, bukan kolam. Knob binCount 3 → 5, itemCount 6 → 8."
+      "catatan": "Aksi: menyeret makhluk ke kartu habitat. Lanjutan TKB HEWAN-HABITAT.01 (hanya hewan; tidak dicantumkan sebagai prasyarat karena batas brief): kini tumbuhan ikut dipilah, sehingga anak melihat tiap habitat punya hewan DAN tumbuhan sendiri. Paket kedua memakai habitat kecil di sekitar rumah (bawah batu, pohon, kolam, tanah). Jebakan: jamur ke hutan lembap; cacing ke tanah, bukan kolam. Knob binCount 3 → 5, itemCount 6 → 8."
     },
     {
       "id": "SAINS.SD2.HABITAT.02",

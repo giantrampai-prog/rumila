@@ -1,6 +1,6 @@
 {
   "id": "berangkat-sekolah",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -13,7 +13,6 @@
       "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
       "sekolah": "Robot ke sekolah",
       "seragam": "pakai seragam",
-      "tas": "pakai tas",
       "sepeda": "naik sepeda",
       "tiba": "sampai sekolah",
       "t-sepatu": "Memakai sepatu",
@@ -51,16 +50,16 @@
       "seberang-3": "menyeberang jalan",
       "seberang-4": "sampai sekolah",
       "t-salim": "Tiba di sekolah",
-      "salim-1": "masuk gerbang sekolah",
-      "salim-2": "salim dengan guru",
-      "salim-3": "taruh tas di kelas"
+      "salim-1": "salim dengan guru di gerbang",
+      "salim-2": "jalan ke kelas",
+      "salim-3": "taruh tas di kelas",
+      "sekolah-bangun": "bangun tidur"
     },
     "en": {
       "judul": "Off to School",
       "instruksi": "Put the pictures in order to get to school the right way.",
       "sekolah": "The robot goes to school",
       "seragam": "put on uniform",
-      "tas": "put on backpack",
       "sepeda": "ride the bike",
       "tiba": "arrive at school",
       "t-sepatu": "Putting on shoes",
@@ -98,9 +97,10 @@
       "seberang-3": "cross the road",
       "seberang-4": "arrive at school",
       "t-salim": "Arriving at school",
-      "salim-1": "go through the school gate",
-      "salim-2": "shake hands with the teacher",
-      "salim-3": "put your bag in the classroom"
+      "salim-1": "shake hands with the teacher at the gate",
+      "salim-2": "walk to the classroom",
+      "salim-3": "put your bag in the classroom",
+      "sekolah-bangun": "wake up"
     }
   },
   "knobs": {
@@ -123,14 +123,14 @@
       "titleKey": "sekolah",
       "steps": [
         {
+          "id": "bangun",
+          "labelKey": "sekolah-bangun",
+          "emoji": "🥱"
+        },
+        {
           "id": "seragam",
           "labelKey": "seragam",
           "emoji": "👕"
-        },
-        {
-          "id": "tas",
-          "labelKey": "tas",
-          "emoji": "🎒"
         },
         {
           "id": "sepeda",
@@ -329,12 +329,12 @@
         {
           "id": "salim-1",
           "labelKey": "salim-1",
-          "emoji": "🚪"
+          "emoji": "🤝"
         },
         {
           "id": "salim-2",
           "labelKey": "salim-2",
-          "emoji": "🤝"
+          "emoji": "🚶"
         },
         {
           "id": "salim-3",

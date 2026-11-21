@@ -1,6 +1,6 @@
 {
   "id": "hitung-kelereng-11-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,13 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Kelereng Tumpah",
+      "judul": "Kelereng dan Kancing Tumpah",
       "instruksi": "{Barang} robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "kelereng": "kelereng",
       "kancing": "kancing"
     },
     "en": {
-      "judul": "Spilled Marbles",
+      "judul": "Spilled Marbles and Buttons",
       "instruksi": "The robot's {barang} spilled: touch each one as you count, then slide the marker to the number.",
       "kelereng": "marbles",
       "kancing": "buttons"

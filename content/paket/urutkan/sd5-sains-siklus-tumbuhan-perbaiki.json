@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -190,7 +190,7 @@
       "max": 7,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah tahap: 4 (biji sampai berbunga) → 7"
+      "keterangan": "jumlah tahap: 4 → 7; dipotong di tengah, jadi biji awal dan biji baru selalu tampil"
     }
   },
   "assets": [],
@@ -199,6 +199,7 @@
   "world": "halaman",
   "mechanic": "urutkan",
   "mode": "perbaiki",
+  "potong": "tengah",
   "sequences": [
     {
       "id": "padi",

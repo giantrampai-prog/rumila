@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-rak-kurang-berapa-seratus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kurang Berapa Supaya 100?",
-      "instruksi": "Tiap celengan harus berisi seratus. Taruh di rak 'kurang berapa'.",
+      "instruksi": "Supaya jadi 100, kurang berapa lagi? Taruh tiap kartu di rak 'kurang' yang benar.",
       "b-kurang-10": "kurang 10",
       "b-kurang-20": "kurang 20",
       "b-kurang-30": "kurang 30",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "How Many More to Make 100?",
-      "instruksi": "Every money box must hold one hundred. Put each on the 'needs how many' shelf.",
+      "instruksi": "How many more to make 100? Put each card on the right 'needs' shelf.",
       "b-kurang-10": "needs 10",
       "b-kurang-20": "needs 20",
       "b-kurang-30": "needs 30",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-mesin-hitung-pabrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -126,217 +126,186 @@
       "id": "n76",
       "labelKey": "i-n76",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n66",
       "labelKey": "i-n66",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n75",
       "labelKey": "i-n75",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n77",
       "labelKey": "i-n77",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n87",
       "labelKey": "i-n87",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n79",
       "labelKey": "i-n79",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n78",
       "labelKey": "i-n78",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n89",
       "labelKey": "i-n89",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n58",
       "labelKey": "i-n58",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n48",
       "labelKey": "i-n48",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n59",
       "labelKey": "i-n59",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n98",
       "labelKey": "i-n98",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n97",
       "labelKey": "i-n97",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n88",
       "labelKey": "i-n88",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n47",
       "labelKey": "i-n47",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n96",
       "labelKey": "i-n96",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n52",
       "labelKey": "i-n52",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n53",
       "labelKey": "i-n53",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n42",
       "labelKey": "i-n42",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n45",
       "labelKey": "i-n45",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n44",
       "labelKey": "i-n44",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n35",
       "labelKey": "i-n35",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n38",
       "labelKey": "i-n38",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n37",
       "labelKey": "i-n37",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n33",
       "labelKey": "i-n33",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n43",
       "labelKey": "i-n43",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n34",
       "labelKey": "i-n34",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n41",
       "labelKey": "i-n41",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n31",
       "labelKey": "i-n31",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n51",
       "labelKey": "i-n51",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     },
     {
       "id": "n40",
       "labelKey": "i-n40",
       "bin": "pilihan",
-      "emoji": "⚙️",
       "scale": 1
     }
   ],

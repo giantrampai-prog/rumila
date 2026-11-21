@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kembalian-ratusan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD5",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kasir Toko Pakaian",
-      "instruksi": "Pembeli membayar 50 ribu atau 100 ribu. Hitung kembaliannya, termasuk koin 500.",
+      "instruksi": "Pembeli membayar 50 ribu atau 100 ribu. Hitung kembaliannya, lalu beri uang kembalian yang tepat, termasuk koin 500.",
       "kaos-kaki": "kaus kaki",
       "kaos": "kaus",
       "payung": "payung",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Clothes Shop Cashier",
-      "instruksi": "The customer pays 50,000 or 100,000. Work out the change, including 500 coins.",
+      "instruksi": "The customer pays 50,000 or 100,000. Work out the change, then give the exact change, including 500 coins.",
       "kaos-kaki": "socks",
       "kaos": "T-shirt",
       "payung": "umbrella",

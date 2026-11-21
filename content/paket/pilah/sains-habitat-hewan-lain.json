@@ -1,6 +1,6 @@
 {
   "id": "sains-habitat-hewan-lain",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "i-rubahgurun": "rubah gurun",
       "i-landakgurun": "landak gurun",
       "i-kumbanggurun": "kumbang gurun",
-      "i-beluga": "paus beluga",
+      "i-beluga": "paus beluga di laut es",
       "i-burunghantusalju": "burung hantu salju",
       "i-serigalakutub": "serigala kutub",
       "i-macantutul": "macan tutul"
@@ -43,7 +43,7 @@
       "i-rubahgurun": "fennec fox",
       "i-landakgurun": "desert hedgehog",
       "i-kumbanggurun": "desert beetle",
-      "i-beluga": "beluga whale",
+      "i-beluga": "beluga whale in the icy sea",
       "i-burunghantusalju": "snowy owl",
       "i-serigalakutub": "arctic wolf",
       "i-macantutul": "leopard"

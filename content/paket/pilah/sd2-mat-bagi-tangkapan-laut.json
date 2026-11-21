@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bagi-tangkapan-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -82,63 +82,54 @@
       "id": "n9",
       "labelKey": "i-n9",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n10",
       "labelKey": "i-n10",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n8",
       "labelKey": "i-n8",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n7",
       "labelKey": "i-n7",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n6",
       "labelKey": "i-n6",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n5",
       "labelKey": "i-n5",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n4",
       "labelKey": "i-n4",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n3",
       "labelKey": "i-n3",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     },
     {
       "id": "n2",
       "labelKey": "i-n2",
       "bin": "pilihan",
-      "emoji": "🐟",
       "scale": 1
     }
   ],

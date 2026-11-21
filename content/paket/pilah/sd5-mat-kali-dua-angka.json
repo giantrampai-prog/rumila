@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kali-dua-angka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -57,7 +57,7 @@
       "q10": "925 : 7 = …",
       "c35": "132 sisa 1",
       "c36": "132 sisa 0",
-      "c37": "131 sisa 8",
+      "c37": "131 sisa 1",
       "c38": "133 sisa 0",
       "q11": "Satu bus punya 45 kursi. Berapa kursi dalam 18 bus?",
       "c39": "810",
@@ -120,7 +120,7 @@
       "q10": "925 ÷ 7 = …",
       "c35": "132 r 1",
       "c36": "132 r 0",
-      "c37": "131 r 8",
+      "c37": "131 r 1",
       "c38": "133 r 0",
       "q11": "A bus has 45 seats. How many seats in 18 buses?",
       "c39": "810",

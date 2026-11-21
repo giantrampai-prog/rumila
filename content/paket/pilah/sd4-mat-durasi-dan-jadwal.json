@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-durasi-dan-jadwal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -62,7 +62,7 @@
       "c38": "80",
       "c39": "60",
       "c40": "100",
-      "q12": "Pameran dibuka 4 hari mulai hari Senin. Hari terakhirnya …",
+      "q12": "Pameran dibuka selama 4 hari. Hari pertamanya Senin. Hari terakhirnya …",
       "c41": "Kamis",
       "c42": "Jumat",
       "c43": "Rabu",
@@ -123,7 +123,7 @@
       "c38": "80",
       "c39": "60",
       "c40": "100",
-      "q12": "A fair is open for 4 days starting on Monday. Its last day is …",
+      "q12": "A fair is open for 4 days. Its first day is Monday. Its last day is …",
       "c41": "Thursday",
       "c42": "Friday",
       "c43": "Wednesday",

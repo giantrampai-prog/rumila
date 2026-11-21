@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-dobel-etalase-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -152,98 +152,84 @@
       "id": "n15",
       "labelKey": "i-15",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n14",
       "labelKey": "i-14",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n16",
       "labelKey": "i-16",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n12",
       "labelKey": "i-12",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n11",
       "labelKey": "i-11",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n13",
       "labelKey": "i-13",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n18",
       "labelKey": "i-18",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n10",
       "labelKey": "i-10",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n17",
       "labelKey": "i-17",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n20",
       "labelKey": "i-20",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n19",
       "labelKey": "i-19",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n7",
       "labelKey": "i-7",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n6",
       "labelKey": "i-6",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     },
     {
       "id": "n8",
       "labelKey": "i-8",
       "bin": "pilihan",
-      "emoji": "🧁",
       "scale": 1
     }
   ],

@@ -1060,7 +1060,7 @@ function ModeBagi(c: Ctx) {
           <span className="rounded-full px-2" style={{ ...Tebal, fontSize: 20, background: hasil ? (kiri === kanan && kiri + kanan === ronde.target ? "#e4f8ee" : "#ffe9ec") : "#fff1c2" }}>{n}</span>
         </button>
         <div className="flex min-h-[72px] w-full flex-wrap items-center justify-center gap-1 rounded-[18px]" style={{ background: "radial-gradient(ellipse at center,#fff 55%,#e3e6f3 56%,#fff 60%)", boxShadow: "inset 0 0 0 3px #d4d8ea" }} aria-label={`Piring ${sisi}: ${n} ikan`}>
-          {tempat.map((tp, i) => tp === sisi && <KartuBenda key={i} v={v} size={36} onClick={() => pindah(i)} className="min-h-14 min-w-14 akademi-pop" />)}
+          {tempat.map((tp, i) => tp === sisi && <KartuBenda key={i} v={v} size={36} keterangan={false} onClick={() => pindah(i)} className="min-h-14 min-w-14 akademi-pop" />)}
           {n === 0 && <span className="text-[13px] font-bold opacity-50">kosong</span>}
         </div>
       </div>

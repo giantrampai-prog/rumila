@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-kpk-dan-fpb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "KPK dan FPB",
-      "instruksi": "KPK = kelipatan bersama terkecil, FPB = faktor bersama terbesar. Sentuh jawaban yang benar.",
+      "instruksi": "KPK = kelipatan persekutuan terkecil, FPB = faktor persekutuan terbesar. Sentuh jawaban yang benar.",
       "q1": "KPK dari 4 dan 6 adalah …",
       "c1": "12",
       "c2": "24",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-rawat-atau-rusak-sungai-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Merawat atau Merusak? (Sungai dan Pantai)",
-      "instruksi": "Di sungai dan pantai: kegiatan ini merawat atau merusak? Taruh ke raknya.",
+      "instruksi": "Di sungai dan pantai, apakah tiap kegiatan merawat atau merusak? Taruh ke raknya.",
       "b-rawat": "merawat lingkungan",
       "b-rusak": "merusak lingkungan",
       "i-mangrove": "menanam bakau di pantai",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Caring or Harming? (River and Beach)",
-      "instruksi": "At the river and beach: does this action care or harm? Put it on its shelf.",
+      "instruksi": "At the river and beach, does each action care or harm? Put it on its shelf.",
       "b-rawat": "caring for the environment",
       "b-rusak": "harming the environment",
       "i-mangrove": "planting mangroves on the shore",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-bulatkan-puluhan-tiga-angka",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ke Puluhan Terdekat",
-      "instruksi": "Lihat angka satuannya saja. 5 ke atas naik ke puluhan berikutnya.",
+      "instruksi": "Bulatkan ke puluhan terdekat. Lihat angka satuannya: 5 ke atas naik ke puluhan berikutnya, kurang dari 5 tetap. Taruh di rak hasilnya.",
       "b-340": "340",
       "b-350": "350",
       "b-360": "360",
@@ -64,7 +64,7 @@
     },
     "en": {
       "judul": "To the Nearest Ten",
-      "instruksi": "Look only at the ones digit. 5 or more goes up to the next ten.",
+      "instruksi": "Round to the nearest ten. Look at the ones digit: 5 or more goes up to the next ten, less than 5 stays. Put it on its answer shelf.",
       "b-340": "340",
       "b-350": "350",
       "b-360": "360",

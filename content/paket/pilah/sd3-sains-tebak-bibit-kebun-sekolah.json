@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tebak-bibit-kebun-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Bibit di Kebun Sekolah",
-      "instruksi": "Tebak dulu: bibit mana yang tetap sehat dan mana yang akan layu?",
+      "instruksi": "Tebak dulu: taruh tiap bibit ke rak tetap sehat atau akan layu.",
       "b-sehat": "tetap sehat",
       "b-layu": "akan layu",
       "i-rumahkaca": "bibit di rumah kaca terang, disiram",
       "i-bedeng": "bibit di bedeng terkena cahaya, tanah lembap",
       "i-naungan": "bibit di bawah naungan tipis, disiram pagi",
-      "i-pot": "bibit di pot dekat jendela kelas",
+      "i-pot": "bibit di pot dekat jendela kelas, disiram rutin",
       "i-gudang": "bibit di gudang tanpa jendela",
       "i-becek": "bibit di tanah tergenang air terus",
       "i-tembok": "bibit menempel tembok panas terik tanpa disiram",
@@ -25,13 +25,13 @@
     },
     "en": {
       "judul": "Seedlings in the School Garden",
-      "instruksi": "Predict first: which seedlings stay healthy and which will wilt?",
+      "instruksi": "Predict first: put each seedling on the stays-healthy shelf or the will-wilt shelf.",
       "b-sehat": "stays healthy",
       "b-layu": "will wilt",
       "i-rumahkaca": "seedling in a bright greenhouse, watered",
       "i-bedeng": "seedling in a sunny bed, moist soil",
       "i-naungan": "seedling under light shade, watered each morning",
-      "i-pot": "seedling in a pot by the classroom window",
+      "i-pot": "seedling in a pot by the classroom window, watered regularly",
       "i-gudang": "seedling in a shed with no window",
       "i-becek": "seedling in waterlogged soil",
       "i-tembok": "seedling against a scorching wall, never watered",

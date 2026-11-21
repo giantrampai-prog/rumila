@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ubah-bentuk-taman-bermain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-ranting": "ranting lentur dibengkokkan",
       "i-kardus": "kardus dilipat",
       "i-pipa": "selang dibengkokkan",
-      "i-pel": "kain pel diperas",
+      "i-pel": "kain pel diperas dengan diputar",
       "i-tambang": "tali tambang dipilin",
       "i-kawat": "kawat dipuntir"
     },
@@ -44,7 +44,7 @@
       "i-ranting": "bendy twig bent over",
       "i-kardus": "cardboard folded",
       "i-pipa": "hose bent round",
-      "i-pel": "mop cloth wrung out",
+      "i-pel": "mop cloth wrung out by twisting",
       "i-tambang": "rope twisted together",
       "i-kawat": "wire twisted"
     }

@@ -1,6 +1,6 @@
 {
   "id": "sains-bekerja-dulu-di-taman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "t-2": "Budi mau berlari mengejar layang-layang. Bagian mana yang bekerja?",
       "t-3": "Budi mau naik tangga perosotan satu per satu. Bagian mana yang bekerja?",
       "t-4": "Budi mau menarik napas dalam sebelum bernyanyi. Bagian mana yang bekerja?",
-      "t-5": "Budi mau menghirup wangi bunga dalam-dalam. Bagian mana yang bekerja?",
+      "t-5": "Budi mau menghirup udara segar dalam-dalam. Bagian mana yang bekerja?",
       "t-6": "Budi mau meniup kincir angin kertas. Bagian mana yang bekerja?",
       "t-7": "Budi mau mendorong ayunan teman dengan tangan. Bagian mana yang bekerja?",
       "t-8": "Budi mau bergelantungan di palang taman. Bagian mana yang bekerja?",
@@ -40,7 +40,7 @@
       "t-2": "Budi wants to run after a kite. Which part works?",
       "t-3": "Budi wants to climb the slide steps one by one. Which part works?",
       "t-4": "Budi wants to take a deep breath before singing. Which part works?",
-      "t-5": "Budi wants to breathe in a flower's smell deeply. Which part works?",
+      "t-5": "Budi wants to breathe in fresh air deeply. Which part works?",
       "t-6": "Budi wants to blow a paper pinwheel. Which part works?",
       "t-7": "Budi wants to push a friend's swing with his hands. Which part works?",
       "t-8": "Budi wants to hang from the monkey bars. Which part works?",
@@ -122,8 +122,7 @@
       "choices": [
         "kaki",
         "paru",
-        "otak",
-        "lengan"
+        "otak"
       ],
       "correct": "kaki"
     },

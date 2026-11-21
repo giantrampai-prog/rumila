@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-aman-listrik-di-luar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Aman dengan Listrik di Luar Rumah",
-      "instruksi": "Di luar rumah ada kabel, gardu listrik, dan petir. Kebiasaan ini aman atau berbahaya? Taruh ke raknya.",
+      "instruksi": "Di luar rumah ada kabel, gardu listrik, dan petir. Apakah tiap kebiasaan aman atau berbahaya? Taruh ke raknya.",
       "b-aman": "aman",
       "b-bahaya": "berbahaya",
       "i-gedung": "berteduh di dalam gedung saat petir",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Safe with Electricity Outdoors",
-      "instruksi": "Outside there are cables, electric substations, and lightning. Is this habit safe or dangerous? Put it on its shelf.",
+      "instruksi": "Outside there are cables, electric substations, and lightning. Is each habit safe or dangerous? Put it on its shelf.",
       "b-aman": "safe",
       "b-bahaya": "dangerous",
       "i-gedung": "sheltering indoors in a thunderstorm",

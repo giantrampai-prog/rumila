@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bahan Baru atau Bisa Kembali?",
-      "instruksi": "Setelah berubah, bisakah dikembalikan? Taruh ke raknya.",
+      "instruksi": "Lihat tiap perubahan. Bisakah bahannya kembali seperti semula? Taruh ke rak jadi bahan baru atau bisa dikembalikan.",
       "b-baru": "jadi bahan baru",
       "b-kembali": "bisa dikembalikan",
       "i-telur": "telur digoreng",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "New Material or Can Go Back?",
-      "instruksi": "After the change, can it go back? Put it on its shelf.",
+      "instruksi": "Look at each change. Can the material go back to how it was? Put it on the new-material shelf or the can-go-back shelf.",
       "b-baru": "makes a new material",
       "b-kembali": "can be undone",
       "i-telur": "egg being fried",

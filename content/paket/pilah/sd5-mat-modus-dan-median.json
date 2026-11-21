@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-modus-dan-median",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Modus dan Median",
-      "instruksi": "Modus = nilai yang paling sering muncul. Median = nilai tengah setelah data diurutkan.",
+      "instruksi": "Modus = nilai yang paling sering muncul. Median = nilai tengah setelah data diurutkan. Sentuh jawabannya.",
       "q1": "Nilai kuis: 8, 3, 9, 3, 5. Modusnya …",
       "c1": "3",
       "c2": "5",
@@ -49,7 +49,7 @@
     },
     "en": {
       "judul": "Mode and Median",
-      "instruksi": "Mode = the most common value. Median = the middle value after sorting the data.",
+      "instruksi": "Mode = the most common value. Median = the middle value after sorting the data. Touch the answer.",
       "q1": "Quiz scores: 8, 3, 9, 3, 5. The mode is …",
       "c1": "3",
       "c2": "5",

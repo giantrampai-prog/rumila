@@ -1,6 +1,6 @@
 {
   "id": "gabung-bebek-kolam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Bebek Berkumpul",
+      "judul": "Berkumpul di Kolam",
       "instruksi": "{Barang} dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua {barang}.",
       "bebek": "bebek",
       "katak": "katak",
       "angsa": "angsa"
     },
     "en": {
-      "judul": "Ducks Gather",
+      "judul": "Gathering at the Pond",
       "instruksi": "{Barang} from both sides gather in the pond: slide the marker to how many {barang} there are in all.",
       "bebek": "ducks",
       "katak": "frogs",

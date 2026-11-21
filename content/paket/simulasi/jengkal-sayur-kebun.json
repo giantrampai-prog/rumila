@@ -1,6 +1,6 @@
 {
   "id": "jengkal-sayur-kebun",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ukur dengan Jengkal",
-      "instruksi": "Tempelkan jengkal tanganmu dari ujung ke ujung, lalu sebutkan berapa jengkal panjangnya.",
+      "instruksi": "Tempelkan jengkal tanganmu dari ujung ke ujung, lalu sentuh angka jumlah jengkalnya.",
       "wortel": "wortel",
       "timun": "timun",
       "jagung": "jagung",
@@ -25,7 +25,7 @@
     },
     "en": {
       "judul": "Measure in Hand Spans",
-      "instruksi": "Lay your hand spans from one end to the other, then say how many spans long it is.",
+      "instruksi": "Lay your hand spans from one end to the other, then touch the number of spans.",
       "wortel": "carrot",
       "timun": "cucumber",
       "jagung": "corn",

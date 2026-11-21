@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-diagram-carroll-kelipatan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,10 +11,10 @@
     "id": {
       "judul": "Carroll Kelipatan",
       "instruksi": "Dua sifat: kelipatan 5 atau bukan, dan kelipatan 3 atau bukan. Taruh tiap bilangan di kotak yang cocok untuk keduanya.",
-      "b-k5-k3": "kelipatan 5 & 3",
+      "b-k5-k3": "kelipatan 5 dan 3",
       "b-k5-b3": "kelipatan 5, bukan 3",
       "b-b5-k3": "kelipatan 3, bukan 5",
-      "b-b5-b3": "bukan keduanya",
+      "b-b5-b3": "bukan kelipatan 5, bukan kelipatan 3",
       "i1": "15",
       "i2": "30",
       "i3": "45",
@@ -48,10 +48,10 @@
     "en": {
       "judul": "Multiples Carroll Diagram",
       "instruksi": "Two properties: a multiple of 5 or not, and a multiple of 3 or not. Put each number in the box that fits both.",
-      "b-k5-k3": "multiple of 5 & 3",
+      "b-k5-k3": "multiple of 5 and 3",
       "b-k5-b3": "of 5, not 3",
       "b-b5-k3": "of 3, not 5",
-      "b-b5-b3": "neither",
+      "b-b5-b3": "not a multiple of 5 or 3",
       "i1": "15",
       "i2": "30",
       "i3": "45",

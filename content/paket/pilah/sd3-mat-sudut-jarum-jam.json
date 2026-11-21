@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-sudut-jarum-jam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,10 +10,10 @@
   "locale": {
     "id": {
       "judul": "Sudut Jarum Jam",
-      "instruksi": "Lihat sudut di antara dua jarum jam. Bandingkan dengan sudut siku seperti pojok buku.",
-      "b-kurang-siku": "< siku",
-      "b-siku": "siku",
-      "b-lebih-siku": "> siku",
+      "instruksi": "Lihat sudut di antara dua jarum jam. Bandingkan dengan sudut siku seperti pojok buku, lalu taruh tiap jam di raknya.",
+      "b-kurang-siku": "lebih kecil dari siku",
+      "b-siku": "sudut siku",
+      "b-lebih-siku": "lebih besar dari siku",
       "b-garis-lurus": "garis lurus",
       "i-jam-pukul-1": "jam pukul 1",
       "i-jam-pukul-2": "jam pukul 2",
@@ -29,10 +29,10 @@
     },
     "en": {
       "judul": "Clock-Hand Angles",
-      "instruksi": "Look at the angle between the two clock hands. Compare it with a right angle, like the corner of a book.",
-      "b-kurang-siku": "< right angle",
+      "instruksi": "Look at the angle between the two clock hands. Compare it with a right angle, like the corner of a book, then put each clock on its shelf.",
+      "b-kurang-siku": "smaller than a right angle",
       "b-siku": "right angle",
-      "b-lebih-siku": "> right angle",
+      "b-lebih-siku": "bigger than a right angle",
       "b-garis-lurus": "straight line",
       "i-jam-pukul-1": "clock at 1 o'clock",
       "i-jam-pukul-2": "clock at 2 o'clock",

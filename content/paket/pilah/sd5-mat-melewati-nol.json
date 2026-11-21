@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-melewati-nol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -54,7 +54,7 @@
       "c32": "6",
       "c33": "0",
       "c34": "−60",
-      "q10": "Lift di lantai −2 (parkir) naik 6 lantai. Sampai di lantai …",
+      "q10": "Lantai 0 adalah lobi. Lift di lantai −2 (parkir) naik 6 lantai. Sampai di lantai …",
       "q11": "Kapal selam di −40 m naik 25 m. Sekarang di …",
       "c35": "−15 m",
       "c36": "−65 m",
@@ -111,7 +111,7 @@
       "c32": "6",
       "c33": "0",
       "c34": "−60",
-      "q10": "A lift at floor −2 (car park) goes up 6 floors. It reaches floor …",
+      "q10": "Floor 0 is the lobby. A lift at floor −2 (car park) goes up 6 floors. It reaches floor …",
       "q11": "A submarine at −40 m rises 25 m. Now it is at …",
       "c35": "−15 m",
       "c36": "−65 m",

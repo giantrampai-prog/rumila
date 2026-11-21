@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-gerbong-urut-0-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -82,28 +82,23 @@
       "steps": [
         {
           "id": "n1",
-          "labelKey": "s-1",
-          "emoji": "🚃"
+          "labelKey": "s-1"
         },
         {
           "id": "n5",
-          "labelKey": "s-5",
-          "emoji": "🚃"
+          "labelKey": "s-5"
         },
         {
           "id": "n9",
-          "labelKey": "s-9",
-          "emoji": "🚃"
+          "labelKey": "s-9"
         },
         {
           "id": "n14",
-          "labelKey": "s-14",
-          "emoji": "🚃"
+          "labelKey": "s-14"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -113,28 +108,23 @@
       "steps": [
         {
           "id": "n2",
-          "labelKey": "s-2",
-          "emoji": "🚃"
+          "labelKey": "s-2"
         },
         {
           "id": "n8",
-          "labelKey": "s-8",
-          "emoji": "🚃"
+          "labelKey": "s-8"
         },
         {
           "id": "n11",
-          "labelKey": "s-11",
-          "emoji": "🚃"
+          "labelKey": "s-11"
         },
         {
           "id": "n13",
-          "labelKey": "s-13",
-          "emoji": "🚃"
+          "labelKey": "s-13"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🚃"
+          "labelKey": "s-19"
         }
       ]
     },
@@ -144,28 +134,23 @@
       "steps": [
         {
           "id": "n0",
-          "labelKey": "s-0",
-          "emoji": "🚃"
+          "labelKey": "s-0"
         },
         {
           "id": "n6",
-          "labelKey": "s-6",
-          "emoji": "🚃"
+          "labelKey": "s-6"
         },
         {
           "id": "n10",
-          "labelKey": "s-10",
-          "emoji": "🚃"
+          "labelKey": "s-10"
         },
         {
           "id": "n16",
-          "labelKey": "s-16",
-          "emoji": "🚃"
+          "labelKey": "s-16"
         },
         {
           "id": "n17",
-          "labelKey": "s-17",
-          "emoji": "🚃"
+          "labelKey": "s-17"
         }
       ]
     },
@@ -175,28 +160,23 @@
       "steps": [
         {
           "id": "n3",
-          "labelKey": "s-3",
-          "emoji": "🚃"
+          "labelKey": "s-3"
         },
         {
           "id": "n4",
-          "labelKey": "s-4",
-          "emoji": "🚃"
+          "labelKey": "s-4"
         },
         {
           "id": "n12",
-          "labelKey": "s-12",
-          "emoji": "🚃"
+          "labelKey": "s-12"
         },
         {
           "id": "n15",
-          "labelKey": "s-15",
-          "emoji": "🚃"
+          "labelKey": "s-15"
         },
         {
           "id": "n18",
-          "labelKey": "s-18",
-          "emoji": "🚃"
+          "labelKey": "s-18"
         }
       ]
     },
@@ -206,28 +186,23 @@
       "steps": [
         {
           "id": "n5",
-          "labelKey": "s-5",
-          "emoji": "🚃"
+          "labelKey": "s-5"
         },
         {
           "id": "n7",
-          "labelKey": "s-7",
-          "emoji": "🚃"
+          "labelKey": "s-7"
         },
         {
           "id": "n13",
-          "labelKey": "s-13",
-          "emoji": "🚃"
+          "labelKey": "s-13"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🚃"
+          "labelKey": "s-19"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -237,28 +212,23 @@
       "steps": [
         {
           "id": "n8",
-          "labelKey": "s-8",
-          "emoji": "🚃"
+          "labelKey": "s-8"
         },
         {
           "id": "n9",
-          "labelKey": "s-9",
-          "emoji": "🚃"
+          "labelKey": "s-9"
         },
         {
           "id": "n11",
-          "labelKey": "s-11",
-          "emoji": "🚃"
+          "labelKey": "s-11"
         },
         {
           "id": "n14",
-          "labelKey": "s-14",
-          "emoji": "🚃"
+          "labelKey": "s-14"
         },
         {
           "id": "n16",
-          "labelKey": "s-16",
-          "emoji": "🚃"
+          "labelKey": "s-16"
         }
       ]
     },
@@ -268,28 +238,23 @@
       "steps": [
         {
           "id": "n0",
-          "labelKey": "s-0",
-          "emoji": "🚃"
+          "labelKey": "s-0"
         },
         {
           "id": "n1",
-          "labelKey": "s-1",
-          "emoji": "🚃"
+          "labelKey": "s-1"
         },
         {
           "id": "n17",
-          "labelKey": "s-17",
-          "emoji": "🚃"
+          "labelKey": "s-17"
         },
         {
           "id": "n18",
-          "labelKey": "s-18",
-          "emoji": "🚃"
+          "labelKey": "s-18"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -299,28 +264,23 @@
       "steps": [
         {
           "id": "n10",
-          "labelKey": "s-10",
-          "emoji": "🚃"
+          "labelKey": "s-10"
         },
         {
           "id": "n12",
-          "labelKey": "s-12",
-          "emoji": "🚃"
+          "labelKey": "s-12"
         },
         {
           "id": "n13",
-          "labelKey": "s-13",
-          "emoji": "🚃"
+          "labelKey": "s-13"
         },
         {
           "id": "n15",
-          "labelKey": "s-15",
-          "emoji": "🚃"
+          "labelKey": "s-15"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🚃"
+          "labelKey": "s-19"
         }
       ]
     },
@@ -330,28 +290,23 @@
       "steps": [
         {
           "id": "n4",
-          "labelKey": "s-4",
-          "emoji": "🚃"
+          "labelKey": "s-4"
         },
         {
           "id": "n9",
-          "labelKey": "s-9",
-          "emoji": "🚃"
+          "labelKey": "s-9"
         },
         {
           "id": "n14",
-          "labelKey": "s-14",
-          "emoji": "🚃"
+          "labelKey": "s-14"
         },
         {
           "id": "n16",
-          "labelKey": "s-16",
-          "emoji": "🚃"
+          "labelKey": "s-16"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -361,28 +316,23 @@
       "steps": [
         {
           "id": "n2",
-          "labelKey": "s-2",
-          "emoji": "🚃"
+          "labelKey": "s-2"
         },
         {
           "id": "n3",
-          "labelKey": "s-3",
-          "emoji": "🚃"
+          "labelKey": "s-3"
         },
         {
           "id": "n7",
-          "labelKey": "s-7",
-          "emoji": "🚃"
+          "labelKey": "s-7"
         },
         {
           "id": "n10",
-          "labelKey": "s-10",
-          "emoji": "🚃"
+          "labelKey": "s-10"
         },
         {
           "id": "n12",
-          "labelKey": "s-12",
-          "emoji": "🚃"
+          "labelKey": "s-12"
         }
       ]
     },
@@ -392,28 +342,23 @@
       "steps": [
         {
           "id": "n11",
-          "labelKey": "s-11",
-          "emoji": "🚃"
+          "labelKey": "s-11"
         },
         {
           "id": "n14",
-          "labelKey": "s-14",
-          "emoji": "🚃"
+          "labelKey": "s-14"
         },
         {
           "id": "n15",
-          "labelKey": "s-15",
-          "emoji": "🚃"
+          "labelKey": "s-15"
         },
         {
           "id": "n17",
-          "labelKey": "s-17",
-          "emoji": "🚃"
+          "labelKey": "s-17"
         },
         {
           "id": "n18",
-          "labelKey": "s-18",
-          "emoji": "🚃"
+          "labelKey": "s-18"
         }
       ]
     },
@@ -423,28 +368,23 @@
       "steps": [
         {
           "id": "n6",
-          "labelKey": "s-6",
-          "emoji": "🚃"
+          "labelKey": "s-6"
         },
         {
           "id": "n8",
-          "labelKey": "s-8",
-          "emoji": "🚃"
+          "labelKey": "s-8"
         },
         {
           "id": "n9",
-          "labelKey": "s-9",
-          "emoji": "🚃"
+          "labelKey": "s-9"
         },
         {
           "id": "n13",
-          "labelKey": "s-13",
-          "emoji": "🚃"
+          "labelKey": "s-13"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -454,28 +394,23 @@
       "steps": [
         {
           "id": "n1",
-          "labelKey": "s-1",
-          "emoji": "🚃"
+          "labelKey": "s-1"
         },
         {
           "id": "n3",
-          "labelKey": "s-3",
-          "emoji": "🚃"
+          "labelKey": "s-3"
         },
         {
           "id": "n16",
-          "labelKey": "s-16",
-          "emoji": "🚃"
+          "labelKey": "s-16"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🚃"
+          "labelKey": "s-19"
         },
         {
           "id": "n20",
-          "labelKey": "s-20",
-          "emoji": "🚃"
+          "labelKey": "s-20"
         }
       ]
     },
@@ -485,28 +420,23 @@
       "steps": [
         {
           "id": "n7",
-          "labelKey": "s-7",
-          "emoji": "🚃"
+          "labelKey": "s-7"
         },
         {
           "id": "n10",
-          "labelKey": "s-10",
-          "emoji": "🚃"
+          "labelKey": "s-10"
         },
         {
           "id": "n11",
-          "labelKey": "s-11",
-          "emoji": "🚃"
+          "labelKey": "s-11"
         },
         {
           "id": "n18",
-          "labelKey": "s-18",
-          "emoji": "🚃"
+          "labelKey": "s-18"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🚃"
+          "labelKey": "s-19"
         }
       ]
     }

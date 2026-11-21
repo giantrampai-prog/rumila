@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-nilai-huruf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Huruf Rahasia",
-      "instruksi": "Huruf mewakili sebuah bilangan. Cari bilangannya supaya kalimat matematikanya benar.",
+      "instruksi": "Huruf mewakili sebuah bilangan. Cari bilangannya supaya kalimat matematikanya benar. Sentuh jawabannya.",
       "q1": "n + 15 = 42. Nilai n …",
       "c1": "27",
       "c2": "57",
@@ -67,7 +67,7 @@
     },
     "en": {
       "judul": "Secret Letters",
-      "instruksi": "The letter stands for a number. Find the number that makes the sentence true.",
+      "instruksi": "The letter stands for a number. Find the number that makes the sentence true. Touch the answer.",
       "q1": "n + 15 = 42. What is n?",
       "c1": "27",
       "c2": "57",

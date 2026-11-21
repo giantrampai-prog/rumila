@@ -1,6 +1,6 @@
 {
   "id": "lengkapi-koin-lima-pasar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Pas Lima di Pasar",
-      "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: tambahkan koin supaya pas lima.",
+      "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: taruh koin tambahan supaya pas dengan harganya.",
       "mangga": "mangga",
       "nanas": "nanas"
     },
     "en": {
       "judul": "Make Five at the Market",
-      "instruksi": "The customer flashes their coins then hides them: add coins to make exactly five.",
+      "instruksi": "The customer flashes their coins then hides them: put extra coins down to make exactly the price.",
       "mangga": "mango",
       "nanas": "pineapple"
     }

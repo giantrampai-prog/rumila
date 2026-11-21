@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-simbol-diagram-alir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Simbol Diagram Alir",
-      "instruksi": "Seret tiap langkah ke bentuk diagram alirnya: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi untuk proses, belah ketupat untuk keputusan.",
+      "instruksi": "Seret tiap langkah ke bentuk diagram alirnya: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi panjang untuk proses, belah ketupat untuk keputusan.",
       "bin-oval": "mulai / selesai",
       "bin-io": "masukan / keluaran",
       "bin-proses": "proses",

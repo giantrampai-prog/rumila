@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-malam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cahaya di Malam Hari",
-      "instruksi": "Di luar malam hari, mana yang membuat cahaya sendiri? Taruh ke raknya.",
+      "instruksi": "Di luar malam hari, mana yang membuat cahaya sendiri? Taruh tiap benda ke rak sumber cahaya atau bukan.",
       "b-sumber": "sumber cahaya",
       "b-bukan": "bukan sumber cahaya",
       "i-bintang": "bintang",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Lights at Night",
-      "instruksi": "Outside at night, which things make their own light? Put them on their shelf.",
+      "instruksi": "Outside at night, which things make their own light? Put each thing on the light-source shelf or the not-a-light-source shelf.",
       "b-sumber": "light source",
       "b-bukan": "not a light source",
       "i-bintang": "star",

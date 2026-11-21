@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-prima-50-sampai-100",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Prima di Atas 50",
-      "instruksi": "Semua kartu ganjil! Cari faktornya: kalau hanya 1 dan dirinya, berarti prima.",
+      "instruksi": "Semua kartu ganjil! Cari faktornya: kalau hanya 1 dan dirinya, berarti prima. Taruh tiap kartu di rak prima atau komposit.",
       "b-prima": "prima",
       "b-komposit": "komposit",
       "i1": "53",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Primes Above 50",
-      "instruksi": "Every card is odd! Look for factors: if only 1 and itself, it is prime.",
+      "instruksi": "Every card is odd! Look for factors: if only 1 and itself, it is prime. Put each card on the prime or composite shelf.",
       "b-prima": "prime",
       "b-komposit": "composite",
       "i1": "53",

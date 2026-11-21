@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-carroll-lantai-menara",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Lantai Menara Carroll",
-      "instruksi": "Nomor lantai ini genap atau ganjil? Di bawah lantai 50 atau tidak? Cari kotak yang cocok untuk dua-duanya.",
-      "b-genap-kecil": "genap, < 50",
-      "b-genap-besar": "genap, ≥ 50",
-      "b-ganjil-kecil": "ganjil, < 50",
-      "b-ganjil-besar": "ganjil, ≥ 50",
+      "instruksi": "Tiap nomor lantai: genap atau ganjil? Kurang dari 50 atau tidak? Taruh di kotak yang cocok untuk dua-duanya.",
+      "b-genap-kecil": "genap, kurang dari 50",
+      "b-genap-besar": "genap, 50 atau lebih",
+      "b-ganjil-kecil": "ganjil, kurang dari 50",
+      "b-ganjil-besar": "ganjil, 50 atau lebih",
       "i-2": "2",
       "i-8": "8",
       "i-18": "18",
@@ -42,11 +42,11 @@
     },
     "en": {
       "judul": "Tower Floors Carroll Diagram",
-      "instruksi": "Is this floor number even or odd? Is it below floor 50 or not? Find the box that matches both.",
-      "b-genap-kecil": "even, < 50",
-      "b-genap-besar": "even, ≥ 50",
-      "b-ganjil-kecil": "odd, < 50",
-      "b-ganjil-besar": "odd, ≥ 50",
+      "instruksi": "For each floor number: even or odd? Less than 50 or not? Put it in the box that matches both.",
+      "b-genap-kecil": "even, less than 50",
+      "b-genap-besar": "even, 50 or more",
+      "b-ganjil-kecil": "odd, less than 50",
+      "b-ganjil-besar": "odd, 50 or more",
       "i-2": "2",
       "i-8": "8",
       "i-18": "18",
@@ -122,168 +122,144 @@
       "id": "n2",
       "labelKey": "i-2",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n8",
       "labelKey": "i-8",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n18",
       "labelKey": "i-18",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n26",
       "labelKey": "i-26",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n34",
       "labelKey": "i-34",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n46",
       "labelKey": "i-46",
       "bin": "genap-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n52",
       "labelKey": "i-52",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n56",
       "labelKey": "i-56",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n60",
       "labelKey": "i-60",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n74",
       "labelKey": "i-74",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n88",
       "labelKey": "i-88",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n98",
       "labelKey": "i-98",
       "bin": "genap-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n9",
       "labelKey": "i-9",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n15",
       "labelKey": "i-15",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n27",
       "labelKey": "i-27",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n31",
       "labelKey": "i-31",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n41",
       "labelKey": "i-41",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n47",
       "labelKey": "i-47",
       "bin": "ganjil-kecil",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n55",
       "labelKey": "i-55",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n59",
       "labelKey": "i-59",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n63",
       "labelKey": "i-63",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n71",
       "labelKey": "i-71",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n89",
       "labelKey": "i-89",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     },
     {
       "id": "n93",
       "labelKey": "i-93",
       "bin": "ganjil-besar",
-      "emoji": "🏢",
       "scale": 1
     }
   ]

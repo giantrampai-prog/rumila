@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-pilih-prosedur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -43,7 +43,7 @@
       "c22": "ulangi 6 kali: tangga()",
       "c23": "tangga() saja",
       "c24": "maju 6, naik 6",
-      "q8": "Prosedur tangga() = maju 1, naik 1. Bangunan butuh 6 anak tangga. Program terpendek adalah…",
+      "q8": "Prosedur tangga() = maju 1, naik 1. Bangunan butuh 6 anak tangga. Program terpendek yang tetap membuat 6 anak tangga adalah…",
       "c25": "siku(n): maju n, kanan, maju n",
       "c26": "siku3() dan siku5()",
       "q9": "Dua bagian kode ini sama kecuali angkanya: (maju 3, kanan, maju 3) dan (maju 5, kanan, maju 5). Prosedur yang paling berguna adalah…",
@@ -95,7 +95,7 @@
       "c22": "repeat 6 times: step()",
       "c23": "step() only",
       "c24": "forward 6, up 6",
-      "q8": "Procedure step() = forward 1, up 1. A building needs 6 steps. The shortest program is…",
+      "q8": "Procedure step() = forward 1, up 1. A building needs 6 steps. The shortest program that still makes all 6 steps is…",
       "c25": "corner(n): forward n, right, forward n",
       "c26": "corner3() and corner5()",
       "q9": "These two parts are the same except for the number: (forward 3, right, forward 3) and (forward 5, right, forward 5). The most useful procedure is…",

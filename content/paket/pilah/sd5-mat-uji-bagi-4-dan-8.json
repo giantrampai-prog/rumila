@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-uji-bagi-4-dan-8",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -12,7 +12,7 @@
       "judul": "Uji Bagi 4 dan 8",
       "instruksi": "Uji dua atau tiga angka terakhir, lalu taruh tiap bilangan di rak yang benar.",
       "b-b8": "habis dibagi 8",
-      "b-b4": "dibagi 4, tidak 8",
+      "b-b4": "habis dibagi 4, tidak 8",
       "b-tidak": "tidak habis dibagi 4",
       "i1": "312",
       "i2": "144",

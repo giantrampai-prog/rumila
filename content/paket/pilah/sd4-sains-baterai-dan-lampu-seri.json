@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-baterai-dan-lampu-seri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tambah Baterai, Tambah Lampu",
-      "instruksi": "Semua rangkaian ini seri (berderet). Dengarkan perubahannya, lalu tebak lampunya jadi lebih terang, lebih redup, atau padam.",
+      "instruksi": "Semua rangkaian ini seri (berderet). Dengarkan perubahannya, lalu sentuh perkiraanmu: lampunya jadi lebih terang, lebih redup, atau padam.",
       "b-pilihan": "pilihan",
       "i-terang": "lebih terang",
       "i-redup": "lebih redup",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "More Batteries, More Bulbs",
-      "instruksi": "All these circuits are in series (in a row). Listen to the change, then predict whether the bulbs get brighter, dimmer, or go out.",
+      "instruksi": "All these circuits are in series (in a row). Listen to the change, then touch your prediction: the bulbs get brighter, dimmer, or go out.",
       "b-pilihan": "choices",
       "i-terang": "brighter",
       "i-redup": "dimmer",

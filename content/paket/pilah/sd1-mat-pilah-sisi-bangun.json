@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-pilah-sisi-bangun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Hitung sisi tiap bangun. Lurus semua atau ada yang lengkung? Taruh di rak yang pas.",
       "b-3-sisi-lurus": "3 sisi lurus",
       "b-4-sisi-lurus": "4 sisi lurus",
-      "b-sisi-lengkung": "sisi lengkung",
+      "b-sisi-lengkung": "ada sisi lengkung",
       "i-segitiga": "segitiga",
       "i-segitiga-kecil": "segitiga kecil",
       "i-segitiga-terbalik": "segitiga terbalik",
@@ -33,7 +33,7 @@
       "instruksi": "Count the sides of each shape. All straight, or is one curved? Put it on the right shelf.",
       "b-3-sisi-lurus": "3 straight sides",
       "b-4-sisi-lurus": "4 straight sides",
-      "b-sisi-lengkung": "curved side",
+      "b-sisi-lengkung": "has a curved side",
       "i-segitiga": "triangle",
       "i-segitiga-kecil": "small triangle",
       "i-segitiga-terbalik": "upside-down triangle",

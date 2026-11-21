@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-cari-bagi-dua",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cari dengan Bagi Dua",
-      "instruksi": "Cek kartu tengah dulu (kalau genap, ambil tengah kiri), lalu buang separuh yang tidak mungkin.",
+      "instruksi": "Cek kartu tengah dulu (kalau genap, ambil tengah kiri), buang separuh yang tidak mungkin, lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "22",
       "c2": "37",
@@ -54,7 +54,7 @@
     },
     "en": {
       "judul": "Search by Halving",
-      "instruksi": "Check the middle card first (if even, take the left middle), then throw away the half it cannot be in.",
+      "instruksi": "Check the middle card first (if even, take the left middle), throw away the half it cannot be in, then choose the answer.",
       "pilihan": "choices",
       "c1": "22",
       "c2": "37",

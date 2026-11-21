@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-hewan-pantai-rangka",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Tulang Belakang, Cangkang, atau Lunak?",
+      "judul": "Tulang Belakang, Rangka Luar, atau Lunak?",
       "instruksi": "Pilah hewan-hewan ini: bertulang belakang, berangka luar yang keras, atau bertubuh lunak tanpa tulang belakang.",
       "b-vertebrata": "bertulang belakang (vertebrata)",
       "b-rangkaluar": "tanpa tulang belakang, rangka luar keras",
@@ -32,7 +32,7 @@
       "i-gurita": "gurita"
     },
     "en": {
-      "judul": "Backbone, Hard Shell, or Soft Body?",
+      "judul": "Backbone, Outer Skeleton, or Soft Body?",
       "instruksi": "Sort these animals: with a backbone, with a hard outer skeleton, or with a soft body and no backbone.",
       "b-vertebrata": "has a backbone (vertebrate)",
       "b-rangkaluar": "no backbone, hard outer skeleton",

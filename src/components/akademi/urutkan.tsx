@@ -19,7 +19,7 @@ type Langkah = RondeUrutkan["shown"][number];
 const SOROT = "#ffd23f";
 
 function visual(x: Langkah, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px). */
@@ -167,7 +167,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               <span className="absolute -top-3 -left-1">
                 <Nomor n={i + 1} warna={benar ? BENAR : salah ? SALAH : undefined} />
               </span>
-              {id ? <KartuBenda v={visual(langkah(id), t)} size={ukuran} className="pointer-events-none !shadow-none" /> : <span style={{ fontSize: 28, opacity: 0.3 }}>?</span>}
+              {id ? <KartuBenda v={visual(langkah(id), t)} size={ukuran} keterangan={false} className="pointer-events-none !shadow-none" /> : <span style={{ fontSize: 28, opacity: 0.3 }}>?</span>}
             </button>
           );
         })}

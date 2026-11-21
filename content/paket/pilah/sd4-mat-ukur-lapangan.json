@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-ukur-lapangan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,13 +11,13 @@
     "id": {
       "judul": "Ukur Lapangan",
       "instruksi": "Keliling = jumlah semua sisi. Luas = panjang × lebar. Sentuh jawaban dengan satuan yang benar.",
-      "q1": "Luas kertas 88 cm² dan lebarnya 11 cm. Panjangnya …",
-      "c1": "8 cm",
+      "q1": "Luas kertas 88 cm² dan lebarnya 8 cm. Panjangnya …",
+      "c1": "80 cm",
       "c2": "77 cm",
       "c3": "19 cm",
       "c4": "16 cm",
-      "q2": "Luas kertas 72 cm² dan lebarnya 9 cm. Panjangnya …",
-      "c5": "63 cm",
+      "q2": "Luas kertas 72 cm² dan lebarnya 8 cm. Panjangnya …",
+      "c5": "64 cm",
       "c6": "17 cm",
       "q3": "Luas kertas 22 cm² dan lebarnya 2 cm. Panjangnya …",
       "c7": "11 cm",
@@ -71,13 +71,13 @@
     "en": {
       "judul": "Measure the Court",
       "instruksi": "Perimeter = all sides added. Area = length × width. Touch the answer with the right unit.",
-      "q1": "A sheet has area 88 cm² and width 11 cm. Its length is …",
-      "c1": "8 cm",
+      "q1": "A sheet has area 88 cm² and width 8 cm. Its length is …",
+      "c1": "80 cm",
       "c2": "77 cm",
       "c3": "19 cm",
       "c4": "16 cm",
-      "q2": "A sheet has area 72 cm² and width 9 cm. Its length is …",
-      "c5": "63 cm",
+      "q2": "A sheet has area 72 cm² and width 8 cm. Its length is …",
+      "c5": "64 cm",
       "c6": "17 cm",
       "q3": "A sheet has area 22 cm² and width 2 cm. Its length is …",
       "c7": "11 cm",
@@ -379,23 +379,23 @@
       "id": "r1",
       "promptKey": "q1",
       "choices": [
+        "c7",
         "c1",
-        "c2",
         "c3",
         "c4"
       ],
-      "correct": "c1"
+      "correct": "c7"
     },
     {
       "id": "r2",
       "promptKey": "q2",
       "choices": [
-        "c1",
+        "c27",
         "c5",
         "c6",
         "c4"
       ],
-      "correct": "c1"
+      "correct": "c27"
     },
     {
       "id": "r3",

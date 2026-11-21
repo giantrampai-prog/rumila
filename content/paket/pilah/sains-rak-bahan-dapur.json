@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,7 @@
       "i-toples": "toples kaca",
       "i-sumpit": "sumpit kayu",
       "i-kursi": "kursi makan kayu",
-      "i-garpu": "garpu makan",
+      "i-garpu": "garpu besi",
       "i-pisau": "pisau dapur"
     },
     "en": {

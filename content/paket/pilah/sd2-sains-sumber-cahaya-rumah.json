@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sumber Cahaya di Rumah",
-      "instruksi": "Benda ini membuat cahaya sendiri? Taruh ke raknya.",
+      "instruksi": "Apakah tiap benda membuat cahaya sendiri? Taruh ke rak sumber cahaya atau bukan.",
       "b-sumber": "sumber cahaya",
       "b-bukan": "bukan sumber cahaya",
       "i-lampu": "lampu menyala",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Light Sources at Home",
-      "instruksi": "Does this thing make its own light? Put it on its shelf.",
+      "instruksi": "Does each thing make its own light? Put it on the light-source shelf or the not-a-light-source shelf.",
       "b-sumber": "light source",
       "b-bukan": "not a light source",
       "i-lampu": "lamp switched on",

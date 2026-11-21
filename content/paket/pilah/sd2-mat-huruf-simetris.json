@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-huruf-simetris",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Huruf Cermin",
-      "instruksi": "Bayangkan melipat huruf. Kalau kedua sisinya pas bertumpuk, huruf itu punya garis simetri.",
+      "instruksi": "Bayangkan melipat huruf. Kalau kedua sisinya pas bertumpuk, huruf itu simetris. Taruh tiap huruf di raknya.",
       "b-simetris": "simetris",
       "b-tidak-simetris": "tidak simetris",
       "i-a": "A",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "Mirror Letters",
-      "instruksi": "Imagine folding each letter. If both halves match exactly, it has a line of symmetry.",
+      "instruksi": "Imagine folding each letter. If both halves match exactly, it is symmetrical. Put each letter on its shelf.",
       "b-simetris": "symmetrical",
       "b-tidak-simetris": "not symmetrical",
       "i-a": "A",

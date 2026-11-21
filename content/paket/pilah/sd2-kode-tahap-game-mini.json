@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-mini",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,7 @@
       "i-change-the-wrong-block": "ganti blok yang salah",
       "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat",
       "i-list-the-characters-needed": "tulis daftar tokoh yang dibutuhkan",
-      "i-draw-a-map-of-the-level": "gambar peta level",
+      "i-draw-a-map-of-the-level": "gambar peta level di kertas",
       "i-decide-which-enemy-to-avoid": "tentukan musuh yang harus dihindari",
       "i-put-in-the-background-picture": "pasang gambar latar",
       "i-add-coins-to-collect": "tambahkan koin untuk dikumpulkan",
@@ -57,7 +57,7 @@
       "i-change-the-wrong-block": "change the wrong block",
       "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast",
       "i-list-the-characters-needed": "write a list of the characters you need",
-      "i-draw-a-map-of-the-level": "draw a map of the level",
+      "i-draw-a-map-of-the-level": "draw a map of the level on paper",
       "i-decide-which-enemy-to-avoid": "decide which enemy to avoid",
       "i-put-in-the-background-picture": "put in the background picture",
       "i-add-coins-to-collect": "add coins to collect",

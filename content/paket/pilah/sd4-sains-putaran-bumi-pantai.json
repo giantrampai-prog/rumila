@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-putaran-bumi-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bumi Berputar di Pantai",
-      "instruksi": "Seharian di pantai. Dengarkan kejadiannya, lalu jelaskan dengan Bumi yang berputar.",
+      "instruksi": "Seharian di pantai. Dengarkan kejadiannya, lalu sentuh jawaban yang benar. Ingat, yang berputar adalah Bumi.",
       "b-pilihan": "pilihan",
       "i-berputar": "Bumi berputar pada porosnya",
       "i-mataharibergerak": "Matahari berjalan mengelilingi Bumi tiap hari",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "The Spinning Earth at the Beach",
-      "instruksi": "A whole day at the beach. Listen to what happens, then explain it with the spinning Earth.",
+      "instruksi": "A whole day at the beach. Listen to what happens, then touch the right answer. Remember, it is the Earth that spins.",
       "b-pilihan": "choices",
       "i-berputar": "the Earth spins on its axis",
       "i-mataharibergerak": "the Sun travels around the Earth every day",

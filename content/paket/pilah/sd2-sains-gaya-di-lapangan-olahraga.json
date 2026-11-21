@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-gaya-di-lapangan-olahraga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Gaya di Lapangan Olahraga",
-      "instruksi": "Gaya ini mengubah gerak atau bentuk? Taruh ke raknya.",
+      "instruksi": "Lihat tiap kejadian. Gayanya mengubah gerak atau bentuk? Taruh ke raknya.",
       "b-gerak": "gerak berubah",
       "b-bentuk": "bentuk berubah",
       "i-sundul": "menyundul bola",
       "i-kasti": "memukul bola kasti",
       "i-tahan": "menahan bola basket",
-      "i-gawang": "bola ditangkap jaring gawang",
+      "i-gawang": "menendang bola supaya berbelok",
       "i-dayung": "mendayung perahu",
       "i-bolastres": "meremas bola lunak",
       "i-kardus": "menginjak kardus",
@@ -26,13 +26,13 @@
     },
     "en": {
       "judul": "Forces on the Sports Field",
-      "instruksi": "Does this force change movement or shape? Put it on its shelf.",
+      "instruksi": "Look at each event. Does the force change movement or shape? Put it on its shelf.",
       "b-gerak": "movement changes",
       "b-bentuk": "shape changes",
       "i-sundul": "heading a ball",
       "i-kasti": "hitting a rounders ball",
       "i-tahan": "stopping a basketball",
-      "i-gawang": "ball caught by the goal net",
+      "i-gawang": "kicking a ball to make it change direction",
       "i-dayung": "paddling a boat",
       "i-bolastres": "squeezing a soft ball",
       "i-kardus": "stepping on a box",
@@ -92,7 +92,7 @@
       "id": "gawang",
       "labelKey": "i-gawang",
       "bin": "gerak",
-      "emoji": "🥅"
+      "emoji": "↪️"
     },
     {
       "id": "dayung",

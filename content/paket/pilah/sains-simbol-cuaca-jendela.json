@@ -1,6 +1,6 @@
 {
   "id": "sains-simbol-cuaca-jendela",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,16 +16,16 @@
       "i-mendung": "mendung",
       "i-hujan": "hujan",
       "i-angin": "berangin",
-      "t1": "Dari jendela kamar, langit biru dan matahari bersinar terang.",
-      "t2": "Ibu menjemur baju di halaman yang terang dan panas.",
-      "t3": "Langit di atas sawah abu-abu penuh awan, tapi belum ada air jatuh.",
-      "t4": "Matahari tertutup awan tebal, kebun jadi redup.",
-      "t5": "Air jatuh dari langit, jalan depan rumah jadi basah.",
-      "t6": "Ayah pulang memakai jas hujan yang basah.",
-      "t7": "Pohon jambu di halaman bergoyang kencang, jemuran berkibar.",
-      "t8": "Layang-layang tetangga terbang tinggi sekali.",
-      "t9": "Ada tetes air di kaca jendela dan genangan di teras.",
-      "t10": "Kucing berjemur di teras, sinar matahari terang sekali."
+      "t1": "Dari jendela kamar, langit biru dan matahari bersinar terang. Cuaca apa?",
+      "t2": "Ibu menjemur baju di halaman yang terang dan panas. Cuaca apa?",
+      "t3": "Langit di atas sawah abu-abu penuh awan, tapi belum ada air jatuh. Cuaca apa?",
+      "t4": "Matahari tertutup awan tebal, kebun jadi redup. Cuaca apa?",
+      "t5": "Air jatuh dari langit, jalan depan rumah jadi basah. Cuaca apa?",
+      "t6": "Ayah pulang memakai jas hujan yang basah. Cuaca apa?",
+      "t7": "Pohon jambu di halaman bergoyang kencang, jemuran berkibar. Cuaca apa?",
+      "t8": "Layang-layang tetangga terbang tinggi sekali. Cuaca apa?",
+      "t9": "Ada tetes air di kaca jendela dan genangan di teras. Cuaca apa?",
+      "t10": "Kucing berjemur di teras, sinar matahari terang sekali. Cuaca apa?"
     },
     "en": {
       "judul": "Weather from the Home Window",
@@ -35,16 +35,16 @@
       "i-mendung": "cloudy",
       "i-hujan": "rainy",
       "i-angin": "windy",
-      "t1": "From the bedroom window, the sky is blue and the sun is bright.",
-      "t2": "Mum hangs the washing in the bright, hot yard.",
-      "t3": "The sky over the rice field is grey and full of clouds, but no water is falling yet.",
-      "t4": "Thick clouds hide the sun, and the garden turns dim.",
-      "t5": "Water falls from the sky, and the road outside the house gets wet.",
-      "t6": "Dad comes home in a wet raincoat.",
-      "t7": "The guava tree in the yard sways hard and the washing flaps.",
-      "t8": "The neighbour's kite flies very high.",
-      "t9": "There are drops on the window glass and puddles on the porch.",
-      "t10": "The cat suns itself on the porch, and the sunlight is very bright."
+      "t1": "From the bedroom window, the sky is blue and the sun is bright. What's the weather?",
+      "t2": "Mum hangs the washing in the bright, hot yard. What's the weather?",
+      "t3": "The sky over the rice field is grey and full of clouds, but no water is falling yet. What's the weather?",
+      "t4": "Thick clouds hide the sun, and the garden turns dim. What's the weather?",
+      "t5": "Water falls from the sky, and the road outside the house gets wet. What's the weather?",
+      "t6": "Dad comes home in a wet raincoat. What's the weather?",
+      "t7": "The guava tree in the yard sways hard and the washing flaps. What's the weather?",
+      "t8": "The neighbour's kite flies very high. What's the weather?",
+      "t9": "There are drops on the window glass and puddles on the porch. What's the weather?",
+      "t10": "The cat suns itself on the porch, and the sunlight is very bright. What's the weather?"
     }
   },
   "knobs": {

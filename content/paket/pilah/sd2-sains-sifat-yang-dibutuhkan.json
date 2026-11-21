@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sifat Apa yang Dibutuhkan?",
-      "instruksi": "Pikirkan tugas tiap benda, lalu taruh ke sifat yang paling dibutuhkannya.",
+      "instruksi": "Pikirkan tugas tiap benda, lalu taruh ke rak sifat yang paling dibutuhkannya.",
       "b-kedap": "kedap air",
       "b-tembus": "tembus pandang",
       "b-lentur": "lentur",
@@ -20,7 +20,7 @@
       "i-atap": "genting atap",
       "i-jendela": "jendela",
       "i-kacamata": "kacamata",
-      "i-toples": "toples kaca",
+      "i-toples": "kaca pembesar",
       "i-ban": "ban sepeda",
       "i-karetgelang": "karet gelang",
       "i-selang": "tali jemuran",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Which Property Is Needed?",
-      "instruksi": "Think about each object's job, then put it on the property it needs most.",
+      "instruksi": "Think about each object's job, then put it on the shelf for the property it needs most.",
       "b-kedap": "waterproof",
       "b-tembus": "see-through",
       "b-lentur": "bendy",
@@ -40,7 +40,7 @@
       "i-atap": "roof tile",
       "i-jendela": "window",
       "i-kacamata": "glasses",
-      "i-toples": "glass jar",
+      "i-toples": "magnifying glass",
       "i-ban": "bike tyre",
       "i-karetgelang": "rubber band",
       "i-selang": "clothesline",
@@ -131,7 +131,7 @@
       "id": "toples",
       "labelKey": "i-toples",
       "bin": "tembus",
-      "emoji": "🫙"
+      "emoji": "🔍"
     },
     {
       "id": "ban",

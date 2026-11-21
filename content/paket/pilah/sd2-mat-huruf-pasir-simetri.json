@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-huruf-pasir-simetri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Huruf di Pasir Pantai",
-      "instruksi": "Tarik garis lurus di tengah huruf. Kalau dua belahnya sama seperti bayangan di cermin, huruf itu punya garis simetri.",
+      "instruksi": "Bayangkan garis lurus di tengah huruf. Kalau dua belahnya sama seperti bayangan di cermin, huruf itu punya garis simetri. Sentuh huruf yang diminta.",
       "t-punya": "Huruf mana yang punya garis simetri?",
       "i-huruf-a": "A",
       "i-huruf-f": "F",
@@ -38,7 +38,7 @@
     },
     "en": {
       "judul": "Letters in the Beach Sand",
-      "instruksi": "Draw a straight line through the middle of a letter. If the two halves match like a mirror image, the letter has a line of symmetry.",
+      "instruksi": "Imagine a straight line through the middle of a letter. If the two halves match like a mirror image, it has a line of symmetry. Tap the letter asked for.",
       "t-punya": "Which letter has a line of symmetry?",
       "i-huruf-a": "A",
       "i-huruf-f": "F",

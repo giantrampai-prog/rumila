@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-tukar-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -47,13 +47,13 @@
       "c25": "1",
       "c26": "2",
       "c27": "0",
-      "q9": "Kue berjajar dengan ukuran: 3, 1, 2. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q9": "Kue berjajar dengan ukuran: 3, 1, 2. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
       "c28": "3",
-      "q10": "Kue berjajar dengan ukuran: 2, 3, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q10": "Kue berjajar dengan ukuran: 2, 3, 1. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
       "c29": "4",
-      "q11": "Kue berjajar dengan ukuran: 4, 3, 2, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
-      "q12": "Kue berjajar dengan ukuran: 1, 2, 4, 3. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
-      "q13": "Kue berjajar dengan ukuran: 5, 1, 2, 3, 4. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?"
+      "q11": "Kue berjajar dengan ukuran: 4, 3, 2, 1. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
+      "q12": "Kue berjajar dengan ukuran: 1, 2, 4, 3. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
+      "q13": "Kue berjajar dengan ukuran: 5, 1, 2, 3, 4. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?"
     },
     "en": {
       "judul": "Tidying the Cake Row",
@@ -94,13 +94,13 @@
       "c25": "1",
       "c26": "2",
       "c27": "0",
-      "q9": "Cakes in a row, sizes: 3, 1, 2. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "q9": "Cakes in a row, sizes: 3, 1, 2. After how many passes of neighbour swaps are they all sorted smallest first?",
       "c28": "3",
-      "q10": "Cakes in a row, sizes: 2, 3, 1. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "q10": "Cakes in a row, sizes: 2, 3, 1. After how many passes of neighbour swaps are they all sorted smallest first?",
       "c29": "4",
-      "q11": "Cakes in a row, sizes: 4, 3, 2, 1. How many passes of neighbour swaps until they are all sorted smallest first?",
-      "q12": "Cakes in a row, sizes: 1, 2, 4, 3. How many passes of neighbour swaps until they are all sorted smallest first?",
-      "q13": "Cakes in a row, sizes: 5, 1, 2, 3, 4. How many passes of neighbour swaps until they are all sorted smallest first?"
+      "q11": "Cakes in a row, sizes: 4, 3, 2, 1. After how many passes of neighbour swaps are they all sorted smallest first?",
+      "q12": "Cakes in a row, sizes: 1, 2, 4, 3. After how many passes of neighbour swaps are they all sorted smallest first?",
+      "q13": "Cakes in a row, sizes: 5, 1, 2, 3, 4. After how many passes of neighbour swaps are they all sorted smallest first?"
     }
   },
   "knobs": {},

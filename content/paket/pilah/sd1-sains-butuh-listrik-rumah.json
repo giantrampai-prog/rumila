@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Butuh Listrik? (Rumah)",
-      "instruksi": "Alat ini bekerja dengan listrik atau tidak? Taruh ke raknya.",
+      "instruksi": "Apakah tiap alat butuh listrik untuk bekerja? Taruh ke rak butuh listrik atau tanpa listrik.",
       "b-listrik": "butuh listrik",
       "b-tanpa": "tanpa listrik",
       "i-kipas": "kipas angin",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Needs Electricity? (Home)",
-      "instruksi": "Does this thing work with electricity or not? Put it on its shelf.",
+      "instruksi": "Does each thing need electricity to work? Put it on the needs-electricity shelf or the no-electricity shelf.",
       "b-listrik": "needs electricity",
       "b-tanpa": "no electricity",
       "i-kipas": "electric fan",

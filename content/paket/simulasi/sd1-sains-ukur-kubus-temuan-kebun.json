@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-kubus-temuan-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ukur Temuan di Kebun",
-      "instruksi": "Sejajarkan ujung temuan dengan kubus nomor satu, lalu baca ujung satunya.",
+      "instruksi": "Hitung kubus yang ada tepat di bawah temuan, dari ujung ke ujung, lalu pilih angkanya.",
       "ulat": "ulat",
       "daunjambu": "daun jambu",
       "bulu": "bulu burung",
@@ -22,7 +22,7 @@
     },
     "en": {
       "judul": "Measure Garden Finds",
-      "instruksi": "Line up one end of the find with cube number one, then read the other end.",
+      "instruksi": "Count the cubes right under the find, from end to end, then pick the number.",
       "ulat": "caterpillar",
       "daunjambu": "guava leaf",
       "bulu": "bird feather",
