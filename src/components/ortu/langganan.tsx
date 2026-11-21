@@ -30,7 +30,7 @@ type Tarif = { harga?: number; coret?: number; tambah?: number; tambah_coret?: n
 type Paket = { id: string; nama: string; deskripsi: string | null; maks_anak: number; tarif: Partial<Record<Periode, Tarif>>; label_promo: string | null; unggulan: boolean };
 type Atur = { bank: string; no_rekening: string; atas_nama: string; trial_hari: number; kode_unik: boolean; catatan: string | null };
 type Bayar = { id: string; paket_id: string; periode: Periode; anak_tambahan: number; jumlah: number; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; bukti_path: string | null; dibuat_at: string; sampai: string | null };
-type Status = { trial_sampai: string; aktif_sampai: string | null; paket_id: string | null; periode: Periode | null; menunggu: number } | null;
+type Status = { trial_sampai: string; aktif_sampai: string | null; paket_id: string | null; periode: Periode | null; menunggu: number; alumni?: string[] } | null;
 
 export const rupiah = (n: number) => "Rp" + n.toLocaleString("id-ID");
 const tgl = (iso: string) => new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
@@ -76,7 +76,10 @@ export function LanggananKeluarga() {
   const [err, setErr] = useState("");
   const [pilih, setPilih] = useState<{ paket: Paket; periode: Periode; anak: number } | null>(null);
   const members = useRumila((s) => s.members);
-  const anakDiRumah = useMemo(() => Math.max(1, anakRumah(members).length), [members]);
+  const anakSemua = useMemo(() => anakRumah(members), [members]);
+  const alumni = useMemo(() => anakSemua.filter((m) => status?.alumni?.includes(m.id)), [anakSemua, status]);
+  // Alumni SD 6 tidak dihitung sebagai anak berbayar (rapor & sertifikatnya tetap gratis).
+  const anakDiRumah = Math.max(1, anakSemua.length - alumni.length);
   const [anakPilih, setAnak] = useState<number | null>(null);
   const [periode, setPeriode] = useState<Periode>("bulan");
 
@@ -134,6 +137,14 @@ export function LanggananKeluarga() {
               </div>
             )}
           </div>
+          {alumni.length > 0 && (
+            <p className="flex items-start gap-2 rounded-[14px] bg-[#e6f7f3] p-3 text-[13px] font-bold text-[#0b5e52]">
+              <Icon name="school" size={20} />
+              <span>
+                {alumni.map((m) => m.name).join(", ")} sudah lulus SD 6. Sebagai alumni, rapor dan sertifikatnya tetap terbuka gratis dan tidak perlu dihitung dalam jumlah anak.
+              </span>
+            </p>
+          )}
           <div className="grid gap-3">
             {dijual.map((p) => {
               const anak = Math.min(p.maks_anak, anakPilih ?? anakDiRumah);
