@@ -194673,7 +194673,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-senam-tunjuk-tubuh",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194683,7 +194683,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Senam Tunjuk Tubuh",
-        "instruksi": "Ayo senam di taman! Dengarkan nama bagian tubuh, lalu sentuh gambarnya.",
+        "instruksi": "Ayo senam di taman! Dengarkan soalnya, lalu sentuh gambar bagian tubuh yang tepat.",
         "pilihan": "pilihan",
         "i-mata": "mata",
         "i-hidung": "hidung",
@@ -194694,21 +194694,21 @@ export const PAKET_RAW: unknown[] = [
         "i-lengan": "lengan",
         "i-jari": "jari",
         "t-mata1": "Ayo senam! Tunjuk mata, lalu kedipkan.",
-        "t-mata2": "Dina melihat burung dengan mata. Tunjuk matanya!",
+        "t-mata2": "Dina melihat burung terbang. Bagian tubuh mana yang ia pakai untuk melihat? Tunjuk!",
         "t-hidung1": "Ayo senam! Tunjuk hidung, lalu tarik napas.",
-        "t-hidung2": "Dina mencium bunga dengan hidung. Tunjuk hidungnya!",
+        "t-hidung2": "Dina mencium bunga yang harum. Bagian tubuh mana yang ia pakai untuk mencium? Tunjuk!",
         "t-telinga1": "Ayo senam! Tunjuk telinga, lalu tarik pelan-pelan.",
-        "t-telinga2": "Dina mendengar musik dengan telinga. Tunjuk telinganya!",
+        "t-telinga2": "Dina mendengar musik. Bagian tubuh mana yang ia pakai untuk mendengar? Tunjuk!",
         "t-mulut1": "Ayo senam! Tunjuk mulut, lalu buka lebar-lebar, aaa!",
-        "t-mulut2": "Dina menggigit pisang dengan mulut. Tunjuk mulutnya!",
+        "t-mulut2": "Dina menggigit pisang. Bagian tubuh mana yang ia pakai untuk menggigit? Tunjuk!",
         "t-tangan1": "Ayo senam! Tunjuk tangan, lalu lambaikan ke kiri dan ke kanan.",
-        "t-tangan2": "Dina bertepuk tangan. Tunjuk tangannya!",
+        "t-tangan2": "Dina bertepuk mengikuti lagu. Bagian tubuh mana yang ia pakai untuk bertepuk? Tunjuk!",
         "t-kaki1": "Ayo senam! Tunjuk kaki, lalu hentakkan, satu, dua!",
-        "t-kaki2": "Dina menendang bola dengan kaki. Tunjuk kakinya!"
+        "t-kaki2": "Dina menendang bola. Bagian tubuh mana yang ia pakai untuk menendang? Tunjuk!"
       },
       "en": {
         "judul": "Point-and-Move Exercise",
-        "instruksi": "Let's exercise in the park! Listen to the body part, then touch its picture.",
+        "instruksi": "Let's exercise in the park! Listen to the question, then touch the right body part.",
         "pilihan": "choices",
         "i-mata": "eyes",
         "i-hidung": "nose",
@@ -194719,17 +194719,17 @@ export const PAKET_RAW: unknown[] = [
         "i-lengan": "arm",
         "i-jari": "finger",
         "t-mata1": "Let's exercise! Point to the eyes, then blink.",
-        "t-mata2": "Dina watches a bird with her eyes. Point to the eyes!",
+        "t-mata2": "Dina watches a bird fly. Which body part does she use to see? Point!",
         "t-hidung1": "Let's exercise! Point to the nose, then breathe in.",
-        "t-hidung2": "Dina smells a flower with her nose. Point to the nose!",
+        "t-hidung2": "Dina smells a sweet flower. Which body part does she use to smell? Point!",
         "t-telinga1": "Let's exercise! Point to the ears, then gently pull them.",
-        "t-telinga2": "Dina hears music with her ears. Point to the ear!",
+        "t-telinga2": "Dina listens to music. Which body part does she use to hear? Point!",
         "t-mulut1": "Let's exercise! Point to the mouth, then open it wide, aaah!",
-        "t-mulut2": "Dina bites a banana with her mouth. Point to the mouth!",
+        "t-mulut2": "Dina bites a banana. Which body part does she use to bite? Point!",
         "t-tangan1": "Let's exercise! Point to the hands, then wave them left and right.",
-        "t-tangan2": "Dina claps. Point to the hand!",
+        "t-tangan2": "Dina claps along to a song. Which body part does she use to clap? Point!",
         "t-kaki1": "Let's exercise! Point to the legs, then stamp them, one, two!",
-        "t-kaki2": "Dina kicks a ball with her foot. Point to the leg!"
+        "t-kaki2": "Dina kicks a ball. Which body part does she use to kick? Point!"
       }
     },
     "knobs": {
