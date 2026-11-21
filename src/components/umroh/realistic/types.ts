@@ -36,6 +36,8 @@ export interface UmrohWorld {
   bounds: Rect;
   blockers: Rect[];
   landmarks: Landmark[];
+  /** Posisi & arah hadap jamaah utama (mis. di teras rumah menghadap kamera), bila dunia menentukannya. */
+  guide?: { position: Position; heading: number };
   indoor?: boolean;
   /** Static vehicle interior with scenery translated by journey progress. */
   motion?: { group: T.Group; axis: 'x' | 'z'; distance: number; loop?: boolean };
