@@ -4,23 +4,12 @@
 // Satu komponen latar + kerangka layar aktivitas (header kembali, progres ronde, tombol dengar instruksi).
 
 import { useRouter } from "next/navigation";
-import { useEffect, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { TEMA, type DuniaId, type Tema } from "@/lib/akademi/tema-dunia";
+import { LatarDunia } from "./latar-dunia";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
 import { BALOO, INK, NUNITO } from "./jenis";
-
-export function LatarKebunPasar() {
-  return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden" style={{ background: "linear-gradient(180deg,#bfe9ff 0%,#e9f7ff 38%,#d8f3c4 60%,#b6e39a 100%)" }}>
-      {/* hiasan dibuat tipis dan menjauh dari area main supaya anak fokus ke soal */}
-      <div className="absolute bottom-[14%] left-[-14px] text-[72px] opacity-45">🌳</div>
-      <div className="absolute bottom-[15%] right-[-10px] text-[64px] opacity-45">🌳</div>
-      {/* lapak pasar */}
-      <div className="absolute inset-x-0 bottom-0 h-[22%]" style={{ background: "linear-gradient(180deg,#9ed07c,#7fbf63)" }} />
-      <div className="absolute inset-x-[6%] bottom-[18%] h-5 rounded-t-[10px]" style={{ background: "repeating-linear-gradient(90deg,#fd861d 0 28px,#ffd23f 28px 56px)" }} />
-    </div>
-  );
-}
 
 /**
  * Tablet: layar permainan dirancang selebar HP–960 px, jadi di tablet besar (mis. 13", 1280×800) isinya kecil dan
@@ -59,13 +48,42 @@ function useSkalaTablet() {
 }
 
 /** Kerangka layar aktivitas: kembali · judul & progres · instruksi (bisa diputar ulang) · isi. */
+/**
+ * Panggung = area isi di bawah instruksi. Presenter membaca ukurannya untuk membesarkan kartu/wadah di layar lebar
+ * dan tema untuk bentuk wadah. `skala` 1 di HP, naik sampai 1,6 di tablet/desktop yang luas.
+ */
+export interface Panggung { tema: Tema; w: number; h: number; skala: number }
+const PanggungCtx = createContext<Panggung>({ tema: TEMA.kebun, w: 0, h: 0, skala: 1 });
+export const usePanggung = () => useContext(PanggungCtx);
+
+/** Skala isi dari ukuran panggung; patokan desain ±880×500 px. */
+export function skalaPanggung(w: number, h: number): number {
+  if (!w || !h) return 1;
+  return Math.round(Math.max(1, Math.min(1.6, w / 880, h / 500)) * 100) / 100;
+}
+
+const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi",
+  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun",
 }: {
-  judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string;
+  judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string; dunia?: DuniaId;
 }) {
   const router = useRouter();
   useSkalaTablet();
+  const tema = TEMA[dunia];
+  const panggungRef = useRef<HTMLDivElement>(null);
+  const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
+  useIsoLayout(() => {
+    const el = panggungRef.current;
+    if (!el) return;
+    const ukur = () => setUkuran((u) => (u.w === el.clientWidth && u.h === el.clientHeight ? u : { w: el.clientWidth, h: el.clientHeight }));
+    ukur();
+    const ro = new ResizeObserver(ukur);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h) };
   // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
   // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
   const kembali = () => {
@@ -74,18 +92,19 @@ export function LayarAktivitas({
     if (dariSini && window.history.length > 1) router.back();
     else router.push(kembaliKe);
   };
+  const gelap = dunia === "laut" || dunia === "hutan" || dunia === "angkasa";
   return (
     <div className="relative min-h-dvh" style={{ fontFamily: NUNITO, color: INK }}>
-      <LatarKebunPasar />
+      <LatarDunia dunia={dunia} />
       <div
-        className="relative mx-auto flex min-h-dvh max-w-[960px] flex-col gap-3 px-3 sm:px-5"
-        style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(20px, env(safe-area-inset-bottom))" }}
+        className="relative mx-auto flex h-dvh max-w-[1280px] flex-col gap-3 px-3 sm:px-6"
+        style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(14px, env(safe-area-inset-bottom))" }}
       >
         <header className="flex items-center gap-2">
           <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95">
             <Icon name="arrow_back" size={24} />
           </button>
-          <div className="min-w-0 flex-1">
+          <div className="min-w-0 flex-1 rounded-[16px] px-3 py-1.5" style={{ background: gelap ? "rgba(255,255,255,.92)" : "rgba(255,255,255,.55)" }}>
             <div className="truncate" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1 }}>{judul}</div>
             <div className="mt-1 flex gap-1" aria-label={`Ronde ${ronde} dari ${total}`}>
               {Array.from({ length: total }, (_, k) => (
@@ -104,8 +123,10 @@ export function LayarAktivitas({
           </span>
           <span style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 700, lineHeight: 1.2 }}>{instruksi}</span>
         </button>
-        {/* area main mengisi sisa tinggi dan berada di tengah, supaya layar tinggi tidak kosong di bawah */}
-        <div className="flex flex-1 flex-col justify-center gap-3 pb-[12dvh]">{children}</div>
+        {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
+        <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
+          <PanggungCtx.Provider value={panggung}>{children}</PanggungCtx.Provider>
+        </div>
       </div>
     </div>
   );

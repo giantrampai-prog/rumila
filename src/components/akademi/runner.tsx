@@ -4,6 +4,7 @@
 // Knob naik satu step setelah 2 benar beruntun, turun satu step setelah 2 salah beruntun (adaptif sederhana).
 
 import { useRouter } from "next/navigation";
+import { duniaPaket } from "@/lib/akademi/tema-dunia";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
@@ -169,8 +170,8 @@ function Runner({ paket }: { paket: ContentPack }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap}>
-      <div key={idx} className="akademi-fade">
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)}>
+      <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center py-1">
         <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
