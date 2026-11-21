@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-tugas-bagian-tumbuhan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -70,8 +70,8 @@
     {
       "id": "akar",
       "labelKey": "b-akar",
-      "emoji": "🫚",
-      "color": "#efebe9"
+      "color": "#efebe9",
+      "shape": "akar"
     },
     {
       "id": "batang",

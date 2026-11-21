@@ -1,6 +1,6 @@
 {
   "id": "pensil-pendek-ke-panjang",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,40 +9,40 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Pensil Pendek ke Panjang",
-      "instruksi": "Susun benda dari yang paling pendek ke yang paling panjang.",
-      "pensil": "Pensil: pendek ke panjang",
-      "kereta": "Kereta: pendek ke panjang",
+      "judul": "Mainan Pendek ke Panjang",
+      "instruksi": "Robot menjajarkan mobil-mobilan. Susun dari yang paling pendek ke yang paling panjang.",
       "pendek": "pendek",
       "sedang": "sedang",
       "panjang": "panjang",
       "terpanjang": "paling panjang",
-      "t-krayon": "Krayon: pendek ke panjang",
-      "t-pena": "Pena: pendek ke panjang",
-      "t-kuas": "Kuas: pendek ke panjang",
-      "t-penggaris": "Penggaris: pendek ke panjang",
-      "t-sikat": "Sikat gigi: pendek ke panjang",
-      "t-wortel": "Wortel: pendek ke panjang",
-      "t-sendok": "Sendok: pendek ke panjang",
-      "t-bus": "Bus: pendek ke panjang"
+      "t-kereta": "Kereta: pendek ke panjang",
+      "t-bus": "Bus: pendek ke panjang",
+      "t-truk": "Truk: pendek ke panjang",
+      "t-pemadam": "Mobil pemadam: pendek ke panjang",
+      "t-ambulans": "Ambulans: pendek ke panjang",
+      "t-keretauap": "Kereta uap: pendek ke panjang",
+      "t-mobil": "Mobil: pendek ke panjang",
+      "t-traktor": "Traktor: pendek ke panjang",
+      "t-bajaj": "Bajaj: pendek ke panjang",
+      "t-minibus": "Mobil van: pendek ke panjang"
     },
     "en": {
-      "judul": "Pencils Short to Long",
-      "instruksi": "Line up the things from the shortest to the longest.",
-      "pensil": "Pencils: short to long",
-      "kereta": "Trains: short to long",
+      "judul": "Toys Short to Long",
+      "instruksi": "Robot is lining up toy cars. Put them from the shortest to the longest.",
       "pendek": "short",
       "sedang": "medium",
       "panjang": "long",
       "terpanjang": "longest",
-      "t-krayon": "Crayons: short to long",
-      "t-pena": "Pens: short to long",
-      "t-kuas": "Paintbrushes: short to long",
-      "t-penggaris": "Rulers: short to long",
-      "t-sikat": "Toothbrushes: short to long",
-      "t-wortel": "Carrots: short to long",
-      "t-sendok": "Spoons: short to long",
-      "t-bus": "Buses: short to long"
+      "t-kereta": "Trains: short to long",
+      "t-bus": "Buses: short to long",
+      "t-truk": "Trucks: short to long",
+      "t-pemadam": "Fire engines: short to long",
+      "t-ambulans": "Ambulances: short to long",
+      "t-keretauap": "Steam trains: short to long",
+      "t-mobil": "Cars: short to long",
+      "t-traktor": "Tractors: short to long",
+      "t-bajaj": "Auto rickshaws: short to long",
+      "t-minibus": "Vans: short to long"
     }
   },
   "knobs": {
@@ -61,32 +61,8 @@
   "mode": "susun",
   "sequences": [
     {
-      "id": "pensil",
-      "titleKey": "pensil",
-      "steps": [
-        {
-          "id": "pensil-1",
-          "labelKey": "pendek",
-          "emoji": "✏️",
-          "width": 1
-        },
-        {
-          "id": "pensil-2",
-          "labelKey": "sedang",
-          "emoji": "✏️",
-          "width": 1.4
-        },
-        {
-          "id": "pensil-3",
-          "labelKey": "panjang",
-          "emoji": "✏️",
-          "width": 2
-        }
-      ]
-    },
-    {
       "id": "kereta",
-      "titleKey": "kereta",
+      "titleKey": "t-kereta",
       "steps": [
         {
           "id": "kereta-1",
@@ -111,180 +87,6 @@
           "labelKey": "terpanjang",
           "emoji": "🚃",
           "width": 2.2
-        }
-      ]
-    },
-    {
-      "id": "krayon",
-      "titleKey": "t-krayon",
-      "steps": [
-        {
-          "id": "krayon-1",
-          "labelKey": "pendek",
-          "emoji": "🖍️",
-          "width": 1
-        },
-        {
-          "id": "krayon-2",
-          "labelKey": "sedang",
-          "emoji": "🖍️",
-          "width": 1.3
-        },
-        {
-          "id": "krayon-3",
-          "labelKey": "panjang",
-          "emoji": "🖍️",
-          "width": 1.7
-        },
-        {
-          "id": "krayon-4",
-          "labelKey": "terpanjang",
-          "emoji": "🖍️",
-          "width": 2.2
-        }
-      ]
-    },
-    {
-      "id": "pena",
-      "titleKey": "t-pena",
-      "steps": [
-        {
-          "id": "pena-1",
-          "labelKey": "pendek",
-          "emoji": "🖊️",
-          "width": 1
-        },
-        {
-          "id": "pena-2",
-          "labelKey": "sedang",
-          "emoji": "🖊️",
-          "width": 1.4
-        },
-        {
-          "id": "pena-3",
-          "labelKey": "panjang",
-          "emoji": "🖊️",
-          "width": 2
-        }
-      ]
-    },
-    {
-      "id": "kuas",
-      "titleKey": "t-kuas",
-      "steps": [
-        {
-          "id": "kuas-1",
-          "labelKey": "pendek",
-          "emoji": "🖌️",
-          "width": 0.9
-        },
-        {
-          "id": "kuas-2",
-          "labelKey": "sedang",
-          "emoji": "🖌️",
-          "width": 1.3
-        },
-        {
-          "id": "kuas-3",
-          "labelKey": "panjang",
-          "emoji": "🖌️",
-          "width": 1.8
-        }
-      ]
-    },
-    {
-      "id": "penggaris",
-      "titleKey": "t-penggaris",
-      "steps": [
-        {
-          "id": "penggaris-1",
-          "labelKey": "pendek",
-          "emoji": "📏",
-          "width": 1
-        },
-        {
-          "id": "penggaris-2",
-          "labelKey": "sedang",
-          "emoji": "📏",
-          "width": 1.5
-        },
-        {
-          "id": "penggaris-3",
-          "labelKey": "panjang",
-          "emoji": "📏",
-          "width": 2.1
-        }
-      ]
-    },
-    {
-      "id": "sikat",
-      "titleKey": "t-sikat",
-      "steps": [
-        {
-          "id": "sikat-1",
-          "labelKey": "pendek",
-          "emoji": "🪥",
-          "width": 0.9
-        },
-        {
-          "id": "sikat-2",
-          "labelKey": "sedang",
-          "emoji": "🪥",
-          "width": 1.3
-        },
-        {
-          "id": "sikat-3",
-          "labelKey": "panjang",
-          "emoji": "🪥",
-          "width": 1.8
-        }
-      ]
-    },
-    {
-      "id": "wortel",
-      "titleKey": "t-wortel",
-      "steps": [
-        {
-          "id": "wortel-1",
-          "labelKey": "pendek",
-          "emoji": "🥕",
-          "width": 1
-        },
-        {
-          "id": "wortel-2",
-          "labelKey": "sedang",
-          "emoji": "🥕",
-          "width": 1.4
-        },
-        {
-          "id": "wortel-3",
-          "labelKey": "panjang",
-          "emoji": "🥕",
-          "width": 2
-        }
-      ]
-    },
-    {
-      "id": "sendok",
-      "titleKey": "t-sendok",
-      "steps": [
-        {
-          "id": "sendok-1",
-          "labelKey": "pendek",
-          "emoji": "🥄",
-          "width": 0.8
-        },
-        {
-          "id": "sendok-2",
-          "labelKey": "sedang",
-          "emoji": "🥄",
-          "width": 1.2
-        },
-        {
-          "id": "sendok-3",
-          "labelKey": "panjang",
-          "emoji": "🥄",
-          "width": 1.7
         }
       ]
     },
@@ -314,6 +116,210 @@
           "id": "bus-4",
           "labelKey": "terpanjang",
           "emoji": "🚌",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "truk",
+      "titleKey": "t-truk",
+      "steps": [
+        {
+          "id": "truk-1",
+          "labelKey": "pendek",
+          "emoji": "🚚",
+          "width": 1
+        },
+        {
+          "id": "truk-2",
+          "labelKey": "sedang",
+          "emoji": "🚚",
+          "width": 1.4
+        },
+        {
+          "id": "truk-3",
+          "labelKey": "panjang",
+          "emoji": "🚚",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "pemadam",
+      "titleKey": "t-pemadam",
+      "steps": [
+        {
+          "id": "pemadam-1",
+          "labelKey": "pendek",
+          "emoji": "🚒",
+          "width": 1
+        },
+        {
+          "id": "pemadam-2",
+          "labelKey": "sedang",
+          "emoji": "🚒",
+          "width": 1.4
+        },
+        {
+          "id": "pemadam-3",
+          "labelKey": "panjang",
+          "emoji": "🚒",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "ambulans",
+      "titleKey": "t-ambulans",
+      "steps": [
+        {
+          "id": "ambulans-1",
+          "labelKey": "pendek",
+          "emoji": "🚑",
+          "width": 1
+        },
+        {
+          "id": "ambulans-2",
+          "labelKey": "sedang",
+          "emoji": "🚑",
+          "width": 1.4
+        },
+        {
+          "id": "ambulans-3",
+          "labelKey": "panjang",
+          "emoji": "🚑",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "keretauap",
+      "titleKey": "t-keretauap",
+      "steps": [
+        {
+          "id": "keretauap-1",
+          "labelKey": "pendek",
+          "emoji": "🚂",
+          "width": 1
+        },
+        {
+          "id": "keretauap-2",
+          "labelKey": "sedang",
+          "emoji": "🚂",
+          "width": 1.3
+        },
+        {
+          "id": "keretauap-3",
+          "labelKey": "panjang",
+          "emoji": "🚂",
+          "width": 1.7
+        },
+        {
+          "id": "keretauap-4",
+          "labelKey": "terpanjang",
+          "emoji": "🚂",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "mobil",
+      "titleKey": "t-mobil",
+      "steps": [
+        {
+          "id": "mobil-1",
+          "labelKey": "pendek",
+          "emoji": "🚗",
+          "width": 1
+        },
+        {
+          "id": "mobil-2",
+          "labelKey": "sedang",
+          "emoji": "🚗",
+          "width": 1.4
+        },
+        {
+          "id": "mobil-3",
+          "labelKey": "panjang",
+          "emoji": "🚗",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "traktor",
+      "titleKey": "t-traktor",
+      "steps": [
+        {
+          "id": "traktor-1",
+          "labelKey": "pendek",
+          "emoji": "🚜",
+          "width": 1
+        },
+        {
+          "id": "traktor-2",
+          "labelKey": "sedang",
+          "emoji": "🚜",
+          "width": 1.4
+        },
+        {
+          "id": "traktor-3",
+          "labelKey": "panjang",
+          "emoji": "🚜",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "bajaj",
+      "titleKey": "t-bajaj",
+      "steps": [
+        {
+          "id": "bajaj-1",
+          "labelKey": "pendek",
+          "emoji": "🛺",
+          "width": 1
+        },
+        {
+          "id": "bajaj-2",
+          "labelKey": "sedang",
+          "emoji": "🛺",
+          "width": 1.4
+        },
+        {
+          "id": "bajaj-3",
+          "labelKey": "panjang",
+          "emoji": "🛺",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "minibus",
+      "titleKey": "t-minibus",
+      "steps": [
+        {
+          "id": "minibus-1",
+          "labelKey": "pendek",
+          "emoji": "🚐",
+          "width": 1
+        },
+        {
+          "id": "minibus-2",
+          "labelKey": "sedang",
+          "emoji": "🚐",
+          "width": 1.3
+        },
+        {
+          "id": "minibus-3",
+          "labelKey": "panjang",
+          "emoji": "🚐",
+          "width": 1.7
+        },
+        {
+          "id": "minibus-4",
+          "labelKey": "terpanjang",
+          "emoji": "🚐",
           "width": 2.2
         }
       ]

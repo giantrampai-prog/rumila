@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-licin-sampai-kasar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Paling Jauh Meluncur",
       "instruksi": "Susun dari permukaan yang membuat benda meluncur paling jauh sampai paling dekat.",
-      "s-mobil": "Mobil mainan didorong sama kuat",
+      "s-mobil": "Kotak bekal didorong sama kuat",
       "mobil-es": "lantai es",
       "mobil-keramik": "lantai keramik mengilap",
       "mobil-karpet": "karpet berbulu",
@@ -21,7 +21,7 @@
       "kotak-kayu": "papan kayu halus",
       "kotak-handuk": "handuk",
       "kotak-amplas": "kertas amplas",
-      "s-kelereng": "Kelereng digelindingkan sama kuat",
+      "s-kelereng": "Sandal didorong sama kuat",
       "kelereng-ubin": "ubin licin",
       "kelereng-kayu": "papan kayu",
       "kelereng-handuk": "handuk tebal",
@@ -35,12 +35,12 @@
       "kaleng-1": "lantai es",
       "kaleng-2": "meja kaca",
       "kaleng-3": "karpet berbulu",
-      "kaleng-4": "jalan berkerikil",
+      "kaleng-4": "kertas amplas",
       "t-balok": "Balok kayu didorong sama kuat",
       "balok-1": "cermin yang diletakkan datar",
       "balok-2": "papan kayu",
       "balok-3": "karpet berbulu",
-      "balok-4": "jalan berkerikil",
+      "balok-4": "kertas amplas",
       "t-mangkuk": "Mangkuk plastik didorong sama kuat",
       "mangkuk-1": "lantai keramik mengilap",
       "mangkuk-2": "papan kayu",
@@ -50,7 +50,7 @@
       "kotak-sepatu-1": "lantai es",
       "kotak-sepatu-2": "ubin licin",
       "kotak-sepatu-3": "handuk tebal",
-      "kotak-sepatu-4": "jalan berkerikil",
+      "kotak-sepatu-4": "kertas amplas",
       "t-kardus": "Kardus didorong sama kuat",
       "kardus-1": "lantai es",
       "kardus-2": "cermin yang diletakkan datar",
@@ -65,7 +65,7 @@
     "en": {
       "judul": "Slides the Farthest",
       "instruksi": "Order the surfaces from where things slide farthest to where they stop soonest.",
-      "s-mobil": "A toy car pushed just as hard each time",
+      "s-mobil": "A lunch box pushed just as hard each time",
       "mobil-es": "ice rink",
       "mobil-keramik": "shiny tiled floor",
       "mobil-karpet": "shaggy carpet",
@@ -75,7 +75,7 @@
       "kotak-kayu": "smooth wooden board",
       "kotak-handuk": "towel",
       "kotak-amplas": "sandpaper",
-      "s-kelereng": "A marble rolled just as hard each time",
+      "s-kelereng": "A sandal pushed just as hard each time",
       "kelereng-ubin": "smooth tiles",
       "kelereng-kayu": "wooden board",
       "kelereng-handuk": "thick towel",
@@ -89,12 +89,12 @@
       "kaleng-1": "ice floor",
       "kaleng-2": "glass table",
       "kaleng-3": "fluffy carpet",
-      "kaleng-4": "gravel path",
+      "kaleng-4": "sandpaper",
       "t-balok": "A wooden block pushed equally hard",
       "balok-1": "a mirror laid flat",
       "balok-2": "wooden board",
       "balok-3": "fluffy carpet",
-      "balok-4": "gravel path",
+      "balok-4": "sandpaper",
       "t-mangkuk": "A plastic bowl pushed equally hard",
       "mangkuk-1": "shiny tiled floor",
       "mangkuk-2": "wooden board",
@@ -104,7 +104,7 @@
       "kotak-sepatu-1": "ice floor",
       "kotak-sepatu-2": "smooth tiles",
       "kotak-sepatu-3": "thick towel",
-      "kotak-sepatu-4": "gravel path",
+      "kotak-sepatu-4": "sandpaper",
       "t-kardus": "A cardboard box pushed equally hard",
       "kardus-1": "ice floor",
       "kardus-2": "a mirror laid flat",
@@ -149,8 +149,7 @@
         {
           "id": "karpet",
           "labelKey": "mobil-karpet",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "pasir",
@@ -260,13 +259,13 @@
         {
           "id": "kaleng-3",
           "labelKey": "kaleng-3",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "kaleng-4",
           "labelKey": "kaleng-4",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     },
@@ -287,13 +286,13 @@
         {
           "id": "balok-3",
           "labelKey": "balok-3",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "balok-4",
           "labelKey": "balok-4",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     },
@@ -314,8 +313,7 @@
         {
           "id": "mangkuk-3",
           "labelKey": "mangkuk-3",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "mangkuk-4",
@@ -347,7 +345,8 @@
         {
           "id": "kotak-sepatu-4",
           "labelKey": "kotak-sepatu-4",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     },

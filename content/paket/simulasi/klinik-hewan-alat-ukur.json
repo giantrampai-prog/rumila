@@ -1,6 +1,6 @@
 {
   "id": "klinik-hewan-alat-ukur",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -51,7 +51,7 @@
       "max": 12,
       "default": 12,
       "step": 1,
-      "keterangan": "jumlah jenis hewan yang bisa muncul; putaran diacak, bukan pencocokan 1:1"
+      "keterangan": "12 jenis hewan; tiap hewan bisa ditanya panjang atau berat (diacak per putaran), jadi bukan pencocokan hewan–alat 1:1"
     }
   },
   "assets": [],
@@ -62,84 +62,168 @@
   "items": [
     {
       "labelKey": "ular",
-      "id": "ular",
+      "id": "ular-panjang",
       "role": "hewan",
       "emoji": "🐍",
       "value": 1
     },
     {
+      "labelKey": "ular",
+      "id": "ular-berat",
+      "role": "hewan",
+      "emoji": "🐍",
+      "value": 2
+    },
+    {
       "labelKey": "cacing",
-      "id": "cacing",
+      "id": "cacing-panjang",
       "role": "hewan",
       "emoji": "🪱",
       "value": 1
     },
     {
+      "labelKey": "cacing",
+      "id": "cacing-berat",
+      "role": "hewan",
+      "emoji": "🪱",
+      "value": 2
+    },
+    {
       "labelKey": "kadal",
-      "id": "kadal",
+      "id": "kadal-panjang",
       "role": "hewan",
       "emoji": "🦎",
       "value": 1
     },
     {
+      "labelKey": "kadal",
+      "id": "kadal-berat",
+      "role": "hewan",
+      "emoji": "🦎",
+      "value": 2
+    },
+    {
       "labelKey": "kelinci",
-      "id": "kelinci",
+      "id": "kelinci-panjang",
+      "role": "hewan",
+      "emoji": "🐰",
+      "value": 1
+    },
+    {
+      "labelKey": "kelinci",
+      "id": "kelinci-berat",
       "role": "hewan",
       "emoji": "🐰",
       "value": 2
     },
     {
       "labelKey": "kucing",
-      "id": "kucing",
+      "id": "kucing-panjang",
+      "role": "hewan",
+      "emoji": "🐱",
+      "value": 1
+    },
+    {
+      "labelKey": "kucing",
+      "id": "kucing-berat",
       "role": "hewan",
       "emoji": "🐱",
       "value": 2
     },
     {
       "labelKey": "ayam",
-      "id": "ayam",
+      "id": "ayam-panjang",
+      "role": "hewan",
+      "emoji": "🐔",
+      "value": 1
+    },
+    {
+      "labelKey": "ayam",
+      "id": "ayam-berat",
       "role": "hewan",
       "emoji": "🐔",
       "value": 2
     },
     {
       "labelKey": "ulat",
-      "id": "ulat",
+      "id": "ulat-panjang",
       "role": "hewan",
       "emoji": "🐛",
       "value": 1
     },
     {
+      "labelKey": "ulat",
+      "id": "ulat-berat",
+      "role": "hewan",
+      "emoji": "🐛",
+      "value": 2
+    },
+    {
       "labelKey": "ikan",
-      "id": "ikan",
+      "id": "ikan-panjang",
       "role": "hewan",
       "emoji": "🐟",
       "value": 1
     },
     {
+      "labelKey": "ikan",
+      "id": "ikan-berat",
+      "role": "hewan",
+      "emoji": "🐟",
+      "value": 2
+    },
+    {
       "labelKey": "anjing",
-      "id": "anjing",
+      "id": "anjing-panjang",
+      "role": "hewan",
+      "emoji": "🐶",
+      "value": 1
+    },
+    {
+      "labelKey": "anjing",
+      "id": "anjing-berat",
       "role": "hewan",
       "emoji": "🐶",
       "value": 2
     },
     {
       "labelKey": "bebek",
-      "id": "bebek",
+      "id": "bebek-panjang",
+      "role": "hewan",
+      "emoji": "🦆",
+      "value": 1
+    },
+    {
+      "labelKey": "bebek",
+      "id": "bebek-berat",
       "role": "hewan",
       "emoji": "🦆",
       "value": 2
     },
     {
       "labelKey": "hamster",
-      "id": "hamster",
+      "id": "hamster-panjang",
+      "role": "hewan",
+      "emoji": "🐹",
+      "value": 1
+    },
+    {
+      "labelKey": "hamster",
+      "id": "hamster-berat",
       "role": "hewan",
       "emoji": "🐹",
       "value": 2
     },
     {
       "labelKey": "kura-kura",
-      "id": "kura-kura",
+      "id": "kura-kura-panjang",
+      "role": "hewan",
+      "emoji": "🐢",
+      "value": 1
+    },
+    {
+      "labelKey": "kura-kura",
+      "id": "kura-kura-berat",
       "role": "hewan",
       "emoji": "🐢",
       "value": 2

@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -58,10 +58,10 @@
       "s8-3": "permintaan sampai ke server situs sekolah",
       "s8-4": "server mengirim halaman dalam paket-paket",
       "s8-5": "browser menyusun paket dan menampilkan halaman",
-      "s9": "Bermain gim daring",
+      "s9": "Bermain game daring",
       "s9-1": "kamu menekan tombol lompat",
       "s9-2": "perangkatmu mengirim perintah lewat internet",
-      "s9-3": "server gim menerima perintah",
+      "s9-3": "server game menerima perintah",
       "s9-4": "server mengirim posisi baru ke semua pemain",
       "s9-5": "tokohmu melompat di layar temanmu",
       "s10": "Pesan suara",

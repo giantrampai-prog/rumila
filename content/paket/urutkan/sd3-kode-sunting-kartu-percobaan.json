@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -12,16 +12,16 @@
       "judul": "Kartu Langkah Tertukar Jauh",
       "instruksi": "Satu pasang kartu tertukar, kadang berjarak satu kartu. Temukan pasangan itu lalu tukar sekali.",
       "t-gunung": "Percobaan gunung meletus",
-      "gunung-1": "taruh botol kecil di nampan",
-      "gunung-2": "masukkan dua sendok soda kue",
-      "gunung-3": "tuang cuka ke dalam botol",
+      "gunung-1": "siapkan botol kosong di atas nampan",
+      "gunung-2": "masukkan dua sendok soda kue ke botol",
+      "gunung-3": "tuang cuka ke atas soda kue",
       "gunung-4": "busa meluap keluar botol",
-      "gunung-5": "amati busanya sampai berhenti",
-      "gunung-6": "catat yang terjadi selagi busa masih ada",
-      "gunung-7": "cuci botol dan nampan",
-      "gunung-8": "simpan alat di lemari",
+      "gunung-5": "amati busa sampai berhenti",
+      "gunung-6": "tulis hasil pengamatanmu",
+      "gunung-7": "bacakan catatanmu di depan kelas",
+      "gunung-8": "teman-teman bertepuk tangan",
       "t-unggah": "Mengumpulkan tugas lewat aplikasi",
-      "unggah-1": "selesaikan gambar tugasmu",
+      "unggah-1": "buka kunci layar tablet",
       "unggah-2": "buka aplikasi kelas",
       "unggah-3": "pilih tugas dari guru",
       "unggah-4": "tekan tombol unggah",
@@ -33,16 +33,16 @@
       "nasi-goreng-1": "tuang minyak ke wajan",
       "nasi-goreng-2": "panaskan minyak di atas kompor",
       "nasi-goreng-3": "tumis bawang sampai harum",
-      "nasi-goreng-4": "masukkan nasi",
-      "nasi-goreng-5": "tuang kecap",
-      "nasi-goreng-6": "aduk sampai rata",
+      "nasi-goreng-4": "masukkan nasi ke tumisan bawang",
+      "nasi-goreng-5": "tuang kecap ke atas nasi",
+      "nasi-goreng-6": "aduk di atas api sampai warnanya rata",
       "nasi-goreng-7": "matikan kompor",
       "nasi-goreng-8": "sajikan di piring",
       "t-lari": "Ikut lomba lari",
       "lari-1": "daftarkan nama",
       "lari-2": "terima nomor dada",
       "lari-3": "pasang nomor dada di baju",
-      "lari-4": "berdiri di garis start",
+      "lari-4": "petugas memeriksa nomor di bajumu",
       "lari-5": "dengar aba-aba mulai",
       "lari-6": "lari sekencang mungkin",
       "lari-7": "lewati garis finis",
@@ -68,7 +68,7 @@
       "t-ban": "Menambal ban sepeda",
       "ban-1": "lepas roda sepeda",
       "ban-2": "keluarkan ban dalam",
-      "ban-3": "cari lubangnya",
+      "ban-3": "celupkan ban dalam ke air untuk mencari lubang",
       "ban-4": "tambal lubangnya",
       "ban-5": "masukkan lagi ban dalam lalu pompa",
       "ban-6": "pasang roda",
@@ -77,9 +77,9 @@
       "t-cerita": "Menulis cerita di komputer",
       "cerita-1": "nyalakan komputer",
       "cerita-2": "buka aplikasi pengolah kata",
-      "cerita-3": "ketik judul cerita",
-      "cerita-4": "ketik isi cerita",
-      "cerita-5": "periksa ejaan ceritamu",
+      "cerita-3": "ketik judul dan isi cerita",
+      "cerita-4": "periksa ejaan ceritamu",
+      "cerita-5": "perbaiki kata yang salah",
       "cerita-6": "tekan cetak",
       "cerita-7": "ambil kertas dari printer",
       "cerita-8": "kumpulkan ke guru",
@@ -102,12 +102,12 @@
       "pot-botol-7": "tunggu bunganya jadi cabai merah",
       "pot-botol-8": "petik cabainya",
       "t-sop": "Memasak sayur sop",
-      "sop-1": "cuci sayurannya",
-      "sop-2": "potong wortel dan kentang",
-      "sop-3": "masukkan ke panci berisi air",
-      "sop-4": "rebus sampai empuk",
-      "sop-5": "tambahkan garam",
-      "sop-6": "aduk sampai garam larut",
+      "sop-1": "isi panci dengan air",
+      "sop-2": "nyalakan kompor sampai air mendidih",
+      "sop-3": "masukkan potongan wortel dan kentang ke air mendidih",
+      "sop-4": "rebus sampai sayurnya empuk",
+      "sop-5": "tambahkan garam ke sayur yang sudah empuk",
+      "sop-6": "aduk selagi kompor menyala",
       "sop-7": "matikan kompor",
       "sop-8": "tuang sop ke mangkuk"
     },
@@ -115,16 +115,16 @@
       "judul": "Far-Swapped Step Cards",
       "instruksi": "One pair of cards is swapped, sometimes with a card between them. Find the pair and swap once.",
       "t-gunung": "Volcano experiment",
-      "gunung-1": "put a small bottle on a tray",
-      "gunung-2": "add two spoons of baking soda",
-      "gunung-3": "pour vinegar into the bottle",
+      "gunung-1": "set an empty bottle on a tray",
+      "gunung-2": "put two spoons of baking soda into the bottle",
+      "gunung-3": "pour vinegar onto the baking soda",
       "gunung-4": "foam bubbles out of the bottle",
       "gunung-5": "watch the foam until it stops",
-      "gunung-6": "write down what happened while the foam is still there",
-      "gunung-7": "wash the bottle and tray",
-      "gunung-8": "put the tools in the cupboard",
+      "gunung-6": "write down what you observed",
+      "gunung-7": "read your notes to the class",
+      "gunung-8": "your classmates clap",
       "t-unggah": "Handing in work through an app",
-      "unggah-1": "finish your drawing assignment",
+      "unggah-1": "unlock the tablet screen",
       "unggah-2": "open the class app",
       "unggah-3": "choose the teacher's assignment",
       "unggah-4": "press the upload button",
@@ -136,16 +136,16 @@
       "nasi-goreng-1": "pour oil into the wok",
       "nasi-goreng-2": "heat the oil on the stove",
       "nasi-goreng-3": "fry the garlic until it smells good",
-      "nasi-goreng-4": "add the rice",
-      "nasi-goreng-5": "pour in soy sauce",
-      "nasi-goreng-6": "stir until mixed",
+      "nasi-goreng-4": "add the rice to the fried garlic and shallots",
+      "nasi-goreng-5": "pour sweet soy sauce over the rice",
+      "nasi-goreng-6": "stir over the heat until the colour is even",
       "nasi-goreng-7": "turn off the stove",
       "nasi-goreng-8": "serve it on a plate",
       "t-lari": "Running in a race",
       "lari-1": "sign up your name",
       "lari-2": "get your race number",
       "lari-3": "pin the number on your shirt",
-      "lari-4": "stand at the start line",
+      "lari-4": "an official checks the number on your shirt",
       "lari-5": "hear the start signal",
       "lari-6": "run as fast as you can",
       "lari-7": "cross the finish line",
@@ -171,7 +171,7 @@
       "t-ban": "Fixing a flat bike tyre",
       "ban-1": "take off the wheel",
       "ban-2": "pull out the inner tube",
-      "ban-3": "find the hole",
+      "ban-3": "dip the inner tube in water to find the hole",
       "ban-4": "patch the hole",
       "ban-5": "put the inner tube back and pump it up",
       "ban-6": "fit the wheel",
@@ -180,9 +180,9 @@
       "t-cerita": "Writing a story on a computer",
       "cerita-1": "turn on the computer",
       "cerita-2": "open the word processor",
-      "cerita-3": "type the story title",
-      "cerita-4": "type the story",
-      "cerita-5": "check the spelling of your story",
+      "cerita-3": "type the title and the story",
+      "cerita-4": "check your story's spelling",
+      "cerita-5": "fix the misspelt words",
       "cerita-6": "press print",
       "cerita-7": "take the paper from the printer",
       "cerita-8": "hand it to the teacher",
@@ -205,12 +205,12 @@
       "pot-botol-7": "wait for the flowers to turn into red chillies",
       "pot-botol-8": "pick the chillies",
       "t-sop": "Cooking vegetable soup",
-      "sop-1": "wash the vegetables",
-      "sop-2": "cut the carrots and potatoes",
-      "sop-3": "put them in a pot of water",
-      "sop-4": "boil until soft",
-      "sop-5": "add salt",
-      "sop-6": "stir until the salt dissolves",
+      "sop-1": "fill the pot with water",
+      "sop-2": "turn on the stove until the water boils",
+      "sop-3": "put the cut carrots and potatoes into the boiling water",
+      "sop-4": "boil until the vegetables are soft",
+      "sop-5": "add salt to the soft vegetables",
+      "sop-6": "stir while the stove is still on",
       "sop-7": "turn off the stove",
       "sop-8": "pour the soup into bowls"
     }
@@ -237,7 +237,7 @@
         {
           "id": "gunung-1",
           "labelKey": "gunung-1",
-          "emoji": "🧪"
+          "emoji": "🧺"
         },
         {
           "id": "gunung-2",
@@ -267,12 +267,12 @@
         {
           "id": "gunung-7",
           "labelKey": "gunung-7",
-          "emoji": "🧽"
+          "emoji": "🙋"
         },
         {
           "id": "gunung-8",
           "labelKey": "gunung-8",
-          "emoji": "🗄️"
+          "emoji": "👏"
         }
       ]
     },
@@ -283,7 +283,7 @@
         {
           "id": "unggah-1",
           "labelKey": "unggah-1",
-          "emoji": "🎨"
+          "emoji": "🔓"
         },
         {
           "id": "unggah-2",
@@ -390,7 +390,7 @@
         {
           "id": "lari-4",
           "labelKey": "lari-4",
-          "emoji": "🧍"
+          "emoji": "👮"
         },
         {
           "id": "lari-5",
@@ -523,7 +523,7 @@
         {
           "id": "ban-3",
           "labelKey": "ban-3",
-          "emoji": "🔍"
+          "emoji": "💧"
         },
         {
           "id": "ban-4",
@@ -569,17 +569,17 @@
         {
           "id": "cerita-3",
           "labelKey": "cerita-3",
-          "emoji": "🔤"
+          "emoji": "⌨️"
         },
         {
           "id": "cerita-4",
           "labelKey": "cerita-4",
-          "emoji": "⌨️"
+          "emoji": "🔍"
         },
         {
           "id": "cerita-5",
           "labelKey": "cerita-5",
-          "emoji": "🔍"
+          "emoji": "✏️"
         },
         {
           "id": "cerita-6",
@@ -697,17 +697,17 @@
         {
           "id": "sop-1",
           "labelKey": "sop-1",
-          "emoji": "🥕"
+          "emoji": "🫗"
         },
         {
           "id": "sop-2",
           "labelKey": "sop-2",
-          "emoji": "🔪"
+          "emoji": "🔥"
         },
         {
           "id": "sop-3",
           "labelKey": "sop-3",
-          "emoji": "🍲"
+          "emoji": "🥕"
         },
         {
           "id": "sop-4",

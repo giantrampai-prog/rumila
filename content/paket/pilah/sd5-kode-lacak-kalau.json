@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-lacak-kalau",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -31,7 +31,7 @@
       "q6": "umur = 9. kalau umur >= 10: tampil 'boleh naik', kalau tidak: tampil 'belum boleh'. Apa yang tampil?",
       "c12": "bawa payung",
       "c13": "pakai topi",
-      "q7": "hujan = Benar. kalau hujan: tampil 'bawa payung', kalau tidak: tampil 'pakai topi'. Apa yang tampil?",
+      "q7": "hujan = True. kalau hujan: tampil 'bawa payung', kalau tidak: tampil 'pakai topi'. Apa yang tampil?",
       "c14": "kurang koin",
       "c15": "beli",
       "q8": "koin = 3, harga = 5. kalau koin >= harga: tampil 'beli', kalau tidak: tampil 'kurang koin'. Apa yang tampil?",

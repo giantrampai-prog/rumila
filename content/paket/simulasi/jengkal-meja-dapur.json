@@ -1,6 +1,6 @@
 {
   "id": "jengkal-meja-dapur",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -26,7 +26,9 @@
       "timun": "timun",
       "wortel": "wortel",
       "roti-tawar": "roti tawar",
-      "garpu": "garpu dan pisau"
+      "garpu": "garpu dan pisau",
+      "sapu": "sapu",
+      "keranjang": "keranjang"
     },
     "en": {
       "judul": "Spans in the Kitchen",
@@ -34,7 +36,7 @@
       "taplak": "scarf",
       "nampan": "plate",
       "roti": "long bread",
-      "talenan": "firewood",
+      "talenan": "firewood log",
       "pisang": "banana",
       "sendok": "wooden spoon",
       "wajan": "frying pan",
@@ -46,7 +48,9 @@
       "timun": "cucumber",
       "wortel": "carrot",
       "roti-tawar": "loaf of bread",
-      "garpu": "fork and knife"
+      "garpu": "fork and knife",
+      "sapu": "broom",
+      "keranjang": "basket"
     }
   },
   "knobs": {
@@ -84,21 +88,13 @@
       "role": "benda",
       "emoji": "🧣",
       "value": 10,
-      "width": 4
+      "width": 4.0
     },
     {
-      "labelKey": "nampan",
-      "id": "nampan",
+      "labelKey": "sapu",
+      "id": "sapu",
       "role": "benda",
-      "emoji": "🍽️",
-      "value": 9,
-      "width": 3.6
-    },
-    {
-      "labelKey": "roti",
-      "id": "roti",
-      "role": "benda",
-      "emoji": "🥖",
+      "emoji": "🧹",
       "value": 7,
       "width": 2.8
     },
@@ -111,42 +107,10 @@
       "width": 2.4
     },
     {
-      "labelKey": "pisang",
-      "id": "pisang",
+      "labelKey": "roti",
+      "id": "roti",
       "role": "benda",
-      "emoji": "🍌",
-      "value": 5,
-      "width": 2
-    },
-    {
-      "labelKey": "sendok",
-      "id": "sendok",
-      "role": "benda",
-      "emoji": "🥄",
-      "value": 4,
-      "width": 1.6
-    },
-    {
-      "labelKey": "wajan",
-      "id": "wajan",
-      "role": "benda",
-      "emoji": "🍳",
-      "value": 5,
-      "width": 2
-    },
-    {
-      "labelKey": "terong",
-      "id": "terong",
-      "role": "benda",
-      "emoji": "🍆",
-      "value": 6,
-      "width": 2.4
-    },
-    {
-      "labelKey": "jagung",
-      "id": "jagung",
-      "role": "benda",
-      "emoji": "🌽",
+      "emoji": "🥖",
       "value": 4,
       "width": 1.6
     },
@@ -155,38 +119,78 @@
       "id": "ikan",
       "role": "benda",
       "emoji": "🐟",
-      "value": 4,
-      "width": 1.6
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "wajan",
+      "id": "wajan",
+      "role": "benda",
+      "emoji": "🍳",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "keranjang",
+      "id": "keranjang",
+      "role": "benda",
+      "emoji": "🧺",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "nampan",
+      "id": "nampan",
+      "role": "benda",
+      "emoji": "🍽️",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "sendok",
+      "id": "sendok",
+      "role": "benda",
+      "emoji": "🥄",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "terong",
+      "id": "terong",
+      "role": "benda",
+      "emoji": "🍆",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "jagung",
+      "id": "jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "value": 2,
+      "width": 0.8
     },
     {
       "labelKey": "teko",
       "id": "teko",
       "role": "benda",
       "emoji": "🫖",
-      "value": 3,
-      "width": 1.2
+      "value": 2,
+      "width": 0.8
     },
     {
       "labelKey": "sumpit",
       "id": "sumpit",
       "role": "benda",
       "emoji": "🥢",
-      "value": 3,
-      "width": 1.2
+      "value": 2,
+      "width": 0.8
     },
     {
       "labelKey": "timun",
       "id": "timun",
       "role": "benda",
       "emoji": "🥒",
-      "value": 3,
-      "width": 1.2
-    },
-    {
-      "labelKey": "wortel",
-      "id": "wortel",
-      "role": "benda",
-      "emoji": "🥕",
       "value": 2,
       "width": 0.8
     },
@@ -199,12 +203,28 @@
       "width": 0.8
     },
     {
+      "labelKey": "pisang",
+      "id": "pisang",
+      "role": "benda",
+      "emoji": "🍌",
+      "value": 1,
+      "width": 0.4
+    },
+    {
+      "labelKey": "wortel",
+      "id": "wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "value": 1,
+      "width": 0.4
+    },
+    {
       "labelKey": "garpu",
       "id": "garpu",
       "role": "benda",
       "emoji": "🍴",
-      "value": 2,
-      "width": 0.8
+      "value": 1,
+      "width": 0.4
     }
   ]
 }

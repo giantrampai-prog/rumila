@@ -98,7 +98,7 @@
       },
       "statement": {
         "id": "Aku bisa memakai dua blok ulangi dalam satu program supaya robot melewati jalur berbelok yang tidak muat di rak",
-        "en": "I can use two repeat blocks in one program so robot follows a turning path too long for the rack"
+        "en": "I can use two repeat blocks in one program so the robot follows a turning path too long for the rack"
       },
       "depth": [
         "pakai"
@@ -155,7 +155,7 @@
       },
       "statement": {
         "id": "Aku bisa menunjuk petak tujuan robot sebelum tiap langkah dijalankan, di program yang memakai blok ulangi",
-        "en": "I can point to where robot will land before each step runs, in a program that uses a repeat block"
+        "en": "I can point to where the robot will land before each step runs, in a program that uses a repeat block"
       },
       "depth": [
         "pakai"
@@ -290,7 +290,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Robot = mesin yang bisa bergerak atau bekerja sendiri mengikuti program (robot penyedot debu, lengan robot pabrik, robot pemotong rumput, drone pengantar). Bukan robot = benda yang digerakkan orang atau tidak bergerak (boneka, sepeda, payung, gunting). Dunia nyata: rumah, pabrik, rumah sakit, gudang. Jebakan: mainan berbentuk robot (bukan robot) dan mesin yang tidak berbentuk manusia (robot). Benda abu-abu (mobil remote, mesin cuci) dihindari. Knob: itemCount 6 → 10."
+      "catatan": "Robot = mesin yang bisa bergerak atau bekerja sendiri mengikuti program (robot penyedot debu, lengan robot pabrik, mobil tanpa sopir, drone pengantar). Bukan robot = benda yang digerakkan orang atau tidak bergerak (boneka, sepeda, payung, gunting). Dunia nyata: rumah, pabrik, rumah sakit, gudang. Jebakan: mainan berbentuk robot (bukan robot) dan mesin yang tidak berbentuk manusia (robot). Benda abu-abu (mobil remote, mesin cuci) dihindari. Knob: itemCount 6 → 10."
     }
   ]
 }

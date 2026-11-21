@@ -18,7 +18,7 @@ for (const f of semua("content/paket")) { const raw = JSON.parse(readFileSync(f,
 function tampil(p: ContentPack, o: Record<string, unknown>): string {
   const L = p.locale.id;
   const lab = typeof o.labelKey === "string" ? (L[o.labelKey] ?? `?${o.labelKey}`) : "";
-  const vis = ["emoji", "color", "scale", "count", "shape", "width", "value", "role", "price"].filter((k) => o[k] !== undefined).map((k) => k === "emoji" ? String(o[k]) : `${k}=${o[k]}`);
+  const vis = ["emoji", "color", "scale", "count", "shape", "angka", "width", "value", "role", "price"].filter((k) => o[k] !== undefined).map((k) => k === "emoji" ? String(o[k]) : `${k}=${o[k]}`);
   return `${vis.join(" ")} "${lab}"`.trim();
 }
 function blok(m: (typeof paket)[number]): string {

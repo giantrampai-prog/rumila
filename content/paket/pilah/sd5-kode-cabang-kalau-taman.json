@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-cabang-kalau-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "q3": "jam = 17. kalau jam < 17: tampil 'taman buka', kalau tidak: tampil 'taman tutup'. Apa yang tampil?",
       "c7": "main di dalam",
       "c8": "main layangan",
-      "q4": "cerah = Salah. kalau cerah: tampil 'main layangan', kalau tidak: tampil 'main di dalam'. Apa yang tampil?",
+      "q4": "cerah = False. kalau cerah: tampil 'main layangan', kalau tidak: tampil 'main di dalam'. Apa yang tampil?",
       "c9": "tunggu kering",
       "c10": "bangun istana",
       "q5": "pasir = 'basah'. kalau pasir == 'kering': tampil 'bangun istana', kalau tidak: tampil 'tunggu kering'. Apa yang tampil?",

@@ -1,6 +1,6 @@
 {
   "id": "sains-bagian-tumbuhan-di-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -92,15 +92,15 @@
       "id": "akarpohon",
       "labelKey": "i-akarpohon",
       "bin": "pilihan",
-      "emoji": "🫚",
-      "color": "#8d6e63"
+      "color": "#8d6e63",
+      "shape": "akar"
     },
     {
       "id": "akarrumput",
       "labelKey": "i-akarrumput",
       "bin": "pilihan",
-      "emoji": "🫚",
-      "color": "#bcaaa4"
+      "color": "#bcaaa4",
+      "shape": "akar"
     },
     {
       "id": "batangpohon",

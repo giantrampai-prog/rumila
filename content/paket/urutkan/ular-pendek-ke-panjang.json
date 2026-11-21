@@ -1,6 +1,6 @@
 {
   "id": "ular-pendek-ke-panjang",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,40 +9,40 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Ular Pendek ke Panjang",
-      "instruksi": "Susun benda dari yang paling pendek ke yang paling panjang.",
-      "ular": "Ular: pendek ke panjang",
-      "cacing": "Cacing: pendek ke panjang",
+      "judul": "Hewan Pendek ke Panjang",
+      "instruksi": "Hewan-hewan berbaris. Susun hewan dari yang paling pendek ke yang paling panjang.",
       "pendek": "pendek",
       "sedang": "sedang",
       "panjang": "panjang",
       "terpanjang": "paling panjang",
+      "t-cacing": "Cacing: pendek ke panjang",
       "t-buaya": "Buaya: pendek ke panjang",
       "t-ikan": "Ikan: pendek ke panjang",
       "t-kadal": "Kadal: pendek ke panjang",
       "t-ulat": "Ulat: pendek ke panjang",
-      "t-perahu": "Perahu: pendek ke panjang",
-      "t-kayu": "Kayu: pendek ke panjang",
-      "t-timun": "Timun: pendek ke panjang",
-      "t-roti": "Roti: pendek ke panjang"
+      "t-hiu": "Hiu: pendek ke panjang",
+      "t-lumba": "Lumba-lumba: pendek ke panjang",
+      "t-paus": "Paus: pendek ke panjang",
+      "t-anjinglaut": "Anjing laut: pendek ke panjang",
+      "t-berang": "Berang-berang: pendek ke panjang"
     },
     "en": {
-      "judul": "Snakes Short to Long",
-      "instruksi": "Line up the things from the shortest to the longest.",
-      "ular": "Snakes: short to long",
-      "cacing": "Worms: short to long",
+      "judul": "Animals Short to Long",
+      "instruksi": "The animals are lining up. Put the animals from the shortest to the longest.",
       "pendek": "short",
       "sedang": "medium",
       "panjang": "long",
       "terpanjang": "longest",
+      "t-cacing": "Worms: short to long",
       "t-buaya": "Crocodiles: short to long",
       "t-ikan": "Fish: short to long",
       "t-kadal": "Lizards: short to long",
       "t-ulat": "Caterpillars: short to long",
-      "t-perahu": "Boats: short to long",
-      "t-kayu": "Logs: short to long",
-      "t-timun": "Cucumbers: short to long",
-      "t-roti": "Bread loaves: short to long"
+      "t-hiu": "Sharks: short to long",
+      "t-lumba": "Dolphins: short to long",
+      "t-paus": "Whales: short to long",
+      "t-anjinglaut": "Seals: short to long",
+      "t-berang": "Otters: short to long"
     }
   },
   "knobs": {
@@ -61,32 +61,8 @@
   "mode": "susun",
   "sequences": [
     {
-      "id": "ular",
-      "titleKey": "ular",
-      "steps": [
-        {
-          "id": "ular-1",
-          "labelKey": "pendek",
-          "emoji": "🐍",
-          "width": 1
-        },
-        {
-          "id": "ular-2",
-          "labelKey": "sedang",
-          "emoji": "🐍",
-          "width": 1.4
-        },
-        {
-          "id": "ular-3",
-          "labelKey": "panjang",
-          "emoji": "🐍",
-          "width": 2
-        }
-      ]
-    },
-    {
       "id": "cacing",
-      "titleKey": "cacing",
+      "titleKey": "t-cacing",
       "steps": [
         {
           "id": "cacing-1",
@@ -146,19 +122,19 @@
           "id": "ikan-1",
           "labelKey": "pendek",
           "emoji": "🐟",
-          "width": 0.9
+          "width": 1
         },
         {
           "id": "ikan-2",
           "labelKey": "sedang",
           "emoji": "🐟",
-          "width": 1.3
+          "width": 1.4
         },
         {
           "id": "ikan-3",
           "labelKey": "panjang",
           "emoji": "🐟",
-          "width": 1.8
+          "width": 2
         }
       ]
     },
@@ -217,104 +193,134 @@
       ]
     },
     {
-      "id": "perahu",
-      "titleKey": "t-perahu",
+      "id": "hiu",
+      "titleKey": "t-hiu",
       "steps": [
         {
-          "id": "perahu-1",
+          "id": "hiu-1",
           "labelKey": "pendek",
-          "emoji": "🛶",
+          "emoji": "🦈",
           "width": 1
         },
         {
-          "id": "perahu-2",
+          "id": "hiu-2",
           "labelKey": "sedang",
-          "emoji": "🛶",
-          "width": 1.3
-        },
-        {
-          "id": "perahu-3",
-          "labelKey": "panjang",
-          "emoji": "🛶",
-          "width": 1.7
-        },
-        {
-          "id": "perahu-4",
-          "labelKey": "terpanjang",
-          "emoji": "🛶",
-          "width": 2.2
-        }
-      ]
-    },
-    {
-      "id": "kayu",
-      "titleKey": "t-kayu",
-      "steps": [
-        {
-          "id": "kayu-1",
-          "labelKey": "pendek",
-          "emoji": "🪵",
-          "width": 0.9
-        },
-        {
-          "id": "kayu-2",
-          "labelKey": "sedang",
-          "emoji": "🪵",
-          "width": 1.3
-        },
-        {
-          "id": "kayu-3",
-          "labelKey": "panjang",
-          "emoji": "🪵",
-          "width": 1.8
-        }
-      ]
-    },
-    {
-      "id": "timun",
-      "titleKey": "t-timun",
-      "steps": [
-        {
-          "id": "timun-1",
-          "labelKey": "pendek",
-          "emoji": "🥒",
-          "width": 1
-        },
-        {
-          "id": "timun-2",
-          "labelKey": "sedang",
-          "emoji": "🥒",
+          "emoji": "🦈",
           "width": 1.4
         },
         {
-          "id": "timun-3",
+          "id": "hiu-3",
           "labelKey": "panjang",
-          "emoji": "🥒",
+          "emoji": "🦈",
           "width": 2
         }
       ]
     },
     {
-      "id": "roti",
-      "titleKey": "t-roti",
+      "id": "lumba",
+      "titleKey": "t-lumba",
       "steps": [
         {
-          "id": "roti-1",
+          "id": "lumba-1",
           "labelKey": "pendek",
-          "emoji": "🥖",
-          "width": 0.8
+          "emoji": "🐬",
+          "width": 1
         },
         {
-          "id": "roti-2",
+          "id": "lumba-2",
           "labelKey": "sedang",
-          "emoji": "🥖",
-          "width": 1.2
+          "emoji": "🐬",
+          "width": 1.3
         },
         {
-          "id": "roti-3",
+          "id": "lumba-3",
           "labelKey": "panjang",
-          "emoji": "🥖",
+          "emoji": "🐬",
           "width": 1.7
+        },
+        {
+          "id": "lumba-4",
+          "labelKey": "terpanjang",
+          "emoji": "🐬",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "paus",
+      "titleKey": "t-paus",
+      "steps": [
+        {
+          "id": "paus-1",
+          "labelKey": "pendek",
+          "emoji": "🐋",
+          "width": 1
+        },
+        {
+          "id": "paus-2",
+          "labelKey": "sedang",
+          "emoji": "🐋",
+          "width": 1.4
+        },
+        {
+          "id": "paus-3",
+          "labelKey": "panjang",
+          "emoji": "🐋",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "anjinglaut",
+      "titleKey": "t-anjinglaut",
+      "steps": [
+        {
+          "id": "anjinglaut-1",
+          "labelKey": "pendek",
+          "emoji": "🦭",
+          "width": 1
+        },
+        {
+          "id": "anjinglaut-2",
+          "labelKey": "sedang",
+          "emoji": "🦭",
+          "width": 1.4
+        },
+        {
+          "id": "anjinglaut-3",
+          "labelKey": "panjang",
+          "emoji": "🦭",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "berang",
+      "titleKey": "t-berang",
+      "steps": [
+        {
+          "id": "berang-1",
+          "labelKey": "pendek",
+          "emoji": "🦦",
+          "width": 1
+        },
+        {
+          "id": "berang-2",
+          "labelKey": "sedang",
+          "emoji": "🦦",
+          "width": 1.3
+        },
+        {
+          "id": "berang-3",
+          "labelKey": "panjang",
+          "emoji": "🦦",
+          "width": 1.7
+        },
+        {
+          "id": "berang-4",
+          "labelKey": "terpanjang",
+          "emoji": "🦦",
+          "width": 2.2
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-cari-robot-pabrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,11 +13,7 @@
       "instruksi": "Robot adalah mesin yang bekerja sendiri mengikuti program. Pisahkan robot dan yang bukan robot.",
       "bin-robot": "robot",
       "bin-bukan": "bukan robot",
-      "i-pemerah-susu": "robot pemerah susu sapi",
       "i-mobil-otomatis": "mobil yang menyetir sendiri",
-      "i-pembersih-kolam": "robot pembersih kolam renang",
-      "i-pemetik-buah": "robot pemetik buah",
-      "i-pembersih-jendela": "robot pembersih kaca gedung",
       "i-traktor": "traktor yang membajak sawah sendiri",
       "i-penyambut": "robot penyambut tamu di toko",
       "i-palu": "palu",
@@ -26,18 +22,17 @@
       "i-patung-kayu": "patung robot dari kayu",
       "i-troli": "troli belanja",
       "i-bola": "bola basket",
-      "i-keranjang": "keranjang anyaman"
+      "i-keranjang": "keranjang anyaman",
+      "i-lengan-pengecat": "lengan robot pengecat mobil",
+      "i-kereta-otomatis": "kereta yang berjalan sendiri tanpa masinis",
+      "i-pengangkut-gudang": "robot pengangkut barang di gudang"
     },
     "en": {
       "judul": "Which One Is a Robot?",
       "instruksi": "A robot is a machine that works by itself following a program. Sort the robots from the things that are not robots.",
       "bin-robot": "robot",
       "bin-bukan": "not a robot",
-      "i-pemerah-susu": "cow-milking robot",
       "i-mobil-otomatis": "self-driving car",
-      "i-pembersih-kolam": "pool-cleaning robot",
-      "i-pemetik-buah": "fruit-picking robot",
-      "i-pembersih-jendela": "window-cleaning robot for tall buildings",
       "i-traktor": "tractor that ploughs the field by itself",
       "i-penyambut": "shop greeter robot",
       "i-palu": "hammer",
@@ -46,7 +41,10 @@
       "i-patung-kayu": "wooden robot statue",
       "i-troli": "shopping trolley",
       "i-bola": "basketball",
-      "i-keranjang": "woven basket"
+      "i-keranjang": "woven basket",
+      "i-lengan-pengecat": "car-painting robot arm",
+      "i-kereta-otomatis": "train that runs by itself without a driver",
+      "i-pengangkut-gudang": "warehouse robot that carries goods"
     }
   },
   "knobs": {
@@ -78,10 +76,10 @@
   ],
   "items": [
     {
-      "id": "pemerah-susu",
-      "labelKey": "i-pemerah-susu",
+      "id": "lengan-pengecat",
+      "labelKey": "i-lengan-pengecat",
       "bin": "robot",
-      "emoji": "🐄"
+      "emoji": "🦾"
     },
     {
       "id": "mobil-otomatis",
@@ -90,22 +88,16 @@
       "emoji": "🚘"
     },
     {
-      "id": "pembersih-kolam",
-      "labelKey": "i-pembersih-kolam",
+      "id": "kereta-otomatis",
+      "labelKey": "i-kereta-otomatis",
       "bin": "robot",
-      "emoji": "🏊"
+      "emoji": "🚈"
     },
     {
-      "id": "pemetik-buah",
-      "labelKey": "i-pemetik-buah",
+      "id": "pengangkut-gudang",
+      "labelKey": "i-pengangkut-gudang",
       "bin": "robot",
-      "emoji": "🍎"
-    },
-    {
-      "id": "pembersih-jendela",
-      "labelKey": "i-pembersih-jendela",
-      "bin": "robot",
-      "emoji": "🏢"
+      "emoji": "🤖"
     },
     {
       "id": "traktor",

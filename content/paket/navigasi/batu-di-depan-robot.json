@@ -1,6 +1,6 @@
 {
   "id": "batu-di-depan-robot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Rock Ahead",
-      "instruksi": "If there is a rock in front of robot press 'jump', if it is empty press 'forward'."
+      "instruksi": "If there is a rock in front of the robot press 'jump', if it is empty press 'forward'."
     }
   },
   "knobs": {

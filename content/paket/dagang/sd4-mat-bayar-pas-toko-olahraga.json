@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-bayar-pas-toko-olahraga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Uang Pas di Toko Olahraga",
-      "instruksi": "Lihat total harganya, lalu bayar dengan uang pas dari laci.",
+      "instruksi": "Jumlahkan harga semua barangnya, lalu bayar dengan uang pas dari laci.",
       "tali": "tali lompat",
       "kok": "kok bulu tangkis",
       "bola": "bola sepak",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Exact Money at the Sports Shop",
-      "instruksi": "Look at the total price, then pay the exact amount from the drawer.",
+      "instruksi": "Add up the prices of all the items, then pay the exact amount from the drawer.",
       "tali": "skipping rope",
       "kok": "shuttlecock",
       "bola": "football",

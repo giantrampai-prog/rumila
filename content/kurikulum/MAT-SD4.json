@@ -190,8 +190,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memberi kembalian yang tepat dari Rp50.000 atau Rp100.000 untuk harga ribuan",
-        "en": "I can give the right change from Rp50,000 or Rp100,000 for prices in thousands"
+        "id": "Aku bisa memberi kembalian yang tepat dari Rp50.000 atau Rp100.000 untuk belanja dua atau tiga barang",
+        "en": "I can give the right change from Rp50,000 or Rp100,000 when a customer buys two or three items"
       },
       "depth": [
         "pakai"
@@ -210,7 +210,7 @@
       "mechanics": [
         "dagang"
       ],
-      "catatan": "Pembeli membayar 50 ribu (harga < 50 ribu) atau 100 ribu; anak menyusun kembalian dari laci. Jebakan: meminjam di puluhan ribu (100 − 74 = 26, bukan 36). Bukti: jumlah kembalian tepat."
+      "catatan": "Pembeli membeli 2–3 barang (dua jenis) dengan total Rp21.000–Rp99.000 dan membayar dengan selembar uang terkecil yang cukup: 50 ribu (total kurang dari 50 ribu) atau 100 ribu. Lebih dalam dari SD 3 (UANG.01, satu atau dua barang, dibayar 10 ribu sampai 100 ribu): uang yang dibayar selalu 50/100 ribu, kembalian sampai Rp50.000, dan hampir selalu meminjam di puluhan ribu sehingga kembalian disusun dari beberapa lembar. Jebakan: 100 − 74 = 26, bukan 36. Bukti: jumlah kembalian tepat. Knob: 2 → 3 barang."
     },
     {
       "id": "MAT.SD4.KALI-BAGI.01",

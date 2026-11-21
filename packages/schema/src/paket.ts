@@ -38,7 +38,9 @@ const Visual = {
   /** jumlah salinan yang digambar (kelompok benda) */
   count: z.number().int().min(1).max(20).optional(),
   /** bentuk dasar untuk benda tanpa emoji */
-  shape: z.enum(["circle", "square", "triangle", "rect", "star", "berudu"]).optional(),
+  shape: z.enum(["circle", "square", "triangle", "rect", "star", "berudu", "belah-ketupat", "koin", "uang", "akar"]).optional(),
+  /** teks angka pendek yang digambar di atas bentuk (mis. "500", "1.000", "Rp2.000"); koin & uang menampilkannya sebagai nominal */
+  angka: z.string().min(1).max(8).optional(),
   /** lebar relatif untuk benda memanjang (ular, pensil) */
   width: z.number().min(0.25).max(4).optional(),
 };
@@ -105,6 +107,9 @@ export const PaketUrutkanObj = z.object({
    *  dulu: dua langkah, anak menyentuh yang terjadi lebih dulu ·
    *  label: langkah sudah urut, anak menempel label pertama/lalu/terakhir di bawah tiap gambar lalu tokoh bercerita mengikuti label */
   mode: z.enum(["susun", "perbaiki", "dulu", "label"]).default("susun"),
+  /** cara memendekkan sequence yang lebih panjang dari knob `steps`: akhir = ambil n langkah pertama (bawaan) ·
+   *  tengah = langkah pertama & terakhir dipertahankan, langkah terdekat ke tengah dibuang lebih dulu */
+  potong: z.enum(["akhir", "tengah"]).optional(),
   sequences: z.array(z.object({
     id: Slug,
     titleKey: Key,
@@ -155,6 +160,9 @@ export const PaketDagang = z.object({
   /** harga ditampilkan sebagai jumlah koin bergambar (TK A) atau "Rp7.000" (TK B) */
   priceLabel: z.enum(["koin", "rupiah"]).default("rupiah"),
   goods: z.array(DagangGood).min(1),
+  /** mode bayar/kembalian dengan knob `harga`: true = barang yang tampil diundi dari barang ber-`price` sama dengan harga ronde
+   *  (bila ada; kalau tidak, pesanan acak seperti bawaan). Tanpa field ini perilaku lama (barang acak, harga dari knob). */
+  barangIkutHarga: z.boolean().optional(),
   /** aturan pembeli yang dibangkitkan dari seed */
   customerRule: z.object({
     itemsMin: z.number().int().min(1), itemsMax: z.number().int().min(1),

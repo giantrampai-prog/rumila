@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-larik-nampan-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Nampan Kue Berbaris",
-      "instruksi": "Di nampan, 3 × 5 artinya 3 baris dan tiap baris 5 kue, sama dengan 5 + 5 + 5. Taruh tiap nampan dan kartu tambah di rak perkaliannya.",
+      "instruksi": "3 × 5 artinya 3 baris, tiap baris 5 kue, sama dengan 5 + 5 + 5. Taruh tiap nampan dan kartu tambah di rak perkaliannya.",
       "b-2x4": "2 × 4",
       "i-2-baris-kue-mangkuk-4": "2 baris kue mangkuk, tiap baris 4",
       "i-2-baris-donat-4": "2 baris donat, tiap baris 4",
@@ -38,7 +38,7 @@
     },
     "en": {
       "judul": "Trays of Treats in Rows",
-      "instruksi": "On a tray, 3 × 5 means 3 rows with 5 treats in each row, the same as 5 + 5 + 5. Put each tray and adding card on its multiplication shelf.",
+      "instruksi": "3 × 5 means 3 rows with 5 treats in each row, the same as 5 + 5 + 5. Put each tray and adding card on its multiplication shelf.",
       "b-2x4": "2 × 4",
       "i-2-baris-kue-mangkuk-4": "2 rows of cupcakes, 4 in each row",
       "i-2-baris-donat-4": "2 rows of doughnuts, 4 in each row",

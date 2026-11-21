@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penyebab-gerak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Apa Penyebabnya?",
-      "instruksi": "Benda tidak bergerak sendiri. Sentuh gambar yang terjadi lebih dulu.",
+      "instruksi": "Dorongan dan tarikan membuat benda bergerak, berhenti, atau berbelok. Sentuh penyebabnya, yang terjadi lebih dulu.",
       "s-tendang": "Mana yang lebih dulu?",
       "tendang-awal": "kaki menendang bola",
       "tendang-akhir": "bola melaju",
@@ -44,7 +44,7 @@
     },
     "en": {
       "judul": "What Caused It?",
-      "instruksi": "Things don't move by themselves. Touch the picture that happened first.",
+      "instruksi": "Pushes and pulls make things move, stop, or turn. Touch the cause, the one that happened first.",
       "s-tendang": "Which came first?",
       "tendang-awal": "foot kicks the ball",
       "tendang-akhir": "ball speeds away",

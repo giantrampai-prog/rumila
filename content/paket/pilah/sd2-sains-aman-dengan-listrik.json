@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-aman-dengan-listrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Aman dengan Listrik",
-      "instruksi": "Taruh tiap kebiasaan ke rak aman atau berbahaya.",
+      "instruksi": "Saat memakai alat listrik di rumah dan saat bermain, kebiasaan ini aman atau berbahaya? Taruh ke raknya.",
       "b-aman": "aman",
       "b-bahaya": "berbahaya",
       "i-dewasa": "minta orang dewasa mencolokkan kabel",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Safe with Electricity",
-      "instruksi": "Put each habit on the safe shelf or the dangerous shelf.",
+      "instruksi": "When using electrical things at home and when playing, is this habit safe or dangerous? Put it on its shelf.",
       "b-aman": "safe",
       "b-bahaya": "dangerous",
       "i-dewasa": "asking a grown-up to plug in",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan-dapur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Alami atau Buatan di Dapur?",
-      "instruksi": "Bahan ini langsung dari alam atau dibuat manusia? Taruh ke raknya.",
+      "instruksi": "Lihat bahan-bahan di dapur. Bahan ini langsung dari alam atau dibuat manusia? Taruh ke raknya.",
       "b-alami": "alami",
       "b-buatan": "buatan manusia",
       "i-bambu": "bambu",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Natural or Made in the Kitchen?",
-      "instruksi": "Does this material come straight from nature or is it made by people? Put it on its shelf.",
+      "instruksi": "Look at the materials in the kitchen. Does this material come straight from nature or is it made by people? Put it on its shelf.",
       "b-alami": "natural",
       "b-buatan": "made by people",
       "i-bambu": "bamboo",

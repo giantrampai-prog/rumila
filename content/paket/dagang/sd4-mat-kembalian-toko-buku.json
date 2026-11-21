@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-kembalian-toko-buku",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kasir Toko Buku",
-      "instruksi": "Pembeli membayar dengan selembar uang yang cukup. Berikan kembalian yang pas.",
+      "instruksi": "Pembeli membeli dua atau tiga barang dan membayar dengan selembar uang 50 ribu atau 100 ribu. Jumlahkan harganya, lalu berikan kembalian yang pas.",
       "cerita": "buku cerita",
       "komik": "komik",
       "atlas": "atlas",
@@ -20,13 +20,13 @@
       "kalkulator": "sempoa",
       "penggaris": "penggaris",
       "gunting": "gunting",
-      "tas": "tas sekolah",
       "ensiklopedia": "ensiklopedia",
-      "spidol": "spidol"
+      "spidol": "spidol",
+      "tulis": "buku tulis"
     },
     "en": {
       "judul": "Bookshop Cashier",
-      "instruksi": "The customer pays with one note that is enough. Give the exact change.",
+      "instruksi": "The customer buys two or three things and pays with one 50,000 or 100,000 note. Add up the prices, then give the exact change.",
       "cerita": "storybook",
       "komik": "comic",
       "atlas": "atlas",
@@ -36,18 +36,18 @@
       "kalkulator": "abacus",
       "penggaris": "ruler",
       "gunting": "scissors",
-      "tas": "school bag",
       "ensiklopedia": "encyclopedia",
-      "spidol": "marker pens"
+      "spidol": "marker pens",
+      "tulis": "exercise books"
     }
   },
   "knobs": {
     "itemsMax": {
-      "min": 1,
-      "max": 1,
-      "default": 1,
+      "min": 2,
+      "max": 3,
+      "default": 2,
       "step": 1,
-      "keterangan": "satu barang per pembeli; dibayar dengan uang kertas terkecil yang lebih besar dari harga"
+      "keterangan": "barang per pembeli: 2 → 3 (dua jenis); total Rp21.000–Rp99.000, dibayar selembar 50 ribu atau 100 ribu"
     }
   },
   "assets": [],
@@ -82,13 +82,13 @@
     {
       "id": "atlas",
       "labelKey": "atlas",
-      "price": 74000,
+      "price": 45000,
       "emoji": "🗺️"
     },
     {
       "id": "kamus",
       "labelKey": "kamus",
-      "price": 56000,
+      "price": 39000,
       "emoji": "📘"
     },
     {
@@ -100,19 +100,19 @@
     {
       "id": "krayon",
       "labelKey": "krayon",
-      "price": 37000,
+      "price": 27000,
       "emoji": "🖍️"
     },
     {
       "id": "kalkulator",
       "labelKey": "kalkulator",
-      "price": 83000,
+      "price": 34000,
       "emoji": "🧮"
     },
     {
       "id": "penggaris",
       "labelKey": "penggaris",
-      "price": 9000,
+      "price": 11000,
       "emoji": "📏"
     },
     {
@@ -122,29 +122,29 @@
       "emoji": "✂️"
     },
     {
-      "id": "tas",
-      "labelKey": "tas",
-      "price": 96000,
-      "emoji": "🎒"
+      "id": "tulis",
+      "labelKey": "tulis",
+      "price": 13000,
+      "emoji": "📓"
     },
     {
       "id": "ensiklopedia",
       "labelKey": "ensiklopedia",
-      "price": 68000,
+      "price": 47000,
       "emoji": "📚"
     },
     {
       "id": "spidol",
       "labelKey": "spidol",
-      "price": 29000,
+      "price": 16000,
       "emoji": "🖊️"
     }
   ],
   "customerRule": {
-    "itemsMin": 1,
-    "itemsMax": 1,
+    "itemsMin": 2,
+    "itemsMax": 3,
     "payExact": true,
     "maxTotal": 99000,
-    "kindsMax": 1
+    "kindsMax": 2
   }
 }

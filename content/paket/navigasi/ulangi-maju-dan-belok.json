@@ -1,6 +1,6 @@
 {
   "id": "ulangi-maju-dan-belok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,21 +9,21 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Ulangi Maju dan Belok",
-      "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya robot tepat di bintang."
+      "judul": "Ulangi Maju lalu Lompat",
+      "instruksi": "Isi blok ulangi dengan maju lalu lompat, lalu pilih berapa kali supaya robot tepat di bintang."
     },
     "en": {
-      "judul": "Repeat Forward and Turn",
-      "instruksi": "Fill the repeat block with two commands, then choose how many times so robot lands right on the star."
+      "judul": "Repeat Forward then Jump",
+      "instruksi": "Fill the repeat block with forward then jump, then choose how many times so the robot lands right on the star."
     }
   },
   "knobs": {
     "distance": {
-      "min": 3,
+      "min": 4,
       "max": 6,
-      "default": 3,
-      "step": 1,
-      "keterangan": "jumlah perintah terpendek tanpa ulangi; rak 3 slot memaksa 'ulangi N × (dua perintah)'"
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah perintah terpendek tanpa ulangi: 4 = dua pasang maju-lompat, 6 = tiga pasang; rak 3 slot memaksa 'ulangi N × [maju, lompat]'"
     }
   },
   "assets": [],
@@ -33,30 +33,12 @@
   "execMode": "program",
   "commands": [
     "maju",
-    "kanan",
+    "lompat",
     "ulangi"
   ],
   "grids": [
     {
-      "id": "maju-maju-x2",
-      "w": 6,
-      "h": 1,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 4,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-maju-x3",
+      "id": "maju-lompat-x2-e-7x1-00",
       "w": 7,
       "h": 1,
       "start": {
@@ -69,296 +51,740 @@
         "y": 0
       },
       "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-pojok",
-      "w": 3,
-      "h": 3,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 1,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-tengah",
-      "w": 4,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 1,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 2,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-naik",
-      "w": 3,
-      "h": 3,
-      "start": {
-        "x": 0,
-        "y": 2,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 1,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-tengah-putar-kiri",
-      "w": 4,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 2,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 2,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-maju-x2-papan-7x1-00",
-      "w": 7,
-      "h": 1,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
       "optimal": 4,
       "rackSlots": 3
     },
     {
-      "id": "maju-maju-x3-papan-8x1-00",
+      "id": "maju-lompat-x2-e-8x1-10",
       "w": 8,
       "h": 1,
       "start": {
-        "x": 0,
+        "x": 1,
         "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-e-9x2-01",
+      "w": 9,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
         "dir": "E"
       },
       "goal": {
         "x": 6,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-pojok-papan-4x3-00",
-      "w": 4,
-      "h": 3,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 1,
         "y": 1
       },
       "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-tengah-papan-5x4-00",
-      "w": 5,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 1,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 2,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-pojok-papan-4x3-00-putar-kiri",
-      "w": 3,
-      "h": 4,
-      "start": {
-        "x": 0,
-        "y": 3,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 1,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-tengah-papan-5x4-00-putar-kiri",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 1,
-        "y": 3,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 2,
-        "y": 2
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-naik-papan-4x3-00",
-      "w": 4,
-      "h": 3,
-      "start": {
-        "x": 0,
-        "y": 2,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 1,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-kanan-x2-tengah-putar-kiri-papan-5x4-00",
-      "w": 5,
-      "h": 4,
-      "start": {
-        "x": 1,
-        "y": 2,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 2,
-        "y": 1
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 3,
-      "rackSlots": 3
-    },
-    {
-      "id": "maju-maju-x2-papan-7x1-00-papan-8x1-00",
-      "w": 8,
-      "h": 1,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
       "optimal": 4,
       "rackSlots": 3
     },
     {
-      "id": "maju-maju-x3-papan-8x1-00-papan-9x1-00",
+      "id": "maju-lompat-x2-e-8x3-01",
+      "w": 8,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-w-7x1-60",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-w-9x1-70",
       "w": 9,
       "h": 1,
       "start": {
-        "x": 0,
+        "x": 7,
         "y": 0,
-        "dir": "E"
+        "dir": "W"
       },
       "goal": {
-        "x": 6,
+        "x": 1,
         "y": 0
       },
       "walls": [],
-      "rocks": [],
-      "optimal": 6,
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
       "rackSlots": 3
     },
     {
-      "id": "maju-kanan-x2-naik-papan-4x3-00-putar-kanan",
-      "w": 3,
-      "h": 4,
+      "id": "maju-lompat-x2-w-8x2-70",
+      "w": 8,
+      "h": 2,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-n-2x7-06",
+      "w": 2,
+      "h": 7,
       "start": {
         "x": 0,
-        "y": 0,
-        "dir": "E"
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-n-3x8-17",
+      "w": 3,
+      "h": 8,
+      "start": {
+        "x": 1,
+        "y": 7,
+        "dir": "N"
       },
       "goal": {
         "x": 1,
         "y": 1
       },
       "walls": [],
-      "rocks": [],
-      "optimal": 3,
+      "rocks": [
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
       "rackSlots": 3
     },
     {
-      "id": "maju-kanan-x2-tengah-putar-kiri-papan-5x4-00-putar-kanan",
-      "w": 4,
-      "h": 5,
+      "id": "maju-lompat-x2-n-2x9-18",
+      "w": 2,
+      "h": 9,
       "start": {
         "x": 1,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-s-2x7-10",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-s-3x8-00",
+      "w": 3,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-s-2x9-01",
+      "w": 2,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 7
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 6
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x2-e-10x2-20",
+      "w": 10,
+      "h": 2,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-e-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 9,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-e-10x2-01",
+      "w": 10,
+      "h": 2,
+      "start": {
+        "x": 0,
         "y": 1,
         "dir": "E"
       },
       "goal": {
-        "x": 2,
+        "x": 9,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-e-10x3-01",
+      "w": 10,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 9,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-w-10x1-90",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 9,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-w-10x2-90",
+      "w": 10,
+      "h": 2,
+      "start": {
+        "x": 9,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-w-10x3-92",
+      "w": 10,
+      "h": 3,
+      "start": {
+        "x": 9,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
         "y": 2
       },
       "walls": [],
-      "rocks": [],
-      "optimal": 3,
+      "rocks": [
+        {
+          "x": 7,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-n-2x10-09",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-n-3x10-19",
+      "w": 3,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-s-2x10-10",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 9
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 8
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-s-3x10-20",
+      "w": 3,
+      "h": 10,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 9
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 8
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-n-3x10-29",
+      "w": 3,
+      "h": 10,
+      "start": {
+        "x": 2,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-x3-s-3x10-00",
+      "w": 3,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 9
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 8
+        }
+      ],
+      "optimal": 6,
       "rackSlots": 3
     }
   ]

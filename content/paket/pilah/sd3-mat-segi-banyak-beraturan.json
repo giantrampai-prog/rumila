@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-segi-banyak-beraturan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,6 @@
       "i-rambu-segi-delapan": "rambu segi delapan",
       "i-persegi-panjang": "persegi panjang",
       "i-belah-ketupat": "belah ketupat",
-      "i-belah-ketupat-kecil": "belah ketupat kecil",
       "i-jajar-genjang": "jajar genjang",
       "i-trapesium": "trapesium",
       "i-segitiga-sikumsiku": "segitiga siku-siku"
@@ -39,7 +38,6 @@
       "i-rambu-segi-delapan": "octagon sign",
       "i-persegi-panjang": "rectangle",
       "i-belah-ketupat": "rhombus",
-      "i-belah-ketupat-kecil": "small rhombus",
       "i-jajar-genjang": "parallelogram",
       "i-trapesium": "trapezium",
       "i-segitiga-sikumsiku": "right-angled triangle"
@@ -122,14 +120,7 @@
     {
       "id": "ketupat",
       "labelKey": "i-belah-ketupat",
-      "bin": "tidak",
-      "emoji": "🔷"
-    },
-    {
-      "id": "ketupat-kecil",
-      "labelKey": "i-belah-ketupat-kecil",
-      "bin": "tidak",
-      "emoji": "🔶"
+      "bin": "tidak"
     },
     {
       "id": "jajar-genjang",

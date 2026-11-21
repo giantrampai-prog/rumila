@@ -44,8 +44,8 @@ const EMOJI_BARANG: Record<string, string> = {
 
 function visualGood(g: Good | undefined, id: string): VisualSpec {
   if (!g) return { emoji: EMOJI_BARANG[id] ?? "🛍️" };
-  const { emoji, color, scale, shape, width } = g;
-  return { emoji: emoji ?? (shape ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width };
+  const { emoji, color, scale, shape, width, angka } = g;
+  return { emoji: emoji ?? (shape ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width, angka };
 }
 
 function visualUang(nilai: number): VisualSpec & { label: string } {
@@ -71,6 +71,44 @@ function tangan(n: number): string {
 
 function ulang(emoji: string, n: number) {
   return Array.from({ length: n }, () => emoji).join("");
+}
+
+/**
+ * Rincian harga per barang (bayar/kembalian): dipakai bila pembelian > 1 barang, paket tanpa knob `harga`, dan jumlah
+ * qty × price persis = harga ronde. Anak menjumlahkan sendiri, jadi total TIDAK ditampilkan/dibacakan (kecuali saat bantuan
+ * atau sesudah dijawab). Pembelian 1 barang / paket ber-knob harga (TK) → null, tampilan lama (total).
+ */
+export function rincianHarga(paket: PaketDagang, ronde: RondeDagang): { goodId: string; qty: number; price: number }[] | null {
+  if (paket.knobs?.harga) return null;
+  const qty = ronde.pesanan.reduce((s, x) => s + x.qty, 0);
+  if (qty < 2) return null;
+  const baris = ronde.pesanan.map((x) => ({ goodId: x.goodId, qty: x.qty, price: paket.goods.find((g) => g.id === x.goodId)?.price ?? NaN }));
+  return baris.reduce((s, b) => s + b.qty * b.price, 0) === ronde.harga ? baris : null;
+}
+
+/** Kalimat VO rincian: "Buku 2 kali 23.000 rupiah dan pensil 9.000 rupiah." */
+function ucapRincian(baris: { goodId: string; qty: number; price: number }[], nama: (id: string) => string): string {
+  return baris.map((b) => `${nama(b.goodId)} ${b.qty > 1 ? `${b.qty} kali ` : ""}${formatRibuan(b.price)} rupiah`).join(" dan ") + ".";
+}
+
+/** Daftar harga per barang + baris total ("?" sampai bantuan/hasil). */
+function RincianHarga({ baris, nama, visual, total, buka }: { baris: { goodId: string; qty: number; price: number }[]; nama: (id: string) => string; visual: (id: string) => VisualSpec; total: number; buka: boolean }) {
+  return (
+    <div className="flex flex-col gap-1" aria-label="Harga tiap barang">
+      {baris.map((b) => (
+        <div key={b.goodId} className="flex flex-wrap items-center gap-1.5">
+          <Benda v={visual(b.goodId)} size={30} />
+          <span className="text-[14px] font-bold">{nama(b.goodId)}</span>
+          {b.qty > 1 && <span className="rounded-full px-2" style={{ ...Tebal, fontSize: 15, background: "#fff1c2" }}>{b.qty} ×</span>}
+          <span style={{ ...Tebal, fontSize: 18, color: "#0567c2" }}>{rupiah(b.price)}</span>
+        </div>
+      ))}
+      <div className="flex items-center gap-1.5 border-t border-dashed pt-1" style={{ borderColor: "rgba(11,37,69,.25)" }}>
+        <span className="text-[14px] font-bold">Total</span>
+        <span className={buka ? "akademi-pop" : ""} style={{ ...Tebal, fontSize: 20, color: buka ? "#0567c2" : INK }}>{buka ? rupiah(total) : "?"}</span>
+      </div>
+    </div>
+  );
 }
 
 /* ---------------- kerangka bersama ---------------- */
@@ -615,12 +653,17 @@ function ModeBayar(c: Ctx) {
   const { uang, ambil, kembalikan, total } = useNampan();
   const { hint, bantu } = useBantu(c.onHint);
   const barang = ronde.pesanan.length ? ronde.pesanan : [];
-  const teks = ronde.priceLabel === "koin" ? `Harganya ${Math.round(ronde.harga / KOIN)} koin.` : `Harganya ${formatRibuan(ronde.harga)} rupiah.`;
+  const rincian = useMemo(() => rincianHarga(c.paket, ronde), [c.paket, ronde]);
+  const teks = rincian
+    ? `${ucapRincian(rincian, nama)} Berapa semuanya? Bayar dengan uang pas.`
+    : ronde.priceLabel === "koin" ? `Harganya ${Math.round(ronde.harga / KOIN)} koin.` : `Harganya ${formatRibuan(ronde.harga)} rupiah.`;
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, ronde.harga - total) : null;
 
   return (
     <Kunci terkunci={terkunci}>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
+      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={rincian
+        ? <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
+        : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
       <Lapak><div className="flex flex-wrap justify-center gap-2">{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={52} label={nama(p.goodId)} className="min-h-14 min-w-14" />)}</div></Lapak>
       <Nampan uang={uang} onAmbil={kembalikan} judul="Nampan bayar" sorot={hint && total === ronde.harga} />
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={sorot} disabled={terkunci} />
@@ -638,7 +681,10 @@ function ModeKembalian(c: Ctx) {
   const { hint, bantu } = useBantu(c.onHint);
   const kembalian = ronde.dibayar - ronde.harga;
   const vBayar = visualUang(ronde.dibayar);
-  const teks = `Ini uang ${formatRibuan(ronde.dibayar)}. Harganya ${formatRibuan(ronde.harga)}. Berapa kembaliannya?`;
+  const rincian = useMemo(() => rincianHarga(c.paket, ronde), [c.paket, ronde]);
+  const teks = rincian
+    ? `Ini uang ${formatRibuan(ronde.dibayar)}. ${ucapRincian(rincian, nama)} Jumlahkan harganya. Berapa kembaliannya?`
+    : `Ini uang ${formatRibuan(ronde.dibayar)}. Harganya ${formatRibuan(ronde.harga)}. Berapa kembaliannya?`;
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, kembalian - total) : null;
   const langkah = useMemo(() => { const out: number[] = []; for (let v = ronde.harga; v <= ronde.dibayar; v += KOIN) out.push(v); return out.length <= 12 ? out : []; }, [ronde.harga, ronde.dibayar]);
 
@@ -646,15 +692,20 @@ function ModeKembalian(c: Ctx) {
     <Kunci terkunci={terkunci}>
       <Pembeli
         wajah={wajah} teksUcap={teks} hasil={hasil}
-        balon={
+        balon={rincian ? (
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center gap-2"><Benda v={vBayar} size={40} /><span style={{ ...Tebal, fontSize: 20 }}>{rupiah(ronde.dibayar)}</span></div>
+            <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
+          </div>
+        ) : (
           <div className="flex flex-wrap items-center gap-2">
             <Benda v={vBayar} size={40} /><span style={{ ...Tebal, fontSize: 20 }}>{rupiah(ronde.dibayar)}</span>
             <span className="opacity-50" style={{ ...Tebal, fontSize: 20 }}>→</span>
             {ronde.pesanan.map((p) => <Benda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={36} />)}
             <span style={{ ...Tebal, fontSize: 18, color: "#0567c2" }}>{rupiah(ronde.harga)}</span>
           </div>
-        }
-        jawabanBenar={`Kembalian ${rupiah(kembalian)}`}
+        )}
+        jawabanBenar={rincian ? `Total ${rupiah(ronde.harga)} · kembalian ${rupiah(kembalian)}` : `Kembalian ${rupiah(kembalian)}`}
       />
       <Lapak>
         <div className="flex flex-wrap items-center justify-center gap-3 text-white">

@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-perangkat-terhubung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Perangkat yang Terhubung",
-      "instruksi": "Seret tiap benda: apakah ia mengirim data lewat internet, atau bekerja sendiri tanpa internet?",
-      "bin-kirim": "kirim data lewat internet",
+      "instruksi": "Seret tiap benda: apakah ia terhubung ke internet untuk mengirim atau menerima data, atau bekerja sendiri tanpa internet?",
+      "bin-kirim": "terhubung ke internet",
       "bin-sendiri": "bekerja tanpa internet",
       "i1": "sensor cuaca yang mengirim suhu ke situs cuaca",
       "i2": "kamera keamanan yang bisa dilihat dari HP",
       "i3": "lampu pintar yang diatur lewat aplikasi",
-      "i4": "mesin ATM",
+      "i4": "mesin parkir yang mengirim data ke aplikasi",
       "i5": "speaker pintar yang menjawab pertanyaan",
       "i6": "meteran listrik pintar",
       "i7": "mobil yang mengirim lokasinya ke aplikasi",
@@ -30,13 +30,13 @@
     },
     "en": {
       "judul": "Connected Devices",
-      "instruksi": "Drag each thing: does it send data over the internet, or work on its own without the internet?",
-      "bin-kirim": "sends data online",
+      "instruksi": "Drag each thing: does it connect to the internet to send or receive data, or work on its own without the internet?",
+      "bin-kirim": "connected to the internet",
       "bin-sendiri": "works offline",
       "i1": "weather sensor sending temperature to a weather website",
       "i2": "security camera you can watch from a phone",
       "i3": "smart lamp controlled by an app",
-      "i4": "cash machine (ATM)",
+      "i4": "parking machine that sends data to an app",
       "i5": "smart speaker that answers questions",
       "i6": "smart electricity meter",
       "i7": "car that sends its location to an app",

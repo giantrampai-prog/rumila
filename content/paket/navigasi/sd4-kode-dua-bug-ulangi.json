@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-dua-bug-ulangi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,21 +9,21 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Dua Kesalahan Tersembunyi",
-      "instruksi": "Ada dua bagian yang salah di program ini: jalankan, amati di mana robot menyimpang, lalu perbaiki tepat dua bagian."
+      "judul": "Tiga Kesalahan Tersembunyi",
+      "instruksi": "Ada tiga bagian yang salah di program empat ruas ini: jalankan, amati di mana robot menyimpang, perbaiki, lalu ulangi sampai tepat tiga bagian diperbaiki."
     },
     "en": {
-      "judul": "Two Hidden Bugs",
-      "instruksi": "Two parts of this program are wrong: run it, watch where the robot goes off course, then fix exactly two parts."
+      "judul": "Three Hidden Bugs",
+      "instruksi": "Three parts of this four-part program are wrong: run it, watch where the robot goes off course, fix it, and repeat until exactly three parts are fixed."
     }
   },
   "knobs": {
-    "distance": {
-      "min": 5,
-      "max": 7,
-      "default": 5,
+    "panjang": {
+      "min": 11,
+      "max": 16,
+      "default": 11,
       "step": 1,
-      "keterangan": "panjang jalur (program tanpa ulangi); makin panjang makin banyak petak yang harus dihitung"
+      "keterangan": "panjang jalur empat ruas (dokumentasi); tiga kesalahan di tiga keping berbeda"
     }
   },
   "assets": [],
@@ -37,319 +37,171 @@
     "lompat",
     "kiri",
     "kanan",
+    "kalau",
     "ulangi"
   ],
   "grids": [
     {
-      "id": "sd4-bug2-3-4-e-kiri-0",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 0,
-        "y": 4,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-5-e-kiri-4",
-      "w": 4,
-      "h": 6,
-      "start": {
-        "x": 0,
-        "y": 5,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-5-4-n-kiri-5",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 4,
-        "y": 5,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "lompat"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-6-s-kanan-11",
+      "id": "sd4-bug3-6363-nnr-1111-1",
       "w": 7,
-      "h": 5,
-      "start": {
-        "x": 6,
-        "y": 0,
-        "dir": "S"
-      },
-      "goal": {
-        "x": 0,
-        "y": 4
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-4-e-kiri-12",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 0,
-        "y": 4,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "lompat"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-5-w-kanan-14",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 4,
-        "y": 5,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-4-w-kanan-18",
-      "w": 5,
-      "h": 5,
-      "start": {
-        "x": 4,
-        "y": 4,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 2,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-6-3-s-kanan-19",
-      "w": 4,
       "h": 7,
       "start": {
-        "x": 3,
+        "x": 0,
         "y": 0,
-        "dir": "S"
+        "dir": "E"
       },
       "goal": {
         "x": 0,
         "y": 6
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 13,
       "program": [
         {
           "cmd": "ulangi",
-          "n": 6,
+          "n": 5,
           "body": [
             {
-              "cmd": "lompat"
+              "cmd": "kalau"
             }
           ]
         },
@@ -361,282 +213,553 @@
           "n": 2,
           "body": [
             {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-5-5-n-kiri-21",
-      "w": 6,
-      "h": 6,
-      "start": {
-        "x": 5,
-        "y": 5,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 7,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 6,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-3-n-kiri-25",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 3,
-        "y": 4,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
+              "cmd": "kalau"
             }
           ]
         },
         {
           "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
         },
         {
           "cmd": "ulangi",
           "n": 2,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "kalau"
             }
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
     },
     {
-      "id": "sd4-bug2-4-5-w-kanan-26",
-      "w": 5,
-      "h": 6,
-      "start": {
-        "x": 4,
-        "y": 5,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "lompat"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-5-e-kiri-28",
-      "w": 4,
-      "h": 6,
-      "start": {
-        "x": 0,
-        "y": 5,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-6-e-kiri-32",
-      "w": 4,
-      "h": 7,
-      "start": {
-        "x": 0,
-        "y": 6,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-5-5-n-kiri-33",
-      "w": 6,
-      "h": 6,
-      "start": {
-        "x": 5,
-        "y": 5,
-        "dir": "N"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 7,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "lompat"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-6-s-kanan-35",
-      "w": 7,
-      "h": 5,
+      "id": "sd4-bug3-3647-nrr-1011-2",
+      "w": 8,
+      "h": 8,
       "start": {
         "x": 6,
         "y": 0,
         "dir": "S"
       },
       "goal": {
-        "x": 0,
-        "y": 4
+        "x": 7,
+        "y": 7
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 7,
+          "y": 2
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 6
+        }
+      ],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 7
+        }
+      ],
+      "optimal": 14,
       "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
         {
           "cmd": "ulangi",
           "n": 5,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-4756-nrr-0111-3",
+      "w": 10,
+      "h": 8,
+      "start": {
+        "x": 9,
+        "y": 7,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 0
+        },
+        {
+          "x": 9,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 1
+        },
+        {
+          "x": 9,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 7,
+          "y": 2
+        },
+        {
+          "x": 8,
+          "y": 2
+        },
+        {
+          "x": 9,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 3
+        },
+        {
+          "x": 9,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 8,
+          "y": 4
+        },
+        {
+          "x": 9,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 8,
+          "y": 5
+        },
+        {
+          "x": 9,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 6
+        },
+        {
+          "x": 8,
+          "y": 6
+        },
+        {
+          "x": 9,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 16,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
             }
           ]
         },
@@ -648,36 +771,788 @@
           "n": 6,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
             }
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
     },
     {
-      "id": "sd4-bug2-5-3-s-kanan-39",
-      "w": 4,
-      "h": 6,
+      "id": "sd4-bug3-5645-nrr-1222-4",
+      "w": 7,
+      "h": 10,
       "start": {
-        "x": 3,
+        "x": 0,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 5,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        },
+        {
+          "x": 1,
+          "y": 8
+        },
+        {
+          "x": 2,
+          "y": 8
+        },
+        {
+          "x": 3,
+          "y": 8
+        },
+        {
+          "x": 4,
+          "y": 8
+        },
+        {
+          "x": 5,
+          "y": 8
+        },
+        {
+          "x": 6,
+          "y": 8
+        },
+        {
+          "x": 1,
+          "y": 9
+        },
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 3,
+          "y": 9
+        },
+        {
+          "x": 4,
+          "y": 9
+        },
+        {
+          "x": 5,
+          "y": 9
+        },
+        {
+          "x": 6,
+          "y": 9
+        }
+      ],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 15,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-4733-nrr-0201-5",
+      "w": 8,
+      "h": 8,
+      "start": {
+        "x": 7,
         "y": 0,
         "dir": "S"
       },
       "goal": {
-        "x": 0,
-        "y": 5
+        "x": 3,
+        "y": 7
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 5,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        },
+        {
+          "x": 7,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 7
+        }
+      ],
+      "optimal": 13,
       "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
         {
           "cmd": "ulangi",
           "n": 6,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-5444-nrr-2012-6",
+      "w": 10,
+      "h": 5,
+      "start": {
+        "x": 9,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 0
+        },
+        {
+          "x": 9,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 1
+        },
+        {
+          "x": 9,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 7,
+          "y": 2
+        },
+        {
+          "x": 8,
+          "y": 2
+        },
+        {
+          "x": 9,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 3
+        },
+        {
+          "x": 9,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [
+        {
+          "x": 8,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 12,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
             }
           ]
         },
@@ -694,28 +1569,154 @@
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
     },
     {
-      "id": "sd4-bug2-3-5-e-kiri-40",
-      "w": 4,
-      "h": 6,
+      "id": "sd4-bug3-5745-rrr-1121-7",
+      "w": 6,
+      "h": 8,
       "start": {
-        "x": 0,
-        "y": 5,
-        "dir": "E"
+        "x": 5,
+        "y": 0,
+        "dir": "W"
       },
       "goal": {
-        "x": 3,
-        "y": 0
+        "x": 4,
+        "y": 2
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 6,
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "optimal": 15,
       "program": [
         {
           "cmd": "ulangi",
-          "n": 3,
+          "n": 4,
           "body": [
             {
               "cmd": "lompat"
@@ -727,162 +1728,10 @@
         },
         {
           "cmd": "ulangi",
-          "n": 4,
+          "n": 6,
           "body": [
             {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-4-w-kanan-42",
-      "w": 5,
-      "h": 5,
-      "start": {
-        "x": 4,
-        "y": 4,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-4-e-kiri-0-cermin-datar",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 3,
-        "y": 4,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 4,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-4-e-kiri-12-cermin-datar",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 3,
-        "y": 4,
-        "dir": "W"
-      },
-      "goal": {
-        "x": 0,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "lompat"
-            }
-          ]
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-4-w-kanan-18-cermin-datar",
-      "w": 5,
-      "h": 5,
-      "start": {
-        "x": 0,
-        "y": 4,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 5,
-          "body": [
-            {
-              "cmd": "maju"
+              "cmd": "kalau"
             }
           ]
         },
@@ -894,30 +1743,1563 @@
           "n": 2,
           "body": [
             {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
               "cmd": "maju"
             }
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
     },
     {
-      "id": "sd4-bug2-4-3-n-kiri-25-cermin-datar",
-      "w": 4,
-      "h": 5,
+      "id": "sd4-bug3-6563-nnr-0210-8",
+      "w": 7,
+      "h": 9,
+      "start": {
+        "x": 6,
+        "y": 8,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 5,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "optimal": 15,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-4534-rnr-1110-9",
+      "w": 8,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 9,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 5,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        },
+        {
+          "x": 7,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 8
+        },
+        {
+          "x": 1,
+          "y": 8
+        },
+        {
+          "x": 2,
+          "y": 8
+        },
+        {
+          "x": 3,
+          "y": 8
+        },
+        {
+          "x": 5,
+          "y": 8
+        },
+        {
+          "x": 6,
+          "y": 8
+        },
+        {
+          "x": 7,
+          "y": 8
+        },
+        {
+          "x": 5,
+          "y": 9
+        },
+        {
+          "x": 6,
+          "y": 9
+        },
+        {
+          "x": 7,
+          "y": 9
+        }
+      ],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "optimal": 13,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-4473-nnn-2211-10",
+      "w": 5,
+      "h": 8,
       "start": {
         "x": 0,
         "y": 4,
         "dir": "N"
       },
       "goal": {
-        "x": 3,
+        "x": 1,
+        "y": 7
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 7
+        }
+      ],
+      "optimal": 13,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-7763-rrr-2100-11",
+      "w": 8,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        },
+        {
+          "x": 7,
+          "y": 4
+        }
+      ],
+      "optimal": 16,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-3347-nrr-0112-12",
+      "w": 8,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
         "y": 0
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 1,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        }
+      ],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 7,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 3
+        }
+      ],
+      "optimal": 13,
       "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-6637-nrr-1112-13",
+      "w": 8,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 7,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 2,
+          "y": 7
+        },
+        {
+          "x": 3,
+          "y": 7
+        },
+        {
+          "x": 4,
+          "y": 7
+        },
+        {
+          "x": 5,
+          "y": 7
+        },
+        {
+          "x": 6,
+          "y": 7
+        },
+        {
+          "x": 7,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 8
+        },
+        {
+          "x": 2,
+          "y": 8
+        },
+        {
+          "x": 3,
+          "y": 8
+        },
+        {
+          "x": 4,
+          "y": 8
+        },
+        {
+          "x": 5,
+          "y": 8
+        },
+        {
+          "x": 6,
+          "y": 8
+        },
+        {
+          "x": 7,
+          "y": 8
+        },
+        {
+          "x": 0,
+          "y": 9
+        },
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 3,
+          "y": 9
+        },
+        {
+          "x": 4,
+          "y": 9
+        },
+        {
+          "x": 5,
+          "y": 9
+        },
+        {
+          "x": 6,
+          "y": 9
+        },
+        {
+          "x": 7,
+          "y": 9
+        }
+      ],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 8
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 15,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
         {
           "cmd": "ulangi",
           "n": 5,
@@ -938,33 +3320,279 @@
               "cmd": "maju"
             }
           ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-4-4-w-kanan-42-cermin-datar",
-      "w": 5,
-      "h": 5,
-      "start": {
-        "x": 0,
-        "y": 4,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 4,
-        "y": 0
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
+        },
+        {
+          "cmd": "kiri"
+        },
         {
           "cmd": "ulangi",
           "n": 5,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-3366-nrr-1021-14",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 9,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 7,
+          "y": 2
+        },
+        {
+          "x": 8,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 8,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 8,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        }
+      ],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 8,
+          "y": 6
+        },
+        {
+          "x": 9,
+          "y": 2
+        }
+      ],
+      "optimal": 14,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
             }
           ]
         },
@@ -976,36 +3604,102 @@
           "n": 4,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
             }
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
     },
     {
-      "id": "sd4-bug2-3-4-e-kiri-0-cermin-tegak",
-      "w": 4,
+      "id": "sd4-bug3-3443-nnn-1011-15",
+      "w": 5,
       "h": 5,
       "start": {
-        "x": 0,
+        "x": 1,
         "y": 0,
         "dir": "E"
       },
       "goal": {
-        "x": 3,
-        "y": 4
+        "x": 0,
+        "y": 1
       },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 11,
       "program": [
         {
           "cmd": "ulangi",
-          "n": 4,
+          "n": 2,
           "body": [
             {
-              "cmd": "maju"
+              "cmd": "kalau"
             }
           ]
         },
@@ -1017,36 +3711,7 @@
           "n": 4,
           "body": [
             {
-              "cmd": "maju"
-            }
-          ]
-        }
-      ],
-      "fixes": 2
-    },
-    {
-      "id": "sd4-bug2-3-4-e-kiri-12-cermin-tegak",
-      "w": 4,
-      "h": 5,
-      "start": {
-        "x": 0,
-        "y": 0,
-        "dir": "E"
-      },
-      "goal": {
-        "x": 3,
-        "y": 4
-      },
-      "walls": [],
-      "rocks": [],
-      "optimal": 5,
-      "program": [
-        {
-          "cmd": "ulangi",
-          "n": 3,
-          "body": [
-            {
-              "cmd": "lompat"
+              "cmd": "kalau"
             }
           ]
         },
@@ -1058,12 +3723,231 @@
           "n": 3,
           "body": [
             {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
               "cmd": "maju"
             }
           ]
         }
       ],
-      "fixes": 2
+      "fixes": 3
+    },
+    {
+      "id": "sd4-bug3-4533-nrr-0111-16",
+      "w": 8,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        }
+      ],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 4
+        }
+      ],
+      "optimal": 12,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 3
     }
   ]
 }

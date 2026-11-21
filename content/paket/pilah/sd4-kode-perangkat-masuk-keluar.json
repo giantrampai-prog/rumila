@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perangkat-masuk-keluar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,59 +9,61 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Masuk, Keluar, Simpan",
-      "instruksi": "Seret tiap perangkat ke kelompoknya: memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
-      "bin-masukan": "masukan",
-      "bin-keluaran": "keluaran",
-      "bin-simpan": "penyimpanan",
-      "i1": "⌨️ papan ketik",
-      "i2": "🖱️ tetikus",
-      "i3": "🎤 mikrofon",
-      "i4": "📷 kamera web",
-      "i5": "🕹️ joystick",
-      "i6": "🌡️ sensor suhu",
-      "i7": "🔍 pemindai barcode",
-      "i8": "🖨️ printer",
-      "i9": "🔊 speaker",
-      "i10": "🖥️ monitor",
-      "i11": "🎧 headphone",
-      "i12": "📽️ proyektor",
-      "i13": "💡 lampu LED robot",
-      "i14": "💾 flashdisk",
-      "i15": "🗂️ kartu memori",
-      "i16": "🧱 hard disk"
+      "judul": "Masuk, Keluar, atau Keduanya",
+      "instruksi": "Seret tiap perangkat ke kelompoknya: hanya memasukkan data, hanya mengeluarkan hasil, atau sekaligus memasukkan dan mengeluarkan.",
+      "bin-masukan": "masukan saja",
+      "bin-keluaran": "keluaran saja",
+      "bin-keduanya": "masukan dan keluaran",
+      "i1": "keyboard",
+      "i2": "mouse",
+      "i3": "mikrofon",
+      "i4": "kamera web",
+      "i5": "joystick tanpa getar",
+      "i6": "sensor suhu",
+      "i7": "printer",
+      "i8": "speaker",
+      "i9": "monitor",
+      "i10": "headphone tanpa mikrofon",
+      "i11": "proyektor",
+      "i12": "lampu LED robot",
+      "i13": "layar sentuh tablet",
+      "i14": "headset bermikrofon",
+      "i15": "jam tangan pintar berlayar sentuh",
+      "i16": "stik game yang bisa bergetar",
+      "i17": "speaker pintar yang menjawab perintah suara"
     },
     "en": {
-      "judul": "In, Out, Store",
-      "instruksi": "Drag each device to its group: puts data into the computer, gives results out, or stores data.",
-      "bin-masukan": "input",
-      "bin-keluaran": "output",
-      "bin-simpan": "storage",
-      "i1": "⌨️ keyboard",
-      "i2": "🖱️ mouse",
-      "i3": "🎤 microphone",
-      "i4": "📷 webcam",
-      "i5": "🕹️ joystick",
-      "i6": "🌡️ temperature sensor",
-      "i7": "🔍 barcode scanner",
-      "i8": "🖨️ printer",
-      "i9": "🔊 speaker",
-      "i10": "🖥️ monitor",
-      "i11": "🎧 headphones",
-      "i12": "📽️ projector",
-      "i13": "💡 robot LED light",
-      "i14": "💾 USB flash drive",
-      "i15": "🗂️ memory card",
-      "i16": "🧱 hard disk"
+      "judul": "In, Out, or Both",
+      "instruksi": "Drag each device to its group: only puts data in, only gives results out, or does both.",
+      "bin-masukan": "input only",
+      "bin-keluaran": "output only",
+      "bin-keduanya": "input and output",
+      "i1": "keyboard",
+      "i2": "mouse",
+      "i3": "microphone",
+      "i4": "webcam",
+      "i5": "joystick without vibration",
+      "i6": "temperature sensor",
+      "i7": "printer",
+      "i8": "speaker",
+      "i9": "monitor",
+      "i10": "headphones without a microphone",
+      "i11": "projector",
+      "i12": "robot LED light",
+      "i13": "tablet touchscreen",
+      "i14": "headset with a microphone",
+      "i15": "smartwatch with a touchscreen",
+      "i16": "game controller that vibrates",
+      "i17": "smart speaker that answers voice commands"
     }
   },
   "knobs": {
     "binCount": {
       "min": 2,
       "max": 3,
-      "default": 2,
+      "default": 3,
       "step": 1,
-      "keterangan": "2 = masukan & keluaran; 3 = tambah penyimpanan"
+      "keterangan": "2 = masukan & keluaran (ulang SD 3); 3 = tambah kotak masukan sekaligus keluaran"
     },
     "itemCount": {
       "min": 6,
@@ -81,17 +83,17 @@
     {
       "id": "masukan",
       "labelKey": "bin-masukan",
-      "emoji": "⌨️"
+      "emoji": "⬇️"
     },
     {
       "id": "keluaran",
       "labelKey": "bin-keluaran",
-      "emoji": "🔊"
+      "emoji": "⬆️"
     },
     {
-      "id": "simpan",
-      "labelKey": "bin-simpan",
-      "emoji": "💾"
+      "id": "keduanya",
+      "labelKey": "bin-keduanya",
+      "emoji": "↕️"
     }
   ],
   "items": [
@@ -99,97 +101,103 @@
       "id": "i1",
       "labelKey": "i1",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "⌨️"
     },
     {
       "id": "i2",
       "labelKey": "i2",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🖱️"
     },
     {
       "id": "i3",
       "labelKey": "i3",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🎤"
     },
     {
       "id": "i4",
       "labelKey": "i4",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "📷"
     },
     {
       "id": "i5",
       "labelKey": "i5",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🕹️"
     },
     {
       "id": "i6",
       "labelKey": "i6",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🌡️"
     },
     {
       "id": "i7",
       "labelKey": "i7",
-      "bin": "masukan",
-      "scale": 0.5
+      "bin": "keluaran",
+      "emoji": "🖨️"
     },
     {
       "id": "i8",
       "labelKey": "i8",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "🔊"
     },
     {
       "id": "i9",
       "labelKey": "i9",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "🖥️"
     },
     {
       "id": "i10",
       "labelKey": "i10",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "🎧"
     },
     {
       "id": "i11",
       "labelKey": "i11",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "📽️"
     },
     {
       "id": "i12",
       "labelKey": "i12",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "💡"
     },
     {
       "id": "i13",
       "labelKey": "i13",
-      "bin": "keluaran",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "📱"
     },
     {
       "id": "i14",
       "labelKey": "i14",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "🎧"
     },
     {
       "id": "i15",
       "labelKey": "i15",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "⌚"
     },
     {
       "id": "i16",
       "labelKey": "i16",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "🎮"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "keduanya",
+      "emoji": "🔈"
     }
   ]
 }

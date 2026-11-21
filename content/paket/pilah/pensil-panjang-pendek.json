@@ -1,6 +1,6 @@
 {
   "id": "pensil-panjang-pendek",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,32 +9,30 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Panjang Pendek di Meja",
-      "instruksi": "Di meja robot ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
+      "judul": "Mainan Panjang Pendek",
+      "instruksi": "Di meja robot ada dua mainan sejenis: sentuh yang lebih panjang atau lebih pendek.",
       "pilihan": "pilihan",
-      "pensil": "pensil",
-      "kereta": "kereta",
-      "penggaris": "penggaris",
-      "sendok": "sendok",
-      "pita": "pita",
       "tPanjang": "Mana yang lebih panjang?",
       "tPendek": "Mana yang lebih pendek?",
-      "sikatgigi": "sikat gigi",
-      "krayon": "krayon"
+      "kereta": "kereta mainan",
+      "bus": "bus mainan",
+      "truk": "truk mainan",
+      "perahu": "perahu mainan",
+      "kayu": "balok kayu",
+      "ikan": "ikan mainan"
     },
     "en": {
-      "judul": "Long and Short on the Desk",
-      "instruksi": "On the robot's desk are two of the same thing: touch the longer or the shorter one.",
+      "judul": "Long and Short Toys",
+      "instruksi": "On the robot's desk are two of the same toy: touch the longer or the shorter one.",
       "pilihan": "choices",
-      "pensil": "pencil",
-      "kereta": "train",
-      "penggaris": "ruler",
-      "sendok": "spoon",
-      "pita": "ribbon",
       "tPanjang": "Which one is longer?",
       "tPendek": "Which one is shorter?",
-      "sikatgigi": "toothbrush",
-      "krayon": "crayon"
+      "kereta": "toy train",
+      "bus": "toy bus",
+      "truk": "toy truck",
+      "perahu": "toy boat",
+      "kayu": "wooden log",
+      "ikan": "toy fish"
     }
   },
   "knobs": {
@@ -59,25 +57,11 @@
   ],
   "items": [
     {
-      "id": "pensil-panjang",
-      "labelKey": "pensil",
-      "bin": "pilihan",
-      "emoji": "✏️",
-      "width": 1.8
-    },
-    {
-      "id": "pensil-pendek",
-      "labelKey": "pensil",
-      "bin": "pilihan",
-      "emoji": "✏️",
-      "width": 1
-    },
-    {
       "id": "kereta-panjang",
       "labelKey": "kereta",
       "bin": "pilihan",
       "emoji": "🚃",
-      "width": 2
+      "width": 2.0
     },
     {
       "id": "kereta-pendek",
@@ -87,73 +71,73 @@
       "width": 1
     },
     {
-      "id": "penggaris-panjang",
-      "labelKey": "penggaris",
+      "id": "bus-panjang",
+      "labelKey": "bus",
       "bin": "pilihan",
-      "emoji": "📏",
-      "width": 1.6
+      "emoji": "🚌",
+      "width": 1.8
     },
     {
-      "id": "penggaris-pendek",
-      "labelKey": "penggaris",
+      "id": "bus-pendek",
+      "labelKey": "bus",
       "bin": "pilihan",
-      "emoji": "📏",
+      "emoji": "🚌",
       "width": 1
     },
     {
-      "id": "sendok-panjang",
-      "labelKey": "sendok",
+      "id": "truk-panjang",
+      "labelKey": "truk",
       "bin": "pilihan",
-      "emoji": "🥄",
+      "emoji": "🚚",
       "width": 1.7
     },
     {
-      "id": "sendok-pendek",
-      "labelKey": "sendok",
+      "id": "truk-pendek",
+      "labelKey": "truk",
       "bin": "pilihan",
-      "emoji": "🥄",
+      "emoji": "🚚",
       "width": 1
     },
     {
-      "id": "pita-panjang",
-      "labelKey": "pita",
+      "id": "perahu-panjang",
+      "labelKey": "perahu",
       "bin": "pilihan",
-      "emoji": "🎀",
+      "emoji": "🛶",
       "width": 1.8
     },
     {
-      "id": "pita-pendek",
-      "labelKey": "pita",
+      "id": "perahu-pendek",
+      "labelKey": "perahu",
       "bin": "pilihan",
-      "emoji": "🎀",
+      "emoji": "🛶",
       "width": 1
     },
     {
-      "id": "sikatgigi-panjang",
-      "labelKey": "sikatgigi",
+      "id": "kayu-panjang",
+      "labelKey": "kayu",
       "bin": "pilihan",
-      "emoji": "🪥",
-      "width": 1.8
+      "emoji": "🪵",
+      "width": 1.6
     },
     {
-      "id": "sikatgigi-pendek",
-      "labelKey": "sikatgigi",
+      "id": "kayu-pendek",
+      "labelKey": "kayu",
       "bin": "pilihan",
-      "emoji": "🪥",
+      "emoji": "🪵",
       "width": 1
     },
     {
-      "id": "krayon-panjang",
-      "labelKey": "krayon",
+      "id": "ikan-panjang",
+      "labelKey": "ikan",
       "bin": "pilihan",
-      "emoji": "🖍️",
+      "emoji": "🐟",
       "width": 1.8
     },
     {
-      "id": "krayon-pendek",
-      "labelKey": "krayon",
+      "id": "ikan-pendek",
+      "labelKey": "ikan",
       "bin": "pilihan",
-      "emoji": "🖍️",
+      "emoji": "🐟",
       "width": 1
     }
   ],
@@ -162,10 +146,10 @@
       "id": "r1",
       "promptKey": "tPanjang",
       "choices": [
-        "pensil-pendek",
-        "pensil-panjang"
+        "kereta-pendek",
+        "kereta-panjang"
       ],
-      "correct": "pensil-panjang"
+      "correct": "kereta-panjang"
     },
     {
       "id": "r2",
@@ -180,109 +164,91 @@
       "id": "r3",
       "promptKey": "tPanjang",
       "choices": [
-        "penggaris-pendek",
-        "penggaris-panjang"
+        "bus-pendek",
+        "bus-panjang"
       ],
-      "correct": "penggaris-panjang"
+      "correct": "bus-panjang"
     },
     {
       "id": "r4",
       "promptKey": "tPendek",
       "choices": [
-        "sendok-panjang",
-        "sendok-pendek"
+        "bus-panjang",
+        "bus-pendek"
       ],
-      "correct": "sendok-pendek"
+      "correct": "bus-pendek"
     },
     {
       "id": "r5",
       "promptKey": "tPanjang",
       "choices": [
-        "pita-pendek",
-        "pita-panjang"
+        "truk-pendek",
+        "truk-panjang"
       ],
-      "correct": "pita-panjang"
+      "correct": "truk-panjang"
     },
     {
       "id": "r6",
       "promptKey": "tPendek",
       "choices": [
-        "pensil-panjang",
-        "pensil-pendek"
+        "truk-panjang",
+        "truk-pendek"
       ],
-      "correct": "pensil-pendek"
+      "correct": "truk-pendek"
     },
     {
       "id": "r7",
       "promptKey": "tPanjang",
       "choices": [
-        "kereta-pendek",
-        "kereta-panjang"
+        "perahu-pendek",
+        "perahu-panjang"
       ],
-      "correct": "kereta-panjang"
+      "correct": "perahu-panjang"
     },
     {
       "id": "r8",
       "promptKey": "tPendek",
       "choices": [
-        "penggaris-panjang",
-        "penggaris-pendek"
+        "perahu-panjang",
+        "perahu-pendek"
       ],
-      "correct": "penggaris-pendek"
+      "correct": "perahu-pendek"
     },
     {
       "id": "r9",
       "promptKey": "tPanjang",
       "choices": [
-        "sendok-pendek",
-        "sendok-panjang"
+        "kayu-pendek",
+        "kayu-panjang"
       ],
-      "correct": "sendok-panjang"
+      "correct": "kayu-panjang"
     },
     {
       "id": "r10",
       "promptKey": "tPendek",
       "choices": [
-        "pita-panjang",
-        "pita-pendek"
+        "kayu-panjang",
+        "kayu-pendek"
       ],
-      "correct": "pita-pendek"
+      "correct": "kayu-pendek"
     },
     {
       "id": "r11",
       "promptKey": "tPanjang",
       "choices": [
-        "sikatgigi-pendek",
-        "sikatgigi-panjang"
+        "ikan-pendek",
+        "ikan-panjang"
       ],
-      "correct": "sikatgigi-panjang"
+      "correct": "ikan-panjang"
     },
     {
       "id": "r12",
       "promptKey": "tPendek",
       "choices": [
-        "sikatgigi-panjang",
-        "sikatgigi-pendek"
+        "ikan-panjang",
+        "ikan-pendek"
       ],
-      "correct": "sikatgigi-pendek"
-    },
-    {
-      "id": "r13",
-      "promptKey": "tPendek",
-      "choices": [
-        "krayon-panjang",
-        "krayon-pendek"
-      ],
-      "correct": "krayon-pendek"
-    },
-    {
-      "id": "r14",
-      "promptKey": "tPanjang",
-      "choices": [
-        "krayon-pendek",
-        "krayon-panjang"
-      ],
-      "correct": "krayon-panjang"
+      "correct": "ikan-pendek"
     }
   ]
 }

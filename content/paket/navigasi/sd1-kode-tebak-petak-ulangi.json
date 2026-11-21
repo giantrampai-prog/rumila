@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tebak-petak-ulangi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Guess the Square in a Loop",
-      "instruksi": "Before each step, point to where robot will land. Remember, the repeat runs its blocks many times."
+      "instruksi": "Before each step, point to where the robot will land. Remember, the repeat runs its blocks many times."
     }
   },
   "knobs": {

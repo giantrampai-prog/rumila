@@ -1,6 +1,6 @@
 {
   "id": "jengkal-sayur-kebun",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -21,9 +21,7 @@
       "ubi": "ubi",
       "brokoli": "brokoli",
       "sawi": "sawi",
-      "paprika": "paprika",
-      "cabai": "cabai",
-      "kentang": "kentang"
+      "kacang-panjang": "kacang panjang"
     },
     "en": {
       "judul": "Measure in Hand Spans",
@@ -38,9 +36,7 @@
       "ubi": "sweet potato",
       "brokoli": "broccoli",
       "sawi": "mustard greens",
-      "paprika": "bell pepper",
-      "cabai": "chili",
-      "kentang": "potato"
+      "kacang-panjang": "long beans"
     }
   },
   "knobs": {
@@ -70,30 +66,78 @@
       "id": "wortel",
       "role": "benda",
       "emoji": "🥕",
-      "value": 2,
-      "width": 1
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "labelKey": "pisang",
+      "id": "pisang",
+      "role": "benda",
+      "emoji": "🍌",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "labelKey": "ubi",
+      "id": "ubi",
+      "role": "benda",
+      "emoji": "🍠",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "labelKey": "brokoli",
+      "id": "brokoli",
+      "role": "benda",
+      "emoji": "🥦",
+      "value": 1,
+      "width": 0.5
     },
     {
       "labelKey": "timun",
       "id": "timun",
       "role": "benda",
       "emoji": "🥒",
-      "value": 3,
-      "width": 1.5
+      "value": 2,
+      "width": 1.0
     },
     {
       "labelKey": "jagung",
       "id": "jagung",
       "role": "benda",
       "emoji": "🌽",
-      "value": 4,
-      "width": 2
+      "value": 2,
+      "width": 1.0
     },
     {
       "labelKey": "terong",
       "id": "terong",
       "role": "benda",
       "emoji": "🍆",
+      "value": 2,
+      "width": 1.0
+    },
+    {
+      "labelKey": "nanas",
+      "id": "nanas",
+      "role": "benda",
+      "emoji": "🍍",
+      "value": 2,
+      "width": 1.0
+    },
+    {
+      "labelKey": "sawi",
+      "id": "sawi",
+      "role": "benda",
+      "emoji": "🥬",
+      "value": 2,
+      "width": 1.0
+    },
+    {
+      "labelKey": "kacang-panjang",
+      "id": "kacang-panjang",
+      "role": "benda",
+      "emoji": "🫛",
       "value": 3,
       "width": 1.5
     },
@@ -102,72 +146,8 @@
       "id": "roti",
       "role": "benda",
       "emoji": "🥖",
-      "value": 5,
-      "width": 2.5
-    },
-    {
-      "labelKey": "pisang",
-      "id": "pisang",
-      "role": "benda",
-      "emoji": "🍌",
-      "value": 3,
-      "width": 1.5
-    },
-    {
-      "labelKey": "nanas",
-      "id": "nanas",
-      "role": "benda",
-      "emoji": "🍍",
-      "value": 3,
-      "width": 1.5
-    },
-    {
-      "labelKey": "ubi",
-      "id": "ubi",
-      "role": "benda",
-      "emoji": "🍠",
-      "value": 2,
-      "width": 1
-    },
-    {
-      "labelKey": "brokoli",
-      "id": "brokoli",
-      "role": "benda",
-      "emoji": "🥦",
-      "value": 2,
-      "width": 1
-    },
-    {
-      "labelKey": "sawi",
-      "id": "sawi",
-      "role": "benda",
-      "emoji": "🥬",
-      "value": 2,
-      "width": 1
-    },
-    {
-      "labelKey": "paprika",
-      "id": "paprika",
-      "role": "benda",
-      "emoji": "🫑",
-      "value": 2,
-      "width": 1
-    },
-    {
-      "labelKey": "cabai",
-      "id": "cabai",
-      "role": "benda",
-      "emoji": "🌶️",
-      "value": 1,
-      "width": 0.5
-    },
-    {
-      "labelKey": "kentang",
-      "id": "kentang",
-      "role": "benda",
-      "emoji": "🥔",
-      "value": 1,
-      "width": 0.5
+      "value": 4,
+      "width": 2.0
     }
   ]
 }

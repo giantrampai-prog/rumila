@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-urut-suhu-stasiun-cuaca",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Stasiun Cuaca Dingin",
-      "instruksi": "Susun kartu suhu dari yang paling dingin sampai yang paling hangat.",
+      "instruksi": "Catatan stasiun cuaca punya suhu minus yang berdekatan. −23°C lebih dingin dari −20°C. Susun dari yang paling dingin sampai yang paling hangat.",
       "s1": "Suhu di lima tempat",
       "s1-1": "−24°C",
       "s1-2": "−17°C",
@@ -74,7 +74,7 @@
     },
     "en": {
       "judul": "Cold Weather Stations",
-      "instruksi": "Arrange the temperature cards from coldest to warmest.",
+      "instruksi": "The weather station has minus temperatures that are close together. −23°C is colder than −20°C. Arrange them from coldest to warmest.",
       "s1": "Temperatures in five places",
       "s1-1": "−24°C",
       "s1-2": "−17°C",

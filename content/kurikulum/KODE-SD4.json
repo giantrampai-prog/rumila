@@ -13,13 +13,15 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memakai dua blok ulangi berurutan dan satu belokan supaya robot menempuh jalur berbelok yang tidak muat di rak",
-        "en": "I can use two repeat blocks in a row with one turn so the robot follows a turning path that is too long for the rack"
+        "id": "Aku bisa memakai empat blok ulangi dan tiga belokan supaya robot menempuh jalur empat ruas yang tidak muat di rak",
+        "en": "I can use four repeat blocks and three turns so the robot follows a four-part path that is too long for the rack"
       },
       "depth": [
         "pakai"
       ],
-      "prereq": [],
+      "prereq": [
+        "KODE.SD3.EFISIEN.01"
+      ],
       "refs": [
         {
           "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
@@ -31,7 +33,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Jalur L: a petak, belok, b petak (a, b = 3–6). Rak 5 keping, jalur tanpa ulangi butuh 7–13 blok, jadi satu-satunya cara: ulangi a [maju], belok, ulangi b [maju]. Bukti: sampai bintang dengan ≤ 5 keping. Jebakan: menghitung petak awal sehingga ulangan kelebihan satu (robot melewati sudut), atau belok ke arah layar bukan arah robot. Knob: distance 7 → 13. Paket: sd4-kode-dua-ulangi-belok."
+      "catatan": "Naik dari SD 1 ULANGI.01 (dua ruas) dan SD 3 EFISIEN.01 (dua ulangi, rak 6): jalur koridor empat ruas a, b, c, d (3–6 petak) dengan tiga belokan, petak di luar jalur berdinding. Rak 11 keping; tanpa ulangi jalur butuh 16–23 blok. Generator memeriksa semua program ≤ 10 keping gagal, jadi satu-satunya cara: ulangi a [maju], belok, ulangi b [maju], belok, ulangi c [maju], belok, ulangi d [maju]. Bukti: sampai bintang dengan ≤ 11 keping. Jebakan: menghitung petak awal sehingga ulangan kelebihan satu (robot menabrak dinding di sudut); arah belokan ketiga; belok ke arah layar bukan arah robot. Knob: panjang 16 → 23 (dokumentasi). Paket: sd4-kode-dua-ulangi-belok, sd4-kode-ulangi-jalan-kota."
     },
     {
       "id": "KODE.SD4.ULANGI.02",
@@ -45,8 +47,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan dua perintah yang berulang di jalur berbatu lalu menaruh keduanya di dalam satu blok ulangi",
-        "en": "I can spot the two commands that repeat on a rocky path and put both inside one repeat block"
+        "id": "Aku bisa menemukan pola perintah yang berbeda di tiap ruas jalur berbatu lalu menulis tiap pola dengan satu blok ulangi",
+        "en": "I can find the different command pattern on each part of a rocky path and write each pattern with one repeat block"
       },
       "depth": [
         "pakai"
@@ -65,7 +67,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Batu berjarak tetap (tiap 3 petak), satuan [maju, lompat] atau [lompat, maju]; rak 3 keping (4 bila ada satu maju di ekor). Bukti: satu blok ulangi berisi dua perintah, sampai bintang. Jebakan: 'lompat terus' (lompat di petak kosong tetap 2 petak, mendarat di batu) dan urutan isi terbalik. Knob: distance 4 → 6. Paket: sd4-kode-ulangi-maju-lompat."
+      "catatan": "Naik dari SD 2 ULANGI.01 (satu pola) dan SD 3 EFISIEN.01 (dua pola): jalur tiga ruas berdinding, tiap ruas punya pola sendiri — [maju] (lurus), [lompat] (batu selang-seling), [maju, lompat] atau [lompat, maju] (batu tiap 3 petak); paling sedikit dua pola berbeda dan satu pola dua perintah. Rak = keping program ulangi a [pola 1], belok, ulangi b [pola 2], belok, ulangi c [pola 3] (9–11 keping); generator memeriksa tidak ada program yang lebih hemat. Bukti: sampai bintang dalam rak. Jebakan: memakai pola ruas pertama untuk seluruh jalur; urutan isi terbalik (lompat dulu saat batu belum di depan); N dihitung dari jumlah batu, bukan jumlah satuan pola. Knob: panjang (dokumentasi). Paket: sd4-kode-ulangi-batu-sungai, sd4-kode-ulangi-maju-lompat."
     },
     {
       "id": "KODE.SD4.DEBUG.01",
@@ -79,14 +81,15 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan satu bagian yang salah dalam program berisi ulangi, angka ulangan, isinya, atau belokan, lalu menggantinya saja",
-        "en": "I can find the one wrong part of a program with repeats, the repeat number, its inside or a turn, and change only that"
+        "id": "Aku bisa menemukan dua bagian yang salah di program empat ruas berisi ulangi dan kalau, lalu mengganti dua bagian itu saja",
+        "en": "I can find the two wrong parts in a four-part program with repeat and if, and change only those two parts"
       },
       "depth": [
         "pakai"
       ],
       "prereq": [
-        "KODE.SD4.ULANGI.01"
+        "KODE.SD4.ULANGI.01",
+        "KODE.SD3.DEBUG.01"
       ],
       "refs": [
         {
@@ -99,7 +102,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Program L yang benar dengan satu mutasi: ulangan ±1/−2, isi ulangi diganti lompat, atau belok terbalik. Ulangan kelebihan di segmen terakhir tidak dipakai (robot berhenti di bintang lebih dulu). Mesin: edits == 1 dan sampai bintang; tiap peta diverifikasi punya perbaikan satu blok. Jebakan: mengubah dua bagian sekaligus 'biar aman'. Knob: distance. Paket: sd4-kode-perbaiki-ulangi."
+      "catatan": "Naik dari SD 3 DEBUG.01 (dua bug, tiga ruas): program empat ruas ulangi n [kalau] + tiga belokan dengan dua mutasi di dua keping berbeda: lupa kalau (isi jadi maju), lompat terus (isi jadi lompat), salah hitung ulangan, atau belok terbalik. Tiap peta diverifikasi: tidak ada perbaikan satu keping yang cukup, perbaikan dua keping ada. Mesin: edits ≤ 2 dan sampai bintang. Jebakan: mengubah lebih dari dua bagian 'biar aman'; bug kedua baru tampak setelah bug pertama diperbaiki. Knob: panjang (dokumentasi). Paket: sd4-kode-perbaiki-ulangi, sd4-kode-satu-bug-batu-pantai."
     },
     {
       "id": "KODE.SD4.DEBUG.02",
@@ -113,8 +116,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menjalankan program, mengamati di mana robot menyimpang, lalu memperbaiki tepat dua kesalahan",
-        "en": "I can run a program, watch where the robot goes wrong, then fix exactly two mistakes"
+        "id": "Aku bisa menjalankan program, mengamati di mana robot menyimpang, lalu memperbaiki tepat tiga kesalahan",
+        "en": "I can run a program, watch where the robot goes wrong, then fix exactly three mistakes"
       },
       "depth": [
         "pakai"
@@ -127,7 +130,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Dua mutasi di dua bagian berbeda dari program L berisi ulangi. Tiap peta diverifikasi: tidak ada perbaikan satu blok yang cukup, perbaikan dua blok ada. Bukti: edits == 2 dan sampai bintang. Jebakan: berhenti setelah kesalahan pertama terlihat; bug kedua baru tampak setelah bug pertama diperbaiki. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd4-kode-dua-bug-ulangi. Pengaya."
+      "catatan": "Tiga mutasi di tiga keping berbeda dari program empat ruas berisi ulangi dan kalau (lupa kalau, lompat terus, salah hitung, belok terbalik). Tiap peta diverifikasi: tidak ada perbaikan satu atau dua keping yang cukup, perbaikan tiga keping ada. Bukti: edits ≤ 3 dan sampai bintang. Jebakan: berhenti setelah kesalahan pertama terlihat; bug berikutnya baru tampak setelah bug sebelumnya diperbaiki (jalankan–amati–perbaiki berulang). Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd4-kode-dua-bug-ulangi, sd4-kode-dua-bug-batu-kutub. Pengaya."
     },
     {
       "id": "KODE.SD4.VARIABEL.01",
@@ -214,7 +217,7 @@
       "mechanics": [
         "urutkan"
       ],
-      "catatan": "Enam program teks (kalkulator, kuis, pengubah suhu, sapaan, luas persegi, rata-rata), 3–4 baris. Bukti: urutan persis benar. Tiap baris memakai variabel yang dibuat baris sebelumnya, jadi urutan tunggal; dua masukan selalu bernomor (pertama/kedua) agar tidak ambigu. Jebakan: menampilkan hasil sebelum dihitung. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps tetap 4 (versi 3 baris memotong baris keluaran). Paket: sd4-kode-masukan-proses-keluaran."
+      "catatan": "Sepuluh program teks 4 baris bergaya `x = minta('…')` (kalkulator, kuis, pengubah suhu, sapaan, luas ubin, rata-rata, umur, tabungan, jarak lari, bagi permen). Baris `minta` adalah satu-satunya masukan dan langsung mengisi variabel; `tampilkan` hanya dipakai untuk keluaran di baris terakhir, jadi tidak ada baris 'tampilkan pertanyaan' yang bisa dikira keluaran. Bukti: urutan persis benar. Tiap baris memakai variabel yang dibuat baris sebelumnya, jadi urutan tunggal; dua masukan selalu bernomor (pertama/kedua) agar tidak ambigu. Jebakan: menampilkan hasil sebelum dihitung; `f = f + 32` sebelum `f` dibuat. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps tetap 4 (versi 3 baris memotong baris keluaran). Paket: sd4-kode-masukan-proses-keluaran, sd4-kode-ipo-pasar."
     },
     {
       "id": "KODE.SD4.PERANGKAT.01",
@@ -228,19 +231,21 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah perangkat menjadi alat masukan, alat keluaran, dan penyimpanan",
-        "en": "I can sort devices into input devices, output devices and storage"
+        "id": "Aku bisa memilah perangkat menjadi alat masukan, alat keluaran, atau alat yang sekaligus masukan dan keluaran",
+        "en": "I can sort devices into input devices, output devices, or devices that are both input and output"
       },
       "depth": [
         "pakai"
       ],
-      "prereq": [],
+      "prereq": [
+        "KODE.SD3.PERANGKAT.01"
+      ],
       "refs": [],
       "core": true,
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Kartu teks berikon (papan ketik, sensor suhu, printer, proyektor, flashdisk …). Bukti: semua kartu satu ronde benar. Jebakan: 'lampu LED robot' (keluaran) dan 'sensor suhu' (masukan) tidak tampak seperti komputer. Layar sentuh sengaja tidak dipakai karena masukan sekaligus keluaran. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 3, itemCount 6 → 10. Paket: sd4-kode-perangkat-masuk-keluar."
+      "catatan": "Lanjutan SD 3 PERANGKAT.01 (masukan/simpan/keluaran): kini ada kotak 'masukan sekaligus keluaran' — layar sentuh, headset bermikrofon, printer-scanner, papan tulis interaktif, speaker pintar, jam tangan pintar. Anak memeriksa dua arah: apakah alat menerima data dari kita, dan apakah alat memberi data kembali. Bukti: semua kartu satu ronde benar. Jebakan: 'headphone' (keluaran saja) vs 'headset bermikrofon' (keduanya); 'monitor' (keluaran) vs 'layar sentuh' (keduanya); 'sensor suhu' dan 'lampu LED robot' tidak tampak seperti komputer. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 3 (2 = masukan & keluaran, 3 = tambah keduanya), itemCount 6 → 10. Paket: sd4-kode-perangkat-masuk-keluar, sd4-kode-perangkat-kelas."
     },
     {
       "id": "KODE.SD4.CARI.01",

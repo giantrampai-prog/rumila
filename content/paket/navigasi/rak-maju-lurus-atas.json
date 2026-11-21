@@ -1,6 +1,6 @@
 {
   "id": "rak-maju-lurus-atas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Up to the Star",
-      "instruksi": "Robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+      "instruksi": "The robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
     }
   },
   "knobs": {

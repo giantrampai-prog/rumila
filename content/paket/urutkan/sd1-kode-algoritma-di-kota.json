@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-di-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -39,13 +39,6 @@
       "ikan-4": "tabur di akuarium",
       "ikan-5": "ikan berenang mendekat",
       "ikan-6": "ikan memakan pakan",
-      "t-susu": "Membuat susu cokelat",
-      "susu-1": "tuang susu ke gelas",
-      "susu-2": "masukkan bubuk cokelat",
-      "susu-3": "aduk sampai rata",
-      "susu-4": "pasang sedotan",
-      "susu-5": "minum susunya",
-      "susu-6": "cuci gelasnya",
       "t-tas": "Menyiapkan tas sekolah",
       "tas-1": "lihat jadwal pelajaran",
       "tas-2": "ambil buku sesuai jadwal",
@@ -53,13 +46,6 @@
       "tas-4": "tutup ritsleting tas",
       "tas-5": "gendong tas ke sekolah",
       "tas-6": "sampai di kelas",
-      "t-tv": "Menonton kartun di TV",
-      "tv-1": "ambil remot",
-      "tv-2": "tekan tombol daya",
-      "tv-3": "TV menyala",
-      "tv-4": "pilih saluran kartun",
-      "tv-5": "kartun mulai tayang",
-      "tv-6": "tertawa menonton kartun",
       "t-sampah": "Membuang kotak minuman",
       "sampah-1": "habiskan minuman",
       "sampah-2": "pipihkan kotaknya",
@@ -87,7 +73,21 @@
       "kirim-paket-3": "sebutkan nama penerima",
       "kirim-paket-4": "terima paketnya",
       "kirim-paket-5": "ucapkan terima kasih",
-      "kirim-paket-6": "bawa paket pulang"
+      "kirim-paket-6": "bawa paket pulang",
+      "t-susu-cokelat": "Membuat susu cokelat",
+      "susu-cokelat-1": "tuang susu dan bubuk cokelat ke gelas",
+      "susu-cokelat-2": "aduk sampai rata",
+      "susu-cokelat-3": "pasang sedotan",
+      "susu-cokelat-4": "minum susunya",
+      "susu-cokelat-5": "cuci gelasnya",
+      "susu-cokelat-6": "gelas bersih kembali",
+      "t-televisi": "Menonton kartun di TV",
+      "televisi-1": "colokkan kabel TV",
+      "televisi-2": "tekan tombol daya",
+      "televisi-3": "TV menyala",
+      "televisi-4": "pilih saluran kartun",
+      "televisi-5": "kartun mulai tayang",
+      "televisi-6": "tertawa menonton kartun"
     },
     "en": {
       "judul": "Step by Step Around Town",
@@ -120,13 +120,6 @@
       "ikan-4": "sprinkle it in the tank",
       "ikan-5": "the fish swim closer",
       "ikan-6": "the fish eat the food",
-      "t-susu": "Making chocolate milk",
-      "susu-1": "pour milk into a glass",
-      "susu-2": "add chocolate powder",
-      "susu-3": "stir until mixed",
-      "susu-4": "put in a straw",
-      "susu-5": "drink the milk",
-      "susu-6": "wash the glass",
       "t-tas": "Packing the school bag",
       "tas-1": "check the lesson timetable",
       "tas-2": "take the books you need",
@@ -134,13 +127,6 @@
       "tas-4": "zip up the bag",
       "tas-5": "carry the bag to school",
       "tas-6": "arrive in class",
-      "t-tv": "Watching cartoons on TV",
-      "tv-1": "pick up the remote",
-      "tv-2": "press the power button",
-      "tv-3": "the TV turns on",
-      "tv-4": "choose the cartoon channel",
-      "tv-5": "the cartoon starts",
-      "tv-6": "laugh at the cartoon",
       "t-sampah": "Throwing away a drink box",
       "sampah-1": "finish the drink",
       "sampah-2": "flatten the box",
@@ -168,7 +154,21 @@
       "kirim-paket-3": "say the receiver's name",
       "kirim-paket-4": "receive the parcel",
       "kirim-paket-5": "say thank you",
-      "kirim-paket-6": "carry the parcel home"
+      "kirim-paket-6": "carry the parcel home",
+      "t-susu-cokelat": "Making chocolate milk",
+      "susu-cokelat-1": "pour milk and chocolate powder into a glass",
+      "susu-cokelat-2": "stir until mixed",
+      "susu-cokelat-3": "put in a straw",
+      "susu-cokelat-4": "drink the milk",
+      "susu-cokelat-5": "wash the glass",
+      "susu-cokelat-6": "the glass is clean again",
+      "t-televisi": "Watching cartoons on TV",
+      "televisi-1": "plug in the TV",
+      "televisi-2": "press the power button",
+      "televisi-3": "the TV turns on",
+      "televisi-4": "choose the cartoon channel",
+      "televisi-5": "the cartoon starts",
+      "televisi-6": "laugh at the cartoon"
     }
   },
   "knobs": {
@@ -331,38 +331,38 @@
       ]
     },
     {
-      "id": "susu",
-      "titleKey": "t-susu",
+      "id": "susu-cokelat",
+      "titleKey": "t-susu-cokelat",
       "steps": [
         {
-          "id": "susu-1",
-          "labelKey": "susu-1",
+          "id": "susu-cokelat-1",
+          "labelKey": "susu-cokelat-1",
           "emoji": "🥛"
         },
         {
-          "id": "susu-2",
-          "labelKey": "susu-2",
-          "emoji": "🍫"
-        },
-        {
-          "id": "susu-3",
-          "labelKey": "susu-3",
+          "id": "susu-cokelat-2",
+          "labelKey": "susu-cokelat-2",
           "emoji": "🥄"
         },
         {
-          "id": "susu-4",
-          "labelKey": "susu-4",
+          "id": "susu-cokelat-3",
+          "labelKey": "susu-cokelat-3",
           "emoji": "🥤"
         },
         {
-          "id": "susu-5",
-          "labelKey": "susu-5",
+          "id": "susu-cokelat-4",
+          "labelKey": "susu-cokelat-4",
           "emoji": "😋"
         },
         {
-          "id": "susu-6",
-          "labelKey": "susu-6",
+          "id": "susu-cokelat-5",
+          "labelKey": "susu-cokelat-5",
           "emoji": "🧽"
+        },
+        {
+          "id": "susu-cokelat-6",
+          "labelKey": "susu-cokelat-6",
+          "emoji": "✨"
         }
       ]
     },
@@ -403,37 +403,37 @@
       ]
     },
     {
-      "id": "tv",
-      "titleKey": "t-tv",
+      "id": "televisi",
+      "titleKey": "t-televisi",
       "steps": [
         {
-          "id": "tv-1",
-          "labelKey": "tv-1",
-          "emoji": "📡"
+          "id": "televisi-1",
+          "labelKey": "televisi-1",
+          "emoji": "🔌"
         },
         {
-          "id": "tv-2",
-          "labelKey": "tv-2",
+          "id": "televisi-2",
+          "labelKey": "televisi-2",
           "emoji": "🔘"
         },
         {
-          "id": "tv-3",
-          "labelKey": "tv-3",
+          "id": "televisi-3",
+          "labelKey": "televisi-3",
           "emoji": "📺"
         },
         {
-          "id": "tv-4",
-          "labelKey": "tv-4",
+          "id": "televisi-4",
+          "labelKey": "televisi-4",
           "emoji": "🔢"
         },
         {
-          "id": "tv-5",
-          "labelKey": "tv-5",
+          "id": "televisi-5",
+          "labelKey": "televisi-5",
           "emoji": "🎬"
         },
         {
-          "id": "tv-6",
-          "labelKey": "tv-6",
+          "id": "televisi-6",
+          "labelKey": "televisi-6",
           "emoji": "😄"
         }
       ]

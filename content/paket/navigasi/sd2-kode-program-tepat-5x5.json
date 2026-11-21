@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-program-tepat-5x5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Precise 5×5 Program",
-      "instruksi": "Build all the blocks first, then run: robot must reach the star without hitting a wall."
+      "instruksi": "Build all the blocks first, then run: the robot must reach the star without hitting a wall."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Semua Logam Ditarik Magnet?",
-      "instruksi": "Dekatkan magnet ke tiap benda. Taruh ke rak ditarik atau tidak ditarik.",
+      "instruksi": "Apakah semua logam ditarik magnet? Dekatkan magnet ke tiap benda, lalu taruh ke rak ditarik atau tidak ditarik.",
       "b-tarik": "ditarik magnet",
       "b-tidak": "tidak ditarik",
       "i-paku": "baut besi",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Are All Metals Pulled by a Magnet?",
-      "instruksi": "Bring the magnet near each thing. Put it on the pulled or not-pulled shelf.",
+      "instruksi": "Are all metals pulled by a magnet? Bring the magnet near each thing, then put it on the pulled or not-pulled shelf.",
       "b-tarik": "pulled by a magnet",
       "b-tidak": "not pulled",
       "i-paku": "iron bolt",

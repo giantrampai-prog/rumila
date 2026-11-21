@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pemburu-dan-penghindar-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.02"
@@ -16,13 +16,13 @@
       "i-elang": "elang laut: penglihatan tajam melihat ikan dari ketinggian",
       "i-labalaba": "laba-laba: membuat jaring lengket",
       "i-katak": "katak: lidah panjang lengket untuk menangkap serangga",
-      "i-harimau": "harimau: loreng menyamarkannya saat mengintai",
+      "i-harimau": "harimau: cakar tajam untuk mencengkeram mangsa",
       "i-ularbisa": "ular kobra: taring berbisa untuk melumpuhkan",
       "i-burunghantu": "burung hantu: terbang tanpa suara di malam hari",
       "i-cumi": "cumi-cumi: menyemburkan tinta hitam lalu kabur",
       "i-buntal": "ikan buntal: menggembung jadi bola berduri",
       "i-cicak": "cicak: memutuskan ekornya saat ditangkap",
-      "i-belalang": "belalang daun: bentuk dan warnanya seperti daun",
+      "i-landak": "landak: duri tajam di punggungnya berdiri saat terancam",
       "i-rusa": "rusa: berlari zigzag saat dikejar",
       "i-kurakura": "kura-kura: menarik kepala ke dalam tempurung",
       "i-ulat": "ulat: punya bercak seperti mata besar untuk menakuti"
@@ -36,13 +36,13 @@
       "i-elang": "sea eagle: sharp eyes that spot fish from high up",
       "i-labalaba": "spider: spins a sticky web",
       "i-katak": "frog: a long sticky tongue to catch insects",
-      "i-harimau": "tiger: stripes hide it while it stalks",
+      "i-harimau": "tiger: sharp claws to grip its prey",
       "i-ularbisa": "cobra: venomous fangs to stop its catch",
       "i-burunghantu": "owl: flies silently at night",
       "i-cumi": "squid: squirts black ink and dashes away",
       "i-buntal": "pufferfish: puffs up into a spiky ball",
       "i-cicak": "house gecko: drops its tail when caught",
-      "i-belalang": "leaf insect: shaped and coloured like a leaf",
+      "i-landak": "porcupine: sharp spines on its back stand up when threatened",
       "i-rusa": "deer: runs in zigzags when chased",
       "i-kurakura": "tortoise: pulls its head into its shell",
       "i-ulat": "caterpillar: has big eye-like spots to scare enemies"
@@ -67,7 +67,7 @@
     {
       "id": "pemangsa",
       "labelKey": "b-pemangsa",
-      "emoji": "🦈",
+      "emoji": "🎯",
       "color": "#ffcdd2"
     },
     {
@@ -139,10 +139,10 @@
       "emoji": "🦎"
     },
     {
-      "id": "belalang",
-      "labelKey": "i-belalang",
+      "id": "landak",
+      "labelKey": "i-landak",
       "bin": "mangsa",
-      "emoji": "🍃"
+      "emoji": "🦔"
     },
     {
       "id": "rusa",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-air",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Perbaiki Siklus Hidup di Air",
-      "instruksi": "Dua tahap tertukar. Tukar sekali supaya siklusnya benar.",
+      "instruksi": "Ini siklus hidup hewan di air dan tepi air. Ada yang berubah bentuk, ada yang hanya membesar. Dua tahap tertukar: tukar sekali supaya benar.",
       "s-katak": "Siklus hidup katak",
       "katak-telur": "telur katak di air",
       "katak-berudu": "berudu berekor",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "Fix the Water Life Cycles",
-      "instruksi": "Two stages are swapped. Swap them once to fix the life cycle.",
+      "instruksi": "These are life cycles of animals in and near water. Some change shape, some just grow bigger. Two stages are swapped: swap once to fix it.",
       "s-katak": "Frog life cycle",
       "katak-telur": "frogspawn in water",
       "katak-berudu": "tadpole with a tail",

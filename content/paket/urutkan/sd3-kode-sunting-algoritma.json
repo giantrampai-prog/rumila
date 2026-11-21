@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-algoritma",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,9 +11,9 @@
     "id": {
       "judul": "Sunting Algoritma Panjang",
       "instruksi": "Satu pasang kartu tertukar, mungkin tidak bersebelahan. Temukan dan tukar sekali saja.",
-      "t-surel": "Mengirim surel",
+      "t-surel": "Mengirim email",
       "surel-1": "nyalakan laptop",
-      "surel-2": "buka aplikasi surel",
+      "surel-2": "buka aplikasi email",
       "surel-3": "klik tulis pesan baru",
       "surel-4": "ketik isi pesan",
       "surel-5": "klik kirim",
@@ -24,7 +24,7 @@
       "pohon-2": "gali lubang",
       "pohon-3": "masukkan bibit",
       "pohon-4": "timbun dengan tanah",
-      "pohon-5": "siram air",
+      "pohon-5": "siram tanah timbunannya",
       "pohon-6": "tunggu seminggu",
       "pohon-7": "daun baru tumbuh",
       "t-game": "Bermain game di tablet",
@@ -95,7 +95,7 @@
       "video-tugas-4": "tekan tombol berhenti",
       "video-tugas-5": "tonton ulang videonya",
       "video-tugas-6": "potong bagian yang salah",
-      "video-tugas-7": "simpan videonya",
+      "video-tugas-7": "simpan video yang sudah dipotong",
       "video-tugas-8": "kirim video ke guru"
     },
     "en": {
@@ -114,7 +114,7 @@
       "pohon-2": "dig a hole",
       "pohon-3": "put in the young tree",
       "pohon-4": "fill in with soil",
-      "pohon-5": "water it",
+      "pohon-5": "water the filled-in soil",
       "pohon-6": "wait a week",
       "pohon-7": "new leaves grow",
       "t-game": "Playing a tablet game",
@@ -185,7 +185,7 @@
       "video-tugas-4": "press stop",
       "video-tugas-5": "watch the video back",
       "video-tugas-6": "cut out the mistakes",
-      "video-tugas-7": "save the video",
+      "video-tugas-7": "save the trimmed video",
       "video-tugas-8": "send the video to your teacher"
     }
   },

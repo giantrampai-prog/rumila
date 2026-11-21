@@ -1,6 +1,6 @@
 {
   "id": "sains-anak-siapa-di-peternakan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -114,7 +114,7 @@
       "id": "anakbebek",
       "labelKey": "i-anakbebek",
       "bin": "bebek",
-      "emoji": "🐤",
+      "emoji": "🦆",
       "scale": 0.7
     },
     {

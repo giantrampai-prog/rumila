@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-pilah-sisi-bangun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -131,13 +131,16 @@
       "id": "ketupat-biru",
       "labelKey": "i-belah-ketupat",
       "bin": "empat",
-      "emoji": "🔷"
+      "shape": "belah-ketupat",
+      "color": "#1e88e5"
     },
     {
       "id": "ketupat-oranye",
       "labelKey": "i-belah-ketupat-kecil",
       "bin": "empat",
-      "emoji": "🔸"
+      "shape": "belah-ketupat",
+      "color": "#fb8c00",
+      "scale": 0.7
     },
     {
       "id": "lingkaran",

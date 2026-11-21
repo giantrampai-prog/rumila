@@ -52,11 +52,21 @@ function buatPesanan(p: PaketDagang, knobs: Knobs, r: () => number): { pesanan: 
 
 /**
  * Harga ronde: knob `harga` (ribuan rupiah) menang; kalau tidak, dari pesanan (jumlah `price`).
- * Catatan QC: dengan knob harga, `price` barang tidak dipakai. Mengikat harga ke `price` membuat variasi soal tinggal
- * sebanyak barang ber-price di sekitar knob (audit soal-berulang-satu-sesi), jadi perilaku ini dipertahankan.
+ * Catatan QC: harga ronde tetap dari knob (variasi soal tidak dibatasi jumlah barang); barang yang ditampilkan lalu
+ * diselaraskan lewat pesananSesuaiHarga bila ada barang ber-price sama (audit harga-barang-tak-cocok menandai celahnya).
  */
 function hargaRonde(knobs: Knobs, dariPesanan: number): number {
   return knobs.harga !== undefined ? Math.max(1, Math.floor(knobs.harga)) * KOIN : dariPesanan;
+}
+
+/**
+ * bayar/kembalian dengan knob `harga` dan paket `barangIkutHarga: true`: bila ada barang ber-`price` tepat sama dengan harga ronde, pesanan diganti satu barang itu
+ * (diundi di antara yang cocok) supaya barang yang tampil sesuai harganya. Tanpa barang cocok / tanpa knob: pesanan apa adanya.
+ */
+function pesananSesuaiHarga(p: PaketDagang, knobs: Knobs, harga: number, pesanan: Pesanan[], r: () => number): Pesanan[] {
+  if (!p.barangIkutHarga || knobs.harga === undefined) return pesanan;
+  const cocok = p.goods.filter(g => g.price === harga);
+  return cocok.length ? [{ goodId: pilihSatu(cocok, r).id, qty: 1 }] : pesanan;
 }
 
 /** sisa: paket berisi tepat dua barang = [benda, penanda] (ikan + pelet, kue + lilin); selain itu benda diundi dan penandanya benda itu sendiri. */
@@ -100,8 +110,9 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "bayar": {
-      const { pesanan, harga } = buatPesanan(p, knobs, r);
-      ronde.pesanan = pesanan; ronde.harga = hargaRonde(knobs, harga); ronde.laci = laciDari(denoms);
+      const { pesanan, harga: dariPesanan } = buatPesanan(p, knobs, r);
+      const harga = hargaRonde(knobs, dariPesanan);
+      ronde.pesanan = pesananSesuaiHarga(p, knobs, harga, pesanan, r); ronde.harga = harga; ronde.laci = laciDari(denoms);
       return ronde;
     }
     case "kembalian": {
@@ -109,7 +120,7 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       const harga = hargaRonde(knobs, dariPesanan);
       const lebih = denoms.filter(d => d > harga);
       const dibayar = lebih.length ? lebih[0] : Math.ceil((harga + 1) / 10000) * 10000;
-      ronde.pesanan = pesanan; ronde.harga = harga; ronde.dibayar = dibayar; ronde.laci = laciDari(denoms);
+      ronde.pesanan = pesananSesuaiHarga(p, knobs, harga, pesanan, r); ronde.harga = harga; ronde.dibayar = dibayar; ronde.laci = laciDari(denoms);
       return ronde;
     }
     case "tukar": {

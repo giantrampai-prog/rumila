@@ -1,5 +1,7 @@
 # Daftar keputusan owner — Audit QC 21 November 2026
 
+> **Putaran 2 selesai:** semua butir keputusan sudah dikerjakan; audit 0 ERROR, 0 WARNING. Lihat bagian "Putaran 2" di akhir.
+
 Temuan yang menyangkut arah isi dan TIDAK diubah. Dikumpulkan dari log perbaikan per kelompok.
 
 ## MAT PAUD–TK B

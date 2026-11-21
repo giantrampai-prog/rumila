@@ -1,6 +1,6 @@
 {
   "id": "mana-topi-warna",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,13 +16,7 @@
       "tBiru": "Mana yang biru?",
       "tKuning": "Mana yang kuning?",
       "tHijau": "Mana yang hijau?",
-      "topi": "topi pesta",
-      "tOranye": "Mana yang oranye?",
-      "tUngu": "Mana yang ungu?",
-      "tMerahMuda": "Mana yang merah muda?",
-      "tCokelat": "Mana yang cokelat?",
-      "tHitam": "Mana yang hitam?",
-      "tAbu": "Mana yang abu-abu?"
+      "topi": "topi pesta"
     },
     "en": {
       "judul": "Robot's Party Hat",
@@ -32,13 +26,7 @@
       "tBiru": "Which one is blue?",
       "tKuning": "Which one is yellow?",
       "tHijau": "Which one is green?",
-      "topi": "party hat",
-      "tOranye": "Which one is orange?",
-      "tUngu": "Which one is purple?",
-      "tMerahMuda": "Which one is pink?",
-      "tCokelat": "Which one is brown?",
-      "tHitam": "Which one is black?",
-      "tAbu": "Which one is grey?"
+      "topi": "party hat"
     }
   },
   "knobs": {
@@ -47,7 +35,7 @@
       "max": 4,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah topi yang ditampilkan per pertanyaan"
+      "keterangan": "jumlah topi yang ditampilkan per pertanyaan; hanya empat warna (merah, biru, kuning, hijau) dengan ukuran berbeda supaya anak memilih warna, bukan ukuran"
     }
   },
   "assets": [],
@@ -70,11 +58,43 @@
       "color": "#e53935"
     },
     {
+      "id": "topi-merah-kecil",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#e53935",
+      "scale": 0.7
+    },
+    {
+      "id": "topi-merah-besar",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#e53935",
+      "scale": 1.3
+    },
+    {
       "id": "topi-biru",
       "labelKey": "topi",
       "bin": "pilihan",
       "shape": "triangle",
       "color": "#1e88e5"
+    },
+    {
+      "id": "topi-biru-kecil",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#1e88e5",
+      "scale": 0.7
+    },
+    {
+      "id": "topi-biru-besar",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#1e88e5",
+      "scale": 1.3
     },
     {
       "id": "topi-kuning",
@@ -84,6 +104,22 @@
       "color": "#fdd835"
     },
     {
+      "id": "topi-kuning-kecil",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#fdd835",
+      "scale": 0.7
+    },
+    {
+      "id": "topi-kuning-besar",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#fdd835",
+      "scale": 1.3
+    },
+    {
       "id": "topi-hijau",
       "labelKey": "topi",
       "bin": "pilihan",
@@ -91,88 +127,62 @@
       "color": "#43a047"
     },
     {
-      "bin": "pilihan",
-      "id": "topi-oranye",
+      "id": "topi-hijau-kecil",
       "labelKey": "topi",
+      "bin": "pilihan",
       "shape": "triangle",
-      "color": "#fb8c00"
+      "color": "#43a047",
+      "scale": 0.7
     },
     {
-      "bin": "pilihan",
-      "id": "topi-ungu",
+      "id": "topi-hijau-besar",
       "labelKey": "topi",
-      "shape": "triangle",
-      "color": "#8e24aa"
-    },
-    {
       "bin": "pilihan",
-      "id": "topi-merahmuda",
-      "labelKey": "topi",
       "shape": "triangle",
-      "color": "#f48fb1"
-    },
-    {
-      "bin": "pilihan",
-      "id": "topi-cokelat",
-      "labelKey": "topi",
-      "shape": "triangle",
-      "color": "#6d4c41"
-    },
-    {
-      "bin": "pilihan",
-      "id": "topi-hitam",
-      "labelKey": "topi",
-      "shape": "triangle",
-      "color": "#212121"
-    },
-    {
-      "bin": "pilihan",
-      "id": "topi-abuabu",
-      "labelKey": "topi",
-      "shape": "triangle",
-      "color": "#9e9e9e"
+      "color": "#43a047",
+      "scale": 1.3
     }
   ],
   "pilihan": [
     {
-      "id": "merah",
+      "id": "r1",
       "promptKey": "tMerah",
       "choices": [
-        "topi-merah",
-        "topi-biru",
+        "topi-biru-besar",
         "topi-kuning",
-        "topi-hijau"
+        "topi-hijau-kecil",
+        "topi-merah"
       ],
       "correct": "topi-merah"
     },
     {
-      "id": "biru",
+      "id": "r2",
       "promptKey": "tBiru",
       "choices": [
-        "topi-merah",
-        "topi-biru",
         "topi-kuning",
-        "topi-hijau"
+        "topi-hijau-kecil",
+        "topi-merah-kecil",
+        "topi-biru"
       ],
       "correct": "topi-biru"
     },
     {
-      "id": "kuning",
+      "id": "r3",
       "promptKey": "tKuning",
       "choices": [
-        "topi-merah",
-        "topi-biru",
-        "topi-kuning",
-        "topi-hijau"
+        "topi-hijau-kecil",
+        "topi-merah-kecil",
+        "topi-biru-besar",
+        "topi-kuning"
       ],
       "correct": "topi-kuning"
     },
     {
-      "id": "hijau",
+      "id": "r4",
       "promptKey": "tHijau",
       "choices": [
-        "topi-merah",
-        "topi-biru",
+        "topi-merah-kecil",
+        "topi-biru-besar",
         "topi-kuning",
         "topi-hijau"
       ],
@@ -180,69 +190,91 @@
     },
     {
       "id": "r5",
-      "promptKey": "tOranye",
+      "promptKey": "tMerah",
       "choices": [
-        "topi-oranye",
         "topi-biru",
-        "topi-hijau",
-        "topi-ungu"
+        "topi-kuning-kecil",
+        "topi-hijau-besar",
+        "topi-merah-kecil"
       ],
-      "correct": "topi-oranye"
+      "correct": "topi-merah-kecil"
     },
     {
       "id": "r6",
-      "promptKey": "tUngu",
+      "promptKey": "tBiru",
       "choices": [
-        "topi-kuning",
-        "topi-oranye",
-        "topi-hijau",
-        "topi-ungu"
+        "topi-kuning-kecil",
+        "topi-hijau-besar",
+        "topi-merah-besar",
+        "topi-biru-kecil"
       ],
-      "correct": "topi-ungu"
+      "correct": "topi-biru-kecil"
     },
     {
       "id": "r7",
-      "promptKey": "tMerahMuda",
+      "promptKey": "tKuning",
       "choices": [
-        "topi-hijau",
-        "topi-cokelat",
-        "topi-merahmuda",
-        "topi-biru"
+        "topi-hijau-besar",
+        "topi-merah-besar",
+        "topi-biru",
+        "topi-kuning-kecil"
       ],
-      "correct": "topi-merahmuda"
+      "correct": "topi-kuning-kecil"
     },
     {
       "id": "r8",
-      "promptKey": "tCokelat",
+      "promptKey": "tHijau",
       "choices": [
-        "topi-merahmuda",
-        "topi-cokelat",
-        "topi-kuning",
-        "topi-biru"
+        "topi-merah-besar",
+        "topi-biru",
+        "topi-kuning-kecil",
+        "topi-hijau-kecil"
       ],
-      "correct": "topi-cokelat"
+      "correct": "topi-hijau-kecil"
     },
     {
       "id": "r9",
-      "promptKey": "tHitam",
+      "promptKey": "tMerah",
       "choices": [
-        "topi-hitam",
-        "topi-kuning",
-        "topi-merah",
-        "topi-hijau"
+        "topi-biru-kecil",
+        "topi-kuning-besar",
+        "topi-hijau",
+        "topi-merah-besar"
       ],
-      "correct": "topi-hitam"
+      "correct": "topi-merah-besar"
     },
     {
       "id": "r10",
-      "promptKey": "tAbu",
+      "promptKey": "tBiru",
+      "choices": [
+        "topi-kuning-besar",
+        "topi-hijau",
+        "topi-merah",
+        "topi-biru-besar"
+      ],
+      "correct": "topi-biru-besar"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tKuning",
+      "choices": [
+        "topi-hijau",
+        "topi-merah",
+        "topi-biru-kecil",
+        "topi-kuning-besar"
+      ],
+      "correct": "topi-kuning-besar"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tHijau",
       "choices": [
         "topi-merah",
-        "topi-kuning",
-        "topi-ungu",
-        "topi-abuabu"
+        "topi-biru-kecil",
+        "topi-kuning-besar",
+        "topi-hijau-besar"
       ],
-      "correct": "topi-abuabu"
+      "correct": "topi-hijau-besar"
     }
   ]
 }

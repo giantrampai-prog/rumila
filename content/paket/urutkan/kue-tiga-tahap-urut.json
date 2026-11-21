@@ -1,6 +1,6 @@
 {
   "id": "kue-tiga-tahap-urut",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,156 +10,160 @@
   "locale": {
     "id": {
       "judul": "Enam Langkah Membuat Kue",
-      "instruksi": "Susun enam langkah membuat kue dari awal sampai matang.",
-      "kue": "Membuat kue: siapkan, campur, panggang",
-      "roti": "Membuat roti: siapkan, campur, panggang",
-      "tepung-telur": "ambil tepung dan telur",
-      "cuci": "cuci tangan",
-      "aduk": "aduk adonan",
-      "tuang": "tuang ke loyang",
-      "oven": "masukkan ke oven",
-      "jadi": "kue matang",
-      "tepung-ragi": "ambil tepung dan ragi",
-      "uleni": "uleni adonan",
-      "bentuk": "bentuk roti",
-      "roti2": "roti matang",
+      "instruksi": "Tiap langkah punya tahap: siapkan, campur, panggang. Susun tahap demi tahap dari awal sampai matang.",
+      "t-kue": "Membuat kue: siapkan, campur, panggang",
+      "kue-1": "siapkan: cuci tangan",
+      "kue-2": "siapkan: ambil tepung dan telur",
+      "kue-3": "campur: aduk tepung dan telur",
+      "kue-4": "campur: tuang susu, aduk lagi",
+      "kue-5": "panggang: masukkan ke oven",
+      "kue-6": "panggang: kue matang",
+      "t-roti": "Membuat roti: siapkan, campur, panggang",
+      "roti-1": "siapkan: cuci tangan",
+      "roti-2": "siapkan: ambil tepung dan ragi",
+      "roti-3": "campur: tuang air ke tepung",
+      "roti-4": "campur: uleni adonan",
+      "roti-5": "panggang: masukkan ke oven",
+      "roti-6": "panggang: roti matang",
       "t-kering": "Membuat kue kering: siapkan, campur, panggang",
-      "kering-cuci": "cuci tangan",
-      "kering-mentega": "ambil mentega",
-      "kering-aduk": "aduk adonan",
-      "kering-cetak": "cetak bentuk bintang",
-      "kering-oven": "masukkan ke oven",
-      "kering-jadi": "kue kering matang",
+      "kering-1": "siapkan: cuci tangan",
+      "kering-2": "siapkan: ambil mentega dan tepung",
+      "kering-3": "campur: masukkan ke mangkuk",
+      "kering-4": "campur: aduk jadi adonan",
+      "kering-5": "panggang: masukkan ke oven",
+      "kering-6": "panggang: kue kering matang",
       "t-pizza": "Membuat pizza: siapkan, campur, panggang",
-      "pizza-cuci": "cuci tangan",
-      "pizza-tepung": "ambil tepung",
-      "pizza-uleni": "uleni adonan",
-      "pizza-keju": "taburi keju",
-      "pizza-oven": "masukkan ke oven",
-      "pizza-jadi": "pizza matang",
+      "pizza-1": "siapkan: cuci tangan",
+      "pizza-2": "siapkan: ambil tepung",
+      "pizza-3": "campur: campur tepung dengan air",
+      "pizza-4": "campur: uleni sampai lembut",
+      "pizza-5": "panggang: masukkan ke oven",
+      "pizza-6": "panggang: pizza matang",
       "t-mangkuk": "Membuat kue mangkuk: siapkan, campur, panggang",
-      "mangkuk-cuci": "cuci tangan",
-      "mangkuk-telur": "ambil telur",
-      "mangkuk-kocok": "kocok adonan",
-      "mangkuk-tuang": "tuang ke cetakan",
-      "mangkuk-oven": "masukkan ke oven",
-      "mangkuk-jadi": "kue mangkuk matang",
+      "mangkuk-1": "siapkan: cuci tangan",
+      "mangkuk-2": "siapkan: ambil telur dan tepung",
+      "mangkuk-3": "campur: kocok telur",
+      "mangkuk-4": "campur: tambah tepung, aduk lagi",
+      "mangkuk-5": "panggang: masukkan ke oven",
+      "mangkuk-6": "panggang: kue mangkuk matang",
       "t-pai": "Membuat pai apel: siapkan, campur, panggang",
-      "pai-cuci": "cuci apel",
-      "pai-potong": "potong apel",
-      "pai-aduk": "aduk adonan",
-      "pai-tutup": "tutup apel dengan adonan",
-      "pai-oven": "masukkan ke oven",
-      "pai-jadi": "pai apel matang",
+      "pai-1": "siapkan: cuci apel",
+      "pai-2": "siapkan: potong apel",
+      "pai-3": "campur: aduk tepung dan mentega",
+      "pai-4": "campur: masukkan apel ke adonan",
+      "pai-5": "panggang: masukkan ke oven",
+      "pai-6": "panggang: pai apel matang",
       "t-bolu": "Membuat bolu pisang: siapkan, campur, panggang",
-      "bolu-kupas": "kupas pisang",
-      "bolu-lumat": "lumatkan pisang",
-      "bolu-telur": "tambah telur",
-      "bolu-aduk": "aduk adonan",
-      "bolu-oven": "masukkan ke oven",
-      "bolu-jadi": "bolu pisang matang",
+      "bolu-1": "siapkan: kupas pisang",
+      "bolu-2": "siapkan: lumatkan pisang",
+      "bolu-3": "campur: tambah telur",
+      "bolu-4": "campur: aduk adonan",
+      "bolu-5": "panggang: masukkan ke oven",
+      "bolu-6": "panggang: bolu pisang matang",
       "t-roti-cokelat": "Membuat roti cokelat: siapkan, campur, panggang",
-      "roti-cokelat-cuci": "cuci tangan",
-      "roti-cokelat-tepung": "ambil tepung",
-      "roti-cokelat-uleni": "uleni adonan",
-      "roti-cokelat-isi": "isi dengan cokelat",
-      "roti-cokelat-oven": "masukkan ke oven",
-      "roti-cokelat-jadi": "roti cokelat matang",
-      "t-nastar": "Membuat nastar: siapkan, campur, panggang",
-      "nastar-kupas": "kupas nanas",
-      "nastar-selai": "masak selai nanas",
-      "nastar-aduk": "aduk adonan",
-      "nastar-bulat": "bulatkan, isi selai",
-      "nastar-oven": "masukkan ke oven",
-      "nastar-jadi": "nastar matang",
-      "t-roti-sosis": "Membuat roti sosis: siapkan, campur, panggang",
-      "roti-sosis-cuci": "cuci tangan",
-      "roti-sosis-tepung": "ambil tepung",
-      "roti-sosis-uleni": "uleni adonan",
-      "roti-sosis-gulung": "gulung dengan sosis",
-      "roti-sosis-oven": "masukkan ke oven",
-      "roti-sosis-jadi": "roti sosis matang"
+      "roti-cokelat-1": "siapkan: cuci tangan",
+      "roti-cokelat-2": "siapkan: ambil tepung dan cokelat",
+      "roti-cokelat-3": "campur: campur cokelat ke tepung",
+      "roti-cokelat-4": "campur: uleni adonan",
+      "roti-cokelat-5": "panggang: masukkan ke oven",
+      "roti-cokelat-6": "panggang: roti cokelat matang",
+      "t-keju": "Membuat kue keju: siapkan, campur, panggang",
+      "keju-1": "siapkan: cuci tangan",
+      "keju-2": "siapkan: parut keju",
+      "keju-3": "campur: campur keju dengan tepung",
+      "keju-4": "campur: aduk jadi adonan",
+      "keju-5": "panggang: masukkan ke oven",
+      "keju-6": "panggang: kue keju matang",
+      "t-roti-susu": "Membuat roti susu: siapkan, campur, panggang",
+      "roti-susu-1": "siapkan: cuci tangan",
+      "roti-susu-2": "siapkan: ambil tepung dan ragi",
+      "roti-susu-3": "campur: tuang susu ke tepung",
+      "roti-susu-4": "campur: uleni adonan",
+      "roti-susu-5": "panggang: masukkan ke oven",
+      "roti-susu-6": "panggang: roti susu matang"
     },
     "en": {
       "judul": "Six Baking Steps",
-      "instruksi": "Put the six baking steps in order, from the start until it is baked.",
-      "kue": "Baking: get ready, mix, bake",
-      "roti": "Bread: get ready, mix, bake",
-      "tepung-telur": "get the flour and eggs",
-      "cuci": "wash hands",
-      "aduk": "stir the batter",
-      "tuang": "pour into the tin",
-      "oven": "put it in the oven",
-      "jadi": "the cake is done",
-      "tepung-ragi": "get the flour and yeast",
-      "uleni": "knead the dough",
-      "bentuk": "shape the loaf",
-      "roti2": "the bread is done",
+      "instruksi": "Each step has a stage: prepare, mix, bake. Put them in order stage by stage, from the start until it is ready.",
+      "t-kue": "Making cake: prepare, mix, bake",
+      "kue-1": "prepare: wash your hands",
+      "kue-2": "prepare: get flour and eggs",
+      "kue-3": "mix: stir the flour and eggs",
+      "kue-4": "mix: pour in milk, stir again",
+      "kue-5": "bake: put it in the oven",
+      "kue-6": "bake: the cake is ready",
+      "t-roti": "Making bread: prepare, mix, bake",
+      "roti-1": "prepare: wash your hands",
+      "roti-2": "prepare: get flour and yeast",
+      "roti-3": "mix: pour water into the flour",
+      "roti-4": "mix: knead the dough",
+      "roti-5": "bake: put it in the oven",
+      "roti-6": "bake: the bread is ready",
       "t-kering": "Making cookies: prepare, mix, bake",
-      "kering-cuci": "wash hands",
-      "kering-mentega": "take the butter",
-      "kering-aduk": "stir the dough",
-      "kering-cetak": "cut out star shapes",
-      "kering-oven": "put it in the oven",
-      "kering-jadi": "cookies are done",
+      "kering-1": "prepare: wash your hands",
+      "kering-2": "prepare: get butter and flour",
+      "kering-3": "mix: put them in a bowl",
+      "kering-4": "mix: stir into a dough",
+      "kering-5": "bake: put it in the oven",
+      "kering-6": "bake: the cookies are ready",
       "t-pizza": "Making pizza: prepare, mix, bake",
-      "pizza-cuci": "wash hands",
-      "pizza-tepung": "take the flour",
-      "pizza-uleni": "knead the dough",
-      "pizza-keju": "sprinkle cheese",
-      "pizza-oven": "put it in the oven",
-      "pizza-jadi": "pizza is done",
+      "pizza-1": "prepare: wash your hands",
+      "pizza-2": "prepare: get the flour",
+      "pizza-3": "mix: mix the flour with water",
+      "pizza-4": "mix: knead until soft",
+      "pizza-5": "bake: put it in the oven",
+      "pizza-6": "bake: the pizza is ready",
       "t-mangkuk": "Making cupcakes: prepare, mix, bake",
-      "mangkuk-cuci": "wash hands",
-      "mangkuk-telur": "take the eggs",
-      "mangkuk-kocok": "whisk the batter",
-      "mangkuk-tuang": "spoon into the cups",
-      "mangkuk-oven": "put it in the oven",
-      "mangkuk-jadi": "cupcakes are done",
+      "mangkuk-1": "prepare: wash your hands",
+      "mangkuk-2": "prepare: get eggs and flour",
+      "mangkuk-3": "mix: beat the eggs",
+      "mangkuk-4": "mix: add flour, stir again",
+      "mangkuk-5": "bake: put it in the oven",
+      "mangkuk-6": "bake: the cupcakes are ready",
       "t-pai": "Making apple pie: prepare, mix, bake",
-      "pai-cuci": "wash the apples",
-      "pai-potong": "cut the apples",
-      "pai-aduk": "stir the dough",
-      "pai-tutup": "cover the apples with dough",
-      "pai-oven": "put it in the oven",
-      "pai-jadi": "apple pie is done",
+      "pai-1": "prepare: wash the apples",
+      "pai-2": "prepare: cut the apples",
+      "pai-3": "mix: stir the flour and butter",
+      "pai-4": "mix: put the apples in the dough",
+      "pai-5": "bake: put it in the oven",
+      "pai-6": "bake: the apple pie is ready",
       "t-bolu": "Making banana cake: prepare, mix, bake",
-      "bolu-kupas": "peel the bananas",
-      "bolu-lumat": "mash the bananas",
-      "bolu-telur": "add the eggs",
-      "bolu-aduk": "stir the batter",
-      "bolu-oven": "put it in the oven",
-      "bolu-jadi": "banana cake is done",
+      "bolu-1": "prepare: peel the bananas",
+      "bolu-2": "prepare: mash the bananas",
+      "bolu-3": "mix: add the eggs",
+      "bolu-4": "mix: stir the batter",
+      "bolu-5": "bake: put it in the oven",
+      "bolu-6": "bake: the banana cake is ready",
       "t-roti-cokelat": "Making chocolate bread: prepare, mix, bake",
-      "roti-cokelat-cuci": "wash hands",
-      "roti-cokelat-tepung": "take the flour",
-      "roti-cokelat-uleni": "knead the dough",
-      "roti-cokelat-isi": "fill with chocolate",
-      "roti-cokelat-oven": "put it in the oven",
-      "roti-cokelat-jadi": "chocolate bread is done",
-      "t-nastar": "Making pineapple tarts: prepare, mix, bake",
-      "nastar-kupas": "peel the pineapple",
-      "nastar-selai": "cook pineapple jam",
-      "nastar-aduk": "stir the dough",
-      "nastar-bulat": "roll into balls with jam inside",
-      "nastar-oven": "put it in the oven",
-      "nastar-jadi": "pineapple tarts are done",
-      "t-roti-sosis": "Making sausage rolls: prepare, mix, bake",
-      "roti-sosis-cuci": "wash hands",
-      "roti-sosis-tepung": "take the flour",
-      "roti-sosis-uleni": "knead the dough",
-      "roti-sosis-gulung": "roll it around a sausage",
-      "roti-sosis-oven": "put it in the oven",
-      "roti-sosis-jadi": "sausage rolls are done"
+      "roti-cokelat-1": "prepare: wash your hands",
+      "roti-cokelat-2": "prepare: get flour and chocolate",
+      "roti-cokelat-3": "mix: mix the chocolate into the flour",
+      "roti-cokelat-4": "mix: knead the dough",
+      "roti-cokelat-5": "bake: put it in the oven",
+      "roti-cokelat-6": "bake: the chocolate bread is ready",
+      "t-keju": "Making cheese cookies: prepare, mix, bake",
+      "keju-1": "prepare: wash your hands",
+      "keju-2": "prepare: grate the cheese",
+      "keju-3": "mix: mix the cheese with flour",
+      "keju-4": "mix: stir into a dough",
+      "keju-5": "bake: put it in the oven",
+      "keju-6": "bake: the cheese cookies are ready",
+      "t-roti-susu": "Making milk bread: prepare, mix, bake",
+      "roti-susu-1": "prepare: wash your hands",
+      "roti-susu-2": "prepare: get flour and yeast",
+      "roti-susu-3": "mix: pour milk into the flour",
+      "roti-susu-4": "mix: knead the dough",
+      "roti-susu-5": "bake: put it in the oven",
+      "roti-susu-6": "bake: the milk bread is ready"
     }
   },
   "knobs": {
     "steps": {
-      "min": 4,
+      "min": 6,
       "max": 6,
       "default": 6,
       "step": 1,
-      "keterangan": "jumlah langkah tampil; 6 = tiga tahap lengkap"
+      "keterangan": "jumlah langkah tampil: selalu 6 (tiga tahap × dua langkah)"
     }
   },
   "assets": [],
@@ -170,72 +174,72 @@
   "sequences": [
     {
       "id": "kue",
-      "titleKey": "kue",
+      "titleKey": "t-kue",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "cuci",
+          "id": "kue-1",
+          "labelKey": "kue-1",
           "emoji": "🧼"
         },
         {
-          "id": "tepung",
-          "labelKey": "tepung-telur",
+          "id": "kue-2",
+          "labelKey": "kue-2",
           "emoji": "🌾"
         },
         {
-          "id": "aduk",
-          "labelKey": "aduk",
+          "id": "kue-3",
+          "labelKey": "kue-3",
           "emoji": "🥄"
         },
         {
-          "id": "tuang",
-          "labelKey": "tuang",
-          "emoji": "🥣"
+          "id": "kue-4",
+          "labelKey": "kue-4",
+          "emoji": "🥛"
         },
         {
-          "id": "oven",
-          "labelKey": "oven",
+          "id": "kue-5",
+          "labelKey": "kue-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "jadi",
+          "id": "kue-6",
+          "labelKey": "kue-6",
           "emoji": "🎂"
         }
       ]
     },
     {
       "id": "roti",
-      "titleKey": "roti",
+      "titleKey": "t-roti",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "cuci",
+          "id": "roti-1",
+          "labelKey": "roti-1",
           "emoji": "🧼"
         },
         {
-          "id": "tepung2",
-          "labelKey": "tepung-ragi",
+          "id": "roti-2",
+          "labelKey": "roti-2",
           "emoji": "🌾"
         },
         {
-          "id": "uleni",
-          "labelKey": "uleni",
+          "id": "roti-3",
+          "labelKey": "roti-3",
+          "emoji": "💧"
+        },
+        {
+          "id": "roti-4",
+          "labelKey": "roti-4",
           "emoji": "🤲"
         },
         {
-          "id": "bentuk",
-          "labelKey": "bentuk",
-          "emoji": "🫓"
-        },
-        {
-          "id": "oven2",
-          "labelKey": "oven",
+          "id": "roti-5",
+          "labelKey": "roti-5",
           "emoji": "♨️"
         },
         {
-          "id": "roti2",
-          "labelKey": "roti2",
+          "id": "roti-6",
+          "labelKey": "roti-6",
           "emoji": "🍞"
         }
       ]
@@ -245,33 +249,33 @@
       "titleKey": "t-kering",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "kering-cuci",
+          "id": "kering-1",
+          "labelKey": "kering-1",
           "emoji": "🧼"
         },
         {
-          "id": "mentega",
-          "labelKey": "kering-mentega",
+          "id": "kering-2",
+          "labelKey": "kering-2",
           "emoji": "🧈"
         },
         {
-          "id": "aduk",
-          "labelKey": "kering-aduk",
+          "id": "kering-3",
+          "labelKey": "kering-3",
           "emoji": "🥣"
         },
         {
-          "id": "cetak",
-          "labelKey": "kering-cetak",
-          "emoji": "⭐"
+          "id": "kering-4",
+          "labelKey": "kering-4",
+          "emoji": "🥄"
         },
         {
-          "id": "oven",
-          "labelKey": "kering-oven",
+          "id": "kering-5",
+          "labelKey": "kering-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "kering-jadi",
+          "id": "kering-6",
+          "labelKey": "kering-6",
           "emoji": "🍪"
         }
       ]
@@ -281,33 +285,33 @@
       "titleKey": "t-pizza",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "pizza-cuci",
+          "id": "pizza-1",
+          "labelKey": "pizza-1",
           "emoji": "🧼"
         },
         {
-          "id": "tepung",
-          "labelKey": "pizza-tepung",
+          "id": "pizza-2",
+          "labelKey": "pizza-2",
           "emoji": "🌾"
         },
         {
-          "id": "uleni",
-          "labelKey": "pizza-uleni",
+          "id": "pizza-3",
+          "labelKey": "pizza-3",
+          "emoji": "🥣"
+        },
+        {
+          "id": "pizza-4",
+          "labelKey": "pizza-4",
           "emoji": "🤲"
         },
         {
-          "id": "keju",
-          "labelKey": "pizza-keju",
-          "emoji": "🧀"
-        },
-        {
-          "id": "oven",
-          "labelKey": "pizza-oven",
+          "id": "pizza-5",
+          "labelKey": "pizza-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "pizza-jadi",
+          "id": "pizza-6",
+          "labelKey": "pizza-6",
           "emoji": "🍕"
         }
       ]
@@ -317,33 +321,33 @@
       "titleKey": "t-mangkuk",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "mangkuk-cuci",
+          "id": "mangkuk-1",
+          "labelKey": "mangkuk-1",
           "emoji": "🧼"
         },
         {
-          "id": "telur",
-          "labelKey": "mangkuk-telur",
+          "id": "mangkuk-2",
+          "labelKey": "mangkuk-2",
           "emoji": "🥚"
         },
         {
-          "id": "kocok",
-          "labelKey": "mangkuk-kocok",
+          "id": "mangkuk-3",
+          "labelKey": "mangkuk-3",
           "emoji": "🥣"
         },
         {
-          "id": "tuang",
-          "labelKey": "mangkuk-tuang",
+          "id": "mangkuk-4",
+          "labelKey": "mangkuk-4",
           "emoji": "🥄"
         },
         {
-          "id": "oven",
-          "labelKey": "mangkuk-oven",
+          "id": "mangkuk-5",
+          "labelKey": "mangkuk-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "mangkuk-jadi",
+          "id": "mangkuk-6",
+          "labelKey": "mangkuk-6",
           "emoji": "🧁"
         }
       ]
@@ -353,33 +357,33 @@
       "titleKey": "t-pai",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "pai-cuci",
+          "id": "pai-1",
+          "labelKey": "pai-1",
           "emoji": "🍎"
         },
         {
-          "id": "potong",
-          "labelKey": "pai-potong",
+          "id": "pai-2",
+          "labelKey": "pai-2",
           "emoji": "🔪"
         },
         {
-          "id": "aduk",
-          "labelKey": "pai-aduk",
+          "id": "pai-3",
+          "labelKey": "pai-3",
           "emoji": "🥣"
         },
         {
-          "id": "tutup",
-          "labelKey": "pai-tutup",
-          "emoji": "🫓"
+          "id": "pai-4",
+          "labelKey": "pai-4",
+          "emoji": "🍏"
         },
         {
-          "id": "oven",
-          "labelKey": "pai-oven",
+          "id": "pai-5",
+          "labelKey": "pai-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "pai-jadi",
+          "id": "pai-6",
+          "labelKey": "pai-6",
           "emoji": "🥧"
         }
       ]
@@ -389,33 +393,33 @@
       "titleKey": "t-bolu",
       "steps": [
         {
-          "id": "kupas",
-          "labelKey": "bolu-kupas",
+          "id": "bolu-1",
+          "labelKey": "bolu-1",
           "emoji": "🍌"
         },
         {
-          "id": "lumat",
-          "labelKey": "bolu-lumat",
+          "id": "bolu-2",
+          "labelKey": "bolu-2",
           "emoji": "🥄"
         },
         {
-          "id": "telur",
-          "labelKey": "bolu-telur",
+          "id": "bolu-3",
+          "labelKey": "bolu-3",
           "emoji": "🥚"
         },
         {
-          "id": "aduk",
-          "labelKey": "bolu-aduk",
+          "id": "bolu-4",
+          "labelKey": "bolu-4",
           "emoji": "🥣"
         },
         {
-          "id": "oven",
-          "labelKey": "bolu-oven",
+          "id": "bolu-5",
+          "labelKey": "bolu-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "bolu-jadi",
+          "id": "bolu-6",
+          "labelKey": "bolu-6",
           "emoji": "🍰"
         }
       ]
@@ -425,105 +429,105 @@
       "titleKey": "t-roti-cokelat",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "roti-cokelat-cuci",
+          "id": "roti-cokelat-1",
+          "labelKey": "roti-cokelat-1",
           "emoji": "🧼"
         },
         {
-          "id": "tepung",
-          "labelKey": "roti-cokelat-tepung",
+          "id": "roti-cokelat-2",
+          "labelKey": "roti-cokelat-2",
           "emoji": "🌾"
         },
         {
-          "id": "uleni",
-          "labelKey": "roti-cokelat-uleni",
-          "emoji": "🤲"
-        },
-        {
-          "id": "isi",
-          "labelKey": "roti-cokelat-isi",
+          "id": "roti-cokelat-3",
+          "labelKey": "roti-cokelat-3",
           "emoji": "🍫"
         },
         {
-          "id": "oven",
-          "labelKey": "roti-cokelat-oven",
+          "id": "roti-cokelat-4",
+          "labelKey": "roti-cokelat-4",
+          "emoji": "🤲"
+        },
+        {
+          "id": "roti-cokelat-5",
+          "labelKey": "roti-cokelat-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "roti-cokelat-jadi",
+          "id": "roti-cokelat-6",
+          "labelKey": "roti-cokelat-6",
           "emoji": "🍞"
         }
       ]
     },
     {
-      "id": "nastar",
-      "titleKey": "t-nastar",
+      "id": "keju",
+      "titleKey": "t-keju",
       "steps": [
         {
-          "id": "kupas",
-          "labelKey": "nastar-kupas",
-          "emoji": "🍍"
+          "id": "keju-1",
+          "labelKey": "keju-1",
+          "emoji": "🧼"
         },
         {
-          "id": "selai",
-          "labelKey": "nastar-selai",
-          "emoji": "🍯"
+          "id": "keju-2",
+          "labelKey": "keju-2",
+          "emoji": "🧀"
         },
         {
-          "id": "aduk",
-          "labelKey": "nastar-aduk",
+          "id": "keju-3",
+          "labelKey": "keju-3",
           "emoji": "🥣"
         },
         {
-          "id": "bulat",
-          "labelKey": "nastar-bulat",
-          "emoji": "🟡"
+          "id": "keju-4",
+          "labelKey": "keju-4",
+          "emoji": "🥄"
         },
         {
-          "id": "oven",
-          "labelKey": "nastar-oven",
+          "id": "keju-5",
+          "labelKey": "keju-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "nastar-jadi",
+          "id": "keju-6",
+          "labelKey": "keju-6",
           "emoji": "🍪"
         }
       ]
     },
     {
-      "id": "roti-sosis",
-      "titleKey": "t-roti-sosis",
+      "id": "roti-susu",
+      "titleKey": "t-roti-susu",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "roti-sosis-cuci",
+          "id": "roti-susu-1",
+          "labelKey": "roti-susu-1",
           "emoji": "🧼"
         },
         {
-          "id": "tepung",
-          "labelKey": "roti-sosis-tepung",
+          "id": "roti-susu-2",
+          "labelKey": "roti-susu-2",
           "emoji": "🌾"
         },
         {
-          "id": "uleni",
-          "labelKey": "roti-sosis-uleni",
+          "id": "roti-susu-3",
+          "labelKey": "roti-susu-3",
+          "emoji": "🥛"
+        },
+        {
+          "id": "roti-susu-4",
+          "labelKey": "roti-susu-4",
           "emoji": "🤲"
         },
         {
-          "id": "gulung",
-          "labelKey": "roti-sosis-gulung",
-          "emoji": "🌭"
-        },
-        {
-          "id": "oven",
-          "labelKey": "roti-sosis-oven",
+          "id": "roti-susu-5",
+          "labelKey": "roti-susu-5",
           "emoji": "♨️"
         },
         {
-          "id": "jadi",
-          "labelKey": "roti-sosis-jadi",
+          "id": "roti-susu-6",
+          "labelKey": "roti-susu-6",
           "emoji": "🥖"
         }
       ]

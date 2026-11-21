@@ -244,8 +244,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah perangkat ke tiga kelompok: untuk memasukkan, untuk menyimpan, dan untuk menampilkan data",
-        "en": "I can sort devices into three groups: for putting data in, for storing it, and for showing it"
+        "id": "Aku bisa memilah perangkat ke tiga kelompok: untuk memasukkan, untuk menyimpan, dan untuk mengeluarkan data",
+        "en": "I can sort devices into three groups: for putting data in, for storing it, and for giving it out"
       },
       "depth": [
         "pakai"
@@ -258,7 +258,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Menambah 'menyimpan' (flashdisk, kartu memori, hard disk) pada pilah masukan/keluaran SD 2. Jebakan: flashdisk dikira masukan karena dicolokkan; printer dikira menyimpan karena kertasnya disimpan. Kode Computer Systems Stage 3 belum ada di kamus; refs kosong. Knob: binCount 2 → 3, itemCount 6 → 9."
+      "catatan": "Menambah 'menyimpan' (flashdisk, kartu memori, hard disk, SSD) pada pilah masukan/keluaran SD 2. Kotak keluaran berlabel 'mengeluarkan' (bukan 'menampilkan') karena isinya juga speaker dan printer. Jebakan: flashdisk dikira masukan karena dicolokkan; printer dikira menyimpan karena kertasnya disimpan. Kode Computer Systems Stage 3 belum ada di kamus; refs kosong. Knob: binCount 2 → 3, itemCount 6 → 9."
     },
     {
       "id": "KODE.SD3.POLA.01",

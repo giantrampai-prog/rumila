@@ -1,6 +1,6 @@
 {
   "id": "bayar-rupiah-alat-tulis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,11 @@
       "penggaris": "penggaris",
       "buku": "buku tulis",
       "krayon": "krayon",
-      "tas": "tas pensil"
+      "tas": "tas pensil",
+      "pulpen": "pulpen",
+      "gunting": "gunting",
+      "kuas": "kuas",
+      "catair": "cat air"
     },
     "en": {
       "judul": "Buying Stationery",
@@ -24,7 +28,11 @@
       "penggaris": "ruler",
       "buku": "notebook",
       "krayon": "crayons",
-      "tas": "pencil case"
+      "tas": "pencil case",
+      "pulpen": "pen",
+      "gunting": "scissors",
+      "kuas": "paintbrush",
+      "catair": "watercolour paints"
     }
   },
   "knobs": {
@@ -69,10 +77,28 @@
       "emoji": "✏️"
     },
     {
+      "id": "pulpen",
+      "labelKey": "pulpen",
+      "price": 4000,
+      "emoji": "🖊️"
+    },
+    {
+      "id": "gunting",
+      "labelKey": "gunting",
+      "price": 5000,
+      "emoji": "✂️"
+    },
+    {
       "id": "buku",
       "labelKey": "buku",
       "price": 6000,
       "emoji": "📒"
+    },
+    {
+      "id": "kuas",
+      "labelKey": "kuas",
+      "price": 7000,
+      "emoji": "🖌️"
     },
     {
       "id": "krayon",
@@ -85,6 +111,12 @@
       "labelKey": "tas",
       "price": 9000,
       "emoji": "👝"
+    },
+    {
+      "id": "catair",
+      "labelKey": "catair",
+      "price": 10000,
+      "emoji": "🎨"
     }
   ],
   "customerRule": {

@@ -14,7 +14,7 @@
       },
       "statement": {
         "id": "Aku bisa menyusun program 9 sampai 12 perintah yang tepat supaya robot sampai bintang di grid 5×5 berdinding",
-        "en": "I can build a precise program of 9 to 12 commands so robot reaches the star on a 5×5 grid with walls"
+        "en": "I can build a precise program of 9 to 12 commands so the robot reaches the star on a 5×5 grid with walls"
       },
       "depth": [
         "pakai"
@@ -48,7 +48,7 @@
       },
       "statement": {
         "id": "Aku bisa memilih jalan terpendek di antara dua jalan supaya program robot muat di rak",
-        "en": "I can choose the shorter of two paths so robot's program fits in the rack"
+        "en": "I can choose the shorter of two paths so the robot's program fits in the rack"
       },
       "depth": [
         "pakai"
@@ -76,7 +76,7 @@
       },
       "statement": {
         "id": "Aku bisa menemukan dua perintah yang berulang lalu memasukkannya ke satu blok ulangi supaya robot melewati batu-batu",
-        "en": "I can spot two commands that repeat and put them in one repeat block so robot gets past the rocks"
+        "en": "I can spot two commands that repeat and put them in one repeat block so the robot gets past the rocks"
       },
       "depth": [
         "pakai"
@@ -89,7 +89,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Batu berjarak sama (tiap 3 petak), sehingga jalannya 'maju, lompat' atau 'lompat, maju' berulang. Rak 3 blok: ulangi N [dua perintah] adalah satu-satunya yang muat. Isi ulangi dua blok (batas presenter). Jebakan: urutan isi terbalik (lompat dulu saat batu belum di depan → mendarat di batu); N dihitung dari jumlah batu, bukan jumlah pasangan. Knob: distance 4 → 10."
+      "catatan": "Batu berjarak sama (tiap 3 petak), sehingga jalannya 'maju, lompat' atau 'lompat, maju' berulang. Rak 3 blok: ulangi N [dua perintah] adalah satu-satunya yang muat. Isi ulangi dua blok (batas presenter). Jebakan: urutan isi terbalik (lompat dulu saat batu belum di depan → mendarat di batu); N dihitung dari jumlah batu, bukan jumlah pasangan. Knob: distance 4 → 10. Beda dengan TK B ULANGI.02 (isi ulangi sudah disebut: maju lalu lompat, anak hanya memilih jumlah ulangan): di SD 2 anak sendiri menemukan dua perintah yang berulang dan urutannya."
     },
     {
       "id": "KODE.SD2.KONDISI.01",

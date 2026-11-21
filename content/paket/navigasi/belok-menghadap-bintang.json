@@ -1,6 +1,6 @@
 {
   "id": "belok-menghadap-bintang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Face the Star",
-      "instruksi": "Robot is not facing the star yet: use a left or right block, then forward."
+      "instruksi": "The robot is not facing the star yet: use a left or right block, then forward."
     }
   },
   "knobs": {

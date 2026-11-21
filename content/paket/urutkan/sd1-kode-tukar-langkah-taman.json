@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -25,13 +25,6 @@
       "layang-4": "berlari melawan angin",
       "layang-5": "layang-layang naik",
       "layang-6": "ulur benang pelan-pelan",
-      "t-anjing": "Memandikan anjing",
-      "anjing-1": "ajak anjing ke kamar mandi",
-      "anjing-2": "basahi bulunya",
-      "anjing-3": "gosok dengan sampo",
-      "anjing-4": "bilas busanya",
-      "anjing-5": "keringkan dengan handuk",
-      "anjing-6": "anjing bersih dan wangi",
       "t-kolase": "Membuat kolase",
       "kolase-1": "gunting kertas warna",
       "kolase-2": "susun potongannya",
@@ -87,7 +80,14 @@
       "tanam-pot-3": "tanam bibit bunga",
       "tanam-pot-4": "siram dengan air",
       "tanam-pot-5": "tunggu beberapa hari",
-      "tanam-pot-6": "bunganya mekar"
+      "tanam-pot-6": "bunganya mekar",
+      "t-perosotan": "Main perosotan",
+      "perosotan-1": "antre di belakang teman",
+      "perosotan-2": "naiki tangga perosotan",
+      "perosotan-3": "duduk di puncak perosotan",
+      "perosotan-4": "meluncur ke bawah",
+      "perosotan-5": "sampai di bawah",
+      "perosotan-6": "beri giliran ke teman"
     },
     "en": {
       "judul": "One Swap Fixes It",
@@ -106,13 +106,6 @@
       "layang-4": "run against the wind",
       "layang-5": "the kite rises",
       "layang-6": "let out the string slowly",
-      "t-anjing": "Bathing the dog",
-      "anjing-1": "bring the dog to the bathroom",
-      "anjing-2": "wet its fur",
-      "anjing-3": "rub in shampoo",
-      "anjing-4": "rinse off the foam",
-      "anjing-5": "dry it with a towel",
-      "anjing-6": "the dog is clean and fresh",
       "t-kolase": "Making a collage",
       "kolase-1": "cut coloured paper",
       "kolase-2": "arrange the pieces",
@@ -168,7 +161,14 @@
       "tanam-pot-3": "plant the seedling",
       "tanam-pot-4": "water it",
       "tanam-pot-5": "wait a few days",
-      "tanam-pot-6": "the flower blooms"
+      "tanam-pot-6": "the flower blooms",
+      "t-perosotan": "Playing on the slide",
+      "perosotan-1": "line up behind your friend",
+      "perosotan-2": "climb the slide ladder",
+      "perosotan-3": "sit at the top of the slide",
+      "perosotan-4": "slide down",
+      "perosotan-5": "reach the bottom",
+      "perosotan-6": "give your friend a turn"
     }
   },
   "knobs": {
@@ -259,38 +259,38 @@
       ]
     },
     {
-      "id": "anjing",
-      "titleKey": "t-anjing",
+      "id": "perosotan",
+      "titleKey": "t-perosotan",
       "steps": [
         {
-          "id": "anjing-1",
-          "labelKey": "anjing-1",
-          "emoji": "🐕"
+          "id": "perosotan-1",
+          "labelKey": "perosotan-1",
+          "emoji": "🚶"
         },
         {
-          "id": "anjing-2",
-          "labelKey": "anjing-2",
-          "emoji": "💦"
+          "id": "perosotan-2",
+          "labelKey": "perosotan-2",
+          "emoji": "🪜"
         },
         {
-          "id": "anjing-3",
-          "labelKey": "anjing-3",
-          "emoji": "🧴"
+          "id": "perosotan-3",
+          "labelKey": "perosotan-3",
+          "emoji": "🪑"
         },
         {
-          "id": "anjing-4",
-          "labelKey": "anjing-4",
-          "emoji": "🚿"
+          "id": "perosotan-4",
+          "labelKey": "perosotan-4",
+          "emoji": "🛝"
         },
         {
-          "id": "anjing-5",
-          "labelKey": "anjing-5",
-          "emoji": "🧺"
+          "id": "perosotan-5",
+          "labelKey": "perosotan-5",
+          "emoji": "😄"
         },
         {
-          "id": "anjing-6",
-          "labelKey": "anjing-6",
-          "emoji": "🐶"
+          "id": "perosotan-6",
+          "labelKey": "perosotan-6",
+          "emoji": "👋"
         }
       ]
     },

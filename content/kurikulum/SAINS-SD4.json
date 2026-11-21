@@ -322,7 +322,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Pilah kelompok: 'berubah wujud, bisa kembali' vs 'jadi zat baru'. Pasangan jebakan sengaja ada dalam satu kumpulan: lilin meleleh (fisika) vs sumbu lilin terbakar (kimia); air membeku vs telur digoreng; mentega meleleh vs roti gosong. Petunjuk untuk anak di umpan balik: 'bisakah dikembalikan seperti semula?'. Knob itemCount 4 → 10."
+      "catatan": "Pilah kelompok: 'berubah wujud, bisa kembali' vs 'jadi zat baru'. Pasangan jebakan sengaja ada dalam satu kumpulan: lilin meleleh (fisika) vs sumbu lilin terbakar (kimia); air membeku vs telur digoreng; mentega meleleh vs roti gosong. Petunjuk untuk anak di umpan balik: 'bisakah dikembalikan seperti semula?'. Lilin meleleh dan sumbu terbakar sengaja memakai emoji yang sama (🕯️): bendanya sama, perubahannya yang berbeda, jadi anak harus membaca label. Knob itemCount 4 → 10."
     },
     {
       "id": "SAINS.SD4.LISTRIK.01",
@@ -359,7 +359,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Pilah kelompok 'menyala' vs 'tidak menyala'; tiap kartu menggambarkan satu keadaan rangkaian sederhana (baterai, kabel, lampu, sakelar). Jebakan: kedua kabel di kutub baterai yang sama (rangkaian tidak lewat baterai), lampu yang filamennya putus walau kabel lengkap. Saran presenter: sesudah dijawab, rangkaian digambar dan lampu menyala/padam supaya sebab-akibatnya teramati. Knob itemCount 4 → 8."
+      "catatan": "Pilah kelompok 'menyala' vs 'tidak menyala'; tiap kartu menggambarkan satu keadaan rangkaian sederhana (baterai, kabel, lampu, sakelar). Jebakan: kedua kabel di kutub baterai yang sama (rangkaian tidak lewat baterai), lampu yang filamennya putus walau kabel lengkap. Saran presenter: sesudah dijawab, rangkaian digambar dan lampu menyala/padam supaya sebab-akibatnya teramati. Emoji kartu sengaja sama untuk pasangan menyala/padam (🔋, 🔘, 🔌, 🔦, 🚗, 🏮; 💡 untuk lampu putus) dan tidak diberi warna pembeda: gambar hanya menunjukkan bendanya, keadaan rangkaian harus dibaca dari label supaya gambar tidak membocorkan jawaban. Knob itemCount 4 → 8."
     },
     {
       "id": "SAINS.SD4.LISTRIK.02",
@@ -469,7 +469,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Pilah kelompok dua wadah. Jebakan sengaja: Bulan (tampak bersinar tetapi memantulkan cahaya Matahari), cermin dan pemantul sepeda (berkilau tetapi tidak membuat cahaya), layar HP menyala (sumber). Umpan balik presenter: garis cahaya dari sumber → benda → mata. Knob itemCount 4 → 10."
+      "catatan": "Pilah kelompok dua wadah. Jebakan sengaja: Bulan (tampak bersinar tetapi memantulkan cahaya Matahari), cermin dan pemantul sepeda (berkilau tetapi tidak membuat cahaya), layar HP menyala (sumber), televisi menyala vs televisi mati (emoji 📺 sengaja sama; keadaannya dibaca dari label). Emoji wadah (🔆 sumber, ↩️ pantul) tidak boleh sama dengan emoji kartu mana pun. Umpan balik presenter: garis cahaya dari sumber → benda → mata. Knob itemCount 4 → 10."
     },
     {
       "id": "SAINS.SD4.BUMI-ANTARIKSA.01",

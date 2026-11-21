@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet-bengkel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Magnet di Bengkel",
-      "instruksi": "Dekatkan magnet ke tiap benda. Taruh ke rak ditarik atau tidak ditarik.",
+      "instruksi": "Di bengkel ada banyak benda logam. Dekatkan magnet ke tiap benda: ditarik atau tidak? Taruh ke raknya.",
       "b-tarik": "ditarik magnet",
       "b-tidak": "tidak ditarik",
       "i-obeng": "ujung obeng baja",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Magnets in the Workshop",
-      "instruksi": "Bring the magnet near each thing. Put it on the pulled or not-pulled shelf.",
+      "instruksi": "A workshop has many metal things. Bring the magnet near each one: pulled or not? Put it on its shelf.",
       "b-tarik": "pulled by a magnet",
       "b-tidak": "not pulled",
       "i-obeng": "steel screwdriver tip",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-internet-putus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,52 +10,69 @@
   "locale": {
     "id": {
       "judul": "Kalau Internet Putus",
-      "instruksi": "Internet di rumah sedang putus: seret tiap kegiatan ke 'tetap bisa' atau 'tidak bisa'.",
-      "bin-bisa": "tetap bisa",
-      "bin-tidak": "tidak bisa",
-      "i1": "memotret dengan kamera HP",
-      "i2": "memakai kalkulator di HP",
-      "i3": "membuka foto di galeri",
-      "i4": "menulis catatan di laptop",
-      "i5": "mendengar lagu yang sudah diunduh",
-      "i6": "bermain game luring yang sudah terpasang",
-      "i7": "mencetak lewat kabel USB",
-      "i8": "panggilan video dengan nenek",
-      "i9": "mengirim email",
-      "i10": "menonton video streaming",
-      "i11": "mencari di mesin pencari",
-      "i12": "membuka peta daring untuk rute",
-      "i13": "membayar dengan dompet digital",
-      "i14": "mengunggah tugas ke kelas daring"
+      "instruksi": "Internet sedang putus, tetapi router Wi-Fi rumah masih menyala dan Bluetooth bisa dipakai. Seret tiap kegiatan: cukup jaringan rumah, butuh internet, atau tidak butuh jaringan?",
+      "bin-lokal": "cukup Wi-Fi rumah atau Bluetooth",
+      "bin-internet": "butuh internet",
+      "bin-tanpa": "tidak butuh jaringan",
+      "i1": "mencetak tugas ke printer lewat Wi-Fi rumah",
+      "i2": "mengirim foto ke HP adik lewat Bluetooth",
+      "i3": "memutar lagu dari HP ke speaker Bluetooth",
+      "i4": "memindahkan berkas ke laptop kakak lewat Wi-Fi rumah",
+      "i5": "mengetik di tablet dengan keyboard Bluetooth",
+      "i6": "main game berdua lewat Bluetooth dengan HP di sebelahmu",
+      "i7": "panggilan video dengan nenek di kota lain",
+      "i8": "mengirim email",
+      "i9": "menonton video streaming",
+      "i10": "mencari di mesin pencari",
+      "i11": "membuka peta daring untuk rute",
+      "i12": "mengunggah tugas ke kelas daring",
+      "i13": "memotret dengan kamera HP",
+      "i14": "memakai kalkulator di HP",
+      "i15": "membuka foto di galeri",
+      "i16": "menulis catatan di laptop",
+      "i17": "mendengar lagu yang sudah diunduh dari speaker HP",
+      "i18": "main game luring yang sudah terpasang"
     },
     "en": {
       "judul": "When the Internet Goes Down",
-      "instruksi": "The internet at home is down: drag each activity to 'still works' or 'does not work'.",
-      "bin-bisa": "still works",
-      "bin-tidak": "does not work",
-      "i1": "taking a photo with the phone camera",
-      "i2": "using the phone calculator",
-      "i3": "opening photos in the gallery",
-      "i4": "writing notes on a laptop",
-      "i5": "listening to a downloaded song",
-      "i6": "playing an installed offline game",
-      "i7": "printing over a USB cable",
-      "i8": "a video call with grandma",
-      "i9": "sending an email",
-      "i10": "watching a streaming video",
-      "i11": "searching with a search engine",
-      "i12": "opening an online map for directions",
-      "i13": "paying with a digital wallet",
-      "i14": "uploading homework to an online class"
+      "instruksi": "The internet is down, but the home Wi-Fi router is still on and Bluetooth works. Drag each activity: home network is enough, needs the internet, or needs no network?",
+      "bin-lokal": "home Wi-Fi or Bluetooth is enough",
+      "bin-internet": "needs the internet",
+      "bin-tanpa": "needs no network",
+      "i1": "printing homework to the printer over home Wi-Fi",
+      "i2": "sending a photo to your sibling's phone by Bluetooth",
+      "i3": "playing a song from the phone on a Bluetooth speaker",
+      "i4": "moving a file to your brother's laptop over home Wi-Fi",
+      "i5": "typing on a tablet with a Bluetooth keyboard",
+      "i6": "playing a two-player game by Bluetooth with the phone next to you",
+      "i7": "a video call with grandma in another city",
+      "i8": "sending an email",
+      "i9": "watching a streaming video",
+      "i10": "searching with a search engine",
+      "i11": "opening an online map for directions",
+      "i12": "uploading homework to an online class",
+      "i13": "taking a photo with the phone camera",
+      "i14": "using the phone calculator",
+      "i15": "opening photos in the gallery",
+      "i16": "writing notes on a laptop",
+      "i17": "listening to a downloaded song on the phone speaker",
+      "i18": "playing an installed offline game"
     }
   },
   "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = jaringan lokal vs internet; 3 = tambah kegiatan tanpa jaringan (ulang SD 3)"
+    },
     "itemCount": {
       "min": 6,
-      "max": 10,
+      "max": 9,
       "default": 6,
-      "step": 2,
-      "keterangan": "jumlah kegiatan per ronde"
+      "step": 3,
+      "keterangan": "jumlah kegiatan per ronde; jebakan: lewat Wi-Fi rumah belum tentu lewat internet"
     }
   },
   "assets": [],
@@ -66,100 +83,111 @@
   "pilihan": [],
   "bins": [
     {
-      "id": "bisa",
-      "labelKey": "bin-bisa",
-      "emoji": "📴"
+      "id": "lokal",
+      "labelKey": "bin-lokal",
+      "emoji": "📶"
     },
     {
-      "id": "tidak",
-      "labelKey": "bin-tidak",
+      "id": "internet",
+      "labelKey": "bin-internet",
       "emoji": "🌐"
+    },
+    {
+      "id": "tanpa",
+      "labelKey": "bin-tanpa",
+      "emoji": "📴"
     }
   ],
   "items": [
     {
       "id": "i1",
       "labelKey": "i1",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i2",
       "labelKey": "i2",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i3",
       "labelKey": "i3",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i4",
       "labelKey": "i4",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i5",
       "labelKey": "i5",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i6",
       "labelKey": "i6",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "lokal"
     },
     {
       "id": "i7",
       "labelKey": "i7",
-      "bin": "bisa",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i8",
       "labelKey": "i8",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i9",
       "labelKey": "i9",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i10",
       "labelKey": "i10",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i11",
       "labelKey": "i11",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i12",
       "labelKey": "i12",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "internet"
     },
     {
       "id": "i13",
       "labelKey": "i13",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "tanpa"
     },
     {
       "id": "i14",
       "labelKey": "i14",
-      "bin": "tidak",
-      "scale": 0.5
+      "bin": "tanpa"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "tanpa"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "tanpa"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "tanpa"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "tanpa"
     }
   ]
 }

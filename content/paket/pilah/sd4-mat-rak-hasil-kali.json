@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-rak-hasil-kali",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Hasil Kali",
-      "instruksi": "Taruh tiap kartu perkalian di rak hasilnya. Satu rak bisa berisi beberapa perkalian.",
-      "b-h18": "18",
-      "b-h24": "24",
-      "b-h30": "30",
-      "b-h36": "36",
-      "b-h40": "40",
-      "b-h48": "48",
+      "instruksi": "Tiap rak punya dua perkalian berbeda yang hasilnya sama, misalnya 3 × 8 dan 4 × 6. Taruh tiap kartu di rak hasilnya.",
       "i1": "2 × 9",
       "i2": "3 × 6",
       "i3": "9 × 2",
@@ -33,17 +27,39 @@
       "i14": "4 × 10",
       "i15": "8 × 5",
       "i16": "6 × 8",
-      "i17": "8 × 6"
+      "i17": "8 × 6",
+      "b-18": "18",
+      "i-2x9": "2 × 9",
+      "i-9x2": "9 × 2",
+      "i-3x6": "3 × 6",
+      "i-6x3": "6 × 3",
+      "b-24": "24",
+      "i-3x8": "3 × 8",
+      "i-8x3": "8 × 3",
+      "i-4x6": "4 × 6",
+      "i-6x4": "6 × 4",
+      "b-30": "30",
+      "i-5x6": "5 × 6",
+      "i-6x5": "6 × 5",
+      "i-3x10": "3 × 10",
+      "i-10x3": "10 × 3",
+      "b-36": "36",
+      "i-4x9": "4 × 9",
+      "i-9x4": "9 × 4",
+      "i-6x6": "6 × 6",
+      "b-40": "40",
+      "i-5x8": "5 × 8",
+      "i-8x5": "8 × 5",
+      "i-4x10": "4 × 10",
+      "i-10x4": "10 × 4",
+      "b-16": "16",
+      "i-2x8": "2 × 8",
+      "i-8x2": "8 × 2",
+      "i-4x4": "4 × 4"
     },
     "en": {
       "judul": "Product Shelves",
-      "instruksi": "Put each multiplication card on the shelf with its product. A shelf can hold several facts.",
-      "b-h18": "18",
-      "b-h24": "24",
-      "b-h30": "30",
-      "b-h36": "36",
-      "b-h40": "40",
-      "b-h48": "48",
+      "instruksi": "Each shelf has two different facts with the same product, like 3 × 8 and 4 × 6. Put each card on the shelf with its product.",
       "i1": "2 × 9",
       "i2": "3 × 6",
       "i3": "9 × 2",
@@ -60,7 +76,35 @@
       "i14": "4 × 10",
       "i15": "8 × 5",
       "i16": "6 × 8",
-      "i17": "8 × 6"
+      "i17": "8 × 6",
+      "b-18": "18",
+      "i-2x9": "2 × 9",
+      "i-9x2": "9 × 2",
+      "i-3x6": "3 × 6",
+      "i-6x3": "6 × 3",
+      "b-24": "24",
+      "i-3x8": "3 × 8",
+      "i-8x3": "8 × 3",
+      "i-4x6": "4 × 6",
+      "i-6x4": "6 × 4",
+      "b-30": "30",
+      "i-5x6": "5 × 6",
+      "i-6x5": "6 × 5",
+      "i-3x10": "3 × 10",
+      "i-10x3": "10 × 3",
+      "b-36": "36",
+      "i-4x9": "4 × 9",
+      "i-9x4": "9 × 4",
+      "i-6x6": "6 × 6",
+      "b-40": "40",
+      "i-5x8": "5 × 8",
+      "i-8x5": "8 × 5",
+      "i-4x10": "4 × 10",
+      "i-10x4": "10 × 4",
+      "b-16": "16",
+      "i-2x8": "2 × 8",
+      "i-8x2": "8 × 2",
+      "i-4x4": "4 × 4"
     }
   },
   "knobs": {
@@ -88,116 +132,139 @@
   "bins": [
     {
       "id": "h18",
-      "labelKey": "b-h18"
+      "labelKey": "b-18"
     },
     {
       "id": "h24",
-      "labelKey": "b-h24"
+      "labelKey": "b-24"
     },
     {
       "id": "h30",
-      "labelKey": "b-h30"
+      "labelKey": "b-30"
     },
     {
       "id": "h36",
-      "labelKey": "b-h36"
+      "labelKey": "b-36"
     },
     {
       "id": "h40",
-      "labelKey": "b-h40"
+      "labelKey": "b-40"
     },
     {
-      "id": "h48",
-      "labelKey": "b-h48"
+      "id": "h16",
+      "labelKey": "b-16"
     }
   ],
   "items": [
     {
-      "id": "i1",
-      "labelKey": "i1",
+      "id": "k2x9",
+      "labelKey": "i-2x9",
       "bin": "h18"
     },
     {
-      "id": "i2",
-      "labelKey": "i2",
+      "id": "k9x2",
+      "labelKey": "i-9x2",
       "bin": "h18"
     },
     {
-      "id": "i3",
-      "labelKey": "i3",
+      "id": "k3x6",
+      "labelKey": "i-3x6",
       "bin": "h18"
     },
     {
-      "id": "i4",
-      "labelKey": "i4",
+      "id": "k6x3",
+      "labelKey": "i-6x3",
+      "bin": "h18"
+    },
+    {
+      "id": "k3x8",
+      "labelKey": "i-3x8",
       "bin": "h24"
     },
     {
-      "id": "i5",
-      "labelKey": "i5",
+      "id": "k8x3",
+      "labelKey": "i-8x3",
       "bin": "h24"
     },
     {
-      "id": "i6",
-      "labelKey": "i6",
+      "id": "k4x6",
+      "labelKey": "i-4x6",
       "bin": "h24"
     },
     {
-      "id": "i7",
-      "labelKey": "i7",
+      "id": "k6x4",
+      "labelKey": "i-6x4",
+      "bin": "h24"
+    },
+    {
+      "id": "k5x6",
+      "labelKey": "i-5x6",
       "bin": "h30"
     },
     {
-      "id": "i8",
-      "labelKey": "i8",
-      "bin": "h30",
-      "scale": 0.7
-    },
-    {
-      "id": "i9",
-      "labelKey": "i9",
+      "id": "k6x5",
+      "labelKey": "i-6x5",
       "bin": "h30"
     },
     {
-      "id": "i10",
-      "labelKey": "i10",
+      "id": "k3x10",
+      "labelKey": "i-3x10",
+      "bin": "h30"
+    },
+    {
+      "id": "k10x3",
+      "labelKey": "i-10x3",
+      "bin": "h30"
+    },
+    {
+      "id": "k4x9",
+      "labelKey": "i-4x9",
       "bin": "h36"
     },
     {
-      "id": "i11",
-      "labelKey": "i11",
+      "id": "k9x4",
+      "labelKey": "i-9x4",
       "bin": "h36"
     },
     {
-      "id": "i12",
-      "labelKey": "i12",
+      "id": "k6x6",
+      "labelKey": "i-6x6",
       "bin": "h36"
     },
     {
-      "id": "i13",
-      "labelKey": "i13",
+      "id": "k5x8",
+      "labelKey": "i-5x8",
       "bin": "h40"
     },
     {
-      "id": "i14",
-      "labelKey": "i14",
-      "bin": "h40",
-      "scale": 0.7
-    },
-    {
-      "id": "i15",
-      "labelKey": "i15",
+      "id": "k8x5",
+      "labelKey": "i-8x5",
       "bin": "h40"
     },
     {
-      "id": "i16",
-      "labelKey": "i16",
-      "bin": "h48"
+      "id": "k4x10",
+      "labelKey": "i-4x10",
+      "bin": "h40"
     },
     {
-      "id": "i17",
-      "labelKey": "i17",
-      "bin": "h48"
+      "id": "k10x4",
+      "labelKey": "i-10x4",
+      "bin": "h40"
+    },
+    {
+      "id": "k2x8",
+      "labelKey": "i-2x8",
+      "bin": "h16"
+    },
+    {
+      "id": "k8x2",
+      "labelKey": "i-8x2",
+      "bin": "h16"
+    },
+    {
+      "id": "k4x4",
+      "labelKey": "i-4x4",
+      "bin": "h16"
     }
   ]
 }

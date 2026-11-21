@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-masuk-simpan-keluar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Masuk, Simpan, Keluar",
-      "instruksi": "Perangkat ini untuk memasukkan, menyimpan, atau menampilkan data? Taruh di kotaknya.",
+      "instruksi": "Perangkat ini untuk memasukkan, menyimpan, atau mengeluarkan data? Taruh di kotaknya.",
       "bin-masuk": "memasukkan",
-      "bin-keluar": "menampilkan",
+      "bin-keluar": "mengeluarkan",
       "bin-simpan": "menyimpan",
       "i-keyboard": "keyboard",
       "i-mouse": "mouse",
@@ -29,9 +29,9 @@
     },
     "en": {
       "judul": "In, Store, Out",
-      "instruksi": "Is this device for putting data in, storing it, or showing it? Put it in its box.",
+      "instruksi": "Is this device for putting data in, storing it, or giving it out? Put it in its box.",
       "bin-masuk": "putting in",
-      "bin-keluar": "showing",
+      "bin-keluar": "giving out",
       "bin-simpan": "storing",
       "i-keyboard": "keyboard",
       "i-mouse": "mouse",
@@ -53,7 +53,7 @@
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = ulang masuk/tampil (SD 2), 3 = tambah kotak simpan"
+      "keterangan": "2 = ulang memasukkan/mengeluarkan (SD 2), 3 = tambah kotak menyimpan"
     },
     "itemCount": {
       "min": 6,
@@ -115,13 +115,15 @@
       "id": "usb-flash-drive",
       "labelKey": "i-usb-flash-drive",
       "bin": "simpan",
-      "emoji": "💾"
+      "shape": "rect",
+      "color": "#2563eb"
     },
     {
       "id": "memory-card",
       "labelKey": "i-memory-card",
       "bin": "simpan",
-      "emoji": "🗂️"
+      "shape": "square",
+      "color": "#f59e0b"
     },
     {
       "id": "hard-disk",

@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-ayam",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -13,7 +13,6 @@
       "instruksi": "Susun gambar sesuai urutan hidupnya, dari yang paling awal.",
       "s-ayam": "Siklus hidup ayam",
       "ayam-telur": "telur",
-      "ayam-retak": "telur retak, menetas",
       "ayam-anak": "anak ayam kuning",
       "ayam-dewasa": "ayam dewasa cokelat",
       "s-bebek": "Siklus hidup bebek",
@@ -26,12 +25,11 @@
       "jago-dewasa": "ayam jago",
       "t-bebek-menetas": "Bebek menetas",
       "bebek-menetas-telur": "telur bebek",
-      "bebek-menetas-retak": "telur retak, menetas",
-      "bebek-menetas-anak": "anak bebek kecil",
+      "bebek-menetas-retak": "anak bebek menetas",
       "bebek-menetas-dewasa": "bebek dewasa",
       "t-tumbuh": "Ayam tumbuh",
       "tumbuh-telur": "telur",
-      "tumbuh-retak": "telur retak, menetas",
+      "tumbuh-retak": "anak ayam menetas",
       "tumbuh-dewasa": "ayam jago",
       "t-besar": "Anak ayam besar",
       "besar-retak": "baru menetas",
@@ -51,7 +49,6 @@
       "instruksi": "Put the pictures in life-cycle order, starting from the earliest.",
       "s-ayam": "Chicken life cycle",
       "ayam-telur": "egg",
-      "ayam-retak": "egg cracks and hatches",
       "ayam-anak": "yellow chick",
       "ayam-dewasa": "grown brown hen",
       "s-bebek": "Duck life cycle",
@@ -64,12 +61,11 @@
       "jago-dewasa": "rooster",
       "t-bebek-menetas": "A duckling hatches",
       "bebek-menetas-telur": "duck egg",
-      "bebek-menetas-retak": "the egg cracks and hatches",
-      "bebek-menetas-anak": "little duckling",
+      "bebek-menetas-retak": "the duckling hatches",
       "bebek-menetas-dewasa": "grown-up duck",
       "t-tumbuh": "A chicken grows",
       "tumbuh-telur": "egg",
-      "tumbuh-retak": "the egg cracks and hatches",
+      "tumbuh-retak": "the chick hatches",
       "tumbuh-dewasa": "rooster",
       "t-besar": "The chick gets big",
       "besar-retak": "just hatched",
@@ -88,15 +84,15 @@
   "knobs": {
     "steps": {
       "min": 3,
-      "max": 4,
+      "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "jumlah tahap: 3 (telur, anak ayam, ayam) → 4 (tambah telur retak menetas)"
+      "keterangan": "tiga tahap: telur (atau baru menetas), anak, dewasa; tahap telur retak menunggu opsi potong tengah"
     }
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 8,
   "world": "halaman",
   "mode": "susun",
   "sequences": [
@@ -109,12 +105,6 @@
           "labelKey": "ayam-telur",
           "emoji": "🥚",
           "scale": 0.8
-        },
-        {
-          "id": "retak",
-          "labelKey": "ayam-retak",
-          "emoji": "🐣",
-          "scale": 0.9
         },
         {
           "id": "anak",
@@ -145,7 +135,7 @@
         {
           "id": "anak",
           "labelKey": "bebek-anak",
-          "emoji": "🐤",
+          "emoji": "🦆",
           "scale": 1
         },
         {
@@ -196,12 +186,6 @@
           "labelKey": "bebek-menetas-retak",
           "emoji": "🐣",
           "scale": 0.9
-        },
-        {
-          "id": "anak",
-          "labelKey": "bebek-menetas-anak",
-          "emoji": "🐤",
-          "scale": 1
         },
         {
           "id": "dewasa",
@@ -297,7 +281,7 @@
         {
           "id": "anak",
           "labelKey": "bebek-besar-anak",
-          "emoji": "🐤",
+          "emoji": "🦆",
           "scale": 1
         },
         {

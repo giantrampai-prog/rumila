@@ -1,6 +1,7 @@
 // Mekanik urutkan: susun (langkah diacak), perbaiki (satu pasang tertukar), dulu (dua langkah, pilih yang lebih dulu),
 // label (langkah sudah urut; anak memasang label pertama/lalu/terakhir per posisi).
-// Knob: steps = jumlah langkah tampil; sequence yang cukup panjang dipilih lalu dipotong dari depan.
+// Knob: steps = jumlah langkah tampil; sequence yang cukup panjang dipilih lalu dipotong: `potong` "akhir" (bawaan) = n langkah
+// pertama, "tengah" = langkah pertama & terakhir tetap, yang dibuang langkah dari tengah (lihat potongTengah).
 
 import type { PaketUrutkan } from "@akademi/schema";
 import { acak, acakInt, pilihSatu, rng } from "./rng";
@@ -34,6 +35,20 @@ export function hitungSwap(dari: string[], ke: string[]): number | null {
   return perm.length - siklus;
 }
 
+/**
+ * Pendekkan `steps` menjadi n langkah dengan membuang langkah dari tengah: langkah pertama & terakhir selalu tetap,
+ * yang dibuang lebih dulu ialah indeks terdekat ke titik tengah (seri: indeks lebih kecil dulu). Deterministik; urutan tetap benar.
+ */
+export function potongTengah<T>(steps: readonly T[], n: number): T[] {
+  if (n >= steps.length) return steps.slice();
+  if (n <= 1) return steps.slice(0, Math.max(0, n));
+  const tengah = (steps.length - 1) / 2;
+  const calon = Array.from({ length: steps.length - 2 }, (_, k) => k + 1)
+    .sort((a, b) => Math.abs(a - tengah) - Math.abs(b - tengah) || a - b);
+  const buang = new Set(calon.slice(0, steps.length - n));
+  return steps.filter((_, i) => !buang.has(i));
+}
+
 export function buatRondeUrutkan(p: PaketUrutkan, knobs: Knobs, seed: number): RondeUrutkan {
   const r = rng(seed);
   const n = p.mode === "dulu" ? 2 : knobs.steps !== undefined ? Math.max(2, Math.floor(knobs.steps)) : undefined;
@@ -43,7 +58,7 @@ export function buatRondeUrutkan(p: PaketUrutkan, knobs: Knobs, seed: number): R
     kandidat = p.sequences.filter(s => s.steps.length === terpanjang);
   }
   const seq = pilihSatu(kandidat, r);
-  const steps: Step[] = n !== undefined ? seq.steps.slice(0, n) : seq.steps;
+  const steps: Step[] = n === undefined ? seq.steps : p.potong === "tengah" ? potongTengah(seq.steps, n) : seq.steps.slice(0, n);
   const correct = steps.map(s => s.id);
   const dasar = { mode: p.mode, sequenceId: seq.id, titleKey: seq.titleKey, correct };
 

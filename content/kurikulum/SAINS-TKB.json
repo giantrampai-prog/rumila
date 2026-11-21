@@ -124,7 +124,7 @@
         "pilah",
         "dagang"
       ],
-      "catatan": "Bahasa 'sehari-hari' vs 'sesekali', bukan 'baik/buruk', supaya anak tidak merasa bersalah. Dua wadah berlabel gambar. Item sehari-hari: pisang, wortel, nasi, telur, ikan, susu, air putih; sesekali: permen, keripik, soda, kue krim. Jebakan: jus kemasan manis dikira buah — pakai buah utuh dari aset Kebun Buah (48 buah 3D). Knob: 4 → 10 item; 2 → 3 wadah (tambah 'kadang': roti manis)."
+      "catatan": "Bahasa 'sehari-hari' vs 'sesekali', bukan 'baik/buruk', supaya anak tidak merasa bersalah. Dua wadah berlabel gambar. Item sehari-hari: pisang, wortel, nasi, telur, ikan, susu, air putih; sesekali: permen, keripik, soda, kue krim. Jebakan: jus kemasan manis dikira buah — pakai buah utuh dari aset Kebun Buah (48 buah 3D). Knob: 4 → 10 item. Hanya dua wadah: wadah 'kadang-kadang' tidak dipakai karena artinya hampir sama dengan 'sesekali' (roti manis, wafel, biskuit masuk toples). [QC 21 Nov 2026]"
     },
     {
       "id": "SAINS.TKB.MAKANAN-SEHAT.02",
@@ -288,8 +288,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menunjuk tanaman yang akan layu sebelum hari berganti, misalnya yang disimpan di tempat gelap",
-        "en": "I can point to the plant that will wilt before the day changes, for example the one kept in the dark"
+        "id": "Aku bisa menunjuk tanaman yang akan layu beberapa hari lagi, misalnya yang disimpan di tempat gelap",
+        "en": "I can point to the plant that will wilt in a few days, for example the one kept in the dark"
       },
       "depth": [
         "pakai"
@@ -309,7 +309,7 @@
         "simulasi",
         "pilah"
       ],
-      "catatan": "Prediksi: tiga pot sama, satu kondisi berbeda (di lemari gelap / tidak disiram / tanpa tanah), anak menunjuk yang akan layu sebelum animasi hari berjalan. Bukti sah hanya bila tebakan dibuat sebelum perubahan terlihat. Jebakan: anak menunggu animasi — tombol 'tebak' mengunci dulu. Pengaya. Knob: 1 → 2 pot bermasalah; kondisi makin halus (sedikit cahaya vs gelap)."
+      "catatan": "Prediksi: tiga pot sama, satu kondisi berbeda (di lemari gelap / tidak disiram / tanpa tanah), anak menunjuk yang akan layu sebelum animasi beberapa hari berjalan. Bukti sah hanya bila tebakan dibuat sebelum perubahan terlihat. Jebakan: anak menunggu animasi — tombol 'tebak' mengunci dulu. Pengaya. Knob: 1 → 2 pot bermasalah; kondisi makin halus (sedikit cahaya vs gelap)."
     },
     {
       "id": "SAINS.TKB.HEWAN-HABITAT.01",
@@ -475,7 +475,7 @@
         "urutkan",
         "pilah"
       ],
-      "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Ide lain untuk PO: mengurutkan ukuran Matahari > Bumi > Bulan (urutkan). Tanpa kode kerangka di kamus."
+      "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Varian urutkan: menyusun Matahari, Bumi, Bulan dari tengah ke luar (atau dari luar ke tengah) sesuai susunan pusat–pengiring; urutan ukuran tidak dipakai karena bukan kemampuan ini. [QC 21 Nov 2026] Tanpa kode kerangka di kamus."
     },
     {
       "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.03",

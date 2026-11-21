@@ -28,7 +28,7 @@ const BAYANG = "0 4px 0 rgba(11,37,69,.12)";
 
 function visualItem(x: Item | undefined, label?: string): VisualSpec {
   if (!x) return { emoji: "❓", label };
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, label };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label };
 }
 
 /** Robot pemandu + balon kalimat (ketuk untuk dibacakan). */

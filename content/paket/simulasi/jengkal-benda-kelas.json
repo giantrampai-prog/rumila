@@ -1,6 +1,6 @@
 {
   "id": "jengkal-benda-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -12,24 +12,22 @@
       "judul": "Jengkal di Kelas",
       "instruksi": "Ukur benda-benda di kelas: tempelkan jengkal tanganmu dari ujung ke ujung tanpa celah, lalu sebutkan berapa jengkal.",
       "pensil": "pensil",
-      "krayon": "krayon",
       "buku-tulis": "buku tulis",
       "kuas": "kuas",
       "penggaris": "penggaris",
       "tas": "tas sekolah",
-      "papan-ketik": "papan ketik",
+      "papan-ketik": "keyboard",
       "lukisan": "lukisan",
       "peta": "peta dinding",
       "kursi": "kursi",
       "papan-nama": "papan nama",
       "pianika": "piano mainan",
-      "sapu": "sapu"
+      "tempat-sampah": "tempat sampah"
     },
     "en": {
       "judul": "Hand Spans in Class",
       "instruksi": "Measure things in the classroom: lay your hand spans end to end with no gaps, then say how many spans.",
       "pensil": "pencil",
-      "krayon": "crayon",
       "buku-tulis": "notebook",
       "kuas": "paintbrush",
       "penggaris": "ruler",
@@ -40,7 +38,7 @@
       "kursi": "chair",
       "papan-nama": "name board",
       "pianika": "toy piano",
-      "sapu": "broom"
+      "tempat-sampah": "rubbish bin"
     }
   },
   "knobs": {
@@ -66,106 +64,98 @@
   "mode": "jengkal",
   "items": [
     {
-      "id": "pensil",
       "labelKey": "pensil",
+      "id": "pensil",
       "role": "benda",
       "emoji": "✏️",
       "value": 1,
       "width": 0.5
     },
     {
-      "id": "krayon",
-      "labelKey": "krayon",
-      "role": "benda",
-      "emoji": "🖍️",
-      "value": 1,
-      "width": 0.5
-    },
-    {
-      "id": "buku-tulis",
-      "labelKey": "buku-tulis",
-      "role": "benda",
-      "emoji": "📘",
-      "value": 1,
-      "width": 0.5
-    },
-    {
-      "id": "kuas",
       "labelKey": "kuas",
+      "id": "kuas",
       "role": "benda",
       "emoji": "🖌️",
       "value": 1,
       "width": 0.5
     },
     {
-      "id": "penggaris",
+      "labelKey": "buku-tulis",
+      "id": "buku-tulis",
+      "role": "benda",
+      "emoji": "📘",
+      "value": 2,
+      "width": 1.0
+    },
+    {
       "labelKey": "penggaris",
+      "id": "penggaris",
       "role": "benda",
       "emoji": "📏",
       "value": 2,
-      "width": 1
+      "width": 1.0
     },
     {
-      "id": "tas",
+      "labelKey": "papan-nama",
+      "id": "papan-nama",
+      "role": "benda",
+      "emoji": "🪧",
+      "value": 2,
+      "width": 1.0
+    },
+    {
       "labelKey": "tas",
+      "id": "tas",
       "role": "benda",
       "emoji": "🎒",
-      "value": 2,
-      "width": 1
+      "value": 3,
+      "width": 1.5
     },
     {
-      "id": "papan-ketik",
       "labelKey": "papan-ketik",
+      "id": "papan-ketik",
       "role": "benda",
       "emoji": "⌨️",
-      "value": 2,
-      "width": 1
+      "value": 3,
+      "width": 1.5
     },
     {
-      "id": "lukisan",
       "labelKey": "lukisan",
+      "id": "lukisan",
       "role": "benda",
       "emoji": "🖼️",
       "value": 3,
       "width": 1.5
     },
     {
-      "id": "peta",
-      "labelKey": "peta",
-      "role": "benda",
-      "emoji": "🗺️",
-      "value": 3,
-      "width": 1.5
-    },
-    {
-      "id": "kursi",
-      "labelKey": "kursi",
-      "role": "benda",
-      "emoji": "🪑",
-      "value": 3,
-      "width": 1.5
-    },
-    {
-      "id": "papan-nama",
-      "labelKey": "papan-nama",
-      "role": "benda",
-      "emoji": "🪧",
-      "value": 4,
-      "width": 2
-    },
-    {
-      "id": "pianika",
       "labelKey": "pianika",
+      "id": "pianika",
       "role": "benda",
       "emoji": "🎹",
       "value": 4,
-      "width": 2
+      "width": 2.0
     },
     {
-      "id": "sapu",
-      "labelKey": "sapu",
+      "labelKey": "tempat-sampah",
+      "id": "tempat-sampah",
       "role": "benda",
-      "emoji": "🧹",
+      "emoji": "🗑️",
+      "value": 4,
+      "width": 2.0
+    },
+    {
+      "labelKey": "kursi",
+      "id": "kursi",
+      "role": "benda",
+      "emoji": "🪑",
+      "value": 5,
+      "width": 2.5
+    },
+    {
+      "labelKey": "peta",
+      "id": "peta",
+      "role": "benda",
+      "emoji": "🗺️",
       "value": 5,
       "width": 2.5
     }

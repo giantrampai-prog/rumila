@@ -1,6 +1,6 @@
 {
   "id": "cerita-pertama-lalu-terakhir",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -33,10 +33,6 @@
       "telur-pecah": "pecahkan telur",
       "telur-goreng": "goreng di wajan",
       "telur-makan": "makan telur",
-      "t-dongeng": "Sebelum tidur",
-      "dongeng-buku": "ambil buku cerita",
-      "dongeng-baca": "dibacakan cerita",
-      "dongeng-tidur": "tertidur",
       "t-pasar": "Ke pasar",
       "pasar-keranjang": "bawa keranjang",
       "pasar-beli": "beli sayur",
@@ -56,7 +52,11 @@
       "t-malam": "Malam hari",
       "malam-sikat": "sikat gigi",
       "malam-lampu": "matikan lampu",
-      "malam-tidur": "tidur"
+      "malam-tidur": "tidur",
+      "t-balon": "Main balon",
+      "balon-1": "tiup balon",
+      "balon-2": "ikat ujungnya",
+      "balon-3": "main balon bersama"
     },
     "en": {
       "judul": "First, Then, Last Story",
@@ -83,10 +83,6 @@
       "telur-pecah": "crack the egg",
       "telur-goreng": "fry it in the pan",
       "telur-makan": "eat the egg",
-      "t-dongeng": "Before bed",
-      "dongeng-buku": "take a storybook",
-      "dongeng-baca": "listen to the story",
-      "dongeng-tidur": "fall asleep",
       "t-pasar": "To the market",
       "pasar-keranjang": "bring a basket",
       "pasar-beli": "buy vegetables",
@@ -106,7 +102,11 @@
       "t-malam": "Night time",
       "malam-sikat": "brush teeth",
       "malam-lampu": "turn off the light",
-      "malam-tidur": "go to sleep"
+      "malam-tidur": "go to sleep",
+      "t-balon": "Playing with a balloon",
+      "balon-1": "blow up the balloon",
+      "balon-2": "tie the end",
+      "balon-3": "play with the balloon together"
     }
   },
   "knobs": {
@@ -240,23 +240,23 @@
       ]
     },
     {
-      "id": "dongeng",
-      "titleKey": "t-dongeng",
+      "id": "balon",
+      "titleKey": "t-balon",
       "steps": [
         {
-          "id": "buku",
-          "labelKey": "dongeng-buku",
-          "emoji": "📚"
+          "id": "balon-1",
+          "labelKey": "balon-1",
+          "emoji": "🎈"
         },
         {
-          "id": "baca",
-          "labelKey": "dongeng-baca",
-          "emoji": "📖"
+          "id": "balon-2",
+          "labelKey": "balon-2",
+          "emoji": "🪢"
         },
         {
-          "id": "tidur",
-          "labelKey": "dongeng-tidur",
-          "emoji": "😴"
+          "id": "balon-3",
+          "labelKey": "balon-3",
+          "emoji": "🎉"
         }
       ]
     },

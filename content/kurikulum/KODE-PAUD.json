@@ -157,7 +157,7 @@
       },
       "statement": {
         "id": "Aku bisa menyuruh robot maju satu sampai tiga langkah untuk sampai ke bintang",
-        "en": "I can tell robot to move forward one to three steps to reach the star"
+        "en": "I can tell the robot to move forward one to three steps to reach the star"
       },
       "depth": [
         "pakai"
@@ -191,7 +191,7 @@
       },
       "statement": {
         "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan robot",
-        "en": "I can press jump instead of forward when a rock is right in front of robot"
+        "en": "I can press jump instead of forward when a rock is right in front of the robot"
       },
       "depth": [
         "pakai"
@@ -245,7 +245,7 @@
       },
       "statement": {
         "id": "Aku bisa meminta tolong tokoh lewat tombol bantuan saat alat di dunia tidak bekerja",
-        "en": "I can ask robot for help with the help button when something in the world does not work"
+        "en": "I can ask the robot for help with the help button when something in the world does not work"
       },
       "depth": [
         "pakai"
