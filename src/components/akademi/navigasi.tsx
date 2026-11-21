@@ -58,6 +58,11 @@ const TANAH: Record<DuniaId, [string, string]> = {
   hutan: ["#a8d893", "#95cc7f"], // lumut hutan
   angkasa: ["#d8d2f4", "#c7bfec"], // permukaan bulan
   taman: ["#cdeea2", "#bae58c"], // rumput taman
+  sungai: ["#cfeccf", "#bfe3bf"], // tepi sungai berumput
+  lab: ["#e3f6f3", "#d2efea"], // ubin lab
+  gudang: ["#ead9c0", "#dfcaab"], // lantai gudang
+  bukit: ["#d9e6b0", "#cbdb9b"], // rumput bukit
+  kutub: ["#eef7ff", "#dcedfb"], // salju
 };
 
 /** Muka tombol/keping: warna blok diencerkan di atas putih, supaya ikon & label gelap tetap terbaca. */
@@ -660,6 +665,10 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
   petak?: number;
   petakMaks: number;
 }) {
+  const { rintangan } = usePanggung();
+  // petak rintangan: cokelat tanah untuk tumbuhan, abu-abu batu untuk benda buatan/es
+  const tumbuhan = ["🌳", "🌲", "🌴", "🌾", "🌵"].includes(rintangan);
+  const [isiDinding, tepiDinding] = tumbuhan ? ["#7a5a3a", "#4f3822"] : ["#8a97ab", "#5b677a"];
   const sel: ReactNode[] = [];
   for (let y = 0; y < grid.h; y++) {
     for (let x = 0; x < grid.w; x++) {
@@ -671,11 +680,11 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       const tebak = tebakan && samaSel(tebakan, { x, y });
       sel.push(
         <g key={`${x}-${y}`} onClick={bisaKetuk && !dinding ? () => onKetuk(x, y) : undefined} style={{ cursor: bisaKetuk && !dinding ? "pointer" : "default" }} role={bisaKetuk && !dinding ? "button" : undefined} aria-label={bisaKetuk ? `Petak ${x + 1}, ${y + 1}` : undefined}>
-          <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill={dinding ? "#7a5a3a" : (x + y) % 2 ? tanah[1] : tanah[0]} stroke={dinding ? "#4f3822" : GARIS} strokeWidth={3} />
+          <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill={dinding ? isiDinding : (x + y) % 2 ? tanah[1] : tanah[0]} stroke={dinding ? tepiDinding : GARIS} strokeWidth={3} />
           <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill="url(#ka-bevel)" />
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill={tebak ? "#3a86ff" : "#ffd23f"} opacity={tebak ? 0.45 : 0.55} className="goal-pulse" />}
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill="none" stroke={tebak ? "#3a86ff" : "#ffb000"} strokeWidth={5} />}
-          {dinding && <text x={X + SEL / 2} y={Y + SEL / 2 + 24} textAnchor="middle" fontSize={66}>🌳</text>}
+          {dinding && <text x={X + SEL / 2} y={Y + SEL / 2 + 24} textAnchor="middle" fontSize={66}>{rintangan}</text>}
           {batu && <ellipse cx={X + SEL / 2} cy={Y + SEL / 2 + 22} rx={32} ry={10} fill="#0b2545" opacity={0.3} />}
           {batu && <text x={X + SEL / 2} y={Y + SEL / 2 + 20} textAnchor="middle" fontSize={56}>🪨</text>}
           {goal && (

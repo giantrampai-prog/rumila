@@ -3,6 +3,7 @@
 // Presenter mekanik "pilah": kelompok (ketuk/seret item ke bin) dan pilih (sentuh satu pilihan benar).
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
+import { bentukDariTeks } from "@/lib/akademi/tema-dunia";
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent } from "react";
 import { createPortal } from "react-dom";
@@ -248,6 +249,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               style={{ minHeight: 132 * sk }}
               ring={ring}
               hijau={hijau}
+              bentuk={bentukDariTeks(t(b.labelKey)) ?? undefined}
               label={
                 <>
                   <Benda v={visual(b, t)} size={Math.round(34 * sk)} />
