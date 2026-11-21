@@ -259,3 +259,10 @@ body {
     animation: none;
   }
 }
+
+/* Baloo 2 punya ekor & topi huruf yang tinggi: teks satu baris yang dipotong (truncate) diberi ruang di dalam
+   kotaknya supaya huruf tidak terpenggal, tanpa mengubah tata letak (margin negatif menutup tambahannya). */
+.truncate {
+  padding-block: 0.2em;
+  margin-block: -0.2em;
+}

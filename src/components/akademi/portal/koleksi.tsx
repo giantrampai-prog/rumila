@@ -196,7 +196,7 @@ function KartuStiker({ s, baru }: { s: Stiker; baru: boolean }) {
             </span>
           )}
         </span>
-        <span className="line-clamp-2 w-full text-center text-[13px] leading-tight font-extrabold" style={{ color: INK }}>
+        <span className="line-clamp-3 w-full text-center text-[13px] leading-[1.25] font-extrabold" style={{ color: INK }}>
           {judulPaket(p)}
         </span>
         <span className="text-[11px] font-extrabold text-ink-3">{labelMekanik(p.mechanic)}</span>
@@ -229,9 +229,9 @@ function LencanaTrack({ track, semua }: { track: TrackId; semua: Lencana[] }) {
             <span className="text-[12px] font-extrabold text-ink-3">
               {levelMeta(lv).nama} · {levelMeta(lv).lokal}
             </span>
-            <ul className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1">
+            <ul className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-x-1 gap-y-2">
               {unit.map((u) => (
-                <li key={u.id} className="shrink-0">
+                <li key={u.id} className="flex justify-center">
                   <KoinLencana track={track} nama={u.nama} status={statusDari(lv, u.id)} />
                 </li>
               ))}
@@ -247,7 +247,7 @@ function KoinLencana({ track, nama, status }: { track: TrackId; nama: string; st
   const w = LENCANA_WARNA[status];
   const terkunci = status === "terkunci";
   return (
-    <Link href={`/akademi/pelajaran/${track}`} aria-label={`${nama}: ${w.label}`} className="flex w-[88px] flex-col items-center gap-1.5 rounded-[16px] py-1.5 transition-transform active:scale-95">
+    <Link href={`/akademi/pelajaran/${track}`} aria-label={`${nama}: ${w.label}`} className="flex w-full max-w-[112px] flex-col items-center gap-1.5 rounded-[16px] py-1.5 transition-transform active:scale-95">
       <span
         className="flex size-16 items-center justify-center rounded-full"
         style={{
@@ -259,7 +259,7 @@ function KoinLencana({ track, nama, status }: { track: TrackId; nama: string; st
       >
         <Icon name={terkunci ? "lock" : "military_tech"} size={terkunci ? 26 : 34} />
       </span>
-      <span className="line-clamp-2 w-full text-center text-[11px] leading-tight font-extrabold" style={{ color: terkunci ? "#b3a6c4" : INK }}>
+      <span className="w-full text-center text-[12px] leading-[1.25] font-extrabold text-balance" style={{ color: terkunci ? "#6b5f80" : INK }}>
         {nama}
       </span>
     </Link>

@@ -75,7 +75,7 @@ export function KidHeader() {
       {/* salam (bukan tombol) */}
       <div className="min-w-0 flex-1">
         <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
-        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.05 }}>
+        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.2 }}>
           {me.name}
         </span>
       </div>
