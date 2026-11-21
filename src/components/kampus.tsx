@@ -14,7 +14,7 @@ import { AppIcon, BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { TRACK_SLICE, TRACK_IKON, TRACK_WARNA, trackMeta } from "@/components/akademi/portal/bersama";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, PAKET, levelAnak, peranAkademi, useProfilAkademiVersi } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { keadaanLab, type KeadaanLab } from "@/lib/akademi/lab";
 import { proyeksi } from "@/lib/akademi/mastery";
 import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta";
@@ -22,6 +22,7 @@ import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { PLAY, canonicalToolId } from "@/lib/catalog";
 import { GEDUNG, isiGedung, type Gedung } from "@/lib/kampus";
+import { isOrangTua } from "@/lib/profil";
 import { can, useMe, useRumila, useUI, type Member } from "@/lib/store";
 
 function useLevel(memberId: string): LevelId {
@@ -37,7 +38,7 @@ export function useLab(me: Member): (toolId: string) => KeadaanLab {
   const ujian = useUjian(me.id);
   const level = useLevel(me.id);
   const activity = useRumila((s) => s.activity);
-  const dewasa = me.admin || peranAkademi(me.id) === "dewasa";
+  const dewasa = isOrangTua(me);
   const selesai = useMemo(() => kompetensiSelesai(events, PAKET), [events]);
   return (toolId) => {
     if (dewasa) return { terbuka: true };

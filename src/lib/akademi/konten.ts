@@ -140,8 +140,9 @@ export function setPeranAkademi(memberId: string, peran: PeranAkademi) {
 }
 
 /** Anak di rumah: non-admin yang tidak ditandai dewasa. */
-export function anakRumah<T extends { id: string; admin: boolean }>(members: T[]): T[] {
-  return members.filter((m) => !m.admin && peranAkademi(m.id) === "anak");
+export function anakRumah<T extends { id: string; admin: boolean; peran?: "anak" | "dewasa" }>(members: T[]): T[] {
+  // peran di server menang; tanpa itu, non-admin dianggap anak kecuali ditandai dewasa di perangkat
+  return members.filter((m) => (m.peran ? m.peran === "anak" : !m.admin && peranAkademi(m.id) === "anak"));
 }
 
 /** Hook: angka yang bertambah tiap profil Academy (level/bahasa/peran) anggota mana pun berubah — untuk daftar anak di Rapor/Telemetri. */

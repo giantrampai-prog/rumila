@@ -4,6 +4,8 @@ import { createContext, useContext, type CSSProperties, type ReactNode } from "r
 import { tintaPada } from "@/lib/brand";
 import { CAT, PLAY, type ColorKey } from "@/lib/catalog";
 import { initialOf } from "@/lib/format";
+import { bacaAvatar } from "@/lib/avatar";
+import { AvatarKarakter } from "@/components/avatar-karakter";
 
 export function Icon({
   name,
@@ -70,8 +72,9 @@ export function Tile({ c, icon, size = 44, radius = 0.3 }: { c: ColorKey; icon: 
 }
 
 /** Avatar anggota: lingkaran warna main + ring 7% tint. */
-export function Avatar({ c, name, size = 46, initial }: { c: ColorKey; name: string; size?: number; initial?: string }) {
+export function Avatar({ c, name, size = 46, initial, avatar }: { c: ColorKey; name: string; size?: number; initial?: string; avatar?: string }) {
   const play = usePlay();
+  if (avatar && bacaAvatar(avatar)) return <AvatarKarakter id={avatar} c={c} size={size} flat={!play} />;
   if (play) {
     const [l, m, d] = PLAY[c];
     return (

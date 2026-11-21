@@ -14,6 +14,8 @@ import { installApp, useCanInstall } from "./pwa";
 import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
 import { ACTIVE_LEVELS, LEVELS, type LevelId } from "@akademi/schema";
 import { sudahBelajar, aturJenjangAwal } from "@/lib/akademi/siswa";
+import { PilihAvatar } from "@/components/avatar-karakter";
+import { tutupProfil } from "@/lib/profil";
 import { bahasaAnak, levelAnak, setBahasaAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
 
 export const accessText = (m: Member) =>
@@ -42,6 +44,7 @@ export function SheetHost() {
 
   let body: ReactNode = null;
   if (sheet.kind === "members") body = <MembersSheet />;
+  if (sheet.kind === "avatar") body = <AvatarSheet memberId={sheet.memberId} />;
   if (sheet.kind === "add") body = <AddSheet />;
   if (sheet.kind === "edit") body = <EditSheet memberId={sheet.memberId} />;
   if (sheet.kind === "app") body = <AppSheet toolId={sheet.toolId} />;
@@ -74,14 +77,12 @@ function SheetTitle({ children }: { children: ReactNode }) {
 function MembersSheet() {
   const members = useRumila((s) => s.members);
   const meId = useRumila((s) => s.meId);
-  const switchMember = useRumila((s) => s.switchMember);
   const close = useUI((s) => s.closeSheet);
   const openSheet = useUI((s) => s.openSheet);
   const email = useCloud((s) => s.email);
   const canInstall = useCanInstall();
   const router = useRouter();
   const me = members.find((m) => m.id === meId);
-  const others = members.filter((m) => m.id !== meId);
   const row = "flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold";
 
   return (
@@ -89,42 +90,29 @@ function MembersSheet() {
       <SheetTitle>Profil & pengaturan</SheetTitle>
       {me && (
         <div className="flex items-center gap-3 rounded-2xl px-3 py-3" style={{ background: CAT[me.c][0] }}>
-          <Avatar c={me.c} name={me.name} size={48} />
+          <Avatar c={me.c} name={me.name} size={48} avatar={me.avatar} />
           <span className="min-w-0 flex-1">
             <span className="block text-[17px] font-extrabold">{me.name}</span>
             <span className="text-xs text-ink-3">
               {me.admin ? "Admin" : "User"} · {accessText(me)}
             </span>
           </span>
-          <button onClick={() => openSheet({ kind: "edit", memberId: me.id })} className="rounded-xl bg-white px-3 py-2 text-[13px] font-bold">
-            Ubah
+          <button onClick={() => openSheet({ kind: "avatar", memberId: me.id })} className="rounded-xl bg-white px-3 py-2 text-[13px] font-bold">
+            Ganti avatar
           </button>
         </div>
       )}
 
-      {others.length > 0 && (
-        <div className="flex flex-col gap-1">
-          <span className="px-1 text-xs font-bold text-ink-3">Ganti pemain</span>
-          {others.map((m) => (
-            <div key={m.id} className="flex items-center gap-1">
-              <button
-                onClick={() => {
-                  close();
-                  switchMember(m.id);
-                  router.push("/beranda");
-                }}
-                className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl px-3 py-2 text-left"
-              >
-                <Avatar c={m.c} name={m.name} size={36} />
-                <span className="min-w-0 flex-1 truncate text-[15px] font-bold">{m.name}</span>
-              </button>
-              <button onClick={() => openSheet({ kind: "edit", memberId: m.id })} aria-label={`Atur ${m.name}`} className="flex size-10 items-center justify-center rounded-xl text-ink-3">
-                <Icon name="settings" size={20} />
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
+      <button
+        onClick={() => {
+          close();
+          tutupProfil();
+          router.replace("/masuk");
+        }}
+        className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-ink text-[15px] font-bold text-white"
+      >
+        <Icon name="switch_account" /> Ganti profil
+      </button>
 
       <div className="flex flex-col gap-1 border-t border-line pt-2">
         <span className="px-1 text-xs font-bold text-ink-3">Pengaturan</span>
@@ -140,8 +128,14 @@ function MembersSheet() {
           </button>
         )}
         <SoundToggle className={row} />
-        <button onClick={() => openSheet({ kind: "add" })} className={row}>
-          <Icon name="person_add" /> Tambah anggota
+        <button
+          onClick={() => {
+            close();
+            router.push("/orang-tua?tab=anggota");
+          }}
+          className={row}
+        >
+          <Icon name="manage_accounts" /> Atur anggota & PIN <span className="ml-auto text-xs text-ink-3">PIN orang tua</span>
         </button>
         <button
           onClick={async () => {
@@ -155,6 +149,30 @@ function MembersSheet() {
         </button>
         {email && <span className="px-3 text-xs text-ink-4">Masuk sebagai {displayLogin(email)}</span>}
       </div>
+    </>
+  );
+}
+
+/** Ganti avatar karakter (anak boleh mengganti avatarnya sendiri). */
+function AvatarSheet({ memberId }: { memberId: string }) {
+  const m = useRumila((s) => s.members.find((x) => x.id === memberId));
+  const updateMember = useRumila((s) => s.updateMember);
+  const close = useUI((s) => s.closeSheet);
+  const showToast = useUI((s) => s.showToast);
+  if (!m) return null;
+  return (
+    <>
+      <SheetTitle>Avatar {m.name}</SheetTitle>
+      <PilihAvatar
+        awal={m.avatar}
+        c={m.c}
+        onBatal={close}
+        onSimpan={(avatar) => {
+          updateMember(m.id, { avatar });
+          close();
+          showToast("Avatar baru dipakai");
+        }}
+      />
     </>
   );
 }
@@ -262,7 +280,11 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
   const terkunci = useMemo(() => sudahBelajar(memberId), [memberId, versi]);
   return (
     <div className="rounded-[18px] bg-page px-3.5 py-3">
-      <button role="switch" aria-checked={anak} onClick={() => setPeranAkademi(memberId, anak ? "dewasa" : "anak")} className="flex w-full items-center gap-3 py-1 text-left">
+      <button role="switch" aria-checked={anak} onClick={() => {
+          const baru = anak ? "dewasa" : "anak";
+          setPeranAkademi(memberId, baru);
+          useRumila.getState().updateMember(memberId, { peran: baru });
+        }} className="flex w-full items-center gap-3 py-1 text-left">
         <Tile c="red" icon="school" size={34} radius={0.32} />
         <span className="flex-1">
           <span className="block text-sm font-semibold">Profil anak Academy</span>
@@ -325,7 +347,7 @@ function EditSheet({ memberId }: { memberId: string }) {
   return (
     <>
       <div className="flex items-center gap-3">
-        <Avatar c={m.c} name={m.name} size={52} />
+        <Avatar c={m.c} name={m.name} size={52} avatar={m.avatar} />
         <div className="flex-1">
           <div className="text-xl font-extrabold tracking-[-0.02em]">{m.name}</div>
           <RoleBadge admin={m.admin} />

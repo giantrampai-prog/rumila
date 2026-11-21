@@ -38,7 +38,7 @@ export default function FruitExplorer() {
   <header className="fruit-header">
    {fruit?<button className="fruit-back" onClick={back}><Icon name="arrow_back" size={22}/><span>Katalog buah</span></button>:<Link href="/akademi/lab" className="fruit-back"><Icon name="arrow_back" size={22}/><span>Laboratorium 3D</span></Link>}
    <Link href="/beranda" className="fruit-brand">RINOYA<span>●</span></Link>
-   <button className="fruit-profile" onClick={()=>openSheet({kind:'members'})} aria-label="Ganti profil"><Avatar name={me.name} c={me.c} size={32}/><span className="fruit-profile-name">{me.name}</span><Icon name="expand_more" size={20}/></button>
+   <button className="fruit-profile" onClick={()=>openSheet({kind:'members'})} aria-label="Ganti profil"><Avatar name={me.name} c={me.c} size={32} avatar={me.avatar}/><span className="fruit-profile-name">{me.name}</span><Icon name="expand_more" size={20}/></button>
   </header>
   <div className="fruit-page">
    {fruit?<FruitDetail key={fruit.id} fruit={fruit} admin={me.admin} memberId={me.id} autoPlay={autoPlay} choose={choose}/>:<>
