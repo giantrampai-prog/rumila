@@ -35,12 +35,15 @@ export function useLastTool(): Tool | null {
 /* ---------------- kerangka ---------------- */
 
 export function KidFrame({ children, overlay }: { children: ReactNode; overlay?: ReactNode }) {
+  // Peta Academy dua kolom di tablet mendatar/desktop: butuh lebar lebih supaya kiri-kanan tidak kosong
+  const path = usePathname() ?? "";
+  const lebar = path === "/akademi" || path === "/dev/akademi";
   return (
     <PlayCtx.Provider value={true}>
       <div className="theme-play bg-dots relative min-h-dvh" style={{ fontFamily: NUNITO }}>
         <LauncherBackdrop />
         <div
-          className="relative mx-auto flex max-w-[1080px] flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5"
+          className={`relative mx-auto flex ${lebar ? "max-w-[1360px]" : "max-w-[1080px]"} flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5`}
           style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}
         >
           {children}
