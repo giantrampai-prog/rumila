@@ -1,6 +1,6 @@
 {
   "id": "sains-antar-ke-habitat",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -92,8 +92,8 @@
     {
       "id": "terumbu",
       "labelKey": "terumbu",
-      "emoji": "🪸",
-      "color": "#b3e5fc"
+      "color": "#b3e5fc",
+      "emoji": "🐚"
     }
   ],
   "items": [

@@ -1,6 +1,6 @@
 {
   "id": "alat-ukur-hewan-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -120,15 +120,15 @@
       "id": "ubur-ubur-panjang",
       "labelKey": "ubur-ubur",
       "role": "hewan",
-      "emoji": "🪼",
-      "value": 1
+      "value": 1,
+      "shape": "ubur-ubur"
     },
     {
       "id": "ubur-ubur-berat",
       "labelKey": "ubur-ubur",
       "role": "hewan",
-      "emoji": "🪼",
-      "value": 2
+      "value": 2,
+      "shape": "ubur-ubur"
     },
     {
       "id": "gurita-panjang",

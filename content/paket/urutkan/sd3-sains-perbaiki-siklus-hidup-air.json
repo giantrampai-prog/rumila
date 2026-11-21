@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-air",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -161,7 +161,7 @@
         {
           "id": "telur",
           "labelKey": "ikan-telur",
-          "emoji": "🫧"
+          "emoji": "🥚"
         },
         {
           "id": "larva",
@@ -350,7 +350,7 @@
         {
           "id": "telur",
           "labelKey": "ikan-telur",
-          "emoji": "🫧"
+          "emoji": "🥚"
         },
         {
           "id": "burayak",

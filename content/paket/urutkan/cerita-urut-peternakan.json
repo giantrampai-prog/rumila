@@ -1,6 +1,6 @@
 {
   "id": "cerita-urut-peternakan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -245,7 +245,7 @@
         {
           "id": "kambing-tuang",
           "labelKey": "kambing-tuang",
-          "emoji": "🫗"
+          "emoji": "🥣"
         },
         {
           "id": "kambing-minum",

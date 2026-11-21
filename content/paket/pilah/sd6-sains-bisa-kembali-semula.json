@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-bisa-kembali-semula",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.01"
@@ -114,7 +114,7 @@
       "id": "kacangberas",
       "labelKey": "i-kacangberas",
       "bin": "balik",
-      "emoji": "🫘"
+      "emoji": "🥜"
     },
     {
       "id": "plastisin",

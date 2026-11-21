@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-sehari-hari-pasar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,7 +78,7 @@
     {
       "id": "toples",
       "labelKey": "toples",
-      "emoji": "🫙",
+      "emoji": "🍬",
       "color": "#ffe0b2"
     }
   ],

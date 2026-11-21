@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-dorong-tarik-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -65,8 +65,8 @@
     {
       "id": "tarik",
       "labelKey": "b-tarik",
-      "emoji": "🫴",
-      "color": "#fff3e0"
+      "color": "#fff3e0",
+      "emoji": "⬅️"
     }
   ],
   "items": [

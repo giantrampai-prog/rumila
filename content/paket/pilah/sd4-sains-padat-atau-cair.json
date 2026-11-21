@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-padat-atau-cair",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.01"
@@ -123,7 +123,7 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "cair",
-      "emoji": "🫗"
+      "emoji": "🧴"
     },
     {
       "id": "madu",

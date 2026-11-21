@@ -1,6 +1,6 @@
 {
   "id": "sains-pilah-lapisan-tubuh-kelas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -86,7 +86,7 @@
       "id": "rusuk",
       "labelKey": "i-rusuk",
       "bin": "tulang",
-      "emoji": "🩻"
+      "emoji": "🦴"
     },
     {
       "id": "belakang",

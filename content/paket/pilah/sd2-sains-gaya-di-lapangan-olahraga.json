@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-gaya-di-lapangan-olahraga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -65,8 +65,8 @@
     {
       "id": "bentuk",
       "labelKey": "b-bentuk",
-      "emoji": "🫳",
-      "color": "#fce4ec"
+      "color": "#fce4ec",
+      "emoji": "🤏"
     }
   ],
   "items": [

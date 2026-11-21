@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-larut-atau-tidak",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -63,7 +63,7 @@
     {
       "id": "larut",
       "labelKey": "b-larut",
-      "emoji": "🫙",
+      "emoji": "🥤",
       "color": "#bbdefb"
     },
     {
@@ -131,7 +131,7 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "tidak",
-      "emoji": "🫗"
+      "emoji": "🧴"
     },
     {
       "id": "serbukkayu",

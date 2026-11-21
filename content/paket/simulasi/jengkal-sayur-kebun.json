@@ -1,6 +1,6 @@
 {
   "id": "jengkal-sayur-kebun",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -137,9 +137,9 @@
       "labelKey": "kacang-panjang",
       "id": "kacang-panjang",
       "role": "benda",
-      "emoji": "🫛",
       "value": 3,
-      "width": 1.5
+      "width": 1.5,
+      "emoji": "🥒"
     },
     {
       "labelKey": "roti",

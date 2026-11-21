@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-menjelajah-bukit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -148,7 +148,7 @@
       "id": "ketapang",
       "labelKey": "i-ketapang",
       "bin": "air",
-      "emoji": "🛟"
+      "emoji": "🌰"
     },
     {
       "id": "pandan",
@@ -172,19 +172,19 @@
       "id": "pletekan",
       "labelKey": "i-pletekan",
       "bin": "letup",
-      "emoji": "🪻"
+      "emoji": "🌺"
     },
     {
       "id": "jarak",
       "labelKey": "i-jarak",
       "bin": "letup",
-      "emoji": "🫘"
+      "emoji": "🥜"
     },
     {
       "id": "lamtoro",
       "labelKey": "i-lamtoro",
       "bin": "letup",
-      "emoji": "🫛"
+      "emoji": "🥜"
     }
   ],
   "pilihan": []

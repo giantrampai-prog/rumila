@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-perbaiki-algoritma",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -185,7 +185,7 @@
         {
           "id": "jus-3",
           "labelKey": "jus-3",
-          "emoji": "🫙"
+          "emoji": "🥤"
         },
         {
           "id": "jus-4",
@@ -283,7 +283,7 @@
         {
           "id": "senter-2",
           "labelKey": "senter-2",
-          "emoji": "🪫"
+          "emoji": "🔋"
         },
         {
           "id": "senter-3",
@@ -355,7 +355,7 @@
         {
           "id": "kue-3",
           "labelKey": "kue-3",
-          "emoji": "🫗"
+          "emoji": "🥣"
         },
         {
           "id": "kue-4",

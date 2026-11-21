@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalan-udara",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERNAPASAN.01"
@@ -190,7 +190,7 @@
         {
           "id": "alveolus",
           "labelKey": "masuk-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -249,7 +249,7 @@
         {
           "id": "alveolus",
           "labelKey": "taman-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -288,7 +288,7 @@
         {
           "id": "alveolus",
           "labelKey": "flu-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         }
       ]
     },
@@ -299,7 +299,7 @@
         {
           "id": "alveolus",
           "labelKey": "otot-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -343,7 +343,7 @@
         {
           "id": "alveolus",
           "labelKey": "dalam-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -384,7 +384,7 @@
         {
           "id": "alveolus",
           "labelKey": "aroma-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         }
       ]
     },
@@ -395,7 +395,7 @@
         {
           "id": "alveolus",
           "labelKey": "lilin-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "bronkus",
@@ -473,7 +473,7 @@
         {
           "id": "alveolus",
           "labelKey": "sisa-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "trakea",
@@ -495,7 +495,7 @@
         {
           "id": "alveolus",
           "labelKey": "kaca-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "bronkus",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-produsen-konsumen-sawah-laut",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -88,7 +88,7 @@
       "id": "eceng",
       "labelKey": "i-eceng",
       "bin": "produsen",
-      "emoji": "🪷"
+      "emoji": "🌸"
     },
     {
       "id": "lamun",

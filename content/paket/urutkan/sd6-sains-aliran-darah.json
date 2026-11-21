@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-aliran-darah",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.SIRKULASI.01"
@@ -350,7 +350,7 @@
         {
           "id": "saring",
           "labelKey": "ginjal-saring",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "vena",

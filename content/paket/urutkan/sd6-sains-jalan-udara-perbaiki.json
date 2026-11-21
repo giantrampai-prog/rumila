@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalan-udara-perbaiki",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERNAPASAN.01"
@@ -191,7 +191,7 @@
         {
           "id": "alveolus",
           "labelKey": "melati-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -222,7 +222,7 @@
         {
           "id": "alveolus",
           "labelKey": "menyelam-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -253,7 +253,7 @@
         {
           "id": "alveolus",
           "labelKey": "mendaki-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "kaki",
@@ -289,7 +289,7 @@
         {
           "id": "alveolus",
           "labelKey": "debu-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         }
       ]
     },
@@ -315,7 +315,7 @@
         {
           "id": "alveolus",
           "labelKey": "dingin-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -346,7 +346,7 @@
         {
           "id": "alveolus",
           "labelKey": "berenang-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -362,7 +362,7 @@
         {
           "id": "alveolus",
           "labelKey": "otak-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "darah",
@@ -429,7 +429,7 @@
         {
           "id": "alveolus",
           "labelKey": "sepeda-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "saluran",
@@ -450,7 +450,7 @@
         {
           "id": "alveolus",
           "labelKey": "nyanyi-alveolus",
-          "emoji": "🫧"
+          "emoji": "🫁"
         },
         {
           "id": "bronkus",

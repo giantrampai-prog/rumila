@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-gaya-di-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.GAYA.01"
@@ -78,7 +78,7 @@
       "id": "gesek",
       "labelKey": "i-gesek",
       "bin": "pilihan",
-      "emoji": "🛞"
+      "emoji": "👟"
     },
     {
       "id": "udara",
@@ -96,7 +96,7 @@
       "id": "apung",
       "labelKey": "i-apung",
       "bin": "pilihan",
-      "emoji": "🛟"
+      "emoji": "🛶"
     },
     {
       "id": "normal",

@@ -1,6 +1,6 @@
 {
   "id": "sains-percobaan-bak-cuci-dapur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -63,7 +63,7 @@
     {
       "id": "apung",
       "labelKey": "b-apung",
-      "emoji": "🛟"
+      "emoji": "🛶"
     },
     {
       "id": "tenggelam",

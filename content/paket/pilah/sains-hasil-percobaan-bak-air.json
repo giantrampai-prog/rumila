@@ -1,6 +1,6 @@
 {
   "id": "sains-hasil-percobaan-bak-air",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -63,8 +63,8 @@
     {
       "id": "apung",
       "labelKey": "apung",
-      "emoji": "🛟",
-      "color": "#e1f5fe"
+      "color": "#e1f5fe",
+      "emoji": "🛶"
     },
     {
       "id": "tenggelam",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-aliran-darah-perbaiki",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.SIRKULASI.01"
@@ -350,7 +350,7 @@
         {
           "id": "saring",
           "labelKey": "ginjal-saring",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "vena",

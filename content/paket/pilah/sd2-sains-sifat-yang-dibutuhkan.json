@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -137,7 +137,7 @@
       "id": "ban",
       "labelKey": "i-ban",
       "bin": "lentur",
-      "emoji": "🛞"
+      "emoji": "🚲"
     },
     {
       "id": "karetgelang",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-adaptasi-tiga-wilayah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.01"
@@ -150,7 +150,7 @@
       "id": "eceng",
       "labelKey": "i-eceng",
       "bin": "basah",
-      "emoji": "🪻"
+      "emoji": "🌿"
     },
     {
       "id": "bebek",

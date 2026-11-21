@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -249,7 +249,7 @@
         {
           "id": "biji",
           "labelKey": "jagung-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "kecambah",
@@ -285,7 +285,7 @@
         {
           "id": "biji",
           "labelKey": "kacangpanjang-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "kecambah",
@@ -310,7 +310,7 @@
         {
           "id": "buah",
           "labelKey": "kacangpanjang-buah",
-          "emoji": "🫛"
+          "emoji": "🥜"
         }
       ]
     },
@@ -321,7 +321,7 @@
         {
           "id": "biji",
           "labelKey": "labu-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "kecambah",
@@ -487,7 +487,7 @@
         {
           "id": "biji",
           "labelKey": "terong-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "kecambah",
@@ -528,7 +528,7 @@
         {
           "id": "biji",
           "labelKey": "buncis-biji",
-          "emoji": "🫘"
+          "emoji": "🥜"
         },
         {
           "id": "kecambah",
@@ -553,7 +553,7 @@
         {
           "id": "buah",
           "labelKey": "buncis-buah",
-          "emoji": "🫛"
+          "emoji": "🥜"
         }
       ]
     },
@@ -589,7 +589,7 @@
         {
           "id": "buah",
           "labelKey": "kacanghijau-buah",
-          "emoji": "🫛"
+          "emoji": "🥜"
         }
       ]
     },

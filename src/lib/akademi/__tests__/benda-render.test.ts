@@ -20,6 +20,11 @@ describe("Benda bentuk baru", () => {
     expect((h.match(/stroke="#8a5a2b"/g) ?? []).length).toBe(1);
     expect(html({ shape: "akar", color: "#6d4c41" })).toContain('fill="#6d4c41"');
   });
+  it("badan: batang tubuh polos warna kulit (bukan baju)", () => {
+    const h = html({ shape: "badan" });
+    expect(h).toContain('data-bentuk="badan"');
+    expect(h).toContain('fill="#f2c29b"');
+  });
   it("koin: cakram dengan nominal; warna bawaan perak < 1000, emas ≥ 1000", () => {
     const h = html({ shape: "koin", angka: "500" });
     expect(h).toContain('data-bentuk="koin"');

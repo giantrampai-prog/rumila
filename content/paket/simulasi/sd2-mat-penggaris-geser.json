@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-penggaris-geser",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -120,9 +120,9 @@
       "id": "seruling",
       "labelKey": "i-seruling",
       "role": "benda",
-      "emoji": "🪈",
       "width": 4,
-      "value": 10
+      "value": 10,
+      "emoji": "🎷"
     },
     {
       "id": "tongkat",

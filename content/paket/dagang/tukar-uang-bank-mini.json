@@ -1,6 +1,6 @@
 {
   "id": "tukar-uang-bank-mini",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -26,15 +26,15 @@
   "knobs": {
     "harga": {
       "min": 7,
-      "max": 12,
-      "default": 12,
+      "max": 10,
+      "default": 10,
       "step": 1,
-      "keterangan": "tingkat lanjut: termasuk uang sepuluh ribu, 1–4 lembar, total Rp7.000–12.000"
+      "keterangan": "tingkat lanjut: termasuk uang sepuluh ribu, 1–4 lembar, total Rp7.000–10.000"
     }
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 9,
   "world": "bank-mini",
   "currency": "IDR",
   "denominations": [
@@ -75,7 +75,7 @@
     "itemsMin": 1,
     "itemsMax": 4,
     "payExact": true,
-    "maxTotal": 12000,
+    "maxTotal": 10000,
     "kindsMax": 1
   }
 }

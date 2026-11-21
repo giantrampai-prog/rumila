@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-halaman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -139,13 +139,13 @@
       "id": "ban",
       "labelKey": "i-ban",
       "bin": "gas",
-      "emoji": "🛞"
+      "emoji": "🚲"
     },
     {
       "id": "gelembungsabun",
       "labelKey": "i-gelembungsabun",
       "bin": "gas",
-      "emoji": "🫧"
+      "emoji": "🧼"
     },
     {
       "id": "angin",
