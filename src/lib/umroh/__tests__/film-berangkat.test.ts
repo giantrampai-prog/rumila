@@ -54,3 +54,30 @@ describe("aksi langkah interaktif", () => {
     }
   });
 });
+
+import { FILM_PULANG, babFilm, durasiFilm as durasi, filmUntukBab, penandaFilm as penanda } from "../film-berangkat";
+
+describe("film Pulang", () => {
+  it("mengikuti bab kepulangan dari Makkah sampai rumah", () => {
+    const ids = JOURNEY_CHAPTERS.map((c) => c.id);
+    const bab = babFilm(FILM_PULANG);
+    const awal = ids.indexOf("makkah_jed");
+    expect(bab).toEqual(ids.slice(awal, awal + bab.length));
+    expect(bab.at(-1)).toBe("rumah_selesai");
+  });
+  it("durasi perjalanan sama dengan bab, lama 2–3 menit, penanda satu per bab", () => {
+    for (const a of FILM_PULANG) {
+      const bab = getJourneyChapter(a.bab);
+      if (bab.kind === "travel") expect(a.detik).toBe(bab.durationSeconds);
+      else expect(a.perjalanan).toBeFalsy();
+    }
+    expect(durasi(FILM_PULANG)).toBeGreaterThanOrEqual(120);
+    expect(durasi(FILM_PULANG)).toBeLessThanOrEqual(180);
+    expect(penanda(FILM_PULANG).map((p) => p.bab)).toEqual([...babFilm(FILM_PULANG)]);
+  });
+  it("tiap bab tahu filmnya", () => {
+    expect(filmUntukBab("cgk")).toBe("berangkat");
+    expect(filmUntukBab("garuda_cgk")).toBe("pulang");
+    expect(filmUntukBab("umroh")).toBeNull();
+  });
+});
