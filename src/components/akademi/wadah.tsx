@@ -64,6 +64,27 @@ function badan(bentuk: BentukWadah, w: string, g: string): CSSProperties {
         background: `repeating-linear-gradient(135deg,rgba(255,255,255,.22) 0 14px,transparent 14px 28px), ${w}`,
         boxShadow: `inset 0 10px 0 ${g}, 0 6px 0 ${g}`,
       };
+    case "rak": {
+      // rak selalu kayu (apa pun dunianya): rangka gelap dengan papan-papan melintang
+      const [w, g] = ["#c9935a", "#7d5428"];
+      return {
+        borderRadius: 10,
+        background: `repeating-linear-gradient(180deg,transparent 0 40px,${g} 40px 48px), ${w}`,
+        boxShadow: `inset 8px 0 0 ${g}, inset -8px 0 0 ${g}, inset 0 8px 0 ${g}, 0 6px 0 ${g}`,
+      };
+    }
+    case "kardus":
+      return {
+        borderRadius: 8,
+        background: `linear-gradient(90deg,transparent 46%,rgba(0,0,0,.12) 46% 54%,transparent 54%), linear-gradient(180deg,${g}aa 0 12px,${w} 12px)`,
+        boxShadow: `0 6px 0 ${g}`,
+      };
+    case "es":
+      return {
+        borderRadius: 22,
+        background: `linear-gradient(150deg,rgba(255,255,255,.7) 0 16%,transparent 30%), ${w}`,
+        boxShadow: `inset 0 0 0 4px rgba(255,255,255,.7), 0 6px 0 ${g}`,
+      };
     case "kotak":
     default:
       return {
@@ -85,12 +106,14 @@ export interface WadahProps extends Omit<HTMLAttributes<HTMLDivElement>, "childr
   hijau?: boolean;
   /** tinggi minimum area isi (px, sebelum skala) */
   minIsi?: number;
+  /** paksa bentuk wadah (mis. label menyebut "rak"); kosong = bentuk dari panggung */
+  bentuk?: BentukWadah;
 }
 
 /** Wadah bertema dunia: label di atas, area isi terang di dalam badan wadah. */
-export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, minIsi = 56, className = "", style, ...rest }, ref) {
+export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, minIsi = 56, bentuk, className = "", style, ...rest }, ref) {
   const { tema, skala } = usePanggung();
-  const b = badan(tema.wadah, tema.wadahWarna, tema.wadahGelap);
+  const b = badan(bentuk ?? tema.wadah, tema.wadahWarna, tema.wadahGelap);
   return (
     <div
       ref={ref}

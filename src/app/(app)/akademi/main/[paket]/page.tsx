@@ -17,7 +17,7 @@ export default function AkademiMainPage() {
   const { paket } = useParams<{ paket: string }>();
   const [klien, setKlien] = useState(false);
   useEffect(() => setKlien(true), []);
-  if (!klien) return null;
+  if (!klien) return <Memuat />;
   return <Gerbang paketId={paket} />;
 }
 
@@ -29,7 +29,7 @@ function Gerbang({ paketId }: { paketId: string }) {
   if (!p) return <ActivityRunner paketId={paketId} />;
   const a = akses(p);
   if (a.boleh) return <ActivityRunner paketId={paketId} />;
-  if (!siap) return null; // hasil ujian belum ditarik: jangan buru-buru menyatakan terkunci
+  if (!siap) return <Memuat />; // hasil ujian belum ditarik: jangan buru-buru menyatakan terkunci
   return (
     <div className="flex min-h-dvh items-center justify-center p-6">
       <div className="flex w-full max-w-[420px] flex-col items-center gap-3 rounded-[28px] bg-white p-6 text-center shadow-[0_6px_0_rgba(11,37,69,.08)]">
@@ -46,6 +46,18 @@ function Gerbang({ paketId }: { paketId: string }) {
         >
           <Icon name="map" size={22} /> {bahasa === "en" ? "Back to the map" : "Ke peta"}
         </Link>
+      </div>
+    </div>
+  );
+}
+
+/** Tanda halaman sedang dibuka, supaya anak tidak mengetuk ulang dan tidak melihat layar kosong. */
+function Memuat() {
+  return (
+    <div className="flex min-h-dvh items-center justify-center p-6" role="status" aria-label="Membuka misi">
+      <div className="flex flex-col items-center gap-3 rounded-[28px] bg-white px-8 py-6 shadow-[0_6px_0_rgba(11,37,69,.08)]">
+        <Icon name="progress_activity" size={44} className="animate-spin text-[#0786eb]" />
+        <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: "#0b2545" }}>Membuka misi…</p>
       </div>
     </div>
   );

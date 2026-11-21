@@ -25,7 +25,7 @@ import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
 import { LatarDunia } from "../latar-dunia";
-import { duniaPaket } from "@/lib/akademi/tema-dunia";
+import { duniaPaket, type DuniaId } from "@/lib/akademi/tema-dunia";
 import "../akademi.css";
 
 const KARTU = "rounded-[24px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
@@ -244,9 +244,8 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
       .map((x, i) => (i === 0 ? `M ${x} ${yTitik(0)}` : `C ${geser[i - 1]} ${yTitik(i) - SLOT / 2} ${x} ${yTitik(i - 1) + SLOT / 2} ${x} ${yTitik(i)}`))
       .join(" ");
   const terakhirTerbuka = u.misi.reduce((t, x, i) => (x.selesai || x.sekarang ? i : t), -1);
-  // dunia modul = dunia paket misi pertamanya; jadi "pulau" bergambar di peta, bukan krem polos yang sama
-  const paketPertama = u.misi.length ? PAKET.find((p) => p.competencyIds[0] === u.misi[0].kompetensi.id) : undefined;
-  const dunia = paketPertama ? duniaPaket(paketPertama) : "kebun";
+  // dunia modul = dunia yang paling sering dipakai misinya (seri → misi paling awal); jadi "pulau" bergambar di peta
+  const dunia = duniaModul(u);
   return (
     <section aria-label={`${trackMeta(u.track).nama.id}: ${u.nama.id}, ${selesai} dari ${u.misi.length} misi`} className="relative overflow-hidden rounded-[28px] p-2 pb-1 shadow-[0_5px_0_rgba(11,37,69,.10)]" style={{ filter: semuaKunci ? "grayscale(.5)" : undefined }}>
       <LatarDunia dunia={dunia} isi />
@@ -314,8 +313,21 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
   );
 }
 
+/** Dunia terbanyak di antara paket misi sebuah modul, supaya gambar pulau mewakili isi modulnya. */
+function duniaModul(u: UnitPeta): DuniaId {
+  const hit = new Map<DuniaId, number>();
+  for (const x of u.misi) {
+    const pk = PAKET.find((p) => p.competencyIds[0] === x.kompetensi.id);
+    if (pk) { const d = duniaPaket(pk); hit.set(d, (hit.get(d) ?? 0) + 1); }
+  }
+  let terbaik: DuniaId = "kebun", n = 0;
+  for (const [d, k] of hit) if (k > n) { terbaik = d; n = k; }
+  return terbaik;
+}
+
 function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m: MisiPeta; warna: [string, string, string]; unitAktif?: string; href?: string; judul: string; sisiLabel: "kiri" | "kanan"; bahasa: BahasaAnak }) {
   const [goyang, setGoyang] = useState(0);
+  const [membuka, setMembuka] = useState(false);
   const [l, mm, d] = warna;
   const ukuran = m.sekarang ? 76 : 62;
   const persen = m.selesai ? 100 : m.progres > 0 ? Math.round(m.progres * 100) : 0;
@@ -327,7 +339,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
         ? { background: "#ece4d8", boxShadow: "0 5px 0 #d6cbbb", color: "#a99c8a" }
         : { background: "#fff", boxShadow: `0 5px 0 ${l}`, border: `3px solid ${l}`, color: mm };
   const label = `Misi ${m.nomor}, ${judul}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : m.terkunci ? "Terkunci" : persen ? `Sudah ${persen}%` : "Belum dimainkan"}`;
-  const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95";
+  const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95 group-active:translate-y-1 group-active:scale-95";
   const isi = (
     <>
       {m.sekarang && <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />}
@@ -356,8 +368,10 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
   const sisi = ukuran + 2 * (tebal + 4);
   const r = (sisi - tebal) / 2;
   const kel = 2 * Math.PI * r;
-  return (
-    <div className="relative flex flex-col items-center">
+  // Seluruh titik (lingkaran, pita MULAI, dan label judul) satu tautan supaya ketukan anak di mana pun langsung masuk.
+  // Begitu diketuk, lingkaran menampilkan putaran "membuka" agar anak tidak mengetuk berulang saat halaman dimuat.
+  const dalam = (
+    <>
       {persen > 0 && (
         <svg aria-hidden width={sisi} height={sisi} className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
           <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke="#f1e6d6" strokeWidth={tebal} />
@@ -375,9 +389,9 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
         </span>
       )}
       {href ? (
-        <Link href={href} aria-label={label} title={pernyataan(m, bahasa)} className={kelas} style={{ width: ukuran, height: ukuran, ...gaya }}>
-          {isi}
-        </Link>
+        <span className={kelas} style={{ width: ukuran, height: ukuran, ...gaya }}>
+          {membuka ? <Icon name="progress_activity" size={36} className="animate-spin" /> : isi}
+        </span>
       ) : (
         <button type="button" key={`titik-${goyang}`} onClick={() => setGoyang((n) => n + 1)} aria-label={label} className={`${kelas} ${goyang ? "akademi-shake" : ""}`} style={{ width: ukuran, height: ukuran, ...gaya }}>
           {isi}
@@ -391,7 +405,14 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
       >
         <span className="line-clamp-3 [overflow-wrap:anywhere]">{judul}</span>
       </span>
-    </div>
+    </>
+  );
+  return href ? (
+    <Link href={href} onClick={() => setMembuka(true)} aria-label={label} title={pernyataan(m, bahasa)} className="group relative flex flex-col items-center [-webkit-tap-highlight-color:transparent]">
+      {dalam}
+    </Link>
+  ) : (
+    <div className="relative flex flex-col items-center">{dalam}</div>
   );
 }
 

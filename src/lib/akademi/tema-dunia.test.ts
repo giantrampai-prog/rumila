@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { duniaPaket, pilihDunia, SEMUA_DUNIA, TEMA } from "./tema-dunia";
+import { bentukDariTeks, duniaDariWorld, duniaPaket, pilihDunia, SEMUA_DUNIA, TEMA } from "./tema-dunia";
 
 describe("pilihDunia", () => {
   it("memilih dari kata kunci di id dan judul", () => {
@@ -21,6 +21,23 @@ describe("pilihDunia", () => {
     const a = pilihDunia({ id: "zzz-qqq", competencyIds: ["CODING.SD3.A.01"] });
     expect(["kota", "angkasa"]).toContain(a);
     expect(pilihDunia({ id: "zzz-qqq", competencyIds: ["CODING.SD3.A.01"] })).toBe(a);
+  });
+
+  it("dunia tulisan penulis (world) menang atas tebakan kata kunci", () => {
+    expect(duniaDariWorld("kolam")).toBe("sungai");
+    expect(duniaDariWorld("stasiun")).toBe("kota");
+    expect(duniaDariWorld("toko-kue")).toBe("pasar");
+    expect(duniaDariWorld("kebun-pasar", ["Rak Hasil Dua Angka"])).toBe("pasar");
+    expect(duniaDariWorld("kebun-pasar", ["Rawat Pot di Kebun"])).toBe("kebun");
+    // "Jalan Katak Loncat" dulu jatuh ke kota karena kata "jalan"
+    expect(duniaPaket({ id: "x", world: "kolam", instructionKey: "i", locale: { id: { judul: "Jalan Katak Loncat 10", i: "" } } })).toBe("sungai");
+  });
+
+  it("wadah mengikuti benda yang disebut teks", () => {
+    expect(bentukDariTeks("Rak Hasil Dua Angka")).toBe("rak");
+    expect(bentukDariTeks("Kotak Mainan Warna")).toBe("kotak-mainan");
+    expect(bentukDariTeks("Ember Kerang")).toBe("ember");
+    expect(bentukDariTeks("Genap atau Ganjil?")).toBeNull();
   });
 
   it("setiap dunia punya tema lengkap", () => {

@@ -5,7 +5,7 @@
 
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
-import { TEMA, type DuniaId, type Tema } from "@/lib/akademi/tema-dunia";
+import { TEMA, type BentukWadah, type DuniaId, type Tema } from "@/lib/akademi/tema-dunia";
 import { LatarDunia } from "./latar-dunia";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
@@ -53,8 +53,8 @@ function useSkalaTablet() {
  * Panggung = area isi di bawah instruksi. Presenter membaca ukurannya untuk membesarkan kartu/wadah di layar lebar
  * dan tema untuk bentuk wadah. `skala` 1 di HP, naik sampai 1,6 di tablet/desktop yang luas.
  */
-export interface Panggung { tema: Tema; w: number; h: number; skala: number }
-const PanggungCtx = createContext<Panggung>({ tema: TEMA.kebun, w: 0, h: 0, skala: 1 });
+export interface Panggung { tema: Tema; w: number; h: number; skala: number; /** emoji petak rintangan soal robot */ rintangan: string }
+const PanggungCtx = createContext<Panggung>({ tema: TEMA.kebun, w: 0, h: 0, skala: 1, rintangan: "🌳" });
 export const usePanggung = () => useContext(PanggungCtx);
 
 /** Skala isi dari ukuran panggung; patokan desain ±880×500 px. */
@@ -66,15 +66,19 @@ export function skalaPanggung(w: number, h: number): number {
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", musik,
+  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik,
 }: {
   judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string; dunia?: DuniaId;
+  /** bentuk wadah yang disebut paket (mis. "rak"); kosong = bawaan dunia */
+  wadah?: BentukWadah;
+  /** emoji rintangan soal robot (mis. 🗄️ bila soal menyebut rak) */
+  rintangan?: string;
   /** backsound: tombol musik nyala/mati di kepala layar (kosong = tanpa tombol, mis. ujian) */
   musik?: { nyala: boolean; alih: () => void };
 }) {
   const router = useRouter();
   useSkalaTablet();
-  const tema = TEMA[dunia];
+  const tema = wadah ? { ...TEMA[dunia], wadah } : TEMA[dunia];
   const panggungRef = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
   useIsoLayout(() => {
@@ -86,7 +90,7 @@ export function LayarAktivitas({
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
-  const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h) };
+  const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h), rintangan };
   // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
   // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
   const kembali = () => {

@@ -115,6 +115,59 @@ const LATAR: Record<DuniaId, () => ReactNode> = {
       <Hias e="🪁" s={40} style={{ right: 10, top: "38%" }} />
     </>
   ),
+  sungai: () => (
+    <>
+      <div style={{ ...isi, background: "linear-gradient(180deg,#bfe9ff 0%,#e6f6ff 30%,#9fd98a 30.2%,#86cc72 44%,#4fb3e0 44.2%,#3a9fd0 74%,#86cc72 74.2%,#78c066 100%)" }} />
+      <div className="absolute inset-x-0" style={{ top: "52%", height: 10, background: "repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 30px,transparent 30px 90px)" }} />
+      <div className="absolute inset-x-0" style={{ top: "64%", height: 8, background: "repeating-linear-gradient(90deg,transparent 0 50px,rgba(255,255,255,.45) 50px 80px,transparent 80px 140px)" }} />
+      <Hias e="🐸" s={44} style={{ left: 10, top: "47%" }} />
+      <Hias e="🪷" s={40} style={{ right: 16, top: "56%" }} />
+      <Hias e="🌾" s={54} style={{ left: 6, bottom: "8%" }} />
+      <Hias e="🪨" s={40} style={{ right: 12, bottom: "10%" }} />
+      <Hias e="☁️" s={46} style={{ right: 10, top: "8%" }} />
+    </>
+  ),
+  lab: () => (
+    <>
+      <div style={{ ...isi, background: "linear-gradient(180deg,#eefaf8 0%,#e2f5f2 70%,#c9d6dc 70.2%,#b5c4cc 100%)" }} />
+      <div style={{ ...isi, bottom: "30%", backgroundImage: "linear-gradient(rgba(18,168,154,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(18,168,154,.07) 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
+      <Hias e="🧪" s={52} style={{ left: 10, bottom: "31%" }} />
+      <Hias e="🔬" s={54} style={{ right: 12, bottom: "31%" }} />
+      <Hias e="⚗️" s={40} style={{ left: 10, top: "40%" }} />
+      <Hias e="🧲" s={36} style={{ right: 12, top: "40%" }} />
+    </>
+  ),
+  gudang: () => (
+    <>
+      <div style={{ ...isi, background: "linear-gradient(180deg,#f3e6d3 0%,#ead8bd 72%,#c9b08c 72.2%,#bba07a 100%)" }} />
+      <div style={{ ...isi, bottom: "28%", background: "repeating-linear-gradient(90deg,rgba(125,84,40,.08) 0 3px,transparent 3px 60px)" }} />
+      <Hias e="📦" s={56} style={{ left: 8, bottom: "29%" }} />
+      <Hias e="📦" s={44} style={{ left: 22, bottom: "38%" }} />
+      <Hias e="🧰" s={48} style={{ right: 12, bottom: "29%" }} />
+      <Hias e="🏷️" s={34} style={{ right: 12, top: "40%" }} />
+    </>
+  ),
+  bukit: () => (
+    <>
+      <div style={{ ...isi, background: "linear-gradient(180deg,#bfe6ff 0%,#eaf7ff 40%,#cfe3a0 40.2%,#b7d483 100%)" }} />
+      <div className="absolute -left-[10%] bottom-[36%] h-[34%] w-[70%] rounded-[50%_50%_0_0/100%_100%_0_0]" style={{ background: "#a9c879" }} />
+      <div className="absolute -right-[12%] bottom-[30%] h-[40%] w-[66%] rounded-[50%_50%_0_0/100%_100%_0_0]" style={{ background: "#98bb69" }} />
+      <Hias e="⛰️" s={60} style={{ right: 12, top: "30%" }} />
+      <Hias e="🪨" s={44} style={{ left: 10, bottom: "10%" }} />
+      <Hias e="🌲" s={54} style={{ right: 10, bottom: "12%" }} />
+      <Hias e="🦅" s={34} style={{ left: 12, top: "36%" }} />
+    </>
+  ),
+  kutub: () => (
+    <>
+      <div style={{ ...isi, background: "linear-gradient(180deg,#cfe9ff 0%,#eef7ff 46%,#ffffff 46.2%,#e3f1fc 100%)" }} />
+      <div className="absolute inset-x-0" style={{ top: "46%", height: 14, background: "radial-gradient(circle at 30px 0,#ffffff 22px,transparent 23px) 0 0/60px 14px repeat-x" }} />
+      <Hias e="🐧" s={56} style={{ left: 10, bottom: "12%" }} />
+      <Hias e="🏔️" s={58} style={{ right: 10, top: "30%" }} />
+      <Hias e="🧊" s={40} style={{ right: 14, bottom: "10%" }} />
+      <Hias e="❄️" s={32} style={{ left: 12, top: "38%" }} />
+    </>
+  ),
 };
 
 /** Latar dunia. Bawaan: fixed di belakang layar aktivitas; `isi`: mengisi kotak induknya (mis. pulau modul di peta). */
