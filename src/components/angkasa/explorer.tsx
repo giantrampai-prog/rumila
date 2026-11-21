@@ -914,7 +914,7 @@ export function Explorer({
         aria-label="Navigasi modul"
         className="hidden items-center gap-2 text-[13px] font-bold text-ink-2 sm:flex"
       >
-        <Link href="/beranda/angkasa" className="hover:text-ink">
+        <Link href="/akademi/lab" className="hover:text-ink">
           Angkasa
         </Link>
         <Icon name="chevron_right" size={16} />

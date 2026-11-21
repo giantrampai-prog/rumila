@@ -9,12 +9,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/launcher";
 import { Icon, PlayCtx } from "@/components/ui";
-import { tintaPada } from "@/lib/brand";
-import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/catalog";
+import { canonicalToolId, getTool, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
 import { PullToRefresh } from "@/components/pwa";
 import { can, useMe, useRumila, useUI } from "@/lib/store";
-import { JUMLAH_PAKET } from "@/lib/akademi/jumlah.generated";
+import { alatSiap } from "@/lib/kampus";
 
 const INK = "#0b2545";
 
@@ -27,7 +26,7 @@ export function useLastTool(): Tool | null {
       const a = activity[i];
       if (a.memberId !== me.id) continue;
       const t = getTool(canonicalToolId(a.toolId));
-      if (t && !t.planned && can(me, t.folder)) return t;
+      if (t && alatSiap(t) && can(me, t.folder)) return t;
     }
     return null;
   }, [activity, me]);
@@ -65,12 +64,12 @@ export function KidHeader() {
       {!diBeranda && (
         <Link
           href="/beranda"
-          aria-label="Kembali ke beranda"
+          aria-label="Kembali ke kampus"
           className="flex h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.1)] transition-transform active:translate-y-0.5 active:scale-95"
           style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800 }}
         >
           <Icon name="home" size={26} />
-          <span>Beranda</span>
+          <span>Kampus</span>
         </Link>
       )}
       {/* salam (bukan tombol) */}
@@ -109,31 +108,3 @@ export function MascotBubble({ children }: { children: ReactNode }) {
   );
 }
 
-/* ---------------- kartu dunia ---------------- */
-
-export function WorldCard({ f }: { f: Folder }) {
-  const [l, m, d] = PLAY[f.c];
-  const tinta = tintaPada(f.c);
-  const ready = f.items.filter((t) => !t.planned);
-  // Academy punya portal sendiri (Hari ini, Pelajaran); folder Edukasi lama tidak dipakai lagi.
-  const akademi = f.id === "edukasi";
-  const sub = akademi ? `${JUMLAH_PAKET} aktivitas` : ready.length ? `${ready.length} permainan` : "Segera hadir";
-  return (
-    <Link
-      href={akademi ? "/akademi" : `/beranda/${f.id}`}
-      className="relative flex min-h-[124px] flex-col justify-between overflow-hidden rounded-[22px] p-3.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97] sm:min-h-[136px]"
-      style={{ color: tinta, background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)`, boxShadow: `0 5px 0 ${d}` }}
-    >
-      <div aria-hidden className="absolute -right-8 -bottom-10 size-28 rounded-full bg-white/18" />
-      <span className="relative flex size-11 items-center justify-center rounded-[14px] bg-white" style={{ boxShadow: `0 3px 0 ${d}44` }}>
-        <span className="ms" style={{ fontSize: 26, color: d }}>
-          {f.icon}
-        </span>
-      </span>
-      <div className="relative">
-        <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: tinta === "#fff" ? "0 1px 0 rgba(0,0,0,.12)" : undefined }}>{f.name}</div>
-        <div className="mt-0.5 text-[12px] font-extrabold opacity-85">{sub}</div>
-      </div>
-    </Link>
-  );
-}

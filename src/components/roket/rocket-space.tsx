@@ -231,7 +231,7 @@ export function RocketSpace() {
               <RoundBtn
                 icon={focus ? "arrow_back" : "home"}
                 label={focus ? "Kembali" : "Keluar"}
-                onClick={() => (focus ? engine.focus(null) : router.push("/beranda/angkasa"))}
+                onClick={() => (focus ? engine.focus(null) : router.push("/akademi/lab"))}
               />
               <div className="pointer-events-auto flex flex-wrap justify-center gap-1 rounded-2xl bg-[#142825]/70 p-1.5 text-white shadow-lg backdrop-blur-md sm:gap-2" aria-label="Sudut pandang lingkungan">
                 {([['landasan', 'rocket_launch', 'Landasan'], ['pesisir', 'waves', 'Pesisir'], ['hutan', 'forest', 'Hutan']] as const).map(([id, icon, label]) => (

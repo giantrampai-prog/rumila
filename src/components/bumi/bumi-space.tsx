@@ -241,7 +241,7 @@ export function BumiSpace() {
         ) : (
           <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
             <div className="flex items-start justify-between gap-2">
-              <RoundBtn icon={focus ? 'arrow_back' : 'home'} label={focus ? 'Kembali' : 'Keluar'} onClick={() => (focus ? engine.focus(null) : router.push('/beranda/angkasa'))} />
+              <RoundBtn icon={focus ? 'arrow_back' : 'home'} label={focus ? 'Kembali' : 'Keluar'} onClick={() => (focus ? engine.focus(null) : router.push('/akademi/lab'))} />
               <div className="flex gap-3">
                 <RoundBtn icon="sports_esports" label="Game" tone="purple" onClick={openGames} />
                 <RoundBtn icon="explore" label="Mulai Tur" tone="orange" onClick={() => engine.setMode('tur')} />

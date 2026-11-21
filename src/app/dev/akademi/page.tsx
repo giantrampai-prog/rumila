@@ -21,9 +21,8 @@ import { LayarUjian } from "@/components/akademi/ujian";
 import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
 import { RuangOrangTua } from "@/components/ortu/ruang";
 import { useMe, useRumila, type Member } from "@/lib/store";
-import { KartuKampus } from "@/components/kampus";
-import { WorldView } from "@/components/world";
-import { getFolder } from "@/lib/catalog";
+import { GedungView, KartuKampus, PetaKampus } from "@/components/kampus";
+import { GEDUNG } from "@/lib/kampus";
 
 function KampusDev() {
   const me = useMe();
@@ -33,11 +32,11 @@ function KampusDev() {
     const id = q.get("kampus");
     if (id && id !== "1") useRumila.getState().switchMember(id);
   }, [q]);
-  const f = getFolder("angkasa")!;
   return (
     <>
       <KartuKampus me={me} />
-      <WorldView f={f} />
+      <PetaKampus me={me} />
+      <GedungView g={GEDUNG[0]} />
     </>
   );
 }
