@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -202,14 +202,16 @@
       "labelKey": "i-penguin",
       "bin": "kutub",
       "emoji": "🐺",
-      "color": "#fafafa"
+      "color": "#fafafa",
+      "latar": true
     },
     {
       "id": "anjinglaut",
       "labelKey": "i-anjinglaut",
       "bin": "kutub",
       "emoji": "🦊",
-      "color": "#fafafa"
+      "color": "#fafafa",
+      "latar": true
     }
   ],
   "pilihan": []

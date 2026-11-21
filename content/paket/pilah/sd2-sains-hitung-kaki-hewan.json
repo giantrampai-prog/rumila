@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hitung-kaki-hewan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -98,7 +98,7 @@
     {
       "id": "k6",
       "labelKey": "b-k6",
-      "emoji": "🐜",
+      "emoji": "6️⃣",
       "color": "#fffde7"
     },
     {

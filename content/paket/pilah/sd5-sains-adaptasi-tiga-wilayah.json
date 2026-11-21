@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-adaptasi-tiga-wilayah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.01"
@@ -19,7 +19,7 @@
       "i-ular": "ular gurun: bergerak menyamping agar sedikit menyentuh pasir panas",
       "i-akar": "tumbuhan gurun: akar menyebar luas tepat di bawah permukaan untuk menangkap hujan",
       "i-rubah": "rubah kutub: bulu putih tebal dan telinga kecil",
-      "i-walrus": "walrus: lapisan lemak sangat tebal di bawah kulit",
+      "i-walrus": "anjing laut: lapisan lemak sangat tebal di bawah kulit",
       "i-penguin": "penguin kaisar: mengerami telur di atas kaki agar tak menyentuh es",
       "i-beruang": "beruang kutub: telapak kaki berbulu agar hangat dan tidak tergelincir",
       "i-rusa": "rusa kutub: kuku lebar seperti sepatu salju",
@@ -40,7 +40,7 @@
       "i-ular": "desert snake: moves sideways so less of it touches the hot sand",
       "i-akar": "desert plant: roots spread wide just under the surface to catch rain",
       "i-rubah": "Arctic fox: thick white fur and small ears",
-      "i-walrus": "walrus: a very thick layer of fat under the skin",
+      "i-walrus": "seal: a very thick layer of fat under the skin",
       "i-penguin": "emperor penguin: keeps its egg on its feet, off the ice",
       "i-beruang": "polar bear: furry paws to stay warm and not slip",
       "i-rusa": "reindeer: wide hooves like snowshoes",

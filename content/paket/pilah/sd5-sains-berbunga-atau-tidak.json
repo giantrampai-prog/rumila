@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-berbunga-atau-tidak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.02"
@@ -69,7 +69,7 @@
     {
       "id": "tidak",
       "labelKey": "b-tidak",
-      "emoji": "🌿",
+      "emoji": "🍂",
       "color": "#c8e6c9"
     }
   ],

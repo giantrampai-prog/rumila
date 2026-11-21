@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-benda-langit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "i-bintang": "bintang",
       "t-bumi": "Mana Bumi? Bumi biru dan hijau.",
       "t-matahari": "Mana Matahari?",
-      "t-bulan": "Mana Bulan? Bulan kecil dan abu-abu.",
+      "t-bulan": "Mana Bulan? Bulan bersinar di langit malam.",
       "t-bumi2": "Mana Bumi?",
       "t-mars": "Mana Mars yang merah?",
       "i-saturnus": "Saturnus",
@@ -42,7 +42,7 @@
       "i-bintang": "a star",
       "t-bumi": "Where is Earth? Earth is blue and green.",
       "t-matahari": "Where is the Sun?",
-      "t-bulan": "Where is the Moon? The Moon is small and grey.",
+      "t-bulan": "Where is the Moon? The Moon shines in the night sky.",
       "t-bumi2": "Where is Earth?",
       "t-mars": "Where is red Mars?",
       "i-saturnus": "Saturn",
@@ -95,7 +95,8 @@
       "bin": "pilihan",
       "emoji": "🌕",
       "scale": 0.6,
-      "color": "#263238"
+      "color": "#263238",
+      "latar": true
     },
     {
       "id": "mars",

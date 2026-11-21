@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-rantai-makanan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -55,7 +55,7 @@
       "padang2-kelinci": "kelinci liar",
       "padang2-ular": "ular",
       "padang2-elang": "elang",
-      "s-lautlepas": "Rantai makanan di laut lepas",
+      "s-lautlepas": "Rantai makanan di laut dangkal",
       "lautlepas-rumputlaut": "rumput laut",
       "lautlepas-ikan": "ikan kecil",
       "lautlepas-cumi": "cumi-cumi",
@@ -113,7 +113,7 @@
       "padang2-kelinci": "wild rabbit",
       "padang2-ular": "snake",
       "padang2-elang": "eagle",
-      "s-lautlepas": "An open sea food chain",
+      "s-lautlepas": "A shallow sea food chain",
       "lautlepas-rumputlaut": "seaweed",
       "lautlepas-ikan": "small fish",
       "lautlepas-cumi": "squid",

@@ -1,6 +1,6 @@
 {
   "id": "pensil-panjang-pendek",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,8 +18,8 @@
       "bus": "bus mainan",
       "truk": "truk mainan",
       "perahu": "perahu mainan",
-      "kayu": "balok kayu",
-      "ikan": "ikan mainan"
+      "ikan": "ikan mainan",
+      "traktor": "traktor mainan"
     },
     "en": {
       "judul": "Long and Short Toys",
@@ -31,8 +31,8 @@
       "bus": "toy bus",
       "truk": "toy truck",
       "perahu": "toy boat",
-      "kayu": "wooden log",
-      "ikan": "toy fish"
+      "ikan": "toy fish",
+      "traktor": "toy tractor"
     }
   },
   "knobs": {
@@ -113,17 +113,17 @@
       "width": 1
     },
     {
-      "id": "kayu-panjang",
-      "labelKey": "kayu",
+      "id": "traktor-panjang",
+      "labelKey": "traktor",
       "bin": "pilihan",
-      "emoji": "🪵",
+      "emoji": "🚜",
       "width": 1.6
     },
     {
-      "id": "kayu-pendek",
-      "labelKey": "kayu",
+      "id": "traktor-pendek",
+      "labelKey": "traktor",
       "bin": "pilihan",
-      "emoji": "🪵",
+      "emoji": "🚜",
       "width": 1
     },
     {
@@ -218,19 +218,19 @@
       "id": "r9",
       "promptKey": "tPanjang",
       "choices": [
-        "kayu-pendek",
-        "kayu-panjang"
+        "traktor-pendek",
+        "traktor-panjang"
       ],
-      "correct": "kayu-panjang"
+      "correct": "traktor-panjang"
     },
     {
       "id": "r10",
       "promptKey": "tPendek",
       "choices": [
-        "kayu-panjang",
-        "kayu-pendek"
+        "traktor-panjang",
+        "traktor-pendek"
       ],
-      "correct": "kayu-pendek"
+      "correct": "traktor-pendek"
     },
     {
       "id": "r11",

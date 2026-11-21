@@ -1,6 +1,6 @@
 {
   "id": "kartu-titik-kebun-1-5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kartu Titik Kebun",
-      "instruksi": "Hitung hewan dan tanaman di kebun, lalu seret ke kartu yang titiknya sama banyak.",
+      "instruksi": "Hitung yang ada di kebun, lalu seret ke kartu yang titiknya sama banyak.",
       "n1": "1",
       "n2": "2",
       "n3": "3",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Garden Dot Cards",
-      "instruksi": "Count the garden creatures and plants, then drag them to the card with the same number of dots.",
+      "instruksi": "Count the things in the garden, then drag them to the card with the same number of dots.",
       "n1": "1",
       "n2": "2",
       "n3": "3",

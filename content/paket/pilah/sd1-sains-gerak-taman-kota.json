@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gerak-taman-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "i-semangka": "semangka jatuh di jalan menurun",
       "i-boling": "bola boling di lintasan",
       "i-seluncur": "anak berseluncur di arena es",
-      "i-keretaluncur": "kereta luncur menuruni bukit salju",
+      "i-keretaluncur": "anak duduk di kardus, meluncur di rumput miring",
       "i-piring": "piring didorong di meja licin",
       "i-sandal": "sandal didorong di lantai licin",
       "i-komidi": "komidi putar",
@@ -38,7 +38,7 @@
       "i-semangka": "a watermelon on a downhill path",
       "i-boling": "a bowling ball on the lane",
       "i-seluncur": "a child skating on an ice rink",
-      "i-keretaluncur": "a sled going down a snowy hill",
+      "i-keretaluncur": "a child sitting on cardboard, sliding down a grassy slope",
       "i-piring": "a plate pushed across a smooth table",
       "i-sandal": "a flip-flop pushed across a slippery floor",
       "i-komidi": "a merry-go-round",
@@ -72,17 +72,17 @@
     {
       "id": "gelinding",
       "labelKey": "b-gelinding",
-      "emoji": "🎾"
+      "emoji": "🛞"
     },
     {
       "id": "luncur",
       "labelKey": "b-luncur",
-      "emoji": "🛷"
+      "emoji": "🛝"
     },
     {
       "id": "putar",
       "labelKey": "b-putar",
-      "emoji": "🎠"
+      "emoji": "🔄"
     }
   ],
   "items": [
@@ -120,7 +120,7 @@
       "id": "keretaluncur",
       "labelKey": "i-keretaluncur",
       "bin": "luncur",
-      "emoji": "🛷"
+      "emoji": "📦"
     },
     {
       "id": "piring",

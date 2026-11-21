@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-pilih-satuan-ukur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -32,7 +32,7 @@
       "i-berat-telur": "berat telur",
       "i-berat-surat": "berat surat",
       "i-berat-anjing": "berat anjing",
-      "i-berat-labu": "berat labu",
+      "i-berat-labu": "berat kelapa",
       "i-berat-koper": "berat koper",
       "i-isi-tabung-kecil": "isi tabung kecil",
       "i-setetes-air": "setetes air",
@@ -65,7 +65,7 @@
       "i-berat-telur": "mass of an egg",
       "i-berat-surat": "mass of a letter",
       "i-berat-anjing": "mass of a dog",
-      "i-berat-labu": "mass of a pumpkin",
+      "i-berat-labu": "mass of a coconut",
       "i-berat-koper": "mass of a suitcase",
       "i-isi-tabung-kecil": "a small test tube",
       "i-setetes-air": "a drop of water",
@@ -223,7 +223,7 @@
       "id": "labu",
       "labelKey": "i-berat-labu",
       "bin": "kg",
-      "emoji": "🎃"
+      "emoji": "🥥"
     },
     {
       "id": "koper",
@@ -259,7 +259,7 @@
       "id": "galon",
       "labelKey": "i-air-galon",
       "bin": "l",
-      "emoji": "💧"
+      "emoji": "🫙"
     },
     {
       "id": "akuarium",

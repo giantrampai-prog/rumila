@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-gabung-harta-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "g-kerang": "kerang",
       "g-kepiting": "kepiting",
       "g-ikan": "ikan hias",
-      "g-penyu": "anak penyu"
+      "g-penyu": "tiram"
     },
     "en": {
       "judul": "Beach Treasure Piles",
@@ -22,7 +22,7 @@
       "g-kerang": "shells",
       "g-kepiting": "crabs",
       "g-ikan": "tropical fish",
-      "g-penyu": "baby turtles"
+      "g-penyu": "oysters"
     }
   },
   "knobs": {
@@ -67,7 +67,7 @@
       "id": "penyu",
       "labelKey": "g-penyu",
       "price": 1000,
-      "emoji": "🐢"
+      "emoji": "🦪"
     }
   ],
   "customerRule": {

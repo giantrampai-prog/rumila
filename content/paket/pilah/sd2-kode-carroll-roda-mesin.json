@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-roda-mesin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,23 +78,19 @@
   "bins": [
     {
       "id": "roda-mesin",
-      "labelKey": "bin-roda-mesin",
-      "emoji": "🚗"
+      "labelKey": "bin-roda-mesin"
     },
     {
       "id": "roda-tanpa",
-      "labelKey": "bin-roda-tanpa",
-      "emoji": "🚲"
+      "labelKey": "bin-roda-tanpa"
     },
     {
       "id": "tanpa-mesin",
-      "labelKey": "bin-tanpa-mesin",
-      "emoji": "🚤"
+      "labelKey": "bin-tanpa-mesin"
     },
     {
       "id": "tanpa-tanpa",
-      "labelKey": "bin-tanpa-tanpa",
-      "emoji": "⛵"
+      "labelKey": "bin-tanpa-tanpa"
     }
   ],
   "items": [

@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-urut-suhu-di-bawah-nol",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -65,7 +65,7 @@
       "s9-3": "−9°C",
       "s9-4": "−5°C",
       "s9-5": "1°C",
-      "s10": "Percobaan es dan garam",
+      "s10": "Lima ruang pendingin",
       "s10-1": "−30°C",
       "s10-2": "−21°C",
       "s10-3": "−12°C",
@@ -129,7 +129,7 @@
       "s9-3": "−9°C",
       "s9-4": "−5°C",
       "s9-5": "1°C",
-      "s10": "Ice and salt experiment",
+      "s10": "Five cold rooms",
       "s10-1": "−30°C",
       "s10-2": "−21°C",
       "s10-3": "−12°C",

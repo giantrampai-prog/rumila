@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-sambungan-perangkat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kabel atau Sinyal?",
-      "instruksi": "Perangkat ini tersambung dengan kabel atau tanpa kabel? Taruh di kotak yang cocok.",
+      "instruksi": "Tiap perangkat tersambung dengan kabel atau tanpa kabel? Taruh di kotak yang cocok.",
       "bin-kabel": "dengan kabel",
       "bin-nirkabel": "tanpa kabel",
       "i-mik-kabel": "mikrofon berkabel",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Cable or Signal?",
-      "instruksi": "Is this device connected with a cable or without one? Put it in the right box.",
+      "instruksi": "Is each device connected with a cable or without one? Put it in the right box.",
       "bin-kabel": "with a cable",
       "bin-nirkabel": "without a cable",
       "i-mik-kabel": "wired microphone",

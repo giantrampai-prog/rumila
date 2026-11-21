@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lampu-menyala",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.01"
@@ -59,7 +59,7 @@
     {
       "id": "menyala",
       "labelKey": "b-menyala",
-      "emoji": "💡",
+      "emoji": "✨",
       "color": "#fff59d"
     },
     {

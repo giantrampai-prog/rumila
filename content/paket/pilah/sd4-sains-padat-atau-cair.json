@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-padat-atau-cair",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.01"
@@ -63,13 +63,13 @@
     {
       "id": "padat",
       "labelKey": "b-padat",
-      "emoji": "🧱",
+      "emoji": "🔲",
       "color": "#d7ccc8"
     },
     {
       "id": "cair",
       "labelKey": "b-cair",
-      "emoji": "💧",
+      "emoji": "🌊",
       "color": "#bbdefb"
     }
   ],

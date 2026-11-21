@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-tulang-di-tempatnya",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,7 +80,7 @@
     {
       "id": "kepala",
       "labelKey": "b-kepala",
-      "emoji": "💀"
+      "emoji": "🙂"
     },
     {
       "id": "badan",
@@ -90,12 +90,12 @@
     {
       "id": "kaki",
       "labelKey": "b-kaki",
-      "emoji": "🦵"
+      "emoji": "🏃"
     },
     {
       "id": "lengan",
       "labelKey": "b-lengan",
-      "emoji": "💪"
+      "emoji": "🙌"
     }
   ],
   "items": [

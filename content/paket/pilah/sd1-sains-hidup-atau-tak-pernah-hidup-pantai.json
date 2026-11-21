@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-hidup-atau-tak-pernah-hidup-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -69,7 +69,7 @@
     {
       "id": "takpernah",
       "labelKey": "b-takpernah",
-      "emoji": "🪨",
+      "emoji": "🧱",
       "color": "#e0e0e0"
     }
   ],

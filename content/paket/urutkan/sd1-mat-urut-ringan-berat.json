@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urut-ringan-berat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "s-daun": "daun",
       "s-balon": "balon",
       "s-motor": "motor",
-      "s-batu-besar": "batu"
+      "s-batu-besar": "batu sekepal tangan"
     },
     "en": {
       "judul": "From Light to Heavy",
@@ -38,7 +38,7 @@
       "s-daun": "leaf",
       "s-balon": "balloon",
       "s-motor": "motorbike",
-      "s-batu-besar": "stone"
+      "s-batu-besar": "fist-sized stone"
     }
   },
   "knobs": {

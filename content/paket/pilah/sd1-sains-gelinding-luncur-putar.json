@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gelinding-luncur-putar",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,19 +72,19 @@
     {
       "id": "gelinding",
       "labelKey": "b-gelinding",
-      "emoji": "⚽",
+      "emoji": "➰",
       "color": "#e8f5e9"
     },
     {
       "id": "luncur",
       "labelKey": "b-luncur",
-      "emoji": "🛝",
+      "emoji": "↘️",
       "color": "#e3f2fd"
     },
     {
       "id": "putar",
       "labelKey": "b-putar",
-      "emoji": "🌀",
+      "emoji": "🔄",
       "color": "#fff8e1"
     }
   ],

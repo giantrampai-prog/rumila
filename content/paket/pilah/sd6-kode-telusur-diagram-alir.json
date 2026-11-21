@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-telusur-diagram-alir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ikuti Panah Diagram Alir",
-      "instruksi": "Mulai dari Mulai, ikuti panah, jawab tiap ◇ dengan ya atau tidak sampai Selesai, lalu pilih apa yang tampil.",
+      "instruksi": "Mulai dari Mulai, ikuti panah, jawab tiap ◇ dengan ya atau tidak sampai Selesai, lalu pilih jawaban pertanyaannya.",
       "pilihan": "pilihan",
       "c1": "12",
       "c2": "6",
@@ -49,7 +49,7 @@
     },
     "en": {
       "judul": "Follow the Flowchart Arrows",
-      "instruksi": "Begin at Start, follow the arrows, answer each ◇ with yes or no until End, then choose what is shown.",
+      "instruksi": "Begin at Start, follow the arrows, answer each ◇ with yes or no until End, then choose the answer to the question.",
       "pilihan": "choices",
       "c1": "12",
       "c2": "6",

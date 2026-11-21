@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tertarik-magnet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.MAGNET.01"
@@ -118,7 +118,10 @@
       "id": "kalengalu",
       "labelKey": "i-kalengalu",
       "bin": "tidak",
-      "emoji": "🥤"
+      "color": "#b0bec5",
+      "scale": 0.7,
+      "shape": "square",
+      "width": 0.6
     },
     {
       "id": "foil",

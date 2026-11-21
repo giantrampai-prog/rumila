@@ -1,6 +1,6 @@
 {
   "id": "ular-pendek-ke-panjang",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,10 +11,6 @@
     "id": {
       "judul": "Hewan Pendek ke Panjang",
       "instruksi": "Hewan-hewan berbaris. Susun hewan dari yang paling pendek ke yang paling panjang.",
-      "pendek": "pendek",
-      "sedang": "sedang",
-      "panjang": "panjang",
-      "terpanjang": "paling panjang",
       "t-cacing": "Cacing: pendek ke panjang",
       "t-buaya": "Buaya: pendek ke panjang",
       "t-ikan": "Ikan: pendek ke panjang",
@@ -24,15 +20,21 @@
       "t-lumba": "Lumba-lumba: pendek ke panjang",
       "t-paus": "Paus: pendek ke panjang",
       "t-anjinglaut": "Anjing laut: pendek ke panjang",
-      "t-berang": "Berang-berang: pendek ke panjang"
+      "t-berang": "Berang-berang: pendek ke panjang",
+      "n-cacing": "cacing",
+      "n-buaya": "buaya",
+      "n-ikan": "ikan",
+      "n-kadal": "kadal",
+      "n-ulat": "ulat",
+      "n-hiu": "hiu",
+      "n-lumba": "lumba-lumba",
+      "n-paus": "paus",
+      "n-anjinglaut": "anjing laut",
+      "n-berang": "berang-berang"
     },
     "en": {
       "judul": "Animals Short to Long",
       "instruksi": "The animals are lining up. Put the animals from the shortest to the longest.",
-      "pendek": "short",
-      "sedang": "medium",
-      "panjang": "long",
-      "terpanjang": "longest",
       "t-cacing": "Worms: short to long",
       "t-buaya": "Crocodiles: short to long",
       "t-ikan": "Fish: short to long",
@@ -42,7 +44,17 @@
       "t-lumba": "Dolphins: short to long",
       "t-paus": "Whales: short to long",
       "t-anjinglaut": "Seals: short to long",
-      "t-berang": "Otters: short to long"
+      "t-berang": "Otters: short to long",
+      "n-cacing": "Worms",
+      "n-buaya": "Crocodiles",
+      "n-ikan": "Fish",
+      "n-kadal": "Lizards",
+      "n-ulat": "Caterpillars",
+      "n-hiu": "Sharks",
+      "n-lumba": "Dolphins",
+      "n-paus": "Whales",
+      "n-anjinglaut": "Seals",
+      "n-berang": "Otters"
     }
   },
   "knobs": {
@@ -66,25 +78,25 @@
       "steps": [
         {
           "id": "cacing-1",
-          "labelKey": "pendek",
+          "labelKey": "n-cacing",
           "emoji": "🪱",
           "width": 1
         },
         {
           "id": "cacing-2",
-          "labelKey": "sedang",
+          "labelKey": "n-cacing",
           "emoji": "🪱",
           "width": 1.3
         },
         {
           "id": "cacing-3",
-          "labelKey": "panjang",
+          "labelKey": "n-cacing",
           "emoji": "🪱",
           "width": 1.7
         },
         {
           "id": "cacing-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-cacing",
           "emoji": "🪱",
           "width": 2.2
         }
@@ -96,19 +108,19 @@
       "steps": [
         {
           "id": "buaya-1",
-          "labelKey": "pendek",
+          "labelKey": "n-buaya",
           "emoji": "🐊",
           "width": 1
         },
         {
           "id": "buaya-2",
-          "labelKey": "sedang",
+          "labelKey": "n-buaya",
           "emoji": "🐊",
           "width": 1.4
         },
         {
           "id": "buaya-3",
-          "labelKey": "panjang",
+          "labelKey": "n-buaya",
           "emoji": "🐊",
           "width": 2
         }
@@ -120,19 +132,19 @@
       "steps": [
         {
           "id": "ikan-1",
-          "labelKey": "pendek",
+          "labelKey": "n-ikan",
           "emoji": "🐟",
           "width": 1
         },
         {
           "id": "ikan-2",
-          "labelKey": "sedang",
+          "labelKey": "n-ikan",
           "emoji": "🐟",
           "width": 1.4
         },
         {
           "id": "ikan-3",
-          "labelKey": "panjang",
+          "labelKey": "n-ikan",
           "emoji": "🐟",
           "width": 2
         }
@@ -144,25 +156,25 @@
       "steps": [
         {
           "id": "kadal-1",
-          "labelKey": "pendek",
+          "labelKey": "n-kadal",
           "emoji": "🦎",
           "width": 1
         },
         {
           "id": "kadal-2",
-          "labelKey": "sedang",
+          "labelKey": "n-kadal",
           "emoji": "🦎",
           "width": 1.3
         },
         {
           "id": "kadal-3",
-          "labelKey": "panjang",
+          "labelKey": "n-kadal",
           "emoji": "🦎",
           "width": 1.7
         },
         {
           "id": "kadal-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-kadal",
           "emoji": "🦎",
           "width": 2.2
         }
@@ -174,19 +186,19 @@
       "steps": [
         {
           "id": "ulat-1",
-          "labelKey": "pendek",
+          "labelKey": "n-ulat",
           "emoji": "🐛",
           "width": 1
         },
         {
           "id": "ulat-2",
-          "labelKey": "sedang",
+          "labelKey": "n-ulat",
           "emoji": "🐛",
           "width": 1.4
         },
         {
           "id": "ulat-3",
-          "labelKey": "panjang",
+          "labelKey": "n-ulat",
           "emoji": "🐛",
           "width": 2
         }
@@ -198,19 +210,19 @@
       "steps": [
         {
           "id": "hiu-1",
-          "labelKey": "pendek",
+          "labelKey": "n-hiu",
           "emoji": "🦈",
           "width": 1
         },
         {
           "id": "hiu-2",
-          "labelKey": "sedang",
+          "labelKey": "n-hiu",
           "emoji": "🦈",
           "width": 1.4
         },
         {
           "id": "hiu-3",
-          "labelKey": "panjang",
+          "labelKey": "n-hiu",
           "emoji": "🦈",
           "width": 2
         }
@@ -222,25 +234,25 @@
       "steps": [
         {
           "id": "lumba-1",
-          "labelKey": "pendek",
+          "labelKey": "n-lumba",
           "emoji": "🐬",
           "width": 1
         },
         {
           "id": "lumba-2",
-          "labelKey": "sedang",
+          "labelKey": "n-lumba",
           "emoji": "🐬",
           "width": 1.3
         },
         {
           "id": "lumba-3",
-          "labelKey": "panjang",
+          "labelKey": "n-lumba",
           "emoji": "🐬",
           "width": 1.7
         },
         {
           "id": "lumba-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-lumba",
           "emoji": "🐬",
           "width": 2.2
         }
@@ -252,19 +264,19 @@
       "steps": [
         {
           "id": "paus-1",
-          "labelKey": "pendek",
+          "labelKey": "n-paus",
           "emoji": "🐋",
           "width": 1
         },
         {
           "id": "paus-2",
-          "labelKey": "sedang",
+          "labelKey": "n-paus",
           "emoji": "🐋",
           "width": 1.4
         },
         {
           "id": "paus-3",
-          "labelKey": "panjang",
+          "labelKey": "n-paus",
           "emoji": "🐋",
           "width": 2
         }
@@ -276,19 +288,19 @@
       "steps": [
         {
           "id": "anjinglaut-1",
-          "labelKey": "pendek",
+          "labelKey": "n-anjinglaut",
           "emoji": "🦭",
           "width": 1
         },
         {
           "id": "anjinglaut-2",
-          "labelKey": "sedang",
+          "labelKey": "n-anjinglaut",
           "emoji": "🦭",
           "width": 1.4
         },
         {
           "id": "anjinglaut-3",
-          "labelKey": "panjang",
+          "labelKey": "n-anjinglaut",
           "emoji": "🦭",
           "width": 2
         }
@@ -300,25 +312,25 @@
       "steps": [
         {
           "id": "berang-1",
-          "labelKey": "pendek",
+          "labelKey": "n-berang",
           "emoji": "🦦",
           "width": 1
         },
         {
           "id": "berang-2",
-          "labelKey": "sedang",
+          "labelKey": "n-berang",
           "emoji": "🦦",
           "width": 1.3
         },
         {
           "id": "berang-3",
-          "labelKey": "panjang",
+          "labelKey": "n-berang",
           "emoji": "🦦",
           "width": 1.7
         },
         {
           "id": "berang-4",
-          "labelKey": "terpanjang",
+          "labelKey": "n-berang",
           "emoji": "🦦",
           "width": 2.2
         }

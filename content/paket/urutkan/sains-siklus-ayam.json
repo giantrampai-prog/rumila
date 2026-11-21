@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-ayam",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -130,7 +130,8 @@
           "labelKey": "bebek-telur",
           "emoji": "🥚",
           "scale": 0.8,
-          "color": "#c8e6c9"
+          "color": "#c8e6c9",
+          "latar": true
         },
         {
           "id": "anak",
@@ -179,7 +180,8 @@
           "labelKey": "bebek-menetas-telur",
           "emoji": "🥚",
           "scale": 0.8,
-          "color": "#c8e6c9"
+          "color": "#c8e6c9",
+          "latar": true
         },
         {
           "id": "retak",

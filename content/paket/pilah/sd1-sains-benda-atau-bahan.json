@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-benda-atau-bahan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -67,7 +67,7 @@
     {
       "id": "benda",
       "labelKey": "b-benda",
-      "emoji": "🪑",
+      "emoji": "🛠️",
       "color": "#fff3e0"
     },
     {

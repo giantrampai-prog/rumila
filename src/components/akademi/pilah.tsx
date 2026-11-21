@@ -12,6 +12,7 @@ import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } fr
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
+import { sedangBicara, ucapkan } from "@/lib/akademi/suara";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { Wadah } from "./wadah";
@@ -25,8 +26,8 @@ const SOROT = "#ffd23f";
 const UNGU = "#0786eb";
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk (mis. kartu angka). */
-function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; kolom?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; labelKey: string }, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
+function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; kolom?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; latar?: boolean; labelKey: string }, t: (k: string) => string): VisualSpec {
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
@@ -67,8 +68,11 @@ interface Seret {
   binHover: string | null;
 }
 
-function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ronde: RondePilahKelompok }) {
+function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ronde: RondePilahKelompok }) {
   const { bins, items } = ronde;
+  // PAUD–TK belum membaca: nama kartu dibacakan saat disentuh (kartu "hasil percobaan", magnet, dll. hanya bertulisan)
+  const bacaLabel = levelIndex(paket.level) < levelIndex("SD1");
+  const lang = bahasaDari(paket, t);
   const [peta, setPeta] = useState<Record<string, string>>({});
   const [terpilih, setTerpilih] = useState<string | null>(null);
   const [hint, setHint] = useState<{ item: string; bin: string } | null>(null);
@@ -137,6 +141,10 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
 
   const turun = (e: RPointerEvent<Element>, id: string) => {
     if (kunci) return;
+    if (bacaLabel) {
+      const item = items.find((i) => i.id === id);
+      if (item) ucapkan(t(item.labelKey), lang);
+    }
     e.currentTarget.setPointerCapture(e.pointerId);
     const s: Seret = { id, x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, aktif: false, binHover: null };
     seretRef.current = s;
@@ -290,6 +298,11 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
   );
 }
 
+/** Bahasa suara: en-US bila paket sedang tampil dalam bahasa Inggris. */
+function bahasaDari(paket: PaketPilah, t: (k: string) => string): string {
+  return t(paket.instructionKey) === paket.locale.en[paket.instructionKey] && paket.locale.en[paket.instructionKey] !== paket.locale.id[paket.instructionKey] ? "en-US" : "id-ID";
+}
+
 /* ---------------- mode pilih ---------------- */
 
 function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ronde: RondePilahPilih }) {
@@ -305,6 +318,30 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
     setDipilih(null);
     setRedup(null);
   }, [ronde]);
+
+  // Soal tiap ronde dibacakan (anak PAUD–TK belum membaca). Ronde pertama: tunggu instruksi aktivitas selesai dulu.
+  const soal = t(promptKey);
+  const lang = bahasaDari(paket, t);
+  useEffect(() => {
+    const aktif = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation?.hasBeenActive ?? true;
+    if (!aktif || !soal) return;
+    let batal = false;
+    let tunggu = 0;
+    const coba = () => {
+      if (batal) return;
+      if (sedangBicara() && tunggu < 60) {
+        tunggu++;
+        timer = setTimeout(coba, 250);
+        return;
+      }
+      ucapkan(soal, lang);
+    };
+    let timer = setTimeout(coba, 700);
+    return () => {
+      batal = true;
+      clearTimeout(timer);
+    };
+  }, [ronde, soal, lang]);
 
   const pilih = (id: string) => {
     if (kunci) return;
@@ -330,7 +367,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       <div className="flex items-start gap-2">
         <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
-          {t(promptKey)}
+          <button type="button" onClick={() => ucapkan(soal, lang)} className="w-full" aria-label="Dengarkan soal">
+            {soal}
+          </button>
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>

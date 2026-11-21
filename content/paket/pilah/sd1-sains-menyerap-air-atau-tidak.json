@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-menyerap-air-atau-tidak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -69,7 +69,7 @@
     {
       "id": "kedap",
       "labelKey": "b-kedap",
-      "emoji": "☂️",
+      "emoji": "🚫",
       "color": "#ede7f6"
     }
   ],
@@ -117,7 +117,8 @@
       "labelKey": "i-jashujan",
       "bin": "kedap",
       "emoji": "🧥",
-      "color": "#fff176"
+      "color": "#fff176",
+      "latar": true
     },
     {
       "id": "payung",
@@ -148,7 +149,8 @@
       "labelKey": "i-sepatubot",
       "bin": "kedap",
       "emoji": "🥾",
-      "color": "#ffd600"
+      "color": "#ffd600",
+      "latar": true
     }
   ],
   "pilihan": []

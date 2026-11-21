@@ -58,7 +58,13 @@ export function buatRondePilah(p: PaketPilah, knobs: Knobs, seed: number): Ronde
   if (p.mode === "pilih") {
     const ronde = pilihSatu(p.pilihan, r);
     const byId = new Map(p.items.map(i => [i.id, i] as const));
-    const choices = ronde.choices.map(id => byId.get(id)).filter((i): i is Item => !!i);
+    let choices = ronde.choices.map(id => byId.get(id)).filter((i): i is Item => !!i);
+    // knob itemCount = jumlah pilihan (min 2): pengecoh dibuang acak, jawaban benar selalu tetap ada
+    if (knobs.itemCount !== undefined && choices.length > Math.max(2, Math.floor(knobs.itemCount))) {
+      const n = Math.max(2, Math.floor(knobs.itemCount));
+      const benar = choices.filter(c => c.id === ronde.correct);
+      choices = [...benar, ...acak(choices.filter(c => c.id !== ronde.correct), r).slice(0, n - benar.length)];
+    }
     return { mode: "pilih", promptKey: ronde.promptKey, choices: acak(choices, r), correct: ronde.correct };
   }
   const bins = binAktif(p, knobs);

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-hasil-janggal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYELIDIKAN.01"
@@ -308,7 +308,7 @@
       "id": "pakaisaja",
       "labelKey": "i-pakaisaja",
       "bin": "pilihan",
-      "emoji": "✅"
+      "emoji": "📝"
     },
     {
       "id": "andal",

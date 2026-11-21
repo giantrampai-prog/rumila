@@ -1,6 +1,6 @@
 {
   "id": "sains-alat-gerak-hewan-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bergerak dengan Apa?",
-      "instruksi": "Lihat hewan di sekitar pantai. Taruh ke papan sirip, sayap, atau kaki sesuai alat geraknya.",
+      "instruksi": "Lihat hewan di sekitar pantai. Taruh ke papan sirip, sayap, atau kaki sesuai cara bergeraknya.",
       "b-sirip": "sirip",
       "b-sayap": "sayap",
       "b-kaki": "kaki",
@@ -72,7 +72,7 @@
     {
       "id": "sirip",
       "labelKey": "b-sirip",
-      "emoji": "🐟"
+      "emoji": "🌊"
     },
     {
       "id": "sayap",

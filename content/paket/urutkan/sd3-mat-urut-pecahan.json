@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-urut-pecahan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -97,12 +97,12 @@
         {
           "id": "1per8",
           "labelKey": "s-1per8",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "1per6",
           "labelKey": "s-1per6",
-          "scale": 0.75
+          "scale": 0.85
         },
         {
           "id": "1per4",
@@ -123,7 +123,7 @@
         {
           "id": "1per6",
           "labelKey": "s-1per6",
-          "scale": 0.75
+          "scale": 0.85
         },
         {
           "id": "1per5",
@@ -149,7 +149,7 @@
         {
           "id": "1per10",
           "labelKey": "s-1per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "1per5",
@@ -175,7 +175,7 @@
         {
           "id": "1per10",
           "labelKey": "s-1per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "1per4",
@@ -227,7 +227,7 @@
         {
           "id": "1per10",
           "labelKey": "s-1per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "1per5",
@@ -284,22 +284,22 @@
         {
           "id": "1per10",
           "labelKey": "s-1per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "3per10",
           "labelKey": "s-3per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "7per10",
           "labelKey": "s-7per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "9per10",
           "labelKey": "s-9per10",
-          "scale": 0.7
+          "scale": 0.85
         }
       ]
     },
@@ -336,27 +336,27 @@
         {
           "id": "2per10",
           "labelKey": "s-2per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "5per10",
           "labelKey": "s-5per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "6per10",
           "labelKey": "s-6per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "8per10",
           "labelKey": "s-8per10",
-          "scale": 0.7
+          "scale": 0.85
         },
         {
           "id": "10per10",
           "labelKey": "s-10per10",
-          "scale": 0.6
+          "scale": 0.85
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
   "id": "cerita-urut-peternakan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -261,7 +261,7 @@
         {
           "id": "menetas-telur",
           "labelKey": "menetas-telur",
-          "emoji": "🐓"
+          "emoji": "🐔"
         },
         {
           "id": "menetas-retak",

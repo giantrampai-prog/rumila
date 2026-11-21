@@ -1,6 +1,6 @@
 {
   "id": "siang-dan-malam",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -32,11 +32,9 @@
       "t-tidur-siang": "Tidur siang",
       "tidur-siang-makan": "makan siang",
       "tidur-siang-tidur": "tidur siang",
-      "tidur-siang-bangun": "bangun tidur",
       "t-hari": "Satu hari",
-      "hari-pagi": "pagi",
+      "hari-pagi": "pagi, ayam berkokok",
       "hari-siang": "siang terik",
-      "hari-sore": "sore",
       "hari-malam": "malam",
       "t-lampu": "Membaca malam",
       "lampu-gelap": "langit gelap",
@@ -53,7 +51,8 @@
       "t-pulang": "Pulang sekolah",
       "pulang-bel": "bel pulang berbunyi",
       "pulang-sepeda": "naik sepeda",
-      "pulang-rumah": "sampai rumah"
+      "pulang-rumah": "sampai rumah",
+      "tidur-siang-gigi": "sikat gigi"
     },
     "en": {
       "judul": "Day and Night",
@@ -79,11 +78,9 @@
       "t-tidur-siang": "Nap time",
       "tidur-siang-makan": "eat lunch",
       "tidur-siang-tidur": "take a nap",
-      "tidur-siang-bangun": "wake up",
       "t-hari": "One day",
-      "hari-pagi": "morning",
+      "hari-pagi": "morning, the rooster crows",
       "hari-siang": "hot midday",
-      "hari-sore": "evening",
       "hari-malam": "night",
       "t-lampu": "Reading at night",
       "lampu-gelap": "the sky gets dark",
@@ -100,7 +97,8 @@
       "t-pulang": "Going home from school",
       "pulang-bel": "the home bell rings",
       "pulang-sepeda": "ride the bike",
-      "pulang-rumah": "arrive home"
+      "pulang-rumah": "arrive home",
+      "tidur-siang-gigi": "brush teeth"
     }
   },
   "knobs": {
@@ -135,7 +133,7 @@
         {
           "id": "habis",
           "labelKey": "habis",
-          "emoji": "✨"
+          "emoji": "🍽️"
         },
         {
           "id": "cuci-piring",
@@ -222,14 +220,14 @@
           "emoji": "🍚"
         },
         {
+          "id": "gigi",
+          "labelKey": "tidur-siang-gigi",
+          "emoji": "🪥"
+        },
+        {
           "id": "tidur",
           "labelKey": "tidur-siang-tidur",
           "emoji": "😴"
-        },
-        {
-          "id": "bangun",
-          "labelKey": "tidur-siang-bangun",
-          "emoji": "🥱"
         }
       ]
     },
@@ -240,17 +238,12 @@
         {
           "id": "pagi",
           "labelKey": "hari-pagi",
-          "emoji": "🌅"
+          "emoji": "🐓"
         },
         {
           "id": "siang",
           "labelKey": "hari-siang",
           "emoji": "☀️"
-        },
-        {
-          "id": "sore",
-          "labelKey": "hari-sore",
-          "emoji": "🌇"
         },
         {
           "id": "malam",

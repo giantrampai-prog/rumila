@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-mini",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,16 +15,16 @@
       "bin-buat": "buat",
       "bin-uji": "uji",
       "bin-perbaiki": "perbaiki",
-      "i-sketch-the-character-on-paper": "gambar sketsa tokoh di kertas",
+      "i-sketch-the-character-on-paper": "gambar sketsa karakter di kertas",
       "i-decide-the-goal-of-the-game": "tentukan tujuan game",
       "i-write-the-rules": "tulis aturan main",
-      "i-snap-blocks-so-the-character-moves": "susun blok supaya tokoh bergerak",
+      "i-snap-blocks-so-the-character-moves": "susun blok supaya karakter bergerak",
       "i-add-a-jump-sound": "tambahkan suara lompat",
       "i-play-the-game-to-the-end": "mainkan game sampai selesai",
       "i-ask-a-friend-to-try-it": "minta teman mencoba",
       "i-change-the-wrong-block": "ganti blok yang salah",
-      "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat",
-      "i-list-the-characters-needed": "tulis daftar tokoh yang dibutuhkan",
+      "i-slow-down-a-character-that-is-too-fast": "pelankan karakter yang terlalu cepat",
+      "i-list-the-characters-needed": "tulis daftar karakter yang dibutuhkan",
       "i-draw-a-map-of-the-level": "gambar peta level di kertas",
       "i-decide-which-enemy-to-avoid": "tentukan musuh yang harus dihindari",
       "i-put-in-the-background-picture": "pasang gambar latar",
@@ -38,7 +38,7 @@
       "i-fix-the-silent-sound": "betulkan suara yang tidak berbunyi",
       "i-make-the-tiny-button-bigger": "perbesar tombol yang terlalu kecil",
       "i-delete-extra-blocks": "hapus blok yang tidak perlu",
-      "i-speed-up-a-character-that-is-too-slow": "percepat tokoh yang terlalu lambat"
+      "i-speed-up-a-character-that-is-too-slow": "percepat karakter yang terlalu lambat"
     },
     "en": {
       "judul": "Four Stages of Making a Game",

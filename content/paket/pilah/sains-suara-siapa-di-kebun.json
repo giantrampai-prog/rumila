@@ -1,6 +1,6 @@
 {
   "id": "sains-suara-siapa-di-kebun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -134,8 +134,7 @@
       "id": "gagak",
       "labelKey": "i-gagak",
       "bin": "pilihan",
-      "emoji": "🐦",
-      "color": "#212121"
+      "emoji": "🐦‍⬛"
     },
     {
       "id": "kuda",

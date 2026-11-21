@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-dapur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,19 +72,19 @@
     {
       "id": "padat",
       "labelKey": "b-padat",
-      "emoji": "🧊",
+      "emoji": "🧱",
       "color": "#e3f2fd"
     },
     {
       "id": "cair",
       "labelKey": "b-cair",
-      "emoji": "💧",
+      "emoji": "🌊",
       "color": "#e1f5fe"
     },
     {
       "id": "gas",
       "labelKey": "b-gas",
-      "emoji": "🎈",
+      "emoji": "💨",
       "color": "#f3e5f5"
     }
   ],
@@ -144,7 +144,8 @@
       "labelKey": "i-kecap",
       "bin": "cair",
       "emoji": "🍶",
-      "color": "#4e342e"
+      "color": "#4e342e",
+      "latar": true
     },
     {
       "id": "uap",

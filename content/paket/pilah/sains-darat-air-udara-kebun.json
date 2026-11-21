@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Darat, Air, atau Udara?",
-      "instruksi": "Antar tiap hewan ke tempat hidupnya: darat, air, atau udara.",
+      "instruksi": "Antar tiap hewan ke tempat hidupnya.",
       "darat": "darat",
       "air": "air",
       "udara": "udara",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Land, Water, or Sky?",
-      "instruksi": "Take each animal to where it lives: land, water, or sky.",
+      "instruksi": "Take each animal to where it lives.",
       "darat": "land",
       "air": "water",
       "udara": "sky",

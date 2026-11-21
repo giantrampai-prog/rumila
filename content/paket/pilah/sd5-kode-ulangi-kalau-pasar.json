@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-ulangi-kalau-pasar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Putaran Kasir dengan Syarat",
-      "instruksi": "Di pasar, program kasir mengulang langkah dan mengecek syarat di setiap putaran: telusuri putaran satu per satu, lalu pilih hasil akhirnya.",
+      "judul": "Putaran dengan Syarat",
+      "instruksi": "Program mengulang langkah dan mengecek syarat di setiap putaran: telusuri putaran satu per satu, lalu pilih hasil akhirnya.",
       "pilihan": "pilihan",
       "c1": "26",
       "c2": "34",
@@ -49,8 +49,8 @@
       "q12": "stok = 3. ulangi 5 kali: kalau stok > 0: stok = stok - 1. Berapa stok?"
     },
     "en": {
-      "judul": "Cashier Laps with Conditions",
-      "instruksi": "At the market, the cashier program repeats its steps and checks a condition every lap: trace the laps one by one, then choose the final result.",
+      "judul": "Laps with Conditions",
+      "instruksi": "The program repeats its steps and checks a condition every lap: trace the laps one by one, then choose the final result.",
       "pilihan": "choices",
       "c1": "26",
       "c2": "34",

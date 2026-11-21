@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hidup-pernah-tidak-pernah-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -82,13 +82,13 @@
     {
       "id": "pernah",
       "labelKey": "b-pernah",
-      "emoji": "🍂",
+      "emoji": "⌛",
       "color": "#ffe0b2"
     },
     {
       "id": "tidak",
       "labelKey": "b-tidak",
-      "emoji": "🪨",
+      "emoji": "🧱",
       "color": "#e0e0e0"
     }
   ],
@@ -145,8 +145,8 @@
       "id": "ranting",
       "labelKey": "i-ranting",
       "bin": "pernah",
-      "emoji": "🥢",
-      "color": "#8d6e63"
+      "emoji": "🪵",
+      "scale": 0.7
     },
     {
       "id": "batu",
@@ -164,7 +164,7 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "tidak",
-      "emoji": "🔮"
+      "emoji": "🔵"
     },
     {
       "id": "garam",

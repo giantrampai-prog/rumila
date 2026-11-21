@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-peta-tulang-tubuh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANGKA-OTOT.01"
@@ -63,7 +63,7 @@
     {
       "id": "kepala",
       "labelKey": "b-kepala",
-      "emoji": "💀",
+      "emoji": "🙂",
       "color": "#eceff1"
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": "anggota",
       "labelKey": "b-anggota",
-      "emoji": "🦵",
+      "emoji": "🤸",
       "color": "#c8e6c9"
     }
   ],

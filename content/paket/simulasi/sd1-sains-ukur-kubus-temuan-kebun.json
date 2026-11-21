@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-kubus-temuan-kebun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -108,7 +108,7 @@
       "id": "daunpisang",
       "labelKey": "daunpisang",
       "role": "benda",
-      "emoji": "🌱",
+      "emoji": "🍃",
       "value": 10,
       "width": 4.0
     }

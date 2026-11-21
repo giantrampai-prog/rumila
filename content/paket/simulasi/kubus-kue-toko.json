@@ -1,6 +1,6 @@
 {
   "id": "kubus-kue-toko",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "kue-kering": "kue kering",
       "kue-mangkuk": "kue mangkuk",
       "donat": "donat",
-      "croissant": "croissant",
+      "croissant": "kroisan",
       "potong-kue": "potongan kue",
       "roti-panjang": "roti panjang",
       "kue-ulang-tahun": "kue ulang tahun",
@@ -113,8 +113,8 @@
       "labelKey": "roti-panjang",
       "role": "benda",
       "emoji": "🥖",
-      "value": 8,
-      "width": 3.2
+      "value": 10,
+      "width": 4
     },
     {
       "id": "kue-ulang-tahun",
@@ -129,8 +129,8 @@
       "labelKey": "cokelat-batang",
       "role": "benda",
       "emoji": "🍫",
-      "value": 10,
-      "width": 4
+      "value": 8,
+      "width": 3.2
     }
   ]
 }

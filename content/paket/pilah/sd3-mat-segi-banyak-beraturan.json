@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-segi-banyak-beraturan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -67,7 +67,7 @@
     {
       "id": "tidak",
       "labelKey": "b-tidak-beraturan",
-      "emoji": "▱"
+      "emoji": "✖️"
     }
   ],
   "items": [
@@ -120,7 +120,9 @@
     {
       "id": "ketupat",
       "labelKey": "i-belah-ketupat",
-      "bin": "tidak"
+      "bin": "tidak",
+      "shape": "belah-ketupat",
+      "color": "#a78bfa"
     },
     {
       "id": "jajar-genjang",

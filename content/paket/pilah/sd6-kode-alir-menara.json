@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-alir-menara",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Diagram Alir Menara Air",
-      "instruksi": "Ikuti panah diagram alir dari Mulai: di tiap ◇ jawab ya atau tidak, dan bila panah kembali ke ◇, periksa lagi dengan nilai yang baru. Pilih apa yang tampil di akhir.",
+      "instruksi": "Ikuti panah diagram alir dari Mulai: di tiap ◇ jawab ya atau tidak, dan bila panah kembali ke ◇, periksa lagi dengan nilai yang baru. Lalu pilih jawaban pertanyaannya.",
       "pilihan": "pilihan",
       "c1": "18",
       "c2": "14",
@@ -52,7 +52,7 @@
     },
     "en": {
       "judul": "Water Tower Flowchart",
-      "instruksi": "Follow the flowchart arrows from Start: at each ◇ answer yes or no, and when an arrow loops back to ◇, check again with the new value. Choose what is shown at the end.",
+      "instruksi": "Follow the flowchart arrows from Start: at each ◇ answer yes or no, and when an arrow loops back to ◇, check again with the new value. Then choose the answer to the question.",
       "pilihan": "choices",
       "c1": "18",
       "c2": "14",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pilih-alat-ukur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,7 @@
       "t-kelas": "Apakah ruang kelas lebih panas siang daripada pagi?",
       "t-tas": "Tas siapa yang paling berat?",
       "t-mobil": "Berapa lama mobil mainan meluncur sampai ujung papan?",
-      "t-ulat": "Seberapa panjang ulat di daun ini?",
+      "t-ulat": "Seberapa panjang ulat yang merayap di daun?",
       "t-siram": "Berapa banyak air untuk menyiram satu pot?"
     },
     "en": {
@@ -45,7 +45,7 @@
       "t-kelas": "Is the classroom hotter at midday than in the morning?",
       "t-tas": "Whose school bag is the heaviest?",
       "t-mobil": "How long does the toy car take to reach the end of the board?",
-      "t-ulat": "How long is the caterpillar on this leaf?",
+      "t-ulat": "How long is the caterpillar crawling on the leaf?",
       "t-siram": "How much water to water one pot?"
     }
   },

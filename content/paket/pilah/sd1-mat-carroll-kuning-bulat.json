@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-carroll-kuning-bulat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -88,7 +88,7 @@
     {
       "id": "kuning-sudut",
       "labelKey": "b-kuning-sudut",
-      "emoji": "🟨"
+      "emoji": "🔶"
     },
     {
       "id": "lain-bulat",

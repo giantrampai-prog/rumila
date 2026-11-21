@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-ukur",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -31,7 +31,7 @@
       "i-sup": "seberapa hangat sup di mangkuk?",
       "i-kucing": "seberapa berat kucing peliharaan?",
       "i-nanas": "seberapa berat buah nanas?",
-      "i-labu": "seberapa berat labu?",
+      "i-labu": "seberapa berat kelapa?",
       "i-pensil": "seberapa panjang pensil?",
       "i-pita": "seberapa panjang pita?",
       "i-buku": "seberapa lebar buku tulis?"
@@ -59,7 +59,7 @@
       "i-sup": "how warm is the soup in the bowl?",
       "i-kucing": "how heavy is the pet cat?",
       "i-nanas": "how heavy is the pineapple?",
-      "i-labu": "how heavy is the pumpkin?",
+      "i-labu": "how heavy is the coconut?",
       "i-pensil": "how long is the pencil?",
       "i-pita": "how long is the ribbon?",
       "i-buku": "how wide is the notebook?"
@@ -213,7 +213,7 @@
       "id": "labu",
       "labelKey": "i-labu",
       "bin": "timbangan",
-      "emoji": "🎃"
+      "emoji": "🥥"
     },
     {
       "id": "pensil",

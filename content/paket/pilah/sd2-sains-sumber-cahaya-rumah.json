@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -59,7 +59,7 @@
     {
       "id": "sumber",
       "labelKey": "b-sumber",
-      "emoji": "💡",
+      "emoji": "✨",
       "color": "#fff9c4"
     },
     {

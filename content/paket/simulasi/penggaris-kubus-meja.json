@@ -1,6 +1,6 @@
 {
   "id": "penggaris-kubus-meja",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -53,16 +53,16 @@
       "id": "krayon",
       "role": "benda",
       "emoji": "🖍️",
-      "value": 3,
-      "width": 1.2
+      "value": 4,
+      "width": 1.6
     },
     {
       "labelKey": "kunci",
       "id": "kunci",
       "role": "benda",
       "emoji": "🔑",
-      "value": 4,
-      "width": 1.6
+      "value": 3,
+      "width": 1.2
     },
     {
       "labelKey": "sendok",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perangkat-masuk-tampil",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-webcam": "kamera web",
       "i-tv": "layar televisi",
       "i-layar-laptop": "layar laptop",
-      "i-earphone": "earphone",
+      "i-earphone": "headphone",
       "i-speaker": "speaker komputer",
       "i-struk": "printer struk kasir",
       "i-proyektor": "proyektor"
@@ -39,7 +39,7 @@
       "i-webcam": "webcam",
       "i-tv": "TV screen",
       "i-layar-laptop": "laptop screen",
-      "i-earphone": "earphones",
+      "i-earphone": "headphones",
       "i-speaker": "computer speaker",
       "i-struk": "receipt printer",
       "i-proyektor": "projector"

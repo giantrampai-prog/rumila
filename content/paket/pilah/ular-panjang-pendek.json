@@ -1,6 +1,6 @@
 {
   "id": "ular-panjang-pendek",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -12,25 +12,25 @@
       "judul": "Hewan Berjemur",
       "instruksi": "Dua hewan berjemur sejajar: sentuh yang lebih panjang atau lebih pendek sesuai permintaan.",
       "pilihan": "pilihan",
-      "cacing": "cacing",
       "buaya": "buaya",
       "ulat": "ulat",
       "tPanjang": "Mana yang lebih panjang?",
       "tPendek": "Mana yang lebih pendek?",
-      "kadal": "kadal",
-      "anjinglaut": "anjing laut"
+      "anjinglaut": "anjing laut",
+      "kucing": "kucing",
+      "anjing": "anjing"
     },
     "en": {
       "judul": "Sunbathing Animals",
       "instruksi": "Two animals are sunbathing side by side: touch the longer or shorter one as asked.",
       "pilihan": "choices",
-      "cacing": "worm",
       "buaya": "crocodile",
       "ulat": "caterpillar",
       "tPanjang": "Which one is longer?",
       "tPendek": "Which one is shorter?",
-      "kadal": "lizard",
-      "anjinglaut": "seal"
+      "anjinglaut": "seal",
+      "kucing": "cat",
+      "anjing": "dog"
     }
   },
   "knobs": {
@@ -55,17 +55,17 @@
   ],
   "items": [
     {
-      "id": "cacing-panjang",
-      "labelKey": "cacing",
+      "id": "kucing-panjang",
+      "labelKey": "kucing",
       "bin": "pilihan",
-      "emoji": "🪱",
+      "emoji": "🐈",
       "width": 1.8
     },
     {
-      "id": "cacing-pendek",
-      "labelKey": "cacing",
+      "id": "kucing-pendek",
+      "labelKey": "kucing",
       "bin": "pilihan",
-      "emoji": "🪱",
+      "emoji": "🐈",
       "width": 1
     },
     {
@@ -97,17 +97,17 @@
       "width": 1
     },
     {
-      "id": "kadal-panjang",
-      "labelKey": "kadal",
+      "id": "anjing-panjang",
+      "labelKey": "anjing",
       "bin": "pilihan",
-      "emoji": "🦎",
+      "emoji": "🐕",
       "width": 1.8
     },
     {
-      "id": "kadal-pendek",
-      "labelKey": "kadal",
+      "id": "anjing-pendek",
+      "labelKey": "anjing",
       "bin": "pilihan",
-      "emoji": "🦎",
+      "emoji": "🐕",
       "width": 1
     },
     {
@@ -130,19 +130,19 @@
       "id": "r1",
       "promptKey": "tPanjang",
       "choices": [
-        "cacing-pendek",
-        "cacing-panjang"
+        "kucing-pendek",
+        "kucing-panjang"
       ],
-      "correct": "cacing-panjang"
+      "correct": "kucing-panjang"
     },
     {
       "id": "r2",
       "promptKey": "tPendek",
       "choices": [
-        "cacing-panjang",
-        "cacing-pendek"
+        "kucing-panjang",
+        "kucing-pendek"
       ],
-      "correct": "cacing-pendek"
+      "correct": "kucing-pendek"
     },
     {
       "id": "r3",
@@ -184,19 +184,19 @@
       "id": "r7",
       "promptKey": "tPanjang",
       "choices": [
-        "kadal-pendek",
-        "kadal-panjang"
+        "anjing-pendek",
+        "anjing-panjang"
       ],
-      "correct": "kadal-panjang"
+      "correct": "anjing-panjang"
     },
     {
       "id": "r8",
       "promptKey": "tPendek",
       "choices": [
-        "kadal-panjang",
-        "kadal-pendek"
+        "anjing-panjang",
+        "anjing-pendek"
       ],
-      "correct": "kadal-pendek"
+      "correct": "anjing-pendek"
     },
     {
       "id": "r9",

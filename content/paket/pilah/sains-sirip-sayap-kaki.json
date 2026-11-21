@@ -1,6 +1,6 @@
 {
   "id": "sains-sirip-sayap-kaki",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sirip, Sayap, atau Kaki?",
-      "instruksi": "Lihat tubuh hewannya: taruh ke rak sirip, sayap, atau kaki sesuai cara geraknya.",
+      "instruksi": "Lihat tubuh hewannya: taruh di rak yang sesuai dengan cara geraknya.",
       "sirip": "sirip",
       "sayap": "sayap",
       "kaki": "kaki",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Fins, Wings, or Legs?",
-      "instruksi": "Look at the animal's body: put it on the fins, wings, or legs shelf by how it moves.",
+      "instruksi": "Look at the animal's body: put it on the shelf that matches how it moves.",
       "sirip": "fins",
       "sayap": "wings",
       "kaki": "legs",

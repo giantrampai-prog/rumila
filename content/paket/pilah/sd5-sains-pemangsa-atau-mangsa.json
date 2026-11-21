@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pemangsa-atau-mangsa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.ADAPTASI.02"
@@ -106,7 +106,7 @@
       "id": "matasamping",
       "labelKey": "i-matasamping",
       "bin": "mangsa",
-      "emoji": "🐰"
+      "emoji": "🐴"
     },
     {
       "id": "telinga",

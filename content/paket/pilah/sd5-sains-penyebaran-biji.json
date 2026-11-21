@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-penyebaran-biji",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -136,7 +136,9 @@
       "id": "bakau",
       "labelKey": "i-bakau",
       "bin": "air",
-      "emoji": "🌊"
+      "color": "#6d8b3a",
+      "shape": "square",
+      "width": 0.25
     },
     {
       "id": "nipah",
@@ -154,7 +156,7 @@
       "id": "karet",
       "labelKey": "i-karet",
       "bin": "letup",
-      "emoji": "💥"
+      "emoji": "🌰"
     },
     {
       "id": "pacarair",

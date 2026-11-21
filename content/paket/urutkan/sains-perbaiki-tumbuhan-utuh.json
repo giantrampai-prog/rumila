@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-tumbuhan-utuh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -371,7 +371,7 @@
           "id": "bunga",
           "labelKey": "bugenvil-bunga",
           "emoji": "🌺",
-          "color": "#d81b60"
+          "color": "#8e24aa"
         }
       ]
     },

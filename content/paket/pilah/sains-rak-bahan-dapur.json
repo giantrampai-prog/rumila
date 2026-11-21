@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "logam": "logam",
       "plastik": "plastik",
       "kaca": "kaca",
-      "i-sendokkayu": "sendok kayu",
+      "i-pintu": "pintu dapur kayu",
       "i-talenan": "talenan kayu",
       "i-kaleng": "kaleng",
       "i-panci": "wajan",
@@ -35,7 +35,7 @@
       "logam": "metal",
       "plastik": "plastic",
       "kaca": "glass",
-      "i-sendokkayu": "wooden spoon",
+      "i-pintu": "wooden kitchen door",
       "i-talenan": "wooden cutting board",
       "i-kaleng": "tin can",
       "i-panci": "metal frying pan",
@@ -74,7 +74,7 @@
     {
       "id": "kayu",
       "labelKey": "kayu",
-      "emoji": "🪵",
+      "emoji": "🌳",
       "color": "#d7ccc8"
     },
     {
@@ -86,23 +86,22 @@
     {
       "id": "plastik",
       "labelKey": "plastik",
-      "emoji": "🧴",
+      "emoji": "♻️",
       "color": "#ffe0b2"
     },
     {
       "id": "kaca",
       "labelKey": "kaca",
-      "emoji": "🥛",
+      "emoji": "🪟",
       "color": "#e1f5fe"
     }
   ],
   "items": [
     {
-      "id": "sendokkayu",
-      "labelKey": "i-sendokkayu",
+      "id": "pintu",
+      "labelKey": "i-pintu",
       "bin": "kayu",
-      "emoji": "🥄",
-      "color": "#d7ccc8"
+      "emoji": "🚪"
     },
     {
       "id": "talenan",

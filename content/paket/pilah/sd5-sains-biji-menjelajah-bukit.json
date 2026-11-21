@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-menjelajah-bukit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -154,7 +154,7 @@
       "id": "pandan",
       "labelKey": "i-pandan",
       "bin": "air",
-      "emoji": "🌊"
+      "emoji": "🍍"
     },
     {
       "id": "nyamplung",

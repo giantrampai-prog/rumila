@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-halaman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -103,7 +103,7 @@
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "padat",
-      "emoji": "🔮"
+      "emoji": "🔵"
     },
     {
       "id": "kayu",

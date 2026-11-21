@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-di-rantai-makanan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -188,19 +188,19 @@
       "id": "tanparacun",
       "labelKey": "i-tanparacun",
       "bin": "pilihan",
-      "emoji": "✅"
+      "emoji": "🌱"
     },
     {
       "id": "tikushilang",
       "labelKey": "i-tikushilang",
       "bin": "pilihan",
-      "emoji": "❌"
+      "emoji": "🐀"
     },
     {
       "id": "elangkenyang",
       "labelKey": "i-elangkenyang",
       "bin": "pilihan",
-      "emoji": "❓"
+      "emoji": "🦅"
     }
   ],
   "pilihan": [

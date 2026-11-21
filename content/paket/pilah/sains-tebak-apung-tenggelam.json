@@ -1,6 +1,6 @@
 {
   "id": "sains-tebak-apung-tenggelam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -94,7 +94,8 @@
       "labelKey": "i-bebekkaret",
       "bin": "apung",
       "emoji": "🦆",
-      "color": "#fff176"
+      "color": "#fff176",
+      "latar": true
     },
     {
       "id": "gabus",

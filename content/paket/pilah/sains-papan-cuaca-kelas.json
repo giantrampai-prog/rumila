@@ -1,6 +1,6 @@
 {
   "id": "sains-papan-cuaca-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -82,7 +82,7 @@
       "id": "mendung",
       "labelKey": "i-mendung",
       "bin": "pilihan",
-      "emoji": "🌥️"
+      "emoji": "☁️"
     },
     {
       "id": "hujan",

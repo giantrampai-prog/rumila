@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-hewan-pantai-rangka",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -170,7 +170,8 @@
       "labelKey": "i-lintah",
       "bin": "lunak",
       "emoji": "🪱",
-      "color": "#3e2723"
+      "color": "#3e2723",
+      "latar": true
     },
     {
       "id": "uburubur",

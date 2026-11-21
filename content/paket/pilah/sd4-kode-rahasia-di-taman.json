@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-rahasia-di-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Kamu sedang main game daring dengan orang yang tidak kamu kenal: seret tiap informasi ke 'boleh dibagikan' atau 'rahasia'.",
       "bin-boleh": "boleh dibagikan",
       "bin-rahasia": "rahasia",
-      "i1": "tokoh kartun favoritmu",
+      "i1": "karakter kartun favoritmu",
       "i2": "olahraga yang kamu suka",
       "i3": "skor tertinggimu di game ini",
       "i4": "mainan kesukaanmu",

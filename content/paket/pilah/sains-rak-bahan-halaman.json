@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-halaman",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,13 +78,13 @@
     {
       "id": "kayu",
       "labelKey": "kayu",
-      "emoji": "🪵",
+      "emoji": "🌳",
       "color": "#d7ccc8"
     },
     {
       "id": "logam",
       "labelKey": "logam",
-      "emoji": "🔩",
+      "emoji": "⚙️",
       "color": "#cfd8dc"
     },
     {
