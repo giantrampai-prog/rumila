@@ -19,7 +19,7 @@ import { AgamTop } from "@/components/koding/stage";
 import { sfx } from "@/lib/sfx";
 import type { DuniaId } from "@/lib/akademi/tema-dunia";
 import { usePanggung } from "./dunia";
-import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
+import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 import "@/components/koding/koding.css";
 
 type Props = PresenterProps<RondeNavigasi, JawabanNavigasi, PaketNavigasi>;
@@ -499,7 +499,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
 
   const kartuPeta = {
     background: tema.panel,
-    boxShadow: `0 5px 0 rgba(11,37,69,.14), inset 0 0 0 3px ${tema.aksen}40`,
+    boxShadow: bayangKartu(),
     padding: 8 * sk,
   } as const;
 
@@ -631,7 +631,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     return (
       <div className="flex min-h-0 flex-1 flex-row items-stretch gap-4" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
         {peta}
-        <div className="flex min-h-0 shrink-0 flex-col justify-center gap-3 overflow-y-auto rounded-[24px] p-3" style={{ width: lebarKanan, background: tema.panel, boxShadow: `0 5px 0 rgba(11,37,69,.14), inset 0 0 0 3px ${tema.aksen}40` }}>
+        <div className="flex min-h-0 shrink-0 flex-col justify-center gap-3 overflow-y-auto rounded-[24px] p-3" style={{ width: lebarKanan, background: tema.panel, boxShadow: bayangKartu() }}>
           {kendali}
         </div>
       </div>

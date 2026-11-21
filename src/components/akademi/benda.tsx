@@ -4,7 +4,7 @@
 // Dipakai semua presenter supaya item, bin, langkah, dan barang dagangan tampil seragam.
 
 import { createContext, useContext, useMemo, type CSSProperties, type ReactNode } from "react";
-import { BALOO, INK, NUNITO } from "./jenis";
+import { BALOO, INK, NUNITO, PILAR_CSS, bayangKartu } from "./jenis";
 
 /** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
 const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+/).map((k) => k.length));
@@ -251,6 +251,17 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
     const kecil = tulisan.length > 10 ? 0.62 : tulisan.length > 6 ? 0.78 : tulisan.length > 4 ? 0.9 : 1;
     // Angka/kata pendek memakai Baloo (display); kalimat memakai Nunito (badan teks brand). Ukuran dibatasi lebar
     // kartu (cqi, bila kartu memasang container) supaya kata terpanjang muat utuh — tidak terpotong "istiraha / t".
+    // "15.05 setel gitar" → jam besar berwarna pilar + kegiatan di bawahnya (mata langsung ke angka)
+    const jam = /^(\d{1,2}[.:]\d{2})\s+(.+)$/.exec(tulisan);
+    if (jam) {
+      const besar = s * 0.5;
+      return (
+        <span key={k} className="flex flex-col items-center text-center" style={{ gap: 2, maxWidth: Math.max(s * 2.4, 120) }}>
+          <span style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1, color: v.color ?? PILAR_CSS, fontSize: `min(${besar}px, 30cqi)` }}>{jam[1]}</span>
+          <span className="text-balance" style={{ fontFamily: NUNITO, fontWeight: 800, lineHeight: 1.2, color: INK, fontSize: `min(${Math.max(15, besar * 0.55)}px, ${(158 / kataTerpanjang(jam[2])).toFixed(1)}cqi)`, overflowWrap: "break-word" }}>{jam[2]}</span>
+        </span>
+      );
+    }
     const kalimat = tulisan.length > 6 && /\s/.test(tulisan);
     const px = s * 0.6 * kecil * (kalimat ? 0.82 : 1);
     return (
@@ -295,7 +306,8 @@ export function KartuBenda({
    */
   penuh?: boolean;
 }) {
-  const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#0786eb" : "transparent";
+  // salah = oranye lembut (aturan brand: anak tidak diberi merah), terpilih = warna pilar
+  const ring = right ? "#22b573" : wrong ? "#ff9a4d" : selected ? PILAR_CSS : "transparent";
   // Kartu bergambar: teks label tetap ditulis di bawahnya (tanpa ini kartu bernomor/berdeskripsi tampak kembar).
   // Kartu tanpa gambar sudah menampilkan labelnya sebagai teks besar di dalam Benda.
   const teks = label ?? (keterangan && (v.emoji || v.shape) && v.label && v.label !== v.angka ? v.label : undefined);
@@ -306,8 +318,8 @@ export function KartuBenda({
       draggable={draggable}
       onDragStart={onDragStart}
       onPointerDown={onPointerDown}
-      className={`flex flex-col items-center justify-center gap-1 rounded-[18px] bg-white p-2 transition-transform active:scale-95 ${dim ? "opacity-40" : ""} ${className}`}
-      style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...(penuh ? { containerType: "inline-size" } : {}), ...style }}
+      className={`flex flex-col items-center justify-center gap-1 rounded-[16px] bg-white p-2 transition-transform active:translate-y-0.5 ${dim ? "opacity-40" : ""} ${className}`}
+      style={{ boxShadow: bayangKartu(ring), touchAction: "none", ...(penuh ? { containerType: "inline-size" } : {}), ...style }}
     >
       <Benda v={v} size={size} />
       {teks && (

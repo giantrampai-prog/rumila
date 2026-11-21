@@ -30,7 +30,7 @@ import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { Wadah } from "./wadah";
-import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
+import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 
 type Props = PresenterProps<RondeDagang, JawabanDagang, PaketDagang>;
 type Good = PaketDagang["goods"][number];
@@ -173,14 +173,10 @@ function Kunci({ terkunci, kiri, kanan }: { terkunci: boolean; kiri: ReactNode; 
 
 /** Lapak pasar: tenda bergaris warna dunia + meja kayu (papan CSS). Mengisi sisa tinggi kolom; isi ditengahkan di atas meja. */
 function Lapak({ children, style, className = "" }: { children: ReactNode; style?: CSSProperties; className?: string }) {
-  const { tema, skala: sk } = usePanggung();
-  // HP (satu kolom): tenda tipis supaya isi tidak meluap dari layar
-  const tenda = useLebar() || sk > 1 ? Math.round(16 * sk) : 8;
+  const { skala: sk } = usePanggung();
+  // gaya bersih: meja = kartu putih bertepi abu (tanpa tenda & papan kayu)
   return (
-    <div className={`relative flex flex-1 flex-col overflow-hidden rounded-[24px] ${className}`} style={{ background: "linear-gradient(180deg,#c98b4a 0,#b9783a 10px,#c98b4a 10px,#c98b4a 26px,#a86a2f 26px,#a86a2f 28px,#c98b4a 28px)", backgroundSize: "100% 56px", boxShadow: "0 6px 0 #7d4a1c, inset 0 2px 0 rgba(255,255,255,.25)", padding: `${tenda + (tenda > 8 ? 10 * sk : 4)}px ${12 * sk}px ${12 * sk}px`, ...style }}>
-      {/* tenda: garis-garis warna aksen dunia dengan tepi bergerigi */}
-      <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0" style={{ height: tenda, background: `repeating-linear-gradient(90deg,${tema.aksen} 0 ${tenda * 2}px,#fff ${tenda * 2}px ${tenda * 4}px)` }} />
-      <span aria-hidden className="pointer-events-none absolute inset-x-0" style={{ top: tenda, height: tenda / 2, background: `radial-gradient(circle at ${tenda}px 0,${tema.aksen} ${tenda / 2}px,transparent ${tenda / 2 + 0.5}px) 0 0/${tenda * 2}px 100% repeat-x`, opacity: 0.85 }} />
+    <div className={`relative flex flex-1 flex-col rounded-[20px] bg-white ${className}`} style={{ boxShadow: bayangKartu(), padding: 12 * sk, ...style }}>
       <div className="flex flex-1 flex-col justify-center">{children}</div>
     </div>
   );
@@ -361,15 +357,14 @@ function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number
     return [...m.entries()].sort((a, b) => a[0] - b[0]);
   }, [laci]);
   const terpakai = (nilai: number) => dipakai.filter((x) => x === nilai).length;
-  const { tema, skala: sk } = usePanggung();
+  const { skala: sk } = usePanggung();
   return (
     // laci kasir: badan kayu/warna wadah dunia, sekat-sekat pecahan di dalam, gagang di depan
-    <div className={`relative flex flex-col rounded-[22px] ${penuh ? "flex-1" : "shrink-0"}`} style={{ background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}, inset 0 2px 0 rgba(255,255,255,.25)`, padding: `${10 * sk}px ${12 * sk}px ${20 * sk}px` }}>
-      <div className="mb-1.5 flex w-fit items-center gap-2 rounded-full bg-white/95 px-3 py-0.5 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 15 * sk, color: INK }}>
+    <div className={`relative flex flex-col rounded-[20px] bg-white ${penuh ? "flex-1" : "shrink-0"}`} style={{ boxShadow: bayangKartu(), padding: 10 * sk }}>
+      <div className="mb-1.5 flex w-fit items-center gap-2 px-1" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 15 * sk, color: INK }}>
         <Icon name="point_of_sale" size={Math.round(20 * sk)} /> Laci uang
       </div>
-      <span aria-hidden className="pointer-events-none absolute left-1/2 -translate-x-1/2 rounded-full" style={{ bottom: 6 * sk, width: 56 * sk, height: 7 * sk, background: tema.wadahGelap, boxShadow: "inset 0 2px 0 rgba(0,0,0,.25)" }} />
-      <div className={`flex flex-wrap content-center justify-center rounded-[16px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "rgba(0,0,0,.16)", boxShadow: "inset 0 4px 8px rgba(0,0,0,.2)" }}>
+      <div className={`flex flex-wrap content-center justify-center rounded-[14px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "#f6f8fb" }}>
         {kelompok.map(([nilai, jumlah]) => {
           const sisa = jumlah - terpakai(nilai);
           const v = visualUang(nilai);
@@ -405,7 +400,7 @@ function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang d
         <span>{judul}</span>
         <span className="ml-auto rounded-full px-3" style={{ fontSize: 15 * sk, background: "#fff1c2" }}>{rupiah(total)}</span>
       </div>
-      <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ minHeight: 64 * sk, gap: 8 * sk, padding: 8 * sk, background: tema.panel, boxShadow: `inset 0 4px 10px rgba(0,0,0,.16), inset 0 0 0 3px ${tema.aksen}22` }}>
+      <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ minHeight: 64 * sk, gap: 8 * sk, padding: 8 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }}>
         {uang.length === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * sk, color: "#4a5a6e" }}>{kosong}</span>}
         {uang.map((nilai, i) => {
           const v = visualUang(nilai);
@@ -846,7 +841,7 @@ function ModeTukar(c: Ctx) {
     </>} kanan={<>
       {/* baki cetakan koin: slot berbingkai tegas di atas alas terang */}
       <div className="flex flex-1 flex-col rounded-[26px]" style={{ background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}`, padding: 10 * sk, gap: 8 * sk }}>
-        <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ gap: 6 * sk, padding: 10 * sk, background: tema.panel, boxShadow: "inset 0 4px 10px rgba(0,0,0,.16)" }} aria-label="Cetakan koin">
+        <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ gap: 6 * sk, padding: 10 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }} aria-label="Cetakan koin">
           {Array.from({ length: Math.max(slot, uang.length) }, (_, k) => (
             <button key={k} type="button" onClick={() => { if (k < uang.length) kembalikan(k); }} disabled={k >= uang.length} aria-label={k < uang.length ? `Koin ke-${k + 1}, ketuk untuk ambil` : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: k < uang.length ? "none" : "3px dashed rgba(11,37,69,.55)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "#fff", boxShadow: k < uang.length ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
               {k < uang.length ? <span className="akademi-pop">🪙</span> : hint && k === uang.length ? <span className="akademi-bounce opacity-60">🪙</span> : null}
@@ -905,7 +900,7 @@ function ModeLengkapi(c: Ctx) {
         jawabanBenar={`Kurang ${ronde.target} koin`}
       />
       <Lapak>
-        <div className="flex flex-1 flex-col rounded-[18px]" style={{ padding: 12 * sk, background: tema.panel, boxShadow: `inset 0 0 0 3px ${tema.aksen}55` }}>
+        <div className="flex flex-1 flex-col rounded-[18px]" style={{ padding: 12 * sk, background: tema.panel, boxShadow: bayangKartu() }}>
           <div className="mb-2 flex items-center justify-between" style={{ ...Tebal, fontSize: 17 * sk }}><span>Harga: {totalKoin} koin</span><span className="rounded-full px-3" style={{ background: "#fff1c2", fontSize: 15 * sk }}>{uang.length} ditambah</span></div>
           <div className="flex flex-1 flex-wrap content-center justify-center" style={{ gap: 6 * sk }} aria-label="Deretan koin harga">
             {Array.from({ length: totalKoin }, (_, k) => {
@@ -970,7 +965,7 @@ function ModeGabung(c: Ctx) {
           ))}
           <div className="relative mx-auto flex w-full flex-col items-center transition-transform duration-500" style={{ ...wadahB, maxWidth: 420 * sk, padding: 10 * sk, gap: 8 * sk, transform: fase === "gabung" ? "scale(1.02)" : "none" }}>
             <div className="flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ ...Tebal, fontSize: 16 * sk }}><span style={{ fontSize: 26 * sk, lineHeight: 1 }}>🧺</span>{fase === "gabung" ? "Semua jadi satu" : "Keranjang bersama"}</div>
-            <div className="flex w-full flex-wrap content-center justify-center gap-1 rounded-[16px]" style={{ minHeight: 56 * sk, padding: 6 * sk, background: tema.panel, boxShadow: "inset 0 4px 10px rgba(0,0,0,.16)" }} aria-label={fase === "gabung" ? `${a + b} ${nama(id)}` : undefined}>
+            <div className="flex w-full flex-wrap content-center justify-center gap-1 rounded-[16px]" style={{ minHeight: 56 * sk, padding: 6 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }} aria-label={fase === "gabung" ? `${a + b} ${nama(id)}` : undefined}>
               {fase === "gabung" && Array.from({ length: a + b }, (_, k) => (
                 <span key={k} className="akademi-pop" style={{ animationDelay: `${k * 60}ms`, borderRadius: 999, padding: 2, background: hint ? (k < a ? "rgba(91,75,255,.22)" : "rgba(34,181,115,.25)") : "transparent" }}><Benda v={visual(id)} size={bs} /></span>
               ))}

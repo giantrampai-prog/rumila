@@ -5,12 +5,11 @@
 
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
-import { TEMA, type BentukWadah, type DuniaId, type Tema } from "@/lib/akademi/tema-dunia";
-import { LatarDunia } from "./latar-dunia";
+import { PILAR, TEMA, temaBersih, type BentukWadah, type DuniaId, type Pilar, type Tema } from "@/lib/akademi/tema-dunia";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
 import { PUJIAN, PUJIAN_BERUNTUN, SEMANGAT, acakKata } from "@/lib/sfx-akademi";
-import { BALOO, INK, NUNITO } from "./jenis";
+import { BALOO, GARIS, GARIS_BAWAH, INK, NUNITO } from "./jenis";
 import { SlotBantuProvider } from "./mode-ujian";
 
 /**
@@ -67,8 +66,10 @@ export function skalaPanggung(w: number, h: number): number {
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik,
+  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik, pilar = PILAR.MAT,
 }: {
+  /** warna pilar pelajaran: latar layar lembut + aksen aktif (progres, kartu terpilih, wadah tujuan) */
+  pilar?: Pilar;
   judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string; dunia?: DuniaId;
   /** bentuk wadah yang disebut paket (mis. "rak"); kosong = bawaan dunia */
   wadah?: BentukWadah;
@@ -79,7 +80,9 @@ export function LayarAktivitas({
 }) {
   const router = useRouter();
   useSkalaTablet();
-  const tema = wadah ? { ...TEMA[dunia], wadah } : TEMA[dunia];
+  // Layar soal bergaya bersih: dunia tidak lagi digambar di belakang soal (cukup di pembuka & layar selesai);
+  // panel & wadah putih, aksen = warna pilar.
+  const tema = temaBersih(wadah ? { ...TEMA[dunia], wadah } : TEMA[dunia], pilar);
   const panggungRef = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
   useIsoLayout(() => {
@@ -101,24 +104,30 @@ export function LayarAktivitas({
     if (dariSini && window.history.length > 1) router.back();
     else router.push(kembaliKe);
   };
+  const kotakIkon = { boxShadow: `0 0 0 2px ${GARIS}, 0 4px 0 ${GARIS_BAWAH}` };
   return (
-    <div className="relative min-h-dvh" style={{ fontFamily: NUNITO, color: INK }}>
-      <LatarDunia dunia={dunia} />
+    <div
+      className="relative min-h-dvh"
+      style={{ fontFamily: NUNITO, color: INK, background: pilar.dasar, ["--pilar" as string]: pilar.warna, ["--pilar-tua" as string]: pilar.tua, ["--pilar-dasar" as string]: pilar.dasar } as React.CSSProperties}
+    >
       <div
-        className="relative mx-auto flex h-dvh max-w-[1280px] flex-col gap-3 px-3 sm:px-6"
+        className="relative mx-auto flex h-dvh max-w-[1100px] flex-col gap-2.5 px-3 sm:px-6"
         style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(14px, env(safe-area-inset-bottom))" }}
       >
         <header className="flex items-center gap-2">
-          <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95">
+          <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[14px] bg-white active:translate-y-0.5" style={{ ...kotakIkon, color: INK }}>
             <Icon name="arrow_back" size={24} />
           </button>
-          <div className="min-w-0 flex-1 rounded-[16px] px-3 py-1.5" style={{ background: "rgba(255,255,255,.94)", boxShadow: "0 3px 0 rgba(11,37,69,.08)" }}>
-            <div style={{ fontFamily: BALOO, fontSize: 16.5, fontWeight: 800, lineHeight: 1.12, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", textWrap: "balance" }}>{judul}</div>
-            <div className="mt-1 flex gap-1" aria-label={`Ronde ${ronde} dari ${total}`}>
-              {Array.from({ length: total }, (_, k) => (
-                <span key={k} className="h-2 flex-1 rounded-full" style={{ background: k < ronde ? "#fd861d" : "rgba(11,37,69,.15)" }} />
-              ))}
-            </div>
+          <div
+            className="h-3.5 min-w-0 flex-1 overflow-hidden rounded-full"
+            style={{ background: "#dde3ec" }}
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={total}
+            aria-valuenow={ronde}
+            aria-label={`Ronde ${ronde} dari ${total}`}
+          >
+            <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${Math.max(6, (ronde / Math.max(1, total)) * 100)}%`, background: pilar.warna, boxShadow: "inset 0 -4px 0 rgba(0,0,0,.14)" }} />
           </div>
           {musik && (
             <button
@@ -126,15 +135,18 @@ export function LayarAktivitas({
               onClick={musik.alih}
               aria-label={musik.nyala ? "Matikan musik" : "Nyalakan musik"}
               aria-pressed={musik.nyala}
-              className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95"
-              style={{ color: musik.nyala ? "#e06d00" : "#5e5548" }}
+              className="flex size-11 shrink-0 items-center justify-center rounded-[14px] bg-white active:translate-y-0.5"
+              style={{ ...kotakIkon, color: musik.nyala ? pilar.warna : "#7a8599" }}
             >
-              <Icon name={musik.nyala ? "music_note" : "music_off"} size={24} />
+              <Icon name={musik.nyala ? "music_note" : "music_off"} size={22} />
             </button>
           )}
           {/* tombol Bantu presenter dipasang ke sini (lihat bantu.tsx) */}
           <div ref={setSlotBantu} className="flex shrink-0 empty:hidden" />
         </header>
+        <h1 className="m-0 px-0.5" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.12, textWrap: "balance", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+          {judul}
+        </h1>
         <Instruksi teks={instruksi} onUcap={onUcap} />
         {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
         <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
@@ -166,8 +178,8 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
     return () => ro.disconnect();
   }, [teks, buka]);
   return (
-    <div className="flex items-start gap-2.5 rounded-[18px] bg-white py-2 pr-2 pl-2 shadow-[0_4px_0_rgba(11,37,69,.1)]">
-      <button type="button" onClick={onUcap} aria-label="Dengarkan instruksi" className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#ffd23f] text-[#0b2545] active:scale-95">
+    <div className="flex items-start gap-2.5 px-0.5">
+      <button type="button" onClick={onUcap} aria-label="Dengarkan instruksi" className="flex size-9 shrink-0 items-center justify-center rounded-full text-white active:scale-95" style={{ background: "var(--pilar)", boxShadow: "0 3px 0 var(--pilar-tua)" }}>
         <Icon name="volume_up" size={20} />
       </button>
       <span
@@ -175,7 +187,7 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
         onClick={onUcap}
         className="min-w-0 flex-1 cursor-pointer self-center"
         style={{
-          fontFamily: NUNITO, fontSize: 15.5, fontWeight: 700, lineHeight: "21px", textWrap: "pretty",
+          fontFamily: NUNITO, fontSize: 16, fontWeight: 700, lineHeight: "22px", textWrap: "pretty",
           ...(buka ? {} : { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }),
         }}
       >
@@ -187,7 +199,8 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
           onClick={() => setBuka((b) => !b)}
           aria-expanded={buka}
           aria-label={buka ? "Ringkas instruksi" : "Baca instruksi lengkap"}
-          className="flex h-9 shrink-0 items-center self-center rounded-full bg-[#eef3fa] px-1.5 text-[#0567c2] active:scale-95"
+          className="flex h-9 shrink-0 items-center self-center rounded-full bg-white px-1.5 active:scale-95"
+          style={{ color: "var(--pilar)", boxShadow: `0 0 0 2px ${GARIS}` }}
         >
           <Icon name={buka ? "expand_less" : "expand_more"} size={22} />
         </button>

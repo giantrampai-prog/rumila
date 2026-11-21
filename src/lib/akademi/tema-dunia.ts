@@ -210,3 +210,23 @@ export function rintanganPaket(p: PaketTema): string {
   for (const [e, kata] of KATA_RINTANGAN) if (kata.some((k) => hitung(t, k) > 0)) return e;
   return RINTANGAN_DUNIA[duniaPaket(p)];
 }
+
+/** Warna pilar (brand RINOYA) untuk layar soal: `warna` aksen aktif, `tua` bayangan tombol/kartu terpilih, `dasar` latar layar. */
+export interface Pilar { id: "MAT" | "SAINS" | "KODE"; warna: string; tua: string; dasar: string }
+
+export const PILAR: Record<Pilar["id"], Pilar> = {
+  MAT: { id: "MAT", warna: "#5b4bff", tua: "#3f31d6", dasar: "#f0eeff" },
+  SAINS: { id: "SAINS", warna: "#0a8a7c", tua: "#066b60", dasar: "#e8f6f3" },
+  KODE: { id: "KODE", warna: "#8b45f5", tua: "#6a2bd1", dasar: "#f4eefe" },
+};
+
+/** Pilar paket dari kompetensi pertamanya (MAT/SAINS/KODE); tanpa kompetensi → Matematika. */
+export function pilarPaket(p: { competencyIds?: readonly string[] }): Pilar {
+  const k = (p.competencyIds?.[0] ?? "").split(".")[0] as Pilar["id"];
+  return PILAR[k] ?? PILAR.MAT;
+}
+
+/** Tema bersih untuk layar soal: panel & wadah putih, aksen = warna pilar, garis abu kebiruan. Bentuk wadah tetap (untuk label). */
+export function temaBersih(t: Tema, p: Pilar): Tema {
+  return { ...t, panel: "#ffffff", aksen: p.warna, tinta: "#14223a", wadahWarna: "#ffffff", wadahGelap: "#c3ccd9" };
+}
