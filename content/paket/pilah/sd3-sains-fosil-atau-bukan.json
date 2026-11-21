@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-fosil-atau-bukan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -99,8 +99,7 @@
       "id": "tulangdino",
       "labelKey": "i-tulangdino",
       "bin": "fosil",
-      "emoji": "🦴",
-      "color": "#a1887f"
+      "emoji": "🦴"
     },
     {
       "id": "ikanbatu",
@@ -119,7 +118,8 @@
       "id": "mainan",
       "labelKey": "i-mainan",
       "bin": "bukan",
-      "emoji": "🦖"
+      "emoji": "🦖",
+      "color": "#8d6e63"
     },
     {
       "id": "tulangayam",
@@ -137,7 +137,8 @@
       "id": "batukali",
       "labelKey": "i-batukali",
       "bin": "bukan",
-      "emoji": "🪨"
+      "emoji": "🪨",
+      "color": "#8d6e63"
     },
     {
       "id": "daunkering",

@@ -1,6 +1,6 @@
 {
   "id": "bagi-ikan-laut-adil",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -9,18 +9,18 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Bagi Ikan Laut",
-      "instruksi": "Nelayan pulang membawa ikan laut. Bagi semuanya ke dua piring kucing sampai sama banyak.",
-      "ikan-buntal": "ikan buntal",
-      "ikan-badut": "ikan badut",
-      "ikan-tongkol": "ikan tongkol"
+      "judul": "Bagi Hasil Laut",
+      "instruksi": "Nelayan pulang membawa hasil laut. Bagi semuanya ke dua piring kucing sampai sama banyak.",
+      "ikan-tongkol": "ikan tongkol",
+      "udang": "udang",
+      "cumi": "cumi-cumi"
     },
     "en": {
-      "judul": "Share the Sea Fish",
-      "instruksi": "The fisher brings home sea fish. Share them all onto the two cats' plates so both get the same.",
-      "ikan-buntal": "pufferfish",
-      "ikan-badut": "clownfish",
-      "ikan-tongkol": "tuna fish"
+      "judul": "Share the Catch",
+      "instruksi": "The fisher brings home the catch. Share it all onto the two cats' plates so both get the same.",
+      "ikan-tongkol": "tuna fish",
+      "udang": "shrimp",
+      "cumi": "squid"
     }
   },
   "knobs": {
@@ -39,22 +39,22 @@
   "mode": "bagi",
   "items": [
     {
-      "id": "ikan-buntal",
-      "labelKey": "ikan-buntal",
-      "role": "benda",
-      "emoji": "🐡"
-    },
-    {
-      "id": "ikan-badut",
-      "labelKey": "ikan-badut",
-      "role": "benda",
-      "emoji": "🐠"
-    },
-    {
       "id": "ikan-tongkol",
       "labelKey": "ikan-tongkol",
       "role": "benda",
       "emoji": "🐟"
+    },
+    {
+      "id": "udang",
+      "labelKey": "udang",
+      "role": "benda",
+      "emoji": "🦐"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "cumi",
+      "role": "benda",
+      "emoji": "🦑"
     }
   ]
 }

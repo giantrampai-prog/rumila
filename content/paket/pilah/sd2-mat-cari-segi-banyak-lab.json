@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-cari-segi-banyak-lab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -113,7 +113,8 @@
       "id": "belah-ketupat-oranye",
       "labelKey": "i-belah-ketupat-oranye",
       "bin": "pilihan",
-      "emoji": "🔶"
+      "shape": "belah-ketupat",
+      "color": "#fb8c00"
     },
     {
       "id": "persegi-panjang-kuning",

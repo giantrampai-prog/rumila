@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Angka Pembuka Peti Pantai",
-      "instruksi": "Ada peti terdampar di pantai. Telusuri angkanya dengan jarimu mengikuti panah supaya peti terbuka.",
-      "peti-kayu": "peti kayu"
+      "judul": "Angka Pembuka Koper Pantai",
+      "instruksi": "Ada koper terdampar di pantai. Telusuri angka kuncinya dengan jarimu mengikuti panah supaya koper terbuka.",
+      "koper": "koper"
     },
     "en": {
-      "judul": "Beach Crate Numbers",
-      "instruksi": "A crate washed up on the beach. Trace its number with your finger, following the arrows, to open it.",
-      "peti-kayu": "wooden crate"
+      "judul": "Beach Suitcase Numbers",
+      "instruksi": "A suitcase washed up on the beach. Trace its lock number with your finger, following the arrows, to open it.",
+      "koper": "suitcase"
     }
   },
   "knobs": {
@@ -42,10 +42,10 @@
   "mode": "telusur",
   "items": [
     {
-      "id": "peti-kayu",
-      "labelKey": "peti-kayu",
+      "id": "koper",
+      "labelKey": "koper",
       "role": "benda",
-      "emoji": "📦"
+      "emoji": "🧳"
     }
   ]
 }

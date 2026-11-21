@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-harta",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Telusur Angka Peti Harta",
-      "instruksi": "Telusuri angka dengan jarimu mengikuti panah, itu mantra pembuka peti harta.",
-      "peti": "peti harta"
+      "instruksi": "Telusuri angka dengan jarimu mengikuti panah, itu mantra pembuka gembok peti harta.",
+      "peti": "gembok peti harta"
     },
     "en": {
       "judul": "Trace the Treasure Number",
-      "instruksi": "Trace the number with your finger following the arrows; it is the spell that opens the treasure chest.",
-      "peti": "treasure chest"
+      "instruksi": "Trace the number with your finger following the arrows; it is the spell that opens the treasure chest padlock.",
+      "peti": "treasure chest padlock"
     }
   },
   "knobs": {
@@ -45,7 +45,7 @@
       "id": "peti",
       "labelKey": "peti",
       "role": "benda",
-      "emoji": "🧰"
+      "emoji": "🔒"
     }
   ]
 }

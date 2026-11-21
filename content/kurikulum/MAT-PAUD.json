@@ -300,7 +300,7 @@
         "pilah",
         "bangun"
       ],
-      "catatan": "Mekanik kotak-pos: bentuk hanya masuk ke lubang yang cocok, jadi umpan balik fisik. Jebakan: segitiga yang diputar; di awal orientasi sama dengan lubang, knob menambah rotasi. Warna bentuk diacak supaya anak memilah bentuk, bukan warna."
+      "catatan": "Mekanik kotak-pos: bentuk hanya masuk ke lubang yang cocok, jadi umpan balik fisik. Keping selalu searah dengan lubangnya; segitiga yang diputar belum dilatih karena mesin belum punya knob rotasi. Warna bentuk diacak supaya anak memilah bentuk, bukan warna."
     },
     {
       "id": "MAT.PAUD.BENTUK-DASAR.02",

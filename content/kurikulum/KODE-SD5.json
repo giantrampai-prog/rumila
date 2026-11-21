@@ -13,21 +13,22 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menaruh blok kalau di dalam ulangi dan menghitung ulangan sebelum belok, supaya satu program lolos di tiga jalur",
-        "en": "I can put the if block inside repeats and count repeats before a turn so one program passes three different paths"
+        "id": "Aku bisa menaruh kalau di dalam empat blok ulangi dan menghitung ulangan tiap ruas, supaya satu program lolos di tiga jalur empat ruas",
+        "en": "I can put if inside four repeat blocks and count the repeats for each part so one program passes three four-part paths"
       },
       "depth": [
         "pakai"
       ],
       "prereq": [
-        "KODE.SD4.ULANGI.02"
+        "KODE.SD4.ULANGI.01",
+        "KODE.SD3.KONDISI.01"
       ],
       "refs": [],
       "core": true,
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Jalur L, tiga varian per soal: jumlah batu di segmen pertama sama (1–2) tetapi letaknya berbeda, segmen kedua 0–2 batu. Rak 5 keping: ulangi (a − batu) [kalau], belok, ulangi b [kalau]. Diverifikasi solver: tanpa blok kalau tidak ada program ≤ 5 keping yang lolos di ketiganya. Jebakan: ulangan segmen pertama = jumlah petak (lupa lompat memakan 2 petak), sehingga robot melewati sudut. Stage 5 (tanpa kode): 'algorithms that contain selection'. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: rocks. Paket: sd5-kode-kalau-belok-tiga-jalur."
+      "catatan": "Naik dari SD 2 KONDISI.01 (satu belokan) dan SD 3 KONDISI.01 (dua belokan): jalur koridor empat ruas dengan tiga belokan, tiga peta per soal. Jumlah batu tiap ruas sama di ketiga peta (0–2), letaknya berbeda. Rak 11 keping: ulangi (a − batu) [kalau], belok, … , ulangi (d − batu) [kalau]. Diverifikasi solver gabungan: tanpa blok kalau tidak ada program ≤ 11 keping yang lolos di ketiganya. Jebakan: ulangan ruas = jumlah petak (lupa lompat memakan 2 petak) sehingga robot melewati sudut; arah belokan ketiga. Stage 5 (tanpa kode): 'algorithms that contain selection'. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: batu (dokumentasi). Paket: sd5-kode-kalau-belok-tiga-jalur, sd5-kode-kalau-tiga-lorong-gudang."
     },
     {
       "id": "KODE.SD5.KONDISI.02",
@@ -101,8 +102,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memperbaiki satu bagian program berkondisi yang lolos di satu jalur tetapi gagal di jalur lain",
-        "en": "I can fix one part of a program with conditions that passes on one path but fails on another"
+        "id": "Aku bisa memperbaiki satu bagian program empat ruas berkondisi yang lolos di satu jalur tetapi gagal di jalur lain",
+        "en": "I can fix one part of a four-part program with conditions that passes on one path but fails on another"
       },
       "depth": [
         "pakai"
@@ -116,7 +117,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Tiga jalur per soal, program awal dengan satu bug: isi ulangi 'maju' padahal perlu 'kalau' (lolos di jalur tanpa batu, gagal di lainnya), ulangan salah hitung, belok terbalik, atau 'lompat terus'. Diverifikasi: program awal gagal, perbaikan satu blok ada. Bukti: edits == 1 dan lolos di ketiga jalur. Jebakan: puas karena jalur pertama sudah lolos. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-perbaiki-kalau."
+      "catatan": "Tiga jalur empat ruas per soal, program awal dengan satu bug yang lolos di sedikitnya satu jalur dan gagal di jalur lain: isi ulangi 'maju' padahal perlu 'kalau', ulangan salah hitung, belok terbalik, atau 'lompat terus'. Diverifikasi: program awal lolos di satu jalur, gagal di lainnya; perbaikan satu keping ada. Bukti: edits ≤ 1 dan lolos di ketiga jalur. Yang baru dibanding SD 4 DEBUG: bug hanya terlihat di jalur tertentu, jadi anak harus menguji semua jalur. Jebakan: puas karena jalur pertama sudah lolos. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-perbaiki-kalau, sd5-kode-perbaiki-kalau-laut."
     },
     {
       "id": "KODE.SD5.ULANGI-KONDISI.01",
@@ -243,14 +244,15 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah kegiatan yang tetap bisa dan yang tidak bisa dilakukan ketika internet putus",
-        "en": "I can sort activities into those that still work and those that stop when the internet goes down"
+        "id": "Aku bisa memilah kegiatan yang butuh internet, yang cukup jaringan lokal (Wi-Fi rumah, Bluetooth), dan yang tanpa jaringan",
+        "en": "I can sort activities that need the internet, that only need a local network (home Wi-Fi, Bluetooth), and that need no network"
       },
       "depth": [
         "pakai"
       ],
       "prereq": [
-        "KODE.SD4.JARINGAN.01"
+        "KODE.SD4.JARINGAN.01",
+        "KODE.SD3.JARINGAN.02"
       ],
       "refs": [
         {
@@ -263,7 +265,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Tetap bisa: kamera, kalkulator, galeri, catatan, lagu yang sudah diunduh, game luring, cetak lewat kabel. Tidak bisa: panggilan video, email, streaming, mesin pencari, peta daring, dompet digital, unggah tugas. Jebakan: 'lagu yang sudah diunduh' vs streaming. Knob: itemCount 6 → 10. Paket: sd5-kode-internet-putus."
+      "catatan": "Naik dari SD 3 JARINGAN.02 (butuh internet / tanpa internet): kini anak membedakan jaringan lokal dari internet. Skenario: internet putus tetapi router Wi-Fi rumah masih menyala dan Bluetooth bisa dipakai. Cukup jaringan lokal: cetak ke printer lewat Wi-Fi rumah, kirim foto lewat Bluetooth, speaker/keyboard/mouse Bluetooth, salin berkas antarperangkat di rumah, game berdua lewat Bluetooth. Butuh internet: panggilan video, email, streaming, mesin pencari, peta daring, unggah tugas, game daring dengan teman di kota lain. Tanpa jaringan: kamera, kalkulator, galeri, catatan, lagu yang sudah diunduh. Jebakan: 'Wi-Fi menyala' dikira 'ada internet'; 'lagu yang sudah diunduh' vs streaming. Knob: binCount 2 → 3, itemCount 6 → 9. Paket: sd5-kode-internet-putus, sd5-kode-internet-putus-rumah."
     },
     {
       "id": "KODE.SD5.INTERNET.02",
@@ -277,8 +279,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah benda yang mengirim data lewat internet dari benda yang bekerja sendiri tanpa internet",
-        "en": "I can sort things that send data over the internet from things that work on their own without it"
+        "id": "Aku bisa memilah benda yang terhubung ke internet untuk mengirim atau menerima data dari benda yang bekerja sendiri tanpa internet",
+        "en": "I can sort things that connect to the internet to send or receive data from things that work on their own without it"
       },
       "depth": [
         "kenal",
@@ -298,7 +300,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Terhubung: sensor cuaca daring, kamera keamanan, lampu pintar, ATM, speaker pintar, meteran listrik pintar, mobil yang mengirim lokasi. Sendiri: kalkulator saku, senter, weker, kipas, timbangan, mobil mainan inframerah, mesin jahit. Jebakan: 'listrik' ≠ 'internet'. Knob: itemCount. Paket: sd5-kode-perangkat-terhubung. Pengaya."
+      "catatan": "Terhubung: sensor cuaca daring, kamera keamanan, lampu pintar, mesin parkir yang mengirim data ke aplikasi, speaker pintar, papan jadwal bus waktu nyata, meteran listrik pintar, mobil yang mengirim lokasi. Sendiri: kalkulator saku, senter, weker, kipas, timbangan, mobil mainan inframerah, mesin jahit. Jebakan: 'listrik' ≠ 'internet'. Knob: itemCount. Paket: sd5-kode-perangkat-terhubung. Pengaya."
     },
     {
       "id": "KODE.SD5.AMAN.01",

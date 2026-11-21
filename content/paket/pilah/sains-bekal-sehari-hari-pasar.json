@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-sehari-hari-pasar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,6 @@
       "instruksi": "Robot belanja di pasar: makanan sehari-hari ke piring, jajanan sesekali ke toples.",
       "piring": "piring sehari-hari",
       "toples": "toples sesekali",
-      "kadang": "kadang-kadang",
       "i-apel": "apel",
       "i-brokoli": "brokoli",
       "i-jagung": "jagung",
@@ -33,7 +32,6 @@
       "instruksi": "Robot shops at the market: everyday food to the plate, once-in-a-while treats to the jar.",
       "piring": "everyday plate",
       "toples": "once-in-a-while jar",
-      "kadang": "sometimes",
       "i-apel": "apple",
       "i-brokoli": "broccoli",
       "i-jagung": "corn",
@@ -52,10 +50,10 @@
   "knobs": {
     "binCount": {
       "min": 2,
-      "max": 3,
+      "max": 2,
       "default": 2,
       "step": 1,
-      "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang')"
+      "keterangan": "dua wadah: piring sehari-hari dan toples sesekali"
     },
     "itemCount": {
       "min": 4,
@@ -82,12 +80,6 @@
       "labelKey": "toples",
       "emoji": "🫙",
       "color": "#ffe0b2"
-    },
-    {
-      "id": "kadang",
-      "labelKey": "kadang",
-      "emoji": "🧺",
-      "color": "#fff9c4"
     }
   ],
   "items": [
@@ -161,13 +153,13 @@
     {
       "id": "pancake",
       "labelKey": "i-pancake",
-      "bin": "kadang",
+      "bin": "toples",
       "emoji": "🥞"
     },
     {
       "id": "biskuit",
       "labelKey": "i-biskuit",
-      "bin": "kadang",
+      "bin": "toples",
       "emoji": "🍪"
     }
   ],

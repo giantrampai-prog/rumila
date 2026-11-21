@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-kembalian-toko-mainan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kasir Toko Mainan Besar",
-      "instruksi": "Pembeli membayar dengan selembar uang yang cukup. Hitung maju dari harga sampai uang pembeli, lalu beri kembaliannya.",
+      "instruksi": "Pembeli membeli dua atau tiga mainan dan membayar dengan selembar uang 50 ribu atau 100 ribu. Hitung maju dari total harga sampai uang pembeli, lalu beri kembaliannya.",
       "robot": "robot mainan",
       "puzzle": "puzzle",
       "layang": "layang-layang",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Big Toy Shop Cashier",
-      "instruksi": "The customer pays with one note that is enough. Count up from the price to the money paid, then give the change.",
+      "instruksi": "The customer buys two or three toys and pays with one 50,000 or 100,000 note. Count on from the total price to the customer's money, then give the change.",
       "robot": "toy robot",
       "puzzle": "jigsaw",
       "layang": "kite",
@@ -43,11 +43,11 @@
   },
   "knobs": {
     "itemsMax": {
-      "min": 1,
-      "max": 1,
-      "default": 1,
+      "min": 2,
+      "max": 3,
+      "default": 2,
       "step": 1,
-      "keterangan": "satu barang per pembeli"
+      "keterangan": "barang per pembeli: 2 → 3 (dua jenis); total Rp21.000–Rp99.000, dibayar selembar 50 ribu atau 100 ribu"
     }
   },
   "assets": [],
@@ -70,7 +70,7 @@
     {
       "id": "robot",
       "labelKey": "robot",
-      "price": 78000,
+      "price": 46000,
       "emoji": "🤖"
     },
     {
@@ -82,25 +82,25 @@
     {
       "id": "layang",
       "labelKey": "layang",
-      "price": 21000,
+      "price": 19000,
       "emoji": "🪁"
     },
     {
       "id": "dadu",
       "labelKey": "dadu",
-      "price": 43000,
+      "price": 27000,
       "emoji": "🎲"
     },
     {
       "id": "boneka",
       "labelKey": "boneka",
-      "price": 66000,
+      "price": 38000,
       "emoji": "🧸"
     },
     {
       "id": "mobil",
       "labelKey": "mobil",
-      "price": 91000,
+      "price": 48000,
       "emoji": "🏎️"
     },
     {
@@ -112,7 +112,7 @@
     {
       "id": "kereta",
       "labelKey": "kereta",
-      "price": 57000,
+      "price": 42000,
       "emoji": "🚂"
     },
     {
@@ -124,27 +124,27 @@
     {
       "id": "catur",
       "labelKey": "catur",
-      "price": 48000,
+      "price": 29000,
       "emoji": "♟️"
     },
     {
       "id": "gitar",
       "labelKey": "gitar",
-      "price": 85000,
+      "price": 44000,
       "emoji": "🎸"
     },
     {
       "id": "balon",
       "labelKey": "balon",
-      "price": 8000,
+      "price": 9000,
       "emoji": "🎈"
     }
   ],
   "customerRule": {
-    "itemsMin": 1,
-    "itemsMax": 1,
+    "itemsMin": 2,
+    "itemsMax": 3,
     "payExact": true,
     "maxTotal": 99000,
-    "kindsMax": 1
+    "kindsMax": 2
   }
 }

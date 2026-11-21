@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hitung-kaki-hewan-lain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hitung Kaki Lagi!",
-      "instruksi": "Hitung kaki tiap hewan, lalu taruh ke rak yang angkanya sama.",
+      "instruksi": "Hewan-hewan lain menunggu! Ada juga yang hidup di laut. Hitung kakinya, lalu taruh ke rak yang angkanya sama.",
       "b-k2": "2 kaki",
       "b-k4": "4 kaki",
       "b-k6": "6 kaki",
@@ -34,7 +34,7 @@
     },
     "en": {
       "judul": "Count the Legs Again!",
-      "instruksi": "Count each animal's legs, then put it on the shelf with the same number.",
+      "instruksi": "More animals are waiting! Some live in the sea. Count their legs, then put each on the shelf with the same number.",
       "b-k2": "2 legs",
       "b-k4": "4 legs",
       "b-k6": "6 legs",

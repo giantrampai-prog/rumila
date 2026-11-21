@@ -1,6 +1,6 @@
 {
   "id": "sains-cuaca-begini-main-apa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,22 +15,23 @@
       "i-layang": "main layang-layang",
       "i-perahu": "main perahu layar mainan",
       "i-halte": "berteduh di halte",
-      "i-buku": "membaca buku di dalam rumah",
-      "i-puzzle": "main puzel di dalam rumah",
       "i-sepeda": "bersepeda di taman",
       "i-bola": "main bola di lapangan",
       "i-pasir": "main pasir di pantai",
       "t-cerah1": "Langit cerah, tidak ada angin. Main apa yang cocok?",
       "t-cerah2": "Lapangan kering dan matahari bersinar. Main apa?",
       "t-cerah3": "Pantai cerah dan hangat, tidak hujan. Main apa?",
-      "t-cerah4": "Siang cerah, jalan di taman kering. Main apa?",
+      "t-cerah4": "Matahari terik dan halaman kering. Apa yang cocok dikerjakan?",
       "t-hujan1": "Hujan deras turun. Apa yang sebaiknya dilakukan?",
-      "t-hujan2": "Hujan dan petir di luar. Kegiatan apa yang cocok?",
-      "t-hujan3": "Hujan seharian, semua anak di dalam rumah. Main apa?",
+      "t-hujan2": "Hujan dan petir di luar. Apa yang sebaiknya dilakukan?",
+      "t-hujan3": "Hujan turun saat kita harus berjalan ke masjid. Apa yang dilakukan?",
       "t-hujan4": "Tiba-tiba hujan saat pulang sekolah. Apa yang dilakukan?",
       "t-angin1": "Angin bertiup kencang dan tidak hujan. Main apa?",
       "t-angin2": "Angin kencang bertiup di kolam taman. Main apa yang cocok?",
-      "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?"
+      "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?",
+      "i-teras": "berteduh di teras rumah",
+      "i-payung": "berjalan memakai payung",
+      "i-jemur": "menjemur baju"
     },
     "en": {
       "judul": "This Weather, What Shall We Do?",
@@ -39,22 +40,23 @@
       "i-layang": "fly a kite",
       "i-perahu": "sail a toy sailboat",
       "i-halte": "take shelter at the bus stop",
-      "i-buku": "read a book indoors",
-      "i-puzzle": "do a puzzle indoors",
       "i-sepeda": "ride a bike in the park",
       "i-bola": "play football on the field",
       "i-pasir": "play in the sand at the beach",
       "t-cerah1": "Clear sky, no wind at all. What fits?",
       "t-cerah2": "The field is dry and the sun is shining. What shall we play?",
       "t-cerah3": "The beach is sunny and warm, no rain. What shall we play?",
-      "t-cerah4": "A sunny afternoon, the park paths are dry. What shall we do?",
+      "t-cerah4": "The sun is hot and the yard is dry. What is good to do?",
       "t-hujan1": "Heavy rain is falling. What should we do?",
-      "t-hujan2": "Rain and lightning outside. Which activity fits?",
-      "t-hujan3": "It rains all day and everyone stays inside. What shall we play?",
+      "t-hujan2": "Rain and lightning outside. What should we do?",
+      "t-hujan3": "It rains while we must walk to the mosque. What do we do?",
       "t-hujan4": "Suddenly it rains on the way home from school. What do we do?",
       "t-angin1": "The wind is strong and it isn't raining. What shall we play?",
       "t-angin2": "A strong wind blows over the park pond. What fits?",
-      "t-angin3": "Leaves fly in the wind over the field. What shall we play?"
+      "t-angin3": "Leaves fly in the wind over the field. What shall we play?",
+      "i-teras": "shelter on the porch",
+      "i-payung": "walk with an umbrella",
+      "i-jemur": "hang clothes out to dry"
     }
   },
   "knobs": {
@@ -97,18 +99,6 @@
       "emoji": "🚏"
     },
     {
-      "id": "buku",
-      "labelKey": "i-buku",
-      "bin": "pilihan",
-      "emoji": "📖"
-    },
-    {
-      "id": "puzzle",
-      "labelKey": "i-puzzle",
-      "bin": "pilihan",
-      "emoji": "🧩"
-    },
-    {
       "id": "sepeda",
       "labelKey": "i-sepeda",
       "bin": "pilihan",
@@ -125,6 +115,24 @@
       "labelKey": "i-pasir",
       "bin": "pilihan",
       "emoji": "🏖️"
+    },
+    {
+      "id": "teras",
+      "labelKey": "i-teras",
+      "bin": "pilihan",
+      "emoji": "🏠"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "pilihan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "jemur",
+      "labelKey": "i-jemur",
+      "bin": "pilihan",
+      "emoji": "👕"
     }
   ],
   "pilihan": [
@@ -143,8 +151,8 @@
       "promptKey": "t-cerah2",
       "choices": [
         "bola",
-        "halte",
-        "puzzle"
+        "teras",
+        "halte"
       ],
       "correct": "bola"
     },
@@ -153,8 +161,8 @@
       "promptKey": "t-cerah3",
       "choices": [
         "pasir",
-        "halte",
-        "buku"
+        "teras",
+        "halte"
       ],
       "correct": "pasir"
     },
@@ -162,11 +170,11 @@
       "id": "cerah4",
       "promptKey": "t-cerah4",
       "choices": [
-        "sepeda",
+        "jemur",
         "halte",
-        "buku"
+        "teras"
       ],
-      "correct": "sepeda"
+      "correct": "jemur"
     },
     {
       "id": "hujan1",
@@ -182,21 +190,21 @@
       "id": "hujan2",
       "promptKey": "t-hujan2",
       "choices": [
-        "buku",
+        "teras",
         "bola",
         "layang"
       ],
-      "correct": "buku"
+      "correct": "teras"
     },
     {
       "id": "hujan3",
       "promptKey": "t-hujan3",
       "choices": [
-        "puzzle",
+        "payung",
         "pasir",
         "sepeda"
       ],
-      "correct": "puzzle"
+      "correct": "payung"
     },
     {
       "id": "hujan4",
@@ -214,7 +222,7 @@
       "choices": [
         "layang",
         "halte",
-        "puzzle"
+        "payung"
       ],
       "correct": "layang"
     },
@@ -223,8 +231,8 @@
       "promptKey": "t-angin2",
       "choices": [
         "perahu",
-        "halte",
-        "buku"
+        "teras",
+        "halte"
       ],
       "correct": "perahu"
     },
@@ -233,8 +241,8 @@
       "promptKey": "t-angin3",
       "choices": [
         "layang",
-        "buku",
-        "halte"
+        "teras",
+        "payung"
       ],
       "correct": "layang"
     }

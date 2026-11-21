@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-kupu-kupu",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -18,7 +18,6 @@
       "kupu-kupu": "kupu-kupu terbang",
       "t-gemuk": "Ulat makan banyak",
       "gemuk-telur": "telur kecil di daun",
-      "gemuk-ulat": "ulat kecil",
       "gemuk-gemuk": "ulat besar dan gemuk",
       "gemuk-kepompong": "kepompong menggantung",
       "gemuk-kupu": "kupu-kupu terbang",
@@ -38,7 +37,6 @@
       "kupu-kupu": "butterfly flies",
       "t-gemuk": "The caterpillar eats a lot",
       "gemuk-telur": "tiny egg on a leaf",
-      "gemuk-ulat": "little caterpillar",
       "gemuk-gemuk": "big fat caterpillar",
       "gemuk-kepompong": "hanging cocoon",
       "gemuk-kupu": "butterfly flies",
@@ -51,11 +49,11 @@
   },
   "knobs": {
     "steps": {
-      "min": 3,
+      "min": 4,
       "max": 4,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah tahap: 4 lengkap; 3 (tanpa telur) sebagai bantuan"
+      "keterangan": "empat tahap: telur, ulat, kepompong, kupu-kupu; versi 3 tahap tanpa telur menunggu opsi potong yang membuang langkah pertama"
     }
   },
   "assets": [],
@@ -104,12 +102,6 @@
           "labelKey": "gemuk-telur",
           "emoji": "🍃",
           "scale": 0.8
-        },
-        {
-          "id": "ulat",
-          "labelKey": "gemuk-ulat",
-          "emoji": "🐛",
-          "scale": 0.7
         },
         {
           "id": "gemuk",

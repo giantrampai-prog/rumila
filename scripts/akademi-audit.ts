@@ -13,7 +13,8 @@
 //   teks       : kunci locale id/en tidak seimbang
 // WARNING     : ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
 //                paket hampir kembar (isi ≥ 80% sama untuk kompetensi sama), instruksi kembar, kompetensi dengan
-//                1 paket saja (Ulangan Modul jadi monoton), paket lintas jenjang.
+//                1 paket saja (Ulangan Modul jadi monoton), paket lintas jenjang,
+//                dagang bayar/kembalian dengan tingkat knob harga tanpa barang ber-price sama (harga-barang-tak-cocok).
 
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -231,6 +232,19 @@ for (const c of kompetensi) for (const [re, saran] of EJAAN) if (re.test(c.state
 for (const { p } of paket) for (const cid of p.competencyIds) {
   const c = kIdx.get(cid);
   if (c && !(c.mechanics as string[]).includes(p.mechanic)) lapor("WARNING", "mekanik-kompetensi-tak-cocok", p.id, `${cid} mencantumkan mekanik ${c.mechanics.join("/")}, paket memakai ${p.mechanic}`);
+}
+
+/* ---------------- dagang: harga knob ↔ price barang ---------------- */
+// bayar/kembalian: knob `harga` dalam ribuan rupiah (mesin: harga ronde = knob × 1000, apa pun priceLabel-nya), price barang
+// dalam rupiah. Tingkat harga tanpa barang ber-price sama → barang yang tampil tidak sesuai harga yang dibacakan.
+for (const { p } of paket) {
+  if (p.mechanic !== "dagang" || (p.mode !== "bayar" && p.mode !== "kembalian")) continue;
+  const kh = p.knobs?.harga;
+  if (!kh) continue;
+  const prices = new Set(p.goods.map((g) => g.price));
+  const kosong: number[] = [];
+  for (let v = kh.min; v <= kh.max + 1e-9; v += kh.step || 1) { const h = Math.max(1, Math.floor(v)) * 1000; if (!prices.has(h)) kosong.push(h); }
+  if (kosong.length) lapor("WARNING", "harga-barang-tak-cocok", p.id, `tingkat harga tanpa barang ber-price sama: ${kosong.join(", ")}${p.barangIkutHarga ? "" : " (barangIkutHarga belum aktif: barang tampil diacak lepas dari harga)"}`);
 }
 
 /* ---------------- kompetensi ↔ paket ---------------- */

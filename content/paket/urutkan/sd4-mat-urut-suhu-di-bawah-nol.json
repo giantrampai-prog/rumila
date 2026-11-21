@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-urut-suhu-di-bawah-nol",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dari Terdingin ke Terhangat",
-      "instruksi": "Susun kartu suhu dari yang paling dingin sampai yang paling hangat.",
+      "instruksi": "Suhu di bawah nol lebih dingin dari 0°C. Makin besar angka sesudah tanda minus, makin dingin. Susun dari yang paling dingin sampai yang paling hangat.",
       "s1": "Suhu pagi di lima kota",
       "s1-1": "−12°C",
       "s1-2": "−5°C",
@@ -74,7 +74,7 @@
     },
     "en": {
       "judul": "Coldest to Warmest",
-      "instruksi": "Arrange the temperature cards from coldest to warmest.",
+      "instruksi": "Temperatures below zero are colder than 0°C. The bigger the number after the minus sign, the colder it is. Arrange them from coldest to warmest.",
       "s1": "Morning temperature in five cities",
       "s1-1": "−12°C",
       "s1-2": "−5°C",

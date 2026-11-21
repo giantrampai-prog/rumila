@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-tabel-tiga-empat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tabel 3 dan 4",
-      "instruksi": "Ingat: 6 × 4 sama dengan 4 × 6. Taruh tiap kartu perkalian di rak hasilnya.",
+      "instruksi": "Kartu ini memakai tabel 3 dan 4. Ingat: 3 × 7 sama dengan 7 × 3. Taruh tiap kartu di rak hasilnya.",
       "b-12": "12",
       "b-18": "18",
       "b-24": "24",
@@ -45,7 +45,7 @@
     },
     "en": {
       "judul": "3 and 4 Times Tables",
-      "instruksi": "Remember: 6 × 4 is the same as 4 × 6. Put each multiplication card on its answer shelf.",
+      "instruksi": "These cards use the 3 and 4 times tables. Remember: 3 × 7 is the same as 7 × 3. Put each card on its answer shelf.",
       "b-12": "12",
       "b-18": "18",
       "b-24": "24",

@@ -1,6 +1,6 @@
 {
   "id": "hitung-kerang-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Kerang di Pantai",
-      "instruksi": "Sentuh {barang} satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+      "instruksi": "Ombak membawa {barang} ke pasir. Hitung satu per satu dengan menyentuhnya, lalu geser penanda ke jumlahnya.",
       "kerang": "kerang",
       "kepiting": "kepiting",
       "penyu": "penyu"
     },
     "en": {
       "judul": "Shells on the Beach",
-      "instruksi": "Touch the {barang} one at a time as you count, then slide the marker to the number.",
+      "instruksi": "The waves bring {barang} onto the sand. Touch each one as you count, then slide the marker to the number.",
       "kerang": "shells",
       "kepiting": "crabs",
       "penyu": "turtles"

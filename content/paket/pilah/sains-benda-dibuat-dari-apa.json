@@ -1,6 +1,6 @@
 {
   "id": "sains-benda-dibuat-dari-apa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,12 @@
   "locale": {
     "id": {
       "judul": "Bahan Mana yang Cocok?",
-      "instruksi": "Taruh tiap benda ke bahan yang paling cocok: kayu, logam, kaca, atau kain.",
+      "instruksi": "Taruh tiap benda ke bahan yang paling cocok: kayu, logam, kaca, atau plastik.",
       "b-kayu": "kayu",
       "b-logam": "logam",
       "b-kaca": "kaca",
-      "b-kain": "kain",
       "i-pensil": "batang pensil",
-      "i-perahu": "perahu dayung",
+      "i-perahu": "perahu kayu",
       "i-pondok": "dinding pondok",
       "i-rel": "rel kereta",
       "i-gembok": "gembok",
@@ -24,19 +23,19 @@
       "i-akuarium": "dinding akuarium supaya ikan terlihat",
       "i-kacamobil": "kaca depan mobil",
       "i-teropong": "lensa teropong",
-      "i-tenda": "tenda kemah",
-      "i-kaoskaki": "kaus kaki",
-      "i-layar": "layar perahu"
+      "b-plastik": "plastik",
+      "i-sikatgigi": "gagang sikat gigi",
+      "i-botolsabun": "botol sabun cair",
+      "i-sisir": "sisir rambut"
     },
     "en": {
       "judul": "Which Material Fits?",
-      "instruksi": "Put each thing with the material that suits it best: wood, metal, glass, or cloth.",
+      "instruksi": "Put each thing with the material that suits it best: wood, metal, glass, or plastic.",
       "b-kayu": "wood",
       "b-logam": "metal",
       "b-kaca": "glass",
-      "b-kain": "cloth",
       "i-pensil": "pencil body",
-      "i-perahu": "rowing boat",
+      "i-perahu": "wooden boat",
       "i-pondok": "hut walls",
       "i-rel": "train tracks",
       "i-gembok": "padlock",
@@ -44,9 +43,10 @@
       "i-akuarium": "fish tank walls so the fish can be seen",
       "i-kacamobil": "car windscreen",
       "i-teropong": "telescope lens",
-      "i-tenda": "camping tent",
-      "i-kaoskaki": "socks",
-      "i-layar": "boat sail"
+      "b-plastik": "plastic",
+      "i-sikatgigi": "toothbrush handle",
+      "i-botolsabun": "liquid soap bottle",
+      "i-sisir": "hair comb"
     }
   },
   "knobs": {
@@ -55,7 +55,7 @@
       "max": 4,
       "default": 3,
       "step": 1,
-      "keterangan": "jumlah bahan: 3 (kayu, logam, kaca) → 4 (tambah kain)"
+      "keterangan": "jumlah bahan: 3 (kayu, logam, kaca) → 4 (tambah plastik)"
     },
     "itemCount": {
       "min": 3,
@@ -90,10 +90,10 @@
       "color": "#e1f5fe"
     },
     {
-      "id": "kain",
-      "labelKey": "b-kain",
-      "emoji": "🧵",
-      "color": "#f8bbd0"
+      "id": "plastik",
+      "labelKey": "b-plastik",
+      "emoji": "🥤",
+      "color": "#fff59d"
     }
   ],
   "items": [
@@ -153,22 +153,22 @@
       "emoji": "🔭"
     },
     {
-      "id": "tenda",
-      "labelKey": "i-tenda",
-      "bin": "kain",
-      "emoji": "⛺"
+      "id": "sikatgigi",
+      "labelKey": "i-sikatgigi",
+      "bin": "plastik",
+      "emoji": "🪥"
     },
     {
-      "id": "kaoskaki",
-      "labelKey": "i-kaoskaki",
-      "bin": "kain",
-      "emoji": "🧦"
+      "id": "botolsabun",
+      "labelKey": "i-botolsabun",
+      "bin": "plastik",
+      "emoji": "🧴"
     },
     {
-      "id": "layar",
-      "labelKey": "i-layar",
-      "bin": "kain",
-      "emoji": "⛵"
+      "id": "sisir",
+      "labelKey": "i-sisir",
+      "bin": "plastik",
+      "emoji": "🪮"
     }
   ],
   "pilihan": []

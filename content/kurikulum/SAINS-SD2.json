@@ -550,8 +550,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa mencatat serangga yang kutemukan dengan turus untuk tiga jenis sekaligus",
-        "en": "I can record the insects I find with tally marks for three kinds at once"
+        "id": "Aku bisa mencatat hewan yang kutemukan, misalnya serangga, dengan turus untuk tiga jenis sekaligus",
+        "en": "I can record the animals I find, such as insects, with tally marks for three kinds at once"
       },
       "depth": [
         "pakai"
@@ -574,7 +574,7 @@
       "mechanics": [
         "simulasi"
       ],
-      "catatan": "Aksi: tiap hewan lewat, ketuk barisnya; tabel turus per jenis dinilai mesin. Lanjutan SD1 PENGAMATAN.02: minimal 3 jenis, lebih banyak hewan, jeda lebih pendek. Konteks survei kebun sekolah dan tepi hutan. Jebakan: serangga mirip (lebah–kumbang) — dibedakan warna. Grafik blok (2TWSa.03) belum ada mekaniknya; turus = tabel. Knob kinds 3 → 4, count 8 → 12, gapMs 1600 → 1000."
+      "catatan": "Aksi: tiap hewan lewat, ketuk barisnya; tabel turus per jenis dinilai mesin. Lanjutan SD1 PENGAMATAN.02: minimal 3 jenis, lebih banyak hewan, jeda lebih pendek. Konteks survei serangga kebun sekolah dan hewan tepi hutan (monyet, tupai, burung, rusa, landak). Jebakan: serangga mirip (lebah–kumbang) — dibedakan warna. Grafik blok (2TWSa.03) belum ada mekaniknya; turus = tabel. Knob kinds 3 → 4, count 8 → 12, gapMs 1600 → 1000."
     },
     {
       "id": "SAINS.SD2.PENGAMATAN.02",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-hewan-pantai-rangka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,12 +78,12 @@
     {
       "id": "rangkaluar",
       "labelKey": "b-rangkaluar",
-      "emoji": "🦞"
+      "emoji": "🛡️"
     },
     {
       "id": "lunak",
       "labelKey": "b-lunak",
-      "emoji": "🦑"
+      "emoji": "💧"
     }
   ],
   "items": [

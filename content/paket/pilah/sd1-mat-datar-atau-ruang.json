@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-datar-atau-ruang",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,12 @@
   "locale": {
     "id": {
       "judul": "Datar atau Ruang?",
-      "instruksi": "Bangun datar tipis seperti gambar. Bangun ruang bisa dipegang dan punya isi. Pilah semuanya.",
+      "instruksi": "Bangun datar pipih seperti selembar kertas. Bangun ruang tebal, bisa digenggam, dan punya isi. Pilah semuanya.",
       "b-bangun-datar": "bangun datar",
       "b-bangun-ruang": "bangun ruang",
       "i-segitiga": "segitiga",
       "i-persegi": "persegi",
       "i-lingkaran": "lingkaran",
-      "i-bintang": "bintang",
       "i-persegi-panjang": "persegi panjang",
       "i-belah-ketupat": "belah ketupat",
       "i-bola": "bola",
@@ -25,17 +24,18 @@
       "i-kardus": "kardus",
       "i-cone-es-krim": "cone es krim",
       "i-kado": "kado",
-      "i-bola-basket": "bola basket"
+      "i-bola-basket": "bola basket",
+      "i-stiker-bintang": "stiker bintang",
+      "i-kertas": "selembar kertas"
     },
     "en": {
       "judul": "Flat or Solid?",
-      "instruksi": "2D shapes are flat like a drawing. 3D shapes can be held and take up space. Sort them all.",
+      "instruksi": "2D shapes are flat like a sheet of paper. 3D shapes are thick, can be held and take up space. Sort them all.",
       "b-bangun-datar": "2D shape",
       "b-bangun-ruang": "3D shape",
       "i-segitiga": "triangle",
       "i-persegi": "square",
       "i-lingkaran": "circle",
-      "i-bintang": "star",
       "i-persegi-panjang": "rectangle",
       "i-belah-ketupat": "rhombus",
       "i-bola": "ball",
@@ -44,7 +44,9 @@
       "i-kardus": "box",
       "i-cone-es-krim": "ice cream cone",
       "i-kado": "gift",
-      "i-bola-basket": "basketball"
+      "i-bola-basket": "basketball",
+      "i-stiker-bintang": "star sticker",
+      "i-kertas": "sheet of paper"
     }
   },
   "knobs": {
@@ -97,11 +99,10 @@
       "color": "#ffd23f"
     },
     {
-      "id": "bintang",
-      "labelKey": "i-bintang",
+      "id": "stiker-bintang",
+      "labelKey": "i-stiker-bintang",
       "bin": "datar",
-      "shape": "star",
-      "color": "#c59be8"
+      "emoji": "⭐"
     },
     {
       "id": "persegi-panjang",
@@ -115,7 +116,14 @@
       "id": "ketupat",
       "labelKey": "i-belah-ketupat",
       "bin": "datar",
-      "emoji": "🔶"
+      "shape": "belah-ketupat",
+      "color": "#fb8c00"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "datar",
+      "emoji": "📄"
     },
     {
       "id": "bola",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hitung-kaki-hewan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -32,8 +32,7 @@
       "i-kalajengking": "kalajengking",
       "i-ular": "ular",
       "i-cacing": "cacing",
-      "i-ikan": "ikan",
-      "i-siput": "siput"
+      "i-ikan": "ikan"
     },
     "en": {
       "judul": "How Many Legs?",
@@ -59,8 +58,7 @@
       "i-kalajengking": "scorpion",
       "i-ular": "snake",
       "i-cacing": "worm",
-      "i-ikan": "fish",
-      "i-siput": "snail"
+      "i-ikan": "fish"
     }
   },
   "knobs": {
@@ -218,12 +216,6 @@
       "labelKey": "i-ikan",
       "bin": "k0",
       "emoji": "🐟"
-    },
-    {
-      "id": "siput",
-      "labelKey": "i-siput",
-      "bin": "k0",
-      "emoji": "🐌"
     }
   ],
   "pilihan": []

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-cahaya-di-sekolah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tembus Cahaya di Sekolah",
-      "instruksi": "Bayangkan menyinari tiap benda dengan senter. Taruh ke raknya.",
+      "instruksi": "Bayangkan menyinari benda-benda di sekolah dengan senter. Cahayanya tembus jelas, tembus buram, atau tidak tembus? Taruh ke raknya.",
       "b-pandang": "tembus pandang (terlihat jelas)",
       "b-tidak": "tidak tembus cahaya (gelap)",
       "b-cahaya": "tembus cahaya (buram)",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Light Through Things at School",
-      "instruksi": "Imagine shining a torch through each thing. Put it on its shelf.",
+      "instruksi": "Imagine shining a torch at things at school. Does the light pass clearly, pass dimly, or not pass at all? Put each on its shelf.",
       "b-pandang": "transparent (see clearly)",
       "b-tidak": "opaque (dark)",
       "b-cahaya": "translucent (blurry)",

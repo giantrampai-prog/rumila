@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-rasio-resep-dan-peta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rasio di Dapur dan Peta",
-      "instruksi": "Kalikan atau bagi kedua bagian rasio dengan bilangan yang sama. Sentuh jawabannya.",
+      "instruksi": "Cari dulu nilai untuk satu bagian, misalnya harga 1 pensil atau jarak 1 cm di peta, lalu kalikan. Sentuh jawabannya.",
       "q1": "Resep: 2 gelas tepung untuk 12 kue. Untuk 30 kue perlu … gelas",
       "c1": "5",
       "c2": "20",
@@ -69,7 +69,7 @@
     },
     "en": {
       "judul": "Ratio in the Kitchen and on Maps",
-      "instruksi": "Multiply or divide both parts of the ratio by the same number. Touch the answer.",
+      "instruksi": "First find the value for one part, such as the price of 1 pencil or 1 cm on the map, then multiply. Touch the answer.",
       "q1": "Recipe: 2 cups of flour for 12 cakes. For 30 cakes you need … cups",
       "c1": "5",
       "c2": "20",

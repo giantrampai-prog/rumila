@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-uji-larut-laboratorium",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -13,10 +13,10 @@
       "b-larut": "larut: butirannya tak tampak lagi",
       "b-tidak": "tidak larut: tetap tampak, mengendap atau mengapung",
       "i-gulamerah": "gula merah serut",
-      "i-madu": "sesendok madu",
+      "i-gulapasir": "gula pasir",
       "i-jeruk": "serbuk minuman rasa jeruk",
       "i-tawas": "kristal tawas",
-      "i-pewarna": "beberapa tetes pewarna makanan",
+      "i-pewarna": "sesendok serbuk pewarna makanan",
       "i-permen": "permen yang dihancurkan",
       "i-garaminggris": "garam kasar",
       "i-besi": "serbuk besi",
@@ -25,7 +25,7 @@
       "i-manik": "manik-manik plastik",
       "i-tanah": "segenggam tanah kebun",
       "i-koin": "koin logam",
-      "i-kapur": "serbuk kapur tulis"
+      "i-batubata": "pecahan batu bata"
     },
     "en": {
       "judul": "Stirring Beakers",
@@ -33,10 +33,10 @@
       "b-larut": "dissolves: the bits can no longer be seen",
       "b-tidak": "does not dissolve: still seen, sinks or floats",
       "i-gulamerah": "grated palm sugar",
-      "i-madu": "a spoonful of honey",
+      "i-gulapasir": "granulated sugar",
       "i-jeruk": "orange drink powder",
       "i-tawas": "alum crystals",
-      "i-pewarna": "a few drops of food colouring",
+      "i-pewarna": "a spoonful of food colouring powder",
       "i-permen": "a crushed sweet",
       "i-garaminggris": "coarse salt",
       "i-besi": "iron filings",
@@ -45,7 +45,7 @@
       "i-manik": "plastic beads",
       "i-tanah": "a handful of garden soil",
       "i-koin": "a metal coin",
-      "i-kapur": "chalk dust"
+      "i-batubata": "pieces of broken brick"
     }
   },
   "knobs": {
@@ -85,10 +85,13 @@
       "emoji": "🟤"
     },
     {
-      "id": "madu",
-      "labelKey": "i-madu",
+      "id": "gulapasir",
+      "labelKey": "i-gulapasir",
       "bin": "larut",
-      "emoji": "🍯"
+      "shape": "circle",
+      "color": "#e0e0e0",
+      "scale": 0.4,
+      "count": 6
     },
     {
       "id": "jeruk",
@@ -106,7 +109,9 @@
       "id": "pewarna",
       "labelKey": "i-pewarna",
       "bin": "larut",
-      "emoji": "🎨"
+      "shape": "circle",
+      "color": "#ff8a80",
+      "scale": 0.5
     },
     {
       "id": "permen",
@@ -157,10 +162,10 @@
       "emoji": "🪙"
     },
     {
-      "id": "kapur",
-      "labelKey": "i-kapur",
+      "id": "batubata",
+      "labelKey": "i-batubata",
       "bin": "tidak",
-      "emoji": "🖍️"
+      "emoji": "🧱"
     }
   ],
   "pilihan": []

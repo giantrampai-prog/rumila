@@ -1,6 +1,6 @@
 {
   "id": "batu-di-jalan-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Rocks on the Garden Path",
-      "instruksi": "Robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
+      "instruksi": "The robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
     }
   },
   "knobs": {

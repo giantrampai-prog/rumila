@@ -42,7 +42,7 @@
       },
       "statement": {
         "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya robot sampai tepat di bintang",
-        "en": "I can choose how many times the repeat block should run so robot lands exactly on the star"
+        "en": "I can choose how many times the repeat block should run so the robot lands exactly on the star"
       },
       "depth": [
         "pakai"
@@ -56,7 +56,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Angka ulangan dipilih dari 2–6; jalur 2–6 petak. Bukti: tepat di bintang, tidak lewat. Jebakan: anak memilih jumlah petak termasuk petak awal. Knob: isi blok 1 perintah → 2 perintah (maju, belok)."
+      "catatan": "Angka ulangan dipilih dari 2–6; jalur 2–6 petak (isi satu perintah) atau 6/9 petak (isi dua perintah, 2–3 ulangan). Bukti: tepat di bintang, tidak lewat. Jebakan: anak memilih jumlah petak termasuk petak awal. Knob: isi blok 1 perintah (ulangi N [maju], paket ulangi-berapa-kali-lurus) → 2 perintah (ulangi N [maju, lompat] di jalur yang batunya tiap tiga petak, paket ulangi-maju-dan-belok; rak 3 sehingga hanya ulangi berisi dua perintah yang muat). Isi 'maju, belok' tidak dipakai: ulangi [maju, belok] selalu berputar di kotak 1×1 sehingga bintang selalu terjangkau ≤ 3 blok tanpa ulangi (audit QC 21 Nov 2026). Beda dengan SD 2 ULANGI.01: di TK B kedua perintah isi ulangi disebut di instruksi dan urutannya selalu maju lalu lompat, anak memilih jumlah ulangan; di SD 2 anak sendiri menemukan pasangan yang berulang, termasuk lompat lalu maju dan perintah tambahan di luar ulangi."
     },
     {
       "id": "KODE.TKB.ULANGI.03",
@@ -134,7 +134,7 @@
       },
       "statement": {
         "id": "Aku bisa menunjuk petak tujuan robot sebelum tiap perintah dijalankan satu per satu",
-        "en": "I can point to the square robot will land on before each command is run one at a time"
+        "en": "I can point to the square the robot will land on before each command is run one at a time"
       },
       "depth": [
         "pakai"
@@ -191,7 +191,7 @@
       },
       "statement": {
         "id": "Aku bisa menunjuk perintah yang akan membuat robot menabrak dinding sebelum perintah itu dijalankan",
-        "en": "I can point to the command that will make robot hit the wall before that command is run"
+        "en": "I can point to the command that will make the robot hit the wall before that command is run"
       },
       "depth": [
         "pakai"
@@ -291,7 +291,7 @@
         "pilah",
         "urutkan"
       ],
-      "catatan": "Dekomposisi di luar grid: langkah kecil dimasukkan ke tahap besarnya. Bukti: tiap tahap berisi 2 langkah yang benar. Pengaya."
+      "catatan": "Dekomposisi di luar grid: langkah kecil dimasukkan ke tahap besarnya. Bukti: tiap tahap berisi 2 langkah yang benar. Paket pilah kue-tiga-tahap: memasukkan langkah ke tahapnya. Paket urutkan kue-tiga-tahap-urut: setiap kartu bertanda tahapnya (siapkan/campur/panggang), anak menyusun tahap demi tahap lalu langkah di dalam tiap tahap. Pengaya."
     }
   ]
 }

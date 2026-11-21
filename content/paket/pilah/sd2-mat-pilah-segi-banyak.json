@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-pilah-segi-banyak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -134,7 +134,8 @@
       "id": "ketupat",
       "labelKey": "i-belah-ketupat",
       "bin": "s4",
-      "emoji": "🔷"
+      "shape": "belah-ketupat",
+      "color": "#1e88e5"
     },
     {
       "id": "segilima",

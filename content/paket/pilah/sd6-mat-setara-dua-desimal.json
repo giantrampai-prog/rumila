@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-setara-dua-desimal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kembar Nilai",
-      "instruksi": "Taruh tiap desimal, persen, atau pecahan di rak pecahan yang nilainya sama.",
+      "instruksi": "Teliti angka nolnya: 0,05 berbeda dengan 0,5. Taruh tiap desimal, persen, atau pecahan di rak yang nilainya sama.",
       "b-setengah": "1/2",
       "b-seperempat": "1/4",
       "b-tigaperempat": "3/4",
@@ -34,7 +34,7 @@
     },
     "en": {
       "judul": "Value Twins",
-      "instruksi": "Put each decimal, percentage or fraction on the fraction shelf with the same value.",
+      "instruksi": "Watch the zeros: 0.05 is not the same as 0.5. Put each decimal, percentage or fraction on the shelf with the same value.",
       "b-setengah": "1/2",
       "b-seperempat": "1/4",
       "b-tigaperempat": "3/4",

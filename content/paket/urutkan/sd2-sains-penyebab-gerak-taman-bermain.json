@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penyebab-gerak-taman-bermain",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Penyebab di Taman Bermain",
-      "instruksi": "Benda tidak bergerak sendiri. Sentuh gambar yang terjadi lebih dulu.",
+      "instruksi": "Di taman bermain, angin, air, tangan, dan kaki menggerakkan benda. Sentuh penyebabnya, yang terjadi lebih dulu.",
       "s-kincir": "Mana yang lebih dulu?",
       "kincir-awal": "angin berembus",
       "kincir-akhir": "kincir berputar",
@@ -44,7 +44,7 @@
     },
     "en": {
       "judul": "Causes at the Playground",
-      "instruksi": "Things don't move by themselves. Touch the picture that happened first.",
+      "instruksi": "At the playground, wind, water, hands, and feet move things. Touch the cause, the one that happened first.",
       "s-kincir": "Which came first?",
       "kincir-awal": "wind blows",
       "kincir-akhir": "windmill spins",

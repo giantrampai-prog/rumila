@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-licin-kasar",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Urutan Gesekan Tertukar",
       "instruksi": "Dua permukaan tertukar. Tukar sekali supaya urut dari paling licin ke paling kasar.",
-      "s-mobil": "Mobil mainan didorong sama kuat",
+      "s-mobil": "Kotak bekal didorong sama kuat",
       "mobil-es": "lantai es",
       "mobil-keramik": "lantai keramik mengilap",
       "mobil-karpet": "karpet berbulu",
@@ -21,7 +21,7 @@
       "kotak-kayu": "papan kayu halus",
       "kotak-handuk": "handuk",
       "kotak-amplas": "kertas amplas",
-      "s-kelereng": "Kelereng digelindingkan sama kuat",
+      "s-kelereng": "Sandal didorong sama kuat",
       "kelereng-ubin": "ubin licin",
       "kelereng-kayu": "papan kayu",
       "kelereng-handuk": "handuk tebal",
@@ -36,11 +36,11 @@
       "buku-keramik": "lantai keramik mengilap",
       "buku-handuk": "handuk tebal",
       "buku-pasir": "pasir",
-      "s-truk": "Truk mainan didorong sama kuat",
+      "s-truk": "Penghapus papan tulis didorong sama kuat",
       "truk-es": "lantai es",
       "truk-keramik": "lantai keramik mengilap",
       "truk-handuk": "handuk tebal",
-      "truk-kerikil": "jalan berkerikil",
+      "truk-kerikil": "kertas amplas",
       "s-balok": "Balok kayu ditarik sama kuat",
       "balok-es": "lantai es",
       "balok-kaca": "meja kaca",
@@ -50,7 +50,7 @@
       "kardus-es": "lantai es",
       "kardus-keramik": "lantai keramik mengilap",
       "kardus-kayu": "papan kayu",
-      "kardus-kerikil": "jalan berkerikil",
+      "kardus-kerikil": "kertas amplas",
       "s-piring": "Piring plastik didorong sama kuat",
       "piring-es": "lantai es",
       "piring-kaca": "meja kaca",
@@ -60,12 +60,12 @@
       "pensil-es": "lantai es",
       "pensil-kaca": "meja kaca",
       "pensil-karpet": "karpet berbulu",
-      "pensil-kerikil": "jalan berkerikil"
+      "pensil-kerikil": "kertas amplas"
     },
     "en": {
       "judul": "Friction Order Mixed Up",
       "instruksi": "Two surfaces are swapped. Swap them once so they go from smoothest to roughest.",
-      "s-mobil": "A toy car pushed just as hard each time",
+      "s-mobil": "A lunch box pushed just as hard each time",
       "mobil-es": "ice rink",
       "mobil-keramik": "shiny tiled floor",
       "mobil-karpet": "shaggy carpet",
@@ -75,7 +75,7 @@
       "kotak-kayu": "smooth wooden board",
       "kotak-handuk": "towel",
       "kotak-amplas": "sandpaper",
-      "s-kelereng": "A marble rolled just as hard each time",
+      "s-kelereng": "A sandal pushed just as hard each time",
       "kelereng-ubin": "smooth tiles",
       "kelereng-kayu": "wooden board",
       "kelereng-handuk": "thick towel",
@@ -90,11 +90,11 @@
       "buku-keramik": "shiny tiled floor",
       "buku-handuk": "thick towel",
       "buku-pasir": "sand",
-      "s-truk": "A toy truck pushed with the same push",
+      "s-truk": "A board eraser pushed with the same push",
       "truk-es": "ice floor",
       "truk-keramik": "shiny tiled floor",
       "truk-handuk": "thick towel",
-      "truk-kerikil": "gravel path",
+      "truk-kerikil": "sandpaper",
       "s-balok": "A wooden block pulled with the same pull",
       "balok-es": "ice floor",
       "balok-kaca": "glass table",
@@ -104,7 +104,7 @@
       "kardus-es": "ice floor",
       "kardus-keramik": "shiny tiled floor",
       "kardus-kayu": "wooden board",
-      "kardus-kerikil": "gravel path",
+      "kardus-kerikil": "sandpaper",
       "s-piring": "A plastic plate pushed with the same push",
       "piring-es": "ice floor",
       "piring-kaca": "glass table",
@@ -114,7 +114,7 @@
       "pensil-es": "ice floor",
       "pensil-kaca": "glass table",
       "pensil-karpet": "fluffy carpet",
-      "pensil-kerikil": "gravel path"
+      "pensil-kerikil": "sandpaper"
     }
   },
   "knobs": {
@@ -149,8 +149,7 @@
         {
           "id": "karpet",
           "labelKey": "mobil-karpet",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "pasir",
@@ -292,7 +291,8 @@
         {
           "id": "kerikil",
           "labelKey": "truk-kerikil",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     },
@@ -345,7 +345,8 @@
         {
           "id": "kerikil",
           "labelKey": "kardus-kerikil",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     },
@@ -396,13 +397,13 @@
         {
           "id": "karpet",
           "labelKey": "pensil-karpet",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "emoji": "🟥"
         },
         {
           "id": "kerikil",
           "labelKey": "pensil-kerikil",
-          "emoji": "🪨"
+          "emoji": "🟫",
+          "color": "#a1887f"
         }
       ]
     }

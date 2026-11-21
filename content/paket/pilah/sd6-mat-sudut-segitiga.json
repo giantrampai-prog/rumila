@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-sudut-segitiga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sudut Ketiga",
-      "instruksi": "Jumlah sudut segitiga selalu 180°. Cari sudut yang hilang, lalu sentuh jawabannya.",
+      "instruksi": "Jumlah sudut segitiga selalu 180°. Pada segitiga sama kaki, dua sudut kakinya sama besar. Cari sudut yang hilang, lalu sentuh jawabannya.",
       "q1": "Segitiga punya sudut 50° dan 60°. Sudut ketiganya …",
       "c1": "70°",
       "c2": "250°",
@@ -31,11 +31,10 @@
       "c14": "230°",
       "c15": "40°",
       "c16": "60°",
-      "q5": "Segitiga sama kaki punya sudut 72° dan 72°. Sudut ketiganya …",
+      "q5": "Segitiga sama kaki, satu sudut kakinya 72°. Sudut puncaknya …",
       "c17": "36°",
       "c18": "216°",
       "c19": "54°",
-      "c20": "46°",
       "q6": "Segitiga punya sudut 120° dan 25°. Sudut ketiganya …",
       "c21": "215°",
       "q7": "Segitiga siku-siku punya sudut 90° dan 62°. Sudut ketiganya …",
@@ -48,8 +47,8 @@
       "c27": "255°",
       "c28": "15°",
       "c29": "85°",
-      "q9": "Segitiga sama kaki punya sudut 110° dan 35°. Sudut ketiganya …",
-      "q10": "Segitiga sama kaki punya sudut 25° dan 25°. Sudut ketiganya …",
+      "q9": "Segitiga sama kaki, sudut puncaknya 110°. Tiap sudut kakinya …",
+      "q10": "Segitiga sama kaki, satu sudut kakinya 25°. Sudut puncaknya …",
       "c30": "130°",
       "c31": "310°",
       "c32": "140°",
@@ -59,11 +58,14 @@
       "c34": "252°",
       "c35": "18°",
       "c36": "82°",
-      "pilihan": "pilihan"
+      "pilihan": "pilihan",
+      "c37": "108°",
+      "c38": "125°",
+      "c39": "155°"
     },
     "en": {
       "judul": "The Third Angle",
-      "instruksi": "The angles in a triangle always add up to 180°. Find the missing angle, then touch the answer.",
+      "instruksi": "The angles of a triangle always add up to 180°. In an isosceles triangle, the two base angles are equal. Find the missing angle, then touch the answer.",
       "q1": "A triangle has angles of 50° and 60°. The third angle is …",
       "c1": "70°",
       "c2": "250°",
@@ -84,11 +86,10 @@
       "c14": "230°",
       "c15": "40°",
       "c16": "60°",
-      "q5": "A isosceles triangle has angles of 72° and 72°. The third angle is …",
+      "q5": "An isosceles triangle has a base angle of 72°. The top angle is …",
       "c17": "36°",
       "c18": "216°",
       "c19": "54°",
-      "c20": "46°",
       "q6": "A triangle has angles of 120° and 25°. The third angle is …",
       "c21": "215°",
       "q7": "A right-angled triangle has angles of 90° and 62°. The third angle is …",
@@ -101,8 +102,8 @@
       "c27": "255°",
       "c28": "15°",
       "c29": "85°",
-      "q9": "A isosceles triangle has angles of 110° and 35°. The third angle is …",
-      "q10": "A isosceles triangle has angles of 25° and 25°. The third angle is …",
+      "q9": "An isosceles triangle has a top angle of 110°. Each base angle is …",
+      "q10": "An isosceles triangle has a base angle of 25°. The top angle is …",
       "c30": "130°",
       "c31": "310°",
       "c32": "140°",
@@ -112,7 +113,10 @@
       "c34": "252°",
       "c35": "18°",
       "c36": "82°",
-      "pilihan": "choices"
+      "pilihan": "choices",
+      "c37": "108°",
+      "c38": "125°",
+      "c39": "155°"
     }
   },
   "knobs": {
@@ -232,11 +236,6 @@
       "bin": "pilihan"
     },
     {
-      "id": "c20",
-      "labelKey": "c20",
-      "bin": "pilihan"
-    },
-    {
       "id": "c21",
       "labelKey": "c21",
       "bin": "pilihan"
@@ -315,6 +314,21 @@
       "id": "c36",
       "labelKey": "c36",
       "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
     }
   ],
   "pilihan": [
@@ -367,9 +381,9 @@
       "promptKey": "q5",
       "choices": [
         "c17",
-        "c18",
+        "c37",
         "c19",
-        "c20"
+        "c18"
       ],
       "correct": "c17"
     },
@@ -411,9 +425,9 @@
       "promptKey": "q9",
       "choices": [
         "c7",
-        "c21",
-        "c5",
-        "c11"
+        "c1",
+        "c11",
+        "c38"
       ],
       "correct": "c7"
     },
@@ -422,8 +436,8 @@
       "promptKey": "q10",
       "choices": [
         "c30",
+        "c39",
         "c31",
-        "c15",
         "c32"
       ],
       "correct": "c30"

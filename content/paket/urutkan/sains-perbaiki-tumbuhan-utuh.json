@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-tumbuhan-utuh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -139,7 +139,7 @@
         {
           "id": "akar",
           "labelKey": "melati-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -166,7 +166,7 @@
         {
           "id": "akar",
           "labelKey": "anggrek-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -193,7 +193,7 @@
         {
           "id": "akar",
           "labelKey": "jeruk-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -220,7 +220,7 @@
         {
           "id": "akar",
           "labelKey": "kopi-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -247,7 +247,7 @@
         {
           "id": "akar",
           "labelKey": "telang-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -274,7 +274,7 @@
         {
           "id": "akar",
           "labelKey": "kemangi-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -301,7 +301,7 @@
         {
           "id": "akar",
           "labelKey": "kenanga-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -328,7 +328,7 @@
         {
           "id": "akar",
           "labelKey": "alamanda-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -355,7 +355,7 @@
         {
           "id": "akar",
           "labelKey": "bugenvil-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",
@@ -382,7 +382,7 @@
         {
           "id": "akar",
           "labelKey": "asoka-akar",
-          "emoji": "🫚"
+          "shape": "akar"
         },
         {
           "id": "batang",

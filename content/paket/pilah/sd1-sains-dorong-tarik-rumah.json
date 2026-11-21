@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-dorong-tarik-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Dorong itu menjauh, tarik itu mendekat. Taruh tiap gerakan ke raknya.",
       "b-dorong": "dorong",
       "b-tarik": "tarik",
-      "i-tutuplaci": "menutup laci",
+      "i-pintu": "mendorong pintu sampai tertutup",
       "i-bel": "menekan bel",
       "i-kursimasuk": "mendorong kursi ke meja",
       "i-troli": "mendorong troli belanja",
@@ -29,7 +29,7 @@
       "instruksi": "A push moves away from you, a pull moves towards you. Put each action on its shelf.",
       "b-dorong": "push",
       "b-tarik": "pull",
-      "i-tutuplaci": "closing a drawer",
+      "i-pintu": "pushing a door shut",
       "i-bel": "pressing a doorbell",
       "i-kursimasuk": "pushing a chair in",
       "i-troli": "pushing a shopping cart",
@@ -71,10 +71,10 @@
   ],
   "items": [
     {
-      "id": "tutuplaci",
-      "labelKey": "i-tutuplaci",
+      "id": "pintu",
+      "labelKey": "i-pintu",
       "bin": "dorong",
-      "emoji": "🗄️"
+      "emoji": "🚪"
     },
     {
       "id": "bel",
@@ -104,8 +104,7 @@
       "id": "bukalaci",
       "labelKey": "i-bukalaci",
       "bin": "tarik",
-      "emoji": "🗄️",
-      "color": "#ffe0b2"
+      "emoji": "🗄️"
     },
     {
       "id": "tisu",

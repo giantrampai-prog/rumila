@@ -325,7 +325,7 @@
         "pilah",
         "simulasi"
       ],
-      "catatan": "Piring berisi 2–20 benda (genap) dipilah ke rak angka setengahnya. Anak boleh membagi dua-dua dalam kepala atau memakai dobel (dobel 6 = 12, jadi setengah 12 = 6). Jebakan: menaruh 12 di rak 12 (menghitung semua). Knob: rak 5 → 10."
+      "catatan": "Piring berisi 2–20 benda (genap) dipilah ke rak angka setengahnya. Anak boleh membagi dua-dua dalam kepala atau memakai dobel (dobel 6 = 12, jadi setengah 12 = 6). Simulasi bagi (membagi ke dua tikar) dibatasi mesin sampai 12 benda; jumlah 14–20 dilatih lewat pilah rak setengah. Jebakan: menaruh 12 di rak 12 (menghitung semua). Knob: rak 5 → 10."
     },
     {
       "id": "MAT.SD1.BANGUN.01",
@@ -399,7 +399,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Bangun datar (gambar tipis: segitiga, bintang, ketupat) vs benda ruang (bola, dadu, kaleng, kotak, es krim). Jebakan: persegi vs dadu, lingkaran vs bola. Knob: kartu 6 → 10."
+      "catatan": "Bangun datar (gambar tipis: segitiga, persegi, ketupat, juga benda pipih seperti selembar kertas dan stiker bintang) vs benda ruang (bola, dadu, kaleng, kotak, es krim). Gaya gambar dicampur supaya anak memilah dari bentuknya, bukan dari jenis gambar. Jebakan: persegi vs dadu, lingkaran vs bola. Knob: kartu 6 → 10."
     },
     {
       "id": "MAT.SD1.UKUR.01",
@@ -465,7 +465,7 @@
       "mechanics": [
         "urutkan"
       ],
-      "catatan": "Kapasitas belum ada di jenjang mana pun (catatan tinjauan TK B); di sini dimulai dengan wadah yang jelas berbeda: sendok, gelas, teko, ember, bak mandi, kolam. Jebakan: gambar sendok dibuat besar. Knob: 3 → 4 wadah."
+      "catatan": "Kapasitas belum ada di jenjang mana pun (catatan tinjauan TK B); di sini dimulai dengan wadah yang jelas berbeda: sendok, cangkir, gelas, mangkuk, teko, panci, ember, bak mandi, tong air. Wadah yang isinya mirip (bak mandi dan tong air) tidak pernah muncul dalam satu urutan. Jebakan: gambar sendok dibuat besar. Knob: 3 → 4 wadah."
     },
     {
       "id": "MAT.SD1.WAKTU.01",
@@ -498,7 +498,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Gambar jam dan kartu digital (03.30) dipilah ke rak 'pukul 3', 'setengah 4', dst. Jebakan bahasa Indonesia: 'setengah 4' = 3.30, bukan 4.30. Knob: rak 4 → 10."
+      "catatan": "Gambar jam dan kartu digital (3.30) dipilah ke rak 'pukul 3', 'setengah 4', dst. Kartu digital ditulis tanpa nol di depan (1.30, bukan 01.30) karena format 24 jam belum diajarkan. Jebakan bahasa Indonesia: 'setengah 4' = 3.30, bukan 4.30. Knob: rak 4 → 10."
     },
     {
       "id": "MAT.SD1.WAKTU.02",

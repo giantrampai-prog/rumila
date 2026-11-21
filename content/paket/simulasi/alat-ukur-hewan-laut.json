@@ -1,6 +1,6 @@
 {
   "id": "alat-ukur-hewan-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -51,7 +51,7 @@
       "max": 12,
       "default": 12,
       "step": 1,
-      "keterangan": "jumlah jenis hewan laut yang bisa muncul; putaran diacak"
+      "keterangan": "12 jenis hewan; tiap hewan bisa ditanya panjang atau berat (diacak per putaran), jadi bukan pencocokan hewan–alat 1:1"
     }
   },
   "assets": [],
@@ -61,84 +61,168 @@
   "mode": "alat",
   "items": [
     {
-      "id": "cumi",
+      "id": "cumi-panjang",
       "labelKey": "cumi",
       "role": "hewan",
       "emoji": "🦑",
       "value": 1
     },
     {
-      "id": "lobster",
+      "id": "cumi-berat",
+      "labelKey": "cumi",
+      "role": "hewan",
+      "emoji": "🦑",
+      "value": 2
+    },
+    {
+      "id": "lobster-panjang",
       "labelKey": "lobster",
       "role": "hewan",
       "emoji": "🦞",
       "value": 1
     },
     {
-      "id": "udang",
+      "id": "lobster-berat",
+      "labelKey": "lobster",
+      "role": "hewan",
+      "emoji": "🦞",
+      "value": 2
+    },
+    {
+      "id": "udang-panjang",
       "labelKey": "udang",
       "role": "hewan",
       "emoji": "🦐",
       "value": 1
     },
     {
-      "id": "hiu",
+      "id": "udang-berat",
+      "labelKey": "udang",
+      "role": "hewan",
+      "emoji": "🦐",
+      "value": 2
+    },
+    {
+      "id": "hiu-panjang",
       "labelKey": "hiu",
       "role": "hewan",
       "emoji": "🦈",
       "value": 1
     },
     {
-      "id": "ubur-ubur",
+      "id": "hiu-berat",
+      "labelKey": "hiu",
+      "role": "hewan",
+      "emoji": "🦈",
+      "value": 2
+    },
+    {
+      "id": "ubur-ubur-panjang",
       "labelKey": "ubur-ubur",
       "role": "hewan",
       "emoji": "🪼",
       "value": 1
     },
     {
-      "id": "gurita",
+      "id": "ubur-ubur-berat",
+      "labelKey": "ubur-ubur",
+      "role": "hewan",
+      "emoji": "🪼",
+      "value": 2
+    },
+    {
+      "id": "gurita-panjang",
       "labelKey": "gurita",
       "role": "hewan",
       "emoji": "🐙",
       "value": 1
     },
     {
-      "id": "kepiting",
+      "id": "gurita-berat",
+      "labelKey": "gurita",
+      "role": "hewan",
+      "emoji": "🐙",
+      "value": 2
+    },
+    {
+      "id": "kepiting-panjang",
+      "labelKey": "kepiting",
+      "role": "hewan",
+      "emoji": "🦀",
+      "value": 1
+    },
+    {
+      "id": "kepiting-berat",
       "labelKey": "kepiting",
       "role": "hewan",
       "emoji": "🦀",
       "value": 2
     },
     {
-      "id": "anjing-laut",
+      "id": "anjing-laut-panjang",
+      "labelKey": "anjing-laut",
+      "role": "hewan",
+      "emoji": "🦭",
+      "value": 1
+    },
+    {
+      "id": "anjing-laut-berat",
       "labelKey": "anjing-laut",
       "role": "hewan",
       "emoji": "🦭",
       "value": 2
     },
     {
-      "id": "penguin",
+      "id": "penguin-panjang",
+      "labelKey": "penguin",
+      "role": "hewan",
+      "emoji": "🐧",
+      "value": 1
+    },
+    {
+      "id": "penguin-berat",
       "labelKey": "penguin",
       "role": "hewan",
       "emoji": "🐧",
       "value": 2
     },
     {
-      "id": "ikan-buntal",
+      "id": "ikan-buntal-panjang",
+      "labelKey": "ikan-buntal",
+      "role": "hewan",
+      "emoji": "🐡",
+      "value": 1
+    },
+    {
+      "id": "ikan-buntal-berat",
       "labelKey": "ikan-buntal",
       "role": "hewan",
       "emoji": "🐡",
       "value": 2
     },
     {
-      "id": "berang-berang",
+      "id": "berang-berang-panjang",
+      "labelKey": "berang-berang",
+      "role": "hewan",
+      "emoji": "🦦",
+      "value": 1
+    },
+    {
+      "id": "berang-berang-berat",
       "labelKey": "berang-berang",
       "role": "hewan",
       "emoji": "🦦",
       "value": 2
     },
     {
-      "id": "paus",
+      "id": "paus-panjang",
+      "labelKey": "paus",
+      "role": "hewan",
+      "emoji": "🐳",
+      "value": 1
+    },
+    {
+      "id": "paus-berat",
       "labelKey": "paus",
       "role": "hewan",
       "emoji": "🐳",

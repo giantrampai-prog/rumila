@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-rumah",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,10 +13,8 @@
       "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
       "pilihan": "pilihan",
       "jam": "jam weker",
-      "bola": "bola",
       "piring": "piring",
       "jendela": "jendela",
-      "kado": "kotak kado",
       "bingkai": "bingkai foto",
       "tenda": "tenda",
       "pizza": "potongan pizza",
@@ -24,18 +22,18 @@
       "tKotak": "Mana yang kotak?",
       "tSegitiga": "Mana yang segitiga?",
       "koin": "uang koin",
-      "kardus": "kardus",
-      "penggaris": "penggaris segitiga"
+      "penggaris": "penggaris segitiga",
+      "kue": "kue kering",
+      "kalender": "kalender",
+      "amplop": "amplop"
     },
     "en": {
       "judul": "Shapes at Home",
       "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
       "pilihan": "choices",
       "jam": "alarm clock",
-      "bola": "ball",
       "piring": "plate",
       "jendela": "window",
-      "kado": "gift box",
       "bingkai": "picture frame",
       "tenda": "tent",
       "pizza": "pizza slice",
@@ -43,8 +41,10 @@
       "tKotak": "Which one is square?",
       "tSegitiga": "Which one is a triangle?",
       "koin": "coin",
-      "kardus": "cardboard box",
-      "penggaris": "triangle ruler"
+      "penggaris": "triangle ruler",
+      "kue": "cookie",
+      "kalender": "calendar",
+      "amplop": "envelope"
     }
   },
   "knobs": {
@@ -75,10 +75,10 @@
       "emoji": "⏰"
     },
     {
-      "id": "bola",
-      "labelKey": "bola",
+      "id": "kue",
+      "labelKey": "kue",
       "bin": "pilihan",
-      "emoji": "⚽"
+      "emoji": "🍪"
     },
     {
       "id": "piring",
@@ -93,10 +93,10 @@
       "emoji": "🪟"
     },
     {
-      "id": "kado",
-      "labelKey": "kado",
+      "id": "kalender",
+      "labelKey": "kalender",
       "bin": "pilihan",
-      "emoji": "🎁"
+      "emoji": "📅"
     },
     {
       "id": "bingkai",
@@ -124,9 +124,9 @@
     },
     {
       "bin": "pilihan",
-      "id": "kardus",
-      "labelKey": "kardus",
-      "emoji": "📦"
+      "id": "amplop",
+      "labelKey": "amplop",
+      "emoji": "✉️"
     },
     {
       "bin": "pilihan",
@@ -150,11 +150,11 @@
       "id": "r2",
       "promptKey": "tKotak",
       "choices": [
-        "bola",
-        "kado",
+        "kue",
+        "kalender",
         "pizza"
       ],
-      "correct": "kado"
+      "correct": "kalender"
     },
     {
       "id": "r3",
@@ -171,10 +171,10 @@
       "promptKey": "tBulat",
       "choices": [
         "pizza",
-        "bola",
+        "kue",
         "jendela"
       ],
-      "correct": "bola"
+      "correct": "kue"
     },
     {
       "id": "r5",
@@ -191,7 +191,7 @@
       "promptKey": "tSegitiga",
       "choices": [
         "pizza",
-        "kado",
+        "kalender",
         "piring"
       ],
       "correct": "pizza"
@@ -201,7 +201,7 @@
       "promptKey": "tBulat",
       "choices": [
         "piring",
-        "kado",
+        "kalender",
         "tenda"
       ],
       "correct": "piring"
@@ -211,7 +211,7 @@
       "promptKey": "tKotak",
       "choices": [
         "bingkai",
-        "bola",
+        "kue",
         "pizza"
       ],
       "correct": "bingkai"
@@ -231,7 +231,7 @@
       "promptKey": "tBulat",
       "choices": [
         "koin",
-        "kardus",
+        "amplop",
         "penggaris"
       ],
       "correct": "koin"
@@ -240,11 +240,11 @@
       "id": "r11",
       "promptKey": "tKotak",
       "choices": [
-        "kardus",
+        "amplop",
         "piring",
         "tenda"
       ],
-      "correct": "kardus"
+      "correct": "amplop"
     }
   ]
 }

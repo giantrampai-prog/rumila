@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,9 +14,7 @@
       "pilihan": "pilihan",
       "roda": "roda sepeda",
       "frisbee": "piring terbang",
-      "jeruk": "jeruk",
       "donat": "donat",
-      "dadu": "dadu",
       "bata": "batu bata",
       "bekal": "kotak bekal",
       "wafel": "wafel",
@@ -26,7 +24,9 @@
       "keju": "potongan keju",
       "tBulat": "Mana yang bulat seperti lingkaran?",
       "tKotak": "Mana yang berbentuk kotak?",
-      "tSegitiga": "Mana yang berbentuk segitiga?"
+      "tSegitiga": "Mana yang berbentuk segitiga?",
+      "kue": "kue kering",
+      "papan": "papan pengumuman"
     },
     "en": {
       "judul": "Shapes in the Park",
@@ -34,9 +34,7 @@
       "pilihan": "choices",
       "roda": "bike wheel",
       "frisbee": "flying disc",
-      "jeruk": "orange",
       "donat": "doughnut",
-      "dadu": "dice",
       "bata": "brick",
       "bekal": "lunch box",
       "wafel": "waffle",
@@ -46,7 +44,9 @@
       "keju": "cheese wedge",
       "tBulat": "Which one is round like a circle?",
       "tKotak": "Which one is shaped like a box?",
-      "tSegitiga": "Which one is a triangle?"
+      "tSegitiga": "Which one is a triangle?",
+      "kue": "cookie",
+      "papan": "notice board"
     }
   },
   "knobs": {
@@ -83,10 +83,10 @@
       "emoji": "🥏"
     },
     {
-      "id": "jeruk",
-      "labelKey": "jeruk",
+      "id": "kue",
+      "labelKey": "kue",
       "bin": "pilihan",
-      "emoji": "🍊"
+      "emoji": "🍪"
     },
     {
       "id": "donat",
@@ -95,10 +95,10 @@
       "emoji": "🍩"
     },
     {
-      "id": "dadu",
-      "labelKey": "dadu",
+      "id": "papan",
+      "labelKey": "papan",
       "bin": "pilihan",
-      "emoji": "🎲"
+      "emoji": "🪧"
     },
     {
       "id": "bata",
@@ -158,11 +158,11 @@
       "id": "r2",
       "promptKey": "tKotak",
       "choices": [
-        "dadu",
+        "papan",
         "frisbee",
         "onigiri"
       ],
-      "correct": "dadu"
+      "correct": "papan"
     },
     {
       "id": "r3",
@@ -189,7 +189,7 @@
       "promptKey": "tKotak",
       "choices": [
         "bata",
-        "jeruk",
+        "kue",
         "keju"
       ],
       "correct": "bata"
@@ -199,7 +199,7 @@
       "promptKey": "tSegitiga",
       "choices": [
         "bendera",
-        "jeruk",
+        "kue",
         "wafel"
       ],
       "correct": "bendera"
@@ -208,11 +208,11 @@
       "id": "r7",
       "promptKey": "tBulat",
       "choices": [
-        "jeruk",
+        "kue",
         "wafel",
         "rambu"
       ],
-      "correct": "jeruk"
+      "correct": "kue"
     },
     {
       "id": "r8",
@@ -230,7 +230,7 @@
       "choices": [
         "onigiri",
         "donat",
-        "dadu"
+        "papan"
       ],
       "correct": "onigiri"
     },
@@ -239,7 +239,7 @@
       "promptKey": "tBulat",
       "choices": [
         "donat",
-        "dadu",
+        "papan",
         "bendera"
       ],
       "correct": "donat"

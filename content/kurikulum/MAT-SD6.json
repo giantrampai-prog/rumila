@@ -416,7 +416,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Rak 1/2, 1/4, 3/4, 2/5, 1/20. Jebakan: 0,05 vs 0,5; 2/5 = 0,25. Knob: 3 → 5 rak."
+      "catatan": "Rak 1/2, 1/4, 3/4, 2/5, 1/20; paket pasar memakai penyebut 20 dan 25 (7/20, 3/25, 9/20, 3/20, 1/25) yang harus diubah dulu ke perseratus. Jebakan: 0,05 vs 0,5; 2/5 = 0,25; 0,04 vs 0,4. Knob: 3 → 5 rak."
     },
     {
       "id": "MAT.SD6.RASIO.01",

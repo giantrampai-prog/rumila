@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,14 +21,6 @@
       "siram": "siram badan",
       "sabun": "pakai sabun",
       "bilas": "bilas sampai bersih",
-      "t-sepatu": "Memakai sepatu",
-      "sepatu-kaus": "pakai kaus kaki",
-      "sepatu-sepatu": "pakai sepatu",
-      "sepatu-jalan": "berangkat",
-      "t-telur": "Sarapan telur",
-      "telur-pecah": "pecahkan telur",
-      "telur-goreng": "goreng telur",
-      "telur-makan": "makan telur",
       "t-bangun": "Bangun pagi",
       "bangun-kokok": "ayam berkokok",
       "bangun-bangun": "bangun tidur",
@@ -38,27 +30,36 @@
       "gigi-sikat": "sikat gigi",
       "gigi-kumur": "kumur-kumur",
       "gigi-bersih": "gigi bersih",
-      "t-bus": "Naik bus",
-      "bus-keluar": "keluar rumah",
-      "bus-halte": "tunggu di halte",
-      "bus-naik": "naik bus",
-      "bus-tiba": "sampai sekolah",
-      "t-roti": "Sarapan roti",
-      "roti-ambil": "ambil roti",
-      "roti-oles": "oles madu",
-      "roti-makan": "makan roti",
-      "t-teh": "Teh hangat",
-      "teh-rebus": "rebus air",
-      "teh-tuang": "tuang ke cangkir",
-      "teh-minum": "minum teh",
       "t-matahari": "Pagi datang",
       "matahari-bulan": "bulan di langit",
       "matahari-terbit": "matahari terbit",
-      "matahari-terang": "pagi terang"
+      "matahari-terang": "pagi terang",
+      "t-wudu": "Awal berwudu",
+      "wudu-1": "cuci kedua tangan",
+      "wudu-2": "berkumur",
+      "wudu-3": "bersihkan hidung",
+      "wudu-4": "basuh muka",
+      "t-siram": "Menyiram tanaman",
+      "siram-1": "isi gembor dengan air",
+      "siram-2": "bawa ke kebun",
+      "siram-3": "siram tanaman",
+      "siram-4": "tanaman segar",
+      "t-doa-makan": "Doa makan",
+      "doa-makan-1": "berdoa sebelum makan",
+      "doa-makan-2": "makan sarapan",
+      "doa-makan-3": "berdoa sesudah makan",
+      "t-ayam": "Memberi makan ayam",
+      "ayam-1": "ambil jagung",
+      "ayam-2": "tabur jagung",
+      "ayam-3": "ayam makan jagung",
+      "t-sisir": "Menyisir rambut",
+      "sisir-1": "berdiri di depan cermin",
+      "sisir-2": "sisir rambut",
+      "sisir-3": "rambut rapi"
     },
     "en": {
       "judul": "Mixed-Up Morning Order",
-      "instruksi": "Robot put one picture in the wrong place: swap two pictures to fix the order.",
+      "instruksi": "The robot put one picture in the wrong place: swap two pictures to fix the order.",
       "pagi": "The morning",
       "mandi": "The robot's bath",
       "bangun": "wake up",
@@ -69,14 +70,6 @@
       "siram": "pour water",
       "sabun": "soap up",
       "bilas": "rinse clean",
-      "t-sepatu": "Putting on shoes",
-      "sepatu-kaus": "put on socks",
-      "sepatu-sepatu": "put on shoes",
-      "sepatu-jalan": "head out",
-      "t-telur": "Eggs for breakfast",
-      "telur-pecah": "crack the egg",
-      "telur-goreng": "fry the egg",
-      "telur-makan": "eat the egg",
       "t-bangun": "Waking up",
       "bangun-kokok": "the rooster crows",
       "bangun-bangun": "wake up",
@@ -86,23 +79,32 @@
       "gigi-sikat": "brush teeth",
       "gigi-kumur": "rinse your mouth",
       "gigi-bersih": "clean teeth",
-      "t-bus": "Taking the bus",
-      "bus-keluar": "leave the house",
-      "bus-halte": "wait at the bus stop",
-      "bus-naik": "get on the bus",
-      "bus-tiba": "arrive at school",
-      "t-roti": "Bread for breakfast",
-      "roti-ambil": "take the bread",
-      "roti-oles": "spread honey",
-      "roti-makan": "eat the bread",
-      "t-teh": "Warm tea",
-      "teh-rebus": "boil water",
-      "teh-tuang": "pour into the cup",
-      "teh-minum": "drink the tea",
       "t-matahari": "Morning comes",
       "matahari-bulan": "the moon in the sky",
       "matahari-terbit": "the sun rises",
-      "matahari-terang": "bright morning"
+      "matahari-terang": "bright morning",
+      "t-wudu": "Starting wudu",
+      "wudu-1": "wash both hands",
+      "wudu-2": "rinse the mouth",
+      "wudu-3": "clean the nose",
+      "wudu-4": "wash the face",
+      "t-siram": "Watering the plants",
+      "siram-1": "fill the watering can",
+      "siram-2": "carry it to the garden",
+      "siram-3": "water the plants",
+      "siram-4": "the plants look fresh",
+      "t-doa-makan": "Mealtime prayers",
+      "doa-makan-1": "pray before eating",
+      "doa-makan-2": "eat breakfast",
+      "doa-makan-3": "pray after eating",
+      "t-ayam": "Feeding the chickens",
+      "ayam-1": "take some corn",
+      "ayam-2": "scatter the corn",
+      "ayam-3": "the chickens eat the corn",
+      "t-sisir": "Combing hair",
+      "sisir-1": "stand in front of the mirror",
+      "sisir-2": "comb your hair",
+      "sisir-3": "your hair is neat"
     }
   },
   "knobs": {
@@ -173,44 +175,49 @@
       ]
     },
     {
-      "id": "sepatu",
-      "titleKey": "t-sepatu",
+      "id": "wudu",
+      "titleKey": "t-wudu",
       "steps": [
         {
-          "id": "kaus",
-          "labelKey": "sepatu-kaus",
-          "emoji": "🧦"
+          "id": "wudu-1",
+          "labelKey": "wudu-1",
+          "emoji": "👐"
         },
         {
-          "id": "sepatu",
-          "labelKey": "sepatu-sepatu",
-          "emoji": "👟"
+          "id": "wudu-2",
+          "labelKey": "wudu-2",
+          "emoji": "💦"
         },
         {
-          "id": "jalan",
-          "labelKey": "sepatu-jalan",
-          "emoji": "🚶"
+          "id": "wudu-3",
+          "labelKey": "wudu-3",
+          "emoji": "👃"
+        },
+        {
+          "id": "wudu-4",
+          "labelKey": "wudu-4",
+          "emoji": "😊"
         }
       ]
     },
     {
-      "id": "telur",
-      "titleKey": "t-telur",
+      "id": "sisir",
+      "titleKey": "t-sisir",
       "steps": [
         {
-          "id": "pecah",
-          "labelKey": "telur-pecah",
-          "emoji": "🥚"
+          "id": "sisir-1",
+          "labelKey": "sisir-1",
+          "emoji": "🪞"
         },
         {
-          "id": "goreng",
-          "labelKey": "telur-goreng",
-          "emoji": "🍳"
+          "id": "sisir-2",
+          "labelKey": "sisir-2",
+          "emoji": "🪮"
         },
         {
-          "id": "makan",
-          "labelKey": "telur-makan",
-          "emoji": "😋"
+          "id": "sisir-3",
+          "labelKey": "sisir-3",
+          "emoji": "😊"
         }
       ]
     },
@@ -262,70 +269,70 @@
       ]
     },
     {
-      "id": "bus",
-      "titleKey": "t-bus",
+      "id": "siram",
+      "titleKey": "t-siram",
       "steps": [
         {
-          "id": "keluar",
-          "labelKey": "bus-keluar",
-          "emoji": "🏠"
+          "id": "siram-1",
+          "labelKey": "siram-1",
+          "emoji": "🚰"
         },
         {
-          "id": "halte",
-          "labelKey": "bus-halte",
-          "emoji": "🚏"
+          "id": "siram-2",
+          "labelKey": "siram-2",
+          "emoji": "🚶"
         },
         {
-          "id": "naik",
-          "labelKey": "bus-naik",
-          "emoji": "🚌"
+          "id": "siram-3",
+          "labelKey": "siram-3",
+          "emoji": "🌱"
         },
         {
-          "id": "tiba",
-          "labelKey": "bus-tiba",
-          "emoji": "🏫"
+          "id": "siram-4",
+          "labelKey": "siram-4",
+          "emoji": "🌼"
         }
       ]
     },
     {
-      "id": "roti",
-      "titleKey": "t-roti",
+      "id": "doa-makan",
+      "titleKey": "t-doa-makan",
       "steps": [
         {
-          "id": "ambil",
-          "labelKey": "roti-ambil",
-          "emoji": "🍞"
+          "id": "doa-makan-1",
+          "labelKey": "doa-makan-1",
+          "emoji": "🙏"
         },
         {
-          "id": "oles",
-          "labelKey": "roti-oles",
-          "emoji": "🍯"
+          "id": "doa-makan-2",
+          "labelKey": "doa-makan-2",
+          "emoji": "🍚"
         },
         {
-          "id": "makan",
-          "labelKey": "roti-makan",
-          "emoji": "😋"
+          "id": "doa-makan-3",
+          "labelKey": "doa-makan-3",
+          "emoji": "🤲"
         }
       ]
     },
     {
-      "id": "teh",
-      "titleKey": "t-teh",
+      "id": "ayam",
+      "titleKey": "t-ayam",
       "steps": [
         {
-          "id": "rebus",
-          "labelKey": "teh-rebus",
-          "emoji": "♨️"
+          "id": "ayam-1",
+          "labelKey": "ayam-1",
+          "emoji": "🌽"
         },
         {
-          "id": "tuang",
-          "labelKey": "teh-tuang",
-          "emoji": "🫖"
+          "id": "ayam-2",
+          "labelKey": "ayam-2",
+          "emoji": "🫳"
         },
         {
-          "id": "minum",
-          "labelKey": "teh-minum",
-          "emoji": "🍵"
+          "id": "ayam-3",
+          "labelKey": "ayam-3",
+          "emoji": "🐔"
         }
       ]
     },

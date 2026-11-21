@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-tabel-dua-lima-kecil",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tabel 2 dan 5",
-      "instruksi": "Hitung loncat kalau perlu. Taruh tiap kartu perkalian di rak hasilnya.",
+      "instruksi": "Hitung loncat dua-dua atau lima-lima kalau perlu. Taruh tiap kartu perkalian di rak hasilnya.",
       "b-4": "4",
       "b-6": "6",
       "b-8": "8",
@@ -45,7 +45,7 @@
     },
     "en": {
       "judul": "2 and 5 Times Tables",
-      "instruksi": "Skip count if you need to. Put each multiplication card on its answer shelf.",
+      "instruksi": "Skip count in twos or fives if you need to. Put each multiplication card on its answer shelf.",
       "b-4": "4",
       "b-6": "6",
       "b-8": "8",

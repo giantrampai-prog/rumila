@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-produsen-konsumen-sawah-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Produsen atau Konsumen di Sawah dan Laut",
-      "instruksi": "Membuat makanan sendiri atau makan makhluk lain? Taruh ke raknya.",
+      "instruksi": "Di sawah dan di laut, siapa membuat makanan sendiri dan siapa makan makhluk lain? Taruh ke raknya.",
       "b-produsen": "produsen (membuat makanan sendiri)",
       "b-konsumen": "konsumen (makan makhluk lain)",
       "i-padi": "padi",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Producer or Consumer in Rice Field and Sea",
-      "instruksi": "Makes its own food or eats other living things? Put it on its shelf.",
+      "instruksi": "In the rice field and the sea, who makes its own food and who eats other living things? Put each on its shelf.",
       "b-produsen": "producer (makes its own food)",
       "b-konsumen": "consumer (eats other living things)",
       "i-padi": "rice plant",

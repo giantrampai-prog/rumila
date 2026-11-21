@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-tabel-enam-delapan-sembilan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tabel 6, 8, dan 9",
-      "instruksi": "Ingat: 6 × 4 sama dengan 4 × 6. Taruh tiap kartu perkalian di rak hasilnya.",
+      "instruksi": "Kartu ini memakai tabel 6, 8, dan 9. Ingat: 6 × 9 sama dengan 9 × 6, dan 8 × 8 tidak punya pasangan tukar. Taruh tiap kartu di rak hasilnya.",
       "b-24": "24",
       "b-36": "36",
       "b-42": "42",
@@ -45,7 +45,7 @@
     },
     "en": {
       "judul": "6, 8 and 9 Times Tables",
-      "instruksi": "Remember: 6 × 4 is the same as 4 × 6. Put each multiplication card on its answer shelf.",
+      "instruksi": "These cards use the 6, 8 and 9 times tables. Remember: 6 × 9 is the same as 9 × 6, and 8 × 8 has no swapped partner. Put each card on its answer shelf.",
       "b-24": "24",
       "b-36": "36",
       "b-42": "42",

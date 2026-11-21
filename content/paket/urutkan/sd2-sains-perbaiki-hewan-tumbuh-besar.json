@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -146,13 +146,13 @@
           "id": "kecil",
           "labelKey": "kucing-kecil",
           "emoji": "🐱",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "kucing-muda",
           "emoji": "🐈",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -176,13 +176,13 @@
           "id": "kecil",
           "labelKey": "ayam-kecil",
           "emoji": "🐤",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "ayam-muda",
           "emoji": "🐔",
-          "scale": 1.0
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -206,13 +206,13 @@
           "id": "kecil",
           "labelKey": "kambing-kecil",
           "emoji": "🐐",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "kambing-muda",
           "emoji": "🐐",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -229,20 +229,20 @@
         {
           "id": "bayi",
           "labelKey": "bebek-bayi",
-          "emoji": "🐤",
+          "emoji": "🦆",
           "scale": 0.6
         },
         {
           "id": "kecil",
           "labelKey": "bebek-kecil",
           "emoji": "🦆",
-          "scale": 0.8
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "bebek-muda",
           "emoji": "🦆",
-          "scale": 1.0
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -266,13 +266,13 @@
           "id": "kecil",
           "labelKey": "anjing-kecil",
           "emoji": "🐶",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "anjing-muda",
           "emoji": "🐕",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -296,13 +296,13 @@
           "id": "kecil",
           "labelKey": "sapi-kecil",
           "emoji": "🐮",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "muda",
           "labelKey": "sapi-muda",
           "emoji": "🐄",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "dewasa",
@@ -326,13 +326,13 @@
           "id": "kuda-2",
           "labelKey": "kuda-2",
           "emoji": "🐴",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "kuda-3",
           "labelKey": "kuda-3",
           "emoji": "🐎",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "kuda-4",
@@ -356,13 +356,13 @@
           "id": "kelinci-2",
           "labelKey": "kelinci-2",
           "emoji": "🐰",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "kelinci-3",
           "labelKey": "kelinci-3",
           "emoji": "🐇",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "kelinci-4",
@@ -386,13 +386,13 @@
           "id": "domba-2",
           "labelKey": "domba-2",
           "emoji": "🐑",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "domba-3",
           "labelKey": "domba-3",
           "emoji": "🐑",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "domba-4",
@@ -416,13 +416,13 @@
           "id": "gajah-2",
           "labelKey": "gajah-2",
           "emoji": "🐘",
-          "scale": 0.85
+          "scale": 0.95
         },
         {
           "id": "gajah-3",
           "labelKey": "gajah-3",
           "emoji": "🐘",
-          "scale": 1.05
+          "scale": 0.95
         },
         {
           "id": "gajah-4",

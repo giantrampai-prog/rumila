@@ -84,7 +84,7 @@
       },
       "statement": {
         "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya robot sampai di bintang",
-        "en": "I can build 2 to 4 forward commands and then run them so robot reaches the star"
+        "en": "I can build 2 to 4 forward commands and then run them so the robot reaches the star"
       },
       "depth": [
         "pakai"
@@ -118,7 +118,7 @@
       },
       "statement": {
         "id": "Aku bisa memakai perintah belok kiri atau kanan supaya robot menghadap ke bintang",
-        "en": "I can use the turn left or turn right command so robot faces the star"
+        "en": "I can use the turn left or turn right command so the robot faces the star"
       },
       "depth": [
         "pakai"

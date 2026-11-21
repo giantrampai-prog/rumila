@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-kelompok-hewan-penipu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-burungunta": "burung unta",
       "i-ayamkecil": "anak ayam",
       "i-hiu": "hiu",
-      "i-kudalaut": "kuda laut",
+      "i-belut": "belut sawah",
       "i-penyu": "penyu",
       "i-komodo": "komodo",
       "i-katakpohon": "katak pohon",
@@ -48,7 +48,7 @@
       "i-burungunta": "ostrich",
       "i-ayamkecil": "chick",
       "i-hiu": "shark",
-      "i-kudalaut": "seahorse",
+      "i-belut": "swamp eel",
       "i-penyu": "sea turtle",
       "i-komodo": "Komodo dragon",
       "i-katakpohon": "tree frog",
@@ -161,11 +161,11 @@
       "emoji": "🦈"
     },
     {
-      "id": "kudalaut",
-      "labelKey": "i-kudalaut",
+      "id": "belut",
+      "labelKey": "i-belut",
       "bin": "ikan",
-      "emoji": "🐠",
-      "color": "#ffd54f"
+      "emoji": "🐍",
+      "color": "#6d4c41"
     },
     {
       "id": "penyu",

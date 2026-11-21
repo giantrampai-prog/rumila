@@ -1,6 +1,6 @@
 {
   "id": "mesin-tukar-koin",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -25,14 +25,14 @@
     "harga": {
       "min": 5,
       "max": 12,
-      "default": 12,
+      "default": 7,
       "step": 1,
-      "keterangan": "total uang yang ditukar (ribuan): sampai Rp12.000, 1–4 lembar; turun ke Rp5.000 bila anak kesulitan"
+      "keterangan": "total uang yang ditukar (ribuan): mulai Rp7.000 (paling banyak 3 lembar: dua ribu dan lima ribu), naik sampai Rp12.000 (4 lembar), turun ke Rp5.000 (satu lembar) bila anak kesulitan"
     }
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 5,
   "world": "pasar",
   "currency": "IDR",
   "denominations": [
@@ -48,15 +48,17 @@
       "id": "lembar-2000",
       "labelKey": "duaribu",
       "price": 2000,
-      "emoji": "💵",
-      "color": "#9e9e9e"
+      "color": "#8fa3b0",
+      "shape": "uang",
+      "angka": "2.000"
     },
     {
       "id": "lembar-5000",
       "labelKey": "limaribu",
       "price": 5000,
-      "emoji": "💵",
-      "color": "#6d4c41"
+      "color": "#a1887f",
+      "shape": "uang",
+      "angka": "5.000"
     }
   ],
   "customerRule": {

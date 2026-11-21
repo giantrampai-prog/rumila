@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tiga-tugas-perangkat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Tiga Tugas Perangkat",
-      "instruksi": "Perangkat ini untuk memasukkan data, menyimpan data, atau menampilkan data? Taruh di kotaknya.",
+      "instruksi": "Perangkat ini untuk memasukkan data, menyimpan data, atau mengeluarkan data? Taruh di kotaknya.",
       "bin-masuk": "memasukkan",
-      "bin-keluar": "menampilkan",
+      "bin-keluar": "mengeluarkan",
       "bin-simpan": "menyimpan",
       "i-trackball": "trackball",
       "i-mik-podcast": "mikrofon podcast",
@@ -20,20 +20,20 @@
       "i-keypad": "papan tombol angka",
       "i-pena": "pena digital",
       "i-dvd": "kepingan DVD",
-      "i-kaset": "kaset video",
-      "i-disket": "disket",
       "i-hdd": "hard disk eksternal",
       "i-tv": "layar televisi",
       "i-struk": "printer struk",
       "i-speaker-laptop": "speaker laptop",
       "i-layar-laptop": "layar laptop",
-      "i-toa": "pengeras suara"
+      "i-toa": "pengeras suara",
+      "i-ssd": "SSD eksternal",
+      "i-kartu-kamera": "kartu memori kamera"
     },
     "en": {
       "judul": "Three Device Jobs",
-      "instruksi": "Is this device for putting data in, storing data or showing data? Put it in its box.",
+      "instruksi": "Is this device for putting data in, storing data or giving data out? Put it in its box.",
       "bin-masuk": "puts data in",
-      "bin-keluar": "shows data",
+      "bin-keluar": "giving out",
       "bin-simpan": "stores data",
       "i-trackball": "trackball",
       "i-mik-podcast": "podcast microphone",
@@ -41,14 +41,14 @@
       "i-keypad": "number keypad",
       "i-pena": "digital pen",
       "i-dvd": "DVD disc",
-      "i-kaset": "video cassette",
-      "i-disket": "floppy disk",
       "i-hdd": "external hard drive",
       "i-tv": "TV screen",
       "i-struk": "receipt printer",
       "i-speaker-laptop": "laptop speaker",
       "i-layar-laptop": "laptop screen",
-      "i-toa": "loudspeaker"
+      "i-toa": "loudspeaker",
+      "i-ssd": "external SSD",
+      "i-kartu-kamera": "camera memory card"
     }
   },
   "knobs": {
@@ -57,7 +57,7 @@
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = ulang memasukkan/menampilkan (SD 2), 3 = tambah kotak menyimpan"
+      "keterangan": "2 = ulang memasukkan/mengeluarkan (SD 2), 3 = tambah kotak menyimpan"
     },
     "itemCount": {
       "min": 6,
@@ -128,16 +128,18 @@
       "emoji": "📀"
     },
     {
-      "id": "kaset",
-      "labelKey": "i-kaset",
+      "id": "ssd",
+      "labelKey": "i-ssd",
       "bin": "simpan",
-      "emoji": "📼"
+      "shape": "rect",
+      "color": "#475569"
     },
     {
-      "id": "disket",
-      "labelKey": "i-disket",
+      "id": "kartu-kamera",
+      "labelKey": "i-kartu-kamera",
       "bin": "simpan",
-      "emoji": "💾"
+      "shape": "square",
+      "color": "#f59e0b"
     },
     {
       "id": "hdd",

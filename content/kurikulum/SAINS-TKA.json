@@ -140,7 +140,7 @@
       "mechanics": [
         "urutkan"
       ],
-      "catatan": "Jembatan ke siklus hidup: bagian tumbuhan muncul bertahap. Gambar harus punya petunjuk visual progresif (tinggi bertambah, daun bertambah). Umpan balik: setelah disusun, tanaman tumbuh dalam animasi cepat; urutan salah membuat tanaman mengecil lagi. Jebakan: tunas vs berdaun mirip — bedakan jumlah daun 2 vs banyak. Pengaya. Knob: 3 → 4 gambar."
+      "catatan": "Jembatan ke siklus hidup: bagian tumbuhan muncul bertahap. Gambar harus punya petunjuk visual progresif (tinggi bertambah, daun bertambah). Umpan balik: setelah disusun, tanaman tumbuh dalam animasi cepat; urutan salah membuat tanaman mengecil lagi. Jebakan: tunas vs berdaun mirip — bedakan jumlah daun 2 vs banyak. Pengaya. Knob: 3 → 4 gambar. [QC 21 Nov 2026: paket urutkan memakai 4 gambar tetap sampai mesin punya opsi potong tengah, karena knob steps 3 membuang tahap berbunga.]"
     },
     {
       "id": "SAINS.TKA.SIKLUS-HIDUP.01",
@@ -175,7 +175,7 @@
       "mechanics": [
         "urutkan"
       ],
-      "catatan": "Siklus paling sederhana (3 tahap, bentuk berubah sedikit). Urutkan mode siklus: setelah ayam dewasa, panah kembali ke telur supaya anak melihat lingkaran. Umpan balik: animasi menetas. Jebakan: anak ayam dan ayam dewasa tertukar bila ukurannya sama — jaga perbedaan ukuran dan warna kuning vs cokelat. Knob: 3 tahap → 4 (tambah telur retak)."
+      "catatan": "Siklus paling sederhana (3 tahap, bentuk berubah sedikit). Urutkan mode siklus: setelah ayam dewasa, panah kembali ke telur supaya anak melihat lingkaran. Umpan balik: animasi menetas. Jebakan: anak ayam dan ayam dewasa tertukar bila ukurannya sama — jaga perbedaan ukuran dan warna kuning vs cokelat. Knob: 3 tahap → 4 (tambah telur retak). [QC 21 Nov 2026: paket urutkan memakai 3 tahap saja sampai mesin punya opsi potong tengah, karena knob steps memotong dari ujung dan membuang tahap dewasa.]"
     },
     {
       "id": "SAINS.TKA.SIKLUS-HIDUP.02",
@@ -496,7 +496,7 @@
         "simulasi",
         "pilah"
       ],
-      "catatan": "Simulasi bak air: anak menjatuhkan benda satu per satu, melihat hasilnya, lalu menaruhnya di rak terapung/tenggelam. Bukti: rak sesuai hasil percobaan yang baru dilihat anak. Benda: bola plastik, daun, gabus, kayu (apung); batu, sendok logam, koin, kelereng (tenggelam). Jebakan: benda besar dianggap pasti tenggelam — sertakan kayu besar yang terapung. Knob: 4 → 8 benda."
+      "catatan": "Simulasi bak air: anak menjatuhkan benda satu per satu, melihat hasilnya, lalu menaruhnya di rak terapung/tenggelam. Bukti: rak sesuai hasil percobaan yang baru dilihat anak. Benda: bola plastik, daun, gabus, kayu (apung); batu, sendok logam, koin, kelereng (tenggelam). Jebakan: benda besar dianggap pasti tenggelam — sertakan kayu besar yang terapung. Knob: 4 → 8 benda. [QC 21 Nov 2026: sebelum simulasi bak air ada, paket pilah .01 membacakan hasil percobaan pada tiap benda ('yang tadi terapung'), jadi .01 melatih mencatat hasil, sedangkan .02 menebak tanpa hasil.]"
     },
     {
       "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02",

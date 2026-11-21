@@ -1,6 +1,6 @@
 {
   "id": "sains-lapak-panen-bagian-tumbuhan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,7 +80,7 @@
     {
       "id": "akar",
       "labelKey": "b-akar",
-      "emoji": "🫚"
+      "shape": "akar"
     }
   ],
   "items": [

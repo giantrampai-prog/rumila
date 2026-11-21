@@ -1,6 +1,6 @@
 {
   "id": "jengkal-tali-halaman",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -13,38 +13,34 @@
       "instruksi": "Taruh jengkalmu satu per satu tanpa celah dan tanpa tumpang tindih, lalu sebutkan jumlahnya.",
       "tali": "tali",
       "bambu": "bambu",
-      "ular": "ular",
-      "selang": "benang",
-      "kayu": "kayu",
+      "kayu": "kayu bakar",
       "sapu": "sapu",
-      "tangga": "tangga",
+      "tangga": "tangga lipat",
       "bunga-matahari": "bunga matahari",
       "layangan": "layang-layang",
       "kadal": "kadal",
       "raket": "raket",
       "payung": "payung",
       "cacing": "cacing",
-      "ulat": "ulat",
-      "daun": "daun"
+      "daun": "daun",
+      "ember": "ember"
     },
     "en": {
       "judul": "Spans in the Yard",
       "instruksi": "Place your spans one by one with no gaps and no overlaps, then say how many there are.",
       "tali": "rope",
       "bambu": "bamboo",
-      "ular": "snake",
-      "selang": "thread",
-      "kayu": "log",
+      "kayu": "firewood log",
       "sapu": "broom",
-      "tangga": "ladder",
+      "tangga": "step ladder",
       "bunga-matahari": "sunflower",
       "layangan": "kite",
       "kadal": "lizard",
       "raket": "racket",
       "payung": "umbrella",
       "cacing": "worm",
-      "ulat": "caterpillar",
-      "daun": "leaf"
+      "daun": "leaf",
+      "ember": "bucket"
     }
   },
   "knobs": {
@@ -82,7 +78,7 @@
       "role": "benda",
       "emoji": "🪢",
       "value": 10,
-      "width": 4
+      "width": 4.0
     },
     {
       "labelKey": "bambu",
@@ -93,36 +89,20 @@
       "width": 3.2
     },
     {
-      "labelKey": "ular",
-      "id": "ular",
+      "labelKey": "sapu",
+      "id": "sapu",
       "role": "benda",
-      "emoji": "🐍",
+      "emoji": "🧹",
       "value": 7,
       "width": 2.8
-    },
-    {
-      "labelKey": "selang",
-      "id": "selang",
-      "role": "benda",
-      "emoji": "🧵",
-      "value": 6,
-      "width": 2.4
     },
     {
       "labelKey": "kayu",
       "id": "kayu",
       "role": "benda",
       "emoji": "🪵",
-      "value": 5,
-      "width": 2
-    },
-    {
-      "labelKey": "sapu",
-      "id": "sapu",
-      "role": "benda",
-      "emoji": "🧹",
-      "value": 4,
-      "width": 1.6
+      "value": 6,
+      "width": 2.4
     },
     {
       "labelKey": "tangga",
@@ -138,7 +118,23 @@
       "role": "benda",
       "emoji": "🌻",
       "value": 5,
-      "width": 2
+      "width": 2.0
+    },
+    {
+      "labelKey": "raket",
+      "id": "raket",
+      "role": "benda",
+      "emoji": "🏸",
+      "value": 5,
+      "width": 2.0
+    },
+    {
+      "labelKey": "payung",
+      "id": "payung",
+      "role": "benda",
+      "emoji": "☂️",
+      "value": 5,
+      "width": 2.0
     },
     {
       "labelKey": "layangan",
@@ -149,52 +145,36 @@
       "width": 1.6
     },
     {
+      "labelKey": "ember",
+      "id": "ember",
+      "role": "benda",
+      "emoji": "🪣",
+      "value": 2,
+      "width": 0.8
+    },
+    {
       "labelKey": "kadal",
       "id": "kadal",
       "role": "benda",
       "emoji": "🦎",
-      "value": 3,
-      "width": 1.2
-    },
-    {
-      "labelKey": "raket",
-      "id": "raket",
-      "role": "benda",
-      "emoji": "🏸",
-      "value": 3,
-      "width": 1.2
-    },
-    {
-      "labelKey": "payung",
-      "id": "payung",
-      "role": "benda",
-      "emoji": "☂️",
-      "value": 3,
-      "width": 1.2
+      "value": 2,
+      "width": 0.8
     },
     {
       "labelKey": "cacing",
       "id": "cacing",
       "role": "benda",
       "emoji": "🪱",
-      "value": 2,
-      "width": 0.8
-    },
-    {
-      "labelKey": "ulat",
-      "id": "ulat",
-      "role": "benda",
-      "emoji": "🐛",
-      "value": 2,
-      "width": 0.8
+      "value": 1,
+      "width": 0.4
     },
     {
       "labelKey": "daun",
       "id": "daun",
       "role": "benda",
       "emoji": "🍃",
-      "value": 2,
-      "width": 0.8
+      "value": 1,
+      "width": 0.4
     }
   ]
 }

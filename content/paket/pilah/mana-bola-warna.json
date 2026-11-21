@@ -1,6 +1,6 @@
 {
   "id": "mana-bola-warna",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,13 +16,7 @@
       "tBiru": "Mana yang biru?",
       "tKuning": "Mana yang kuning?",
       "tHijau": "Mana yang hijau?",
-      "bola": "bola",
-      "tOranye": "Mana yang oranye?",
-      "tUngu": "Mana yang ungu?",
-      "tMerahMuda": "Mana yang merah muda?",
-      "tCokelat": "Mana yang cokelat?",
-      "tHitam": "Mana yang hitam?",
-      "tAbu": "Mana yang abu-abu?"
+      "bola": "bola"
     },
     "en": {
       "judul": "Which Colour Ball?",
@@ -32,13 +26,7 @@
       "tBiru": "Which one is blue?",
       "tKuning": "Which one is yellow?",
       "tHijau": "Which one is green?",
-      "bola": "ball",
-      "tOranye": "Which one is orange?",
-      "tUngu": "Which one is purple?",
-      "tMerahMuda": "Which one is pink?",
-      "tCokelat": "Which one is brown?",
-      "tHitam": "Which one is black?",
-      "tAbu": "Which one is grey?"
+      "bola": "ball"
     }
   },
   "knobs": {
@@ -47,7 +35,7 @@
       "max": 4,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah bola yang ditampilkan per pertanyaan; 4 benda sejenis beda warna"
+      "keterangan": "jumlah bola yang ditampilkan per pertanyaan; hanya empat warna (merah, biru, kuning, hijau) dengan ukuran berbeda supaya anak memilih warna, bukan ukuran"
     }
   },
   "assets": [],
@@ -70,11 +58,43 @@
       "color": "#e53935"
     },
     {
+      "id": "bola-merah-kecil",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#e53935",
+      "scale": 0.7
+    },
+    {
+      "id": "bola-merah-besar",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#e53935",
+      "scale": 1.3
+    },
+    {
       "id": "bola-biru",
       "labelKey": "bola",
       "bin": "pilihan",
       "shape": "circle",
       "color": "#1e88e5"
+    },
+    {
+      "id": "bola-biru-kecil",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "scale": 0.7
+    },
+    {
+      "id": "bola-biru-besar",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "scale": 1.3
     },
     {
       "id": "bola-kuning",
@@ -84,6 +104,22 @@
       "color": "#fdd835"
     },
     {
+      "id": "bola-kuning-kecil",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#fdd835",
+      "scale": 0.7
+    },
+    {
+      "id": "bola-kuning-besar",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#fdd835",
+      "scale": 1.3
+    },
+    {
       "id": "bola-hijau",
       "labelKey": "bola",
       "bin": "pilihan",
@@ -91,88 +127,62 @@
       "color": "#43a047"
     },
     {
-      "bin": "pilihan",
-      "id": "bola-oranye",
+      "id": "bola-hijau-kecil",
       "labelKey": "bola",
+      "bin": "pilihan",
       "shape": "circle",
-      "color": "#fb8c00"
+      "color": "#43a047",
+      "scale": 0.7
     },
     {
-      "bin": "pilihan",
-      "id": "bola-ungu",
+      "id": "bola-hijau-besar",
       "labelKey": "bola",
-      "shape": "circle",
-      "color": "#8e24aa"
-    },
-    {
       "bin": "pilihan",
-      "id": "bola-merahmuda",
-      "labelKey": "bola",
       "shape": "circle",
-      "color": "#f48fb1"
-    },
-    {
-      "bin": "pilihan",
-      "id": "bola-cokelat",
-      "labelKey": "bola",
-      "shape": "circle",
-      "color": "#6d4c41"
-    },
-    {
-      "bin": "pilihan",
-      "id": "bola-hitam",
-      "labelKey": "bola",
-      "shape": "circle",
-      "color": "#212121"
-    },
-    {
-      "bin": "pilihan",
-      "id": "bola-abuabu",
-      "labelKey": "bola",
-      "shape": "circle",
-      "color": "#9e9e9e"
+      "color": "#43a047",
+      "scale": 1.3
     }
   ],
   "pilihan": [
     {
-      "id": "merah",
+      "id": "r1",
       "promptKey": "tMerah",
       "choices": [
-        "bola-merah",
-        "bola-biru",
+        "bola-biru-besar",
         "bola-kuning",
-        "bola-hijau"
+        "bola-hijau-kecil",
+        "bola-merah"
       ],
       "correct": "bola-merah"
     },
     {
-      "id": "biru",
+      "id": "r2",
       "promptKey": "tBiru",
       "choices": [
-        "bola-merah",
-        "bola-biru",
         "bola-kuning",
-        "bola-hijau"
+        "bola-hijau-kecil",
+        "bola-merah-kecil",
+        "bola-biru"
       ],
       "correct": "bola-biru"
     },
     {
-      "id": "kuning",
+      "id": "r3",
       "promptKey": "tKuning",
       "choices": [
-        "bola-merah",
-        "bola-biru",
-        "bola-kuning",
-        "bola-hijau"
+        "bola-hijau-kecil",
+        "bola-merah-kecil",
+        "bola-biru-besar",
+        "bola-kuning"
       ],
       "correct": "bola-kuning"
     },
     {
-      "id": "hijau",
+      "id": "r4",
       "promptKey": "tHijau",
       "choices": [
-        "bola-merah",
-        "bola-biru",
+        "bola-merah-kecil",
+        "bola-biru-besar",
         "bola-kuning",
         "bola-hijau"
       ],
@@ -180,69 +190,91 @@
     },
     {
       "id": "r5",
-      "promptKey": "tOranye",
+      "promptKey": "tMerah",
       "choices": [
-        "bola-oranye",
         "bola-biru",
-        "bola-hijau",
-        "bola-ungu"
+        "bola-kuning-kecil",
+        "bola-hijau-besar",
+        "bola-merah-kecil"
       ],
-      "correct": "bola-oranye"
+      "correct": "bola-merah-kecil"
     },
     {
       "id": "r6",
-      "promptKey": "tUngu",
+      "promptKey": "tBiru",
       "choices": [
-        "bola-kuning",
-        "bola-oranye",
-        "bola-hijau",
-        "bola-ungu"
+        "bola-kuning-kecil",
+        "bola-hijau-besar",
+        "bola-merah-besar",
+        "bola-biru-kecil"
       ],
-      "correct": "bola-ungu"
+      "correct": "bola-biru-kecil"
     },
     {
       "id": "r7",
-      "promptKey": "tMerahMuda",
+      "promptKey": "tKuning",
       "choices": [
-        "bola-hijau",
-        "bola-cokelat",
-        "bola-merahmuda",
-        "bola-biru"
+        "bola-hijau-besar",
+        "bola-merah-besar",
+        "bola-biru",
+        "bola-kuning-kecil"
       ],
-      "correct": "bola-merahmuda"
+      "correct": "bola-kuning-kecil"
     },
     {
       "id": "r8",
-      "promptKey": "tCokelat",
+      "promptKey": "tHijau",
       "choices": [
-        "bola-merahmuda",
-        "bola-cokelat",
-        "bola-kuning",
-        "bola-biru"
+        "bola-merah-besar",
+        "bola-biru",
+        "bola-kuning-kecil",
+        "bola-hijau-kecil"
       ],
-      "correct": "bola-cokelat"
+      "correct": "bola-hijau-kecil"
     },
     {
       "id": "r9",
-      "promptKey": "tHitam",
+      "promptKey": "tMerah",
       "choices": [
-        "bola-hitam",
-        "bola-kuning",
-        "bola-merah",
-        "bola-hijau"
+        "bola-biru-kecil",
+        "bola-kuning-besar",
+        "bola-hijau",
+        "bola-merah-besar"
       ],
-      "correct": "bola-hitam"
+      "correct": "bola-merah-besar"
     },
     {
       "id": "r10",
-      "promptKey": "tAbu",
+      "promptKey": "tBiru",
+      "choices": [
+        "bola-kuning-besar",
+        "bola-hijau",
+        "bola-merah",
+        "bola-biru-besar"
+      ],
+      "correct": "bola-biru-besar"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tKuning",
+      "choices": [
+        "bola-hijau",
+        "bola-merah",
+        "bola-biru-kecil",
+        "bola-kuning-besar"
+      ],
+      "correct": "bola-kuning-besar"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tHijau",
       "choices": [
         "bola-merah",
-        "bola-kuning",
-        "bola-ungu",
-        "bola-abuabu"
+        "bola-biru-kecil",
+        "bola-kuning-besar",
+        "bola-hijau-besar"
       ],
-      "correct": "bola-abuabu"
+      "correct": "bola-hijau-besar"
     }
   ]
 }

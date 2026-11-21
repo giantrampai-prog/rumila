@@ -1,6 +1,6 @@
 {
   "id": "alat-kelas-macet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -21,8 +21,8 @@
       "kamera": "kamera",
       "piano": "piano listrik",
       "tablet": "tablet",
-      "papan-ketik": "papan ketik",
-      "tetikus": "tetikus"
+      "papan-ketik": "keyboard",
+      "tetikus": "mouse"
     },
     "en": {
       "judul": "The Classroom Gadget Won't Start",

@@ -1,6 +1,6 @@
 {
   "id": "sains-alat-gerak-hewan-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,14 +18,14 @@
       "i-paus": "paus",
       "i-ikanmas": "ikan",
       "i-anjinglaut": "anjing laut",
-      "i-elang": "elang",
-      "i-beo": "burung beo",
       "i-lalat": "lalat",
-      "i-burunghantu": "burung hantu",
       "i-kepiting": "kepiting",
       "i-monyet": "monyet",
       "i-kadal": "kadal",
-      "i-kuda": "kuda"
+      "i-kuda": "kuda",
+      "i-kupu": "kupu-kupu",
+      "i-lebah": "lebah",
+      "i-kelelawar": "kelelawar"
     },
     "en": {
       "judul": "What Do They Move With?",
@@ -37,14 +37,14 @@
       "i-paus": "whale",
       "i-ikanmas": "fish",
       "i-anjinglaut": "seal",
-      "i-elang": "eagle",
-      "i-beo": "parrot",
       "i-lalat": "fly",
-      "i-burunghantu": "owl",
       "i-kepiting": "crab",
       "i-monyet": "monkey",
       "i-kadal": "lizard",
-      "i-kuda": "horse"
+      "i-kuda": "horse",
+      "i-kupu": "butterfly",
+      "i-lebah": "bee",
+      "i-kelelawar": "bat"
     }
   },
   "knobs": {
@@ -112,28 +112,10 @@
       "emoji": "🦭"
     },
     {
-      "id": "elang",
-      "labelKey": "i-elang",
-      "bin": "sayap",
-      "emoji": "🦅"
-    },
-    {
-      "id": "beo",
-      "labelKey": "i-beo",
-      "bin": "sayap",
-      "emoji": "🦜"
-    },
-    {
       "id": "lalat",
       "labelKey": "i-lalat",
       "bin": "sayap",
       "emoji": "🪰"
-    },
-    {
-      "id": "burunghantu",
-      "labelKey": "i-burunghantu",
-      "bin": "sayap",
-      "emoji": "🦉"
     },
     {
       "id": "kepiting",
@@ -158,6 +140,24 @@
       "labelKey": "i-kuda",
       "bin": "kaki",
       "emoji": "🐎"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "sayap",
+      "emoji": "🦋"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "sayap",
+      "emoji": "🐝"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "sayap",
+      "emoji": "🦇"
     }
   ],
   "pilihan": []

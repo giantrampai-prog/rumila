@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-kalau-di-dalam-ulangi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "If Inside Repeat",
-      "instruksi": "The rack holds only two blocks: put the if block inside a repeat so robot passes all three paths."
+      "instruksi": "The rack holds only two blocks: put the if block inside a repeat so the robot passes all three paths."
     }
   },
   "knobs": {

@@ -20,8 +20,8 @@ const SOROT = "#ffd23f";
 const UNGU = "#0786eb";
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk (mis. kartu angka). */
-function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; shape?: VisualSpec["shape"]; width?: number; labelKey: string }, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, label: t(x.labelKey) };
+function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; labelKey: string }, t: (k: string) => string): VisualSpec {
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */

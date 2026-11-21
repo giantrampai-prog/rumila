@@ -1,6 +1,6 @@
 {
   "id": "celengan-pecahan-uang",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -49,20 +49,23 @@
     {
       "id": "koin500",
       "labelKey": "koin500",
-      "emoji": "🪙",
-      "color": "#b0bec5"
+      "color": "#d4a94a",
+      "shape": "koin",
+      "angka": "500"
     },
     {
       "id": "koin1000",
       "labelKey": "koin1000",
-      "emoji": "🪙",
-      "color": "#ffd54f"
+      "color": "#b0bec5",
+      "shape": "koin",
+      "angka": "1.000"
     },
     {
       "id": "kertas2000",
       "labelKey": "kertas2000",
-      "emoji": "💵",
-      "color": "#9e9e9e"
+      "color": "#8fa3b0",
+      "shape": "uang",
+      "angka": "2.000"
     }
   ],
   "items": [
@@ -70,64 +73,73 @@
       "id": "koin500-a",
       "labelKey": "koin500",
       "bin": "koin500",
-      "emoji": "🪙",
-      "color": "#b0bec5"
+      "color": "#d4a94a",
+      "shape": "koin",
+      "angka": "500"
     },
     {
       "id": "koin500-b",
       "labelKey": "koin500",
       "bin": "koin500",
-      "emoji": "🪙",
-      "color": "#b0bec5"
+      "color": "#d4a94a",
+      "shape": "koin",
+      "angka": "500"
     },
     {
       "id": "koin500-c",
       "labelKey": "koin500",
       "bin": "koin500",
-      "emoji": "🪙",
-      "color": "#b0bec5"
+      "color": "#d4a94a",
+      "shape": "koin",
+      "angka": "500"
     },
     {
       "id": "koin1000-a",
       "labelKey": "koin1000",
       "bin": "koin1000",
-      "emoji": "🪙",
-      "color": "#ffd54f"
+      "color": "#b0bec5",
+      "shape": "koin",
+      "angka": "1.000"
     },
     {
       "id": "koin1000-b",
       "labelKey": "koin1000",
       "bin": "koin1000",
-      "emoji": "🪙",
-      "color": "#ffd54f"
+      "color": "#b0bec5",
+      "shape": "koin",
+      "angka": "1.000"
     },
     {
       "id": "koin1000-c",
       "labelKey": "koin1000",
       "bin": "koin1000",
-      "emoji": "🪙",
-      "color": "#ffd54f"
+      "color": "#b0bec5",
+      "shape": "koin",
+      "angka": "1.000"
     },
     {
       "id": "kertas2000-a",
       "labelKey": "kertas2000",
       "bin": "kertas2000",
-      "emoji": "💵",
-      "color": "#9e9e9e"
+      "color": "#8fa3b0",
+      "shape": "uang",
+      "angka": "2.000"
     },
     {
       "id": "kertas2000-b",
       "labelKey": "kertas2000",
       "bin": "kertas2000",
-      "emoji": "💵",
-      "color": "#9e9e9e"
+      "color": "#8fa3b0",
+      "shape": "uang",
+      "angka": "2.000"
     },
     {
       "id": "kertas2000-c",
       "labelKey": "kertas2000",
       "bin": "kertas2000",
-      "emoji": "💵",
-      "color": "#9e9e9e"
+      "color": "#8fa3b0",
+      "shape": "uang",
+      "angka": "2.000"
     }
   ]
 }

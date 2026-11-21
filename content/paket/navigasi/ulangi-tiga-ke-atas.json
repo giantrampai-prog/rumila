@@ -1,6 +1,6 @@
 {
   "id": "ulangi-tiga-ke-atas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Repeat Three Upward",
-      "instruksi": "Robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
+      "instruksi": "The robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "kotak-mainan-warna",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,51 +10,29 @@
   "locale": {
     "id": {
       "judul": "Kotak Mainan Warna",
-      "instruksi": "Bantu robot merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
+      "instruksi": "Bantu robot merapikan balok mainan: masukkan tiap mainan ke kotak yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
       "kuning": "kuning",
       "hijau": "hijau",
-      "mobil": "mobil",
-      "balon": "balon",
-      "jip": "jip",
-      "topi": "topi",
-      "taksi": "taksi",
-      "lonceng": "lonceng",
-      "puzel": "kepingan puzel",
-      "kura": "kura-kura",
-      "pemadam": "mobil pemadam",
-      "balap": "mobil balap",
-      "kelereng": "kelereng",
-      "lumba": "lumba-lumba",
-      "bintang": "bintang",
-      "dino": "dinosaurus",
-      "buaya": "buaya",
-      "anakayam": "anak ayam"
+      "bola": "bola",
+      "balok": "balok",
+      "segitiga": "balok segitiga",
+      "bintang": "bintang mainan",
+      "papan": "balok panjang"
     },
     "en": {
       "judul": "Colour Toy Boxes",
-      "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
+      "instruksi": "Help robot tidy the toy blocks: put each toy into the box with the same colour.",
       "merah": "red",
       "biru": "blue",
       "kuning": "yellow",
       "hijau": "green",
-      "mobil": "car",
-      "balon": "balloon",
-      "jip": "jeep",
-      "topi": "cap",
-      "taksi": "taxi",
-      "lonceng": "bell",
-      "puzel": "puzzle piece",
-      "kura": "turtle",
-      "pemadam": "fire engine",
-      "balap": "race car",
-      "kelereng": "marble",
-      "lumba": "dolphin",
-      "bintang": "star",
-      "dino": "dinosaur",
-      "buaya": "crocodile",
-      "anakayam": "chick"
+      "bola": "ball",
+      "balok": "block",
+      "segitiga": "triangle block",
+      "bintang": "toy star",
+      "papan": "long block"
     }
   },
   "knobs": {
@@ -103,115 +81,143 @@
   ],
   "items": [
     {
-      "id": "mobil",
-      "labelKey": "mobil",
+      "id": "bola-merah",
+      "labelKey": "bola",
       "bin": "merah",
-      "emoji": "🚗",
+      "shape": "circle",
       "color": "#e53935"
     },
     {
-      "id": "balon",
-      "labelKey": "balon",
+      "id": "balok-merah",
+      "labelKey": "balok",
       "bin": "merah",
-      "emoji": "🎈",
+      "shape": "square",
       "color": "#e53935"
     },
     {
-      "id": "jip",
-      "labelKey": "jip",
+      "id": "segitiga-merah",
+      "labelKey": "segitiga",
+      "bin": "merah",
+      "shape": "triangle",
+      "color": "#e53935"
+    },
+    {
+      "id": "bintang-merah",
+      "labelKey": "bintang",
+      "bin": "merah",
+      "shape": "star",
+      "color": "#e53935"
+    },
+    {
+      "id": "papan-merah",
+      "labelKey": "papan",
+      "bin": "merah",
+      "shape": "rect",
+      "color": "#e53935"
+    },
+    {
+      "id": "bola-biru",
+      "labelKey": "bola",
       "bin": "biru",
-      "emoji": "🚙",
+      "shape": "circle",
       "color": "#1e88e5"
     },
     {
-      "id": "topi",
-      "labelKey": "topi",
+      "id": "balok-biru",
+      "labelKey": "balok",
       "bin": "biru",
-      "emoji": "🧢",
+      "shape": "square",
       "color": "#1e88e5"
     },
     {
-      "id": "taksi",
-      "labelKey": "taksi",
+      "id": "segitiga-biru",
+      "labelKey": "segitiga",
+      "bin": "biru",
+      "shape": "triangle",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "bintang-biru",
+      "labelKey": "bintang",
+      "bin": "biru",
+      "shape": "star",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "papan-biru",
+      "labelKey": "papan",
+      "bin": "biru",
+      "shape": "rect",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "bola-kuning",
+      "labelKey": "bola",
       "bin": "kuning",
-      "emoji": "🚕",
+      "shape": "circle",
       "color": "#fdd835"
     },
     {
-      "id": "lonceng",
-      "labelKey": "lonceng",
+      "id": "balok-kuning",
+      "labelKey": "balok",
       "bin": "kuning",
-      "emoji": "🔔",
+      "shape": "square",
       "color": "#fdd835"
     },
     {
-      "id": "puzel",
-      "labelKey": "puzel",
-      "bin": "hijau",
-      "emoji": "🧩",
-      "color": "#43a047"
-    },
-    {
-      "id": "kura",
-      "labelKey": "kura",
-      "bin": "hijau",
-      "emoji": "🐢",
-      "color": "#43a047"
-    },
-    {
-      "id": "pemadam",
-      "labelKey": "pemadam",
-      "bin": "merah",
-      "emoji": "🚒",
-      "color": "#e53935"
-    },
-    {
-      "id": "balap",
-      "labelKey": "balap",
-      "bin": "merah",
-      "emoji": "🏎️",
-      "color": "#e53935"
-    },
-    {
-      "id": "kelereng",
-      "labelKey": "kelereng",
-      "bin": "biru",
-      "emoji": "🔵",
-      "color": "#1e88e5"
-    },
-    {
-      "id": "lumba",
-      "labelKey": "lumba",
-      "bin": "biru",
-      "emoji": "🐬",
-      "color": "#1e88e5"
-    },
-    {
-      "id": "anakayam",
-      "labelKey": "anakayam",
+      "id": "segitiga-kuning",
+      "labelKey": "segitiga",
       "bin": "kuning",
-      "emoji": "🐤",
+      "shape": "triangle",
       "color": "#fdd835"
     },
     {
-      "id": "bintang",
+      "id": "bintang-kuning",
       "labelKey": "bintang",
       "bin": "kuning",
-      "emoji": "⭐",
+      "shape": "star",
       "color": "#fdd835"
     },
     {
-      "id": "dino",
-      "labelKey": "dino",
+      "id": "papan-kuning",
+      "labelKey": "papan",
+      "bin": "kuning",
+      "shape": "rect",
+      "color": "#fdd835"
+    },
+    {
+      "id": "bola-hijau",
+      "labelKey": "bola",
       "bin": "hijau",
-      "emoji": "🦖",
+      "shape": "circle",
       "color": "#43a047"
     },
     {
-      "id": "buaya",
-      "labelKey": "buaya",
+      "id": "balok-hijau",
+      "labelKey": "balok",
       "bin": "hijau",
-      "emoji": "🐊",
+      "shape": "square",
+      "color": "#43a047"
+    },
+    {
+      "id": "segitiga-hijau",
+      "labelKey": "segitiga",
+      "bin": "hijau",
+      "shape": "triangle",
+      "color": "#43a047"
+    },
+    {
+      "id": "bintang-hijau",
+      "labelKey": "bintang",
+      "bin": "hijau",
+      "shape": "star",
+      "color": "#43a047"
+    },
+    {
+      "id": "papan-hijau",
+      "labelKey": "papan",
+      "bin": "hijau",
+      "shape": "rect",
       "color": "#43a047"
     }
   ]

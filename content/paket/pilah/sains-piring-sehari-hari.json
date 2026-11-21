@@ -1,6 +1,6 @@
 {
   "id": "sains-piring-sehari-hari",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,6 @@
       "instruksi": "Taruh makanan sehari-hari ke piring, dan makanan sesekali ke toples.",
       "piring": "piring sehari-hari",
       "toples": "toples sesekali",
-      "kadang": "kadang-kadang",
       "i-pisang": "pisang",
       "i-wortel": "wortel",
       "i-nasi": "nasi",
@@ -33,7 +32,6 @@
       "instruksi": "Put everyday food on the plate and once-in-a-while treats in the jar.",
       "piring": "everyday plate",
       "toples": "once-in-a-while jar",
-      "kadang": "sometimes",
       "i-pisang": "banana",
       "i-wortel": "carrot",
       "i-nasi": "rice",
@@ -52,10 +50,10 @@
   "knobs": {
     "binCount": {
       "min": 2,
-      "max": 3,
+      "max": 2,
       "default": 2,
       "step": 1,
-      "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang' untuk roti manis)"
+      "keterangan": "dua wadah: piring sehari-hari dan toples sesekali"
     },
     "itemCount": {
       "min": 4,
@@ -82,12 +80,6 @@
       "labelKey": "toples",
       "emoji": "🫙",
       "color": "#ffe0b2"
-    },
-    {
-      "id": "kadang",
-      "labelKey": "kadang",
-      "emoji": "🧺",
-      "color": "#fff9c4"
     }
   ],
   "items": [
@@ -160,13 +152,13 @@
     {
       "id": "rotimanis",
       "labelKey": "i-rotimanis",
-      "bin": "kadang",
+      "bin": "toples",
       "emoji": "🥐"
     },
     {
       "id": "wafel",
       "labelKey": "i-wafel",
-      "bin": "kadang",
+      "bin": "toples",
       "emoji": "🧇"
     }
   ],

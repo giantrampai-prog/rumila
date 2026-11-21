@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-bunyi-alat-musik-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNYI.01"
@@ -25,7 +25,7 @@
       "p-r8": "Senar bas gitar yang tebal dipetik. Dibanding senar yang tipis, bunyinya…",
       "p-r9": "Senar ukulele dikendurkan, lalu dipetik. Bunyinya jadi…",
       "p-r10": "Kentongan dipukul dengan sangat pelan. Bunyinya jadi…",
-      "p-r11": "Sebuah botol berisi air hampir penuh ditiup di mulutnya. Dibanding botol yang hampir kosong, udara bergetarnya lebih pendek, jadi nadanya…",
+      "p-r11": "Dua gelas kaca dipukul dengan sendok yang sama kuatnya: satu hampir kosong, satu hampir penuh air. Gelas yang hampir kosong bunyinya…",
       "p-r12": "Getaran simbal dibuat lebih lebar dengan pukulan keras. Bunyinya jadi…"
     },
     "en": {
@@ -46,7 +46,7 @@
       "p-r8": "The thick bass string of a guitar is plucked. Compared with a thin string, the sound is…",
       "p-r9": "A ukulele string is loosened, then plucked. The sound becomes…",
       "p-r10": "The slit drum is tapped very softly. The sound becomes…",
-      "p-r11": "A nearly full bottle of water is blown across its top. Compared with a nearly empty bottle, the vibrating air is shorter, so the pitch is…",
+      "p-r11": "Two glasses are tapped equally hard with a spoon: one nearly empty, one nearly full of water. The nearly empty glass sounds…",
       "p-r12": "The cymbal is hit hard so it vibrates more widely. The sound becomes…"
     }
   },

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -12,8 +12,7 @@
       "instruksi": "Baca judulnya, lalu susun langkah terbentuknya fosil.",
       "s-cangkang": "Fosil kerang laut",
       "cangkang-mati": "kerang mati dan tenggelam ke dasar laut",
-      "cangkang-timbun": "tertimbun lumpur dan pasir",
-      "cangkang-busuk": "bagian lunak membusuk, cangkang tertinggal",
+      "cangkang-timbun": "tertimbun lumpur dan pasir; bagian lunak membusuk, cangkang tertinggal",
       "cangkang-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "cangkang-mineral": "mineral perlahan menggantikan cangkang",
       "cangkang-tersingkap": "batuan terkikis, fosil tersingkap",
@@ -25,15 +24,13 @@
       "jejak-tampak": "batuan terkikis, jejak terlihat lagi",
       "s-dino": "Fosil dinosaurus",
       "dino-mati": "dinosaurus mati di tepi sungai",
-      "dino-timbun": "tubuhnya tertimbun lumpur sungai",
-      "dino-busuk": "daging membusuk, tulang tertinggal",
+      "dino-timbun": "tubuhnya tertimbun lumpur sungai; daging membusuk, tulang tertinggal",
       "dino-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "dino-mineral": "mineral perlahan menggantikan tulang",
       "dino-gali": "ahli fosil menggali dan menemukannya",
       "s-ikan": "Fosil ikan purba",
       "ikan-mati": "ikan purba mati dan tenggelam ke dasar danau",
-      "ikan-timbun": "tertutup lumpur halus",
-      "ikan-busuk": "bagian lunak membusuk, tulang dan sisik tertinggal",
+      "ikan-timbun": "tertutup lumpur halus; bagian lunak membusuk, tulang dan sisik tertinggal",
       "ikan-tekan": "lapisan lumpur menekan jadi batuan sedimen",
       "ikan-mineral": "mineral menggantikan tulangnya",
       "ikan-sungai": "sungai mengikis batuan, fosil ikan terlihat",
@@ -46,23 +43,20 @@
       "s-amber": "Fosil siput laut",
       "s-hiu": "Fosil gigi hiu",
       "hiu-mati": "hiu purba mati dan tenggelam ke dasar laut",
-      "hiu-timbun": "tertimbun pasir dan lumpur",
-      "hiu-busuk": "bagian lunak hancur, gigi yang keras tertinggal",
+      "hiu-timbun": "tertimbun pasir dan lumpur; bagian lunak hancur, gigi yang keras tertinggal",
       "hiu-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "hiu-mineral": "mineral menggantikan gigi itu",
       "hiu-pantai": "ombak mengikis batuan, gigi fosil ditemukan di pantai",
       "s-mamut": "Fosil gajah purba",
       "s-burung": "Fosil burung purba",
       "burung-mati": "burung purba mati di tepi danau",
-      "burung-timbun": "tertutup lumpur yang sangat halus",
-      "burung-busuk": "daging membusuk, tulang dan bekas bulu tertinggal",
+      "burung-timbun": "tertutup lumpur yang sangat halus; daging membusuk, tulang dan bekas bulu tertinggal",
       "burung-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "burung-mineral": "mineral menggantikan tulangnya",
       "burung-tambang": "penambang batu membelah batuan dan menemukannya",
       "s-penyu": "Fosil penyu purba",
       "penyu-mati": "penyu purba mati di dasar laut",
-      "penyu-timbun": "tertimbun pasir",
-      "penyu-busuk": "bagian lunak membusuk, tempurung dan tulang tertinggal",
+      "penyu-timbun": "tertimbun pasir; bagian lunak membusuk, tempurung dan tulang tertinggal",
       "penyu-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
       "penyu-mineral": "mineral menggantikan tempurung dan tulang",
       "penyu-gurun": "laut purba itu kini gurun; angin mengikis batuan, fosil tersingkap",
@@ -73,14 +67,12 @@
       "kayu-ganti": "mineral menggantikan kayu sedikit demi sedikit",
       "kayu-batu": "kayu berubah jadi batu (kayu membatu)",
       "amber-1": "siput laut mati di dasar laut dangkal",
-      "amber-2": "cangkangnya tertutup pasir dan lumpur",
-      "amber-3": "bagian lunak membusuk, cangkang keras tertinggal",
+      "amber-2": "cangkangnya tertutup pasir dan lumpur; bagian lunak membusuk, cangkang keras tertinggal",
       "amber-4": "lapisan pasir menekan jadi batuan sedimen",
       "amber-5": "mineral mengisi cangkangnya",
       "amber-6": "batuan terangkat dan terkikis, fosil terlihat",
       "mamut-1": "gajah purba mati di tepi sungai",
-      "mamut-2": "banjir menimbunnya dengan lumpur",
-      "mamut-3": "daging membusuk, tulang dan gading tertinggal",
+      "mamut-2": "banjir menimbunnya dengan lumpur; daging membusuk, tulang dan gading tertinggal",
       "mamut-4": "lapisan lumpur mengeras jadi batuan sedimen",
       "mamut-5": "mineral menggantikan tulangnya",
       "mamut-6": "penggali menemukan fosilnya di tebing sungai"
@@ -90,8 +82,7 @@
       "instruksi": "Read the title, then put the steps of fossil formation in order.",
       "s-cangkang": "A seashell fossil",
       "cangkang-mati": "a shellfish dies and sinks to the seabed",
-      "cangkang-timbun": "it is buried by mud and sand",
-      "cangkang-busuk": "the soft parts rot, the shell is left",
+      "cangkang-timbun": "it is buried by mud and sand; the soft parts rot, the shell is left",
       "cangkang-tekan": "layers pile up and press into sedimentary rock",
       "cangkang-mineral": "minerals slowly replace the shell",
       "cangkang-tersingkap": "the rock wears away and the fossil is uncovered",
@@ -103,15 +94,13 @@
       "jejak-tampak": "the rock wears away and the print shows again",
       "s-dino": "A dinosaur fossil",
       "dino-mati": "a dinosaur dies by a river",
-      "dino-timbun": "its body is buried by river mud",
-      "dino-busuk": "the flesh rots and the bones are left",
+      "dino-timbun": "its body is buried by river mud; the flesh rots and the bones are left",
       "dino-tekan": "layers pile up and press into sedimentary rock",
       "dino-mineral": "minerals slowly replace the bones",
       "dino-gali": "fossil hunters dig it up",
       "s-ikan": "An ancient fish fossil",
       "ikan-mati": "an ancient fish dies and sinks to the lake floor",
-      "ikan-timbun": "it is covered by fine mud",
-      "ikan-busuk": "the soft parts rot; bones and scales are left",
+      "ikan-timbun": "it is covered by fine mud; the soft parts rot; bones and scales are left",
       "ikan-tekan": "layers of mud press into sedimentary rock",
       "ikan-mineral": "minerals replace the bones",
       "ikan-sungai": "a river wears the rock away and the fish fossil shows",
@@ -124,23 +113,20 @@
       "s-amber": "Sea snail fossil",
       "s-hiu": "A shark tooth fossil",
       "hiu-mati": "an ancient shark dies and sinks to the sea floor",
-      "hiu-timbun": "it is buried by sand and mud",
-      "hiu-busuk": "the soft parts break down; the hard teeth are left",
+      "hiu-timbun": "it is buried by sand and mud; the soft parts break down; the hard teeth are left",
       "hiu-tekan": "layers pile up and press into sedimentary rock",
       "hiu-mineral": "minerals replace the tooth",
       "hiu-pantai": "waves wear the rock away and the fossil tooth is found on a beach",
       "s-mamut": "Ancient elephant fossil",
       "s-burung": "An ancient bird fossil",
       "burung-mati": "an ancient bird dies by a lake",
-      "burung-timbun": "it is covered by very fine mud",
-      "burung-busuk": "the flesh rots; bones and feather marks are left",
+      "burung-timbun": "it is covered by very fine mud; the flesh rots; bones and feather marks are left",
       "burung-tekan": "layers pile up and press into sedimentary rock",
       "burung-mineral": "minerals replace the bones",
       "burung-tambang": "quarry workers split the rock and find it",
       "s-penyu": "An ancient turtle fossil",
       "penyu-mati": "an ancient turtle dies on the sea floor",
-      "penyu-timbun": "it is buried by sand",
-      "penyu-busuk": "the soft parts rot; the shell and bones are left",
+      "penyu-timbun": "it is buried by sand; the soft parts rot; the shell and bones are left",
       "penyu-tekan": "layers pile up and press into sedimentary rock",
       "penyu-mineral": "minerals replace the shell and bones",
       "penyu-gurun": "the old sea is now a desert; wind wears the rock and the fossil shows",
@@ -151,14 +137,12 @@
       "kayu-ganti": "minerals replace the wood bit by bit",
       "kayu-batu": "the wood turns to stone (petrified wood)",
       "amber-1": "a sea snail dies on the shallow sea floor",
-      "amber-2": "its shell is covered by sand and mud",
-      "amber-3": "the soft body rots, the hard shell remains",
+      "amber-2": "its shell is covered by sand and mud; the soft body rots, the hard shell remains",
       "amber-4": "layers of sand press down into sedimentary rock",
       "amber-5": "minerals fill in the shell",
       "amber-6": "the rock is lifted and worn away, the fossil shows",
       "mamut-1": "an ancient elephant dies by a river",
-      "mamut-2": "a flood buries it in mud",
-      "mamut-3": "the flesh rots, bones and tusks remain",
+      "mamut-2": "a flood buries it in mud; the flesh rots, bones and tusks remain",
       "mamut-4": "the mud layers harden into sedimentary rock",
       "mamut-5": "minerals replace its bones",
       "mamut-6": "diggers find the fossil in the riverbank"
@@ -167,10 +151,10 @@
   "knobs": {
     "steps": {
       "min": 4,
-      "max": 6,
+      "max": 5,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah langkah: 4 → 6 (beberapa fosil hanya 5 langkah)"
+      "keterangan": "jumlah langkah: 4 → 5"
     }
   },
   "assets": [],
@@ -193,11 +177,6 @@
           "id": "timbun",
           "labelKey": "cangkang-timbun",
           "emoji": "🟫"
-        },
-        {
-          "id": "busuk",
-          "labelKey": "cangkang-busuk",
-          "emoji": "🦴"
         },
         {
           "id": "tekan",
@@ -262,11 +241,6 @@
           "emoji": "🟫"
         },
         {
-          "id": "busuk",
-          "labelKey": "dino-busuk",
-          "emoji": "🦴"
-        },
-        {
           "id": "tekan",
           "labelKey": "dino-tekan",
           "emoji": "📚"
@@ -296,11 +270,6 @@
           "id": "timbun",
           "labelKey": "ikan-timbun",
           "emoji": "🟫"
-        },
-        {
-          "id": "busuk",
-          "labelKey": "ikan-busuk",
-          "emoji": "🦴"
         },
         {
           "id": "tekan",
@@ -365,11 +334,6 @@
           "emoji": "🟫"
         },
         {
-          "id": "amber-3",
-          "labelKey": "amber-3",
-          "emoji": "🐚"
-        },
-        {
           "id": "amber-4",
           "labelKey": "amber-4",
           "emoji": "📚"
@@ -399,11 +363,6 @@
           "id": "timbun",
           "labelKey": "hiu-timbun",
           "emoji": "🟫"
-        },
-        {
-          "id": "busuk",
-          "labelKey": "hiu-busuk",
-          "emoji": "🦷"
         },
         {
           "id": "tekan",
@@ -437,11 +396,6 @@
           "emoji": "🌊"
         },
         {
-          "id": "mamut-3",
-          "labelKey": "mamut-3",
-          "emoji": "🦴"
-        },
-        {
           "id": "mamut-4",
           "labelKey": "mamut-4",
           "emoji": "📚"
@@ -473,11 +427,6 @@
           "emoji": "🟫"
         },
         {
-          "id": "busuk",
-          "labelKey": "burung-busuk",
-          "emoji": "🪶"
-        },
-        {
           "id": "tekan",
           "labelKey": "burung-tekan",
           "emoji": "📚"
@@ -507,11 +456,6 @@
           "id": "timbun",
           "labelKey": "penyu-timbun",
           "emoji": "🟫"
-        },
-        {
-          "id": "busuk",
-          "labelKey": "penyu-busuk",
-          "emoji": "🦴"
         },
         {
           "id": "tekan",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,14 +19,6 @@
       "sepatu-kotor-5": "jemur sampai kering",
       "sepatu-kotor-6": "pasang tali lagi",
       "sepatu-kotor-7": "pakai sepatu yang bersih",
-      "t-piket": "Piket kelas",
-      "piket-1": "naikkan kursi ke atas meja",
-      "piket-2": "sapu lantai",
-      "piket-3": "kumpulkan debu dengan pengki",
-      "piket-4": "buang debu ke tempat sampah",
-      "piket-5": "pel lantai",
-      "piket-6": "tunggu lantai kering",
-      "piket-7": "turunkan kursi lagi",
       "t-baterai": "Mengisi baterai tablet",
       "baterai-1": "baterai tablet hampir habis",
       "baterai-2": "sambungkan tablet ke pengisi daya",
@@ -98,7 +90,15 @@
       "mading-4": "bawa ke papan mading",
       "mading-5": "tempel dengan paku payung",
       "mading-6": "gambarmu terpajang rapi",
-      "mading-7": "teman-teman melihat gambarmu"
+      "mading-7": "teman-teman melihat gambarmu",
+      "t-piket-kelas": "Piket kelas",
+      "piket-kelas-1": "naikkan kursi ke atas meja",
+      "piket-kelas-2": "sapu lantai",
+      "piket-kelas-3": "buang debu ke tempat sampah",
+      "piket-kelas-4": "pel lantai",
+      "piket-kelas-5": "tunggu lantai kering",
+      "piket-kelas-6": "turunkan kursi lagi",
+      "piket-kelas-7": "lapor ke guru bahwa piket selesai"
     },
     "en": {
       "judul": "Task Cards in Order",
@@ -111,14 +111,6 @@
       "sepatu-kotor-5": "dry it in the sun",
       "sepatu-kotor-6": "put the laces back",
       "sepatu-kotor-7": "wear the clean shoes",
-      "t-piket": "Classroom clean-up duty",
-      "piket-1": "put the chairs up on the desks",
-      "piket-2": "sweep the floor",
-      "piket-3": "collect the dust with a dustpan",
-      "piket-4": "empty the dust into the bin",
-      "piket-5": "mop the floor",
-      "piket-6": "wait for the floor to dry",
-      "piket-7": "put the chairs back down",
       "t-baterai": "Charging a tablet",
       "baterai-1": "the tablet battery is nearly empty",
       "baterai-2": "connect the tablet to the charger",
@@ -190,7 +182,15 @@
       "mading-4": "take it to the class board",
       "mading-5": "pin it up",
       "mading-6": "your picture is on display",
-      "mading-7": "your friends look at your picture"
+      "mading-7": "your friends look at your picture",
+      "t-piket-kelas": "Class cleaning duty",
+      "piket-kelas-1": "put the chairs up on the desks",
+      "piket-kelas-2": "sweep the floor",
+      "piket-kelas-3": "throw the dust in the bin",
+      "piket-kelas-4": "mop the floor",
+      "piket-kelas-5": "wait for the floor to dry",
+      "piket-kelas-6": "put the chairs back down",
+      "piket-kelas-7": "tell the teacher the cleaning is done"
     }
   },
   "knobs": {
@@ -250,43 +250,43 @@
       ]
     },
     {
-      "id": "piket",
-      "titleKey": "t-piket",
+      "id": "piket-kelas",
+      "titleKey": "t-piket-kelas",
       "steps": [
         {
-          "id": "piket-1",
-          "labelKey": "piket-1",
+          "id": "piket-kelas-1",
+          "labelKey": "piket-kelas-1",
           "emoji": "🪑"
         },
         {
-          "id": "piket-2",
-          "labelKey": "piket-2",
+          "id": "piket-kelas-2",
+          "labelKey": "piket-kelas-2",
           "emoji": "🧹"
         },
         {
-          "id": "piket-3",
-          "labelKey": "piket-3",
-          "emoji": "🧺"
-        },
-        {
-          "id": "piket-4",
-          "labelKey": "piket-4",
+          "id": "piket-kelas-3",
+          "labelKey": "piket-kelas-3",
           "emoji": "🗑️"
         },
         {
-          "id": "piket-5",
-          "labelKey": "piket-5",
+          "id": "piket-kelas-4",
+          "labelKey": "piket-kelas-4",
           "emoji": "🪣"
         },
         {
-          "id": "piket-6",
-          "labelKey": "piket-6",
+          "id": "piket-kelas-5",
+          "labelKey": "piket-kelas-5",
           "emoji": "⏳"
         },
         {
-          "id": "piket-7",
-          "labelKey": "piket-7",
+          "id": "piket-kelas-6",
+          "labelKey": "piket-kelas-6",
           "emoji": "⬇️"
+        },
+        {
+          "id": "piket-kelas-7",
+          "labelKey": "piket-kelas-7",
+          "emoji": "🙋"
         }
       ]
     },

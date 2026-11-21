@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Perbaiki Siklus Hidup di Kebun",
-      "instruksi": "Dua tahap tertukar. Tukar sekali supaya siklusnya benar.",
+      "instruksi": "Ini siklus hidup hewan di kebun. Ada yang melewati kepompong, ada yang hanya membesar. Dua tahap tertukar: tukar sekali supaya benar.",
       "s-kupu": "Siklus hidup kupu-kupu",
       "kupu-telur": "telur di daun",
       "kupu-ulat": "ulat makan daun",
@@ -65,7 +65,7 @@
     },
     "en": {
       "judul": "Fix the Garden Life Cycles",
-      "instruksi": "Two stages are swapped. Swap them once to fix the life cycle.",
+      "instruksi": "These are life cycles of garden animals. Some go through a pupa, some just grow bigger. Two stages are swapped: swap once to fix it.",
       "s-kupu": "Butterfly life cycle",
       "kupu-telur": "egg on a leaf",
       "kupu-ulat": "caterpillar eating leaves",

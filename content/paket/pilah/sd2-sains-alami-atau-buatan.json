@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Alami atau Buatan?",
-      "instruksi": "Bahan ini langsung dari alam atau dibuat manusia? Taruh ke raknya.",
+      "instruksi": "Bahan alami diambil langsung dari alam. Bahan buatan dibuat oleh manusia. Taruh tiap bahan ke raknya.",
       "b-alami": "alami",
       "b-buatan": "buatan manusia",
       "i-kayu": "kayu",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Natural or Made?",
-      "instruksi": "Does this material come straight from nature or is it made by people? Put it on its shelf.",
+      "instruksi": "Natural materials come straight from nature. Made materials are made by people. Put each material on its shelf.",
       "b-alami": "natural",
       "b-buatan": "made by people",
       "i-kayu": "wood",

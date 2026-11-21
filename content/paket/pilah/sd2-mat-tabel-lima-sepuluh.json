@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-tabel-lima-sepuluh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tabel 5 dan 10",
-      "instruksi": "Hitung loncat kalau perlu. Taruh tiap kartu perkalian di rak hasilnya.",
+      "instruksi": "Hitung loncat lima-lima atau sepuluh-sepuluh kalau perlu. Taruh tiap kartu perkalian di rak hasilnya.",
       "b-25": "25",
       "b-30": "30",
       "b-35": "35",
@@ -47,7 +47,7 @@
     },
     "en": {
       "judul": "5 and 10 Times Tables",
-      "instruksi": "Skip count if you need to. Put each multiplication card on its answer shelf.",
+      "instruksi": "Skip count in fives or tens if you need to. Put each multiplication card on its answer shelf.",
       "b-25": "25",
       "b-30": "30",
       "b-35": "35",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-bertulang-belakang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.VERTEBRATA.01"
@@ -75,13 +75,13 @@
     {
       "id": "rangkaluar",
       "labelKey": "b-rangkaluar",
-      "emoji": "🦀",
+      "emoji": "🛡️",
       "color": "#ffe0b2"
     },
     {
       "id": "lunak",
       "labelKey": "b-lunak",
-      "emoji": "🪱",
+      "emoji": "💧",
       "color": "#f8bbd0"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perangkat-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,53 +10,51 @@
   "locale": {
     "id": {
       "judul": "Alat-Alat di Kelas Komputer",
-      "instruksi": "Di kelas komputer: seret tiap alat ke kelompoknya: memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
-      "bin-masukan": "masukan",
-      "bin-keluaran": "keluaran",
-      "bin-simpan": "penyimpanan",
-      "i1": "👆 sensor sidik jari",
-      "i2": "🖊️ pena digital",
-      "i3": "📄 pemindai dokumen (scanner)",
-      "i4": "🚶 sensor gerak",
-      "i5": "🔲 touchpad laptop",
-      "i6": "🎛️ panel tombol mesin",
-      "i7": "📸 kamera dokumen",
-      "i8": "🔔 bel listrik sekolah",
-      "i9": "🪧 papan tulisan LED berjalan",
-      "i10": "🖨️ printer 3D",
-      "i11": "📢 pengeras suara aula",
-      "i12": "📺 televisi kelas",
-      "i13": "📳 getar HP saat ada pesan",
-      "i14": "💿 CD/DVD",
-      "i15": "🗄️ SSD",
-      "i16": "💽 hard disk eksternal",
-      "i17": "🎴 kartu microSD",
-      "i18": "🗃️ server penyimpanan sekolah"
+      "instruksi": "Di kelas komputer: seret tiap alat ke kelompoknya: masukan saja, keluaran saja, atau masukan sekaligus keluaran.",
+      "bin-masukan": "masukan saja",
+      "bin-keluaran": "keluaran saja",
+      "bin-keduanya": "masukan dan keluaran",
+      "i1": "sensor sidik jari untuk absen",
+      "i2": "pena digital",
+      "i3": "pemindai dokumen (scanner)",
+      "i4": "sensor gerak di pintu",
+      "i5": "touchpad laptop",
+      "i6": "kamera dokumen",
+      "i7": "bel listrik sekolah",
+      "i8": "papan tulisan LED berjalan",
+      "i9": "printer 3D",
+      "i10": "pengeras suara aula",
+      "i11": "televisi kelas",
+      "i12": "getar HP saat ada pesan",
+      "i13": "papan tulis interaktif yang bisa disentuh",
+      "i14": "tablet kelas berlayar sentuh",
+      "i15": "printer-scanner di ruang guru",
+      "i16": "headset bermikrofon untuk kelas daring",
+      "i17": "speaker pintar yang menjawab pertanyaan"
     },
     "en": {
       "judul": "Gadgets in the Computer Class",
-      "instruksi": "In the computer class: drag each gadget to its group: putting data in, giving results out, or storing data.",
-      "bin-masukan": "input",
-      "bin-keluaran": "output",
-      "bin-simpan": "storage",
-      "i1": "👆 fingerprint sensor",
-      "i2": "🖊️ digital pen",
-      "i3": "📄 document scanner",
-      "i4": "🚶 motion sensor",
-      "i5": "🔲 laptop touchpad",
-      "i6": "🎛️ machine button panel",
-      "i7": "📸 document camera",
-      "i8": "🔔 electric school bell",
-      "i9": "🪧 scrolling LED sign",
-      "i10": "🖨️ 3D printer",
-      "i11": "📢 hall loudspeaker",
-      "i12": "📺 classroom TV",
-      "i13": "📳 phone vibration for a message",
-      "i14": "💿 CD/DVD",
-      "i15": "🗄️ SSD",
-      "i16": "💽 external hard drive",
-      "i17": "🎴 microSD card",
-      "i18": "🗃️ school storage server"
+      "instruksi": "In the computer class: drag each gadget to its group: input only, output only, or both input and output.",
+      "bin-masukan": "input only",
+      "bin-keluaran": "output only",
+      "bin-keduanya": "input and output",
+      "i1": "fingerprint sensor for attendance",
+      "i2": "digital pen",
+      "i3": "document scanner",
+      "i4": "motion sensor at the door",
+      "i5": "laptop touchpad",
+      "i6": "document camera",
+      "i7": "electric school bell",
+      "i8": "scrolling LED sign",
+      "i9": "3D printer",
+      "i10": "hall loudspeaker",
+      "i11": "classroom TV",
+      "i12": "phone vibration for a message",
+      "i13": "interactive whiteboard you can touch",
+      "i14": "class tablet with a touchscreen",
+      "i15": "printer-scanner in the staff room",
+      "i16": "headset with a microphone for online class",
+      "i17": "smart speaker that answers questions"
     }
   },
   "knobs": {
@@ -65,7 +63,7 @@
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = masukan & keluaran; 3 = tambah penyimpanan"
+      "keterangan": "2 = masukan & keluaran (ulang SD 3); 3 = tambah kotak masukan sekaligus keluaran"
     },
     "itemCount": {
       "min": 6,
@@ -85,17 +83,17 @@
     {
       "id": "masukan",
       "labelKey": "bin-masukan",
-      "emoji": "🎤"
+      "emoji": "⬇️"
     },
     {
       "id": "keluaran",
       "labelKey": "bin-keluaran",
-      "emoji": "🖨️"
+      "emoji": "⬆️"
     },
     {
-      "id": "simpan",
-      "labelKey": "bin-simpan",
-      "emoji": "💿"
+      "id": "keduanya",
+      "labelKey": "bin-keduanya",
+      "emoji": "↕️"
     }
   ],
   "items": [
@@ -103,109 +101,104 @@
       "id": "i1",
       "labelKey": "i1",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "👆"
     },
     {
       "id": "i2",
       "labelKey": "i2",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🖊️"
     },
     {
       "id": "i3",
       "labelKey": "i3",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "📄"
     },
     {
       "id": "i4",
       "labelKey": "i4",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "🚶"
     },
     {
       "id": "i5",
       "labelKey": "i5",
       "bin": "masukan",
-      "scale": 0.5
+      "shape": "square",
+      "color": "#64748b"
     },
     {
       "id": "i6",
       "labelKey": "i6",
       "bin": "masukan",
-      "scale": 0.5
+      "emoji": "📸"
     },
     {
       "id": "i7",
       "labelKey": "i7",
-      "bin": "masukan",
-      "scale": 0.5
+      "bin": "keluaran",
+      "emoji": "🔔"
     },
     {
       "id": "i8",
       "labelKey": "i8",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "🪧"
     },
     {
       "id": "i9",
       "labelKey": "i9",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "🖨️"
     },
     {
       "id": "i10",
       "labelKey": "i10",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "📢"
     },
     {
       "id": "i11",
       "labelKey": "i11",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "📺"
     },
     {
       "id": "i12",
       "labelKey": "i12",
       "bin": "keluaran",
-      "scale": 0.5
+      "emoji": "📳"
     },
     {
       "id": "i13",
       "labelKey": "i13",
-      "bin": "keluaran",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "🖥️"
     },
     {
       "id": "i14",
       "labelKey": "i14",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "📱"
     },
     {
       "id": "i15",
       "labelKey": "i15",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "📠"
     },
     {
       "id": "i16",
       "labelKey": "i16",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "🎧"
     },
     {
       "id": "i17",
       "labelKey": "i17",
-      "bin": "simpan",
-      "scale": 0.5
-    },
-    {
-      "id": "i18",
-      "labelKey": "i18",
-      "bin": "simpan",
-      "scale": 0.5
+      "bin": "keduanya",
+      "emoji": "🔈"
     }
   ]
 }

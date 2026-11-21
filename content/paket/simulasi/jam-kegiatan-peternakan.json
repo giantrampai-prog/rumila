@@ -1,6 +1,6 @@
 {
   "id": "jam-kegiatan-peternakan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jam di Peternakan",
-      "instruksi": "Robot membantu di peternakan. Dengar kegiatannya pukul berapa, lalu putar jarum pendek ke angka itu dan jarum panjang di angka 12.",
+      "instruksi": "Dengar pukul berapa kegiatan robot di peternakan, lalu putar jarum pendek ke angka itu dan jarum panjang ke 12.",
       "beri-makan-ayam": "memberi makan ayam",
       "perah-susu": "memerah susu sapi",
       "ambil-telur": "mengambil telur",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Farm Clock",
-      "instruksi": "The robot helps on the farm. Listen to what time each job happens, then turn the short hand to that number with the long hand on 12.",
+      "instruksi": "Listen to what time the robot's farm job is, then turn the short hand to that number and the long hand to 12.",
       "beri-makan-ayam": "feeds the chickens",
       "perah-susu": "milks the cow",
       "ambil-telur": "collects the eggs",

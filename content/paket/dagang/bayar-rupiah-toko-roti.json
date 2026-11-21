@@ -1,6 +1,6 @@
 {
   "id": "bayar-rupiah-toko-roti",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,11 @@
       "roti": "roti tawar",
       "kuecangkir": "kue mangkuk",
       "bolu": "bolu",
-      "tart": "kue tart"
+      "tart": "kue tart",
+      "kuekering": "kue kering",
+      "puding": "puding",
+      "kroisan": "kroisan",
+      "pai": "pai buah"
     },
     "en": {
       "judul": "Paying at the Bakery",
@@ -24,7 +28,11 @@
       "roti": "loaf",
       "kuecangkir": "cupcake",
       "bolu": "sponge cake",
-      "tart": "tart"
+      "tart": "tart",
+      "kuekering": "cookies",
+      "puding": "pudding",
+      "kroisan": "croissant",
+      "pai": "fruit pie"
     }
   },
   "knobs": {
@@ -63,6 +71,12 @@
       "emoji": "🍩"
     },
     {
+      "id": "kuekering",
+      "labelKey": "kuekering",
+      "price": 3000,
+      "emoji": "🍪"
+    },
+    {
       "id": "roti",
       "labelKey": "roti",
       "price": 4000,
@@ -75,10 +89,28 @@
       "emoji": "🧁"
     },
     {
+      "id": "puding",
+      "labelKey": "puding",
+      "price": 6000,
+      "emoji": "🍮"
+    },
+    {
       "id": "bolu",
       "labelKey": "bolu",
       "price": 7000,
       "emoji": "🍰"
+    },
+    {
+      "id": "kroisan",
+      "labelKey": "kroisan",
+      "price": 8000,
+      "emoji": "🥐"
+    },
+    {
+      "id": "pai",
+      "labelKey": "pai",
+      "price": 9000,
+      "emoji": "🥧"
     },
     {
       "id": "tart",

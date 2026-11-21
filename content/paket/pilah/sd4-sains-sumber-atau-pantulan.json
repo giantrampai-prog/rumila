@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-sumber-atau-pantulan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.CAHAYA.01"
@@ -65,13 +65,13 @@
     {
       "id": "sumber",
       "labelKey": "b-sumber",
-      "emoji": "☀️",
+      "emoji": "🔆",
       "color": "#fff59d"
     },
     {
       "id": "pantul",
       "labelKey": "b-pantul",
-      "emoji": "🪞",
+      "emoji": "↩️",
       "color": "#cfd8dc"
     }
   ],

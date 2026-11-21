@@ -11,8 +11,10 @@ export interface VisualSpec {
   color?: string;
   scale?: number;
   count?: number;
-  shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu";
+  shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu" | "belah-ketupat" | "koin" | "uang" | "akar";
   width?: number;
+  /** teks angka pendek (≤ 8 karakter) di atas bentuk; koin & uang menampilkannya sebagai nominal */
+  angka?: string;
   /** teks pendek bila tidak ada emoji/bentuk (mis. angka kartu) */
   label?: string;
   /**
@@ -51,7 +53,91 @@ export function LatarWarnaProvider({ paket, children }: { paket: unknown; childr
   return <LatarWarna.Provider value={set}>{children}</LatarWarna.Provider>;
 }
 
-function Bentuk({ shape, color, size, width = 1 }: { shape: NonNullable<VisualSpec["shape"]>; color: string; size: number; width?: number }) {
+/** Tinta kontras untuk teks di atas `bg` (hex): gelap di warna terang, putih di warna gelap. */
+export function tintaKontras(bg: string): string {
+  const m = /^#([0-9a-f]{6})$/i.exec(bg);
+  if (!m) return INK;
+  const n = parseInt(m[1], 16);
+  const lin = (c: number) => { const x = c / 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4; };
+  const L = 0.2126 * lin(n >> 16 & 255) + 0.7152 * lin(n >> 8 & 255) + 0.0722 * lin(n & 255);
+  return L > 0.32 ? INK : "#ffffff";
+}
+
+/** Ukuran huruf (unit viewBox) supaya `teks` muat selebar `lebar` dan setinggi `tinggi`. */
+const hurufMuat = (teks: string, lebar: number, tinggi: number) => Math.min(tinggi, (lebar / Math.max(1, teks.length)) * 1.75);
+
+/** Warna bawaan koin: perak untuk nominal < 1000 (100/200/500), emas untuk lainnya. */
+function warnaKoin(angka?: string): string {
+  const n = angka ? Number(angka.replace(/[^0-9]/g, "")) : NaN;
+  return Number.isFinite(n) && n > 0 && n < 1000 ? "#c9ced6" : "#f2c230";
+}
+
+/** Koin rupiah sederhana: cakram bertepi, kilau, nominal di tengah. */
+function Koin({ color, size, angka }: { color: string; size: number; angka?: string }) {
+  const tinta = tintaKontras(color);
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden data-bentuk="koin">
+      <circle cx="50" cy="52" r="46" fill="rgba(11,37,69,.22)" />
+      <circle cx="50" cy="48" r="46" fill={color} />
+      <circle cx="50" cy="48" r="46" fill="none" stroke="rgba(11,37,69,.28)" strokeWidth="4" />
+      <circle cx="50" cy="48" r="36" fill="none" stroke="rgba(255,255,255,.55)" strokeWidth="3" />
+      <ellipse cx="34" cy="28" rx="14" ry="7" fill="rgba(255,255,255,.45)" transform="rotate(-30 34 28)" />
+      {angka && (
+        <text x="50" y="49" textAnchor="middle" dominantBaseline="central" fill={tinta} style={{ fontFamily: BALOO, fontWeight: 900 }} fontSize={hurufMuat(angka, 62, 38)}>
+          {angka}
+        </text>
+      )}
+    </svg>
+  );
+}
+
+/** Uang kertas rupiah sederhana: lembar mendatar berwarna, bingkai dalam, tanda air, nominal besar. */
+function Uang({ color, size, width = 1, angka }: { color: string; size: number; width?: number; angka?: string }) {
+  const h = size * 0.92, w = size * 1.9 * width;
+  const tinta = tintaKontras(color);
+  return (
+    <svg width={w} height={h} viewBox="0 0 190 92" preserveAspectRatio="none" aria-hidden data-bentuk="uang">
+      <rect x="2" y="5" width="186" height="85" rx="10" fill="rgba(11,37,69,.2)" />
+      <rect x="2" y="2" width="186" height="85" rx="10" fill={color} />
+      <rect x="9" y="9" width="172" height="71" rx="6" fill="none" stroke="rgba(255,255,255,.6)" strokeWidth="3" />
+      <circle cx="36" cy="44" r="20" fill="rgba(255,255,255,.35)" />
+      <circle cx="36" cy="44" r="12" fill="none" stroke="rgba(11,37,69,.18)" strokeWidth="3" />
+      {angka && (
+        <text x="118" y="40" textAnchor="middle" dominantBaseline="central" fill={tinta} style={{ fontFamily: BALOO, fontWeight: 900 }} fontSize={hurufMuat(angka, 112, 46)}>
+          {angka}
+        </text>
+      )}
+      <text x="118" y="71" textAnchor="middle" dominantBaseline="central" fill={tinta} opacity="0.7" style={{ fontFamily: BALOO, fontWeight: 800, letterSpacing: 2 }} fontSize="12">
+        RUPIAH
+      </text>
+    </svg>
+  );
+}
+
+function Bentuk({ shape, color, size, width = 1, angka }: { shape: NonNullable<VisualSpec["shape"]>; color?: string; size: number; width?: number; angka?: string }) {
+  if (shape === "koin") return <Koin color={color ?? warnaKoin(angka)} size={size * width} angka={angka} />;
+  if (shape === "uang") return <Uang color={color ?? "#7ec8a0"} size={size} width={width} angka={angka} />;
+  const warna = color ?? (shape === "akar" ? "#8a5a2b" : "#0786eb");
+  const w = size * width, h = shape === "rect" ? size * 0.42 : size;
+  const gambar = <BentukDasar shape={shape} color={warna} size={size} width={width} />;
+  if (!angka) return gambar;
+  // angka di atas bentuk lain: lapisan teks di tengah kotak bentuk (segitiga: sedikit ke bawah, ke bagian yang lebar)
+  return (
+    <span style={{ position: "relative", display: "inline-flex", width: w, height: h, alignItems: "center", justifyContent: "center" }}>
+      {gambar}
+      <span
+        style={{
+          position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", paddingTop: shape === "triangle" ? h * 0.28 : 0,
+          fontFamily: BALOO, fontWeight: 900, lineHeight: 1, color: tintaKontras(warna), fontSize: Math.min(h * (shape === "triangle" ? 0.34 : 0.5), (w / angka.length) * 1.6),
+        }}
+      >
+        {angka}
+      </span>
+    </span>
+  );
+}
+
+function BentukDasar({ shape, color, size, width = 1 }: { shape: NonNullable<VisualSpec["shape"]>; color: string; size: number; width?: number }) {
   const w = size * width, h = size;
   if (shape === "circle") return <span style={{ width: w, height: h, borderRadius: 9999, background: color, display: "inline-block" }} />;
   if (shape === "square") return <span style={{ width: w, height: h, borderRadius: size * 0.12, background: color, display: "inline-block" }} />;
@@ -60,6 +146,31 @@ function Bentuk({ shape, color, size, width = 1 }: { shape: NonNullable<VisualSp
     return (
       <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden>
         <polygon points="50,6 96,92 4,92" fill={color} />
+      </svg>
+    );
+  // belah ketupat tegak: lebih tinggi daripada lebar, sudut tajam di atas/bawah — jelas beda dari persegi
+  if (shape === "belah-ketupat")
+    return (
+      <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden data-bentuk="belah-ketupat">
+        <polygon points="50,2 84,50 50,98 16,50" fill={color} />
+      </svg>
+    );
+  // akar tumbuhan: pangkal batang hijau kecil, akar tunggang meruncing ke bawah, cabang serabut ke kiri-kanan
+  if (shape === "akar")
+    return (
+      <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden data-bentuk="akar">
+        <rect x="45" y="0" width="10" height="12" rx="3" fill="#4caf50" />
+        <path d="M43 11 Q50 8 57 11 L54 40 Q52 70 50 97 Q48 70 46 40 Z" fill={color} />
+        <g stroke={color} strokeLinecap="round" fill="none">
+          <path d="M47 24 Q34 28 22 40" strokeWidth="4" />
+          <path d="M53 26 Q68 30 80 44" strokeWidth="4" />
+          <path d="M47 44 Q36 50 28 64" strokeWidth="3.2" />
+          <path d="M53 46 Q64 52 72 66" strokeWidth="3.2" />
+          <path d="M48 64 Q42 72 38 82" strokeWidth="2.4" />
+          <path d="M52 66 Q58 73 62 84" strokeWidth="2.4" />
+          <path d="M30 34 Q24 40 22 50" strokeWidth="2" />
+          <path d="M72 38 Q78 44 80 54" strokeWidth="2" />
+        </g>
       </svg>
     );
   if (shape === "berudu")
@@ -100,10 +211,14 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
         </span>
       );
     }
-    if (v.shape) return <Bentuk key={k} shape={v.shape} color={v.color ?? "#0786eb"} size={n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n))) : s} width={v.width} />;
+    if (v.shape) {
+      // uang kertas ~1,9× lebar tingginya: kelompok uang disusun lebih sempit supaya kisi tetap muat
+      const per = n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n)) / (v.shape === "uang" ? 1.4 : 1)) : v.shape === "uang" ? s * 0.8 : s;
+      return <Bentuk key={k} shape={v.shape} color={v.color} size={per} width={v.width} angka={v.angka} />;
+    }
     return (
       <span key={k} style={{ fontFamily: BALOO, fontSize: s * 0.6, fontWeight: 900, color: v.color ?? INK, lineHeight: 1 }}>
-        {v.label ?? "?"}
+        {v.angka ?? v.label ?? "?"}
       </span>
     );
   };

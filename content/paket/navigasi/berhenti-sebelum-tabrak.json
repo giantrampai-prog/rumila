@@ -1,6 +1,6 @@
 {
   "id": "berhenti-sebelum-tabrak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "Stop Before the Crash",
-      "instruksi": "Run the program one step at a time and stop right before robot crashes, then point to the crashing block."
+      "instruksi": "Run the program one step at a time and stop right before the robot crashes, then point to the crashing block."
     }
   },
   "knobs": {

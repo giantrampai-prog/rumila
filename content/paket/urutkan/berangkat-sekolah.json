@@ -1,6 +1,6 @@
 {
   "id": "berangkat-sekolah",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -12,14 +12,10 @@
       "judul": "Berangkat Sekolah",
       "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
       "sekolah": "Robot ke sekolah",
-      "teh": "Membuat teh hangat",
       "seragam": "pakai seragam",
       "tas": "pakai tas",
       "sepeda": "naik sepeda",
       "tiba": "sampai sekolah",
-      "rebus": "rebus air",
-      "tuang": "tuang ke cangkir",
-      "minum": "minum teh",
       "t-sepatu": "Memakai sepatu",
       "sepatu-kaus": "pakai kaus kaki",
       "sepatu-sepatu": "pakai sepatu",
@@ -49,23 +45,24 @@
       "kereta-stasiun": "tunggu di stasiun",
       "kereta-naik": "naik kereta",
       "kereta-tiba": "sampai sekolah",
-      "t-roti": "Sarapan roti",
-      "roti-ambil": "ambil roti",
-      "roti-oles": "oles madu",
-      "roti-makan": "makan roti"
+      "t-seberang": "Menyeberang jalan",
+      "seberang-1": "berhenti di tepi jalan",
+      "seberang-2": "lihat kiri dan kanan",
+      "seberang-3": "menyeberang jalan",
+      "seberang-4": "sampai sekolah",
+      "t-salim": "Tiba di sekolah",
+      "salim-1": "masuk gerbang sekolah",
+      "salim-2": "salim dengan guru",
+      "salim-3": "taruh tas di kelas"
     },
     "en": {
       "judul": "Off to School",
       "instruksi": "Put the pictures in order to get to school the right way.",
-      "sekolah": "Robot goes to school",
-      "teh": "Making warm tea",
+      "sekolah": "The robot goes to school",
       "seragam": "put on uniform",
       "tas": "put on backpack",
       "sepeda": "ride the bike",
       "tiba": "arrive at school",
-      "rebus": "boil water",
-      "tuang": "pour into the cup",
-      "minum": "drink the tea",
       "t-sepatu": "Putting on shoes",
       "sepatu-kaus": "put on socks",
       "sepatu-sepatu": "put on shoes",
@@ -95,10 +92,15 @@
       "kereta-stasiun": "wait at the station",
       "kereta-naik": "ride the train",
       "kereta-tiba": "arrive at school",
-      "t-roti": "Bread for breakfast",
-      "roti-ambil": "take the bread",
-      "roti-oles": "spread honey",
-      "roti-makan": "eat the bread"
+      "t-seberang": "Crossing the road",
+      "seberang-1": "stop at the side of the road",
+      "seberang-2": "look left and right",
+      "seberang-3": "cross the road",
+      "seberang-4": "arrive at school",
+      "t-salim": "Arriving at school",
+      "salim-1": "go through the school gate",
+      "salim-2": "shake hands with the teacher",
+      "salim-3": "put your bag in the classroom"
     }
   },
   "knobs": {
@@ -143,23 +145,28 @@
       ]
     },
     {
-      "id": "teh",
-      "titleKey": "teh",
+      "id": "seberang",
+      "titleKey": "t-seberang",
       "steps": [
         {
-          "id": "rebus",
-          "labelKey": "rebus",
-          "emoji": "♨️"
+          "id": "seberang-1",
+          "labelKey": "seberang-1",
+          "emoji": "✋"
         },
         {
-          "id": "tuang",
-          "labelKey": "tuang",
-          "emoji": "🫖"
+          "id": "seberang-2",
+          "labelKey": "seberang-2",
+          "emoji": "👀"
         },
         {
-          "id": "minum",
-          "labelKey": "minum",
-          "emoji": "🍵"
+          "id": "seberang-3",
+          "labelKey": "seberang-3",
+          "emoji": "🚶"
+        },
+        {
+          "id": "seberang-4",
+          "labelKey": "seberang-4",
+          "emoji": "🏫"
         }
       ]
     },
@@ -316,23 +323,23 @@
       ]
     },
     {
-      "id": "roti",
-      "titleKey": "t-roti",
+      "id": "salim",
+      "titleKey": "t-salim",
       "steps": [
         {
-          "id": "ambil",
-          "labelKey": "roti-ambil",
-          "emoji": "🍞"
+          "id": "salim-1",
+          "labelKey": "salim-1",
+          "emoji": "🚪"
         },
         {
-          "id": "oles",
-          "labelKey": "roti-oles",
-          "emoji": "🍯"
+          "id": "salim-2",
+          "labelKey": "salim-2",
+          "emoji": "🤝"
         },
         {
-          "id": "makan",
-          "labelKey": "roti-makan",
-          "emoji": "😋"
+          "id": "salim-3",
+          "labelKey": "salim-3",
+          "emoji": "🎒"
         }
       ]
     }

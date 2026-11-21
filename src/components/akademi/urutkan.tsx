@@ -19,7 +19,7 @@ type Langkah = RondeUrutkan["shown"][number];
 const SOROT = "#ffd23f";
 
 function visual(x: Langkah, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, label: t(x.labelKey) };
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px). */
