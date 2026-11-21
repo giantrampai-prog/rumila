@@ -11,6 +11,8 @@ import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
+import { usePanggung } from "./dunia";
+import { Wadah } from "./wadah";
 import { BALOO, BENAR, INK, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondePilah, JawabanPilah, PaketPilah>;
@@ -73,6 +75,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
   const binRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const terkirim = useRef(false);
   const kunci = !!hasil;
+  const { tema, skala: sk } = usePanggung();
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -176,16 +179,16 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
   const kolomBin = n <= 3 ? ["", "grid-cols-1", "grid-cols-2", "grid-cols-3"][n] : "grid-cols-2 sm:grid-cols-[repeat(var(--n),minmax(0,1fr))]";
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
-  const lebarKartu = items.some((i) => (i.emoji || i.shape) && t(i.labelKey).length > 18) ? 132 : 76;
+  const lebarKartu = Math.round((items.some((i) => (i.emoji || i.shape) && t(i.labelKey).length > 18) ? 132 : 76) * sk);
 
   return (
-    <div className="flex flex-col gap-3" style={{ color: INK }}>
+    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       {/* tombol Bantu di atas area benda, tidak menutupi kartu di layar sempit */}
       <div className="-mb-1 flex justify-end">
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>
       {/* item yang belum dipilah */}
-      <div className="relative rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]" style={{ minHeight: 120 }}>
+      <div className="relative rounded-[24px] p-3 shadow-[0_5px_0_rgba(11,37,69,.12)]" style={{ minHeight: 120 * sk, background: `${tema.panel}e6`, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` }}>
         <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${lebarKartu}px, 1fr))` }}>
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
@@ -196,11 +199,14 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               <div key={i.id} className="flex" onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
                 <KartuBenda
                   v={visual(i, t)}
-                  size={64}
+                  size={Math.round(64 * sk)}
+                  labelSize={Math.round(13 * sk)}
                   selected={dipilih}
                   onPointerDown={(e) => turun(e, i.id)}
-                  className={`w-full min-h-[76px] min-w-[76px] touch-none select-none ${disorot ? "akademi-bounce" : ""}`}
+                  className={`w-full touch-none select-none ${disorot ? "akademi-bounce" : ""}`}
                   style={{
+                    minHeight: 76 * sk,
+                    minWidth: 76 * sk,
                     transform: dipilih ? "scale(1.12)" : undefined,
                     opacity: sedangDiseret ? 0.25 : 1,
                     boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
@@ -218,17 +224,17 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
         </div>
       </div>
 
-      {/* bin berjajar */}
-      <div className={`grid gap-2 ${kolomBin}`} style={{ ["--n" as string]: n } as CSSProperties}>
+      {/* wadah berjajar, mengisi sisa tinggi panggung */}
+      <div className={`grid flex-1 gap-3 ${kolomBin}`} style={{ ["--n" as string]: n, gap: 12 * sk } as CSSProperties}>
         {bins.map((b) => {
           const isi = items.filter((i) => peta[i.id] === b.id);
           const hover = seret?.binHover === b.id;
           const disorot = hint?.bin === b.id;
           const hijau = benarBin(b);
           const siap = !!terpilih && !kunci;
-          const ring = hijau ? BENAR : hover ? UNGU : disorot ? SOROT : siap ? "rgba(91,75,255,.35)" : "transparent";
+          const ring = hijau ? BENAR : hover ? "#ffd23f" : disorot ? SOROT : siap ? "rgba(255,255,255,.85)" : "transparent";
           return (
-            <div
+            <Wadah
               key={b.id}
               ref={(el) => {
                 binRefs.current[b.id] = el;
@@ -237,37 +243,36 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               tabIndex={0}
               onClick={() => ketukBin(b.id)}
               onKeyDown={(e) => e.key === "Enter" && ketukBin(b.id)}
-              className={`flex min-h-[112px] flex-col rounded-[22px] bg-white p-2 transition-transform ${hover ? "scale-[1.04]" : ""} ${disorot ? "akademi-bounce" : ""}`}
-              style={{ boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 4px ${ring}`, background: hijau ? "#e6f8ef" : undefined }}
+              className={`${hover ? "scale-[1.04]" : ""} ${disorot ? "akademi-bounce" : ""}`}
+              style={{ minHeight: 132 * sk }}
+              ring={ring}
+              hijau={hijau}
+              label={
+                <>
+                  <Benda v={visual(b, t)} size={Math.round(34 * sk)} />
+                  <span className="text-center break-words">{t(b.labelKey)}</span>
+                </>
+              }
             >
-              <div className={`flex items-center justify-center px-1 ${n >= 3 ? "flex-col gap-0.5 sm:flex-row sm:gap-2" : "gap-2"}`}>
-                <Benda v={visual(b, t)} size={40} />
-                <span className="text-center break-words" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, lineHeight: 1.1 }}>
-                  {t(b.labelKey)}
-                </span>
-              </div>
-              <div className="mt-1 flex min-h-[52px] flex-1 items-center gap-1 overflow-x-auto rounded-[14px] bg-[#f4efe6] px-1.5 py-1" style={{ scrollbarWidth: "none" }}>
-                {isi.map((i) => (
-                  <KartuBenda
-                    key={i.id}
-                    v={visual(i, t)}
-                    size={30}
-                    keterangan={false}
-                    wrong={salah(i)}
-                    right={kunci && !salah(i)}
-                    onClick={() => ambil(i.id)}
-                    className={`min-h-[44px] min-w-[44px] shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
-                    style={{ pointerEvents: kunci ? "none" : undefined }}
-                  />
-                ))}
-                {isi.length === 0 && <span className="w-full text-center" style={{ fontSize: 22, opacity: 0.35 }}>⬇</span>}
-              </div>
-            </div>
+              {isi.map((i) => (
+                <KartuBenda
+                  key={i.id}
+                  v={visual(i, t)}
+                  size={Math.round(34 * sk)}
+                  keterangan={false}
+                  wrong={salah(i)}
+                  right={kunci && !salah(i)}
+                  onClick={() => ambil(i.id)}
+                  className={`shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
+                  style={{ minHeight: 46 * sk, minWidth: 46 * sk, pointerEvents: kunci ? "none" : undefined }}
+                />
+              ))}
+              {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: 30 * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap }}>↓</span>}
+            </Wadah>
           );
         })}
       </div>
 
-      {/* bayangan item yang sedang diseret */}
       {/* di-portal ke body: leluhur ber-transform/filter membuat "fixed" melenceng dari jari */}
       {itemSeret && seret && typeof document !== "undefined" && createPortal(
         <div className="pointer-events-none fixed z-[100]" style={{ left: seret.x, top: seret.y, transform: "translate(-50%,-60%) scale(1.15)" }}>
@@ -290,6 +295,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const [dipilih, setDipilih] = useState<string | null>(null);
   const [redup, setRedup] = useState<string | null>(null);
   const kunci = !!hasil || dipilih !== null;
+  const { tema, skala: sk, h } = usePanggung();
 
   useEffect(() => {
     setDipilih(null);
@@ -311,17 +317,21 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
 
   const n = choices.length;
   const kolom = n === 2 ? "grid-cols-2" : n === 3 ? "grid-cols-3" : n === 4 ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3";
-  const ukuran = n <= 2 ? 96 : n <= 4 ? 84 : 72;
+  const baris = Math.ceil(n / (n === 2 ? 2 : n === 3 ? 3 : n === 4 ? 4 : 3));
+  // gambar pilihan ikut tinggi kartu: di tablet kartu tinggi, jadi emoji kecil di tengah kartu besar terasa kosong
+  const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
+  const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5))));
 
   return (
-    <div className="flex flex-col gap-3" style={{ color: INK }}>
+    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
+        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
           {t(promptKey)}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>
-      <div className={`grid gap-3 ${kolom}`}>
+      {/* pilihan mengisi sisa panggung: kartu besar di tablet, tetap rapat di HP */}
+      <div className={`grid flex-1 ${kolom}`} style={{ gap: 14 * sk, gridAutoRows: sk > 1 ? `minmax(${Math.round(120 * sk)}px, 1fr)` : undefined }}>
         {choices.map((c) => {
           const benar = !!hasil && c.id === correct;
           const salah = !!hasil && dipilih === c.id && c.id !== correct;
@@ -335,6 +345,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
               wrong={salah}
               dim={redup === c.id && !hasil}
               keterangan={tulisLabel}
+              labelSize={Math.round(14 * sk)}
               onClick={() => pilih(c.id)}
               className={`min-h-[120px] ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
               style={{ background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined }}

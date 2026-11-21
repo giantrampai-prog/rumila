@@ -16,6 +16,8 @@ import { Icon } from "@/components/ui";
 import { COMMON_DEFS } from "@/components/koding/art";
 import { AgamTop } from "@/components/koding/stage";
 import { sfx } from "@/lib/sfx";
+import type { DuniaId } from "@/lib/akademi/tema-dunia";
+import { usePanggung } from "./dunia";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 import "@/components/koding/koding.css";
 
@@ -26,20 +28,39 @@ type Props = PresenterProps<RondeNavigasi, JawabanNavigasi, PaketNavigasi>;
 const SEL = 100; // satuan petak di viewBox
 const PETAK_MIN = 44;
 const PETAK_MAKS = 112;
+const GARIS = "rgba(11,37,69,.28)"; // garis tepi petak, jelas di semua warna tanah
+const PETAK_PLAFON = 210; // batas petak di tablet mendatar supaya peta 3×3 tidak raksasa
 const SLOT_DEFAULT = 8;
 const DEG: Record<Arah, number> = { N: 0, E: 90, S: 180, W: 270 };
 const DELTA: Record<Arah, { dx: number; dy: number }> = { N: { dx: 0, dy: -1 }, E: { dx: 1, dy: 0 }, S: { dx: 0, dy: 1 }, W: { dx: -1, dy: 0 } };
 const PUTAR: Record<Arah, { kiri: Arah; kanan: Arah }> = { N: { kiri: "W", kanan: "E" }, E: { kiri: "N", kanan: "S" }, S: { kiri: "E", kanan: "W" }, W: { kiri: "S", kanan: "N" } };
 
-const BLOK: Record<NavCommand, { label: string; ikon: ReactNode; c: string; d: string }> = {
-  maju: { label: "maju", ikon: <Icon name="arrow_upward" size={30} />, c: "#3a86ff", d: "#2463c9" },
-  lompat: { label: "lompat", ikon: <span style={{ fontSize: 28, lineHeight: 1 }}>🦘</span>, c: "#22b573", d: "#16804f" },
-  kiri: { label: "kiri", ikon: <Icon name="turn_left" size={30} />, c: "#8b5cf6", d: "#6a3fd1" },
-  kanan: { label: "kanan", ikon: <Icon name="turn_right" size={30} />, c: "#8b5cf6", d: "#6a3fd1" },
-  ulangi: { label: "ulangi", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🔁</span>, c: "#fd861d", d: "#c25a0c" },
-  kalau: { label: "🪨? lompat : maju", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🤔</span>, c: "#0ea5a4", d: "#0b7f7e" },
-  bendera: { label: "bendera", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🚩</span>, c: "#e04f5f", d: "#a8323f" },
+const BLOK: Record<NavCommand, { label: string; ikon: (px: number) => ReactNode; c: string; d: string }> = {
+  maju: { label: "maju", ikon: (px) => <Icon name="arrow_upward" size={px} />, c: "#3a86ff", d: "#2463c9" },
+  lompat: { label: "lompat", ikon: (px) => <span style={{ fontSize: px * 0.93, lineHeight: 1 }}>🦘</span>, c: "#22b573", d: "#16804f" },
+  kiri: { label: "kiri", ikon: (px) => <Icon name="turn_left" size={px} />, c: "#8b5cf6", d: "#6a3fd1" },
+  kanan: { label: "kanan", ikon: (px) => <Icon name="turn_right" size={px} />, c: "#8b5cf6", d: "#6a3fd1" },
+  ulangi: { label: "ulangi", ikon: (px) => <span style={{ fontSize: px * 0.87, lineHeight: 1 }}>🔁</span>, c: "#fd861d", d: "#c25a0c" },
+  kalau: { label: "🪨? lompat : maju", ikon: (px) => <span style={{ fontSize: px * 0.87, lineHeight: 1 }}>🤔</span>, c: "#0ea5a4", d: "#0b7f7e" },
+  bendera: { label: "bendera", ikon: (px) => <span style={{ fontSize: px * 0.87, lineHeight: 1 }}>🚩</span>, c: "#e04f5f", d: "#a8323f" },
 };
+
+/** Warna petak tanah (catur dua nada) per dunia: terang supaya robot gelap, 🌳, 🪨, dan ⭐ tetap kontras. */
+const TANAH: Record<DuniaId, [string, string]> = {
+  pasar: ["#f1d3a4", "#e6c08a"], // lantai kayu pasar
+  kebun: ["#bde79f", "#a9dc8a"], // rumput kebun
+  laut: ["#a7dcf0", "#91cfe8"], // pasir dasar laut kebiruan
+  pantai: ["#f7e4ae", "#efd796"], // pasir pantai
+  kelas: ["#e9e4fc", "#dcd4f8"], // ubin kelas
+  rumah: ["#efcfaa", "#e5bf93"], // lantai kayu rumah
+  kota: ["#d6deec", "#c5d0e3"], // trotoar kota
+  hutan: ["#a8d893", "#95cc7f"], // lumut hutan
+  angkasa: ["#d8d2f4", "#c7bfec"], // permukaan bulan
+  taman: ["#cdeea2", "#bae58c"], // rumput taman
+};
+
+/** Muka tombol/keping: warna blok diencerkan di atas putih, supaya ikon & label gelap tetap terbaca. */
+const muka = (c: string) => `linear-gradient(${c}2e, ${c}2e), #ffffff`;
 
 const tunggu = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 const samaSel = (a: { x: number; y: number }, b: { x: number; y: number }) => a.x === b.x && a.y === b.y;
@@ -457,65 +478,90 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const bisaKetukPetak = !sibuk && !terkunci && ((ronde.execMode === "langkah" && ronde.prediksi) || modeBendera);
   const blokLangkah = ronde.execMode === "langkah" ? lariLangkah?.steps[langkahKe] : undefined;
 
-  return (
-    <div className="flex flex-col gap-3" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
-      {/* panggung */}
-      <div className="relative rounded-[24px] bg-white/70 p-2 shadow-[0_4px_0_rgba(11,37,69,.1)]">
-        <Panggung
-          grid={grid}
-          agam={agam}
-          bendera={modeBendera ? bendera : null}
-          sorot={petakSorot}
-          tebakan={tebakan}
-          bisaKetuk={bisaKetukPetak}
-          onKetuk={ketukPetak}
-          menang={!!hasil?.benar}
-        />
-        {grids.length > 1 && (
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-2" aria-label="Semua kebun">
-            {grids.map((g, i) => (
-              <button
-                key={g.id}
-                onClick={() => { if (!sibuk && !terkunci) { sfx.tap(); setAktif(i); setAgam(awalAgam(g)); } }}
-                className="relative rounded-[12px] bg-white p-1 shadow-[0_3px_0_rgba(11,37,69,.1)] active:translate-y-0.5"
-                style={{ outline: i === aktif ? "3px solid #fd861d" : "3px solid transparent", minWidth: 56, minHeight: 56 }}
-                aria-label={`Kebun ${i + 1}${statusGrid[i] ? `, ${statusGrid[i] === "✓" ? "berhasil" : "gagal"}` : ""}`}
-              >
-                <Mini grid={g} />
-                {statusGrid[i] && (
-                  <span className="absolute -top-2 -right-2 flex size-6 items-center justify-center rounded-full text-[13px] font-black text-white" style={{ background: statusGrid[i] === "✓" ? BENAR : SALAH }}>
-                    {statusGrid[i]}
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-        )}
-        {!ujian && <button
-          onClick={bantu}
-          disabled={terkunci}
-          aria-label="Bantu"
-          className="absolute top-3 right-3 flex size-14 items-center justify-center rounded-full bg-[#fffaf0] shadow-[0_4px_0_#d8ccb4] active:translate-y-0.5 disabled:opacity-40"
-        >
-          <Icon name="lightbulb" size={28} className="text-[#e0a100]" />
-        </button>}
-      </div>
+  // tata letak: tablet/desktop mendatar → peta di kiri, rak + tombol di kanan; HP/tegak → bertumpuk
+  const { tema, w: pw, h: ph, skala: sk } = usePanggung();
+  const skt = Math.min(sk, 1.35); // skala teks: jangan sebesar skala kotak
+  const tanah = TANAH[tema.id];
+  const mendatar = pw >= 760 && ph > 0 && pw / ph >= 1.2;
+  const adaMini = grids.length > 1;
+  const tinggiMini = adaMini ? Math.round(72 * sk) + 22 : 0;
+  const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * 0.42)));
+  // ukuran petak dihitung dari ruang panggung (px), bukan tetap
+  const petakDatar = mendatar
+    ? Math.floor(Math.max(PETAK_MIN, Math.min(PETAK_PLAFON, (pw - lebarKanan - 16 - 28) / grid.w, (ph - 28 - tinggiMini) / grid.h)))
+    : 0;
+  const petakTegak = Math.round(ph > 0 ? Math.min(PETAK_MAKS * sk, Math.max(64, (ph * 0.55 - tinggiMini) / grid.h)) : PETAK_MAKS);
 
+  const kartuPeta = {
+    background: tema.panel,
+    boxShadow: `0 5px 0 rgba(11,37,69,.14), inset 0 0 0 3px ${tema.aksen}40`,
+    padding: 8 * sk,
+  } as const;
+
+  const peta = (
+    <div className={`relative flex flex-col justify-center rounded-[24px] ${mendatar ? "min-h-0 flex-1" : ""}`} style={kartuPeta}>
+      <Panggung
+        grid={grid}
+        agam={agam}
+        bendera={modeBendera ? bendera : null}
+        sorot={petakSorot}
+        tebakan={tebakan}
+        bisaKetuk={bisaKetukPetak}
+        onKetuk={ketukPetak}
+        menang={!!hasil?.benar}
+        tanah={tanah}
+        petak={mendatar ? petakDatar : undefined}
+        petakMaks={petakTegak}
+      />
+      {adaMini && (
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-2" aria-label="Semua kebun">
+          {grids.map((g, i) => (
+            <button
+              key={g.id}
+              onClick={() => { if (!sibuk && !terkunci) { sfx.tap(); setAktif(i); setAgam(awalAgam(g)); } }}
+              className="relative rounded-[12px] bg-white p-1 shadow-[0_3px_0_rgba(11,37,69,.1)] active:translate-y-0.5"
+              style={{ outline: i === aktif ? "3px solid #fd861d" : "3px solid transparent", minWidth: 56, minHeight: 56 }}
+              aria-label={`Kebun ${i + 1}${statusGrid[i] ? `, ${statusGrid[i] === "✓" ? "berhasil" : "gagal"}` : ""}`}
+            >
+              <Mini grid={g} tanah={tanah} ukuran={Math.round(72 * sk)} />
+              {statusGrid[i] && (
+                <span className="absolute -top-2 -right-2 flex size-6 items-center justify-center rounded-full text-[13px] font-black text-white" style={{ background: statusGrid[i] === "✓" ? BENAR : SALAH }}>
+                  {statusGrid[i]}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+      {!ujian && <button
+        onClick={bantu}
+        disabled={terkunci}
+        aria-label="Bantu"
+        className="absolute top-3 right-3 z-10 flex items-center justify-center rounded-full bg-[#fffaf0] shadow-[0_4px_0_#d8ccb4] active:translate-y-0.5 disabled:opacity-60"
+        style={{ width: 56 * skt, height: 56 * skt }}
+      >
+        <Icon name="lightbulb" size={Math.round(28 * skt)} className="text-[#e0a100]" />
+      </button>}
+    </div>
+  );
+
+  const kendali = (
+    <>
       {/* pesan */}
-      <div className="min-h-[28px] text-center text-[17px] font-extrabold" style={{ color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0 }} aria-live="polite">
+      <div className="rounded-full text-center font-extrabold" style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
         {pesan || "·"}
       </div>
 
       {/* ---------- mode langsung ---------- */}
       {ronde.execMode === "langsung" && (
         <>
-          <div className="flex items-center justify-center gap-2 text-[14px] font-bold opacity-70">
-            <span>{efektif.length} langkah</span>
-            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40" style={{ minHeight: 36 }}>
+          <div className="flex items-center justify-center gap-2 font-bold" style={{ fontSize: 14 * skt }}>
+            <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.12)]">{efektif.length} langkah</span>
+            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60" style={{ minHeight: 36 * skt }}>
               ↺ Ulang dari awal
             </button>
           </div>
-          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci} besar />
+          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci} besar penuh={mendatar} />
         </>
       )}
 
@@ -534,13 +580,13 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)}
             />
           )}
-          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} />
+          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} />
           <div className="flex gap-2">
             <button
               onClick={jalan}
               disabled={sibuk || terkunci}
-              className="flex-1 rounded-[20px] bg-[#22b573] py-4 text-white shadow-[0_6px_0_#16804f] active:translate-y-1 disabled:opacity-50"
-              style={{ fontSize: 24, fontWeight: 900, minHeight: 64 }}
+              className="flex-1 rounded-[20px] bg-[#16804f] py-4 text-white shadow-[0_6px_0_#0e5a37] active:translate-y-1 disabled:opacity-60"
+              style={{ fontSize: 24 * skt, fontWeight: 900, minHeight: 64 * skt }}
             >
               Jalan ▶
             </button>
@@ -548,9 +594,10 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               onClick={() => { if (sibuk || terkunci) return; sfx.close(); setRak(ronde.program.map((b) => ({ ...b }))); setRak2([]); setSel(null); setBendera(null); setPesan(""); setAgam(awalAgam(grid)); setStatusGrid(grids.map(() => null)); }}
               disabled={sibuk || terkunci}
               aria-label="Ulang dari awal"
-              className="flex w-16 items-center justify-center rounded-[20px] bg-[#fffaf0] shadow-[0_6px_0_#d8ccb4] active:translate-y-1 disabled:opacity-40"
+              className="flex items-center justify-center rounded-[20px] bg-[#fffaf0] shadow-[0_6px_0_#d8ccb4] active:translate-y-1 disabled:opacity-60"
+              style={{ width: 64 * skt }}
             >
-              <Icon name="restart_alt" size={28} />
+              <Icon name="restart_alt" size={Math.round(28 * skt)} />
             </button>
           </div>
         </>
@@ -560,35 +607,57 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
       {ronde.execMode === "langkah" && lariLangkah && (
         <>
           <Rak judul={`Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`} blok={ronde.program} slot={Math.max(hitungBlok(ronde.program), 1)} aktif sel={null} bacaSaja />
-          <div className="flex items-center gap-2">
-            <div className="flex-1 text-[15px] font-bold opacity-75">
+          <div className={`flex gap-2 ${mendatar ? "flex-col items-stretch" : "items-center"}`}>
+            <div className="flex-1 rounded-[16px] bg-white px-3 py-2 font-bold" style={{ fontSize: 15 * skt }}>
               {ronde.prediksi
                 ? blokLangkah
                   ? `Blok berikutnya: ${BLOK[blokLangkah.cmd === "bendera" ? "bendera" : blokLangkah.cmd].label}. Ketuk petak tujuannya, lalu tekan Langkah.`
                   : "Program habis."
                 : "Tekan Langkah untuk menjalankan satu blok."}
-              {ronde.prediksi && prediksi.length > 0 && <span className="ml-1 opacity-80">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
+              {ronde.prediksi && prediksi.length > 0 && <span className="ml-1">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
             </div>
             <button
               onClick={langkah}
               disabled={sibuk || terkunci || (ronde.prediksi && !tebakan && !!blokLangkah)}
-              className="rounded-[20px] bg-[#3a86ff] px-6 py-4 text-white shadow-[0_6px_0_#2463c9] active:translate-y-1 disabled:opacity-50"
-              style={{ fontSize: 22, fontWeight: 900, minHeight: 64, minWidth: 140 }}
+              className="rounded-[20px] bg-[#2463c9] px-6 py-4 text-white shadow-[0_6px_0_#1a4a99] active:translate-y-1 disabled:opacity-60"
+              style={{ fontSize: 22 * skt, fontWeight: 900, minHeight: 64 * skt, minWidth: 140 * skt }}
             >
               Langkah ▶
             </button>
           </div>
         </>
       )}
+    </>
+  );
+
+  if (mendatar) {
+    return (
+      <div className="flex min-h-0 flex-1 flex-row items-stretch gap-4" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+        {peta}
+        <div className="flex min-h-0 shrink-0 flex-col justify-center gap-3 overflow-y-auto rounded-[24px] p-3" style={{ width: lebarKanan, background: tema.panel, boxShadow: `0 5px 0 rgba(11,37,69,.14), inset 0 0 0 3px ${tema.aksen}40` }}>
+          {kendali}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-3" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+      {peta}
+      {kendali}
     </div>
   );
 }
 
 /* ---------------- panggung ---------------- */
 
-function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang }: {
+function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, petak, petakMaks }: {
   grid: NavGrid; agam: Agam; bendera: { x: number; y: number } | null; sorot: Set<string>; tebakan: { x: number; y: number } | null;
   bisaKetuk: boolean; onKetuk: (x: number, y: number) => void; menang: boolean;
+  tanah: [string, string];
+  /** ukuran petak tetap (px) di tata letak mendatar; kosong = lebar penuh dengan batas `petakMaks` */
+  petak?: number;
+  petakMaks: number;
 }) {
   const sel: ReactNode[] = [];
   for (let y = 0; y < grid.h; y++) {
@@ -601,15 +670,17 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       const tebak = tebakan && samaSel(tebakan, { x, y });
       sel.push(
         <g key={`${x}-${y}`} onClick={bisaKetuk && !dinding ? () => onKetuk(x, y) : undefined} style={{ cursor: bisaKetuk && !dinding ? "pointer" : "default" }} role={bisaKetuk && !dinding ? "button" : undefined} aria-label={bisaKetuk ? `Petak ${x + 1}, ${y + 1}` : undefined}>
-          <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill={(x + y) % 2 ? "#a9dc8a" : "#bde79f"} />
+          <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill={dinding ? "#7a5a3a" : (x + y) % 2 ? tanah[1] : tanah[0]} stroke={dinding ? "#4f3822" : GARIS} strokeWidth={3} />
           <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill="url(#ka-bevel)" />
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill={tebak ? "#3a86ff" : "#ffd23f"} opacity={tebak ? 0.45 : 0.55} className="goal-pulse" />}
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill="none" stroke={tebak ? "#3a86ff" : "#ffb000"} strokeWidth={5} />}
           {dinding && <text x={X + SEL / 2} y={Y + SEL / 2 + 24} textAnchor="middle" fontSize={66}>🌳</text>}
+          {batu && <ellipse cx={X + SEL / 2} cy={Y + SEL / 2 + 22} rx={32} ry={10} fill="#0b2545" opacity={0.3} />}
           {batu && <text x={X + SEL / 2} y={Y + SEL / 2 + 20} textAnchor="middle" fontSize={56}>🪨</text>}
           {goal && (
             <g transform={`translate(${X + SEL / 2} ${Y + SEL / 2})`}>
-              <circle r={40} fill="#ffd23f" opacity={0.3} className="goal-pulse" />
+              <circle r={44} fill="#ffd23f" opacity={0.45} className="goal-pulse" />
+              <circle r={36} fill="#ffffff" stroke="#e07a00" strokeWidth={5} />
               <text y={22} textAnchor="middle" fontSize={menang ? 78 : 60} style={{ transition: "font-size 400ms" }}>⭐</text>
             </g>
           )}
@@ -618,20 +689,21 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       );
     }
   }
-  const lebarMin = grid.w * PETAK_MIN;
-  const lebarMaks = grid.w * PETAK_MAKS;
+  const ukuranSvg = petak
+    ? { width: grid.w * petak, height: grid.h * petak }
+    : { width: "100%", minWidth: grid.w * PETAK_MIN, maxWidth: grid.w * Math.max(PETAK_MIN, petakMaks) };
   return (
     <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: "touch" }}>
       <svg
         viewBox={`0 0 ${grid.w * SEL} ${grid.h * SEL}`}
         className="mx-auto block"
-        style={{ width: "100%", minWidth: lebarMin, maxWidth: lebarMaks, touchAction: "manipulation" }}
+        style={{ ...ukuranSvg, touchAction: "manipulation" }}
         role="img"
         aria-label={`Kebun ${grid.w} kali ${grid.h} petak`}
       >
         <defs>{COMMON_DEFS}</defs>
         {sel}
-        <circle cx={grid.start.x * SEL + SEL / 2} cy={grid.start.y * SEL + SEL / 2} r={30} fill="none" stroke="#fff" strokeOpacity={0.8} strokeWidth={5} strokeDasharray="8 8" />
+        <circle cx={grid.start.x * SEL + SEL / 2} cy={grid.start.y * SEL + SEL / 2} r={30} fill="none" stroke={INK} strokeOpacity={0.55} strokeWidth={5} strokeDasharray="8 8" />
         <g className="akademi-agam" style={{ transform: `translate(${agam.x * SEL + SEL / 2}px, ${agam.y * SEL + SEL / 2}px)` }}>
           <g key={agam.goyang} className={agam.goyang ? "akademi-shake" : undefined}>
             <g className={agam.senang ? "akademi-bounce" : undefined}>
@@ -652,13 +724,14 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
 }
 
 /** Thumbnail grid lain (semuaGrid). */
-function Mini({ grid }: { grid: NavGrid }) {
+function Mini({ grid, tanah, ukuran = 72 }: { grid: NavGrid; tanah: [string, string]; ukuran?: number }) {
   const s = 12;
+  const skala = Math.min(ukuran / (grid.w * s), ukuran / (grid.h * s), 1.6);
   return (
-    <svg viewBox={`0 0 ${grid.w * s} ${grid.h * s}`} width={Math.min(72, grid.w * s)} height={Math.min(72, grid.h * s)} aria-hidden style={{ display: "block" }}>
+    <svg viewBox={`0 0 ${grid.w * s} ${grid.h * s}`} width={Math.round(grid.w * s * skala)} height={Math.round(grid.h * s * skala)} aria-hidden style={{ display: "block" }}>
       {Array.from({ length: grid.h }, (_, y) => Array.from({ length: grid.w }, (_, x) => {
         const c = { x, y };
-        const f = grid.walls.some((w) => samaSel(w, c)) ? "#2c6a1d" : grid.rocks.some((b) => samaSel(b, c)) ? "#9aa1a8" : samaSel(grid.goal, c) ? "#ffd23f" : samaSel(grid.start, c) ? "#2ec4a6" : (x + y) % 2 ? "#a9dc8a" : "#bde79f";
+        const f = grid.walls.some((w) => samaSel(w, c)) ? "#2c6a1d" : grid.rocks.some((b) => samaSel(b, c)) ? "#9aa1a8" : samaSel(grid.goal, c) ? "#ffd23f" : samaSel(grid.start, c) ? "#2ec4a6" : (x + y) % 2 ? tanah[1] : tanah[0];
         return <rect key={`${x}-${y}`} x={x * s + 0.5} y={y * s + 0.5} width={s - 1} height={s - 1} rx={2} fill={f} />;
       }))}
     </svg>
@@ -667,20 +740,25 @@ function Mini({ grid }: { grid: NavGrid }) {
 
 /* ---------------- palet & rak ---------------- */
 
-function Palet({ commands, onTekan, nonaktif, besar }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean }) {
+function Palet({ commands, onTekan, nonaktif, besar, penuh }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean }) {
+  const { skala: sk } = usePanggung();
+  const skt = Math.min(sk, 1.35);
+  const kolom = Math.min(commands.length, 4);
+  // di kolom kanan (mendatar) tombol mengisi lebar kolom; di HP/tegak lebar tombol ikut skala
+  const lebar = penuh ? "1fr" : `${Math.round((besar ? 160 : 140) * sk)}px`;
   return (
-    <div className="grid justify-center gap-2" style={{ gridTemplateColumns: `repeat(${Math.min(commands.length, 4)}, minmax(0, ${besar ? 160 : 140}px))` }}>
+    <div className="grid justify-center" style={{ gap: 8 * sk, gridTemplateColumns: `repeat(${kolom}, minmax(0, ${lebar}))` }}>
       {commands.map((c) => (
         <button
           key={c}
           onClick={() => onTekan(c)}
           disabled={nonaktif}
-          className="koding-block flex flex-col items-center justify-center gap-0.5 px-2 py-2 text-white disabled:opacity-50"
-          style={{ background: BLOK[c].c, boxShadow: `0 5px 0 ${BLOK[c].d}`, minHeight: besar ? 76 : 64 }}
+          className="koding-block flex flex-col items-center justify-center gap-0.5 px-2 py-2 disabled:opacity-70"
+          style={{ background: muka(BLOK[c].c), border: `3px solid ${BLOK[c].c}`, boxShadow: `0 5px 0 ${BLOK[c].d}`, color: BLOK[c].d, minHeight: (besar ? 76 : 64) * sk }}
           aria-label={BLOK[c].label}
         >
-          {BLOK[c].ikon}
-          <span style={{ fontFamily: BALOO, fontSize: c === "kalau" ? 13 : 15, fontWeight: 800, lineHeight: 1.1, textAlign: "center" }}>{BLOK[c].label}</span>
+          {BLOK[c].ikon(Math.round(30 * sk))}
+          <span style={{ fontFamily: BALOO, fontSize: (c === "kalau" ? 13 : 15) * skt, fontWeight: 800, lineHeight: 1.1, textAlign: "center", color: INK }}>{BLOK[c].label}</span>
         </button>
       ))}
     </div>
@@ -691,19 +769,31 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
   judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean;
   onPilihRak?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
+  const { tema, skala: sk } = usePanggung();
+  const skt = Math.min(sk, 1.35);
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
+  const sorotRak = aktif && onPilihRak;
+  // rak bertema dunia: badan berwarna wadah, area slot terang di dalamnya (selaras komponen Wadah)
   return (
-    <div onClick={onPilihRak} className="rounded-[20px] p-2" style={{ background: aktif ? "rgba(11,37,69,.08)" : "rgba(11,37,69,.04)", outline: aktif && onPilihRak ? "3px solid #fd861d" : "3px solid transparent", boxShadow: "inset 0 3px 0 rgba(0,0,0,.06)" }}>
-      <div className="mb-1 px-1 text-[13px] font-extrabold opacity-70">{judul}</div>
-      <div className="flex flex-wrap items-center gap-1.5">
+    <div
+      onClick={onPilihRak}
+      className="rounded-[20px]"
+      style={{
+        background: `linear-gradient(180deg,${tema.wadahGelap} 0 ${Math.round(8 * sk)}px,${tema.wadahWarna} ${Math.round(8 * sk)}px)`,
+        boxShadow: `0 5px 0 ${tema.wadahGelap}${sorotRak ? ", 0 0 0 4px #fd861d" : ""}`,
+        padding: `${10 * sk}px ${10 * sk}px ${12 * sk}px`,
+      }}
+    >
+      <div className="mb-1.5 inline-flex rounded-full bg-white/95 px-3 py-0.5 font-extrabold shadow-[0_2px_0_rgba(0,0,0,.12)]" style={{ fontSize: 13 * skt, color: INK }}>{judul}</div>
+      <div className="flex flex-wrap items-center rounded-[14px]" style={{ gap: 6 * sk, padding: 6 * sk, background: "#ffffff", boxShadow: "inset 0 4px 10px rgba(0,0,0,.14)" }}>
         {blok.map((b, i) => (
           <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
         ))}
         {Array.from({ length: kosong }, (_, k) => (
-          <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56, height: 56, border: "3px dashed rgba(11,37,69,.25)" }} aria-hidden />
+          <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56 * sk, height: 56 * sk, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
         ))}
-        {blok.length === 0 && !bacaSaja && <span className="ml-1 self-center text-[14px] font-bold opacity-60">Ketuk blok di bawah</span>}
+        {blok.length === 0 && !bacaSaja && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
       </div>
     </div>
   );
@@ -712,29 +802,32 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
 function Keping({ blok, nomor, dipilih, bacaSaja, onKetuk, onN, onHapusIsi }: {
   blok: NavBlock; nomor: number; dipilih: boolean; bacaSaja?: boolean; onKetuk: () => void; onN: () => void; onHapusIsi: (j: number) => void;
 }) {
+  const { skala: sk } = usePanggung();
   const b = BLOK[blok.cmd];
-  const gaya = { background: b.c, boxShadow: `0 3px 0 ${b.d}`, outline: dipilih ? "4px solid #ffd23f" : "4px solid transparent", outlineOffset: 1 } as const;
+  const gaya = { background: muka(b.c), border: `3px solid ${b.c}`, color: b.d, boxShadow: `0 3px 0 ${b.d}`, outline: dipilih ? "4px solid #ffb000" : "4px solid transparent", outlineOffset: 1 } as const;
+  const nomorEl = <span className="absolute -top-2 -left-2 flex items-center justify-center rounded-full bg-white font-black" style={{ color: INK, width: 20 * sk, height: 20 * sk, fontSize: 11 * sk }}>{nomor}</span>;
   if (blok.cmd === "ulangi") {
     return (
-      <div className="relative flex items-center gap-1 rounded-[14px] p-1 pl-2 text-white" style={gaya} aria-label={`Blok ${nomor}: ulangi ${blok.n} kali`}>
-        <button onClick={(e) => { e.stopPropagation(); onKetuk(); }} disabled={bacaSaja} className="flex items-center gap-1 self-stretch" style={{ minWidth: 44, minHeight: 48 }} aria-label={dipilih ? "Hapus blok ulangi" : "Isi blok ulangi"}>
-          <span className="text-[22px]">🔁</span>
+      <div className="relative flex items-center gap-1 rounded-[14px] p-1 pl-2" style={gaya} aria-label={`Blok ${nomor}: ulangi ${blok.n} kali`}>
+        <button onClick={(e) => { e.stopPropagation(); onKetuk(); }} disabled={bacaSaja} className="flex items-center gap-1 self-stretch" style={{ minWidth: 44 * sk, minHeight: 48 * sk }} aria-label={dipilih ? "Hapus blok ulangi" : "Isi blok ulangi"}>
+          <span style={{ fontSize: 22 * sk }}>🔁</span>
         </button>
-        <button onClick={(e) => { e.stopPropagation(); onN(); }} disabled={bacaSaja} className="rounded-[10px] bg-white/90 px-2 font-black text-[#c25a0c] active:scale-95" style={{ minWidth: 44, minHeight: 44, fontSize: 20 }} aria-label={`Ulangi ${blok.n} kali, ketuk untuk mengubah`}>
+        <button onClick={(e) => { e.stopPropagation(); onN(); }} disabled={bacaSaja} className="rounded-[10px] bg-white px-2 font-black text-[#a84a08] shadow-[0_2px_0_rgba(0,0,0,.15)] active:scale-95" style={{ minWidth: 44 * sk, minHeight: 44 * sk, fontSize: 20 * sk }} aria-label={`Ulangi ${blok.n} kali, ketuk untuk mengubah`}>
           {blok.n}×
         </button>
-        <div className="flex items-center gap-1 rounded-[10px] bg-black/15 p-1" style={{ minWidth: 48, minHeight: 48 }}>
+        <div className="flex items-center gap-1 rounded-[10px] bg-white p-1 shadow-[inset_0_2px_4px_rgba(0,0,0,.15)]" style={{ minWidth: 48 * sk, minHeight: 48 * sk }}>
           {blok.body.map((c, j) => {
             const k = BLOK[c.cmd];
+            const px = Math.round(22 * sk);
             return (
-              <button key={j} onClick={(e) => { e.stopPropagation(); onHapusIsi(j); }} disabled={bacaSaja} className="flex items-center justify-center rounded-[10px] text-white" style={{ background: k.c, boxShadow: `0 2px 0 ${k.d}`, width: 44, height: 44 }} aria-label={`${k.label}, ketuk untuk menghapus`}>
-                {c.cmd === "maju" ? <Icon name="arrow_upward" size={22} /> : c.cmd === "kiri" ? <Icon name="turn_left" size={22} /> : c.cmd === "kanan" ? <Icon name="turn_right" size={22} /> : <span style={{ fontSize: 20 }}>{c.cmd === "lompat" ? "🦘" : c.cmd === "kalau" ? "🤔" : "🚩"}</span>}
+              <button key={j} onClick={(e) => { e.stopPropagation(); onHapusIsi(j); }} disabled={bacaSaja} className="flex items-center justify-center rounded-[10px]" style={{ background: muka(k.c), border: `2px solid ${k.c}`, color: k.d, boxShadow: `0 2px 0 ${k.d}`, width: 44 * sk, height: 44 * sk }} aria-label={`${k.label}, ketuk untuk menghapus`}>
+                {c.cmd === "maju" ? <Icon name="arrow_upward" size={px} /> : c.cmd === "kiri" ? <Icon name="turn_left" size={px} /> : c.cmd === "kanan" ? <Icon name="turn_right" size={px} /> : <span style={{ fontSize: 20 * sk }}>{c.cmd === "lompat" ? "🦘" : c.cmd === "kalau" ? "🤔" : "🚩"}</span>}
               </button>
             );
           })}
-          {blok.body.length === 0 && <span className="text-[12px] font-bold opacity-80">isi…</span>}
+          {blok.body.length === 0 && <span className="font-bold" style={{ fontSize: 12 * sk, color: "#3d4f66" }}>isi…</span>}
         </div>
-        <span className="absolute -top-2 -left-2 flex size-5 items-center justify-center rounded-full bg-white text-[11px] font-black" style={{ color: INK }}>{nomor}</span>
+        {nomorEl}
       </div>
     );
   }
@@ -742,12 +835,12 @@ function Keping({ blok, nomor, dipilih, bacaSaja, onKetuk, onN, onHapusIsi }: {
     <button
       onClick={(e) => { e.stopPropagation(); onKetuk(); }}
       disabled={bacaSaja}
-      className="relative flex items-center justify-center rounded-[14px] text-white active:translate-y-0.5"
-      style={{ ...gaya, width: blok.cmd === "kalau" ? 88 : 56, height: 56 }}
+      className="relative flex items-center justify-center rounded-[14px] active:translate-y-0.5"
+      style={{ ...gaya, width: (blok.cmd === "kalau" ? 88 : 56) * sk, height: 56 * sk }}
       aria-label={`Blok ${nomor}: ${b.label}${bacaSaja ? "" : dipilih ? ", ketuk lagi untuk menghapus" : ", ketuk untuk menghapus"}`}
     >
-      {blok.cmd === "kalau" ? <span style={{ fontSize: 12, fontWeight: 800, lineHeight: 1.1 }}>🪨? lompat<br />: maju</span> : b.ikon}
-      <span className="absolute -top-2 -left-2 flex size-5 items-center justify-center rounded-full bg-white text-[11px] font-black" style={{ color: INK }}>{nomor}</span>
+      {blok.cmd === "kalau" ? <span style={{ fontSize: 12 * sk, fontWeight: 800, lineHeight: 1.1, color: INK }}>🪨? lompat<br />: maju</span> : b.ikon(Math.round(30 * sk))}
+      {nomorEl}
     </button>
   );
 }
