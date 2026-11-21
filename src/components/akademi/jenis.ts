@@ -23,4 +23,12 @@ export const INK = "#0b2545";
 
 /** Warna umpan balik */
 export const BENAR = "#22b573";
-export const SALAH = "#ff5a6e";
+export const SALAH = "#f08a3c"; // oranye lembut: aturan brand, jawaban salah anak tidak memakai merah
+
+/** Gaya bersih layar soal (lihat artifact "Gaya Soal RINOYA"): kartu putih, tepi abu 2px + bayangan bawah 4px. */
+export const GARIS = "#e3e7ef";
+export const GARIS_BAWAH = "#d5dbe6";
+/** warna pilar aktif (diset LayarAktivitas sebagai CSS var) */
+export const PILAR_CSS = "var(--pilar, #0786eb)";
+export const PILAR_TUA_CSS = "var(--pilar-tua, #0567c2)";
+export const bayangKartu = (ring?: string) => (ring && ring !== "transparent" ? `0 0 0 3px ${ring}, 0 4px 0 ${GARIS_BAWAH}` : `0 0 0 2px ${GARIS}, 0 4px 0 ${GARIS_BAWAH}`);

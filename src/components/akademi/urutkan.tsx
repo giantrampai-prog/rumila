@@ -15,7 +15,7 @@ import { sfx } from "@/lib/sfx";
 import { KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
-import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
+import { BALOO, BENAR, INK, NUNITO, SALAH, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondeUrutkan, JawabanUrutkan, PaketUrutkan>;
 type Langkah = RondeUrutkan["shown"][number];
@@ -48,18 +48,14 @@ function selMuat(lebar: number, n: number, min: number, maks: number, gap: numbe
 const batas = (min: number, x: number, maks: number) => Math.round(Math.min(maks, Math.max(min, x)));
 
 /** Rak tujuan bertema dunia (warna wadah + bibir rak gelap), menggantikan kotak putih pucat. */
-function gayaRak(tema: Tema, sk: number): CSSProperties {
-  return {
-    borderRadius: 26 * sk,
-    padding: 12 * sk,
-    background: `linear-gradient(180deg,rgba(255,255,255,.2),transparent 40%), ${tema.wadahWarna}`,
-    boxShadow: `inset 0 -${Math.round(10 * sk)}px 0 ${tema.wadahGelap}66, 0 6px 0 ${tema.wadahGelap}`,
-  };
+function gayaRak(_tema: Tema, sk: number): CSSProperties {
+  // gaya bersih: tanpa panel pembungkus; slot & kartu langsung di atas latar layar
+  return { padding: 4 * sk };
 }
 
-/** Panel benda (kartu yang belum dipakai) bernuansa dunia. */
-function gayaPanel(tema: Tema, sk: number): CSSProperties {
-  return { borderRadius: 24 * sk, padding: 12 * sk, background: `${tema.panel}e6`, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` };
+/** Panel benda (kartu yang belum dipakai): tanpa pembungkus, kartu langsung di atas latar. */
+function gayaPanel(_tema: Tema, sk: number): CSSProperties {
+  return { padding: 4 * sk };
 }
 
 /** Lubang slot di rak: kosong = cekung nyaris putih bergaris putus tegas, terisi = kartu putih. Isi selalu di atas latar terang. */
@@ -71,13 +67,10 @@ function gayaLubang(terisi: boolean, ring: string, latar?: string): CSSPropertie
 
 /** Judul urutan + tombol bantu dalam satu baris. */
 function Kepala({ judul, onBantu, kunci, tanpaBantu }: { judul: string; onBantu: () => void; kunci: boolean; tanpaBantu?: boolean }) {
-  const { tema, skala: sk } = usePanggung();
+  const { skala: sk } = usePanggung();
   return (
     <div className="flex items-center gap-2">
-      <div
-        className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center"
-        style={{ fontFamily: BALOO, fontSize: 22 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}
-      >
+      <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar)" }}>
         {judul}
       </div>
       {!tanpaBantu && <TombolBantu onClick={onBantu} disabled={kunci} />}
@@ -343,7 +336,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
       <div className="flex flex-1 flex-col items-center justify-center text-center" style={{ ...gayaRak(tema, sk), gap: 14 * sk }}>
-        <div className="rounded-full bg-white px-4 py-1 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ fontFamily: BALOO, fontSize: 18 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>Ketuk dua kartu untuk menukar tempatnya</div>
+        <div style={{ fontFamily: NUNITO, fontSize: 13.5 * Math.min(sk, 1.3), fontWeight: 800, color: "#6b7790" }}>Ketuk dua kartu untuk menukar tempatnya</div>
         <div className="flex flex-wrap justify-center" style={{ gap }}>
           {urutan.map((id, i) => {
             const benar = !!hasil && id === correct[i];

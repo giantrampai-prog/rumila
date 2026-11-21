@@ -13,7 +13,7 @@ import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
-import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
+import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 
 type Props = PresenterProps<RondePola, JawabanPola, PaketPola>;
 type ItemPola = PaketPola["items"][number];
@@ -318,7 +318,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 22 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
+        <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar)" }}>
           {judul}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
@@ -330,8 +330,8 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
         style={{
           borderRadius: 26 * sk,
           padding: `${16 * sk}px ${12 * sk}px`,
-          background: hiasan ? "linear-gradient(180deg,#fff6d6,#ffe7a3)" : `linear-gradient(180deg,rgba(255,255,255,.2),transparent 40%), ${tema.wadahWarna}`,
-          boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : `inset 0 -${Math.round(10 * sk)}px 0 ${tema.wadahGelap}66, 0 6px 0 ${tema.wadahGelap}`,
+          background: hiasan ? "linear-gradient(180deg,#fff6d6,#ffe7a3)" : "#ffffff",
+          boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : bayangKartu(),
         }}
       >
         {/* tali kalung di belakang kotak */}
@@ -388,7 +388,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
       </div>
 
       {/* palette */}
-      <div style={{ borderRadius: 24 * sk, padding: 12 * sk, background: tema.panel, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` }}>
+      <div style={{ borderRadius: 20 * sk, padding: 12 * sk, background: "transparent" }}>
         {mode === "cipta" && !fasePilih && !kunci && (
           <div className="mb-2 text-center" style={{ fontFamily: BALOO, fontSize: 15 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
             Ketuk benda terpilih untuk mengisi · ketuk kotak untuk mengosongkan

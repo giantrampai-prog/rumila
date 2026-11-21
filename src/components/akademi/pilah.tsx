@@ -182,7 +182,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
       {/* tombol Bantu dipasang ke kepala layar (portal), tidak memakan baris */}
       <TombolBantu onClick={bantu} disabled={kunci} />
       {/* item yang belum dipilah */}
-      <div className="relative rounded-[24px] p-3 shadow-[0_5px_0_rgba(11,37,69,.12)]" style={{ minHeight: 120 * sk, background: `${tema.panel}e6`, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` }}>
+      {/* kartu langsung di atas latar layar (tanpa panel pembungkus: satu lapis kartu) */}
+      <div className="relative" style={{ minHeight: 84 * sk }}>
         <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${lebarKartu}px, 1fr))`, gridAutoRows: "1fr" }}>
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
@@ -296,7 +297,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const [dipilih, setDipilih] = useState<string | null>(null);
   const [redup, setRedup] = useState<string | null>(null);
   const kunci = !!hasil || dipilih !== null;
-  const { tema, skala: sk, h, w } = usePanggung();
+  const { skala: sk, h, w } = usePanggung();
 
   useEffect(() => {
     setDipilih(null);
@@ -355,7 +356,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   return (
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
+        <div className="flex-1 px-1 py-1 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar)" }}>
           <button type="button" onClick={() => ucapkan(soal, lang)} className="w-full" aria-label="Dengarkan soal">
             {soal}
           </button>

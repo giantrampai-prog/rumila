@@ -15,7 +15,7 @@ import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { Wadah } from "./wadah";
-import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
+import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 
 type Props = PresenterProps<RondeSimulasi, JawabanSimulasi, PaketSimulasi>;
 type Item = PaketSimulasi["items"][number];
@@ -85,11 +85,11 @@ function Umpan({ hasil, benar }: { hasil: Props["hasil"]; benar: ReactNode }) {
 
 /** Papan/panggung tempat simulasi digambar: panel terang bertema dunia (tetap terang di dunia gelap), mengisi sisa panggung. */
 function Papan({ children, style, className = "" }: { children: ReactNode; style?: CSSProperties; className?: string }) {
-  const { tema, skala } = usePanggung();
+  const { skala } = usePanggung();
   return (
     <div
       className={`relative flex flex-1 flex-col rounded-[24px] ${className}`}
-      style={{ padding: 12 * skala, background: `linear-gradient(180deg, transparent 40%, ${tema.aksen}1c), ${tema.panel}`, boxShadow: `0 6px 0 ${tema.aksen}66, inset 0 0 0 3px ${tema.aksen}40`, ...style }}
+      style={{ padding: 12 * skala, background: "#ffffff", boxShadow: bayangKartu(), ...style }}
     >
       {children}
     </div>
@@ -191,7 +191,7 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
   const angka = useMemo(() => Array.from({ length: Math.max(0, atas - min + 1) }, (_, k) => min + k), [min, atas]);
   const d = Math.round(64 * Math.min(skala, 1.4));
   return (
-    <div className="flex flex-wrap justify-center gap-2 rounded-[20px] p-2" style={{ background: tema.panel, boxShadow: `inset 0 0 0 3px ${tema.aksen}40`, gap: 8 * skala }} role="group" aria-label="Pilih angka">
+    <div className="flex flex-wrap justify-center gap-2 rounded-[20px] p-2" style={{ background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef", gap: 8 * skala }} role="group" aria-label="Pilih angka">
       {angka.map((n) => {
         const aktif = dipilih === n;
         return (
@@ -825,7 +825,7 @@ function ModeTurus(c: Ctx) {
   );
 
   const tabel = (
-    <div className="flex flex-col gap-2 rounded-[20px] p-2" style={{ gap: 8 * skala, background: tema.panel, boxShadow: `0 5px 0 ${tema.aksen}55, inset 0 0 0 3px ${tema.aksen}40` }} role="group" aria-label="Tabel turus">
+    <div className="flex flex-col gap-2 rounded-[20px] p-2" style={{ gap: 8 * skala, background: tema.panel, boxShadow: bayangKartu() }} role="group" aria-label="Tabel turus">
       {hewan.map((h) => {
         const n = turus[h.id] ?? 0;
         const sorot = hint && sedang === h.id;

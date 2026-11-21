@@ -5,7 +5,7 @@
 
 import { SisaBantuProvider } from "./mode-ujian";
 import { useRouter } from "next/navigation";
-import { duniaPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
+import { duniaPaket, pilarPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
@@ -209,7 +209,7 @@ function Runner({ paket }: { paket: ContentPack }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} musik={musik}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} musik={musik}>
       <div key={`${idx}-${percobaan}`} className="akademi-fade flex flex-1 flex-col justify-center">
         <SisaBantuProvider value={sisaBantu}>
         <LatarWarnaProvider paket={paket}>
