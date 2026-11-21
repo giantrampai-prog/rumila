@@ -9,7 +9,9 @@ import { RUTE_ALAT } from "@/lib/kampus";
 import { profilTerbuka, sentuhProfil, tutupProfil } from "@/lib/profil";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { can, useHydrated, useMe, useRumila, useUI } from "@/lib/store";
+import { bebasKunci, useLangganan, usePantauLangganan } from "@/lib/akademi/langganan";
 import { KidFrame, KidHeader } from "./kid";
+import { LanggananHabis } from "./langganan-habis";
 import { SheetHost } from "./sheets";
 
 /** Izin yang dibutuhkan sebuah route (guard sisi klien; fase Supabase ditambah RLS). */
@@ -46,6 +48,12 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, [hydrated, cloud.status, signedIn, router]);
 
   return ready && signedIn ? <Ready>{children}</Ready> : null;
+}
+
+/** Pembaca status langganan; dipasang hanya saat sudah masuk & punya rumah. */
+function PantauLangganan() {
+  usePantauLangganan();
+  return null;
 }
 
 function Ready({ children }: { children: ReactNode }) {
@@ -92,12 +100,15 @@ function Ready({ children }: { children: ReactNode }) {
     }
   }, [allowed, me.id, router, showToast]);
 
-  const page = allowed && terbuka ? children : null;
+  // Kunci akses: masa coba / langganan habis → layar langganan, kecuali Ruang Orang Tua, rapor & sertifikat.
+  const terkunci = useLangganan((s) => s.terkunci) && !bebasKunci(path);
+  const page = allowed && terbuka ? (terkunci ? <LanggananHabis /> : children) : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
   if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/ujian", "/akademi/penempatan", "/akademi/piagam", "/orang-tua", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))
     return (
       <>
+        <PantauLangganan />
         {page}
         <Toast />
         <SheetHost />
@@ -107,6 +118,7 @@ function Ready({ children }: { children: ReactNode }) {
   // Tampilan anak: satu kerangka untuk HP, tablet, dan desktop.
   return (
     <KidFrame overlay={<><Toast /><SheetHost /></>}>
+      <PantauLangganan />
       <KidHeader />
       {page}
     </KidFrame>

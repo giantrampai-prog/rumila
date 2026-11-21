@@ -14,6 +14,7 @@ import { supabase } from "@/lib/supabase/client";
 import { useCloud } from "@/lib/supabase/family";
 import { useRumila } from "@/lib/store";
 import { anakRumah } from "@/lib/akademi/konten";
+import { muatLangganan } from "@/lib/akademi/langganan";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.06)]";
@@ -99,6 +100,7 @@ export function LanggananKeluarga() {
     setAtur(a.data as Atur | null);
     setRiwayat((r.data ?? []) as Bayar[]);
     setStatus(s.data as Status);
+    void muatLangganan();
     // pilih periode pertama yang dijual
     const ada = PERIODE.find(([id]) => ps.some((x) => hargaDari(x, id)));
     if (ada) setPeriode((cur) => (ps.some((x) => hargaDari(x, cur)) ? cur : ada[0]));
