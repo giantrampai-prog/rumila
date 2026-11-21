@@ -13,7 +13,8 @@ import { buatRonde, knobDefaults, nilai, type Hasil, type Jawaban, type Ronde } 
 import { Icon } from "@/components/ui";
 import { catatEvent, eventsAnak } from "@/lib/akademi/jejak";
 import { PAKET, kompetensiUntuk, paketById, useBahasaAnak } from "@/lib/akademi/konten";
-import { diamkan, ucapkan } from "@/lib/akademi/suara";
+import { kalimatUjian } from "@/lib/akademi/kalimat-suara";
+import { diamkan, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
 import { AMBANG, JUMLAH_SOAL, NAMA_UJIAN, SEKALI, bolehMengulang, lulusDari, nilaiDari, predikat, rencanaUjian, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
 import { serahkanUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { sfx } from "@/lib/sfx";
@@ -268,9 +269,8 @@ function LayarNilai({ h, judul, kembaliKe, latihan }: { h: HasilUjian | null; ju
   const router = useRouter();
   useEffect(() => {
     if (!h) return;
-    if (latihan) ucapkan(`Nilai latihanmu ${h.nilai}.`);
-    else if (SEKALI.has(h.jenis)) ucapkan(`Ujian Akhir selesai. Nilaimu ${h.nilai}.`);
-    else ucapkan(h.lulus ? `Selamat, kamu lulus dengan nilai ${h.nilai}.` : `Nilaimu ${h.nilai}. Ayo ulangi materinya, lalu coba besok.`);
+    const u = latihan ? kalimatUjian.latihan(h.nilai) : SEKALI.has(h.jenis) ? kalimatUjian.akhir(h.nilai) : h.lulus ? kalimatUjian.lulus(h.nilai) : kalimatUjian.belum(h.nilai);
+    ucapkanBerurutan(u.potongan, "id-ID", u.teks);
   }, [h, latihan]);
   if (!h)
     return (

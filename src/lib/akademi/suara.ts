@@ -1,12 +1,18 @@
 "use client";
 
-// Pembacaan instruksi Academy.
-// 1) Bila teks ada di manifes SUARA (hasil scripts/akademi-suara.ts, ElevenLabs) → putar MP3 lewat satu elemen
-//    audio bersama ("akademi", dibuka kuncinya oleh installAudioUnlock pada ketukan pertama di iOS).
-// 2) Bila tidak → speechSynthesis peramban. No-op bila tidak tersedia (SSR, WebView lama).
+// Pembacaan suara Academy.
+// Bahasa Indonesia (lang id-*): HANYA rekaman manusia (MP3 suara Aoede) dari manifes SUARA (hasil scripts/akademi-suara.ts),
+//   diputar lewat satu elemen audio bersama ("akademi", dibuka kuncinya oleh installAudioUnlock pada ketukan pertama di iOS).
+//   Tidak pernah jatuh ke speechSynthesis: teks tanpa rekaman → diam (di dev: console.warn "[suara hilang]" dan dicatat di
+//   window.__suaraHilang); berkas gagal dimuat (offline) → diam juga.
+//   Kalimat dari kode dibangun lewat src/lib/akademi/kalimat-suara.ts supaya teksnya sama persis dengan yang direkam.
+// Bahasa lain (en-US): speechSynthesis peramban. No-op bila tidak tersedia (SSR, WebView lama).
 
 import { sharedAudio } from "@/lib/audio-unlock";
+import { angkaKata } from "./kalimat-suara";
 import { SUARA } from "./suara-manifest.generated";
+
+export { angkaKata };
 
 const KUNCI_AUDIO = "akademi";
 /** Jeda antar potongan saat memutar berurutan (ms). */
@@ -115,18 +121,17 @@ export function sedangBicara(): boolean {
 }
 
 
-/** Apakah teks punya suara pra-rekam (ElevenLabs)? */
+/** Apakah teks punya rekaman suara manusia di manifes? */
 export function adaSuara(teks: string): boolean {
   return Object.prototype.hasOwnProperty.call(SUARA, teks.trim());
 }
 
-/** Kata bilangan 1–20 (cocok dengan potongan angka di manifes); di luar itu kembalikan angkanya sebagai teks. */
-export function angkaKata(n: number): string {
-  const K = [
-    "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh",
-    "sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas", "tujuh belas", "delapan belas", "sembilan belas", "dua puluh",
-  ];
-  return K[n - 1] ?? String(n);
+/** Catat teks Indonesia yang belum punya rekaman (hanya di dev). */
+function catatHilang(teks: string) {
+  if (process.env.NODE_ENV === "production" || typeof window === "undefined") return;
+  console.warn("[suara hilang]", teks);
+  const w = window as Window & { __suaraHilang?: string[] };
+  (w.__suaraHilang ??= []).push(teks);
 }
 
 /** Rekaman manifes semuanya berbahasa Indonesia; hanya dipakai bila lang Indonesia. */
@@ -134,34 +139,41 @@ function pakaiRekaman(lang: string) {
   return lang.toLowerCase().split("-")[0] === "id";
 }
 
-/** Bacakan teks (membatalkan ucapan sebelumnya). Pakai MP3 bila ada di manifes (hanya lang id-ID), bila tidak speechSynthesis (voice sesuai lang, mis. en-US). */
+/**
+ * Bacakan teks (membatalkan ucapan sebelumnya).
+ * lang id-*: putar MP3 dari manifes; tanpa rekaman atau gagal dimuat → diam (tidak pernah suara robot).
+ * lang lain (mis. en-US): speechSynthesis dengan voice sesuai lang.
+ */
 export function ucapkan(teks: string, lang = "id-ID") {
   const t = teks.trim();
   if (!t) return;
   diamkanAudio();
   diamkanSintesis();
-  const src = pakaiRekaman(lang) ? SUARA[t] : undefined;
-  if (src && audio()) {
-    const token = urutanAktif;
-    void putar(src).then((ok) => {
-      // berkas gagal dimuat (mis. offline) → jangan bisu, bacakan dengan sintesis
-      if (!ok && token === urutanAktif && audio()?.error) ucapkanSintesis(t, lang);
-    });
+  if (!pakaiRekaman(lang)) {
+    ucapkanSintesis(t, lang);
     return;
   }
-  ucapkanSintesis(t, lang);
+  const src = SUARA[t];
+  if (!src) {
+    catatHilang(t);
+    return;
+  }
+  if (audio()) void putar(src);
 }
 
 /**
  * Bacakan beberapa potongan berurutan, mis. ["Aku mau", "tiga", "jeruk"].
- * Semua potongan harus punya MP3; bila ada yang tidak, seluruhnya digabung jadi satu kalimat lalu dibacakan speechSynthesis.
+ * Bila `utuh` (kalimat lengkapnya) punya rekaman, itu yang diputar. Bila tidak, potongan diputar berurutan asalkan
+ * semuanya punya MP3; kalau ada yang belum, kalimat utuh diteruskan ke `ucapkan` (yang diam bila tak ada rekaman).
+ * Bahasa selain Indonesia: kalimat utuh dibacakan speechSynthesis.
  */
-export function ucapkanBerurutan(potongan: string[], lang = "id-ID") {
+export function ucapkanBerurutan(potongan: string[], lang = "id-ID", utuh?: string) {
   const daftar = potongan.map((p) => p.trim()).filter(Boolean);
-  if (!daftar.length) return;
-  const gabungan = daftar.join(" ");
-  if (!pakaiRekaman(lang) || !audio() || !daftar.every(adaSuara)) {
-    ucapkan(gabungan, lang);
+  const kalimat = utuh?.trim() || daftar.join(" ");
+  if (!kalimat) return;
+  if (!pakaiRekaman(lang) || adaSuara(kalimat) || !daftar.length || !daftar.every(adaSuara) || !audio()) {
+    if (pakaiRekaman(lang) && !adaSuara(kalimat)) for (const p of daftar) if (!adaSuara(p)) catatHilang(p);
+    ucapkan(kalimat, lang);
     return;
   }
   diamkanAudio();
@@ -171,12 +183,8 @@ export function ucapkanBerurutan(potongan: string[], lang = "id-ID") {
     for (let i = 0; i < daftar.length; i++) {
       if (token !== urutanAktif) return;
       const ok = await putar(SUARA[daftar[i]]);
-      if (token !== urutanAktif) return;
-      if (!ok) {
-        // satu potongan gagal → bacakan sisa kalimat dengan sintesis
-        if (audio()?.error) ucapkanSintesis(daftar.slice(i).join(" "), lang);
-        return;
-      }
+      // potongan gagal dimuat (offline) atau dihentikan → berhenti, diam
+      if (!ok || token !== urutanAktif) return;
       if (i < daftar.length - 1) await new Promise((r) => setTimeout(r, JEDA_POTONGAN));
     }
   })();

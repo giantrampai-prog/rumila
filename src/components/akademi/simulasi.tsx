@@ -9,6 +9,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import type { PaketSimulasi } from "@akademi/schema";
 import type { JawabanSimulasi, RondeSimulasi } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
+import { KALIMAT_SIMULASI as KS, kalimatSimulasi as ks } from "@/lib/akademi/kalimat-suara";
 import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
@@ -363,7 +364,7 @@ function ModeJamBaca(c: Ctx) {
   const st = useSkalaTeks();
   const samping = useSamping();
   const warna = (knob("bantuanWarna") ?? 0) === 1;
-  const teks = "Jam berapa sekarang? Pilih kartunya.";
+  const teks = KS.jamBaca;
 
   return (
     <Kunci terkunci={terkunci}>
@@ -377,14 +378,14 @@ function ModeJamBaca(c: Ctx) {
         }
         kendali={
           <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
-            <TombolBantu onClick={() => { bantu(); ucapkan("Lihat jarum yang pendek. Ia menunjuk angka berapa?"); }} disabled={terkunci} />
+            <TombolBantu onClick={() => { bantu(); ucapkan(KS.jamBacaBantu); }} disabled={terkunci} />
             <div className={`grid flex-1 grid-cols-2 gap-2 ${samping ? "" : "sm:grid-cols-4"}`} style={{ gap: 8 * skala }}>
               {ronde.options.map((n) => (
                 <button
                   key={n}
                   type="button"
                   disabled={terkunci}
-                  onClick={() => { setDipilih(n); sfx.tap(); ucapkan(`Pukul ${n}`); onJawab({ angka: n }); }}
+                  onClick={() => { setDipilih(n); sfx.tap(); ucapkan(ks.pukul(n)); onJawab({ angka: n }); }}
                   className="flex min-h-16 flex-col items-center justify-center overflow-hidden rounded-[18px] bg-white px-2 active:scale-95 disabled:opacity-80"
                   style={{ minHeight: (samping ? 104 : 64) * skala, boxShadow: `${BAYANG}, 0 0 0 3px ${hasil && n === ronde.target ? BENAR : hasil && n === dipilih ? SALAH : dipilih === n ? UNGU : "rgba(11,37,69,.16)"}` }}
                   aria-label={`Pukul ${n}`}
@@ -411,7 +412,7 @@ function ModeJamPutar(c: Ctx) {
   const { skala } = usePanggung();
   const st = useSkalaTeks();
   const warna = (knob("bantuanWarna") ?? 0) === 1;
-  const teks = `Robot ${kegiatan} pukul ${ronde.target}. Putar jarum pendeknya!`;
+  const teks = ks.jamPutar(kegiatan, ronde.target);
 
   useEffect(() => {
     const id = setTimeout(() => ucapkan(teks), 900);
@@ -447,7 +448,7 @@ function ModeJamPutar(c: Ctx) {
         }
         kendali={
           <div className="flex gap-2" style={{ gap: 8 * skala }}>
-            <TombolBantu onClick={() => { bantu(); ucapkan(`Cari angka ${ronde.target} di jam, lalu ketuk.`); }} disabled={terkunci} />
+            <TombolBantu onClick={() => { bantu(); ucapkan(ks.jamPutarBantu(ronde.target)); }} disabled={terkunci} />
             <TombolBesar onClick={() => { sfx.tap(); onJawab({ angka: jam }); }} disabled={terkunci}><Icon name="check" size={26} /> Sudah</TombolBesar>
           </div>
         }
@@ -490,7 +491,7 @@ function ModeTimbangan(c: Ctx) {
   const L = 150, PX = 200, PY = 150;
   const ujung = (sisi: -1 | 1) => ({ x: PX + sisi * L * Math.cos(rad), y: PY - sisi * L * Math.sin(rad) });
   const uk = ujung(-1), uka = ujung(1);
-  const teks = "Mana yang lebih berat?";
+  const teks = KS.timbangan;
   const berat = ronde.correctId ?? (beratKiri ? kiri?.id : kanan?.id);
 
   const posBenda = (p: { x: number; y: number }): CSSProperties => ({ left: `${p.x / 400 * 100}%`, top: `${(p.y + 46) / 260 * 100}%`, transform: "translate(-50%,-100%)", transition: "left 900ms cubic-bezier(.3,1.3,.5,1), top 900ms cubic-bezier(.3,1.3,.5,1)" });
@@ -527,7 +528,7 @@ function ModeTimbangan(c: Ctx) {
         }
         kendali={
           <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
-            <TombolBantu onClick={() => { bantu(); ucapkan("Lihat papannya. Sisi yang turun ke bawah, itu yang lebih berat."); }} disabled={terkunci} />
+            <TombolBantu onClick={() => { bantu(); ucapkan(KS.timbanganBantu); }} disabled={terkunci} />
             <div className="grid flex-1 grid-cols-2 gap-2" style={{ gap: 8 * skala }}>
               {benda.map((b) => (
                 <KartuBenda
@@ -568,7 +569,7 @@ function ModeJengkal(c: Ctx) {
   const { skala } = usePanggung();
   const seret = useRef<{ awal: number; x0: number } | null>(null);
   const jPx = useRef(J);
-  const teks = `Ukur ${benda ? nama(benda.id) : "bendanya"} dengan jengkal. Berapa jengkal panjangnya?`;
+  const teks = ks.jengkal(benda ? nama(benda.id) : "bendanya");
 
   const tambah = () => {
     if (telapak.length >= maxSpans) return;
@@ -673,7 +674,7 @@ function ModeJengkal(c: Ctx) {
         }
         kendali={<>
       <div className="flex gap-2" style={{ gap: 8 * skala }}>
-        <TombolBantu onClick={() => { bantu(); ucapkan("Taruh telapak rapat rapat dari ujung kiri sampai ujung kanan, lalu hitung berapa telapaknya."); }} disabled={terkunci} />
+        <TombolBantu onClick={() => { bantu(); ucapkan(KS.jengkalBantu); }} disabled={terkunci} />
         <TombolIkon ikon="undo" onClick={ambil} disabled={terkunci || telapak.length === 0} label="Ambil jengkal terakhir" />
         <TombolBesar onClick={tambah} disabled={terkunci || telapak.length >= maxSpans} warna={UNGU} bayang="#0567c2" className={hint && telapak.length < ronde.target ? "akademi-bounce" : ""}>
           Tambah jengkal ✋
@@ -697,7 +698,7 @@ function ModeKubus(c: Ctx) {
   const st = useSkalaTeks();
   const N = 12;
   const warna = ["#ff8fa3", "#ffd23f", "#7ec8a0", "#6ab0e8", "#c59be8", "#ffb86b"];
-  const teks = `Berapa kubus panjang ${benda ? nama(benda.id) : "bendanya"}?`;
+  const teks = ks.kubus(benda ? nama(benda.id) : "bendanya");
   const awal = ronde.offset, akhir = ronde.offset + ronde.target;
 
   return (
@@ -740,7 +741,7 @@ function ModeKubus(c: Ctx) {
         {hint && <Petunjuk className="mt-2">Hitung kubus yang ada tepat di bawah benda, bukan angka di ujungnya.</Petunjuk>}
       </Papan>
       <div className="flex items-center gap-2" style={{ gap: 8 * skala }}>
-        <TombolBantu onClick={() => { bantu(); ucapkan("Hitung kubus yang ada tepat di bawah benda, satu per satu."); }} disabled={terkunci} />
+        <TombolBantu onClick={() => { bantu(); ucapkan(KS.kubusBantu); }} disabled={terkunci} />
         <span className="flex-1 rounded-full bg-white px-3 py-1 text-center" style={{ ...Tebal, fontSize: 16 * st, boxShadow: BAYANG }}>Berapa kubus?</span>
       </div>
       <StripAngka min={1} max={N} dipilih={hasil ? ronde.target : dipilih} disabled={terkunci} onPilih={(n) => { setDipilih(n); sfx.tap(); onJawab({ angka: n }); }} />
@@ -805,7 +806,7 @@ function ModeTurus(c: Ctx) {
   const sedang = selesaiLewat ? null : ronde.urutan[giliran];
   // Instruksi milik paket (tema bisa hewan, serangga, pengunjung, kendaraan…); cadangan netral.
   const instruksi = paket.instructionKey ? t(paket.instructionKey) : "";
-  const teks = instruksi && instruksi !== paket.instructionKey ? instruksi : "Satu per satu lewat. Ketuk barisnya untuk mencatat turus!";
+  const teks = instruksi && instruksi !== paket.instructionKey ? instruksi : KS.turusCadangan;
   // di tablet baris tabel lebih tinggi; bila baris banyak & bertumpuk, jangan sampai mendesak jalur
   const sb = samping ? Math.min(skala * 1.1, 1.6) : skala;
 
@@ -854,7 +855,7 @@ function ModeTurus(c: Ctx) {
 
   const tombol = (
     <div className="flex gap-2" style={{ gap: 8 * skala }}>
-      <TombolBantu onClick={() => { bantu(); ucapkan("Lihat yang sedang lewat, lalu ketuk baris yang sama."); }} disabled={terkunci} />
+      <TombolBantu onClick={() => { bantu(); ucapkan(KS.turusBantu); }} disabled={terkunci} />
       <TombolBesar onClick={() => { sfx.tap(); onJawab({ turus }); }} disabled={terkunci || !selesaiLewat}><Icon name="check" size={26} /> Selesai</TombolBesar>
     </div>
   );
@@ -956,7 +957,7 @@ function ModeTaksir(c: Ctx) {
   }, [hasil, ronde.target]);
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
-  const teks = "Kira-kira ada berapa? Geser penandanya.";
+  const teks = KS.taksir;
   const tinggi = ronde.target <= 8 ? 160 : ronde.target <= 14 ? 200 : 240;
   const { cols, rows } = kisiBenda(ronde.target);
 
@@ -1063,7 +1064,7 @@ function ModeTombol(c: Ctx) {
 
   const semuaDicoba = tombol.every((b) => dicoba.has(b.id));
   const sedang = fase === "tebak" ? ronde.urutan[giliran] : null;
-  const teks = fase === "coba" ? "Coba dulu: ketuk setiap tombol, lihat alat mana yang menyala." : langkah === "tunjuk" ? `Tebak dulu: tombol ${nama(sedang ?? "")} menyalakan alat mana? Ketuk alatnya.` : langkah === "tekan" ? `Sekarang tekan tombol ${nama(sedang ?? "")}.` : "Lihat, alat mana yang menyala?";
+  const teks = fase === "coba" ? KS.tombolCoba : langkah === "tunjuk" ? ks.tombolTebak(nama(sedang ?? "")) : langkah === "tekan" ? ks.tombolTekan(nama(sedang ?? "")) : KS.tombolLihat;
   const kiriKanan = (id: string, alatId: string) => tebakan[id] === alatId;
   const bulat = Math.round(56 * skala);
 
@@ -1139,7 +1140,7 @@ function ModeTombol(c: Ctx) {
         </div>
       </Papan>
       <div className="flex gap-2" style={{ gap: 8 * skala }}>
-        <TombolBantu onClick={() => { bantu(); ucapkan(fase === "coba" ? "Ketuk semua tombol satu per satu, lalu lihat alat mana yang menyala." : "Ingat ingat. Waktu kamu coba tadi, tombol ini menyalakan alat yang mana?"); }} disabled={terkunci} />
+        <TombolBantu onClick={() => { bantu(); ucapkan(fase === "coba" ? KS.tombolBantuCoba : KS.tombolBantuTebak); }} disabled={terkunci} />
         {fase === "coba" ? (
           <TombolBesar onClick={() => { sfx.open(); setFase("tebak"); }} disabled={terkunci || !semuaDicoba} warna={UNGU} bayang="#0567c2">
             <Icon name="arrow_forward" size={26} /> {semuaDicoba ? "Lanjut: Tebak dulu" : `Coba semua tombol (${dicoba.size}/${tombol.length})`}
@@ -1168,8 +1169,8 @@ function ModeAlat(c: Ctx) {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
   const tanyaBerat = hewan?.value === 2;
-  const tanya = tanyaBerat ? "Seberapa berat?" : "Seberapa panjang?";
-  const teks = `${hewan ? nama(hewan.id) : "Hewan"} bertanya: ${tanya} Pilih alat yang tepat.`;
+  const tanya = ks.alatTanya(tanyaBerat);
+  const teks = ks.alat(hewan ? nama(hewan.id) : "Hewan", tanyaBerat);
   const jenisAlat = (a: Item) => (emojiAlat(a, a.id) === "⚖️" || a.id.includes("timbang") ? "timbangan" : "penggaris");
   const dipakai = dipilih ? itemById(dipilih) : undefined;
   const jenisDipakai = dipakai ? jenisAlat(dipakai) : null;
@@ -1217,7 +1218,7 @@ function ModeAlat(c: Ctx) {
         }
         kendali={
           <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
-            <TombolBantu onClick={() => { bantu(); ucapkan(tanyaBerat ? "Kalau mau tahu berat, pakai timbangan." : "Kalau mau tahu panjang, pakai penggaris."); }} disabled={terkunci || !!dipilih} />
+            <TombolBantu onClick={() => { bantu(); ucapkan(tanyaBerat ? KS.alatBantuBerat : KS.alatBantuPanjang); }} disabled={terkunci || !!dipilih} />
             <div className={`grid flex-1 gap-2 ${samping ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap: 8 * skala }}>
               {alat.map((a) => (
                 <button
@@ -1256,7 +1257,7 @@ function ModeBagi(c: Ctx) {
   const st = useSkalaTeks();
   const jumlah = (tp: Tempat) => tempat.filter((x) => x === tp).length;
   const kiri = jumlah("kiri"), kanan = jumlah("kanan"), sisa = jumlah("keranjang");
-  const teks = "Bagi ikan untuk dua kucing sama banyak. Ketuk piring, lalu ketuk ikan.";
+  const teks = KS.bagi;
 
   const pindah = (i: number) => {
     if (terkunci) return;
@@ -1313,7 +1314,7 @@ function ModeBagi(c: Ctx) {
         {hint && <Petunjuk className="mt-2">Satu untuk kiri, satu untuk kanan, bergantian sampai habis.</Petunjuk>}
       </Papan>
       <div className="flex gap-2" style={{ gap: 8 * skala }}>
-        <TombolBantu onClick={() => { bantu(); ucapkan("Satu untuk kucing kiri, satu untuk kucing kanan, bergantian sampai keranjang kosong."); }} disabled={terkunci} />
+        <TombolBantu onClick={() => { bantu(); ucapkan(KS.bagiBantu); }} disabled={terkunci} />
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ kiri, kanan }); }} disabled={terkunci || kiri + kanan === 0}><Icon name="balance" size={26} /> Sudah adil</TombolBesar>
       </div>
     </Kunci>
@@ -1340,7 +1341,7 @@ function ModeMenara(c: Ctx) {
   const penuh = tumpukan.length >= ronde.target;
   const BMIN = 42; // tinggi tingkat terkecil (HP sempit) supaya panggung tidak perlu digulir
   const tinggiPapan = (ronde.target + 1) * BMIN + 36;
-  const teks = `Bangun menara ${ronde.target} tingkat. Ketuk benda untuk menaruhnya di atas.`;
+  const teks = ks.menara(ronde.target);
 
   const ketukLantai = (id: string) => {
     if (terkunci || jatuh || penuh) return;
@@ -1378,7 +1379,7 @@ function ModeMenara(c: Ctx) {
 
   const tombol = (
     <div className="flex gap-2" style={{ gap: 8 * skala }}>
-      <TombolBantu onClick={() => { bantu(); ucapkan("Bola itu bulat, jadi menggelinding. Pilih benda yang rata bawahnya."); }} disabled={terkunci} />
+      <TombolBantu onClick={() => { bantu(); ucapkan(KS.menaraBantu); }} disabled={terkunci} />
       <TombolIkon ikon="undo" onClick={ambilAtas} disabled={terkunci || !tumpukan.length} label="Turunkan benda teratas" />
       <TombolBesar onClick={() => { sfx.tap(); onJawab({ tumpukan }); }} disabled={terkunci || !penuh}><Icon name="check" size={26} /> Selesai</TombolBesar>
     </div>
@@ -1482,7 +1483,7 @@ function ModeBantuan(c: Ctx) {
   const tolong = () => {
     if (terkunci || fase !== "macet") return;
     sfx.tap();
-    ucapkan("Tolong!");
+    ucapkan(KS.tolong);
     setFase("datang");
     timers.current.push(setTimeout(() => { setFase("beres"); sfx.sparkle(); }, 1500));
     timers.current.push(setTimeout(() => onJawab({ ketukanSiaSia: ketukanRef.current, mintaTolong: true }), 2600));
@@ -1637,7 +1638,7 @@ function ModeTelusur(c: Ctx) {
   const cakupan = titik.length ? ukuran.kena / titik.length : 0;
   const keluar = ukuran.sampel ? ukuran.keluar / ukuran.sampel : 0;
   const terbuka = !!hasil?.benar;
-  const teks = `Telusuri angka ${ronde.target} dengan jarimu${ronde.offset === 1 ? ", ikuti panahnya" : ""}. Itu mantra pembuka peti!`;
+  const teks = ks.telusur(ronde.target, ronde.offset === 1);
   /** Penanda goresan ke-i ditaruh 15·i satuan di sepanjang goresannya sendiri, supaya dua goresan yang berawal di titik sama (4, 5) tidak saling menutup. */
   const panahDi = (g: Titik[], i: number) => {
     let sisa = 15 * i;
@@ -1667,7 +1668,7 @@ function ModeTelusur(c: Ctx) {
   );
   const tombol = (
     <div className="flex gap-2" style={{ gap: 8 * skala }}>
-      <TombolBantu onClick={() => { bantu(); ucapkan("Mulai dari panah nomor satu, lalu ikuti jalurnya pelan pelan sampai ujung."); }} disabled={terkunci} />
+      <TombolBantu onClick={() => { bantu(); ucapkan(KS.telusurBantu); }} disabled={terkunci} />
       <TombolIkon ikon="undo" onClick={() => { sfx.whoosh(); ulang(); }} disabled={terkunci || !goresan.length} label="Hapus goresan" />
       <TombolBesar onClick={() => { sfx.tap(); onJawab({ angka: ronde.target, cakupan, keluar }); }} disabled={terkunci || ukuran.sampel === 0}><Icon name="check" size={26} /> Selesai</TombolBesar>
     </div>

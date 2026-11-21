@@ -8,8 +8,11 @@
 //     locale.id[instructionKey], pilah mode pilih → pilihan[].promptKey, urutkan → sequences[].titleKey,
 //     dagang → nama tiap barang (goods[].labelKey) sebagai potongan frasa dinamis,
 //     pola/simulasi → nama tiap benda/hewan/alat (items[].labelKey).
-//   - Kalimat tetap runner (pujian, akhir aktivitas).
-//   - Potongan frasa dagang: angka "satu".."dua puluh" (angka-<n>.mp3), "Aku mau", "Harganya", "ribu", "koin", "dan".
+//   - Kalimat yang diucapkan dari kode (src/lib/akademi/kalimat-suara.ts, dipakai juga oleh komponen):
+//     kalimatUmum() = kalimat tetap (runner, simulasi, urutkan) + potongan: angka "nol".."seratus" (angka-<n>.mp3),
+//     "dua ratus".."sembilan ratus" (ratus-<n>.mp3), frasa sambung ("Aku mau", "ribu", "rupiah", awalan nilai ujian, …);
+//     kalimatPaket(p) = kombinasi kalimat dinamis dari data paket + rentang knob (jam, menara, telusur, benda, tombol,
+//     sisa, gabung, tukar, …), label kartu pilah PAUD–TK, dan kalimat cerita urutkan mode label.
 //
 // Env: ELEVENLABS_API_KEY (wajib untuk generasi), ELEVENLABS_VOICE_ID (default Genesius),
 //      ELEVENLABS_MODEL_ID (default eleven_multilingual_v2). Tanpa kunci: --dry-run tetap jalan.
@@ -18,6 +21,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { ContentPack, isiBarang } from "@akademi/schema";
+import { kalimatPaket, kalimatUmum } from "../src/lib/akademi/kalimat-suara";
 
 const root = resolve(process.cwd());
 const OUT_DIR = resolve(root, "public/akademi/suara");
@@ -45,19 +49,8 @@ if (onlyIdx >= 0 && !only) {
 
 /* ---------------- kalimat tetap ---------------- */
 
-const KALIMAT_RUNNER = [
-  "Hebat! Kamu dapat stiker baru.",
-  "Bagus, kamu sudah mencoba. Ayo main lagi.",
-  "Hebat!",
-  "Coba lagi, ya",
-];
-
-const ANGKA = [
-  "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh",
-  "sebelas", "dua belas", "tiga belas", "empat belas", "lima belas", "enam belas", "tujuh belas", "delapan belas", "sembilan belas", "dua puluh",
-];
-
-const FRASA_DAGANG = ["Aku mau", "Harganya", "ribu", "koin", "dan"];
+/** Rekaman lama yang tetap dipertahankan di manifes (tidak lagi diucapkan dari kode). */
+const WARISAN = ["Hebat!", "Coba lagi, ya"];
 
 /* ---------------- kumpulkan ---------------- */
 
@@ -85,6 +78,10 @@ function tambah(teks: string, sumber: string, file?: string, paketId?: string) {
   if (daftar.has(t)) return;
   daftar.set(t, { teks: t, file: file ?? `${hash12(t)}.mp3`, sumber, paketId });
 }
+
+// kalimat umum dulu: potongan bernama tetap (angka-<n>.mp3, ratus-<n>.mp3) menang atas nama hash bila teksnya sama
+for (const k of kalimatUmum()) tambah(k.teks, k.sumber, k.file);
+for (const k of WARISAN) tambah(k, "warisan");
 
 const berkasPaket = [
   ...jsonRekursif(resolve(root, "content/paket")),
@@ -124,11 +121,9 @@ for (const f of berkasPaket) {
   if (p.mechanic === "urutkan") for (const s of p.sequences) ambil(s.titleKey, "titleKey");
   if (p.mechanic === "dagang") for (const g of p.goods) ambil(g.labelKey, "goods.labelKey");
   if (p.mechanic === "pola" || p.mechanic === "simulasi") for (const i of p.items) ambil(i.labelKey, "items.labelKey");
+  for (const k of kalimatPaket(p)) tambah(k.teks, k.sumber, k.file, p.id);
 }
 
-for (const k of KALIMAT_RUNNER) tambah(k, "runner");
-ANGKA.forEach((a, i) => tambah(a, "angka", `angka-${i + 1}.mp3`));
-for (const f of FRASA_DAGANG) tambah(f, "frasa-dagang");
 
 /** Semua kalimat (manifes selalu dibangun dari semua); `--only` hanya membatasi yang dibangkitkan. */
 const semuaItem = [...daftar.values()];
@@ -150,7 +145,7 @@ function tulisManifest(semua: Item[]) {
   const isi = `// DIBUAT OTOMATIS oleh scripts/akademi-suara.ts — jangan diedit.
 // Teks yang dibacakan → berkas MP3 di public/akademi/suara (rekaman narasi EduVoice yang dipotong per kalimat/kata, atau ElevenLabs bila dibuat lewat skrip ini).
 // Perbarui dengan: npm run -s akademi:suara
-// Hanya teks yang berkasnya sudah ada yang masuk; teks lain jatuh ke speechSynthesis.
+// Hanya teks yang berkasnya sudah ada yang masuk; teks Indonesia lain tidak dibacakan (tidak ada suara robot).
 
 export const SUARA: Record<string, string> = {
 ${baris}};
