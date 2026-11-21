@@ -11,6 +11,7 @@
 //               Semester 2 otomatis terkunci selama semester 1 belum tuntas karena unit terkunci berurutan.
 // Naik jenjang tetap memakai penguasaan: semua kompetensi inti jenjang dikuasai.
 
+import { percobaanUlang } from "./percobaan";
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
 import type { Penguasaan } from "./mastery";
@@ -114,7 +115,7 @@ export function progresMisi(events: GameEvent[], paket: ContentPack[]): Map<stri
   const idx = new Map(paket.map((p) => [p.id, p]));
   const ronde = new Map<string, number>();
   for (const e of events) {
-    if (e.type !== "attempt" || !idx.has(e.activityId)) continue;
+    if (e.type !== "attempt" || percobaanUlang(e) || !idx.has(e.activityId)) continue;
     const k = `${e.sessionId}|${e.activityId}`;
     ronde.set(k, (ronde.get(k) ?? 0) + 1);
   }

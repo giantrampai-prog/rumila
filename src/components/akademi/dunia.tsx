@@ -172,16 +172,16 @@ function Konfeti({ jumlah }: { jumlah: number }) {
 }
 
 /** Umpan balik setelah menjawab: pujian/penyemangat diacak, konfeti saat benar (lebih meriah bila beruntun). */
-/** Salah pertama → ajakan coba sekali lagi (soal diulang); salah kedua (`lanjut`) → jujur bahwa soal berganti. */
-export function UmpanBalik({ benar, beruntun = 1, lanjut = false }: { benar: boolean; beruntun?: number; lanjut?: boolean }) {
-  const [teks] = useState(() => (benar ? acakKata(beruntun >= 3 ? PUJIAN_BERUNTUN : PUJIAN) : lanjut ? "Belum tepat, kita lanjut ya" : acakKata(SEMANGAT)));
-  const [ikon] = useState(() => (benar ? acakKata(beruntun >= 3 ? ["🔥", "🏆", "🚀"] : ["🌟", "⭐", "🎉", "👏", "😄"]) : lanjut ? "👉" : acakKata(["💪", "🙂", "🤔"])));
+/** Salah → ajakan coba lagi (soal diulang sampai benar); mulai salah kedua (`pakaiBantu`) → arahkan ke tombol Bantu. */
+export function UmpanBalik({ benar, beruntun = 1, pakaiBantu: lanjut = false }: { benar: boolean; beruntun?: number; pakaiBantu?: boolean }) {
+  const [teks] = useState(() => (benar ? acakKata(beruntun >= 3 ? PUJIAN_BERUNTUN : PUJIAN) : lanjut ? "Coba lagi, pakai Bantu ya" : acakKata(SEMANGAT)));
+  const [ikon] = useState(() => (benar ? acakKata(beruntun >= 3 ? ["🔥", "🏆", "🚀"] : ["🌟", "⭐", "🎉", "👏", "😄"]) : lanjut ? "💡" : acakKata(["💪", "🙂", "🤔"])));
   return (
     <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
       {benar && <Konfeti jumlah={beruntun >= 3 ? 34 : 20} />}
       <div
         className="akademi-pop flex flex-col items-center rounded-[28px] px-8 py-5 text-white"
-        style={{ background: benar ? "#22b573" : lanjut ? "#5b6b85" : "#ff8a5c", boxShadow: `0 6px 0 ${benar ? "#16804f" : lanjut ? "#3d4a5e" : "#d4622f"}` }}
+        style={{ background: benar ? "#22b573" : lanjut ? "#e0a100" : "#ff8a5c", boxShadow: `0 6px 0 ${benar ? "#16804f" : lanjut ? "#a87600" : "#d4622f"}` }}
       >
         <span className={benar ? "akademi-bintang" : "akademi-goyang"} style={{ fontSize: 64, lineHeight: 1, display: "inline-block" }}>{ikon}</span>
         <span style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}>{teks}</span>
