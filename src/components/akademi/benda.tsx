@@ -218,9 +218,12 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
       const per = n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n)) / (v.shape === "uang" ? 1.4 : 1)) : v.shape === "uang" ? s * 0.8 : s;
       return <Bentuk key={k} shape={v.shape} color={v.color} size={per} width={v.width} angka={v.angka} />;
     }
+    // kartu teks: teks panjang (mis. "1 puluhan 1 satuan") diperkecil dan boleh turun baris supaya tidak keluar kartu/wadah
+    const tulisan = v.angka ?? v.label ?? "?";
+    const kecil = tulisan.length > 10 ? 0.62 : tulisan.length > 6 ? 0.78 : tulisan.length > 4 ? 0.9 : 1;
     return (
-      <span key={k} style={{ fontFamily: BALOO, fontSize: s * 0.6, fontWeight: 900, color: v.color ?? INK, lineHeight: 1 }}>
-        {v.angka ?? v.label ?? "?"}
+      <span key={k} className="text-center text-balance" style={{ fontFamily: BALOO, fontSize: s * 0.6 * kecil, fontWeight: 900, color: v.color ?? INK, lineHeight: 1.1, overflowWrap: "anywhere", maxWidth: Math.max(s * 2.4, 120) }}>
+        {tulisan}
       </span>
     );
   };

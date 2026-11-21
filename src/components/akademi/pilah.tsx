@@ -252,7 +252,8 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               bentuk={bentukDariTeks(t(b.labelKey)) ?? undefined}
               label={
                 <>
-                  <Benda v={visual(b, t)} size={Math.round(34 * sk)} />
+                  {/* gambar hanya bila wadah bergambar; wadah teks/angka cukup labelnya (dulu tertulis dua kali: "11 11") */}
+                  {(b.emoji || b.shape) && <Benda v={visual(b, t)} size={Math.round(34 * sk)} />}
                   <span className="text-center break-words">{t(b.labelKey)}</span>
                 </>
               }
@@ -261,13 +262,13 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
                 <KartuBenda
                   key={i.id}
                   v={visual(i, t)}
-                  size={Math.round(34 * sk)}
+                  size={Math.round((i.emoji || i.shape ? 34 : 50) * sk)}
                   keterangan={false}
                   wrong={salah(i)}
                   right={kunci && !salah(i)}
                   onClick={() => ambil(i.id)}
                   className={`shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
-                  style={{ minHeight: 46 * sk, minWidth: 46 * sk, pointerEvents: kunci ? "none" : undefined }}
+                  style={{ minHeight: 46 * sk, minWidth: 46 * sk, maxWidth: "100%", pointerEvents: kunci ? "none" : undefined }}
                 />
               ))}
               {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: 30 * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap }}>↓</span>}
