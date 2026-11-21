@@ -15,7 +15,7 @@ import { setPeranAkademi } from "@/lib/akademi/konten";
 const PI = "#0b2545";
 const NV = "#1F3044";
 
-function useLook(theme: Theme) {
+export function useLook(theme: Theme) {
   const play = theme === "playful";
   const card: CSSProperties = play
     ? { borderRadius: 40, boxShadow: "0 10px 0 rgba(11,37,69,.1), 0 40px 80px rgba(11,37,69,.15)" }
@@ -42,7 +42,7 @@ function useLook(theme: Theme) {
   return { play, card, title, input, primary, muted, ink: play ? PI : NV };
 }
 
-function Field({ label, children, muted }: { label: string; children: ReactNode; muted: string }) {
+export function Field({ label, children, muted }: { label: string; children: ReactNode; muted: string }) {
   return (
     <label className="flex flex-col gap-1.5 text-left">
       <span style={{ fontSize: 13, fontWeight: 700, color: muted }}>{label}</span>
@@ -51,7 +51,7 @@ function Field({ label, children, muted }: { label: string; children: ReactNode;
   );
 }
 
-function ErrorLine({ msg }: { msg: string }) {
+export function ErrorLine({ msg }: { msg: string }) {
   if (!msg) return null;
   return (
     <p role="alert" className="rounded-xl px-3 py-2 text-sm font-semibold" style={{ background: "#FDE2E3", color: "#B5434A" }}>
@@ -70,14 +70,18 @@ export const toLoginEmail = (v: string) => (isUsername(v) ? `${v.trim().toLowerC
 /** Kebalikannya, untuk ditampilkan: "rumila@rumila.local" → "rumila". */
 export const displayLogin = (email: string | null) => (email?.endsWith("@" + USERNAME_DOMAIN) ? email.split("@")[0] : email);
 
+/** Kirim email "buat kata sandi baru" (Supabase Auth → SMTP Resend kampus@pulaurinoya.com). Tautan kembali ke /masuk/sandi-baru. */
+export const kirimAturUlangSandi = (email: string) =>
+  supabase().auth.resetPasswordForEmail(email.trim(), { redirectTo: `${window.location.origin}/masuk/sandi-baru` });
+
 export function AccountStage({ theme }: { theme: Theme }) {
   const L = useLook(theme);
-  const [mode, setMode] = useState<"masuk" | "daftar">("masuk");
+  const [mode, setMode] = useState<"masuk" | "daftar" | "lupa">("masuk");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-  const [sent, setSent] = useState<"" | "email" | "username">("");
+  const [sent, setSent] = useState<"" | "email" | "username" | "reset">("");
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -87,10 +91,18 @@ export function AccountStage({ theme }: { theme: Theme }) {
       setErr("Nama pengguna 3–30 karakter: huruf, angka, titik, strip, atau garis bawah.");
       return;
     }
+    if (mode === "lupa" && isUsername(login)) {
+      setErr("Akun nama pengguna tidak punya email untuk menerima tautan. Masuk lewat perangkat yang masih tersambung, atau hubungi kampus@pulaurinoya.com.");
+      return;
+    }
     setBusy(true);
     try {
       const sb = supabase();
-      if (mode === "masuk") {
+      if (mode === "lupa") {
+        const { error } = await kirimAturUlangSandi(login);
+        if (error) throw error;
+        setSent("reset");
+      } else if (mode === "masuk") {
         const { error } = await sb.auth.signInWithPassword({ email: toLoginEmail(login), password });
         if (error) throw error;
       } else {
@@ -118,10 +130,15 @@ export function AccountStage({ theme }: { theme: Theme }) {
       <Image src="/brand/rinoya-logo-r.png" alt="RINOYA Academy" width={1137} height={800} priority className="h-auto w-[180px]" />
       {sent ? (
         <>
-          <Icon name={sent === "email" ? "mark_email_read" : "info"} size={48} style={{ color: L.play ? "#12b8a6" : "#52B8A8" }} />
-          <h1 style={L.title}>{sent === "email" ? "Cek email kamu" : "Satu langkah lagi"}</h1>
+          <Icon name={sent === "username" ? "info" : "mark_email_read"} size={48} style={{ color: L.play ? "#12b8a6" : "#52B8A8" }} />
+          <h1 style={L.title}>{sent === "username" ? "Satu langkah lagi" : "Cek email kamu"}</h1>
           <p style={{ color: L.muted, fontWeight: 600, lineHeight: 1.5 }}>
-            {sent === "email" ? (
+            {sent === "reset" ? (
+              <>
+                Kalau <b style={{ color: L.ink }}>{email}</b> terdaftar, kami sudah kirim tautan untuk membuat kata sandi baru dari
+                kampus@pulaurinoya.com. Tautannya berlaku 1 jam. Cek juga folder Spam atau Promosi.
+              </>
+            ) : sent === "email" ? (
               <>
                 Kami kirim tautan konfirmasi ke <b style={{ color: L.ink }}>{email}</b>. Buka tautannya, lalu kamu akan kembali ke sini
                 untuk membuat rumah.
@@ -134,7 +151,10 @@ export function AccountStage({ theme }: { theme: Theme }) {
             )}
           </p>
           <button
-            onClick={() => setSent("")}
+            onClick={() => {
+              setSent("");
+              if (mode === "lupa") setMode("masuk");
+            }}
             className="w-full"
             style={{ ...L.primary, background: "transparent", color: L.ink, boxShadow: "none" }}
           >
@@ -144,26 +164,31 @@ export function AccountStage({ theme }: { theme: Theme }) {
       ) : (
         <>
           <div>
-            <h1 style={L.title}>{mode === "masuk" ? "Masuk ke rumahmu" : "Bikin akun rumah"}</h1>
+            <h1 style={L.title}>{mode === "masuk" ? "Masuk ke rumahmu" : mode === "lupa" ? "Lupa kata sandi" : "Bikin akun rumah"}</h1>
             <p className="mt-1.5" style={{ color: L.muted, fontWeight: 600, fontSize: 14 }}>
-              {mode === "masuk" ? "Satu akun untuk seluruh keluarga." : "Nanti tiap anggota punya profil sendiri."}
+              {mode === "masuk"
+                ? "Satu akun untuk seluruh keluarga."
+                : mode === "lupa"
+                  ? "Tulis email akun rumahmu. Kami kirim tautan untuk membuat kata sandi baru."
+                  : "Nanti tiap anggota punya profil sendiri."}
             </p>
           </div>
           <form onSubmit={submit} className="flex w-full flex-col gap-3.5">
-            <Field label="Nama pengguna atau email" muted={L.muted}>
+            <Field label={mode === "lupa" ? "Email akun" : "Nama pengguna atau email"} muted={L.muted}>
               <input
                 type="text"
                 required
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                autoComplete="username"
+                autoComplete={mode === "lupa" ? "email" : "username"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={L.input}
-                placeholder="Nama pengguna atau email"
+                placeholder={mode === "lupa" ? "nama@email.com" : "Nama pengguna atau email"}
               />
             </Field>
+            {mode !== "lupa" && (
             <Field label="Kata sandi" muted={L.muted}>
               <input
                 type="password"
@@ -176,6 +201,20 @@ export function AccountStage({ theme }: { theme: Theme }) {
                 placeholder="Minimal 6 karakter"
               />
             </Field>
+            )}
+            {mode === "masuk" && (
+              <button
+                type="button"
+                onClick={() => {
+                  setMode("lupa");
+                  setErr("");
+                }}
+                className="-mt-1 self-end text-[13px] font-bold underline underline-offset-2"
+                style={{ color: L.muted }}
+              >
+                Lupa kata sandi?
+              </button>
+            )}
             <ErrorLine msg={err} />
             <button
               type="submit"
@@ -183,11 +222,11 @@ export function AccountStage({ theme }: { theme: Theme }) {
               className="mt-1 transition-transform active:translate-y-[3px] disabled:opacity-60"
               style={L.primary}
             >
-              {busy ? "Sebentar…" : mode === "masuk" ? "Masuk" : "Daftar"}
+              {busy ? "Sebentar…" : mode === "masuk" ? "Masuk" : mode === "lupa" ? "Kirim tautan" : "Daftar"}
             </button>
           </form>
           <p style={{ fontSize: 14, fontWeight: 600, color: L.muted }}>
-            {mode === "masuk" ? "Belum punya akun? " : "Sudah punya akun? "}
+            {mode === "masuk" ? "Belum punya akun? " : mode === "lupa" ? "Ingat kata sandinya? " : "Sudah punya akun? "}
             <button
               onClick={() => {
                 setMode(mode === "masuk" ? "daftar" : "masuk");

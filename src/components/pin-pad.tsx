@@ -167,6 +167,17 @@ export function LupaPin({ m, onSelesai, onBatal }: { m: Member; onSelesai: () =>
   const [pesan, setPesan] = useState<string | null>(null);
   const [sibuk, setSibuk] = useState(false);
   const login = email?.endsWith("@rumila.local") ? email.split("@")[0] : email;
+  const bisaEmail = !!email && !email.endsWith("@rumila.local");
+  const [terkirim, setTerkirim] = useState(false);
+  const kirimTautan = async () => {
+    if (!email) return;
+    setSibuk(true);
+    setPesan(null);
+    const { error } = await supabase().auth.resetPasswordForEmail(email, { redirectTo: `${window.location.origin}/masuk/sandi-baru` });
+    setSibuk(false);
+    if (error) setPesan(/rate limit|after \d+ seconds/i.test(error.message) ? "Tautan baru saja dikirim. Tunggu sebentar, lalu coba lagi." : "Tautan belum terkirim. Coba lagi.");
+    else setTerkirim(true);
+  };
 
   if (lolos) return <BuatPin m={m} jenis={m.jenisPin ?? "angka"} judul={`PIN baru untuk ${m.name}`} onSelesai={onSelesai} kiri={<button type="button" onClick={onBatal} className="text-[14px] font-extrabold text-[#0567c2]">Batal</button>} />;
 
@@ -207,6 +218,20 @@ export function LupaPin({ m, onSelesai, onBatal }: { m: Member; onSelesai: () =>
         Kembali
       </button>
       <p className="text-[12px] font-bold text-ink-3">Kata sandi akun rumah adalah yang dipakai saat pertama kali masuk di perangkat ini.</p>
+      {terkirim ? (
+        <p role="status" className="rounded-[14px] bg-[#e3f7f3] px-3 py-2 text-[13px] font-bold text-[#0b6b5f]">
+          Tautan untuk membuat kata sandi baru sudah dikirim ke <b>{email}</b> dari kampus@pulaurinoya.com. Setelah kata sandi baru tersimpan,
+          kembali ke sini dan ketik kata sandi itu.
+        </p>
+      ) : bisaEmail ? (
+        <button type="button" disabled={sibuk} onClick={kirimTautan} className="text-[13px] font-extrabold text-[#0567c2] underline-offset-2 hover:underline disabled:opacity-50">
+          Lupa kata sandi juga? Kirim tautan ke {email}
+        </button>
+      ) : (
+        <p className="text-[12px] font-bold text-ink-3">
+          Lupa kata sandi juga? Akun nama pengguna tidak punya email, jadi hubungi kampus@pulaurinoya.com.
+        </p>
+      )}
     </form>
   );
 }
