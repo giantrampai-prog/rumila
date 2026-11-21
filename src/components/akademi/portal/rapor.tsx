@@ -2,6 +2,7 @@
 
 // Portal wali: Rapor per anak — layar penuh, gaya tenang (putih, ink #0b2545), bisa dicetak.
 
+import { KartuPraktikKampus } from "./praktik";
 import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -199,6 +200,8 @@ export function RaporAnak({ anak }: { anak: Member }) {
           );
         })}
       </section>
+
+      <KartuPraktikKampus events={events} level={level} rinci />
 
       {/* daftar kompetensi per track × unit */}
       {TRACK_SLICE.map((t) => (

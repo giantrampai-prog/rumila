@@ -16,6 +16,7 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { terbitkan } from "@/lib/akademi/sertifikat";
 import { alasanKunci } from "@/lib/akademi/akses";
+import { KartuPraktikKampus } from "./praktik";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { proyeksi } from "@/lib/akademi/mastery";
@@ -120,6 +121,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           ),
         )}
         <Gerbang peta={peta} berikut={berikut} />
+        <KartuPraktikKampus events={events} level={level} />
       </div>
 
       <div className="mt-1 flex justify-center">
