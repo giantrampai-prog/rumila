@@ -60,9 +60,11 @@ function useSkalaTablet() {
 
 /** Kerangka layar aktivitas: kembali · judul & progres · instruksi (bisa diputar ulang) · isi. */
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi",
+  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", musik,
 }: {
   judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string;
+  /** backsound: tombol musik nyala/mati di kepala layar (kosong = tanpa tombol, mis. ujian) */
+  musik?: { nyala: boolean; alih: () => void };
 }) {
   const router = useRouter();
   useSkalaTablet();
@@ -93,6 +95,18 @@ export function LayarAktivitas({
               ))}
             </div>
           </div>
+          {musik && (
+            <button
+              type="button"
+              onClick={musik.alih}
+              aria-label={musik.nyala ? "Matikan musik" : "Nyalakan musik"}
+              aria-pressed={musik.nyala}
+              className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95"
+              style={{ color: musik.nyala ? "#fd861d" : "#a99c8a" }}
+            >
+              <Icon name={musik.nyala ? "music_note" : "music_off"} size={24} />
+            </button>
+          )}
         </header>
         <button
           onClick={onUcap}

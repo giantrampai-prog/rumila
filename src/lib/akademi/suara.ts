@@ -107,6 +107,14 @@ function putar(src: string): Promise<boolean> {
 
 /* ---------------- API ---------------- */
 
+/** Apakah suara narasi (rekaman atau sintesis) sedang berbunyi? Dipakai backsound untuk mengecil saat VO bicara. */
+export function sedangBicara(): boolean {
+  const a = typeof window === "undefined" ? null : audio();
+  if (a && !a.paused && !a.ended) return true;
+  return !!synth()?.speaking;
+}
+
+
 /** Apakah teks punya suara pra-rekam (ElevenLabs)? */
 export function adaSuara(teks: string): boolean {
   return Object.prototype.hasOwnProperty.call(SUARA, teks.trim());
