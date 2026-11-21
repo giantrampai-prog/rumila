@@ -67,13 +67,15 @@ describe("proyeksi", () => {
     expect(proyeksi(buktiKuat(C1, 5), [ketat])[C1].status).toBe("berkembang");
   });
 
-  it("event imported hanya satu konteks dan tidak dihitung ganda", () => {
+  it("aktivitas gedung kampus (impor Coding, game Coding Agam, quest 3D) tidak dihitung ke Academy", () => {
     const k = [kompetensi(C1)];
-    const ev = Array.from({ length: 4 }, (_, i) => attempt([C1], { hari: i, activityId: `lama-${i}`, imported: true }));
-    const p = proyeksi(ev, k)[C1];
-    expect(p).toMatchObject({ status: "berkembang", success: 4, contexts: 1 });
-    ev.push(attempt([C1], { hari: 5, activityId: "paket-a" }));
-    expect(proyeksi(ev, k)[C1].status).toBe("dikuasai");
+    const kampus = [
+      ...Array.from({ length: 4 }, (_, i) => attempt([C1], { hari: i, activityId: `lama-${i}`, imported: true })),
+      ...Array.from({ length: 4 }, (_, i) => attempt([C1], { hari: i, activityId: "koding-langkah" })),
+      ...Array.from({ length: 4 }, (_, i) => attempt([C1], { hari: i, activityId: "quest:edukasi-buah" })),
+    ];
+    expect(proyeksi(kampus, k)[C1]).toMatchObject({ status: "belum", success: 0 });
+    expect(proyeksi([...kampus, attempt([C1], { hari: 5, activityId: "paket-a" })], k)[C1].success).toBe(1);
   });
 
   it("event tanpa competencyIds atau bukan attempt diabaikan; satu attempt bisa membuktikan banyak kompetensi", () => {

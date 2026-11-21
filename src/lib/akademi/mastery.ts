@@ -6,6 +6,7 @@
 //   hintTail = percobaan berturut-turut dari akhir yang memakai bantuan
 // Aturan = DEFAULT_MASTERY ditimpa c.mastery.
 
+import { dariKampus } from "./akses";
 import { DEFAULT_MASTERY, type Competency, type GameEvent, type LevelId, type MasteryRule, type TrackId } from "@akademi/schema";
 
 export type Status = "belum" | "berkembang" | "dikuasai";
@@ -38,8 +39,9 @@ export function hariLokal(iso: string): string {
 
 function kumpulkanBukti(events: GameEvent[]): Map<string, Bukti[]> {
   const per = new Map<string, Bukti[]>();
+  // hanya bukti dari paket Academy; aktivitas gedung kampus (quest 3D, game Coding Agam) tidak dihitung (lihat akses.ts)
   const urut = events
-    .filter((e) => e.type === "attempt")
+    .filter((e) => e.type === "attempt" && !dariKampus(e))
     .slice()
     .sort((a, b) => (a.clientAt < b.clientAt ? -1 : a.clientAt > b.clientAt ? 1 : 0));
   for (const e of urut) {
