@@ -18,7 +18,7 @@ function Titik({ n, goyang }: { n: number; goyang: boolean }) {
   return (
     <div className="flex justify-center gap-3.5" style={goyang ? { animation: "shake .4s" } : undefined} aria-hidden>
       {[0, 1, 2, 3].map((i) => (
-        <span key={i} className="size-[18px] rounded-full transition-colors" style={{ background: i < n ? "#0786eb" : "#f0e4d2" }} />
+        <span key={i} className="size-[18px] rounded-full transition-colors" style={{ background: i < n ? "#0786eb" : "#c9d6e6" }} />
       ))}
     </div>
   );
