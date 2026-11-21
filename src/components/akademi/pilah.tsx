@@ -9,13 +9,12 @@ import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as R
 import { createPortal } from "react-dom";
 import { levelIndex, type PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
-import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
-import { Icon } from "@/components/ui";
+import { TombolBantu } from "./bantu";
 import { sfx } from "@/lib/sfx";
 import { sedangBicara, ucapkan } from "@/lib/akademi/suara";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
-import { Wadah } from "./wadah";
+import { LabelWadah, Wadah } from "./wadah";
 import { BALOO, BENAR, INK, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondePilah, JawabanPilah, PaketPilah>;
@@ -31,26 +30,6 @@ function visual(x: { emoji?: string; color?: string; scale?: number; count?: num
 }
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
-function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
-  const sisa = useSisaBantu();
-  if (useModeUjian()) return null;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled || sisa === 0}
-      aria-label={sisa === null ? "Bantu" : `Bantu, sisa ${sisa}`}
-      className="relative flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
-      style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
-    >
-      <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
-        <Icon name="lightbulb" size={22} />
-      </span>
-      Bantu
-      <LencanaSisa sisa={sisa} />
-    </button>
-  );
-}
 
 export function PresenterPilah(props: Props) {
   if (props.ronde.mode === "pilih") return <Pilih {...props} ronde={props.ronde} />;
@@ -83,7 +62,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const binRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const terkirim = useRef(false);
   const kunci = !!hasil;
-  const { tema, skala: sk } = usePanggung();
+  const { tema, skala: sk, w } = usePanggung();
+  const hp = w > 0 && w < 600;
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -188,20 +168,22 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
   const n = bins.length;
-  const kolomBin = n <= 3 ? ["", "grid-cols-1", "grid-cols-2", "grid-cols-3"][n] : "grid-cols-2 sm:grid-cols-[repeat(var(--n),minmax(0,1fr))]";
+  // HP dengan ≥ 4 wadah, atau 3 wadah bernama panjang ("mamalia (berambut, menyusui)"): wadah disusun per baris
+  // (label kiri, isi kanan) — kolom selebar ±100 px membuat nama & ciri terlipat per kata.
+  const baris = hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
+  const kolomBin = baris ? "grid-cols-1" : n <= 3 ? ["", "grid-cols-1", "grid-cols-2", "grid-cols-3"][n] : "grid-cols-2 sm:grid-cols-[repeat(var(--n),minmax(0,1fr))]";
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
-  const lebarKartu = Math.round((items.some((i) => (i.emoji || i.shape) && t(i.labelKey).length > 18) ? 132 : 76) * sk);
+  const lebarKartu = Math.round((items.some((i) => (i.emoji || i.shape) && t(i.labelKey).length > 18) ? 132 : hp ? 92 : 96) * sk);
+  const gambarKartu = Math.round((hp ? 50 : 60) * sk);
 
   return (
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
-      {/* tombol Bantu di atas area benda, tidak menutupi kartu di layar sempit */}
-      <div className="-mb-1 flex justify-end">
-        <TombolBantu onClick={bantu} disabled={kunci} />
-      </div>
+      {/* tombol Bantu dipasang ke kepala layar (portal), tidak memakan baris */}
+      <TombolBantu onClick={bantu} disabled={kunci} />
       {/* item yang belum dipilah */}
       <div className="relative rounded-[24px] p-3 shadow-[0_5px_0_rgba(11,37,69,.12)]" style={{ minHeight: 120 * sk, background: `${tema.panel}e6`, boxShadow: `0 5px 0 rgba(11,37,69,.12), inset 0 0 0 3px ${tema.aksen}33` }}>
-        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${lebarKartu}px, 1fr))` }}>
+        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${lebarKartu}px, 1fr))`, gridAutoRows: "1fr" }}>
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
             const disorot = hint?.item === i.id;
@@ -210,9 +192,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               // pointer capture di tombol; move/up menggelembung ke pembungkus ini
               <div key={i.id} className="flex" onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
                 <KartuBenda
+                  penuh
                   v={visual(i, t)}
-                  size={Math.round(64 * sk)}
-                  labelSize={Math.round(13 * sk)}
+                  size={gambarKartu}
+                  labelSize={Math.round(14 * Math.min(sk, 1.3))}
                   selected={dipilih}
                   onPointerDown={(e) => turun(e, i.id)}
                   className={`w-full touch-none select-none ${disorot ? "akademi-bounce" : ""}`}
@@ -237,7 +220,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
       </div>
 
       {/* wadah berjajar, mengisi sisa tinggi panggung */}
-      <div className={`grid flex-1 gap-3 ${kolomBin}`} style={{ ["--n" as string]: n, gap: 12 * sk } as CSSProperties}>
+      <div className={`grid flex-1 gap-3 ${kolomBin}`} style={{ ["--n" as string]: n, gap: (baris ? 10 : 12) * sk, gridAutoRows: baris ? "minmax(0,1fr)" : undefined } as CSSProperties}>
         {bins.map((b) => {
           const isi = items.filter((i) => peta[i.id] === b.id);
           const hover = seret?.binHover === b.id;
@@ -256,16 +239,15 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               onClick={() => ketukBin(b.id)}
               onKeyDown={(e) => e.key === "Enter" && ketukBin(b.id)}
               className={`${hover ? "scale-[1.04]" : ""} ${disorot ? "akademi-bounce" : ""}`}
-              style={{ minHeight: 132 * sk }}
+              style={{ minHeight: (baris ? 72 : 132) * sk }}
+              arah={baris ? "baris" : "kolom"}
+              minIsi={baris ? 48 : 56}
               ring={ring}
               hijau={hijau}
               bentuk={bentukDariTeks(t(b.labelKey)) ?? undefined}
               label={
-                <>
-                  {/* gambar hanya bila wadah bergambar; wadah teks/angka cukup labelnya (dulu tertulis dua kali: "11 11") */}
-                  {(b.emoji || b.shape) && <Benda v={visual(b, t)} size={Math.round(34 * sk)} />}
-                  <span className="text-center break-words">{t(b.labelKey)}</span>
-                </>
+                // gambar hanya bila wadah bergambar; wadah teks/angka cukup labelnya (dulu tertulis dua kali: "11 11")
+                <LabelWadah teks={t(b.labelKey)} rata={baris ? "kiri" : "tengah"} gambar={(b.emoji || b.shape) ? <Benda v={visual(b, t)} size={Math.round((baris ? 30 : 32) * sk)} /> : undefined} />
               }
             >
               {isi.map((i) => (
@@ -281,7 +263,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                   style={{ minHeight: 46 * sk, minWidth: 46 * sk, maxWidth: "100%", pointerEvents: kunci ? "none" : undefined }}
                 />
               ))}
-              {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: 30 * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap }}>↓</span>}
+              {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: (baris ? 24 : 30) * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap, opacity: 0.7 }}>{baris ? "+" : "↓"}</span>}
             </Wadah>
           );
         })}
@@ -382,6 +364,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
           const salah = !!hasil && dipilih === c.id && c.id !== correct;
           return (
             <KartuBenda
+              penuh
               key={c.id}
               v={visual(c, t)}
               size={ukuran}

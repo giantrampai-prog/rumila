@@ -11,6 +11,7 @@ import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
 import { PUJIAN, PUJIAN_BERUNTUN, SEMANGAT, acakKata } from "@/lib/sfx-akademi";
 import { BALOO, INK, NUNITO } from "./jenis";
+import { SlotBantuProvider } from "./mode-ujian";
 
 /**
  * Tablet: layar permainan dirancang selebar HP–960 px, jadi di tablet besar (mis. 13", 1280×800) isinya kecil dan
@@ -91,6 +92,7 @@ export function LayarAktivitas({
     return () => ro.disconnect();
   }, []);
   const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h), rintangan };
+  const [slotBantu, setSlotBantu] = useState<HTMLElement | null>(null);
   // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
   // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
   const kembali = () => {
@@ -111,7 +113,7 @@ export function LayarAktivitas({
             <Icon name="arrow_back" size={24} />
           </button>
           <div className="min-w-0 flex-1 rounded-[16px] px-3 py-1.5" style={{ background: "rgba(255,255,255,.94)", boxShadow: "0 3px 0 rgba(11,37,69,.08)" }}>
-            <div className="truncate" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1 }}>{judul}</div>
+            <div style={{ fontFamily: BALOO, fontSize: 16.5, fontWeight: 800, lineHeight: 1.12, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", textWrap: "balance" }}>{judul}</div>
             <div className="mt-1 flex gap-1" aria-label={`Ronde ${ronde} dari ${total}`}>
               {Array.from({ length: total }, (_, k) => (
                 <span key={k} className="h-2 flex-1 rounded-full" style={{ background: k < ronde ? "#fd861d" : "rgba(11,37,69,.15)" }} />
@@ -130,22 +132,66 @@ export function LayarAktivitas({
               <Icon name={musik.nyala ? "music_note" : "music_off"} size={24} />
             </button>
           )}
+          {/* tombol Bantu presenter dipasang ke sini (lihat bantu.tsx) */}
+          <div ref={setSlotBantu} className="flex shrink-0 empty:hidden" />
         </header>
-        <button
-          onClick={onUcap}
-          className="flex items-center gap-3 rounded-[20px] bg-white px-3 py-2.5 text-left shadow-[0_4px_0_rgba(11,37,69,.1)] active:scale-[.99]"
-          aria-label="Dengarkan instruksi"
-        >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ffd23f] text-[#0b2545]">
-            <Icon name="volume_up" size={22} />
-          </span>
-          <span style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 700, lineHeight: 1.2 }}>{instruksi}</span>
-        </button>
+        <Instruksi teks={instruksi} onUcap={onUcap} />
         {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
         <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
-          <PanggungCtx.Provider value={panggung}>{children}</PanggungCtx.Provider>
+          <PanggungCtx.Provider value={panggung}>
+            <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
+          </PanggungCtx.Provider>
         </div>
       </div>
+    </div>
+  );
+}
+
+/**
+ * Kartu instruksi: ikon suara + teks (Nunito, gaya `pr-body` brand). Instruksi panjang dilipat jadi 2 baris supaya
+ * papan permainan tetap lega; ketuk "Lengkap" untuk membuka. Ketuk teks/ikon = dengarkan.
+ */
+function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [buka, setBuka] = useState(false);
+  const [terpotong, setTerpotong] = useState(false);
+  useEffect(() => setBuka(false), [teks]);
+  useIsoLayout(() => {
+    const el = ref.current;
+    if (!el) return;
+    const cek = () => setTerpotong(el.scrollHeight > el.clientHeight + 2);
+    cek();
+    const ro = new ResizeObserver(cek);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [teks, buka]);
+  return (
+    <div className="flex items-start gap-2.5 rounded-[18px] bg-white py-2 pr-2 pl-2 shadow-[0_4px_0_rgba(11,37,69,.1)]">
+      <button type="button" onClick={onUcap} aria-label="Dengarkan instruksi" className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#ffd23f] text-[#0b2545] active:scale-95">
+        <Icon name="volume_up" size={20} />
+      </button>
+      <span
+        ref={ref}
+        onClick={onUcap}
+        className="min-w-0 flex-1 cursor-pointer self-center"
+        style={{
+          fontFamily: NUNITO, fontSize: 15.5, fontWeight: 700, lineHeight: "21px", textWrap: "pretty",
+          ...(buka ? {} : { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }),
+        }}
+      >
+        {teks}
+      </span>
+      {(terpotong || buka) && (
+        <button
+          type="button"
+          onClick={() => setBuka((b) => !b)}
+          aria-expanded={buka}
+          aria-label={buka ? "Ringkas instruksi" : "Baca instruksi lengkap"}
+          className="flex h-9 shrink-0 items-center self-center rounded-full bg-[#eef3fa] px-1.5 text-[#0567c2] active:scale-95"
+        >
+          <Icon name={buka ? "expand_less" : "expand_more"} size={22} />
+        </button>
+      )}
     </div>
   );
 }

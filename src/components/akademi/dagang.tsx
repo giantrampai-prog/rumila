@@ -7,7 +7,8 @@ import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { PaketDagang } from "@akademi/schema";
 import type { JawabanDagang, RondeDagang } from "@akademi/mechanics";
-import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
+import { TombolBantu } from "./bantu";
+import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { angkaKata, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
@@ -246,25 +247,6 @@ function TombolBesar({ children, onClick, disabled, warna = "#22b573", bayang = 
   );
 }
 
-function TombolBantu({ onClick, disabled, label = "Bantu" }: { onClick: () => void; disabled?: boolean; label?: string }) {
-  const sk = useSk();
-  const sisa = useSisaBantu();
-  if (useModeUjian()) return null;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled || sisa === 0}
-      aria-label={sisa === null ? label : `${label}, sisa ${sisa}`}
-      className="relative flex min-h-14 min-w-14 items-center justify-center gap-1 rounded-[20px] bg-white px-3 text-[#b8860b] active:scale-95 disabled:opacity-50"
-      style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 * Math.min(sk, 1.4), minHeight: 56 * sk, minWidth: 56 * sk }}
-    >
-      <Icon name="lightbulb" size={Math.round(26 * sk)} />
-      <span className="hidden sm:inline">{label}</span>
-      <LencanaSisa sisa={sisa} />
-    </button>
-  );
-}
 
 /** Strip angka: tombol bulat besar min..max. */
 /** Angka tertinggi minimal di strip jawaban. */
