@@ -1,6 +1,6 @@
 {
   "id": "kolam-ikan-lebih-banyak",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -34,7 +34,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 9,
   "world": "kolam",
   "mode": "pilih",
   "bins": [
@@ -228,9 +228,9 @@
       "promptKey": "tBanyak",
       "choices": [
         "ikan-hias-1",
-        "ikan-hias-2"
+        "ikan-hias-4"
       ],
-      "correct": "ikan-hias-2"
+      "correct": "ikan-hias-4"
     },
     {
       "id": "r10",
@@ -263,10 +263,10 @@
       "id": "r13",
       "promptKey": "tBanyak",
       "choices": [
-        "ikan-buntal-2",
+        "ikan-buntal-4",
         "ikan-buntal-1"
       ],
-      "correct": "ikan-buntal-2"
+      "correct": "ikan-buntal-4"
     }
   ]
 }

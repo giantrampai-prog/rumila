@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-halaman",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "i-ember": "ember plastik",
       "i-mainan": "mainan plastik",
       "i-jendela": "kaca jendela",
-      "i-botolkaca": "botol kaca",
+      "i-botolkaca": "toples kaca",
       "i-pintu": "pintu kayu",
       "i-bumerang": "bumerang kayu",
       "i-tangga": "tangga kayu",
@@ -44,7 +44,7 @@
       "i-ember": "plastic bucket",
       "i-mainan": "plastic toy",
       "i-jendela": "window glass",
-      "i-botolkaca": "glass bottle",
+      "i-botolkaca": "glass jar",
       "i-pintu": "wooden door",
       "i-bumerang": "wooden boomerang",
       "i-tangga": "wooden ladder",
@@ -148,7 +148,7 @@
       "id": "botolkaca",
       "labelKey": "i-botolkaca",
       "bin": "kaca",
-      "emoji": "🍾"
+      "emoji": "🫙"
     },
     {
       "id": "pintu",

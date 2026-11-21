@@ -1,6 +1,6 @@
 {
   "id": "sains-cari-organ-di-tubuh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -30,7 +30,7 @@
       "t-8": "Mana paru-paru? Ada dua, di kiri dan kanan dada.",
       "t-9": "Gigi dan mata terlihat dari luar. Mana organ yang tersembunyi di dalam perut?",
       "t-10": "Mana jantungnya? Setelah berlari, jantung berdetak cepat.",
-      "t-11": "Mana paru-parunya? Paru-paru mengisi udara saat kita meniup.",
+      "t-11": "Mana paru-parunya? Paru-paru terisi udara saat kita menarik napas.",
       "t-12": "Mana otaknya? Otak bekerja saat kita menyusun puzel."
     },
     "en": {
@@ -55,7 +55,7 @@
       "t-8": "Where are the lungs? There are two, on the left and right of the chest.",
       "t-9": "Teeth and eyes can be seen from outside. Which organ is hidden inside the tummy?",
       "t-10": "Where is the heart? After running, the heart beats fast.",
-      "t-11": "Where are the lungs? The lungs fill with air when we blow.",
+      "t-11": "Where are the lungs? The lungs fill with air when we breathe in.",
       "t-12": "Where is the brain? The brain works when we do a puzzle."
     }
   },

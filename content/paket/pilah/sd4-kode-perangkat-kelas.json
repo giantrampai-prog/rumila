@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perangkat-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Alat-Alat di Kelas Komputer",
-      "instruksi": "Di kelas komputer: seret tiap alat ke kelompoknya, memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
+      "instruksi": "Di kelas komputer: seret tiap alat ke kelompoknya: memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
       "bin-masukan": "masukan",
       "bin-keluaran": "keluaran",
       "bin-simpan": "penyimpanan",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Gadgets in the Computer Class",
-      "instruksi": "In the computer class: drag each gadget to its group, puts data into the computer, gives results out, or keeps data stored.",
+      "instruksi": "In the computer class: drag each gadget to its group: putting data in, giving results out, or storing data.",
       "bin-masukan": "input",
       "bin-keluaran": "output",
       "bin-simpan": "storage",

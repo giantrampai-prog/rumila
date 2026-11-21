@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-produsen-konsumen-sawah-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "b-konsumen": "konsumen (makan makhluk lain)",
       "i-padi": "padi",
       "i-jagung": "tanaman jagung",
-      "i-eceng": "eceng gondok",
+      "i-eceng": "teratai",
       "i-lamun": "lamun di dasar laut",
       "i-kelapa": "pohon kelapa",
       "i-tikus": "tikus sawah",
@@ -32,7 +32,7 @@
       "b-konsumen": "consumer (eats other living things)",
       "i-padi": "rice plant",
       "i-jagung": "corn plant",
-      "i-eceng": "water hyacinth",
+      "i-eceng": "lotus",
       "i-lamun": "seagrass",
       "i-kelapa": "coconut tree",
       "i-tikus": "rice-field rat",

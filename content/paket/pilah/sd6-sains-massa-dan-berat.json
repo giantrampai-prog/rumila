@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-massa-dan-berat",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.MASSA-BERAT.01"
@@ -88,7 +88,7 @@
       "id": "berat",
       "labelKey": "i-berat",
       "bin": "pilihan",
-      "emoji": "⬇️"
+      "emoji": "🏋️"
     },
     {
       "id": "kg",
@@ -130,7 +130,7 @@
       "id": "kurangkg",
       "labelKey": "i-kurangkg",
       "bin": "pilihan",
-      "emoji": "🎒"
+      "emoji": "🔽"
     },
     {
       "id": "nolkg",

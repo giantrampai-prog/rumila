@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-air-atau-daratan-dari-pesawat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -124,7 +124,8 @@
       "id": "kebunteh",
       "labelKey": "i-kebunteh",
       "bin": "darat",
-      "emoji": "🍵"
+      "emoji": "🌿",
+      "color": "#2e7d32"
     },
     {
       "id": "pulau",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-air",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-AIR.01"
@@ -71,7 +71,7 @@
       "keringat-1": "keringat di kulit menguap saat berlari",
       "keringat-2": "uap air naik, mendingin, dan mengembun jadi awan",
       "keringat-3": "titik air di awan menyatu dan turun sebagai hujan",
-      "keringat-4": "air hujan mengalir kembali ke danau"
+      "keringat-4": "air hujan mengalir ke sungai dan danau"
     },
     "en": {
       "judul": "A Water Drop's Journey",
@@ -137,7 +137,7 @@
       "keringat-1": "sweat on the skin evaporates while running",
       "keringat-2": "the water vapour rises, cools, and condenses into clouds",
       "keringat-3": "droplets in the cloud join and fall as rain",
-      "keringat-4": "the rain flows back into the lake"
+      "keringat-4": "the rain flows into rivers and lakes"
     }
   },
   "knobs": {

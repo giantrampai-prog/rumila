@@ -1,6 +1,6 @@
 {
   "id": "celengan-pecahan-uang",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Lima Celengan",
+      "judul": "Celengan Uang",
       "instruksi": "Robot punya celengan koin: masukkan tiap koin dan uang dua ribu ke celengan yang gambarnya sama.",
       "koin500": "koin lima ratus",
       "koin1000": "koin seribu",
       "kertas2000": "uang dua ribu"
     },
     "en": {
-      "judul": "Five Piggy Banks",
+      "judul": "Money Piggy Banks",
       "instruksi": "The robot has coin banks: put each coin and two-thousand note into the bank with the same picture.",
       "koin500": "500 coin",
       "koin1000": "1,000 coin",

@@ -1,6 +1,6 @@
 {
   "id": "sains-bisa-dilihat-tembus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bisa Kulihat Tembus?",
-      "instruksi": "Di laboratorium, angkat tiap benda ke depan mata dan coba lihat lewat benda itu. Taruh ke rak tembus pandang atau tidak tembus pandang.",
+      "instruksi": "Coba lihat lewat tiap benda. Taruh ke rak tembus pandang atau tidak.",
       "b-tembus": "tembus pandang",
       "b-tidak": "tidak tembus pandang",
       "i-lup": "kaca pembesar",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Can I See Through It?",
-      "instruksi": "In the lab, hold each thing up to your eyes and try to look through it. Put it on the see-through shelf or the not see-through shelf.",
+      "instruksi": "Try to look through each thing. Put it on the see-through shelf or the not see-through shelf.",
       "b-tembus": "see-through",
       "b-tidak": "not see-through",
       "i-lup": "magnifying glass",

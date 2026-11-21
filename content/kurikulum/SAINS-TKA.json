@@ -32,7 +32,8 @@
       "core": true,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Pengenalan nama bagian tumbuhan. Dunia: Kebun Buah — pohon 3D dengan akar terlihat (tanah transparan). Instruksi audio 'Mana akarnya?'; anak menyentuh bagian itu. Variasi ucap: tokoh menyorot bagian, anak menyebut namanya. Jebakan: batang vs dahan, bunga vs buah — di tahap ini bunga dan buah tidak muncul bersamaan. Knob: 4 bagian → 5 (tambah buah)."
     },
@@ -66,7 +67,8 @@
       "core": true,
       "mechanics": [
         "simulasi",
-        "pilah"
+        "pilah",
+        "urutkan"
       ],
       "catatan": "Aksi teramati: anak menyeret 4 potongan ke posisi yang benar relatif terhadap garis tanah: akar di bawah tanah, batang di atas tanah, daun di batang, bunga di pucuk. Umpan balik simulasi: tumbuhan yang benar berdiri dan bergoyang; akar di atas membuat tumbuhan roboh. Jebakan: akar ditaruh di atas tanah. Knob: tumbuhan berbeda (bunga matahari, pohon mangga); potongan 4 → 5."
     },
@@ -311,7 +313,8 @@
       "core": false,
       "mechanics": [
         "cari",
-        "ucap"
+        "ucap",
+        "pilah"
       ],
       "catatan": "Mekanik cari di dunia 3D Bawah Laut, lapisan terumbu (dangkal) untuk TK A. Instruksi audio menyebut satu hewan; anak berenang mendekat dan menyentuhnya. Bukti: 3 hewan ditemukan dalam batas waktu longgar, paling banyak 2 sentuhan salah. Variasi ucap: hewan disorot, anak menyebut namanya. Jebakan: ikan badut vs ikan lain berwarna oranye — pilih target yang bentuknya khas. Pengaya. Knob: 3 → 5 hewan, kedalaman lapisan."
     },

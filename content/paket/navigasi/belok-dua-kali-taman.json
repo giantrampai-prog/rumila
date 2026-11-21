@@ -1,6 +1,6 @@
 {
   "id": "belok-dua-kali-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,12 +9,12 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Belok Dua Kali",
+      "judul": "Belok Menuju Bintang",
       "instruksi": "Lihat ke mana robot menghadap, lalu susun belok dan maju supaya sampai bintang."
     },
     "en": {
-      "judul": "Turn Twice",
-      "instruksi": "Check which way robot is facing, then arrange turn and forward blocks to reach the star."
+      "judul": "Turn to the Star",
+      "instruksi": "Check which way the robot is facing, then arrange turn and forward blocks to reach the star."
     }
   },
   "knobs": {

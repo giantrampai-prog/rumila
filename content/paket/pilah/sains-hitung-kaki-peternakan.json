@@ -1,6 +1,6 @@
 {
   "id": "sains-hitung-kaki-peternakan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Kaki Hewan Peternakan",
-      "instruksi": "Lihat kaki hewan peternakan. Taruh ke papan dua kaki atau empat kaki.",
+      "judul": "Hitung Kaki Hewan",
+      "instruksi": "Lihat kaki hewannya. Taruh ke papan dua kaki atau empat kaki.",
       "b-dua": "dua kaki",
       "b-empat": "empat kaki",
       "i-kalkun": "kalkun",
@@ -27,8 +27,8 @@
       "i-tikus": "tikus"
     },
     "en": {
-      "judul": "Farm Animal Legs",
-      "instruksi": "Look at the farm animals' legs. Put each one on the two-leg or four-leg board.",
+      "judul": "Count the Animal Legs",
+      "instruksi": "Look at each animal's legs. Put it on the two-leg or four-leg board.",
       "b-dua": "two legs",
       "b-empat": "four legs",
       "i-kalkun": "turkey",

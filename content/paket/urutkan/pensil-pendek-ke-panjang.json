@@ -1,6 +1,6 @@
 {
   "id": "pensil-pendek-ke-panjang",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pensil Pendek ke Panjang",
-      "instruksi": "Susun pensil dari yang paling pendek ke yang paling panjang.",
+      "instruksi": "Susun benda dari yang paling pendek ke yang paling panjang.",
       "pensil": "Pensil: pendek ke panjang",
       "kereta": "Kereta: pendek ke panjang",
       "pendek": "pendek",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Pencils Short to Long",
-      "instruksi": "Line up the pencils from the shortest to the longest.",
+      "instruksi": "Line up the things from the shortest to the longest.",
       "pensil": "Pencils: short to long",
       "kereta": "Trains: short to long",
       "pendek": "short",

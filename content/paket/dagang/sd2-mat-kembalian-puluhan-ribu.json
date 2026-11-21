@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-kembalian-puluhan-ribu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "dagang",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Kembalian Puluhan Ribu",
       "instruksi": "Pembeli membayar dengan uang besar. Hitung maju dari harga ke uangnya, lalu beri kembalian.",
-      "g-sepeda-roda-tiga": "sepeda roda tiga",
+      "g-sepeda-roda-tiga": "sepeda",
       "g-tenda-main": "tenda main",
       "g-gitar-mainan": "gitar mainan",
       "g-robot-mainan": "robot mainan",
@@ -25,7 +25,7 @@
     "en": {
       "judul": "Change in Tens of Thousands",
       "instruksi": "The shopper pays with a big note. Count on from the price to the note, then give the change.",
-      "g-sepeda-roda-tiga": "tricycle",
+      "g-sepeda-roda-tiga": "bicycle",
       "g-tenda-main": "play tent",
       "g-gitar-mainan": "toy guitar",
       "g-robot-mainan": "toy robot",

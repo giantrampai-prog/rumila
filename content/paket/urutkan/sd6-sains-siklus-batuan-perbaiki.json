@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-siklus-batuan-perbaiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.03"
@@ -365,7 +365,7 @@
         {
           "id": "leleh",
           "labelKey": "bawahlaut-leleh",
-          "emoji": "🔥"
+          "emoji": "♨️"
         }
       ]
     },

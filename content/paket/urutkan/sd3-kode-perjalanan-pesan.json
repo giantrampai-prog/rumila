@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-perjalanan-pesan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Perjalanan Sebuah Pesan",
-      "instruksi": "Susun perjalanan pesan dari perangkatmu sampai ke perangkat temanmu.",
+      "instruksi": "Susun perjalanan pesan atau data lewat internet, dari langkah pertama sampai terakhir.",
       "t-pesan": "Mengirim pesan",
       "pesan-1": "ketik pesan",
       "pesan-2": "tekan kirim",
@@ -53,13 +53,6 @@
       "lagu-4": "server mengirim lagu",
       "lagu-5": "lagu sampai di ponsel",
       "lagu-6": "lagu terdengar di headset",
-      "t-printer": "Mencetak gambar lewat wifi",
-      "printer-1": "pilih gambar",
-      "printer-2": "klik cetak",
-      "printer-3": "data lewat wifi ke router",
-      "printer-4": "router meneruskan ke printer",
-      "printer-5": "printer mulai mencetak",
-      "printer-6": "gambar tercetak di kertas",
       "t-pesan-suara": "Mengirim pesan suara",
       "pesan-suara-1": "tekan dan tahan tombol rekam",
       "pesan-suara-2": "ucapkan pesanmu",
@@ -84,7 +77,7 @@
     },
     "en": {
       "judul": "A Message's Journey",
-      "instruksi": "Put in order how the message travels from your device to your friend's device.",
+      "instruksi": "Put the journey of the message or data through the internet in order, from the first step to the last.",
       "t-pesan": "Sending a message",
       "pesan-1": "type the message",
       "pesan-2": "press send",
@@ -127,13 +120,6 @@
       "lagu-4": "the server sends the song",
       "lagu-5": "the song reaches the phone",
       "lagu-6": "you hear the song in your headphones",
-      "t-printer": "Printing a picture over wifi",
-      "printer-1": "choose a picture",
-      "printer-2": "click print",
-      "printer-3": "the data goes over wifi to the router",
-      "printer-4": "the router passes it to the printer",
-      "printer-5": "the printer starts printing",
-      "printer-6": "the picture is on paper",
       "t-pesan-suara": "Sending a voice message",
       "pesan-suara-1": "press and hold the record button",
       "pesan-suara-2": "say your message",
@@ -385,42 +371,6 @@
           "id": "lagu-6",
           "labelKey": "lagu-6",
           "emoji": "🎧"
-        }
-      ]
-    },
-    {
-      "id": "printer",
-      "titleKey": "t-printer",
-      "steps": [
-        {
-          "id": "printer-1",
-          "labelKey": "printer-1",
-          "emoji": "🖼️"
-        },
-        {
-          "id": "printer-2",
-          "labelKey": "printer-2",
-          "emoji": "🖱️"
-        },
-        {
-          "id": "printer-3",
-          "labelKey": "printer-3",
-          "emoji": "📶"
-        },
-        {
-          "id": "printer-4",
-          "labelKey": "printer-4",
-          "emoji": "📡"
-        },
-        {
-          "id": "printer-5",
-          "labelKey": "printer-5",
-          "emoji": "🖨️"
-        },
-        {
-          "id": "printer-6",
-          "labelKey": "printer-6",
-          "emoji": "📄"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-pantul-atau-bias",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.CAHAYA.01"
@@ -16,7 +16,7 @@
       "i-spion": "melihat jalan di belakang lewat spion motor",
       "i-danau": "bayangan gunung di permukaan danau yang tenang",
       "i-periskop": "mengintip lewat periskop dua cermin",
-      "i-sendok": "wajah tampak terbalik di sendok mengkilap",
+      "i-sendok": "wajah tampak terbalik di sendok mengilap",
       "i-senter": "sinar senter diarahkan cermin ke dinding",
       "i-pensil": "pensil tampak patah di gelas berisi air",
       "i-kolam": "dasar kolam tampak lebih dangkal",
@@ -96,7 +96,7 @@
       "id": "periskop",
       "labelKey": "i-periskop",
       "bin": "pantul",
-      "emoji": "🔭"
+      "emoji": "🚢"
     },
     {
       "id": "sendok",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-urut-pecahan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Antrean Potongan Kue",
-      "instruksi": "Satu kue dibagi makin banyak, potongannya makin kecil. Susun dari yang terkecil.",
+      "instruksi": "Bandingkan besar bagiannya. Penyebut sama: pembilang besar, bagian besar. Pembilang 1: penyebut besar, bagian kecil. Susun dari yang terkecil.",
       "s-1per10": "1/10",
       "s-1per5": "1/5",
       "s-1per4": "1/4",
@@ -37,11 +37,13 @@
       "s-2per3": "2/3",
       "s-3per3": "3/3",
       "j-penyebut-sama-3-terkecil-dulu": "Penyebut sama (3): terkecil dulu",
-      "s-5per5": "5/5"
+      "s-5per5": "5/5",
+      "s-1per8": "1/8",
+      "s-1per6": "1/6"
     },
     "en": {
       "judul": "Cake Slice Line-Up",
-      "instruksi": "The more pieces a cake is cut into, the smaller each piece. Order from smallest.",
+      "instruksi": "Compare the size of the parts. Same denominator: bigger numerator, bigger part. Numerator 1: bigger denominator, smaller part. Order from smallest.",
       "s-1per10": "1/10",
       "s-1per5": "1/5",
       "s-1per4": "1/4",
@@ -68,7 +70,9 @@
       "s-2per3": "2/3",
       "s-3per3": "3/3",
       "j-penyebut-sama-3-terkecil-dulu": "Same denominator (3): smallest first",
-      "s-5per5": "5/5"
+      "s-5per5": "5/5",
+      "s-1per8": "1/8",
+      "s-1per6": "1/6"
     }
   },
   "knobs": {
@@ -87,18 +91,18 @@
   "mode": "susun",
   "sequences": [
     {
-      "id": "satuan-10-5-4-3",
+      "id": "satuan-8-6-4-3",
       "titleKey": "j-pecahan-satuan-terkecil-dulu",
       "steps": [
         {
-          "id": "1per10",
-          "labelKey": "s-1per10",
+          "id": "1per8",
+          "labelKey": "s-1per8",
           "scale": 0.7
         },
         {
-          "id": "1per5",
-          "labelKey": "s-1per5",
-          "scale": 0.85
+          "id": "1per6",
+          "labelKey": "s-1per6",
+          "scale": 0.75
         },
         {
           "id": "1per4",
@@ -113,13 +117,13 @@
       ]
     },
     {
-      "id": "satuan-10-5-4-2",
+      "id": "satuan-6-5-3-2",
       "titleKey": "j-pecahan-satuan-terkecil-dulu",
       "steps": [
         {
-          "id": "1per10",
-          "labelKey": "s-1per10",
-          "scale": 0.7
+          "id": "1per6",
+          "labelKey": "s-1per6",
+          "scale": 0.75
         },
         {
           "id": "1per5",
@@ -127,8 +131,8 @@
           "scale": 0.85
         },
         {
-          "id": "1per4",
-          "labelKey": "s-1per4",
+          "id": "1per3",
+          "labelKey": "s-1per3",
           "scale": 0.85
         },
         {

@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-urut-bilangan-besar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -35,7 +35,7 @@
       "s4-3": "8.010",
       "s4-4": "8.100",
       "s4-5": "80.001",
-      "s5": "Harga lima sepeda (rupiah)",
+      "s5": "Nomor undian lima peserta",
       "s5-1": "61.234",
       "s5-2": "62.134",
       "s5-3": "62.143",
@@ -99,7 +99,7 @@
       "s4-3": "8,010",
       "s4-4": "8,100",
       "s4-5": "80,001",
-      "s5": "Prices of five bikes (rupiah)",
+      "s5": "Raffle numbers of five players",
       "s5-1": "61,234",
       "s5-2": "62,134",
       "s5-3": "62,143",

@@ -1,6 +1,6 @@
 {
   "id": "sains-pot-mana-yang-layu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pot Mana yang Akan Layu?",
-      "instruksi": "Dengarkan di mana tiap pot disimpan, lalu tebak pot yang akan layu sebelum hari berganti.",
+      "instruksi": "Dengarkan di mana tiap pot disimpan, lalu tebak pot yang akan layu beberapa hari lagi.",
       "pilihan": "pilihan",
       "i-jendela": "pot di jendela terang",
       "i-teras": "pot di teras",
@@ -33,7 +33,7 @@
     },
     "en": {
       "judul": "Which Pot Will Wilt?",
-      "instruksi": "Listen to where each pot is kept, then guess which one will wilt before tomorrow.",
+      "instruksi": "Listen to where each pot is kept, then guess which one will wilt in a few days.",
       "pilihan": "choices",
       "i-jendela": "pot by the bright window",
       "i-teras": "pot on the porch",
@@ -163,7 +163,7 @@
         "kotak",
         "teras",
         "jendela",
-        "lemari"
+        "kebun"
       ],
       "correct": "kotak"
     },

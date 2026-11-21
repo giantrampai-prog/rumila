@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-dan-atau",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Syarat Dan, Atau, Bukan",
-      "instruksi": "'dan' butuh dua syarat benar, 'atau' cukup satu yang benar: pilih satu-satunya pilihan yang memenuhi syarat.",
+      "instruksi": "'dan' butuh dua syarat benar, 'atau' cukup satu yang benar, 'bukan' membalik syarat: pilih satu-satunya pilihan yang memenuhi syarat.",
       "pilihan": "pilihan",
       "c1": "umur 11, tinggi 132",
       "c2": "umur 9, tinggi 140",
@@ -61,7 +61,7 @@
     },
     "en": {
       "judul": "And, Or, Not Conditions",
-      "instruksi": "'and' needs both conditions true, 'or' needs at least one: choose the only option that meets the rule.",
+      "instruksi": "'and' needs both conditions true, 'or' needs at least one, 'not' flips a condition: choose the only option that meets the rule.",
       "pilihan": "choices",
       "c1": "age 11, height 132",
       "c2": "age 9, height 140",

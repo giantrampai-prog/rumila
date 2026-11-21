@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,12 +19,12 @@
       "i-batukali": "batu kali",
       "i-bulu": "bulu ayam",
       "i-tempurung": "batok kelapa",
-      "i-keramik": "piring keramik",
+      "i-keramik": "keramik",
       "i-foil": "aluminium foil",
       "i-plastikwrap": "plastik pembungkus",
-      "i-tisu": "tisu",
-      "i-botolkaca": "botol kaca",
-      "i-spons": "spons cuci piring"
+      "i-tisu": "kertas tisu",
+      "i-botolkaca": "kaca",
+      "i-spons": "busa spons"
     },
     "en": {
       "judul": "Natural or Made in the Kitchen?",
@@ -37,12 +37,12 @@
       "i-batukali": "river stone",
       "i-bulu": "chicken feather",
       "i-tempurung": "coconut shell",
-      "i-keramik": "ceramic plate",
+      "i-keramik": "ceramic",
       "i-foil": "aluminium foil",
       "i-plastikwrap": "plastic wrap",
-      "i-tisu": "tissue",
-      "i-botolkaca": "glass bottle",
-      "i-spons": "dish sponge"
+      "i-tisu": "tissue paper",
+      "i-botolkaca": "glass",
+      "i-spons": "sponge foam"
     }
   },
   "knobs": {
@@ -120,8 +120,8 @@
       "id": "foil",
       "labelKey": "i-foil",
       "bin": "buatan",
-      "emoji": "🪙",
-      "color": "#e0e0e0"
+      "color": "#e0e0e0",
+      "shape": "rect"
     },
     {
       "id": "plastikwrap",

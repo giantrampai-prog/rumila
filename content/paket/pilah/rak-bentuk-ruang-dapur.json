@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,6 @@
       "jeruk": "jeruk",
       "bilyar": "bola bilyar",
       "es": "es batu",
-      "susu": "kotak susu",
       "kado": "kotak kado",
       "gelas": "gelas",
       "kaleng": "kaleng",
@@ -35,7 +34,6 @@
       "jeruk": "orange",
       "bilyar": "billiard ball",
       "es": "ice cube",
-      "susu": "milk carton",
       "kado": "gift box",
       "gelas": "cup",
       "kaleng": "can",
@@ -69,7 +67,7 @@
     {
       "id": "bola",
       "labelKey": "bola",
-      "emoji": "⚪"
+      "emoji": "🏐"
     },
     {
       "id": "kubus",
@@ -106,12 +104,6 @@
       "labelKey": "es",
       "bin": "kubus",
       "emoji": "🧊"
-    },
-    {
-      "id": "susu",
-      "labelKey": "susu",
-      "bin": "kubus",
-      "emoji": "🧃"
     },
     {
       "id": "kado",

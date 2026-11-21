@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-rumah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -12,7 +12,7 @@
       "judul": "Bentuk di Rumah",
       "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
       "pilihan": "pilihan",
-      "jam": "jam dinding",
+      "jam": "jam weker",
       "bola": "bola",
       "piring": "piring",
       "jendela": "jendela",
@@ -20,7 +20,6 @@
       "bingkai": "bingkai foto",
       "tenda": "tenda",
       "pizza": "potongan pizza",
-      "gantungan": "gantungan baju",
       "tBulat": "Mana yang bulat?",
       "tKotak": "Mana yang kotak?",
       "tSegitiga": "Mana yang segitiga?",
@@ -32,7 +31,7 @@
       "judul": "Shapes at Home",
       "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
       "pilihan": "choices",
-      "jam": "wall clock",
+      "jam": "alarm clock",
       "bola": "ball",
       "piring": "plate",
       "jendela": "window",
@@ -40,7 +39,6 @@
       "bingkai": "picture frame",
       "tenda": "tent",
       "pizza": "pizza slice",
-      "gantungan": "coat hanger",
       "tBulat": "Which one is round?",
       "tKotak": "Which one is square?",
       "tSegitiga": "Which one is a triangle?",
@@ -117,12 +115,6 @@
       "labelKey": "pizza",
       "bin": "pilihan",
       "emoji": "🍕"
-    },
-    {
-      "id": "gantungan",
-      "labelKey": "gantungan",
-      "bin": "pilihan",
-      "emoji": "🪝"
     },
     {
       "bin": "pilihan",

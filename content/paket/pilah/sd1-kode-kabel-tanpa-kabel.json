@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-kabel-tanpa-kabel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-wired-printer": "printer berkabel",
       "i-mobile-phone": "ponsel",
       "i-smartwatch": "jam pintar",
-      "i-tv-remote": "remote TV",
+      "i-toy-drone": "drone mainan",
       "i-wireless-game-controller": "stik game tanpa kabel",
       "i-bluetooth-speaker": "speaker bluetooth",
       "i-tablet": "tablet"
@@ -39,7 +39,7 @@
       "i-wired-printer": "wired printer",
       "i-mobile-phone": "mobile phone",
       "i-smartwatch": "smartwatch",
-      "i-tv-remote": "TV remote",
+      "i-toy-drone": "toy drone",
       "i-wireless-game-controller": "wireless game controller",
       "i-bluetooth-speaker": "bluetooth speaker",
       "i-tablet": "tablet"
@@ -122,10 +122,10 @@
       "emoji": "⌚"
     },
     {
-      "id": "tv-remote",
-      "labelKey": "i-tv-remote",
+      "id": "toy-drone",
+      "labelKey": "i-toy-drone",
       "bin": "nirkabel",
-      "emoji": "📡"
+      "emoji": "🚁"
     },
     {
       "id": "wireless-game-controller",

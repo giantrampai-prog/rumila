@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-ulangi-dan-kalau",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "q2": "hitung = 0. untuk angka 1 sampai 10: kalau angka > 7: hitung = hitung + 1. Berapa hitung?",
       "c7": "30",
       "c8": "40",
-      "q3": "skor = 0. untuk tiap jawaban di [benar, salah, benar, benar]: kalau benar: skor = skor + 10. Berapa skor?",
+      "q3": "skor = 0. untuk tiap jawaban di ['benar', 'salah', 'benar', 'benar']: kalau jawaban == 'benar': skor = skor + 10. Berapa skor?",
       "c9": "5",
       "c10": "2",
       "q4": "x = 0. ulangi 5 kali: kalau x < 3: x = x + 1. Berapa x?",
@@ -58,7 +58,7 @@
       "q2": "count = 0. for number 1 to 10: if number > 7: count = count + 1. What is count?",
       "c7": "30",
       "c8": "40",
-      "q3": "score = 0. for each answer in [right, wrong, right, right]: if right: score = score + 10. What is score?",
+      "q3": "score = 0. for each answer in ['right', 'wrong', 'right', 'right']: if answer == 'right': score = score + 10. What is score?",
       "c9": "5",
       "c10": "2",
       "q4": "x = 0. repeat 5 times: if x < 3: x = x + 1. What is x?",

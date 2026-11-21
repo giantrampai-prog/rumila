@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "b-kutub": "kutub es",
       "i-kaktus": "kaktus",
       "i-unta": "unta",
-      "i-kalajengking": "kalajengking",
+      "i-kalajengking": "kalajengking gurun",
       "i-teratai": "teratai",
       "i-katak": "katak",
       "i-bebek": "bebek",
@@ -30,8 +30,8 @@
       "i-gurita": "gurita",
       "i-paus": "paus",
       "i-beruangkutub": "beruang kutub",
-      "i-penguin": "penguin",
-      "i-anjinglaut": "anjing laut"
+      "i-penguin": "penguin kaisar",
+      "i-anjinglaut": "rubah kutub"
     },
     "en": {
       "judul": "Who Lives Where?",
@@ -43,7 +43,7 @@
       "b-kutub": "icy pole",
       "i-kaktus": "cactus",
       "i-unta": "camel",
-      "i-kalajengking": "scorpion",
+      "i-kalajengking": "desert scorpion",
       "i-teratai": "water lily",
       "i-katak": "frog",
       "i-bebek": "duck",
@@ -55,8 +55,8 @@
       "i-gurita": "octopus",
       "i-paus": "whale",
       "i-beruangkutub": "polar bear",
-      "i-penguin": "penguin",
-      "i-anjinglaut": "seal"
+      "i-penguin": "emperor penguin",
+      "i-anjinglaut": "arctic fox"
     }
   },
   "knobs": {
@@ -207,7 +207,8 @@
       "id": "anjinglaut",
       "labelKey": "i-anjinglaut",
       "bin": "kutub",
-      "emoji": "🦭"
+      "emoji": "🦊",
+      "color": "#fafafa"
     }
   ],
   "pilihan": []

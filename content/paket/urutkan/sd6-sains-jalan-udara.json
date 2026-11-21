@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalan-udara",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERNAPASAN.01"
@@ -150,7 +150,7 @@
     "steps": {
       "min": 4,
       "max": 6,
-      "default": 4,
+      "default": 5,
       "step": 1,
       "keterangan": "jumlah langkah: 4 → 6 (beberapa jalur hanya 4–5 langkah)"
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-rumah-es-keluarga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Rumah Es Keluarga Bilangan",
-      "instruksi": "Tiap rumah es dihuni tiga bilangan. Kalimat tambah dan kurang yang memakai tiga bilangan itu satu keluarga. Antar ke rumahnya.",
+      "judul": "Pondok Keluarga Bilangan",
+      "instruksi": "Tiap pondok dihuni tiga bilangan. Kalimat tambah dan kurang yang memakai tiga bilangan itu satu keluarga. Antar ke pondoknya.",
       "b-5-8-13": "5, 8, 13",
       "i-5p8": "5 + 8",
       "i-8p5": "8 + 5",
@@ -43,8 +43,8 @@
       "i-14m9": "14 − 9"
     },
     "en": {
-      "judul": "Ice House Number Families",
-      "instruksi": "Each ice house is home to three numbers. Adding and subtracting sentences that use those three numbers are one family. Take each to its house.",
+      "judul": "Number Family Huts",
+      "instruksi": "Each hut is home to three numbers. Adding and subtracting sentences that use those three numbers are one family. Take each to its hut.",
       "b-5-8-13": "5, 8, 13",
       "i-5p8": "5 + 8",
       "i-8p5": "8 + 5",

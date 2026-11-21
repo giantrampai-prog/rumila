@@ -1,6 +1,6 @@
 {
   "id": "sains-lapisan-laut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rumah di Lapisan Laut",
-      "instruksi": "Laut punya lapisan: terumbu yang dangkal, laut dalam yang gelap, dan palung yang paling dalam. Antar tiap hewan ke rumahnya.",
+      "instruksi": "Antar tiap hewan ke rumahnya: terumbu yang dangkal, laut dalam yang gelap, atau palung yang paling dalam.",
       "terumbu": "terumbu karang",
       "dalam": "laut dalam",
       "palung": "palung",
@@ -18,17 +18,18 @@
       "i-bintang": "bintang laut",
       "i-penyu": "penyu",
       "i-kepiting": "kepiting",
-      "i-paus": "paus sperma",
+      "i-paus": "paus sperma yang menyelam dalam",
       "i-cumi": "cumi-cumi raksasa",
-      "i-hiu": "hiu",
+      "i-hiu": "hiu goblin",
       "i-ubur": "ubur-ubur bercahaya",
       "i-sungut": "ikan berlampu",
       "i-dumbo": "gurita dumbo",
-      "i-udangpalung": "udang palung"
+      "i-udangpalung": "udang palung",
+      "i-siputpalung": "ikan siput palung"
     },
     "en": {
       "judul": "Homes in the Ocean Layers",
-      "instruksi": "The sea has layers: the shallow reef, the dark deep sea, and the deepest trench. Take each animal to its home.",
+      "instruksi": "Take each animal home: the shallow reef, the dark deep sea, or the deepest trench.",
       "terumbu": "coral reef",
       "dalam": "deep sea",
       "palung": "trench",
@@ -36,13 +37,14 @@
       "i-bintang": "starfish",
       "i-penyu": "sea turtle",
       "i-kepiting": "crab",
-      "i-paus": "sperm whale",
+      "i-paus": "deep-diving sperm whale",
       "i-cumi": "giant squid",
-      "i-hiu": "shark",
+      "i-hiu": "goblin shark",
       "i-ubur": "glowing jellyfish",
       "i-sungut": "anglerfish",
       "i-dumbo": "dumbo octopus",
-      "i-udangpalung": "trench amphipod"
+      "i-udangpalung": "trench amphipod",
+      "i-siputpalung": "trench snailfish"
     }
   },
   "knobs": {
@@ -90,7 +92,8 @@
       "id": "bintang",
       "labelKey": "i-bintang",
       "bin": "terumbu",
-      "emoji": "⭐"
+      "shape": "star",
+      "color": "#ff8a65"
     },
     {
       "id": "penyu",
@@ -131,9 +134,16 @@
     {
       "id": "sungut",
       "labelKey": "i-sungut",
-      "bin": "palung",
+      "bin": "dalam",
       "emoji": "🐟",
       "color": "#37474f"
+    },
+    {
+      "id": "siputpalung",
+      "labelKey": "i-siputpalung",
+      "bin": "palung",
+      "emoji": "🐟",
+      "color": "#eceff1"
     },
     {
       "id": "dumbo",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-buah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -38,7 +38,7 @@
       "i-p-tulisan": "perbesar tulisan skor yang terlalu kecil",
       "i-p-keras": "kecilkan bunyi yang terlalu keras",
       "i-p-terbalik": "tukar tombol kiri-kanan yang terbalik",
-      "i-p-dobel": "hapus buah yang muncul dobel"
+      "i-p-dobel": "hapus buah yang muncul ganda"
     },
     "en": {
       "judul": "Stages of a Fruit-Catch Game",

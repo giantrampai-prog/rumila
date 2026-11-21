@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kembalian-ratusan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "mechanic": "dagang",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Kasir Toko Pakaian",
       "instruksi": "Pembeli membayar 50 ribu atau 100 ribu. Hitung kembaliannya, termasuk koin 500.",
-      "jus": "jus buah",
+      "kaos-kaki": "kaus kaki",
       "kaos": "kaus",
       "payung": "payung",
       "sandal": "sandal",
@@ -27,7 +27,7 @@
     "en": {
       "judul": "Clothes Shop Cashier",
       "instruksi": "The customer pays 50,000 or 100,000. Work out the change, including 500 coins.",
-      "jus": "fruit juice",
+      "kaos-kaki": "socks",
       "kaos": "T-shirt",
       "payung": "umbrella",
       "sandal": "sandals",
@@ -69,10 +69,10 @@
   "mode": "kembalian",
   "goods": [
     {
-      "id": "jus",
-      "labelKey": "jus",
+      "id": "kaos-kaki",
+      "labelKey": "kaos-kaki",
       "price": 23500,
-      "emoji": "🧃"
+      "emoji": "🧦"
     },
     {
       "id": "kaos",

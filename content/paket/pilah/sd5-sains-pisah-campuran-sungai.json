@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pisah-campuran-sungai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.02"
@@ -19,7 +19,7 @@
       "p-r1": "Paku-paku kecil tercecer di pasir tepi sungai.",
       "p-r2": "Butiran pasir besi hitam tercampur pasir biasa yang kering.",
       "p-r3": "Air sungai keruh berlumpur ditampung di ember. Tidak ada saringan, tetapi airnya mau dipakai untuk menyiram.",
-      "p-r4": "Ampas kopi tubruk ingin dipisahkan dengan cara menunggu ampasnya turun ke dasar gelas.",
+      "p-r4": "Ampas kopi tubruk tercampur di gelas. Tidak ada saringan.",
       "p-r5": "Kerikil tercampur pasir untuk adukan semen. Pasirnya harus halus.",
       "p-r6": "Tepung beras masih bercampur gumpalan dan butir beras yang kasar.",
       "p-r7": "Santan diperas dari parutan kelapa lewat kain.",
@@ -41,7 +41,7 @@
       "p-r1": "Small nails are scattered in the riverbank sand.",
       "p-r2": "Black iron sand is mixed with ordinary dry sand.",
       "p-r3": "Muddy river water is collected in a bucket. There is no filter, but the water is needed for watering plants.",
-      "p-r4": "The grounds in a cup of coffee are to be separated by waiting for them to sink to the bottom.",
+      "p-r4": "The grounds are mixed into a cup of coffee. There is no strainer.",
       "p-r5": "Gravel is mixed with sand for cement. The sand must be fine.",
       "p-r6": "Rice flour is still mixed with lumps and coarse grains of rice.",
       "p-r7": "Coconut milk is squeezed from grated coconut through a cloth.",
@@ -103,7 +103,7 @@
       "promptKey": "p-r1",
       "choices": [
         "magnet",
-        "ayak",
+        "endap",
         "uap"
       ],
       "correct": "magnet"

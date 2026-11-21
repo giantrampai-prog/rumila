@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-halaman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "b-gas": "gas (memenuhi ruang)",
       "i-batu": "batu",
       "i-pasir": "pasir",
-      "i-bola": "bola",
+      "i-bola": "kelereng",
       "i-kayu": "balok kayu",
       "i-hujan": "air hujan",
       "i-jus": "jus jeruk",
@@ -34,7 +34,7 @@
       "b-gas": "gas (fills the space)",
       "i-batu": "stone",
       "i-pasir": "sand",
-      "i-bola": "ball",
+      "i-bola": "marble",
       "i-kayu": "wooden block",
       "i-hujan": "rainwater",
       "i-jus": "orange juice",
@@ -103,7 +103,7 @@
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "padat",
-      "emoji": "⚽"
+      "emoji": "🔮"
     },
     {
       "id": "kayu",

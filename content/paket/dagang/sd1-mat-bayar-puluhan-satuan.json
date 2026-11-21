@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-bayar-puluhan-satuan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "g-buku-cerita": "buku cerita",
       "g-bola": "bola",
       "g-topi": "topi",
-      "g-kaos": "kaos",
+      "g-kaos": "kaus",
       "g-payung": "payung",
       "g-tas": "tas",
       "g-sandal": "sandal",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Paying in Tens and Ones",
-      "instruksi": "The price is in the teens of thousands. Use one ten-thousand note, then add enough thousand coins.",
+      "instruksi": "The price is between 11,000 and 19,000. Use one ten-thousand note, then add enough thousand coins.",
       "g-buku-cerita": "storybook",
       "g-bola": "ball",
       "g-topi": "hat",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-urut-seperempat-setengah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -85,6 +85,11 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
           "scale": 0.85
         },
         {
@@ -247,6 +252,11 @@
           "id": "3per4",
           "labelKey": "s-3per4",
           "scale": 0.85
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
         }
       ]
     },

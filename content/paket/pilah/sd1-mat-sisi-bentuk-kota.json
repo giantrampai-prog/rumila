@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-sisi-bentuk-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "b-tiga": "3 sisi lurus",
       "b-empat": "4 sisi lurus",
       "b-lengkung": "ada sisi lengkung",
-      "i-rambu-peringatan": "rambu peringatan",
+      "i-rambu-peringatan": "tanda awas",
       "i-segitiga-merah": "segitiga merah",
       "i-segitiga-biru": "segitiga biru",
       "i-segitiga-oranye-kecil": "segitiga oranye kecil",
@@ -35,7 +35,7 @@
       "b-tiga": "3 straight sides",
       "b-empat": "4 straight sides",
       "b-lengkung": "has a curved side",
-      "i-rambu-peringatan": "warning sign",
+      "i-rambu-peringatan": "warning symbol",
       "i-segitiga-merah": "red triangle",
       "i-segitiga-biru": "blue triangle",
       "i-segitiga-oranye-kecil": "small orange triangle",

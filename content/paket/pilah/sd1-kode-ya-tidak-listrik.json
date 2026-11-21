@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-ya-tidak-listrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,6 @@
       "i-phone": "ponsel",
       "i-radio": "radio",
       "i-printer": "printer",
-      "i-electric-fan": "kipas angin listrik",
       "i-book": "buku",
       "i-bicycle": "sepeda",
       "i-umbrella": "payung",
@@ -39,7 +38,6 @@
       "i-phone": "phone",
       "i-radio": "radio",
       "i-printer": "printer",
-      "i-electric-fan": "electric fan",
       "i-book": "book",
       "i-bicycle": "bicycle",
       "i-umbrella": "umbrella",
@@ -112,12 +110,6 @@
       "labelKey": "i-printer",
       "bin": "ya",
       "emoji": "🖨️"
-    },
-    {
-      "id": "electric-fan",
-      "labelKey": "i-electric-fan",
-      "bin": "ya",
-      "emoji": "🌀"
     },
     {
       "id": "book",

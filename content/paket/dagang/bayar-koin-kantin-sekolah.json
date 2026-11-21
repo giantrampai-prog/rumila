@@ -1,6 +1,6 @@
 {
   "id": "bayar-koin-kantin-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "dagang",
   "competencyIds": [
@@ -12,8 +12,8 @@
       "judul": "Jajan di Kantin",
       "instruksi": "Robot jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
       "pisanggoreng": "pisang goreng",
-      "tahu": "tahu goreng",
-      "bakwan": "bakwan",
+      "sate": "sate",
+      "pastel": "pastel",
       "tehmanis": "teh manis",
       "nasikuning": "nasi kuning"
     },
@@ -21,8 +21,8 @@
       "judul": "Canteen Snacks",
       "instruksi": "Robot buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
       "pisanggoreng": "fried banana",
-      "tahu": "fried tofu",
-      "bakwan": "veggie fritter",
+      "sate": "satay",
+      "pastel": "pastry puff",
       "tehmanis": "sweet tea",
       "nasikuning": "yellow rice"
     }
@@ -48,14 +48,14 @@
   "mode": "bayar",
   "goods": [
     {
-      "id": "tahu",
-      "labelKey": "tahu",
+      "id": "sate",
+      "labelKey": "sate",
       "price": 1000,
       "emoji": "🍢"
     },
     {
-      "id": "bakwan",
-      "labelKey": "bakwan",
+      "id": "pastel",
+      "labelKey": "pastel",
       "price": 2000,
       "emoji": "🥟"
     },
@@ -69,7 +69,7 @@
       "id": "tehmanis",
       "labelKey": "tehmanis",
       "price": 4000,
-      "emoji": "🧋"
+      "emoji": "🍵"
     },
     {
       "id": "nasikuning",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-urutan-bayangan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,11 +21,11 @@
       "dino-p2": "dinosaurus agak dekat senter",
       "dino-p3": "dinosaurus di tengah",
       "dino-p4": "dinosaurus dekat layar",
-      "s-gelas": "Bayangan gelas",
-      "gelas-p1": "gelas tepat di depan senter",
-      "gelas-p2": "gelas agak dekat senter",
-      "gelas-p3": "gelas di tengah",
-      "gelas-p4": "gelas dekat layar",
+      "s-gelas": "Bayangan cangkir",
+      "gelas-p1": "cangkir tepat di depan senter",
+      "gelas-p2": "cangkir agak dekat senter",
+      "gelas-p3": "cangkir di tengah",
+      "gelas-p4": "cangkir dekat layar",
       "s-bintang": "Bayangan potongan bintang",
       "bintang-p1": "bintang kertas tepat di depan senter",
       "bintang-p2": "bintang kertas agak dekat senter",
@@ -191,22 +191,22 @@
         {
           "id": "p1",
           "labelKey": "gelas-p1",
-          "emoji": "🥛"
+          "emoji": "☕"
         },
         {
           "id": "p2",
           "labelKey": "gelas-p2",
-          "emoji": "🥛"
+          "emoji": "☕"
         },
         {
           "id": "p3",
           "labelKey": "gelas-p3",
-          "emoji": "🥛"
+          "emoji": "☕"
         },
         {
           "id": "p4",
           "labelKey": "gelas-p4",
-          "emoji": "🥛"
+          "emoji": "☕"
         }
       ]
     },

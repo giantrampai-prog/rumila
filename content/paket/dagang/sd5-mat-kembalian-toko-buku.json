@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kembalian-toko-buku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Kembalian Ratusan Toko Buku",
-      "instruksi": "Pembeli membayar Rp50.000 atau Rp100.000. Lengkapi dulu ratusannya ke ribuan, lalu ke puluhan ribu, lalu ke uangnya. Beri kembalian yang tepat.",
+      "instruksi": "Pembeli membayar Rp50.000 atau Rp100.000. Lengkapi dulu ratusannya ke ribuan, lalu ke puluhan ribu, lalu ke uang yang dibayar. Beri kembalian yang tepat.",
       "kamus": "kamus",
       "atlas": "atlas",
       "ensiklopedia": "ensiklopedia",
       "komik": "komik",
       "novel": "novel",
       "cat-air": "set cat air",
-      "kalkulator": "kalkulator",
+      "kalkulator": "sempoa",
       "tas": "tas sekolah",
       "globe": "bola dunia",
       "pena": "set pena",
@@ -26,14 +26,14 @@
     },
     "en": {
       "judul": "Bookshop Change in Hundreds",
-      "instruksi": "The shopper pays Rp50,000 or Rp100,000. First make the hundreds up to a thousand, then to the next ten thousand, then to the note. Give the exact change.",
+      "instruksi": "The shopper pays Rp50,000 or Rp100,000. First make the hundreds up to a thousand, then to the next ten thousand, then to the money paid. Give the exact change.",
       "kamus": "dictionary",
       "atlas": "atlas",
       "ensiklopedia": "encyclopedia",
       "komik": "comic book",
       "novel": "novel",
       "cat-air": "watercolour set",
-      "kalkulator": "calculator",
+      "kalkulator": "abacus",
       "tas": "school bag",
       "globe": "globe",
       "pena": "pen set",

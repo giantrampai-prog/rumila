@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-barisan-loncat-tetap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -52,7 +52,7 @@
       "s-985": "985",
       "s-980": "980",
       "s-975": "975",
-      "j-mundur-5-dari-1000": "Mundur 5 dari 1000",
+      "j-mundur-5-dari-1000": "Mundur 5 dari 1.000",
       "s-27": "27",
       "s-45": "45",
       "s-63": "63",
@@ -125,7 +125,7 @@
       "s-985": "985",
       "s-980": "980",
       "s-975": "975",
-      "j-mundur-5-dari-1000": "Back 5 from 1000",
+      "j-mundur-5-dari-1000": "Back 5 from 1,000",
       "s-27": "27",
       "s-45": "45",
       "s-63": "63",

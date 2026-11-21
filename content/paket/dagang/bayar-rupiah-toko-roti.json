@@ -1,6 +1,6 @@
 {
   "id": "bayar-rupiah-toko-roti",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Lihat harga rotinya, lalu bayar pas dengan gabungan uang seribu, dua ribu, dan lima ribu.",
       "donat": "donat",
       "roti": "roti tawar",
-      "kuecangkir": "kue cangkir",
+      "kuecangkir": "kue mangkuk",
       "bolu": "bolu",
       "tart": "kue tart"
     },

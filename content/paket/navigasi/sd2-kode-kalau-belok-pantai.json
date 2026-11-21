@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kalau-belok-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Kalau Karang di Tikungan",
-      "instruksi": "Karang di tiga jalur pantai ini pindah-pindah. Susun satu program: ulangi berisi kalau, belok, lalu ulangi berisi kalau lagi."
+      "instruksi": "Batu karang di tiga jalur pantai ini pindah-pindah. Susun satu program: ulangi berisi kalau, belok, lalu ulangi berisi kalau lagi."
     },
     "en": {
       "judul": "If Coral at the Bend",
-      "instruksi": "The coral on these three beach paths moves around. Build one program: a repeat with an if, a turn, then another repeat with an if."
+      "instruksi": "The coral rocks on these three beach paths move around. Build one program: a repeat with an if, a turn, then another repeat with an if."
     }
   },
   "knobs": {

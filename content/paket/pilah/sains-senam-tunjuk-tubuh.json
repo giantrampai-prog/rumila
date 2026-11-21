@@ -1,6 +1,6 @@
 {
   "id": "sains-senam-tunjuk-tubuh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "i-jari": "jari",
       "t-mata1": "Ayo senam! Tunjuk mata, lalu kedipkan.",
       "t-mata2": "Tokoh melihat burung terbang. Tunjuk matanya!",
-      "t-hidung1": "Ayo senam! Pegang hidung, lalu tarik napas.",
+      "t-hidung1": "Ayo senam! Tunjuk hidung, lalu tarik napas.",
       "t-hidung2": "Tokoh mencium bunga yang harum. Tunjuk hidungnya!",
       "t-telinga1": "Ayo senam! Tarik telinga pelan-pelan.",
       "t-telinga2": "Tokoh mendengar musik. Tunjuk telinganya!",
@@ -47,7 +47,7 @@
       "i-jari": "finger",
       "t-mata1": "Let's exercise! Point to the eyes, then blink.",
       "t-mata2": "The character watches a bird fly. Point to the eyes!",
-      "t-hidung1": "Let's exercise! Touch the nose, then breathe in.",
+      "t-hidung1": "Let's exercise! Point to the nose, then breathe in.",
       "t-hidung2": "The character smells a sweet flower. Point to the nose!",
       "t-telinga1": "Let's exercise! Gently pull the ears.",
       "t-telinga2": "The character hears music. Point to the ear!",

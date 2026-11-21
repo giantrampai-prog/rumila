@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-pita-pecahan-tertukar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pita Pecahan Tertukar",
-      "instruksi": "Pita harus urut dari yang terpanjang. Makin banyak potongan, makin kecil tiap potong, jadi 1/10 lebih kecil dari 1/2. Dua kartu tertukar: tukar kembali.",
+      "instruksi": "Pita harus urut dari yang terpanjang. Pembilang 1: penyebut besar, bagian kecil, jadi 1/10 lebih kecil dari 1/2. Penyebut sama: pembilang besar, bagian besar. Dua kartu tertukar: tukar kembali.",
       "j1": "Dari terbesar ke terkecil",
       "s1": "1/2",
       "s2": "1/3",
@@ -43,7 +43,7 @@
     },
     "en": {
       "judul": "Swapped Fraction Ribbons",
-      "instruksi": "The ribbons should go from the longest. More pieces means smaller pieces, so 1/10 is less than 1/2. Two cards are swapped: swap them back.",
+      "instruksi": "The ribbons should go from the longest. Numerator 1: bigger denominator, smaller part, so 1/10 is less than 1/2. Same denominator: bigger numerator, bigger part. Two cards are swapped: swap them back.",
       "j1": "From largest to smallest",
       "s1": "1/2",
       "s2": "1/3",

@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-dorong-tarik-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,7 +80,8 @@
       "id": "ayunan",
       "labelKey": "i-ayunan",
       "bin": "dorong",
-      "emoji": "🎠"
+      "shape": "rect",
+      "color": "#ffb74d"
     },
     {
       "id": "gerobak",

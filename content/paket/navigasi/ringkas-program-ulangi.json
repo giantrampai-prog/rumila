@@ -1,6 +1,6 @@
 {
   "id": "ringkas-program-ulangi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Ringkas Program dengan Ulangi",
-      "instruksi": "Program robot di taman ini kepanjangan: cari bagian yang berulang, ganti dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
+      "instruksi": "Program ini kepanjangan: ganti bagian yang berulang dengan blok ulangi."
     },
     "en": {
       "judul": "Squeeze It with Repeat",
-      "instruksi": "The robot's park program is too long: find the part that repeats and swap it for a repeat block so it fits the rack and the robot walks the same way."
+      "instruksi": "This program is too long: swap the part that repeats for a repeat block."
     }
   },
   "knobs": {

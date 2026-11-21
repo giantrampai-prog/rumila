@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-menyerap-air-atau-tidak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -109,7 +109,8 @@
       "id": "kapas",
       "labelKey": "i-kapas",
       "bin": "serap",
-      "emoji": "☁️"
+      "shape": "circle",
+      "color": "#fafafa"
     },
     {
       "id": "jashujan",
@@ -146,7 +147,8 @@
       "id": "sepatubot",
       "labelKey": "i-sepatubot",
       "bin": "kedap",
-      "emoji": "🥾"
+      "emoji": "🥾",
+      "color": "#ffd600"
     }
   ],
   "pilihan": []

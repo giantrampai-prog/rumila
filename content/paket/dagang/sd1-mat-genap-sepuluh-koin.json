@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-genap-sepuluh-koin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap Sepuluh Koin",
+      "judul": "Lengkapi Sepuluh Koin",
       "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya sepuluh koin: tambahkan kekurangannya.",
       "g-roti": "roti",
       "g-susu": "susu"

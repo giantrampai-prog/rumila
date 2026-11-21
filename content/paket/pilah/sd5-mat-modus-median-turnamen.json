@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-modus-median-turnamen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -32,14 +32,14 @@
       "q6": "Jumlah ikan ditangkap: 6, 1, 13, 12, 13, 8, 5. Modusnya …",
       "c14": "13",
       "c15": "12",
-      "q7": "Skor permainan: 7, 18, 9, 17, 17. Mediannya …",
+      "q7": "Skor permainan: 7, 18, 9, 17, 18. Mediannya …",
       "c16": "17",
       "q8": "Jumlah ikan ditangkap: 6, 15, 11, 4, 18, 17, 8, 5, 4. Modusnya …",
       "q9": "Jumlah ikan ditangkap: 7, 10, 1, 16, 6. Mediannya …",
       "q10": "Jumlah ikan ditangkap: 19, 7, 3, 15, 19. Modusnya …",
       "q11": "Skor permainan: 17, 8, 4, 17, 10. Mediannya …",
       "c17": "11",
-      "q12": "Skor permainan: 17, 7, 7, 18, 2, 15, 5. Mediannya …",
+      "q12": "Skor permainan: 17, 7, 7, 18, 2, 15, 9. Mediannya …",
       "pilihan": "pilihan"
     },
     "en": {
@@ -66,14 +66,14 @@
       "q6": "Fish caught: 6, 1, 13, 12, 13, 8, 5. The mode is …",
       "c14": "13",
       "c15": "12",
-      "q7": "Game scores: 7, 18, 9, 17, 17. The median is …",
+      "q7": "Game scores: 7, 18, 9, 17, 18. The median is …",
       "c16": "17",
       "q8": "Fish caught: 6, 15, 11, 4, 18, 17, 8, 5, 4. The mode is …",
       "q9": "Fish caught: 7, 10, 1, 16, 6. The median is …",
       "q10": "Fish caught: 19, 7, 3, 15, 19. The mode is …",
       "q11": "Game scores: 17, 8, 4, 17, 10. The median is …",
       "c17": "11",
-      "q12": "Game scores: 17, 7, 7, 18, 2, 15, 5. The median is …",
+      "q12": "Game scores: 17, 7, 7, 18, 2, 15, 9. The median is …",
       "pilihan": "choices"
     }
   },
@@ -310,12 +310,12 @@
       "id": "r12",
       "promptKey": "q12",
       "choices": [
-        "c7",
+        "c6",
         "c3",
         "c9",
-        "c12"
+        "c7"
       ],
-      "correct": "c7"
+      "correct": "c6"
     }
   ]
 }

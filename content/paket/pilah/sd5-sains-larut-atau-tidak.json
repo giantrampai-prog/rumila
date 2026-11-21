@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-larut-atau-tidak",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -78,7 +78,10 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "larut",
-      "emoji": "🍚"
+      "shape": "circle",
+      "color": "#e0e0e0",
+      "scale": 0.4,
+      "count": 6
     },
     {
       "id": "garam",
@@ -90,7 +93,9 @@
       "id": "gulabatu",
       "labelKey": "i-gulabatu",
       "bin": "larut",
-      "emoji": "🧊"
+      "shape": "square",
+      "color": "#e0e0e0",
+      "scale": 0.6
     },
     {
       "id": "kopi",

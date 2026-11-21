@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pencernaan-hewan-ternak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.02"
@@ -30,7 +30,7 @@
       "p-r8": "Saat diare, air tidak sempat diserap sehingga kotoran encer. Organ yang biasanya menyerap air itu adalah…",
       "p-r9": "Kotoran ayam keluar dari ujung saluran pencernaannya. Pada manusia, sisa makanan keluar lewat…",
       "p-r10": "Kucing makan ikan. Dari lambungnya, makanan berlanjut ke…",
-      "p-r11": "Dokter hewan memeriksa kerbau, ayam, dan ikan. Semuanya punya mulut, lambung, dan usus. Kesimpulannya…",
+      "p-r11": "Dokter hewan memeriksa kerbau, ayam, dan kambing. Semuanya punya mulut, lambung, dan usus. Kesimpulannya…",
       "p-r12": "Kuda, domba, dan manusia sama-sama mencerna makanan dari mulut sampai anus. Ini menunjukkan…"
     },
     "en": {
@@ -56,7 +56,7 @@
       "p-r8": "With diarrhoea, water is not absorbed in time, so the waste is runny. The organ that usually absorbs that water is the…",
       "p-r9": "Chicken droppings leave from the end of its digestive tract. In humans, waste leaves through the…",
       "p-r10": "A cat eats fish. From its stomach, the food moves on to the…",
-      "p-r11": "A vet examines a buffalo, a chicken and a fish. All have a mouth, stomach and intestines. So…",
+      "p-r11": "A vet examines a buffalo, a chicken and a goat. All have a mouth, stomach and intestines. So…",
       "p-r12": "Horses, sheep and humans all digest food from mouth to anus. This shows that…"
     }
   },

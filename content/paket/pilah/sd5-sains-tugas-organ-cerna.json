@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tugas-organ-cerna",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.02"
@@ -97,7 +97,7 @@
       "id": "usushalus",
       "labelKey": "i-usushalus",
       "bin": "pilihan",
-      "emoji": "🌀"
+      "emoji": "〰️"
     },
     {
       "id": "ususbesar",

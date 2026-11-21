@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-huruf-simetris",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -28,7 +28,6 @@
       "i-d": "D",
       "i-e": "E",
       "i-i": "I",
-      "i-k": "K",
       "i-f": "F",
       "i-g": "G",
       "i-j": "J",
@@ -60,7 +59,6 @@
       "i-d": "D",
       "i-e": "E",
       "i-i": "I",
-      "i-k": "K",
       "i-f": "F",
       "i-g": "G",
       "i-j": "J",
@@ -174,11 +172,6 @@
     {
       "id": "huruf-i",
       "labelKey": "i-i",
-      "bin": "simetris"
-    },
-    {
-      "id": "huruf-k",
-      "labelKey": "i-k",
       "bin": "simetris"
     },
     {

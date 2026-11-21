@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peliharaan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "i-biji": "biji-bijian",
       "i-pepaya": "potongan pepaya",
       "i-pelet": "pelet ikan",
-      "i-jentik": "cacing kecil",
+      "i-jentik": "kutu air",
       "i-rumput": "rumput segar",
       "i-brokoli": "brokoli",
       "i-ayam": "ayam rebus",
@@ -44,7 +44,7 @@
       "i-biji": "birdseed",
       "i-pepaya": "papaya pieces",
       "i-pelet": "fish pellets",
-      "i-jentik": "tiny worms",
+      "i-jentik": "water fleas",
       "i-rumput": "fresh grass",
       "i-brokoli": "broccoli",
       "i-ayam": "boiled chicken",
@@ -148,7 +148,9 @@
       "id": "jentik",
       "labelKey": "i-jentik",
       "bin": "ikanhias",
-      "emoji": "🪱"
+      "shape": "circle",
+      "color": "#e57373",
+      "scale": 0.5
     },
     {
       "id": "rumput",

@@ -1,6 +1,6 @@
 {
   "id": "lengkapi-koin-lima-pasar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap Lima di Pasar",
+      "judul": "Pas Lima di Pasar",
       "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: tambahkan koin supaya pas lima.",
       "mangga": "mangga",
       "nanas": "nanas"

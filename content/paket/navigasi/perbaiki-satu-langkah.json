@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-satu-langkah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
     },
     "en": {
       "judul": "One Wrong Block",
-      "instruksi": "Robot misses because one block is wrong: find it and change it so he reaches the star."
+      "instruksi": "The robot misses because one block is wrong: find it and change it so it reaches the star."
     }
   },
   "knobs": {

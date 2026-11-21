@@ -1,6 +1,6 @@
 {
   "id": "jengkal-meja-dapur",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -11,10 +11,10 @@
     "id": {
       "judul": "Jengkal di Dapur",
       "instruksi": "Ukur benda di meja dengan jengkalmu, rapat tanpa celah, lalu sebutkan berapa jengkal.",
-      "taplak": "taplak meja",
-      "nampan": "nampan",
+      "taplak": "syal",
+      "nampan": "piring",
       "roti": "roti panjang",
-      "talenan": "talenan",
+      "talenan": "kayu bakar",
       "pisang": "pisang",
       "sendok": "sendok kayu",
       "wajan": "wajan",
@@ -26,15 +26,15 @@
       "timun": "timun",
       "wortel": "wortel",
       "roti-tawar": "roti tawar",
-      "garpu": "sendok garpu"
+      "garpu": "garpu dan pisau"
     },
     "en": {
       "judul": "Spans in the Kitchen",
       "instruksi": "Measure the thing on the table with your spans, snug with no gaps, then say how many spans.",
-      "taplak": "tablecloth",
-      "nampan": "tray",
+      "taplak": "scarf",
+      "nampan": "plate",
       "roti": "long bread",
-      "talenan": "cutting board",
+      "talenan": "firewood",
       "pisang": "banana",
       "sendok": "wooden spoon",
       "wajan": "frying pan",

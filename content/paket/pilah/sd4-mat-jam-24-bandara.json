@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-jam-24-bandara",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Papan Jadwal Bandara",
-      "instruksi": "Ubah waktu ke format yang lain. Ingat: siang, sore, dan malam ditambah 12.",
+      "instruksi": "Ubah waktu ke format yang lain. Ingat: pukul 1 siang sampai 11 malam ditambah 12. Pukul 12 siang tetap 12.",
       "q1": "Pukul 4.05 sore dalam format 24 jam adalah …",
       "c1": "16.05",
       "c2": "04.05",
@@ -75,7 +75,7 @@
     },
     "en": {
       "judul": "Airport Departure Board",
-      "instruksi": "Change the time to the other format. Remember: afternoon and evening times add 12.",
+      "instruksi": "Change the time to the other format. Remember: from 1 in the afternoon to 11 at night, add 12. 12 noon stays 12.",
       "q1": "4:05 p.m. (afternoon) in 24-hour time is …",
       "c1": "16:05",
       "c2": "04:05",

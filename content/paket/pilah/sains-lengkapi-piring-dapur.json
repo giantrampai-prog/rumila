@@ -1,6 +1,6 @@
 {
   "id": "sains-lengkapi-piring-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,7 +17,7 @@
       "i-jagung": "jagung rebus",
       "i-daging": "daging",
       "i-udang": "udang",
-      "i-terong": "terong",
+      "i-terong": "terung",
       "i-kacangpolong": "kacang polong",
       "i-paprika": "paprika hijau",
       "i-mangga": "mangga",

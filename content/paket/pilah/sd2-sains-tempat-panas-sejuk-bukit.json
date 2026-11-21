@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-tempat-panas-sejuk-bukit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Panas atau Sejuk di Bukit?",
+      "judul": "Panas atau Sejuk di Sekitarku?",
       "instruksi": "Lihat gambar tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
       "b-panas": "panas dan kering",
       "b-lembap": "sejuk dan lembap",
-      "i-gurun": "gurun pasir siang hari",
+      "i-gurun": "pasir pantai siang hari",
       "i-kapmobil": "kap mobil di parkiran terbuka siang hari",
       "i-tembok": "tembok bata disinari Matahari siang",
       "i-ladang": "padang rumput kering di musim kemarau",
@@ -27,11 +27,11 @@
       "i-jamur": "tanah tempat jamur tumbuh"
     },
     "en": {
-      "judul": "Hot or Cool on the Hill?",
+      "judul": "Hot or Cool Around Me?",
       "instruksi": "Look at each place. Put it on the hot-and-dry shelf or the cool-and-damp shelf.",
       "b-panas": "hot and dry",
       "b-lembap": "cool and damp",
-      "i-gurun": "a sandy desert at midday",
+      "i-gurun": "beach sand at midday",
       "i-kapmobil": "a car bonnet in an open car park at midday",
       "i-tembok": "a brick wall in the midday sun",
       "i-ladang": "a dry grass field in the dry season",
@@ -76,7 +76,7 @@
       "id": "gurun",
       "labelKey": "i-gurun",
       "bin": "panas",
-      "emoji": "🏜️"
+      "emoji": "🏖️"
     },
     {
       "id": "kapmobil",

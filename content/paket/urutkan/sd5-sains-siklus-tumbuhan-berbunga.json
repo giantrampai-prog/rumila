@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-berbunga",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -77,7 +77,7 @@
       "stroberi-tumbuh": "tanaman stroberi tumbuh berdaun",
       "stroberi-bunga": "bunga stroberi yang putih mekar",
       "stroberi-serbuk": "lebah membawa serbuk sari ke kepala putik",
-      "stroberi-buah": "bakal buah jadi stroberi berbiji di kulitnya",
+      "stroberi-buah": "bunga yang sudah diserbuki tumbuh jadi stroberi berbiji di kulitnya",
       "s-melon": "Siklus hidup melon",
       "melon-biji": "biji melon ditanam",
       "melon-kecambah": "biji berkecambah",
@@ -165,7 +165,7 @@
       "stroberi-tumbuh": "the strawberry plant grows leaves",
       "stroberi-bunga": "white strawberry flowers open",
       "stroberi-serbuk": "a bee carries pollen to the stigma",
-      "stroberi-buah": "it becomes a strawberry with seeds on its skin",
+      "stroberi-buah": "the pollinated flower grows into a strawberry with seeds on its skin",
       "s-melon": "Life cycle of a melon",
       "melon-biji": "a melon seed is planted",
       "melon-kecambah": "the seed germinates",

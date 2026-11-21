@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-masukan-proses-keluaran",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "s2": "Kuis satu soal",
       "s2-1": "tampilkan soal 3 + 4 = ?",
       "s2-2": "minta jawaban",
-      "s2-3": "kalau jawaban 7, skor = skor + 1",
+      "s2-3": "kalau jawaban 7, skor = 1, kalau tidak skor = 0",
       "s2-4": "tampilkan skor",
       "s3": "Pengubah suhu",
       "s3-1": "c = suhu °C dari pengguna",
@@ -73,7 +73,7 @@
       "s2": "One-question quiz",
       "s2-1": "show the question 3 + 4 = ?",
       "s2-2": "ask for the answer",
-      "s2-3": "if answer is 7, score = score + 1",
+      "s2-3": "if answer is 7, score = 1, else score = 0",
       "s2-4": "show score",
       "s3": "Temperature converter",
       "s3-1": "c = temperature in °C from the user",
@@ -294,19 +294,23 @@
       "steps": [
         {
           "id": "s7-1",
-          "labelKey": "s7-1"
+          "labelKey": "s7-1",
+          "scale": 0.4
         },
         {
           "id": "s7-2",
-          "labelKey": "s7-2"
+          "labelKey": "s7-2",
+          "scale": 0.4
         },
         {
           "id": "s7-3",
-          "labelKey": "s7-3"
+          "labelKey": "s7-3",
+          "scale": 0.4
         },
         {
           "id": "s7-4",
-          "labelKey": "s7-4"
+          "labelKey": "s7-4",
+          "scale": 0.4
         }
       ]
     },
@@ -316,19 +320,23 @@
       "steps": [
         {
           "id": "s8-1",
-          "labelKey": "s8-1"
+          "labelKey": "s8-1",
+          "scale": 0.4
         },
         {
           "id": "s8-2",
-          "labelKey": "s8-2"
+          "labelKey": "s8-2",
+          "scale": 0.4
         },
         {
           "id": "s8-3",
-          "labelKey": "s8-3"
+          "labelKey": "s8-3",
+          "scale": 0.4
         },
         {
           "id": "s8-4",
-          "labelKey": "s8-4"
+          "labelKey": "s8-4",
+          "scale": 0.4
         }
       ]
     },
@@ -338,19 +346,23 @@
       "steps": [
         {
           "id": "s9-1",
-          "labelKey": "s9-1"
+          "labelKey": "s9-1",
+          "scale": 0.4
         },
         {
           "id": "s9-2",
-          "labelKey": "s9-2"
+          "labelKey": "s9-2",
+          "scale": 0.4
         },
         {
           "id": "s9-3",
-          "labelKey": "s9-3"
+          "labelKey": "s9-3",
+          "scale": 0.4
         },
         {
           "id": "s9-4",
-          "labelKey": "s9-4"
+          "labelKey": "s9-4",
+          "scale": 0.4
         }
       ]
     },
@@ -360,19 +372,23 @@
       "steps": [
         {
           "id": "s10-1",
-          "labelKey": "s10-1"
+          "labelKey": "s10-1",
+          "scale": 0.4
         },
         {
           "id": "s10-2",
-          "labelKey": "s10-2"
+          "labelKey": "s10-2",
+          "scale": 0.4
         },
         {
           "id": "s10-3",
-          "labelKey": "s10-3"
+          "labelKey": "s10-3",
+          "scale": 0.4
         },
         {
           "id": "s10-4",
-          "labelKey": "s10-4"
+          "labelKey": "s10-4",
+          "scale": 0.4
         }
       ]
     }

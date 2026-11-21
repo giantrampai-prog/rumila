@@ -1,6 +1,6 @@
 {
   "id": "jengkal-tali-halaman",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "tali": "tali",
       "bambu": "bambu",
       "ular": "ular",
-      "selang": "selang air",
+      "selang": "benang",
       "kayu": "kayu",
       "sapu": "sapu",
       "tangga": "tangga",
@@ -33,7 +33,7 @@
       "tali": "rope",
       "bambu": "bamboo",
       "ular": "snake",
-      "selang": "hose",
+      "selang": "thread",
       "kayu": "log",
       "sapu": "broom",
       "tangga": "ladder",

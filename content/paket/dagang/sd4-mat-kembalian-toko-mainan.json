@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-kembalian-toko-mainan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kasir Toko Mainan Besar",
-      "instruksi": "Pembeli membayar 50 ribu atau 100 ribu. Hitung maju dari harga sampai uang pembeli, lalu beri kembaliannya.",
+      "instruksi": "Pembeli membayar dengan selembar uang yang cukup. Hitung maju dari harga sampai uang pembeli, lalu beri kembaliannya.",
       "robot": "robot mainan",
       "puzzle": "puzzle",
       "layang": "layang-layang",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Big Toy Shop Cashier",
-      "instruksi": "The customer pays 50,000 or 100,000. Count up from the price to the money paid, then give the change.",
+      "instruksi": "The customer pays with one note that is enough. Count up from the price to the money paid, then give the change.",
       "robot": "toy robot",
       "puzzle": "jigsaw",
       "layang": "kite",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lapisan-bumi",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.BUMI-ANTARIKSA.01"
@@ -19,7 +19,9 @@
       "dalamke-intidalam": "inti dalam: logam padat, paling panas",
       "dalamke-intiluar": "inti luar: logam cair",
       "dalamke-mantel": "mantel: batuan sangat panas yang bergerak pelan",
-      "dalamke-kerak": "kerak: batuan tempat kita berdiri"
+      "dalamke-kerak": "kerak: batuan tempat kita berdiri",
+      "s-luarke-lapis": "Urutkan dari lapisan paling luar ke paling dalam",
+      "s-dalamke-lapis": "Urutkan dari lapisan paling dalam ke paling luar"
     },
     "en": {
       "judul": "Through the Earth's Layers",
@@ -33,7 +35,9 @@
       "dalamke-intidalam": "inner core: solid metal, the hottest",
       "dalamke-intiluar": "outer core: liquid metal",
       "dalamke-mantel": "mantle: very hot rock that moves slowly",
-      "dalamke-kerak": "crust: the rock we stand on"
+      "dalamke-kerak": "crust: the rock we stand on",
+      "s-luarke-lapis": "Order the layers from the outermost to the innermost",
+      "s-dalamke-lapis": "Order the layers from the innermost to the outermost"
     }
   },
   "knobs": {},
@@ -104,7 +108,7 @@
     },
     {
       "id": "luarke-tanpa-kerak",
-      "titleKey": "s-luarke",
+      "titleKey": "s-luarke-lapis",
       "steps": [
         {
           "id": "mantel",
@@ -128,7 +132,7 @@
     },
     {
       "id": "luarke-tanpa-mantel",
-      "titleKey": "s-luarke",
+      "titleKey": "s-luarke-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -151,7 +155,7 @@
     },
     {
       "id": "luarke-tanpa-intiluar",
-      "titleKey": "s-luarke",
+      "titleKey": "s-luarke-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -174,7 +178,7 @@
     },
     {
       "id": "luarke-tanpa-intidalam",
-      "titleKey": "s-luarke",
+      "titleKey": "s-luarke-lapis",
       "steps": [
         {
           "id": "kerak",
@@ -197,7 +201,7 @@
     },
     {
       "id": "dalamke-tanpa-intidalam",
-      "titleKey": "s-dalamke",
+      "titleKey": "s-dalamke-lapis",
       "steps": [
         {
           "id": "intiluar",
@@ -220,7 +224,7 @@
     },
     {
       "id": "dalamke-tanpa-intiluar",
-      "titleKey": "s-dalamke",
+      "titleKey": "s-dalamke-lapis",
       "steps": [
         {
           "id": "intidalam",
@@ -243,7 +247,7 @@
     },
     {
       "id": "dalamke-tanpa-mantel",
-      "titleKey": "s-dalamke",
+      "titleKey": "s-dalamke-lapis",
       "steps": [
         {
           "id": "intidalam",
@@ -266,7 +270,7 @@
     },
     {
       "id": "dalamke-tanpa-kerak",
-      "titleKey": "s-dalamke",
+      "titleKey": "s-dalamke-lapis",
       "steps": [
         {
           "id": "intidalam",

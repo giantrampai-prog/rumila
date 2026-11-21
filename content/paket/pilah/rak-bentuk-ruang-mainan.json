@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-mainan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -67,7 +67,7 @@
     {
       "id": "bola",
       "labelKey": "bola",
-      "emoji": "⚪"
+      "emoji": "🏐"
     },
     {
       "id": "kubus",

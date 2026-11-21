@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -306,23 +306,28 @@
       "steps": [
         {
           "id": "s6-1",
-          "labelKey": "s6-1"
+          "labelKey": "s6-1",
+          "scale": 0.4
         },
         {
           "id": "s6-2",
-          "labelKey": "s6-2"
+          "labelKey": "s6-2",
+          "scale": 0.4
         },
         {
           "id": "s6-3",
-          "labelKey": "s6-3"
+          "labelKey": "s6-3",
+          "scale": 0.4
         },
         {
           "id": "s6-4",
-          "labelKey": "s6-4"
+          "labelKey": "s6-4",
+          "scale": 0.4
         },
         {
           "id": "s6-5",
-          "labelKey": "s6-5"
+          "labelKey": "s6-5",
+          "scale": 0.4
         }
       ]
     },
@@ -332,23 +337,28 @@
       "steps": [
         {
           "id": "s7-1",
-          "labelKey": "s7-1"
+          "labelKey": "s7-1",
+          "scale": 0.4
         },
         {
           "id": "s7-2",
-          "labelKey": "s7-2"
+          "labelKey": "s7-2",
+          "scale": 0.4
         },
         {
           "id": "s7-3",
-          "labelKey": "s7-3"
+          "labelKey": "s7-3",
+          "scale": 0.4
         },
         {
           "id": "s7-4",
-          "labelKey": "s7-4"
+          "labelKey": "s7-4",
+          "scale": 0.4
         },
         {
           "id": "s7-5",
-          "labelKey": "s7-5"
+          "labelKey": "s7-5",
+          "scale": 0.4
         }
       ]
     },
@@ -358,23 +368,28 @@
       "steps": [
         {
           "id": "s8-1",
-          "labelKey": "s8-1"
+          "labelKey": "s8-1",
+          "scale": 0.4
         },
         {
           "id": "s8-2",
-          "labelKey": "s8-2"
+          "labelKey": "s8-2",
+          "scale": 0.4
         },
         {
           "id": "s8-3",
-          "labelKey": "s8-3"
+          "labelKey": "s8-3",
+          "scale": 0.4
         },
         {
           "id": "s8-4",
-          "labelKey": "s8-4"
+          "labelKey": "s8-4",
+          "scale": 0.4
         },
         {
           "id": "s8-5",
-          "labelKey": "s8-5"
+          "labelKey": "s8-5",
+          "scale": 0.4
         }
       ]
     },
@@ -384,23 +399,28 @@
       "steps": [
         {
           "id": "s9-1",
-          "labelKey": "s9-1"
+          "labelKey": "s9-1",
+          "scale": 0.4
         },
         {
           "id": "s9-2",
-          "labelKey": "s9-2"
+          "labelKey": "s9-2",
+          "scale": 0.4
         },
         {
           "id": "s9-3",
-          "labelKey": "s9-3"
+          "labelKey": "s9-3",
+          "scale": 0.4
         },
         {
           "id": "s9-4",
-          "labelKey": "s9-4"
+          "labelKey": "s9-4",
+          "scale": 0.4
         },
         {
           "id": "s9-5",
-          "labelKey": "s9-5"
+          "labelKey": "s9-5",
+          "scale": 0.4
         }
       ]
     },
@@ -410,23 +430,28 @@
       "steps": [
         {
           "id": "s10-1",
-          "labelKey": "s10-1"
+          "labelKey": "s10-1",
+          "scale": 0.4
         },
         {
           "id": "s10-2",
-          "labelKey": "s10-2"
+          "labelKey": "s10-2",
+          "scale": 0.4
         },
         {
           "id": "s10-3",
-          "labelKey": "s10-3"
+          "labelKey": "s10-3",
+          "scale": 0.4
         },
         {
           "id": "s10-4",
-          "labelKey": "s10-4"
+          "labelKey": "s10-4",
+          "scale": 0.4
         },
         {
           "id": "s10-5",
-          "labelKey": "s10-5"
+          "labelKey": "s10-5",
+          "scale": 0.4
         }
       ]
     }

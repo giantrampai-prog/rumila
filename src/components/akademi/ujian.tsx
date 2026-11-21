@@ -18,6 +18,7 @@ import { serahkanUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { sfx } from "@/lib/sfx";
 import { useMe } from "@/lib/store";
 import { uuid } from "@/lib/uuid";
+import { LatarWarnaProvider } from "./benda";
 import { PresenterDagang } from "./dagang";
 import { LayarAktivitas } from "./dunia";
 import { BALOO, INK } from "./jenis";
@@ -232,12 +233,14 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
     <ModeUjianProvider value={true}>
       <LayarAktivitas judul={`${latihan ? "Latihan " : ""}${NAMA_UJIAN[jenis]} · ${judul}`} ronde={idx + 1} total={soal.length} instruksi={instruksi} onUcap={ucap} kembaliKe={kembaliKe}>
         <div key={idx} className="akademi-fade">
+          <LatarWarnaProvider paket={paket}>
           {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "dagang" && ronde.mechanic === "dagang" && <PresenterDagang {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "navigasi" && ronde.mechanic === "navigasi" && <PresenterNavigasi {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "pola" && ronde.mechanic === "pola" && <PresenterPola {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "simulasi" && ronde.mechanic === "simulasi" && <PresenterSimulasi {...props} paket={paket} ronde={ronde.ronde} />}
+          </LatarWarnaProvider>
         </div>
         {hasil && (
           <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">

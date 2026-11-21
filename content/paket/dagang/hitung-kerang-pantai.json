@@ -1,6 +1,6 @@
 {
   "id": "hitung-kerang-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "dagang",
   "competencyIds": [
@@ -13,14 +13,14 @@
       "instruksi": "Sentuh {barang} satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "kerang": "kerang",
       "kepiting": "kepiting",
-      "bintang": "bintang laut"
+      "penyu": "penyu"
     },
     "en": {
       "judul": "Shells on the Beach",
       "instruksi": "Touch the {barang} one at a time as you count, then slide the marker to the number.",
       "kerang": "shells",
       "kepiting": "crabs",
-      "bintang": "starfish"
+      "penyu": "turtles"
     }
   },
   "knobs": {
@@ -63,10 +63,10 @@
       "emoji": "🦀"
     },
     {
-      "id": "bintang",
-      "labelKey": "bintang",
+      "id": "penyu",
+      "labelKey": "penyu",
       "price": 1000,
-      "emoji": "⭐"
+      "emoji": "🐢"
     }
   ],
   "customerRule": {

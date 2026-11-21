@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-panen-dibagi-rata",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Panen Dibagi Rata",
-      "instruksi": "Bagi hasil panen sama rata. Pikirkan berapa kali pembaginya menjadi bilangan itu, lalu sentuh jawabannya.",
+      "instruksi": "Bagi hasil panen sama rata. Pikirkan: pembaginya dikali berapa supaya jadi bilangan itu? Sentuh jawabannya.",
       "pilihan": "pilihan",
       "q1": "84 apel dibagi rata ke 4 keranjang. Tiap keranjang mendapat berapa?",
       "c1": "21",
@@ -54,7 +54,7 @@
     },
     "en": {
       "judul": "Sharing the Harvest",
-      "instruksi": "Share the harvest equally. Think how many times the divisor makes the number, then touch the answer.",
+      "instruksi": "Share the harvest equally. Think: the divisor times what makes the number? Touch the answer.",
       "pilihan": "choices",
       "q1": "84 apples are shared equally into 4 baskets. How many go in each?",
       "c1": "21",

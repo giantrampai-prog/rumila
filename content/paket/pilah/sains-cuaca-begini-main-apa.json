@@ -1,6 +1,6 @@
 {
   "id": "sains-cuaca-begini-main-apa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "i-perahu": "main perahu layar mainan",
       "i-halte": "berteduh di halte",
       "i-buku": "membaca buku di dalam rumah",
-      "i-puzzle": "main puzzle di dalam rumah",
+      "i-puzzle": "main puzel di dalam rumah",
       "i-sepeda": "bersepeda di taman",
       "i-bola": "main bola di lapangan",
       "i-pasir": "main pasir di pantai",

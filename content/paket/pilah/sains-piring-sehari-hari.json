@@ -1,6 +1,6 @@
 {
   "id": "sains-piring-sehari-hari",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "i-susu": "susu",
       "i-air": "air putih",
       "i-permen": "permen",
-      "i-keripik": "keripik",
+      "i-keripik": "kentang goreng",
       "i-soda": "soda",
       "i-kuekrim": "kue krim",
       "i-rotimanis": "roti manis",
@@ -42,7 +42,7 @@
       "i-susu": "milk",
       "i-air": "water",
       "i-permen": "candy",
-      "i-keripik": "crisps",
+      "i-keripik": "chips",
       "i-soda": "fizzy drink",
       "i-kuekrim": "cream cake",
       "i-rotimanis": "sweet bun",

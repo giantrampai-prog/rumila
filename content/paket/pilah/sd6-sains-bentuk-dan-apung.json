@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-bentuk-dan-apung",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.APUNG-TENGGELAM.01"
@@ -116,7 +116,9 @@
       "id": "foilpadat",
       "labelKey": "i-foilpadat",
       "bin": "pilihan",
-      "emoji": "🪨"
+      "shape": "circle",
+      "color": "#b0bec5",
+      "scale": 0.6
     },
     {
       "id": "botolkosong",
@@ -134,7 +136,7 @@
       "id": "perahukelereng",
       "labelKey": "i-perahukelereng",
       "bin": "pilihan",
-      "emoji": "🔮"
+      "emoji": "🛶"
     },
     {
       "id": "kapal",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-panas-kering-sejuk-lembap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -105,7 +105,8 @@
       "id": "bawahbatu",
       "labelKey": "i-bawahbatu",
       "bin": "lembap",
-      "emoji": "🪨"
+      "emoji": "🟫",
+      "color": "#6d4c41"
     },
     {
       "id": "bawahpohon",

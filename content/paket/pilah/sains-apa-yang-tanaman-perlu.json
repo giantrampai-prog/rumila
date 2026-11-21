@@ -1,6 +1,6 @@
 {
   "id": "sains-apa-yang-tanaman-perlu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "i-udara": "udara",
       "i-mainan": "mainan",
       "i-permen": "permen",
-      "i-selimut": "selimut",
+      "i-selimut": "kasur",
       "i-tv": "televisi",
       "i-susu": "susu"
     },
@@ -34,7 +34,7 @@
       "i-udara": "air",
       "i-mainan": "toy",
       "i-permen": "candy",
-      "i-selimut": "blanket",
+      "i-selimut": "mattress",
       "i-tv": "TV",
       "i-susu": "milk"
     }

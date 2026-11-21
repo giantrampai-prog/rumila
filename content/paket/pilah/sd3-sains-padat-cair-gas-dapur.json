@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "i-minyak": "minyak goreng",
       "i-madu": "madu",
       "i-kecap": "kecap",
-      "i-uap": "uap air dari panci",
+      "i-uap": "udara di dalam toples kosong",
       "i-gelembungsoda": "gelembung dalam soda",
       "i-udarabalon": "udara di dalam balon"
     },
@@ -42,7 +42,7 @@
       "i-minyak": "cooking oil",
       "i-madu": "honey",
       "i-kecap": "soy sauce",
-      "i-uap": "steam from a pot",
+      "i-uap": "air inside an empty jar",
       "i-gelembungsoda": "bubbles in a fizzy drink",
       "i-udarabalon": "air inside a balloon"
     }
@@ -105,8 +105,9 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "padat",
-      "emoji": "🍚",
-      "color": "#fafafa"
+      "color": "#fafafa",
+      "shape": "circle",
+      "scale": 0.5
     },
     {
       "id": "roti",
@@ -149,7 +150,7 @@
       "id": "uap",
       "labelKey": "i-uap",
       "bin": "gas",
-      "emoji": "♨️"
+      "emoji": "🫙"
     },
     {
       "id": "gelembungsoda",

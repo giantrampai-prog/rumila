@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-kembalian-toko-buku",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Kasir Toko Buku",
-      "instruksi": "Pembeli membayar dengan uang 50 ribu atau 100 ribu: berikan kembalian yang pas.",
+      "instruksi": "Pembeli membayar dengan selembar uang yang cukup. Berikan kembalian yang pas.",
       "cerita": "buku cerita",
       "komik": "komik",
       "atlas": "atlas",
       "kamus": "kamus",
       "gambar": "buku gambar",
       "krayon": "pensil warna",
-      "kalkulator": "kalkulator",
+      "kalkulator": "sempoa",
       "penggaris": "penggaris",
       "gunting": "gunting",
       "tas": "tas sekolah",
@@ -26,14 +26,14 @@
     },
     "en": {
       "judul": "Bookshop Cashier",
-      "instruksi": "The customer pays with 50,000 or 100,000: give the exact change.",
+      "instruksi": "The customer pays with one note that is enough. Give the exact change.",
       "cerita": "storybook",
       "komik": "comic",
       "atlas": "atlas",
       "kamus": "dictionary",
       "gambar": "sketchbook",
       "krayon": "coloured pencils",
-      "kalkulator": "calculator",
+      "kalkulator": "abacus",
       "penggaris": "ruler",
       "gunting": "scissors",
       "tas": "school bag",
@@ -47,7 +47,7 @@
       "max": 1,
       "default": 1,
       "step": 1,
-      "keterangan": "satu barang per pembeli; harga < 50 ribu dibayar 50 ribu, sisanya 100 ribu"
+      "keterangan": "satu barang per pembeli; dibayar dengan uang kertas terkecil yang lebih besar dari harga"
     }
   },
   "assets": [],

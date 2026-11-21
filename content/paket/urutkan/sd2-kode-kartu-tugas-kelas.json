@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -38,18 +38,18 @@
       "t-paket": "Mengirim paket",
       "paket-1": "masukkan barang ke kardus",
       "paket-2": "tutup kardus dengan selotip",
-      "paket-3": "tulis alamat di kardus yang sudah tertutup",
+      "paket-3": "tulis alamat di kardus tertutup",
       "paket-4": "bawa ke kantor pos",
       "paket-5": "petugas menimbang paket",
       "paket-6": "bayar ongkos kirim",
       "paket-7": "terima bukti pengiriman",
       "t-telur-rebus": "Merebus telur",
-      "telur-rebus-1": "masukkan telur ke panci",
-      "telur-rebus-2": "tuang air sampai telur terendam",
-      "telur-rebus-3": "nyalakan kompor",
-      "telur-rebus-4": "tunggu air mendidih",
-      "telur-rebus-5": "rebus sepuluh menit",
-      "telur-rebus-6": "matikan kompor",
+      "telur-rebus-1": "masukkan telur ke panci air",
+      "telur-rebus-2": "nyalakan kompor",
+      "telur-rebus-3": "tunggu air mendidih",
+      "telur-rebus-4": "rebus sepuluh menit",
+      "telur-rebus-5": "matikan kompor",
+      "telur-rebus-6": "rendam di air dingin",
       "telur-rebus-7": "kupas kulit telur",
       "t-salon": "Potong rambut di salon",
       "salon-1": "duduk di kursi salon",
@@ -136,12 +136,12 @@
       "paket-6": "pay the postage",
       "paket-7": "get the receipt",
       "t-telur-rebus": "Boiling an egg",
-      "telur-rebus-1": "put the egg in a pot",
-      "telur-rebus-2": "add water to cover the egg",
-      "telur-rebus-3": "turn on the stove",
-      "telur-rebus-4": "wait for the water to boil",
-      "telur-rebus-5": "boil for ten minutes",
-      "telur-rebus-6": "turn off the stove",
+      "telur-rebus-1": "put the egg in a pot of water",
+      "telur-rebus-2": "turn on the stove",
+      "telur-rebus-3": "wait for the water to boil",
+      "telur-rebus-4": "boil for ten minutes",
+      "telur-rebus-5": "turn off the stove",
+      "telur-rebus-6": "soak it in cold water",
       "telur-rebus-7": "peel the egg",
       "t-salon": "Getting a haircut",
       "salon-1": "sit in the salon chair",
@@ -379,37 +379,37 @@
         {
           "id": "telur-rebus-1",
           "labelKey": "telur-rebus-1",
-          "emoji": "🥚"
+          "emoji": "🍲"
         },
         {
           "id": "telur-rebus-2",
           "labelKey": "telur-rebus-2",
-          "emoji": "💧"
+          "emoji": "🔥"
         },
         {
           "id": "telur-rebus-3",
           "labelKey": "telur-rebus-3",
-          "emoji": "🔥"
+          "emoji": "♨️"
         },
         {
           "id": "telur-rebus-4",
           "labelKey": "telur-rebus-4",
-          "emoji": "♨️"
+          "emoji": "⏲️"
         },
         {
           "id": "telur-rebus-5",
           "labelKey": "telur-rebus-5",
-          "emoji": "⏲️"
+          "emoji": "🛑"
         },
         {
           "id": "telur-rebus-6",
           "labelKey": "telur-rebus-6",
-          "emoji": "🛑"
+          "emoji": "🧊"
         },
         {
           "id": "telur-rebus-7",
           "labelKey": "telur-rebus-7",
-          "emoji": "🍳"
+          "emoji": "🥚"
         }
       ]
     },

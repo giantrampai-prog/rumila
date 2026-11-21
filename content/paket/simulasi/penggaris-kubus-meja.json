@@ -1,6 +1,6 @@
 {
   "id": "penggaris-kubus-meja",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Berapa Kubus Panjangnya?",
-      "instruksi": "Sejajarkan ujung benda dengan kubus nomor satu, lalu baca nomor di ujung satunya.",
+      "instruksi": "Sejajarkan ujung benda dengan kubus nomor satu, lalu baca nomor di ujung yang lain.",
       "krayon": "krayon",
       "kunci": "kunci",
       "sendok": "sendok",
@@ -18,7 +18,7 @@
       "pensil": "pensil",
       "wortel": "wortel",
       "sumpit": "sumpit",
-      "penggaris-kayu": "tongkat kayu"
+      "penggaris-kayu": "tongkat sihir"
     },
     "en": {
       "judul": "How Many Cubes Long?",
@@ -30,7 +30,7 @@
       "pensil": "pencil",
       "wortel": "carrot",
       "sumpit": "chopstick",
-      "penggaris-kayu": "wooden stick"
+      "penggaris-kayu": "magic wand"
     }
   },
   "knobs": {

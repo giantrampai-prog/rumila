@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penyebab-gerak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -136,7 +136,8 @@
         {
           "id": "akhir",
           "labelKey": "ayunan-akhir",
-          "emoji": "🎠"
+          "shape": "rect",
+          "color": "#ffb74d"
         }
       ]
     },

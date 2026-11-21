@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-otot-berpasangan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANGKA-OTOT.03"
@@ -12,7 +12,7 @@
       "instruksi": "Bayangkan gerakannya, lalu sentuh jawaban tentang otot yang bekerja.",
       "b-pilihan": "pilihan",
       "i-biseps": "otot depan lengan atas (biseps)",
-      "i-trisep": "otot belakang lengan atas (trisep)",
+      "i-trisep": "otot belakang lengan atas (triseps)",
       "i-tulang": "tulang lengan",
       "i-mengerut": "mengerut (memendek)",
       "i-mengendur": "mengendur (memanjang)",
@@ -25,7 +25,7 @@
       "i-sendirian": "sendirian",
       "p-r1": "Lengan ditekuk untuk mengangkat tas. Otot mana yang mengerut?",
       "p-r2": "Lengan diluruskan lagi. Otot mana yang mengerut sekarang?",
-      "p-r3": "Saat biseps mengerut, trisep…",
+      "p-r3": "Saat biseps mengerut, triseps…",
       "p-r4": "Saat lengan diluruskan, biseps…",
       "p-r5": "Kaki diluruskan untuk menendang bola. Otot mana yang mengerut?",
       "p-r6": "Lutut ditekuk ke belakang saat berlari. Otot mana yang mengerut?",

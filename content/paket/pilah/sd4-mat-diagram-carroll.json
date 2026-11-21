@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-diagram-carroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,10 +11,10 @@
     "id": {
       "judul": "Diagram Carroll",
       "instruksi": "Setiap bilangan punya dua sifat: genap atau ganjil, dan lebih dari 50 atau tidak. Taruh di kotak yang cocok untuk keduanya.",
-      "b-genap-besar": "genap, > 50",
-      "b-genap-kecil": "genap, ≤ 50",
-      "b-ganjil-besar": "ganjil, > 50",
-      "b-ganjil-kecil": "ganjil, ≤ 50",
+      "b-genap-besar": "genap, lebih dari 50",
+      "b-genap-kecil": "genap, 50 atau kurang",
+      "b-ganjil-besar": "ganjil, lebih dari 50",
+      "b-ganjil-kecil": "ganjil, 50 atau kurang",
       "i1": "12",
       "i2": "48",
       "i3": "50",
@@ -37,10 +37,10 @@
     "en": {
       "judul": "Carroll Diagram",
       "instruksi": "Each number has two properties: even or odd, and more than 50 or not. Put it in the box that fits both.",
-      "b-genap-besar": "even, > 50",
-      "b-genap-kecil": "even, ≤ 50",
-      "b-ganjil-besar": "odd, > 50",
-      "b-ganjil-kecil": "odd, ≤ 50",
+      "b-genap-besar": "even, more than 50",
+      "b-genap-kecil": "even, 50 or less",
+      "b-ganjil-besar": "odd, more than 50",
+      "b-ganjil-kecil": "odd, 50 or less",
       "i1": "12",
       "i2": "48",
       "i3": "50",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-rawat-atau-rusak-sungai-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,7 +80,7 @@
       "id": "pungut",
       "labelKey": "i-pungut",
       "bin": "rawat",
-      "emoji": "🛍️"
+      "emoji": "🧤"
     },
     {
       "id": "tukik",

@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-sayur-bagian-tumbuhan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,8 +24,7 @@
       "i-selada": "selada",
       "i-kangkung": "kangkung",
       "i-brokoli": "brokoli",
-      "i-kembangkol": "kembang kol",
-      "i-kentang": "kentang (umbi batang)"
+      "i-kembangkol": "kembang kol"
     },
     "en": {
       "judul": "Which Part Is the Veggie?",
@@ -43,8 +42,7 @@
       "i-selada": "lettuce",
       "i-kangkung": "water spinach",
       "i-brokoli": "broccoli",
-      "i-kembangkol": "cauliflower",
-      "i-kentang": "potato (stem tuber)"
+      "i-kembangkol": "cauliflower"
     }
   },
   "knobs": {
@@ -76,14 +74,14 @@
       "color": "#8d6e63"
     },
     {
-      "id": "batang",
-      "labelKey": "batang",
-      "emoji": "🎋"
-    },
-    {
       "id": "daun",
       "labelKey": "daun",
       "emoji": "🍃"
+    },
+    {
+      "id": "batang",
+      "labelKey": "batang",
+      "emoji": "🎋"
     },
     {
       "id": "bunga",
@@ -121,7 +119,8 @@
       "id": "rebung",
       "labelKey": "i-rebung",
       "bin": "batang",
-      "emoji": "🎍"
+      "shape": "triangle",
+      "color": "#d7ccc8"
     },
     {
       "id": "bayam",
@@ -139,7 +138,7 @@
       "id": "kangkung",
       "labelKey": "i-kangkung",
       "bin": "daun",
-      "emoji": "☘️"
+      "emoji": "🌿"
     },
     {
       "id": "brokoli",
@@ -153,12 +152,6 @@
       "bin": "bunga",
       "emoji": "🥦",
       "color": "#fff8e1"
-    },
-    {
-      "id": "kentang",
-      "labelKey": "i-kentang",
-      "bin": "batang",
-      "emoji": "🥔"
     }
   ],
   "pilihan": []

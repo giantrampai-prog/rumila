@@ -1,6 +1,6 @@
 {
   "id": "sains-pilah-lapisan-tubuh-kelas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -53,7 +53,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah potongan per putaran: 3 → 6; potongan berbeda dari paket Lapisan Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
+      "keterangan": "jumlah potongan per putaran: 3 → 6; sebagian potongan berbeda dari paket Lapisan Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
     }
   },
   "assets": [],

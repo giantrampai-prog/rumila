@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet-bengkel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "i-binder": "penjepit kertas baja",
       "i-kuncipas": "kunci pas baja",
       "i-gunting": "bilah gunting baja",
-      "i-panci": "panci aluminium",
+      "i-panci": "wajan aluminium",
       "i-pipa": "pipa tembaga",
       "i-gelang": "gelang perak",
       "i-lonceng": "lonceng kuningan",
@@ -35,7 +35,7 @@
       "i-binder": "steel bulldog clip",
       "i-kuncipas": "steel spanner",
       "i-gunting": "steel scissor blade",
-      "i-panci": "aluminium pan",
+      "i-panci": "aluminium frying pan",
       "i-pipa": "copper pipe",
       "i-gelang": "silver bangle",
       "i-lonceng": "brass bell",

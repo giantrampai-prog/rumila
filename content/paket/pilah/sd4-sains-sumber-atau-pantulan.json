@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-sumber-atau-pantulan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.CAHAYA.01"
@@ -22,7 +22,7 @@
       "i-cermin": "cermin",
       "i-buku": "buku",
       "i-apel": "apel",
-      "i-sendok": "sendok mengkilap",
+      "i-sendok": "sendok mengilap",
       "i-reflektor": "pemantul di sepeda",
       "i-awan": "awan putih"
     },

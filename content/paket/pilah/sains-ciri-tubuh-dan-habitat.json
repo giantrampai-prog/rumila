@@ -1,6 +1,6 @@
 {
   "id": "sains-ciri-tubuh-dan-habitat",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,13 +10,12 @@
   "locale": {
     "id": {
       "judul": "Ciri Tubuh Cocok di Mana?",
-      "instruksi": "Taruh kartu ciri tubuh ke tempat hidup yang cocok: bulu tebal ke es, sirip ke air, punuk ke gurun.",
+      "instruksi": "Taruh kartu ciri tubuh ke tempat hidup yang cocok: bulu tebal ke es, sirip ke air.",
       "es": "es",
       "air": "air",
       "gurun": "gurun",
       "hutan": "hutan",
       "i-bulutebal": "bulu tebal hangat",
-      "i-lemaktebal": "lapisan lemak tebal",
       "i-sirip": "sirip untuk berenang",
       "i-insang": "insang untuk bernapas di air",
       "i-punuk": "punuk penyimpan cadangan",
@@ -30,13 +29,12 @@
     },
     "en": {
       "judul": "Which Home Fits This Body?",
-      "instruksi": "Put each body-feature card on the home it suits: thick fur to the ice, fins to the water, hump to the desert.",
+      "instruksi": "Put each body-feature card on the home it suits: thick fur to the ice, fins to the water.",
       "es": "ice",
       "air": "water",
       "gurun": "desert",
       "hutan": "forest",
       "i-bulutebal": "thick warm fur",
-      "i-lemaktebal": "thick fat layer",
       "i-sirip": "fins for swimming",
       "i-insang": "gills to breathe in water",
       "i-punuk": "hump that stores reserves",
@@ -103,13 +101,6 @@
       "bin": "es",
       "emoji": "🧥",
       "color": "#ffffff"
-    },
-    {
-      "id": "lemaktebal",
-      "labelKey": "i-lemaktebal",
-      "bin": "es",
-      "emoji": "🦭",
-      "color": "#e1f5fe"
     },
     {
       "id": "sirip",

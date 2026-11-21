@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -125,7 +125,7 @@
       "max": 5,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah tahap: 4 → 5 (siklus katak dan ikan lengkap)"
+      "keterangan": "jumlah tahap: 4 → 5 (siklus ayam lengkap)"
     }
   },
   "assets": [],
@@ -184,8 +184,8 @@
         {
           "id": "remaja",
           "labelKey": "ayam-remaja",
-          "emoji": "🐤",
-          "scale": 1.2
+          "emoji": "🐔",
+          "scale": 0.9
         },
         {
           "id": "dewasa",

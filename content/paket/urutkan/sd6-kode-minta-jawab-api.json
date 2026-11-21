@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-minta-jawab-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -153,7 +153,7 @@
     "steps": {
       "min": 4,
       "max": 5,
-      "default": 4,
+      "default": 5,
       "step": 1,
       "keterangan": "jumlah tahap; 4 = sampai server mengirim jawaban, 5 = sampai hasil tampil"
     }

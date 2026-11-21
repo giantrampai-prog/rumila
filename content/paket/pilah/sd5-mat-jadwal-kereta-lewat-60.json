@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-jadwal-kereta-lewat-60",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Jadwal Kereta Malam",
+      "judul": "Lewat Pergantian Jam",
       "instruksi": "Hitung lewat batas jam: 60 menit = 1 jam. Sentuh jawabannya.",
       "q1": "Mulai pukul 16.45, berlangsung 40 menit. Selesai pukul …",
       "c1": "17.25",
@@ -66,7 +66,7 @@
       "pilihan": "pilihan"
     },
     "en": {
-      "judul": "Night Train Timetable",
+      "judul": "Across the Hour",
       "instruksi": "Count across the hour: 60 minutes = 1 hour. Touch the answer.",
       "q1": "It starts at 16:45 and lasts 40 min. It ends at …",
       "c1": "17:25",

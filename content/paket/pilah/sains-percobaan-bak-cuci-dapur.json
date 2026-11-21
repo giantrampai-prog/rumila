@@ -1,6 +1,6 @@
 {
   "id": "sains-percobaan-bak-cuci-dapur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-pisang": "pisang",
       "i-sendok": "sendok logam",
       "i-garpu": "garpu logam",
-      "i-telur": "telur mentah",
+      "i-telur": "telur segar",
       "i-kentang": "kentang",
       "i-koin": "koin",
       "i-batu": "batu ulekan"
@@ -39,7 +39,7 @@
       "i-pisang": "banana",
       "i-sendok": "metal spoon",
       "i-garpu": "metal fork",
-      "i-telur": "raw egg",
+      "i-telur": "fresh egg",
       "i-kentang": "potato",
       "i-koin": "coin",
       "i-batu": "grinding stone"

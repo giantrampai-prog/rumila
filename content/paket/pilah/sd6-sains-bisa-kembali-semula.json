@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-bisa-kembali-semula",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Bisa Kembali Semula?",
-      "instruksi": "Di pesta ulang tahun banyak benda berubah. Pilah: bisa kembali seperti semula, atau tidak bisa.",
+      "instruksi": "Banyak benda di sekitar kita berubah. Pilah: bisa kembali seperti semula, atau tidak bisa.",
       "b-balik": "bisa kembali seperti semula",
       "b-tidak": "tidak bisa kembali seperti semula",
       "i-cokelat": "cokelat meleleh di tangan",
@@ -21,7 +21,7 @@
       "i-plastisin": "plastisin dibentuk menjadi bola",
       "i-embun": "uap air mengembun di gelas es",
       "i-berondong": "jagung meletup menjadi berondong",
-      "i-yoghurt": "susu berubah menjadi yoghurt",
+      "i-yoghurt": "susu berubah menjadi yogurt",
       "i-kembangapi": "kembang api dinyalakan",
       "i-korek": "batang korek api dibakar",
       "i-rotigosong": "roti dipanggang sampai gosong",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Can It Go Back?",
-      "instruksi": "At a birthday party lots of things change. Sort them: can go back to how it was, or cannot.",
+      "instruksi": "Many things around us change. Sort them: can go back to how it was, or cannot.",
       "b-balik": "can go back to how it was",
       "b-tidak": "cannot go back",
       "i-cokelat": "chocolate melting in your hand",
@@ -42,7 +42,7 @@
       "i-plastisin": "playdough shaped into a ball",
       "i-embun": "water vapour condensing on a glass of ice",
       "i-berondong": "corn kernels popping into popcorn",
-      "i-yoghurt": "milk turning into yoghurt",
+      "i-yoghurt": "milk turning into yogurt",
       "i-kembangapi": "fireworks being lit",
       "i-korek": "a matchstick burning",
       "i-rotigosong": "bread toasted until burnt",
@@ -126,7 +126,7 @@
       "id": "embun",
       "labelKey": "i-embun",
       "bin": "balik",
-      "emoji": "🥛"
+      "emoji": "🧊"
     },
     {
       "id": "berondong",

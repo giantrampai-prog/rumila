@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-rotasi-revolusi-menara",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUMI-ORBIT.01"
@@ -120,7 +120,7 @@
       "id": "seminggu",
       "labelKey": "i-seminggu",
       "bin": "pilihan",
-      "emoji": "📅"
+      "emoji": "7️⃣"
     },
     {
       "id": "setahun",
@@ -132,7 +132,7 @@
       "id": "satelit",
       "labelKey": "i-satelit",
       "bin": "pilihan",
-      "emoji": "🛰️"
+      "emoji": "🌙"
     },
     {
       "id": "planet",
@@ -150,7 +150,9 @@
       "id": "kali11",
       "labelKey": "i-kali11",
       "bin": "pilihan",
-      "emoji": "1️⃣"
+      "shape": "circle",
+      "color": "#90caf9",
+      "count": 11
     },
     {
       "id": "kali365",

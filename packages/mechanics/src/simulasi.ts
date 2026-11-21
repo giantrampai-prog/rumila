@@ -66,14 +66,22 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
       for (let i = 0; i < benda.length; i++) for (let j = i + 1; j < benda.length; j++) {
         const a = benda[i], b = benda[j];
         if ((a.value ?? 0) === (b.value ?? 0)) continue;
-        pasangan.push([a, b]);
+        const pas: [Item, Item] = [a, b];
+        pasangan.push(pas);
         const besar = (a.scale ?? 1) > (b.scale ?? 1) ? a : (b.scale ?? 1) > (a.scale ?? 1) ? b : null;
         if (besar) {
           const kecil = besar === a ? b : a;
-          if ((besar.value ?? 0) < (kecil.value ?? 0)) tipuanSaja.push([a, b]);
+          if ((besar.value ?? 0) < (kecil.value ?? 0)) tipuanSaja.push(pas);
         }
       }
-      const kolam = jepit(knobs.tipuan, 0, 1, 0) === 1 && tipuanSaja.length ? tipuanSaja : pasangan;
+      // tipuan=1: hanya pasangan tipuan (besar tapi ringan); tipuan=0: hanya pasangan biasa (bila ada);
+      // paket tanpa knob tipuan: semua pasangan.
+      const biasa = pasangan.filter(x => !tipuanSaja.includes(x));
+      const kolam = knobs.tipuan === undefined
+        ? pasangan
+        : jepit(knobs.tipuan, 0, 1, 0) === 1
+          ? (tipuanSaja.length ? tipuanSaja : pasangan)
+          : (biasa.length ? biasa : pasangan);
       if (!kolam.length) return { ...dasar, items: benda.slice(0, 2), correctId: benda[0]?.id };
       const [a, b] = pilihSatu(kolam, r);
       const berat = (a.value ?? 0) > (b.value ?? 0) ? a : b;

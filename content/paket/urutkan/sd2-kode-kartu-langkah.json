@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-langkah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -63,7 +63,7 @@
       "perpustakaan-4": "serahkan kartu anggota",
       "perpustakaan-5": "petugas mencatat pinjaman",
       "perpustakaan-6": "bawa pulang buku",
-      "perpustakaan-7": "kembalikan sebelum tanggalnya",
+      "perpustakaan-7": "kembalikan sebelum batas waktu",
       "t-lift": "Naik lift",
       "lift-1": "tekan tombol lift",
       "lift-2": "tunggu pintu terbuka",
@@ -275,7 +275,7 @@
         {
           "id": "komputer-1",
           "labelKey": "komputer-1",
-          "emoji": "⏻"
+          "emoji": "🔘"
         },
         {
           "id": "komputer-2",

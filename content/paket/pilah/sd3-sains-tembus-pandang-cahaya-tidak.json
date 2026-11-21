@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-pandang-cahaya-tidak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -164,8 +164,8 @@
       "id": "gorden",
       "labelKey": "i-gorden",
       "bin": "cahaya",
-      "emoji": "🪟",
-      "color": "#f8bbd0"
+      "color": "#f8bbd0",
+      "shape": "rect"
     },
     {
       "id": "botolsusu",

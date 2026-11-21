@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tamu-bunga-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.01"
@@ -29,7 +29,7 @@
       "p-r9": "Pada bunga lili, ujung putik terasa basah dan lengket supaya bisa menangkap serbuk. Bagian itu adalah…",
       "p-r10": "Bagian hijau di bawah mahkota yang dulu membungkus kuncup bunga mawar.",
       "p-r11": "Sesudah serbuk sampai di kepala putik, bagian di pangkal putik ini membesar menjadi buah.",
-      "p-r12": "Burung kolibri mencari bunga berwarna merah menyala. Bagian bunga yang menarik perhatiannya adalah…"
+      "p-r12": "Burung madu mencari bunga berwarna merah menyala. Bagian bunga yang menarik perhatiannya adalah…"
     },
     "en": {
       "judul": "Visitors to the Park Flowers",
@@ -53,7 +53,7 @@
       "p-r9": "In a lily, the top of the pistil is wet and sticky so it can catch pollen. That part is the…",
       "p-r10": "The green parts under the petals that once wrapped the rose bud.",
       "p-r11": "After the pollen lands on the stigma, this part at the base of the pistil swells into a fruit.",
-      "p-r12": "Hummingbirds look for bright red flowers. The flower part that catches their eye is the…"
+      "p-r12": "Sunbirds look for bright red flowers. The flower part that catches their eye is the…"
     }
   },
   "knobs": {},
@@ -98,7 +98,9 @@
       "id": "tangkai",
       "labelKey": "i-tangkai",
       "bin": "pilihan",
-      "emoji": "🥢"
+      "shape": "rect",
+      "color": "#66bb6a",
+      "scale": 0.8
     },
     {
       "id": "bakalbuah",

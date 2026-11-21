@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-urut-dari-terbesar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -35,7 +35,7 @@
       "s4-3": "17.100",
       "s4-4": "16.091",
       "s4-5": "16.010",
-      "s5": "Halaman lima buku tebal — dari terbesar",
+      "s5": "Kata dalam lima buku tebal — dari terbesar",
       "s5-1": "67.109",
       "s5-2": "67.100",
       "s5-3": "66.900",
@@ -99,7 +99,7 @@
       "s4-3": "17,100",
       "s4-4": "16,091",
       "s4-5": "16,010",
-      "s5": "Pages in five thick books — largest first",
+      "s5": "Words in five thick books — largest first",
       "s5-1": "67,109",
       "s5-2": "67,100",
       "s5-3": "66,900",

@@ -1,6 +1,6 @@
 {
   "id": "sains-hewan-air-di-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siapa Tinggal di Air?",
-      "instruksi": "Di pantai ada hewan darat dan hewan air. Dengarkan, lalu sentuh hewan yang hidup di air.",
+      "instruksi": "Ada hewan darat dan hewan air. Dengarkan, lalu sentuh hewan yang hidup di air.",
       "pilihan": "pilihan",
       "i-buntal": "ikan buntal",
       "i-lobster": "lobster",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "Who Lives in the Water?",
-      "instruksi": "At the beach there are land animals and water animals. Listen, then touch the one that lives in water.",
+      "instruksi": "There are land animals and water animals. Listen, then touch the one that lives in water.",
       "pilihan": "choices",
       "i-buntal": "pufferfish",
       "i-lobster": "lobster",

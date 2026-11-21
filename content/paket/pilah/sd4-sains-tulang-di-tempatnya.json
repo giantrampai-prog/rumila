@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-tulang-di-tempatnya",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -139,7 +139,7 @@
       "id": "dada",
       "labelKey": "i-dada",
       "bin": "badan",
-      "emoji": "🫁"
+      "emoji": "🦴"
     },
     {
       "id": "punggung",

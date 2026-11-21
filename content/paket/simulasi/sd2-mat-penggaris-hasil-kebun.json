@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-penggaris-hasil-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Mengukur Hasil Kebun",
+      "judul": "Mengukur di Kebun",
       "instruksi": "Ujung benda tidak ada di angka satu. Hitung kubus yang tertutup benda dari ujung ke ujung, jangan hanya membaca angka terakhirnya.",
       "i-cacing": "cacing",
       "i-ulat": "ulat",
@@ -25,7 +25,7 @@
       "i-sapu-lidi": "sapu lidi"
     },
     "en": {
-      "judul": "Measuring the Garden Harvest",
+      "judul": "Measuring in the Garden",
       "instruksi": "The object does not start at 1. Count the cubes the object covers from end to end, not just the last number you see.",
       "i-cacing": "worm",
       "i-ulat": "caterpillar",

@@ -1,6 +1,6 @@
 {
   "id": "sains-pilih-bahan-bangun-rumah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,7 +17,7 @@
       "i-plastik": "plastik",
       "i-kaca": "kaca",
       "t-jendela": "Jendela supaya cahaya masuk. Bahan apa?",
-      "t-kursi": "Kursi untuk duduk yang kuat dan nyaman. Bahan apa?",
+      "t-kursi": "Kursi dari batang pohon yang digergaji. Bahan apa?",
       "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
       "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
       "t-pintu": "Pintu rumah yang kokoh. Bahan apa?",
@@ -37,7 +37,7 @@
       "i-plastik": "plastic",
       "i-kaca": "glass",
       "t-jendela": "A window to let light in. Which material?",
-      "t-kursi": "A strong, comfy chair to sit on. Which material?",
+      "t-kursi": "A chair made from a sawn tree trunk. Which material?",
       "t-paku": "A nail to hold the boards. Which material?",
       "t-botol": "A light drinking bottle that won't break. Which material?",
       "t-pintu": "A sturdy front door. Which material?",

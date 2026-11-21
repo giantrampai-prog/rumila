@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-otot-tarik-ulur",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Dengarkan gerakannya. Tunjuk otot yang mengerut, atau katakan apa yang terjadi pada pasangannya.",
       "b-pilihan": "pilihan",
       "i-biseps": "otot depan lengan atas (biseps)",
-      "i-trisep": "otot belakang lengan atas (trisep)",
+      "i-trisep": "otot belakang lengan atas (triseps)",
       "i-depanpaha": "otot depan paha",
       "i-belakangpaha": "otot belakang paha",
       "i-mengerut": "mengerut (memendek)",
@@ -24,15 +24,15 @@
       "p-tambang": "Tali tambang ditarik ke arah dada dengan siku ditekuk. Otot mana yang mengerut?",
       "p-lempar": "Saat melempar bola ke depan, siku diluruskan dengan kuat. Otot mana yang mengerut?",
       "p-pushup": "Saat push-up, badan didorong naik sampai siku lurus. Otot mana yang mengerut?",
-      "p-sisir": "Siku ditekuk untuk menyisir rambut. Otot trisep…",
+      "p-sisir": "Siku ditekuk untuk menyisir rambut. Otot triseps…",
       "p-rak": "Siku diluruskan untuk meraih buku di rak tinggi. Otot biseps…",
       "p-tendang": "Lutut diluruskan untuk menendang bola. Otot depan paha…",
       "p-ayun": "Lutut diluruskan untuk menendang bola. Otot belakang paha…",
       "p-tumit": "Lutut ditekuk ke belakang sampai tumit menyentuh bokong. Otot mana yang mengerut?",
       "p-bangkit": "Dari jongkok, lutut diluruskan sampai berdiri tegak. Otot mana yang mengerut?",
       "p-tekuklutut": "Lutut ditekuk ke belakang sampai tumit menyentuh bokong. Otot depan paha…",
-      "p-trisepkerut": "Otot trisep mengerut dan biseps mengendur. Lengan sedang…",
-      "p-bisepkerut": "Otot biseps mengerut dan trisep mengendur. Lengan sedang…"
+      "p-trisepkerut": "Otot triseps mengerut dan biseps mengendur. Lengan sedang…",
+      "p-bisepkerut": "Otot biseps mengerut dan triseps mengendur. Lengan sedang…"
     },
     "en": {
       "judul": "Muscles Pull and Relax",

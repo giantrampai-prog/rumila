@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penyebab-gerak-taman-bermain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -39,7 +39,7 @@
       "pintu-awal": "tangan menahan pintu",
       "pintu-akhir": "pintu berhenti",
       "s-gelinding": "Mana yang lebih dulu?",
-      "gelinding-awal": "anak mendorong bola salju pasir",
+      "gelinding-awal": "anak mendorong bola pasir",
       "gelinding-akhir": "bola pasir menggelinding"
     },
     "en": {
@@ -104,7 +104,7 @@
         {
           "id": "akhir",
           "labelKey": "kincir-akhir",
-          "emoji": "🎡"
+          "emoji": "🌀"
         }
       ]
     },

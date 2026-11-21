@@ -1,6 +1,6 @@
 {
   "id": "cerita-pertama-lalu-terakhir",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cerita Pertama, Lalu, Terakhir",
-      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar, lalu tekan Ceritakan supaya robot bercerita.",
+      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar. Setelah itu tekan Ceritakan.",
       "pagi": "Pagi hari",
       "bangun": "bangun tidur",
       "mandi": "mandi",
@@ -60,7 +60,7 @@
     },
     "en": {
       "judul": "First, Then, Last Story",
-      "instruksi": "Put the first, then, and last labels under the pictures, then press Tell so the robot tells the story.",
+      "instruksi": "Put the first, then, and last labels under the pictures. After that, press Tell.",
       "pagi": "Morning time",
       "bangun": "wake up",
       "mandi": "take a bath",

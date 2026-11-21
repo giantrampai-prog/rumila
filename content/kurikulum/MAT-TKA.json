@@ -152,7 +152,8 @@
       ],
       "core": false,
       "mechanics": [
-        "telusur"
+        "telusur",
+        "simulasi"
       ],
       "catatan": "Pengaya motorik halus, bukan tulisan rapi. Toleransi lebar jalur ±25% tinggi angka, arah goresan mengikuti panah berurutan. Hasil telusuran jadi 'mantra' yang membuka peti. Knob: lebar jalur, panah ditampilkan → disembunyikan."
     },

@@ -1,6 +1,6 @@
 {
   "id": "kue-tiga-tahap-urut",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,16 +10,16 @@
   "locale": {
     "id": {
       "judul": "Enam Langkah Membuat Kue",
-      "instruksi": "Susun enam langkah membuat kue: dua langkah siapkan, dua campur, dua panggang.",
+      "instruksi": "Susun enam langkah membuat kue dari awal sampai matang.",
       "kue": "Membuat kue: siapkan, campur, panggang",
       "roti": "Membuat roti: siapkan, campur, panggang",
-      "tepung": "ambil tepung",
-      "telur": "ambil telur",
+      "tepung-telur": "ambil tepung dan telur",
+      "cuci": "cuci tangan",
       "aduk": "aduk adonan",
       "tuang": "tuang ke loyang",
       "oven": "masukkan ke oven",
       "jadi": "kue matang",
-      "ragi": "ambil ragi",
+      "tepung-ragi": "ambil tepung dan ragi",
       "uleni": "uleni adonan",
       "bentuk": "bentuk roti",
       "roti2": "roti matang",
@@ -82,16 +82,16 @@
     },
     "en": {
       "judul": "Six Baking Steps",
-      "instruksi": "Order the six cake steps: two to get ready, two to mix, two to bake.",
+      "instruksi": "Put the six baking steps in order, from the start until it is baked.",
       "kue": "Baking: get ready, mix, bake",
       "roti": "Bread: get ready, mix, bake",
-      "tepung": "get the flour",
-      "telur": "get the eggs",
+      "tepung-telur": "get the flour and eggs",
+      "cuci": "wash hands",
       "aduk": "stir the batter",
       "tuang": "pour into the tin",
       "oven": "put it in the oven",
       "jadi": "the cake is done",
-      "ragi": "get the yeast",
+      "tepung-ragi": "get the flour and yeast",
       "uleni": "knead the dough",
       "bentuk": "shape the loaf",
       "roti2": "the bread is done",
@@ -173,14 +173,14 @@
       "titleKey": "kue",
       "steps": [
         {
-          "id": "tepung",
-          "labelKey": "tepung",
-          "emoji": "🌾"
+          "id": "cuci",
+          "labelKey": "cuci",
+          "emoji": "🧼"
         },
         {
-          "id": "telur",
-          "labelKey": "telur",
-          "emoji": "🥚"
+          "id": "tepung",
+          "labelKey": "tepung-telur",
+          "emoji": "🌾"
         },
         {
           "id": "aduk",
@@ -209,14 +209,14 @@
       "titleKey": "roti",
       "steps": [
         {
-          "id": "tepung2",
-          "labelKey": "tepung",
-          "emoji": "🌾"
+          "id": "cuci",
+          "labelKey": "cuci",
+          "emoji": "🧼"
         },
         {
-          "id": "ragi",
-          "labelKey": "ragi",
-          "emoji": "🧂"
+          "id": "tepung2",
+          "labelKey": "tepung-ragi",
+          "emoji": "🌾"
         },
         {
           "id": "uleni",

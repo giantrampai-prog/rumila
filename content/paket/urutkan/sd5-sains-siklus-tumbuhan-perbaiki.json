@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -386,7 +386,9 @@
         {
           "id": "buah",
           "labelKey": "pepaya-buah",
-          "emoji": "🍈"
+          "shape": "circle",
+          "color": "#ffa726",
+          "scale": 1.1
         },
         {
           "id": "baru",

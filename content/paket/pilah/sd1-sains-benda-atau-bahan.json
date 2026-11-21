@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-benda-atau-bahan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -125,7 +125,8 @@
       "id": "logam",
       "labelKey": "i-logam",
       "bin": "bahan",
-      "emoji": "🔩"
+      "shape": "square",
+      "color": "#90a4ae"
     },
     {
       "id": "buku",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-atau-tidak",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -76,8 +76,9 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "larut",
-      "emoji": "🍚",
-      "color": "#fafafa"
+      "color": "#fafafa",
+      "shape": "circle",
+      "scale": 0.5
     },
     {
       "id": "garam",

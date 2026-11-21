@@ -1,6 +1,6 @@
 {
   "id": "sains-tunjuk-benda-langit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tunjuk di Langit",
-      "instruksi": "Robot memegang teropong di halaman. Dengarkan nama Matahari, Bumi, atau Bulan, lalu sentuh gambarnya.",
+      "instruksi": "Robot membuka buku gambar angkasa. Dengarkan nama Matahari, Bumi, atau Bulan, lalu sentuh gambarnya.",
       "pilihan": "pilihan",
       "i-matahari": "Matahari",
       "i-bumi": "Bumi",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Point to the Sky",
-      "instruksi": "The robot holds a telescope in the yard. Listen for the Sun, Earth, or Moon, then touch its picture.",
+      "instruksi": "The robot opens a space picture book. Listen for the Sun, Earth, or Moon, then touch its picture.",
       "pilihan": "choices",
       "i-matahari": "the Sun",
       "i-bumi": "Earth",

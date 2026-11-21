@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-barisan-jalan-angka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -31,7 +31,7 @@
       "c14": "kurang 4",
       "c15": "tambah 5",
       "c16": "tambah 3",
-      "q5": "Aturan barisan −7, −3, 1, 5 adalah …",
+      "q5": "Aturan barisan −7, −2, 3, 8 adalah …",
       "q6": "44, 59, 74, 89, … Suku berikutnya?",
       "c17": "104",
       "c18": "119",
@@ -88,7 +88,7 @@
       "c14": "subtract 4",
       "c15": "add 5",
       "c16": "add 3",
-      "q5": "The rule for −7, −3, 1, 5 is …",
+      "q5": "The rule for −7, −2, 3, 8 is …",
       "q6": "44, 59, 74, 89, … What comes next?",
       "c17": "104",
       "c18": "119",
@@ -417,7 +417,7 @@
         "c15",
         "c16"
       ],
-      "correct": "c13"
+      "correct": "c15"
     },
     {
       "id": "r6",

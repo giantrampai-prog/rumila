@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-ukur-sisi-beraturan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -52,7 +52,7 @@
       "c30": "beraturan, karena ada sisi yang sama",
       "c31": "beraturan, karena punya 4 sisi",
       "c32": "tidak beraturan, karena punya 4 sudut",
-      "q9": "Papan tulis persegi panjang 8 × 3 dm itu …",
+      "q9": "Papan tulis persegi panjang 3 m × 1 m itu …",
       "c33": "beraturan, karena semua sudutnya siku",
       "c34": "tidak beraturan, sudutnya tidak sama semua",
       "q10": "Belah ketupat sisinya 5 cm semua, tetapi sudutnya tidak sama. Bangun itu …",
@@ -106,7 +106,7 @@
       "c30": "regular, because some sides are equal",
       "c31": "regular, because it has 4 sides",
       "c32": "not regular, because it has 4 angles",
-      "q9": "A rectangular board 8 × 3 dm is …",
+      "q9": "A rectangular board 3 m × 1 m is …",
       "c33": "regular, because all its angles are right angles",
       "c34": "not regular, its angles are not all equal",
       "q10": "A rhombus has all sides 5 cm, but its angles are not equal. It is …",

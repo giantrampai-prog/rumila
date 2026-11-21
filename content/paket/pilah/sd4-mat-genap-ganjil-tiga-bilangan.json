@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-genap-ganjil-tiga-bilangan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap Ganjil Tiga Bilangan",
+      "judul": "Genap atau Ganjil: Dua dan Tiga Bilangan",
       "instruksi": "Lihat angka satuan tiap bilangan. Tanpa menghitung, apakah hasilnya genap atau ganjil?",
       "b-genap": "hasil genap",
       "b-ganjil": "hasil ganjil",
@@ -22,16 +22,16 @@
       "i7": "180 − 54",
       "i8": "25 + 46 + 94",
       "i9": "29 + 38 + 70",
-      "i10": "33 − 52 + 51",
+      "i10": "33 + 51 − 52",
       "i11": "34 + 62 + 29",
-      "i12": "40 − 76 + 92",
+      "i12": "40 + 92 − 76",
       "i13": "70 + 88 + 42",
       "i14": "72 − 11 + 66",
       "i15": "80 − 57 + 62",
       "i16": "87 + 23 + 51"
     },
     "en": {
-      "judul": "Even or Odd with Three Numbers",
+      "judul": "Even or Odd: Two and Three Numbers",
       "instruksi": "Look at the ones digit of each number. Without calculating, is the result even or odd?",
       "b-genap": "even result",
       "b-ganjil": "odd result",
@@ -44,9 +44,9 @@
       "i7": "180 − 54",
       "i8": "25 + 46 + 94",
       "i9": "29 + 38 + 70",
-      "i10": "33 − 52 + 51",
+      "i10": "33 + 51 − 52",
       "i11": "34 + 62 + 29",
-      "i12": "40 − 76 + 92",
+      "i12": "40 + 92 − 76",
       "i13": "70 + 88 + 42",
       "i14": "72 − 11 + 66",
       "i15": "80 − 57 + 62",

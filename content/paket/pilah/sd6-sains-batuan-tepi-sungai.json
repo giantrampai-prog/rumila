@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-batuan-tepi-sungai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.01"
@@ -22,7 +22,7 @@
       "i-breksi": "pecahan batu bersudut tajam yang terekat lumpur (breksi)",
       "i-lempung": "batu berlapis tipis yang menyimpan fosil ikan (batu lempung)",
       "i-sekis": "batu berkilau dengan sisik mika tipis-tipis (sekis)",
-      "i-filit": "batu mengkilap seperti kain satin, berasal dari batu sabak (filit)",
+      "i-filit": "batu mengilap seperti kain satin, berasal dari batu sabak (filit)",
       "i-pita": "batu berpita bergelombang terang-gelap dari dalam gunung (gneis pita)",
       "i-marmerputih": "batu putih berurat yang dulu batu kapur, terpanggang jauh di dalam bumi"
     },

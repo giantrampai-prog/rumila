@@ -1,6 +1,6 @@
 {
   "id": "sains-benda-dibuat-dari-apa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bahan Mana yang Cocok?",
-      "instruksi": "Robot membangun barang-barang di halaman. Taruh tiap benda ke bahan yang paling cocok untuknya: kayu, logam, kaca, atau kain.",
+      "instruksi": "Taruh tiap benda ke bahan yang paling cocok: kayu, logam, kaca, atau kain.",
       "b-kayu": "kayu",
       "b-logam": "logam",
       "b-kaca": "kaca",
@@ -30,7 +30,7 @@
     },
     "en": {
       "judul": "Which Material Fits?",
-      "instruksi": "The robot is building things in the yard. Put each thing with the material that suits it best: wood, metal, glass, or cloth.",
+      "instruksi": "Put each thing with the material that suits it best: wood, metal, glass, or cloth.",
       "b-kayu": "wood",
       "b-logam": "metal",
       "b-kaca": "glass",
@@ -137,7 +137,8 @@
       "id": "akuarium",
       "labelKey": "i-akuarium",
       "bin": "kaca",
-      "emoji": "🐠"
+      "shape": "rect",
+      "color": "#b3e5fc"
     },
     {
       "id": "kacamobil",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-lama-waktu-sekolah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Lama Waktu di Sekolah",
+      "judul": "Lama Waktu Kegiatan",
       "instruksi": "Hitung lama waktu atau ubah satuannya, lalu sentuh jawabannya.",
       "q1": "Kegiatan mulai 18.25 dan selesai 20.45. Lamanya …",
       "c1": "2 jam 20 menit",
@@ -68,7 +68,7 @@
       "pilihan": "pilihan"
     },
     "en": {
-      "judul": "How Long at School",
+      "judul": "How Long Activities Take",
       "instruksi": "Work out how long, or change the unit, then touch the answer.",
       "q1": "An activity starts at 18:25 and ends at 20:45. It lasts …",
       "c1": "2 h 20 min",

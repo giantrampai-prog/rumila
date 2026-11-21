@@ -15,6 +15,7 @@ import { sfx } from "@/lib/sfx";
 import { useMe } from "@/lib/store";
 import { completeTool, useToolSession } from "@/lib/tool-session";
 import { uuid } from "@/lib/uuid";
+import { LatarWarnaProvider } from "./benda";
 import { PresenterDagang } from "./dagang";
 import { LayarAktivitas, UmpanBalik } from "./dunia";
 import { BALOO, INK } from "./jenis";
@@ -170,12 +171,14 @@ function Runner({ paket }: { paket: ContentPack }) {
   return (
     <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap}>
       <div key={idx} className="akademi-fade">
+        <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "dagang" && ronde.mechanic === "dagang" && <PresenterDagang {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "navigasi" && ronde.mechanic === "navigasi" && <PresenterNavigasi {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "pola" && ronde.mechanic === "pola" && <PresenterPola {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "simulasi" && ronde.mechanic === "simulasi" && <PresenterSimulasi {...props} paket={paket} ronde={ronde.ronde} />}
+        </LatarWarnaProvider>
       </div>
       {hasil && <UmpanBalik benar={hasil.benar} />}
     </LayarAktivitas>

@@ -1,6 +1,6 @@
 {
   "id": "tombol-bengkel-robot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tombol Bengkel Robot",
-      "instruksi": "Robot lupa tombol mana untuk apa, coba dulu, lalu tunjuk alat yang akan menyala sebelum menekan lagi.",
+      "instruksi": "Coba tiap tombol dulu. Lalu tunjuk alat yang akan bekerja sebelum menekan lagi.",
       "tombol-merah": "tombol merah",
       "tombol-biru": "tombol biru",
       "tombol-kuning": "tombol kuning",
@@ -20,7 +20,7 @@
     },
     "en": {
       "judul": "Robot Workshop Buttons",
-      "instruksi": "The robot forgot which button does what; try them, then point to the device that will turn on before pressing again.",
+      "instruksi": "Try each button first. Then point to the device that will work before pressing again.",
       "tombol-merah": "red button",
       "tombol-biru": "blue button",
       "tombol-kuning": "yellow button",

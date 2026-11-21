@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-sisa-kelereng-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -12,13 +12,13 @@
       "judul": "Kelereng yang Tersisa",
       "instruksi": "Beberapa kelereng diambil lalu kotak ditutup. Taruh kelereng sebanyak yang masih tersisa.",
       "g-kelereng": "kelereng",
-      "g-kancing": "kancing"
+      "g-kancing": "kelereng kuning"
     },
     "en": {
       "judul": "Marbles Left Over",
       "instruksi": "Some marbles are taken and the box is closed. Put out as many marbles as are left.",
       "g-kelereng": "marbles",
-      "g-kancing": "buttons"
+      "g-kancing": "yellow marbles"
     }
   },
   "knobs": {

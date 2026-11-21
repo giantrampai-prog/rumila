@@ -1,6 +1,6 @@
 {
   "id": "laci-uang-warung",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,7 +17,7 @@
     },
     "en": {
       "judul": "Shop Cash Drawer",
-      "instruksi": "Put each coin or note into the shop drawer with the same picture.",
+      "instruksi": "Put each note into the shop drawer with the same picture.",
       "kertas2000": "2,000 note",
       "kertas5000": "5,000 note",
       "kertas10000": "10,000 note"

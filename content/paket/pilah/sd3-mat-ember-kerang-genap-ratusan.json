@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-ember-kerang-genap-ratusan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Ember Kerang Pas Seratus",
+      "judul": "Ember Kerang Pas Ratusan",
       "instruksi": "Cari pasangan yang melengkapi: 45 dan 55 jadi 100, 650 dan 350 jadi 1.000. Sentuh berapa kerang lagi yang dibutuhkan.",
       "pilihan": "pilihan",
       "q1": "Ember berisi 45 kerang. Berapa lagi supaya pas 100?",
@@ -67,7 +67,7 @@
       "q12": "Ember berisi 550 kerang. Berapa lagi supaya pas 600?"
     },
     "en": {
-      "judul": "Shell Buckets to a Hundred",
+      "judul": "Shell Buckets to the Hundreds",
       "instruksi": "Find the number that completes it: 45 and 55 make 100, 650 and 350 make 1,000. Touch how many more shells are needed.",
       "pilihan": "choices",
       "q1": "The bucket holds 45 shells. How many more make exactly 100?",

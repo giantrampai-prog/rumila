@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urutan-hari",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -24,10 +24,7 @@
       "j-mulai-hari-kamis": "Mulai hari Kamis",
       "j-mulai-hari-jumat": "Mulai hari Jumat",
       "j-mulai-hari-sabtu": "Mulai hari Sabtu",
-      "j-mulai-hari-minggu": "Mulai hari Minggu",
-      "j-mulai-hari-sabtu-lewati-akhir-pekan": "Mulai hari Sabtu, lewati akhir pekan",
-      "j-mulai-hari-minggu-lewati-akhir-pekan": "Mulai hari Minggu, lewati akhir pekan",
-      "j-mulai-hari-jumat-lewati-akhir-pekan": "Mulai hari Jumat, lewati akhir pekan"
+      "j-mulai-hari-minggu": "Mulai hari Minggu"
     },
     "en": {
       "judul": "Day After Day",
@@ -45,10 +42,7 @@
       "j-mulai-hari-kamis": "Start on Thursday",
       "j-mulai-hari-jumat": "Start on Friday",
       "j-mulai-hari-sabtu": "Start on Saturday",
-      "j-mulai-hari-minggu": "Start on Sunday",
-      "j-mulai-hari-sabtu-lewati-akhir-pekan": "Start on Saturday, past the weekend",
-      "j-mulai-hari-minggu-lewati-akhir-pekan": "Start on Sunday, past the weekend",
-      "j-mulai-hari-jumat-lewati-akhir-pekan": "Start on Friday, past the weekend"
+      "j-mulai-hari-minggu": "Start on Sunday"
     }
   },
   "knobs": {
@@ -279,84 +273,6 @@
         {
           "id": "kamis",
           "labelKey": "s-kamis",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
-      "id": "lewat-sabtu",
-      "titleKey": "j-mulai-hari-sabtu-lewati-akhir-pekan",
-      "steps": [
-        {
-          "id": "sabtu",
-          "labelKey": "s-sabtu",
-          "scale": 0.6
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "senin",
-          "labelKey": "s-senin",
-          "scale": 0.6
-        },
-        {
-          "id": "selasa",
-          "labelKey": "s-selasa",
-          "scale": 0.5
-        }
-      ]
-    },
-    {
-      "id": "lewat-minggu",
-      "titleKey": "j-mulai-hari-minggu-lewati-akhir-pekan",
-      "steps": [
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "senin",
-          "labelKey": "s-senin",
-          "scale": 0.6
-        },
-        {
-          "id": "selasa",
-          "labelKey": "s-selasa",
-          "scale": 0.5
-        },
-        {
-          "id": "rabu",
-          "labelKey": "s-rabu",
-          "scale": 0.7
-        }
-      ]
-    },
-    {
-      "id": "lewat-jumat",
-      "titleKey": "j-mulai-hari-jumat-lewati-akhir-pekan",
-      "steps": [
-        {
-          "id": "jumat",
-          "labelKey": "s-jumat",
-          "scale": 0.6
-        },
-        {
-          "id": "sabtu",
-          "labelKey": "s-sabtu",
-          "scale": 0.6
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "senin",
-          "labelKey": "s-senin",
           "scale": 0.6
         }
       ]

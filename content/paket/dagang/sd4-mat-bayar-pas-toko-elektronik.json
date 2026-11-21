@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-bayar-pas-toko-elektronik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -12,28 +12,28 @@
       "judul": "Uang Pas di Toko Elektronik",
       "instruksi": "Bayar harga barang dengan uang pas. Coba pakai lembar besar dulu.",
       "radio": "radio",
-      "kipas": "kipas angin kecil",
+      "printer": "printer kecil",
       "senter": "senter",
       "lampu": "lampu meja",
-      "earphone": "earphone",
+      "earphone": "headphone",
       "baterai": "baterai",
       "jam": "jam weker",
       "kabel": "kabel",
-      "kalkulator": "kalkulator",
+      "kamera": "kamera saku",
       "mouse": "mouse"
     },
     "en": {
       "judul": "Exact Money at the Electronics Shop",
       "instruksi": "Pay the price exactly. Try using the big notes first.",
       "radio": "radio",
-      "kipas": "small fan",
+      "printer": "small printer",
       "senter": "torch",
       "lampu": "desk lamp",
-      "earphone": "earphones",
+      "earphone": "headphones",
       "baterai": "batteries",
       "jam": "alarm clock",
       "kabel": "cable",
-      "kalkulator": "calculator",
+      "kamera": "pocket camera",
       "mouse": "mouse"
     }
   },
@@ -69,10 +69,10 @@
       "emoji": "📻"
     },
     {
-      "id": "kipas",
-      "labelKey": "kipas",
+      "id": "printer",
+      "labelKey": "printer",
       "price": 64000,
-      "emoji": "🪭"
+      "emoji": "🖨️"
     },
     {
       "id": "senter",
@@ -111,10 +111,10 @@
       "emoji": "🔌"
     },
     {
-      "id": "kalkulator",
-      "labelKey": "kalkulator",
+      "id": "kamera",
+      "labelKey": "kamera",
       "price": 92000,
-      "emoji": "🧮"
+      "emoji": "📷"
     },
     {
       "id": "mouse",

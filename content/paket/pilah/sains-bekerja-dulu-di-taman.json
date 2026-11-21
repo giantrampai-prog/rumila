@@ -1,6 +1,6 @@
 {
   "id": "sains-bekerja-dulu-di-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Bagian Mana Bekerja Dulu?",
-      "instruksi": "Tokoh mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang bekerja lebih dulu.",
+      "judul": "Bagian Mana yang Akan Bekerja?",
+      "instruksi": "Tokoh mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang akan paling bekerja.",
       "pilihan": "pilihan",
       "i-kaki": "otot kaki",
       "i-lengan": "otot lengan",
@@ -29,8 +29,8 @@
       "t-11": "Tokoh mau mengingat jalan pulang dari taman. Bagian mana yang bekerja?"
     },
     "en": {
-      "judul": "Which Part Works First?",
-      "instruksi": "The character wants to play in the park. Listen to what it will do, then touch the body part that works first.",
+      "judul": "Which Part Will Work?",
+      "instruksi": "The character wants to play in the park. Listen to what it will do, then touch the body part that will work the most.",
       "pilihan": "choices",
       "i-kaki": "leg muscles",
       "i-lengan": "arm muscles",

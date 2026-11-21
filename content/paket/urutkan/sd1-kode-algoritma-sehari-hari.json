@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-sehari-hari",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -75,7 +75,7 @@
       "cuci-mobil-1": "siram mobil dengan air",
       "cuci-mobil-2": "gosok dengan spons bersabun",
       "cuci-mobil-3": "bilas busa sabun",
-      "cuci-mobil-4": "jemur sampai kering",
+      "cuci-mobil-4": "lap sampai kering",
       "cuci-mobil-5": "mobil mengilap",
       "cuci-mobil-6": "mobil siap berangkat"
     },
@@ -146,7 +146,7 @@
       "cuci-mobil-1": "spray the car with water",
       "cuci-mobil-2": "scrub with a soapy sponge",
       "cuci-mobil-3": "rinse off the soap",
-      "cuci-mobil-4": "let it dry in the sun",
+      "cuci-mobil-4": "wipe it dry",
       "cuci-mobil-5": "the car shines",
       "cuci-mobil-6": "the car is ready to go"
     }
@@ -497,7 +497,7 @@
         {
           "id": "cuci-mobil-4",
           "labelKey": "cuci-mobil-4",
-          "emoji": "☀️"
+          "emoji": "🧻"
         },
         {
           "id": "cuci-mobil-5",

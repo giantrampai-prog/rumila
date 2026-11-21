@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-puluhan-satuan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -290,12 +290,6 @@
     },
     {
       "id": "a20",
-      "labelKey": "i-10p10",
-      "bin": "r20",
-      "scale": 0.6
-    },
-    {
-      "id": "b20",
       "labelKey": "i-10p10",
       "bin": "r20",
       "scale": 0.6

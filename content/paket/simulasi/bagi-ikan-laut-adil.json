@@ -1,6 +1,6 @@
 {
   "id": "bagi-ikan-laut-adil",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Bagi Ikan Laut",
-      "instruksi": "Nelayan pulang membawa 2, 4, 6, atau 8 ikan laut. Bagi semuanya ke dua piring kucing sampai sama banyak.",
+      "instruksi": "Nelayan pulang membawa ikan laut. Bagi semuanya ke dua piring kucing sampai sama banyak.",
       "ikan-buntal": "ikan buntal",
       "ikan-badut": "ikan badut",
       "ikan-tongkol": "ikan tongkol"
     },
     "en": {
       "judul": "Share the Sea Fish",
-      "instruksi": "The fisher brings home 2, 4, 6, or 8 sea fish. Share them all onto the two cats' plates so both get the same.",
+      "instruksi": "The fisher brings home sea fish. Share them all onto the two cats' plates so both get the same.",
       "ikan-buntal": "pufferfish",
       "ikan-badut": "clownfish",
       "ikan-tongkol": "tuna fish"

@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-bayar-pas-toko-olahraga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "dagang",
   "competencyIds": [
@@ -11,13 +11,13 @@
     "id": {
       "judul": "Uang Pas di Toko Olahraga",
       "instruksi": "Lihat total harganya, lalu bayar dengan uang pas dari laci.",
-      "tali": "tali skipping",
+      "tali": "tali lompat",
       "kok": "kok bulu tangkis",
       "bola": "bola sepak",
       "basket": "bola basket",
       "topi": "topi",
       "kauskaki": "kaus kaki",
-      "botol": "botol minum",
+      "botol": "minuman gelas",
       "stopwatch": "stopwatch",
       "medali": "medali",
       "sarungtangan": "sarung tangan"
@@ -31,7 +31,7 @@
       "basket": "basketball",
       "topi": "cap",
       "kauskaki": "socks",
-      "botol": "water bottle",
+      "botol": "cup drink",
       "stopwatch": "stopwatch",
       "medali": "medal",
       "sarungtangan": "gloves"
