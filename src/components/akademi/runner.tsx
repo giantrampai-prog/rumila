@@ -13,6 +13,7 @@ import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
 import { kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { useBacksound } from "@/lib/akademi/backsound";
+import { KALIMAT_RUNNER } from "@/lib/akademi/kalimat-suara";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { useMe } from "@/lib/store";
 import { completeTool, useToolSession } from "@/lib/tool-session";
@@ -243,7 +244,7 @@ function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: Conte
     const t: ReturnType<typeof setTimeout>[] = [];
     for (let k = 0; k < bintang; k++) t.push(setTimeout(() => { setTampil(k + 1); sfxAkademi.bintang(k); }, 350 + k * 330));
     t.push(setTimeout(() => sfxAkademi.selesai(bintang), 350 + bintang * 330 + 120));
-    ucapkan(bintang >= 2 ? "Hebat! Kamu dapat stiker baru." : "Bagus, kamu sudah mencoba. Ayo main lagi.");
+    ucapkan(bintang >= 2 ? KALIMAT_RUNNER.stiker : KALIMAT_RUNNER.coba);
     return () => t.forEach(clearTimeout);
   }, [bintang]);
   return (

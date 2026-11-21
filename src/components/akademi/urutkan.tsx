@@ -10,6 +10,7 @@ import type { PaketUrutkan } from "@akademi/schema";
 import type { JawabanUrutkan, LabelUrutan, RondeUrutkan } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import type { Tema } from "@/lib/akademi/tema-dunia";
+import { KALIMAT_URUTKAN, KATA_URUTAN, kalimatUrutkan } from "@/lib/akademi/kalimat-suara";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { KartuBenda, type VisualSpec } from "./benda";
@@ -453,9 +454,9 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
 
 /** Label = ikon + suara (bukan tulisan yang harus dibaca); kata dibacakan saat keping diketuk dan saat cerita. */
 const LABEL: Record<LabelUrutan, { ikon: string; kata: string }> = {
-  pertama: { ikon: "🥇", kata: "pertama" },
-  lalu: { ikon: "➡️", kata: "lalu" },
-  terakhir: { ikon: "🏁", kata: "terakhir" },
+  pertama: { ikon: "🥇", kata: KATA_URUTAN.pertama },
+  lalu: { ikon: "➡️", kata: KATA_URUTAN.lalu },
+  terakhir: { ikon: "🏁", kata: KATA_URUTAN.terakhir },
 };
 const URUTAN_LABEL: LabelUrutan[] = ["pertama", "lalu", "terakhir"];
 const JEDA_ADEGAN = 1800;
@@ -510,7 +511,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
     if (kunci) return;
     onHint?.();
     const i = slot.findIndex((v, k) => v !== benar[k]);
-    if (i >= 0 && benar[i]) { setHint({ slot: i, label: benar[i] }); ucapkan(`Gambar ini yang ${LABEL[benar[i]].kata}.`); }
+    if (i >= 0 && benar[i]) { setHint({ slot: i, label: benar[i] }); ucapkan(kalimatUrutkan.hint(LABEL[benar[i]].kata)); }
   };
 
   /** Tokoh bercerita mengikuti label yang dipasang: "terakhir" sebelum gambar terakhir menghentikan cerita, sisanya meredup. */
@@ -527,13 +528,13 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
     adegan.forEach((i, k) => {
       timers.current.push(setTimeout(() => {
         setCerita({ aktif: i, berhenti: null, selesai: false });
-        ucapkan(`${LABEL[labels[i]].kata}, ${t(shown[i].labelKey)}.`);
+        ucapkan(kalimatUrutkan.cerita(LABEL[labels[i]].kata, t(shown[i].labelKey)));
       }, k * JEDA_ADEGAN));
     });
     const akhir = adegan.length * JEDA_ADEGAN;
     timers.current.push(setTimeout(() => {
       setCerita({ aktif: -1, berhenti, selesai: true });
-      if (berhenti !== null) { sfxAkademi.tolak(); ucapkan("Lho, ceritanya berhenti di sini."); }
+      if (berhenti !== null) { sfxAkademi.tolak(); ucapkan(KALIMAT_URUTKAN.berhenti); }
       else sfx.celebrate();
     }, akhir));
     timers.current.push(setTimeout(() => {

@@ -11,20 +11,18 @@ import { TombolBantu } from "./bantu";
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
-import { angkaKata, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
+import { formatRibuan, kalimatDagang as kd, kerjaSisa, type Ucapan } from "@/lib/akademi/kalimat-suara";
+import { ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
 import { useMe } from "@/lib/store";
 
 /**
- * Bacakan pesanan pembeli. Bahasa Indonesia: pola "Aku mau 3 jeruk dan 2 apel." → potongan pra-rekam ElevenLabs,
- * selain pola itu dibacakan utuh. Bahasa Inggris ("I want 3 oranges.") → speechSynthesis voice en-US.
+ * Bacakan ucapan pembeli. Bahasa Indonesia: rekaman kalimat utuh, atau potongan rekaman bila ada (pesanan "Aku mau 3 jeruk
+ * dan 2 apel.", rincian harga) — lihat src/lib/akademi/kalimat-suara.ts. Bahasa Inggris ("I want 3 oranges.") → speechSynthesis en-US.
  */
-function ucapPesanan(teks: string, bahasa: BahasaAnak = "id") {
+function ucapPesanan(teks: string, bahasa: BahasaAnak = "id", potongan?: string[]) {
   if (bahasa === "en") return ucapkan(teks, "en-US");
-  const m = /^Aku mau (\d+) ([^.]+?)(?: dan (\d+) ([^.]+?))?\.$/.exec(teks);
-  if (!m) return ucapkan(teks);
-  const pot = ["Aku mau", angkaKata(Number(m[1])), m[2]];
-  if (m[3]) pot.push("dan", angkaKata(Number(m[3])), m[4]);
-  ucapkanBerurutan(pot);
+  if (potongan?.length) return ucapkanBerurutan(potongan, "id-ID", teks);
+  ucapkan(teks);
 }
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
@@ -62,9 +60,6 @@ function visualUang(nilai: number): VisualSpec & { label: string } {
   return { shape: "uang", color: warna[nilai] ?? "#cfd4dc", angka: label, label };
 }
 
-function formatRibuan(n: number) {
-  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
 const rupiah = (n: number) => `Rp${formatRibuan(n)}`;
 
 const TANGAN: Record<number, string> = { 0: "✊", 1: "☝️", 2: "✌️", 3: "🤟", 4: "🖖", 5: "🖐️" };
@@ -90,10 +85,6 @@ export function rincianHarga(paket: PaketDagang, ronde: RondeDagang): { goodId: 
   return baris.reduce((s, b) => s + b.qty * b.price, 0) === ronde.harga ? baris : null;
 }
 
-/** Kalimat VO rincian: "Buku 2 kali 23.000 rupiah dan pensil 9.000 rupiah." */
-function ucapRincian(baris: { goodId: string; qty: number; price: number }[], nama: (id: string) => string): string {
-  return baris.map((b) => `${nama(b.goodId)} ${b.qty > 1 ? `${b.qty} kali ` : ""}${formatRibuan(b.price)} rupiah`).join(" dan ") + ".";
-}
 
 /** Daftar harga per barang + baris total ("?" sampai bantuan/hasil). */
 function RincianHarga({ baris, nama, visual, total, buka }: { baris: { goodId: string; qty: number; price: number }[]; nama: (id: string) => string; visual: (id: string) => VisualSpec; total: number; buka: boolean }) {
@@ -184,9 +175,9 @@ function Lapak({ children, style, className = "" }: { children: ReactNode; style
 
 /** Pembeli + balon ucapan (balon bisa diketuk untuk dibacakan ulang). */
 function Pembeli({
-  wajah, balon, teksUcap, hasil, jawabanBenar, kanan, kecil, bahasa,
+  wajah, balon, teksUcap, potongan, hasil, jawabanBenar, kanan, kecil, bahasa,
 }: {
-  wajah: string; balon: ReactNode; teksUcap: string; hasil: Props["hasil"]; jawabanBenar?: ReactNode; kanan?: boolean; kecil?: boolean; bahasa?: BahasaAnak;
+  wajah: string; balon: ReactNode; teksUcap: string; /** potongan rekaman (b) bila kalimat utuh tak direkam */ potongan?: string[]; hasil: Props["hasil"]; jawabanBenar?: ReactNode; kanan?: boolean; kecil?: boolean; bahasa?: BahasaAnak;
 }) {
   const muka = hasil ? (hasil.benar ? "😄" : "🤔") : wajah;
   const sk = useSk();
@@ -197,7 +188,7 @@ function Pembeli({
       </div>
       <button
         type="button"
-        onClick={() => { sfx.tap(); ucapPesanan(teksUcap, bahasa); }}
+        onClick={() => { sfx.tap(); ucapPesanan(teksUcap, bahasa, potongan); }}
         aria-label={`Dengar pesanan: ${teksUcap}`}
         className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
         style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", color: INK, minHeight: 56 * sk, padding: `${8 * sk}px ${12 * sk}px` }}
@@ -490,10 +481,13 @@ function ModeAmbil(c: Ctx) {
   const [keranjang, setKeranjang] = useState<Record<string, number>>({});
   const { hint, bantu } = useBantu(c.onHint);
   const goods = useMemo(() => Object.keys(ronde.tersedia), [ronde.tersedia]);
-  const teks = useMemo(
-    () => (bahasa === "en" ? "I want " : "Aku mau ") + ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(bahasa === "en" ? " and " : " dan ") + ".",
+  const ucapan = useMemo<Ucapan>(
+    () => bahasa === "en"
+      ? { teks: `I want ${ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" and ")}.`, potongan: [] }
+      : kd.pesanan(ronde.pesanan.map((p) => ({ qty: p.qty, nama: nama(p.goodId) }))),
     [ronde.pesanan, nama, bahasa],
   );
+  const teks = ucapan.teks;
   const kurang = (id: string) => (ronde.pesanan.find((p) => p.goodId === id)?.qty ?? 0) - (keranjang[id] ?? 0);
 
   const ambil = (id: string) => {
@@ -511,7 +505,7 @@ function ModeAmbil(c: Ctx) {
   return (
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
-        wajah={wajah} teksUcap={teks} hasil={hasil} bahasa={bahasa}
+        wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} bahasa={bahasa}
         balon={<div className="flex flex-col gap-1">{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
         jawabanBenar={ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" + ")}
       />
@@ -570,7 +564,7 @@ function ModeSubitasi(c: Ctx) {
   const lihatPertama = () => { sfx.tap(); setSudahLihat(true); flash(); };
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
-  const teks = `Aku mau ${nama(id)} sebanyak jariku.`;
+  const teks = kd.subitasi(nama(id));
   const sk = useSk();
   const meja = useSkMeja();
 
@@ -652,7 +646,7 @@ function ModeHitung(c: Ctx) {
   const n = ronde.benda.length;
   const terhitung = Object.keys(urutan).length;
   const id0 = ronde.benda[0] ?? "";
-  const teks = `Ada berapa ${nama(id0)} di meja? Sentuh satu-satu, lalu pilih angkanya.`;
+  const teks = kd.hitung(nama(id0));
 
   const sentuh = (i: number) => {
     sentuhan.current.push(String(i));
@@ -729,16 +723,17 @@ function ModeBayar(c: Ctx) {
   const { hint, bantu } = useBantu(c.onHint);
   const barang = ronde.pesanan.length ? ronde.pesanan : [];
   const rincian = useMemo(() => rincianHarga(c.paket, ronde), [c.paket, ronde]);
-  const teks = rincian
-    ? `${ucapRincian(rincian, nama)} Berapa semuanya? Bayar dengan uang pas.`
-    : ronde.priceLabel === "koin" ? `Harganya ${Math.round(ronde.harga / KOIN)} koin.` : `Harganya ${formatRibuan(ronde.harga)} rupiah.`;
+  const ucapan: Ucapan = rincian
+    ? kd.bayarRincian(rincian, nama)
+    : { teks: ronde.priceLabel === "koin" ? kd.hargaKoin(Math.round(ronde.harga / KOIN)) : kd.hargaRupiah(ronde.harga), potongan: [] };
+  const teks = ucapan.teks;
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, ronde.harga - total) : null;
   const sk = useSk();
   const meja = useSkMeja();
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={rincian
+      <Pembeli wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} balon={rincian
         ? <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
         : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
       <Lapak><div className="flex flex-wrap justify-center" style={{ gap: 8 * sk }}>{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round(52 * meja)} label={nama(p.goodId)} labelSize={Math.round(14 * sk)} className="min-h-14 min-w-14" />)}</div></Lapak>
@@ -760,9 +755,10 @@ function ModeKembalian(c: Ctx) {
   const kembalian = ronde.dibayar - ronde.harga;
   const vBayar = visualUang(ronde.dibayar);
   const rincian = useMemo(() => rincianHarga(c.paket, ronde), [c.paket, ronde]);
-  const teks = rincian
-    ? `Ini uang ${formatRibuan(ronde.dibayar)}. ${ucapRincian(rincian, nama)} Jumlahkan harganya. Berapa kembaliannya?`
-    : `Ini uang ${formatRibuan(ronde.dibayar)}. Harganya ${formatRibuan(ronde.harga)}. Berapa kembaliannya?`;
+  const ucapan: Ucapan = rincian
+    ? kd.kembalianRincian(ronde.dibayar, rincian, nama)
+    : { teks: kd.kembalian(ronde.dibayar, ronde.harga), potongan: [] };
+  const teks = ucapan.teks;
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, kembalian - total) : null;
   const langkah = useMemo(() => { const out: number[] = []; for (let v = ronde.harga; v <= ronde.dibayar; v += KOIN) out.push(v); return out.length <= 12 ? out : []; }, [ronde.harga, ronde.dibayar]);
   const sk = useSk();
@@ -771,7 +767,7 @@ function ModeKembalian(c: Ctx) {
   return (
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
-        wajah={wajah} teksUcap={teks} hasil={hasil}
+        wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
         balon={rincian ? (
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center gap-2"><Benda v={vBayar} size={Math.round(40 * sk)} /><span style={{ ...Tebal, fontSize: 20 * sk }}>{rupiah(ronde.dibayar)}</span></div>
@@ -820,7 +816,7 @@ function ModeTukar(c: Ctx) {
   const { uang, ambil, kembalikan, total } = useNampan(ronde.laci.length);
   const { hint, bantu } = useBantu(c.onHint);
   const lembar = ronde.lembar.length ? ronde.lembar : [ronde.dibayar];
-  const teks = `Tolong tukar uang ${lembar.map(formatRibuan).join(" dan ")}${lembar.length > 1 ? `, semuanya ${formatRibuan(ronde.dibayar)},` : ""} jadi koin seribuan.`;
+  const teks = kd.tukar(lembar, ronde.dibayar);
   const { tema, skala: sk } = usePanggung();
   const slotPx = Math.round(56 * sk);
 
@@ -878,7 +874,7 @@ function ModeLengkapi(c: Ctx) {
   useEffect(() => { flash(); return () => { if (timer.current) clearTimeout(timer.current); }; }, [flash]);
 
   const bantu = () => { c.onHint?.(); setHint(true); flash(); };
-  const teks = `Harganya ${totalKoin} koin. Aku punya segini. Berapa koin lagi supaya cukup?`;
+  const teks = kd.lengkapi(totalKoin);
   const kurang = Math.max(0, totalKoin - ditunjukkan);
   const { tema, skala: sk } = usePanggung();
   const slotPx = Math.round(56 * sk);
@@ -942,7 +938,8 @@ function ModeGabung(c: Ctx) {
     const t1 = setTimeout(() => { setFase("gabung"); sfxAkademi.taruh(); }, 1100);
     return () => clearTimeout(t1);
   }, []);
-  const teks = `${a} ${nama(id)} dan ${b} ${nama(id)} digabung. Jadi berapa semuanya?`;
+  const ucapan = kd.gabung(a, b, nama(id));
+  const teks = ucapan.teks;
   const min = Math.max(1, ronde.strip[0]);
   const { tema, skala: sk } = usePanggung();
   const meja = useSkMeja();
@@ -952,8 +949,8 @@ function ModeGabung(c: Ctx) {
   return (
     <Kunci terkunci={terkunci} kiri={<>
       <div className="grid shrink-0 grid-cols-2 gap-2">
-        <Pembeli wajah={PEMBELI[0]} teksUcap={teks} hasil={hasil} kecil balon={<BarisPesanan v={visual(id)} qty={a} label={nama(id)} />} />
-        <Pembeli wajah={PEMBELI[1]} teksUcap={teks} hasil={hasil} kecil kanan balon={<BarisPesanan v={visual(id)} qty={b} label={nama(id)} />} jawabanBenar={`${a} + ${b} = ${ronde.target}`} />
+        <Pembeli wajah={PEMBELI[0]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil balon={<BarisPesanan v={visual(id)} qty={a} label={nama(id)} />} />
+        <Pembeli wajah={PEMBELI[1]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil kanan balon={<BarisPesanan v={visual(id)} qty={b} label={nama(id)} />} jawabanBenar={`${a} + ${b} = ${ronde.target}`} />
       </div>
       <Lapak>
         <div className="relative flex flex-1 flex-col justify-end" style={{ minHeight: 160 * sk }}>
@@ -994,11 +991,11 @@ interface TemaSisa {
   kerja: string;
 }
 const TEMA_SISA: Record<string, TemaSisa> = {
-  kolam: { latar: "radial-gradient(ellipse at 50% 40%,#9fdcff,#3fa9e8)", ditangkap: "🎣", tutupIkon: "🌫️", tutup: "Kolam tertutup kabut", wadah: "Piring", wadahIkon: "🍽️", tombol: "Beri makan", ikonTombol: "set_meal", kerja: "ditangkap" },
-  "toko-kue": { latar: "radial-gradient(ellipse at 50% 40%,#fff7ec,#f6d7b0)", ditangkap: "🛍️", tutupIkon: "🧺", tutup: "Piring ditutup", wadah: "Taruh di sini", wadahIkon: "🍽️", tombol: "Selesai", ikonTombol: "check", kerja: "dibeli" },
-  kebun: { latar: "radial-gradient(ellipse at 50% 40%,#d9f2c4,#9ccc65)", ditangkap: "🧺", tutupIkon: "🍃", tutup: "Bedeng ditutup daun", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: "dipetik" },
+  kolam: { latar: "radial-gradient(ellipse at 50% 40%,#9fdcff,#3fa9e8)", ditangkap: "🎣", tutupIkon: "🌫️", tutup: "Kolam tertutup kabut", wadah: "Piring", wadahIkon: "🍽️", tombol: "Beri makan", ikonTombol: "set_meal", kerja: kerjaSisa("kolam") },
+  "toko-kue": { latar: "radial-gradient(ellipse at 50% 40%,#fff7ec,#f6d7b0)", ditangkap: "🛍️", tutupIkon: "🧺", tutup: "Piring ditutup", wadah: "Taruh di sini", wadahIkon: "🍽️", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa("toko-kue") },
+  kebun: { latar: "radial-gradient(ellipse at 50% 40%,#d9f2c4,#9ccc65)", ditangkap: "🧺", tutupIkon: "🍃", tutup: "Bedeng ditutup daun", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa("kebun") },
 };
-const TEMA_SISA_UMUM: TemaSisa = { latar: "radial-gradient(ellipse at 50% 40%,#fffaf0,#f1dcb4)", ditangkap: "✋", tutupIkon: "📦", tutup: "Kotak ditutup", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: "diambil" };
+const TEMA_SISA_UMUM: TemaSisa = { latar: "radial-gradient(ellipse at 50% 40%,#fffaf0,#f1dcb4)", ditangkap: "✋", tutupIkon: "📦", tutup: "Kotak ditutup", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa(undefined) };
 
 function ModeSisa(c: Ctx) {
   const { paket, ronde, onJawab, hasil, terkunci, wajah, nama, visual } = c;
@@ -1019,17 +1016,14 @@ function ModeSisa(c: Ctx) {
   const pos = useMemo(() => posisiBenda(awal), [awal]);
   const nb = nama(benda), np = nama(penanda);
   const vBenda = visual(benda), vPenanda = visual(penanda);
-  const teks = kolam
-    ? `Ada ${awal} ${nb} di kolam. ${diambil} ${nb} ditangkap. Beri makan ${nb} yang tersisa, satu ${np} untuk satu ${nb}.`
-    : penanda === benda
-      ? `Ada ${awal} ${nb}. ${diambil} ${nb} ${tema.kerja}. Taruh ${np} sebanyak yang tersisa.`
-      : `Ada ${awal} ${nb}. ${diambil} ${nb} ${tema.kerja}. Taruh ${np} sebanyak ${nb} yang tersisa, satu ${np} untuk satu ${nb}.`;
+  const ucapan = kd.sisa({ kolam, awal, diambil, benda: nb, penanda: np, samaPenanda: penanda === benda, kerja: tema.kerja });
+  const teks = ucapan.teks;
   const { tema: dunia, skala: sk } = usePanggung();
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
-        wajah={wajah} teksUcap={teks} hasil={hasil}
+        wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
         balon={<div className="flex flex-wrap items-center gap-1"><BarisPesanan v={vBenda} qty={awal} label={nb} /><span style={{ ...Tebal, fontSize: 20 * sk }}>−</span><BarisPesanan v={{ emoji: tema.ditangkap }} qty={diambil} label={tema.kerja} /><span style={{ ...Tebal, fontSize: 20 * sk }}>= ?</span></div>}
         jawabanBenar={`${awal} − ${diambil} = ${ronde.target} ${nb}`}
       />
