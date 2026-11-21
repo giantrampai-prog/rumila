@@ -24,6 +24,8 @@ import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi,
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
+import { LatarDunia } from "../latar-dunia";
+import { duniaPaket } from "@/lib/akademi/tema-dunia";
 import "../akademi.css";
 
 const KARTU = "rounded-[24px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
@@ -80,7 +82,9 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
 
   return (
-    <>
+    // HP: satu kolom. Tablet mendatar/desktop (lg): kiri = jenjang, tombol misi, tautan (menempel saat gulir); kanan = peta.
+    <div className="grid gap-4 lg:grid-cols-[minmax(340px,420px)_minmax(0,1fr)] lg:items-start lg:gap-6">
+    <div className="flex flex-col gap-4 lg:sticky lg:top-4">
       <KartuJenjang peta={peta} streak={streak} onHadiah={onHadiah} />
 
       {peta.ujian && !peta.sekarang && <KartuUjian u={peta.ujian} bahasa={bahasa} />}
@@ -109,7 +113,12 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         </Link>
       )}
 
-      <div className="flex flex-col gap-3">
+      <div className="hidden flex-col gap-2 lg:flex">
+        <TautanBawah />
+      </div>
+    </div>
+
+      <div className="flex flex-col gap-4">
         {peta.semester.map((sm) =>
           sm.total === 0 ? null : (
             <div key={sm.ke} className="flex flex-col gap-3">
@@ -124,20 +133,26 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         <KartuPraktikKampus events={events} level={level} />
       </div>
 
-      <div className="mt-1 flex justify-center">
-        <Link href="/akademi/piagam" className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
-          <Icon name="emoji_events" size={18} /> Lemari Piagam
-        </Link>
-      </div>
-
-      <div className="flex justify-center">
-        <Link href="/orang-tua" className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
-          <Icon name="lock" size={18} /> Ruang Orang Tua
-        </Link>
+      <div className="flex flex-col gap-2 lg:hidden">
+        <TautanBawah />
       </div>
 
       {rayakan && <Rayakan dari={rayakan.dari} ke={rayakan.ke} onTutup={() => setRayakan(null)} />}
-    </>
+    </div>
+  );
+}
+
+function TautanBawah() {
+  const kelas = "inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[14px] font-extrabold text-[#3d4b63] shadow-[0_3px_0_rgba(11,37,69,.1)] transition-transform active:scale-95";
+  return (
+    <div className="flex flex-wrap justify-center gap-2">
+      <Link href="/akademi/piagam" className={kelas}>
+        <Icon name="emoji_events" size={18} /> Lemari Piagam
+      </Link>
+      <Link href="/orang-tua" className={kelas}>
+        <Icon name="lock" size={18} /> Ruang Orang Tua
+      </Link>
+    </div>
   );
 }
 
@@ -229,11 +244,16 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
       .map((x, i) => (i === 0 ? `M ${x} ${yTitik(0)}` : `C ${geser[i - 1]} ${yTitik(i) - SLOT / 2} ${x} ${yTitik(i - 1) + SLOT / 2} ${x} ${yTitik(i)}`))
       .join(" ");
   const terakhirTerbuka = u.misi.reduce((t, x, i) => (x.selesai || x.sekarang ? i : t), -1);
+  // dunia modul = dunia paket misi pertamanya; jadi "pulau" bergambar di peta, bukan krem polos yang sama
+  const paketPertama = u.misi.length ? PAKET.find((p) => p.competencyIds[0] === u.misi[0].kompetensi.id) : undefined;
+  const dunia = paketPertama ? duniaPaket(paketPertama) : "kebun";
   return (
-    <section aria-label={`${trackMeta(u.track).nama.id}: ${u.nama.id}, ${selesai} dari ${u.misi.length} misi`}>
+    <section aria-label={`${trackMeta(u.track).nama.id}: ${u.nama.id}, ${selesai} dari ${u.misi.length} misi`} className="relative overflow-hidden rounded-[28px] p-2 pb-1 shadow-[0_5px_0_rgba(11,37,69,.10)]" style={{ filter: semuaKunci ? "grayscale(.5)" : undefined }}>
+      <LatarDunia dunia={dunia} isi />
+      <div className="relative">
       <div
         className="flex items-center gap-3 rounded-[22px] px-4 py-3"
-        style={{ background: `linear-gradient(135deg, ${l}, ${m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: tinta, filter: semuaKunci ? "grayscale(.55) opacity(.75)" : undefined }}
+        style={{ background: `linear-gradient(135deg, ${l}, ${m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: tinta }}
       >
         <Icon name={TRACK_IKON[u.track]} size={30} />
         <span className="min-w-0 flex-1">
@@ -266,14 +286,14 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
       )}
       <ol className="relative mb-3 mt-6 flex flex-col items-center" style={{ height: tinggi }}>
         <svg aria-hidden className="pointer-events-none absolute left-1/2 top-0 overflow-visible" width={1} height={tinggi}>
-          <path d={garis(n - 1)} fill="none" stroke="#e6dccd" strokeWidth={10} strokeLinecap="round" strokeDasharray="0.1 18" />
-          {terakhirTerbuka > 0 && <path d={garis(terakhirTerbuka)} fill="none" stroke={m} strokeOpacity={0.5} strokeWidth={10} strokeLinecap="round" strokeDasharray="0.1 18" />}
+          <path d={garis(n - 1)} fill="none" stroke="#ffffff" strokeOpacity={0.9} strokeWidth={12} strokeLinecap="round" strokeDasharray="0.1 18" />
+          {terakhirTerbuka > 0 && <path d={garis(terakhirTerbuka)} fill="none" stroke={m} strokeWidth={12} strokeLinecap="round" strokeDasharray="0.1 18" />}
         </svg>
         {/* hiasan: lambang pelajaran besar di sisi yang tidak dilewati jalur */}
         <span
           aria-hidden
           className="pointer-events-none absolute top-1/2 flex size-[76px] -translate-y-1/2 items-center justify-center rounded-full"
-          style={{ [sisiHias]: 4, background: `${l}30`, color: m, filter: semuaKunci ? "grayscale(.7)" : undefined, opacity: semuaKunci ? 0.6 : 1 }}
+          style={{ [sisiHias]: 8, background: "rgba(255,255,255,.9)", color: m, boxShadow: `0 4px 0 ${l}` }}
         >
           <Icon name={TRACK_IKON[u.track]} size={40} />
         </span>
@@ -289,6 +309,7 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
           );
         })}
       </ol>
+      </div>
     </section>
   );
 }
@@ -365,7 +386,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
       {/* label di luar cincin progres (cincin 10px lebih lebar dari titik), berlatar agar tidak bertabrakan dengan jalur */}
       <span
         aria-hidden
-        className={`absolute top-1/2 z-[5] w-max max-w-[min(150px,calc(50vw-78px))] -translate-y-1/2 rounded-[12px] bg-white/90 px-2 py-1 text-[13px] leading-[1.2] font-extrabold shadow-[0_2px_0_rgba(11,37,69,.06)] ${sisiLabel === "kanan" ? "left-full ml-5 text-left" : "right-full mr-5 text-right"}`}
+        className={`absolute top-1/2 z-[5] w-max max-w-[min(150px,calc(50vw-78px))] -translate-y-1/2 rounded-[12px] bg-white px-2 py-1 text-[13px] leading-[1.2] font-extrabold shadow-[0_2px_0_rgba(11,37,69,.12)] ${sisiLabel === "kanan" ? "left-full ml-5 text-left" : "right-full mr-5 text-right"}`}
         style={{ color: m.terkunci ? "#76695a" : m.selesai || m.sekarang || persen ? INK : "#4a5a75" }}
       >
         <span className="line-clamp-3 [overflow-wrap:anywhere]">{judul}</span>
