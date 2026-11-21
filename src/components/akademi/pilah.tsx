@@ -314,7 +314,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const [dipilih, setDipilih] = useState<string | null>(null);
   const [redup, setRedup] = useState<string | null>(null);
   const kunci = !!hasil || dipilih !== null;
-  const { tema, skala: sk, h } = usePanggung();
+  const { tema, skala: sk, h, w } = usePanggung();
 
   useEffect(() => {
     setDipilih(null);
@@ -363,7 +363,12 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const baris = Math.ceil(n / (n === 2 ? 2 : n === 3 ? 3 : n === 4 ? 4 : 3));
   // gambar pilihan ikut tinggi kartu: di tablet kartu tinggi, jadi emoji kecil di tengah kartu besar terasa kosong
   const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
-  const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5))));
+  // …tapi tidak boleh lebih lebar dari kartunya: di HP tinggi (2 kolom sempit) bola berskala besar sempat terpotong
+  const lebar = typeof window !== "undefined" && window.innerWidth >= 640;
+  const jmlKolom = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
+  const lebarKartu = w > 0 ? (w - 14 * sk * (jmlKolom - 1)) / jmlKolom : Infinity;
+  const skalaMaks = Math.max(1, ...choices.map((c) => c.scale ?? 1));
+  const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5)), (lebarKartu * 0.8) / skalaMaks));
 
   return (
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>

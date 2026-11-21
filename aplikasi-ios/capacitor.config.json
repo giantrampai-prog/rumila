@@ -1,0 +1,15 @@
+{
+  "appId": "com.pulaurinoya.academy",
+  "appName": "RINOYA Academy",
+  "webDir": "www",
+  "server": {
+    "url": "https://kampus.pulaurinoya.com/beranda?mode=app",
+    "errorPath": "offline.html"
+  },
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#FFF8EE",
+    "appendUserAgent": "RinoyaApp-iOS",
+    "limitsNavigationsToAppBoundDomains": false
+  }
+}
