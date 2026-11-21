@@ -245,3 +245,103 @@
 .umroh-sheet .umroh-secondary-actions button { font-size:14px; min-height:40px; }
 .umroh-sheet .umroh-save-note { font-size:12px; }
 .umroh-sheet .umroh-laps > span { height:34px; font-size:13px; }
+
+/* ---------------- film Berangkat ---------------- */
+.film-mode .umroh-babak, .film-mode .umroh-caption, .film-mode .umroh-hud, .film-mode .umroh-hint, .film-mode .umroh-unhide { display:none; }
+.film-mode.is-running .umroh-dpad { display:none; }
+.umroh-letterbox { position:absolute; left:0; right:0; z-index:1; height:clamp(36px, 9vh, 84px); background:#04070d; pointer-events:none; animation:umroh-lb .7s ease-out both; }
+.umroh-letterbox.top { top:0; }
+.umroh-letterbox.bottom { bottom:0; height:clamp(56px, 12vh, 104px); }
+@keyframes umroh-lb { from { transform:scaleY(0); } }
+.umroh-letterbox.top { transform-origin:top; } .umroh-letterbox.bottom { transform-origin:bottom; }
+.film-mode .umroh-top { top:calc(env(safe-area-inset-top, 0px) + 10px); }
+.umroh-film-tag { position:absolute; z-index:3; left:50%; top:calc(env(safe-area-inset-top, 0px) + 18px); transform:translateX(-50%); display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-soft); white-space:nowrap; }
+.film-mode .umroh-loc { display:none; }
+.umroh-subtitle-film { position:absolute; z-index:3; left:50%; bottom:calc(env(safe-area-inset-bottom, 0px) + clamp(56px, 12vh, 104px) + 18px); transform:translateX(-50%); width:max-content; max-width:min(820px, calc(100% - 32px)); margin:0; padding:9px 16px; border-radius:12px; background:rgba(4,7,13,.62); color:#fff; text-align:center; font-family:var(--ff-baloo),sans-serif; font-size:clamp(17px, 2.4vw, 24px); font-weight:700; line-height:1.3; text-wrap:balance; text-shadow:0 1px 2px rgba(0,0,0,.5); }
+.umroh-film-pause { position:absolute; z-index:3; left:50%; top:calc(env(safe-area-inset-top, 0px) + clamp(36px, 9vh, 84px) + 16px); transform:translateX(-50%); margin:0; padding:8px 14px; border-radius:999px; background:rgba(4,7,13,.62); color:#fff; font-size:13px; font-weight:800; white-space:nowrap; max-width:calc(100% - 32px); overflow:hidden; text-overflow:ellipsis; }
+.umroh-film-bar { position:absolute; z-index:4; left:var(--gutter); right:max(16px, env(safe-area-inset-right, 0px)); bottom:calc(env(safe-area-inset-bottom, 0px) + 10px); display:flex; align-items:center; gap:12px; }
+.umroh-film-bar .umroh-glass-btn { background:rgba(255,255,255,.1); box-shadow:none; }
+.umroh-film-play { width:52px; height:52px; background:#fff !important; color:var(--u-ink); }
+.umroh-film-track { position:relative; flex:1; min-width:0; height:44px; }
+.umroh-film-rail { position:absolute; left:0; right:0; top:12px; height:5px; border-radius:9px; background:rgba(255,255,255,.22); overflow:hidden; }
+.umroh-film-rail b { display:block; height:100%; background:linear-gradient(90deg,#ffe08a,#fdb724); }
+.umroh-film-mark { position:absolute; top:4px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; padding:0 2px; border:0; background:transparent; color:rgba(255,255,255,.62); font-size:10.5px; font-weight:800; white-space:nowrap; }
+.umroh-film-mark i { width:3px; height:21px; border-radius:2px; background:rgba(255,255,255,.55); }
+.umroh-film-mark:hover, .umroh-film-mark.now { color:#fff; }
+.umroh-film-mark.now i { background:#fdb724; }
+.umroh-film-mark span { margin-top:-2px; }
+.umroh-film-time { color:#fff; font-size:13px; font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.umroh-film-exit { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:0 14px; border-radius:999px; border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.08); color:#fff; font-size:13.5px; font-weight:800; white-space:nowrap; }
+.umroh-film-exit:hover { background:rgba(255,255,255,.16); }
+.umroh-film-offer { position:absolute; z-index:6; left:50%; top:50%; transform:translate(-50%,-50%); width:min(460px, calc(100% - 32px)); padding:24px; border-radius:28px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; color:#fff; background:var(--glass-strong); border:1px solid var(--glass-line); -webkit-backdrop-filter:blur(20px) saturate(1.4); backdrop-filter:blur(20px) saturate(1.4); box-shadow:0 24px 70px rgba(3,10,22,.4); animation:umroh-pop .3s ease-out; }
+.umroh-film-offer h2 { margin:0; font-family:var(--ff-baloo),sans-serif; font-size:28px; line-height:1.15; }
+.umroh-film-offer p { margin:0 0 8px; font-size:14.5px; line-height:1.55; color:var(--glass-muted); }
+.umroh-film-offer-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.film-mode + .umroh-film-offer, .film-mode .umroh-film-offer { display:none; }
+@media (max-width:760px) {
+  .umroh-film-mark span { display:none; }
+  .umroh-film-time { display:none; }
+  .umroh-film-exit { padding:0 12px; font-size:12.5px; }
+  .umroh-film-bar { gap:8px; }
+  .umroh-film-tag { display:none; }
+}
+
+/* ---------------- aksi langkah & boarding pass ---------------- */
+.umroh-aksi { animation:umroh-aksi-in .35s cubic-bezier(.3,1.5,.5,1); }
+.umroh-aksi .ms { animation:umroh-goyang 1.8s ease-in-out 1s infinite; }
+@keyframes umroh-aksi-in { from { transform:scale(.85); opacity:0; } }
+@keyframes umroh-goyang { 0%,80%,100% { transform:rotate(0); } 85% { transform:rotate(-12deg); } 90% { transform:rotate(10deg); } 95% { transform:rotate(-6deg); } }
+.umroh-umpan { position:absolute; z-index:4; left:50%; bottom:calc(env(safe-area-inset-bottom, 0px) + var(--cap-h, 110px) + 30px); display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:#fff; color:var(--u-ink); font-weight:900; font-size:15px; white-space:nowrap; box-shadow:0 12px 30px rgba(3,10,22,.3); pointer-events:none; animation:umroh-umpan 1.6s ease forwards; }
+.umroh-umpan .ms:last-child { color:#127a43; }
+@keyframes umroh-umpan { 0% { opacity:0; transform:translate(-50%, 16px) scale(.9); } 15% { opacity:1; transform:translate(-50%, 0) scale(1.04); } 25% { transform:translate(-50%, 0) scale(1); } 75% { opacity:1; } 100% { opacity:0; transform:translate(-50%, -24px); visibility:hidden; } }
+.umroh-tiket-chip { display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 14px; border-radius:999px; border:0; background:#fff; color:#0d5f7e; font-weight:900; font-size:13px; box-shadow:0 8px 24px rgba(3,10,22,.25); animation:umroh-pop .3s ease-out; }
+@media (max-width:760px) { .umroh-tiket-chip span { display:none; } .umroh-tiket-chip { width:40px; height:40px; padding:0; justify-content:center; } }
+
+.umroh-tiket-layar { position:absolute; inset:0; z-index:9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:16px; background:rgba(4,10,20,.62); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); overflow-y:auto; }
+.umroh-tiket-slot { width:min(640px, 100%); height:12px; border-radius:8px; background:linear-gradient(#1b2433,#3a4658); box-shadow:inset 0 3px 4px rgba(0,0,0,.6); margin-bottom:-18px; z-index:1; }
+.umroh-tiket { position:relative; width:min(600px, calc(100% - 24px)); border-radius:22px; overflow:hidden; background:#fffdf8; color:#0b2545; box-shadow:0 30px 70px rgba(0,0,0,.45); animation:umroh-cetak 1.1s cubic-bezier(.2,.8,.2,1) both; transform-origin:top center; }
+@keyframes umroh-cetak { 0% { clip-path:inset(0 0 100% 0); transform:translateY(-40px); } 100% { clip-path:inset(0 0 0 0); transform:translateY(0); } }
+.umroh-tiket-kepala { display:flex; align-items:center; gap:10px; padding:14px 18px; background:linear-gradient(120deg,#0d5f7e,#12a3b4); color:#fff; }
+.umroh-tiket-kepala strong { display:block; font-size:16px; font-weight:900; }
+.umroh-tiket-kepala small { display:block; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; opacity:.85; }
+.umroh-tiket-logo { width:36px; height:36px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.2); }
+.umroh-tiket-cap { margin-left:auto; font-style:normal; font-weight:900; font-size:12px; letter-spacing:.08em; text-transform:uppercase; padding:6px 10px; border-radius:8px; background:#1fbf62; color:#fff; animation:umroh-pop .4s ease-out .9s both; }
+.umroh-tiket-badan { display:flex; }
+.umroh-tiket-utama { flex:1; min-width:0; padding:16px 18px; display:flex; flex-direction:column; gap:14px; }
+.umroh-tiket-rute { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 10px; margin:-8px -10px 0; border:2px solid transparent; border-radius:14px; background:transparent; color:#0d5f7e; text-align:left; }
+.umroh-tiket-rute b { display:block; font-family:var(--ff-baloo),sans-serif; font-size:44px; line-height:1; font-weight:800; color:#0b2545; }
+.umroh-tiket-rute small { display:block; font-size:13px; font-weight:800; color:#4a5a75; }
+.umroh-tiket-rute .kanan { text-align:right; }
+.umroh-tiket-isi { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px 12px; }
+.umroh-tiket-medan { display:flex; flex-direction:column; gap:2px; padding:6px 8px; margin:-6px -8px; border:2px solid transparent; border-radius:12px; background:transparent; text-align:left; color:inherit; min-width:0; }
+.umroh-tiket-medan.lebar { grid-column:1 / -1; }
+.umroh-tiket-medan .k, .umroh-tiket-sobek small { font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#5b6b85; }
+.umroh-tiket-medan .v { font-size:16px; font-weight:900; color:#0b2545; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.umroh-tiket-medan.lebar .v { font-size:19px; }
+.umroh-tiket-sobek { width:150px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:14px 10px; border:0; border-left:2px dashed #d8cdbb; background:#fff5e6; color:#0b2545; position:relative; }
+.umroh-tiket-sobek::before, .umroh-tiket-sobek::after { content:""; position:absolute; left:-11px; width:20px; height:20px; border-radius:50%; background:rgba(4,10,20,.62); }
+.umroh-tiket-sobek::before { top:-10px; } .umroh-tiket-sobek::after { bottom:-10px; }
+.umroh-tiket-sobek b { font-family:var(--ff-baloo),sans-serif; font-size:48px; line-height:1; font-weight:800; color:#a34a00; }
+.umroh-tiket-sobek > span { font-size:13px; font-weight:800; color:#4a5a75; }
+.umroh-tiket-kode { display:block; width:100px; height:34px; margin-top:12px; background:repeating-linear-gradient(90deg,#0b2545 0 2px,transparent 2px 4px,#0b2545 4px 5px,transparent 5px 8px,#0b2545 8px 11px,transparent 11px 13px); border-radius:2px; }
+.umroh-tiket-contoh { position:absolute; right:170px; bottom:10px; font-size:42px; font-weight:900; letter-spacing:.2em; color:rgba(11,37,69,.06); transform:rotate(-12deg); pointer-events:none; }
+.umroh-perlu { border-color:#fd861d !important; background:#fff1df !important; animation:umroh-denyut 1.4s ease-in-out infinite; cursor:pointer; }
+.umroh-dicek { border-color:#1fbf62 !important; background:#e8f8ee !important; }
+@keyframes umroh-denyut { 50% { box-shadow:0 0 0 6px rgba(253,134,29,.18); } }
+.umroh-tiket-cek { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; color:#fff; font-size:14px; font-weight:800; }
+.umroh-tiket-cek button { display:inline-flex; align-items:center; gap:5px; min-height:38px; padding:0 12px; border-radius:999px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff; font-weight:800; font-size:13px; }
+.umroh-tiket-cek button[aria-pressed=true] { background:#1fbf62; border-color:#1fbf62; }
+@media (max-width:560px) {
+  .umroh-tiket-badan { flex-direction:column; }
+  .umroh-tiket-sobek { width:auto; flex-direction:row; gap:10px; border-left:0; border-top:2px dashed #d8cdbb; padding:12px 16px; }
+  .umroh-tiket-sobek::before, .umroh-tiket-sobek::after { display:none; }
+  .umroh-tiket-sobek b { font-size:34px; }
+  .umroh-tiket-kode { margin:0 0 0 auto; width:80px; }
+  .umroh-tiket-rute b { font-size:34px; }
+  .umroh-tiket-isi { grid-template-columns:repeat(2, 1fr); }
+  .umroh-tiket-contoh { right:16px; bottom:auto; top:44%; }
+}
+@media (prefers-reduced-motion:reduce) { .umroh-tiket { animation:none; } }
+.umroh-film-offer h2 { font-weight:800; }
+.umroh-tiket-sobek.umroh-perlu { box-shadow:inset 0 0 0 3px #fd861d; }
+.umroh-tiket-sobek.umroh-dicek { box-shadow:inset 0 0 0 3px #1fbf62; }

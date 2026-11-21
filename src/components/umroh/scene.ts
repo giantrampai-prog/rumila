@@ -143,6 +143,8 @@ export class UmrohScene {
   private composer: EffectComposer | null = null;
   private ao: GTAOPass | null = null;
   private grading: ShaderPass | null = null;
+  /** Gerak kamera film: dari pose A ke pose B selama `durasi` detik (easing halus). */
+  private filmShot: { from: T.Vector3; to: T.Vector3; lookFrom: T.Vector3; lookTo: T.Vector3; durasi: number; t: number } | null = null;
   /** Penjaga FPS: bila rata-rata frame > 38 ms selama ±3 detik, efek berat dimatikan. */
   private slowFrames = 0;
   private sampledFrames = 0;
@@ -461,6 +463,35 @@ export class UmrohScene {
     this.soundOn = on;
     this.audio?.setEnabled(on && Boolean(this.world?.telemetry) && this.state.running && !this.state.paused);
   }
+  /**
+   * Film: kamera bergerak pelan menuju sudut landmark (atau stasiun bab bila kosong).
+   * 'maju' = dolly mendekat, 'geser' = bergeser ke samping, 'naik' = turun dari sudut tinggi.
+   */
+  playFilmShot(target: { landmark?: string }, gerak: 'maju' | 'geser' | 'naik', durasi: number): void {
+    if (!this.world) return;
+    const landmark = target.landmark ? this.world.landmarks.find((l) => l.id === target.landmark) : undefined;
+    const station = this.state.chapter ? this.world.stations?.[this.state.chapter] : undefined;
+    const pose = landmark ?? station ?? { position: this.world.spawn, lookAt: this.world.lookAt };
+    const to = new T.Vector3(...pose.position), look = new T.Vector3(...pose.lookAt);
+    const dir = look.clone().sub(to); dir.y = 0; dir.normalize();
+    const side = new T.Vector3(-dir.z, 0, dir.x);
+    const from = to.clone();
+    if (gerak === 'maju') from.addScaledVector(dir, -1.8).add(new T.Vector3(0, .2, 0));
+    else if (gerak === 'geser') from.addScaledVector(side, 1.6);
+    else from.add(new T.Vector3(0, 1.4, 0)).addScaledVector(dir, -1.2);
+    const lookFrom = gerak === 'geser' ? look.clone().addScaledVector(side, .9) : look.clone();
+    this.filmShot = { from, to, lookFrom, lookTo: look, durasi: Math.max(.5, durasi), t: 0 };
+    this.applyFilmShot(0);
+  }
+  stopFilmShot(): void { this.filmShot = null; }
+  private applyFilmShot(delta: number): void {
+    const shot = this.filmShot; if (!shot) return;
+    shot.t = Math.min(shot.durasi, shot.t + delta);
+    const k = shot.t / shot.durasi, e = k * k * (3 - 2 * k);
+    this.camera.position.lerpVectors(shot.from, shot.to, e);
+    const at = this.tmp.lerpVectors(shot.lookFrom, shot.lookTo, e);
+    this.lookAt([at.x, at.y, at.z]);
+  }
   getLandmarks(): { id: string; label: string }[] { return this.world?.landmarks.map(({ id, label }) => ({ id, label })) ?? []; }
   jumpToLandmark(id: string): void {
     const landmark = this.world.landmarks.find((l) => l.id === id); if (!landmark) return;
@@ -578,6 +609,8 @@ export class UmrohScene {
     if (this.world?.flight) { this.resetCamera(); this.shot = -1; }
   };
   private updateCamera(delta: number): void {
+    // Kamera film hanya untuk adegan berjalan kaki; kendaraan, garbarata, dan penerbangan memakai kamera bawaan.
+    if (this.filmShot && !this.state.paused && !this.world.rail && !this.isSeatedView() && !this.world.flight) { this.applyFilmShot(delta); return; }
     if (this.world.rail && this.state.view !== 'overview') { this.placeOnRail(); return; }
     if (this.world.seat && this.world.vehicle && this.isSeatedView()) { this.placeSeated(delta); return; }
     if (this.isAutomaticFlightView()) { if (!this.state.paused) this.frameFlight(delta); return; }
