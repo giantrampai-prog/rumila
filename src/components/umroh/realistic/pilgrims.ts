@@ -102,6 +102,8 @@ export function createSeatedPassengers(r: WorldResources, seats: readonly { posi
 
 export interface StandingPerson {
   position: Position; angle?: number; female?: boolean;
+  /** ukuran tubuh, mis. 0.72 untuk anak */
+  scale?: number;
   /** Uniform colours, for example airport staff or cabin crew. */
   colors?: Partial<Record<'shirt' | 'trousers' | 'dress' | 'scarf', string>>;
   pose?: Partial<Pick<HumanPose, 'arms' | 'forearms' | 'headTurn'>>;
@@ -127,7 +129,7 @@ export class StandingPeople {
     const { position: at, angle, ...limbs } = override;
     this.batch.pose(index, this.appearances[index], {
       gait: 0, walking: false, ...person.pose, ...limbs,
-      position: new T.Vector3(...(at ?? person.position)), angle: angle ?? person.angle ?? 0, scale: .98 + (index % 3) * .02,
+      position: new T.Vector3(...(at ?? person.position)), angle: angle ?? person.angle ?? 0, scale: person.scale ?? .98 + (index % 3) * .02,
     }, 'travel');
   }
   flush(): void { this.batch.flush(); }

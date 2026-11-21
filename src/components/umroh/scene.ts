@@ -428,6 +428,7 @@ export class UmrohScene {
     const { stage, route, progress, visit } = this.state;
     const p = Math.max(0, Math.min(7, progress));
     if (visit === 'nabawi' || this.state.chapter === 'nabawi') { this.avatar.set(1, 0, 63); this.heading = Math.PI; }
+    else if (this.world.guide && this.state.chapter && this.state.chapter !== 'umroh') { this.avatar.set(...this.world.guide.position); this.heading = this.world.guide.heading; }
     else if (this.state.chapter && this.state.chapter !== 'umroh') {
       const station = this.world.stations?.[this.state.chapter];
       const from = station?.position ?? this.world.spawn, to = station?.lookAt ?? this.world.lookAt;

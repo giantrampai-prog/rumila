@@ -114,6 +114,7 @@ export async function bakeCharacter(source: CharacterSource, signal?: AbortSigna
   try {
     abortIfNeeded(signal);
     applyClip(idle, 0);
+    lenganSantai(source.scene);
     const idleHip = hip?.getWorldPosition(new T.Vector3());
     const idleSnapshots = meshes.map((mesh) => sampleMesh(mesh, new T.Vector3()));
     const bounds = new T.Box3();
@@ -219,4 +220,28 @@ export function acquireCharacterLibrary(owner: object): { library: CharacterAsse
   entry.users++;
   let released = false;
   return { library: entry.library, release() { if (released) return; released = true; if (--entry.users === 0) { entry.library.dispose(); libraries.delete(owner); } } };
+}
+
+/**
+ * Klip idle model sumber membiarkan lengan terbuka (mirip pose dasar), sehingga jamaah tampak kaku.
+ * Lengan atas diputar di ruang dunia sampai hampir lurus ke bawah, sedikit menjauh dari badan.
+ */
+export function lenganSantai(root: T.Object3D): void {
+  root.updateMatrixWorld(true);
+  const cari = (pola: RegExp) => { let hasil: T.Object3D | undefined; root.traverse((o) => { if (!hasil && pola.test(o.name)) hasil = o; }); return hasil; };
+  for (const sisi of ['Left', 'Right']) {
+    const lengan = cari(new RegExp(`${sisi}Arm$`)), siku = cari(new RegExp(`${sisi}ForeArm$`));
+    if (!lengan || !siku || !lengan.parent) continue;
+    const a = lengan.getWorldPosition(new T.Vector3()), b = siku.getWorldPosition(new T.Vector3());
+    const kini = b.sub(a).normalize();
+    if (kini.y < -0.9) continue;
+    const keluar = new T.Vector3(kini.x, 0, kini.z);
+    if (keluar.lengthSq() < 1e-6) continue;
+    const tujuan = new T.Vector3(0, -1, 0).addScaledVector(keluar.normalize(), 0.16).normalize();
+    const putar = new T.Quaternion().setFromUnitVectors(kini, tujuan);
+    const dunia = lengan.getWorldQuaternion(new T.Quaternion());
+    const induk = lengan.parent.getWorldQuaternion(new T.Quaternion()).invert();
+    lengan.quaternion.copy(induk.multiply(putar.multiply(dunia)));
+    root.updateMatrixWorld(true);
+  }
 }

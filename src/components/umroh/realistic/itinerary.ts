@@ -1,7 +1,7 @@
 import * as T from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
-import { createSeatedPassengers } from './pilgrims';
+import { createSeatedPassengers, StandingPeople } from './pilgrims';
 import { createGarudaAircraft } from './aircraft';
 
 /** Original, human-scale travel environments. Operator names are plain text, not copied logos. */
@@ -238,64 +238,140 @@ export function addGarudaAircraft(r: WorldResources, parent: T.Object3D, at: Pos
   parent.add(group); return group;
 }
 
+interface WarnaRumah { dinding: string; aksen: string; atap: string; pagar: string }
+const WARNA_RUMAH: WarnaRumah[] = [
+  { dinding: '#f1e7d3', aksen: '#b98a5e', atap: '#8e4a35', pagar: '#2b2f33' },
+  { dinding: '#e7eef0', aksen: '#6f8fa3', atap: '#5d5f66', pagar: '#2b2f33' },
+  { dinding: '#f3e1cb', aksen: '#c6764d', atap: '#9a5338', pagar: '#3a3026' },
+  { dinding: '#e4ecdf', aksen: '#7d9a6e', atap: '#6b4a3a', pagar: '#2b2f33' },
+  { dinding: '#f6eee2', aksen: '#a7896b', atap: '#7a3f31', pagar: '#30363b' },
+];
+
+/**
+ * Rumah tapak satu lantai khas perumahan Indonesia, menghadap +Z (jalan). Lebar kavling 12 m:
+ * atap pelana genteng + lisplang, teras berkeramik dua tiang, carport berkanopi, jendela berkusen & teralis,
+ * roster, pagar besi berpilar dengan pagar geser, taman kecil, dan got bertutup beton di depan.
+ * `utama` menambah perabot teras, nomor rumah, dan detail yang terlihat dari dekat.
+ */
+function rumahPerumahan(k: Kit, parent: T.Object3D, x: number, z: number, rotasi: number, w: WarnaRumah, utama: boolean, nomor: string): void {
+  const r = k.r, g = new T.Group(); g.position.set(x, 0, z); g.rotation.y = rotasi; parent.add(g);
+  const dinding = color(k, 'dinding-' + w.dinding, w.dinding), aksen = color(k, 'aksen-' + w.aksen, w.aksen);
+  const atap = color(k, 'atap-' + w.atap, w.atap, { roughness: .7 }), pagar = color(k, 'pagar-' + w.pagar, w.pagar, { roughness: .45, metalness: .5 });
+  const kusen = color(k, 'kusen', '#5a3a26'), keramik = color(k, 'keramik-teras', '#d9cfc0', { roughness: .35 });
+  const conblock = color(k, 'conblock', '#9a948a'), rumput = color(k, 'rumput-taman', '#6f9a56'), bata = color(k, 'pilar-bata', '#d6c5ab');
+  const putih = color(k, 'lisplang', '#f4f1ea'), daun = color(k, 'daun-pucuk', '#4f8a3c'), pucuk = color(k, 'pucuk-merah', '#b5473a');
+  const kaca = r.mat.glass;
+  // badan rumah & lantai
+  r.box(g, [12, 3.2, 7.4], [0, 1.6, -5.6], dinding);
+  r.box(g, [12, .35, 7.6], [0, .17, -5.6], aksen);
+  r.box(g, [7, .16, 3.6], [-2.5, .08, -.1], keramik);
+  r.box(g, [5, .06, 13.4], [3.5, .03, 4.8], conblock);
+  r.box(g, [7, .05, 9.8], [-2.5, .03, 6.6], rumput);
+  // atap pelana: dua bidang miring + segitiga depan + lisplang
+  const tinggi = 2.1, setengah = 6.7, sudut = Math.atan2(tinggi, setengah), panjang = Math.hypot(tinggi, setengah) + .1;
+  for (const sisi of [-1, 1]) {
+    const bidang = r.box(g, [panjang, .16, 8.8], [sisi * setengah / 2, 3.2 + tinggi / 2 + .08, -5.3], atap); bidang.rotation.z = -sisi * sudut;
+    for (let n = 1; n < 8; n++) { const baris = r.box(g, [panjang, .05, .05], [sisi * setengah / 2, 3.2 + tinggi / 2 + .19, -9.5 + n * 1.05], atap); baris.rotation.z = -sisi * sudut; }
+    const lis = r.box(g, [panjang, .26, .06], [sisi * setengah / 2, 3.2 + tinggi / 2 - .02, -.88], putih); lis.rotation.z = -sisi * sudut;
+  }
+  const segitiga = geo(k, 'gevel-rumah', () => { const sh = new T.Shape(); sh.moveTo(-6, 0); sh.lineTo(6, 0); sh.lineTo(0, tinggi); sh.closePath(); return new T.ExtrudeGeometry(sh, { depth: .12, bevelEnabled: false }); });
+  const gevel = new T.Mesh(segitiga, dinding); gevel.position.set(0, 3.2, -1.98); gevel.castShadow = gevel.receiveShadow = true; g.add(gevel);
+  r.box(g, [1.6, .5, .08], [0, 4.05, -1.84], color(k, 'roster', '#cdbf9f'));
+  for (let n = 0; n < 5; n++) r.box(g, [.18, .18, .1], [-.56 + n * .28, 4.05, -1.8], color(k, 'roster-lubang', '#5d5243'));
+  // teras: dak, tiang, lampu
+  r.box(g, [7.2, .22, 3.8], [-2.5, 3.0, -.05], dinding);
+  r.box(g, [7.2, .14, .08], [-2.5, 2.9, 1.86], aksen);
+  for (const tx of [-5.7, .7]) { r.box(g, [.32, 2.9, .32], [tx, 1.45, 1.55], dinding); r.box(g, [.4, .55, .4], [tx, .27, 1.55], bata); }
+  r.sphere(g, [.12, .12, .12], [-1.6, 2.7, -1.74], color(k, 'lampu-teras', '#fff3cf', { emissive: '#ffd98a', emissiveIntensity: .8 }));
+  // pintu kayu panel & jendela berkusen + teralis + roster
+  r.box(g, [1.1, 2.25, .12], [-1.6, 1.25, -1.86], kusen);
+  r.box(g, [.9, 2.08, .06], [-1.6, 1.2, -1.78], color(k, 'daun-pintu', '#7a4e2f'));
+  for (const py of [.7, 1.6]) r.box(g, [.7, .7, .03], [-1.6, py, -1.74], color(k, 'panel-pintu', '#6b4228'));
+  r.sphere(g, [.04, .04, .04], [-1.25, 1.15, -1.72], r.mat.gold);
+  for (const [wx, lebar] of [[-4.2, 1.9], [3.6, 1.7]] as const) {
+    r.box(g, [lebar + .16, 1.5, .14], [wx, 1.65, -1.86], kusen);
+    r.box(g, [lebar, 1.32, .06], [wx, 1.65, -1.79], kaca);
+    r.box(g, [.06, 1.34, .08], [wx, 1.65, -1.75], kusen);
+    for (let t = -lebar / 2 + .15; t < lebar / 2; t += .22) r.box(g, [.025, 1.4, .025], [wx + t, 1.65, -1.66], pagar);
+    r.box(g, [lebar + .16, .3, .1], [wx, 2.62, -1.82], color(k, 'roster', '#cdbf9f'));
+    r.box(g, [lebar + .3, .08, .25], [wx, .86, -1.72], aksen);
+  }
+  // carport berkanopi
+  const kanopi = r.box(g, [5.2, .06, 8.2], [3.5, 2.75, 2.3], color(k, 'kanopi', '#6c757d', { roughness: .4, metalness: .3 })); kanopi.rotation.x = .04;
+  for (const cx of [1.1, 5.9]) r.box(g, [.1, 2.7, .1], [cx, 1.35, 6.2], pagar);
+  r.box(g, [5, .1, .1], [3.5, 2.6, 6.2], pagar);
+  // pagar depan: dinding rendah, pilar, besi, pagar geser terbuka
+  for (const [px] of [[-5.85], [-.95], [5.85]] as const) { r.box(g, [.45, 1.75, .45], [px, .88, 11.5], bata); r.box(g, [.55, .1, .55], [px, 1.8, 11.5], dinding); }
+  r.box(g, [4.7, .55, .25], [-3.4, .28, 11.5], bata);
+  for (let px = -5.5; px <= -1.3; px += .16) r.box(g, [.035, 1.05, .035], [px, 1.08, 11.5], pagar);
+  r.box(g, [4.7, .05, .05], [-3.4, 1.58, 11.5], pagar);
+  for (let px = -5.3; px <= -1.1; px += .14) r.box(g, [.03, 1.45, .03], [px, .8, 11.2], pagar);
+  r.box(g, [4.6, .06, .06], [-3.2, 1.52, 11.2], pagar); r.box(g, [4.6, .06, .06], [-3.2, .1, 11.2], pagar);
+  // tanaman: pucuk merah di balik pagar, pohon mangga, pot di teras
+  for (let px = -5.4; px <= -1.6; px += .55) { r.sphere(g, [.32, .34, .32], [px, .55, 10.8], daun); r.sphere(g, [.22, .16, .22], [px + .1, .82, 10.75], pucuk); }
+  r.cylinder(g, .08, .12, 2, [-5.2, 1, 9.4], kusen);
+  for (const [dx, dy, dz, s] of [[0, 2.4, 0, .85], [.45, 2.15, .25, .65], [-.4, 2.25, -.25, .7], [.1, 2.75, -.15, .6]] as const) r.sphere(g, [s, s * .85, s], [-5.2 + dx, dy, 9.4 + dz], color(k, 'daun-mangga', '#3f7a35'));
+  // got & tutup beton di depan pagar
+  r.box(g, [12, .03, .6], [0, .01, 12.6], color(k, 'got', '#3a4146'));
+  r.box(g, [5, .08, .66], [3.5, .05, 12.6], conblock);
+  r.box(g, [12, .18, .12], [0, .09, 12.95], color(k, 'kanstin', '#c9c4ba'));
+  if (!utama) return;
+  // perabot teras & nomor rumah
+  const rotan = color(k, 'rotan', '#6b4426', { roughness: .8 }), bantal = color(k, 'bantal-kursi', '#c9b48f');
+  for (const kx of [-4.7, -3.1]) {
+    for (const [lx, lz] of [[-.25, -.85], [.25, -.85], [-.25, -.35], [.25, -.35]] as const) r.box(g, [.05, .4, .05], [kx + lx, .2, lz], rotan);
+    r.box(g, [.62, .06, .58], [kx, .42, -.6], rotan); r.box(g, [.54, .07, .5], [kx, .48, -.6], bantal);
+    r.box(g, [.62, .5, .05], [kx, .7, -.88], rotan);
+  }
+  r.cylinder(g, .26, .26, .04, [-3.9, .5, -.6], color(k, 'kaca-meja', '#b9d4d8'));
+  r.cylinder(g, .04, .06, .48, [-3.9, .25, -.6], rotan);
+  for (const [px, pz] of [[-5.4, 1.1], [.3, 1.1], [-.1, -1.3]] as const) { r.cylinder(g, .22, .17, .4, [px, .36, pz], color(k, 'pot', '#a5532f')); r.sphere(g, [.34, .4, .34], [px, .78, pz], daun); }
+  r.box(g, [.7, .5, .3], [-.4, .41, -1.55], kusen);
+  textPlate(k, g, nomor, [-.95, 1.35, 11.74], .44, '#ffffff', '#1f3a55');
+}
+
 export function createHomeWorld(r: WorldResources): UmrohWorld {
-  const k = kit(r), group = new T.Group(); group.name = 'Rumah di Indonesia';
-  const terracotta = color(k, 'roof-tile', '#975c41'), lawn = color(k, 'lawn', '#68876a');
+  const k = kit(r), group = new T.Group(); group.name = 'Rumah di perumahan, Indonesia';
   r.floor(group, 220, 220, r.mat.paving);
-  r.box(group, [80, 0.025, 9], [0, 0.02, 17.5], r.mat.asphalt);
-  for (let x = -36; x <= 36; x += 7) r.box(group, [3, 0.016, 0.12], [x, 0.045, 17.5], r.mat.white);
-  r.box(group, [20, 0.05, 17], [0, 0.045, -2], lawn);
-  r.box(group, [5, 0.08, 15], [0, 0.08, 4], r.mat.marble);
-  r.box(group, [14.7, 3.9, 10], [0, 1.95, -7], r.mat.plaster);
-  r.box(group, [6.4, 0.18, 3.8], [0, 0.12, -0.6], r.mat.limestone);
-  for (const x of [-3.2, 3.2]) r.box(group, [0.26, 3.6, 0.26], [x, 1.85, 0.6], r.mat.wood);
-  r.box(group, [6.9, 0.18, 4.7], [0, 3.75, -0.6], terracotta);
-  for (const side of [-1, 1]) {
-    const slope = r.box(group, [16.2, 0.21, 5.8], [0, 4.57, -7 + side * 2.55], terracotta); slope.rotation.x = side * 0.32;
-    for (let x = -7.6; x <= 7.6; x += 0.52) {
-      const tile = r.box(group, [0.055, 0.06, 5.8], [x, 4.71, -7 + side * 2.55], terracotta); tile.rotation.x = side * 0.32;
-    }
-  }
-  r.box(group, [1.4, 2.4, 0.13], [0, 1.3, -1.91], r.mat.wood);
-  r.sphere(group, [0.045, 0.045, 0.045], [0.49, 1.1, -1.82], r.mat.gold);
-  for (const x of [-4.9, -2.7, 2.7, 4.9]) {
-    r.box(group, [1.45, 1.85, 0.14], [x, 2.02, -1.9], r.mat.wood);
-    r.box(group, [1.24, 1.65, 0.1], [x, 2.02, -1.79], r.mat.glass);
-    r.box(group, [0.055, 1.7, 0.08], [x, 2.02, -1.7], r.mat.wood);
-  }
-  for (const x of [-9.2, 9.2]) {
-    r.box(group, [0.28, 1, 16], [x, 0.5, -1], r.mat.limestone);
-    palm(k, group, x * 0.8, 3.5, 5.3);
-  }
-  for (const side of [-1, 1]) {
-    r.box(group, [6.1, 0.65, 0.27], [side * 6.05, 0.33, 8.7], r.mat.limestone);
-    for (let offset = 0; offset < 10; offset += 1) r.box(group, [0.045, 0.9, 0.045], [side * (3.2 + offset * 0.6), 1.07, 8.7], r.mat.metal);
-    for (let n = 0; n < 3; n += 1) {
-      const x = side * (23 + n * 17);
-      r.box(group, [13, 4.2, 10], [x, 2.1, -7], r.mat.plaster);
-      r.box(group, [14, 0.3, 11.5], [x, 4.35, -7], terracotta);
-      palm(k, group, x + 5, 4, 5.5);
-    }
-  }
-  luggage(k, group, [1.1, 0.16, 0.6], 1.1);
-  luggage(k, group, [1.8, 0.16, 0.9], 0.85, r.mat.darkStone);
-  vehicle(k, group, 'taxi', [4.8, 0, 15.5], Math.PI / 2);
-  r.sign(group, 'RUMAH · INDONESIA', 'Awal dan akhir perjalanan umroh', [0, 3.0, -1.72], 4.6);
+  // jalan perumahan, kanstin, garis tepi
+  r.box(group, [140, .025, 7], [0, .02, 17.5], r.mat.asphalt);
+  for (const z of [14.15, 20.85]) r.box(group, [140, .16, .3], [0, .08, z], color(k, 'kanstin', '#c9c4ba'));
+  rumahPerumahan(k, group, 0, 0, 0, WARNA_RUMAH[0], true, 'B2 / 17');
+  for (const [i, x] of [[1, -12.4], [2, 12.4], [3, -24.8], [4, 24.8]] as const) rumahPerumahan(k, group, x, 0, 0, WARNA_RUMAH[i], false, '');
+  for (const [i, x] of [[2, -18.6], [0, -6.2], [3, 6.2], [1, 18.6]] as const) rumahPerumahan(k, group, x, 35, Math.PI, WARNA_RUMAH[i], false, '');
+  // tiang listrik & kabel
+  const tiang = color(k, 'tiang-listrik', '#8d9196');
+  for (const tx of [-15, 9]) { r.cylinder(group, .1, .14, 8, [tx, 4, 13.9], tiang); r.box(group, [1.4, .08, .08], [tx, 7.4, 13.9], tiang); }
+  r.box(group, [24, .02, .02], [-3, 7.3, 13.75], color(k, 'kabel', '#1d1f22'));
+  r.box(group, [24, .02, .02], [-3, 7.0, 13.75], color(k, 'kabel', '#1d1f22'));
+  // koper di teras, taksi di jalan
+  luggage(k, group, [.2, .16, .35], 1.1);
+  luggage(k, group, [.85, .16, .55], .85, r.mat.darkStone);
+  vehicle(k, group, 'taxi', [4.8, 0, 17.4], Math.PI / 2);
+  // keluarga yang mengantar di teras, menghadap jalan
+  const keluarga = new StandingPeople(r, [
+    { position: [-3.1, 0, .5], angle: .25, female: true, colors: { dress: '#5f6f86', scarf: '#d7b7a3' } },
+    { position: [-.6, 0, 1.15], angle: -.2, female: false, scale: .72, colors: { shirt: '#e0a43a', trousers: '#3d4a5c' }, pose: { arms: [0, -2.5], forearms: [0, -.5] } },
+  ]);
+  group.add(keluarga.group);
   return {
-    group, spawn: [-2.3, 1.68, 7.4], lookAt: [0, 1.8, -1.7], overview: [24, 16, 32],
-    bounds: { minX: -12, maxX: 12, minZ: 0.1, maxZ: 22 },
+    group, spawn: [-1.8, 1.68, 9.2], lookAt: [-1.6, 1.5, -1.5], overview: [22, 15, 30],
+    guide: { position: [-1.9, 0, .7], heading: 0 },
+    bounds: { minX: -11.5, maxX: 11.5, minZ: -1.4, maxZ: 22 },
     blockers: [
-      { minX: -7.5, maxX: 7.5, minZ: -13, maxZ: -1.7 },
-      { minX: 2.1, maxX: 7.5, minZ: 14.2, maxZ: 16.8 },
-      { minX: 0.6, maxX: 2.2, minZ: 0.1, maxZ: 1.6 },
-      { minX: -9.5, maxX: -8.8, minZ: -8, maxZ: 8 }, { minX: 8.8, maxX: 9.5, minZ: -8, maxZ: 8 },
-      { minX: -9.2, maxX: -3, minZ: 8.48, maxZ: 8.95 }, { minX: 3, maxX: 9.2, minZ: 8.48, maxZ: 8.95 },
-      { minX: -7.7, maxX: -7.02, minZ: 3.15, maxZ: 3.85 }, { minX: 7.02, maxX: 7.7, minZ: 3.15, maxZ: 3.85 },
+      { minX: -6.2, maxX: 6.2, minZ: -9.5, maxZ: -1.75 },
+      { minX: -5.95, maxX: -5.45, minZ: 1.3, maxZ: 1.8 }, { minX: .5, maxX: .95, minZ: 1.3, maxZ: 1.8 },
+      { minX: -6.2, maxX: -.7, minZ: 11.05, maxZ: 11.75 }, { minX: 5.6, maxX: 6.2, minZ: 11.2, maxZ: 11.75 },
+      { minX: -5.5, maxX: -4.9, minZ: 9.1, maxZ: 9.7 },
+      { minX: -4.95, maxX: -2.85, minZ: -1, maxZ: -.25 },
+      { minX: -.1, maxX: 1.2, minZ: .1, maxZ: .9 },
+      { minX: 2.1, maxX: 7.5, minZ: 16.1, maxZ: 18.7 },
+      { minX: -6.6, maxX: -6.2, minZ: -9, maxZ: 12 }, { minX: 6.2, maxX: 6.6, minZ: -9, maxZ: 12 },
     ],
     landmarks: [
-      { id: 'home-porch', label: 'Teras rumah', position: [-1.2, 1.68, 3.2], lookAt: [0, 1.8, -1.7] },
-      { id: 'home-luggage', label: 'Koper siap', position: [3.7, 1.68, 3.4], lookAt: [1.4, 0.8, 0.8] },
-      { id: 'home-taxi', label: 'Taksi', position: [0.1, 1.68, 12], lookAt: [4.8, 0.9, 15.5] },
+      { id: 'home-porch', label: 'Teras rumah', position: [-1.6, 1.62, 6.2], lookAt: [-1.7, 1.35, -.6] },
+      { id: 'home-luggage', label: 'Koper siap', position: [2.2, 1.5, 3.4], lookAt: [.3, .6, .4] },
+      { id: 'home-taxi', label: 'Taksi', position: [.8, 1.68, 10.2], lookAt: [4.8, .9, 17.4] },
     ],
   };
 }
