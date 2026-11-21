@@ -10,7 +10,7 @@
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
-.akademi-fade { animation: akademi-fade 260ms ease-out both; }
+.akademi-fade { animation: akademi-fade 260ms ease-out backwards; }
 
 @keyframes akademi-shake {
   0%, 100% { transform: translateX(0); }
