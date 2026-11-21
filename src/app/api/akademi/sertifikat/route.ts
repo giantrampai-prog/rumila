@@ -8,6 +8,7 @@
 // Jawaban: 200 { sertifikat, levelBaru } · 422 { error: "belum_lulus", dikuasai, total } · 409 jenjang beda ·
 //          401/403 tidak berhak · 503 penerbit belum dikonfigurasi (SUPABASE_SERVICE_ROLE_KEY kosong).
 
+import { penilaianKampus, snapshotPraktik } from "@/lib/akademi/praktik-kampus";
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { LevelId } from "@akademi/schema";
@@ -91,6 +92,9 @@ export async function POST(req: Request) {
     if ((terbaikUjian.get(k)?.nilai ?? -1) < u.nilai) terbaikUjian.set(k, { jenis: u.jenis, ruang: u.ruang, nilai: u.nilai });
   }
   hasil.snapshot.ujian = [...terbaikUjian.values()];
+  // Penilaian Praktik Kampus (pelengkap, bukan syarat): dihitung dari jejak gedung kampus di server
+  const praktik = snapshotPraktik(penilaianKampus(eventDariBaris(rows), KOMPETENSI, level));
+  if (praktik) hasil.snapshot.praktik = praktik;
 
   // 4. terbitkan (kode unik; coba ulang bila kebetulan sama)
   let terbit: unknown = null;

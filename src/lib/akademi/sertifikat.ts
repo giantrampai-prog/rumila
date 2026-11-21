@@ -10,6 +10,7 @@
 // - sertifikatAnak(): baca lokal. ambilSertifikat(): tarik dari server lalu gabung ke lokal.
 // Hook useSertifikat() memakai React; fungsi lain tidak menyentuh React saat dipanggil.
 
+import { penilaianKampus, snapshotPraktik } from "./praktik-kampus";
 import { useEffect, useState } from "react";
 import type { LevelId } from "@akademi/schema";
 import { supabase } from "@/lib/supabase/client";
@@ -245,7 +246,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     level,
     track: null,
     code: buatKode(),
-    snapshot: snapshotSertifikat(peng, KOMPETENSI, level),
+    snapshot: { ...snapshotSertifikat(peng, KOMPETENSI, level), praktik: snapshotPraktik(penilaianKampus(eventsAnak(memberId), KOMPETENSI, level)) },
     issuedAt: new Date().toISOString(),
     pending: true,
   };

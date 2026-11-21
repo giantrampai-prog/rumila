@@ -37,11 +37,11 @@ export function hariLokal(iso: string): string {
   return Number.isNaN(d.getTime()) ? iso.slice(0, 10) : d.toLocaleDateString("id-ID");
 }
 
-function kumpulkanBukti(events: GameEvent[]): Map<string, Bukti[]> {
+function kumpulkanBukti(events: GameEvent[], saring: (e: GameEvent) => boolean = (e) => !dariKampus(e)): Map<string, Bukti[]> {
   const per = new Map<string, Bukti[]>();
-  // hanya bukti dari paket Academy; aktivitas gedung kampus (quest 3D, game Coding Agam) tidak dihitung (lihat akses.ts)
+  // bawaan: hanya bukti dari paket Academy; aktivitas gedung kampus (quest 3D, game Coding Agam) tidak dihitung (lihat akses.ts)
   const urut = events
-    .filter((e) => e.type === "attempt" && !dariKampus(e))
+    .filter((e) => e.type === "attempt" && saring(e))
     .slice()
     .sort((a, b) => (a.clientAt < b.clientAt ? -1 : a.clientAt > b.clientAt ? 1 : 0));
   for (const e of urut) {
@@ -90,7 +90,12 @@ export function aturanUntuk(c: Competency): MasteryRule {
 
 /** Penguasaan tiap kompetensi (kompetensi tanpa bukti → "belum" dengan angka 0). */
 export function proyeksi(events: GameEvent[], kompetensi: Competency[]): Record<string, Penguasaan> {
-  const bukti = kumpulkanBukti(events);
+  return proyeksiDari(events, kompetensi);
+}
+
+/** Proyeksi dengan saringan event sendiri (mis. hanya jejak gedung kampus untuk Penilaian Praktik). */
+export function proyeksiDari(events: GameEvent[], kompetensi: Competency[], saring?: (e: GameEvent) => boolean): Record<string, Penguasaan> {
+  const bukti = kumpulkanBukti(events, saring);
   const out: Record<string, Penguasaan> = {};
   for (const c of kompetensi) out[c.id] = nilaiPenguasaan(bukti.get(c.id) ?? [], aturanUntuk(c));
   return out;

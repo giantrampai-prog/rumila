@@ -2,6 +2,7 @@
 // (/api/akademi/sertifikat). Server menghitung kelulusan sendiri dari learner_event; aplikasi tidak lagi
 // boleh menulis ke tabel akademi_certificate.
 
+import type { SnapshotPraktik } from "./praktik-kampus";
 import { GameEvent, LEVELS, type Competency, type LevelId, type StandardRef, type TrackId } from "@akademi/schema";
 import { pangkat } from "./koleksi";
 import { jenjangBerikut } from "./peta";
@@ -52,6 +53,8 @@ export interface SnapshotSertifikat {
   predikat?: string;
   /** nilai ujian terbaik saat terbit (transkrip): kuis per modul, semester, kenaikan */
   ujian?: { jenis: string; ruang: string; nilai: number }[];
+  /** Penilaian Praktik Kampus saat terbit (pelengkap; kosong bila jenjang belum punya praktik kampus) */
+  praktik?: SnapshotPraktik;
 }
 
 /** Bekukan daftar kompetensi inti satu jenjang + statusnya. Urutan mengikuti katalog. */

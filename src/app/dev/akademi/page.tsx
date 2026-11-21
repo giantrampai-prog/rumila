@@ -101,7 +101,7 @@ function Preview() {
   if (q.get("kartu")) {
     // contoh kartu sertifikat dengan semua kompetensi inti PAUD dianggap dikuasai
     const peng: Record<string, Penguasaan> = Object.fromEntries(KOMPETENSI.map((c) => [c.id, { status: "dikuasai", success: 5, fail: 0, contexts: 2, days: 2, ratioLast10: 1, hintTail: 0 } as Penguasaan]));
-    const snap = { ...snapshotSertifikat(peng, KOMPETENSI, "PAUD"), nilai: 92, predikat: "Dengan Pujian", ujian: [{ jenis: "kenaikan", ruang: "", nilai: 92 }, { jenis: "semester", ruang: "S1", nilai: 88 }, { jenis: "kuis", ruang: "BILANGAN-1-5", nilai: 90 }] };
+    const snap = { ...snapshotSertifikat(peng, KOMPETENSI, "PAUD"), nilai: 92, predikat: "Dengan Pujian", ujian: [{ jenis: "kenaikan", ruang: "", nilai: 92 }, { jenis: "semester", ruang: "S1", nilai: 88 }, { jenis: "kuis", ruang: "BILANGAN-1-5", nilai: 90 }], praktik: { nilai: 84, predikat: "Sangat Baik", komponen: [{ gedung: "komputer" as const, nilai: 88 }, { gedung: "lab" as const, nilai: 80 }] } };
     const at = new Date().toISOString();
     const contohSemester = { level: "PAUD" as const, ke: 1 as const, nilai: 88, nilaiAkhir: 88, perPelajaran: [{ track: "MAT" as const, nilai: 90, modul: 2 }, { track: "KODE" as const, nilai: 86, modul: 1 }, { track: "SAINS" as const, nilai: 88, modul: 2 }], at, sessionId: "ab12cd34-0000-4000-8000-000000000000" };
     if (q.get("kartu") === "buku")

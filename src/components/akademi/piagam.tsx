@@ -5,6 +5,7 @@
 //   SertifikatSemesterKartu : A4 landscape, nilai per pelajaran, dua tanda tangan, QR verifikasi sesi
 //   TranskripJenjang        : halaman 2 Sertifikat Kenaikan — kompetensi inti + nilai ujian, A4 portrait
 
+import { NAMA_GEDUNG_PRAKTIK } from "@/lib/akademi/praktik-kampus";
 import Image from "next/image";
 import { LEVELS, TRACKS, levelMeta, type LevelId } from "@akademi/schema";
 import { KOMPETENSI } from "@/lib/akademi/katalog";
@@ -197,6 +198,22 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
           )}
         </tbody>
       </table>
+
+      {snapshot.praktik && (
+        <>
+          <h2 style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.14em", color: GOLD, marginTop: 20 }}>PRAKTIK KAMPUS · {snapshot.praktik.nilai} · {snapshot.praktik.predikat.toUpperCase()}</h2>
+          <table className="w-full" style={{ borderCollapse: "collapse", fontSize: 12, marginTop: 6 }}>
+            <tbody>
+              {snapshot.praktik.komponen.map((k) => (
+                <tr key={k.gedung} style={{ borderBottom: "1px solid #ece6d8" }}>
+                  <td style={{ padding: "5px 0" }}>{NAMA_GEDUNG_PRAKTIK[k.gedung]?.nama ?? k.gedung}</td>
+                  <td className="text-right" style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{k.nilai}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
 
       <h2 style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.14em", color: GOLD, marginTop: 20 }}>
         KOMPETENSI INTI · {snapshot.dikuasai} DARI {snapshot.total} DIKUASAI
