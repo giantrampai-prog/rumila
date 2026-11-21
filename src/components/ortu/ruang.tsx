@@ -1,7 +1,7 @@
 "use client";
 
 // Ruang Orang Tua: dibuka dengan PIN admin rumah. Per anak: Ringkasan · Rapor · Ujian & Tes · Sertifikat ·
-// Profil Berpikir · Keluarga & Kesehatan. Terkunci lagi otomatis setelah 15 menit atau lewat tombol Kunci.
+// Profil Berpikir · Keluarga & Kesehatan · Langganan (harga per keluarga, transfer manual). Terkunci lagi otomatis setelah 15 menit atau lewat tombol Kunci.
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -28,6 +28,7 @@ import { adminBerPin, bukaDenganPin, bukaRuang, ruangTerbuka, sisaKunci, tutupRu
 import { isOrangTua, profilTerbuka } from "@/lib/profil";
 import { BuatPin, LupaPin } from "@/components/pin-pad";
 import { AnggotaRumah } from "@/components/ortu/anggota";
+import { LanggananKeluarga } from "@/components/ortu/langganan";
 import { daftarDisiapkan } from "@/lib/kampus";
 import { useMe, useRumila, type Member } from "@/lib/store";
 
@@ -41,6 +42,7 @@ const TAB = [
   ["berpikir", "Profil Berpikir", "psychology"],
   ["anggota", "Anggota & PIN", "manage_accounts"],
   ["keluarga", "Keluarga & Kesehatan", "family_restroom"],
+  ["langganan", "Langganan", "card_membership"],
 ] as const;
 type Tab = (typeof TAB)[number][0];
 
@@ -230,6 +232,7 @@ function Bagian({ anak, tab }: { anak: Member; tab: Tab }) {
   if (tab === "berpikir") return <ProfilBerpikirOrtu anak={anak} />;
   if (tab === "keluarga") return <SedangDisiapkan />;
   if (tab === "anggota") return <AnggotaRumah />;
+  if (tab === "langganan") return <LanggananKeluarga />;
   return <Ringkasan anak={anak} />;
 }
 

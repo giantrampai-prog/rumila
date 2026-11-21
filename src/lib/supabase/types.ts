@@ -89,6 +89,24 @@ export type Database = {
         Update: { [k: string]: never };
         Relationships: [];
       };
+      akademi_paket: {
+        Row: { id: string; nama: string; deskripsi: string | null; maks_anak: number; harga_bulan: number | null; harga_semester: number | null; harga_tahun: number | null; unggulan: boolean; aktif: boolean; urut: number; diubah_at: string };
+        Insert: { id: string; nama: string; deskripsi?: string | null; maks_anak?: number; harga_bulan?: number | null; harga_semester?: number | null; harga_tahun?: number | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
+        Update: { id?: string; nama?: string; deskripsi?: string | null; maks_anak?: number; harga_bulan?: number | null; harga_semester?: number | null; harga_tahun?: number | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
+        Relationships: [];
+      };
+      akademi_bayar_atur: {
+        Row: { id: boolean; bank: string; no_rekening: string; atas_nama: string; trial_hari: number; kode_unik: boolean; catatan: string | null; kunci_akses: boolean; diubah_at: string };
+        Insert: { id?: boolean; bank?: string; no_rekening?: string; atas_nama?: string; trial_hari?: number; kode_unik?: boolean; catatan?: string | null; kunci_akses?: boolean; diubah_at?: string };
+        Update: { id?: boolean; bank?: string; no_rekening?: string; atas_nama?: string; trial_hari?: number; kode_unik?: boolean; catatan?: string | null; kunci_akses?: boolean; diubah_at?: string };
+        Relationships: [];
+      };
+      akademi_bayar: {
+        Row: { id: string; family_id: string; paket_id: string; periode: "bulan" | "semester" | "tahun"; harga: number; kode_unik: number; jumlah: number; nama_pengirim: string | null; bukti_path: string | null; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; mulai: string | null; sampai: string | null; dibuat_by: string | null; dibuat_at: string; diperiksa_at: string | null };
+        Insert: { id?: string; family_id: string; paket_id: string; periode: "bulan" | "semester" | "tahun"; harga: number; kode_unik?: number; jumlah: number; nama_pengirim?: string | null; bukti_path?: string | null; status?: "menunggu"; alasan?: null; mulai?: null; sampai?: null; dibuat_by?: string | null; dibuat_at?: string; diperiksa_at?: null };
+        Update: { nama_pengirim?: string | null; bukti_path?: string | null; status?: "menunggu" | "batal" };
+        Relationships: [];
+      };
       akademi_siswa: {
         Row: { member_id: string; family_id: string; level: string; semester: number; sumber: "awal" | "migrasi" | "naik" | "admin"; mulai_at: string; level_sejak: string; updated_at: string };
         Insert: { member_id: string; family_id: string; level: string; semester?: number; sumber?: "awal" | "migrasi" | "naik" | "admin"; mulai_at?: string; level_sejak?: string; updated_at?: string };
@@ -221,6 +239,10 @@ export type Database = {
       verify_semester: {
         Args: { p_session: string };
         Returns: { first_name: string; level: string; ruang: string; nilai: number; created_at: string; kuis: Json }[];
+      };
+      akademi_status_langganan: {
+        Args: { fid: string };
+        Returns: Json;
       };
       akademi_atur_jenjang_awal: {
         Args: { p_member: string; p_level: string };
