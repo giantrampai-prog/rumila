@@ -4,6 +4,7 @@
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent } from "react";
+import { createPortal } from "react-dom";
 import { levelIndex, type PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
 import { useModeUjian } from "./mode-ujian";
@@ -267,12 +268,14 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
       </div>
 
       {/* bayangan item yang sedang diseret */}
-      {itemSeret && seret && (
-        <div className="pointer-events-none fixed z-50" style={{ left: seret.x, top: seret.y, transform: "translate(-50%,-60%) scale(1.15)" }}>
+      {/* di-portal ke body: leluhur ber-transform/filter membuat "fixed" melenceng dari jari */}
+      {itemSeret && seret && typeof document !== "undefined" && createPortal(
+        <div className="pointer-events-none fixed z-[100]" style={{ left: seret.x, top: seret.y, transform: "translate(-50%,-60%) scale(1.15)" }}>
           <span className="flex items-center justify-center rounded-[18px] bg-white p-2" style={{ boxShadow: `0 8px 0 rgba(11,37,69,.18), 0 0 0 3px ${UNGU}` }}>
             <Benda v={visual(itemSeret, t)} size={64} />
           </span>
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );
