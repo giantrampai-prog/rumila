@@ -4,6 +4,7 @@
 // label (tempel pertama/lalu/terakhir di bawah gambar, lalu tokoh bercerita mengikuti label).
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { PaketUrutkan } from "@akademi/schema";
 import type { JawabanUrutkan, LabelUrutan, RondeUrutkan } from "@akademi/mechanics";
@@ -152,7 +153,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
 
   const isiSlot = (i: number, id: string) => {
     if (kunci || slot[i]) return;
-    sfx.plop();
+    sfxAkademi.taruh();
     setSlot((s) => s.map((v, k) => (k === i ? id : v === id ? null : v)));
     setTerpilih(null);
     if (hint?.kartu === id) setHint(null);
@@ -326,7 +327,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
   };
   const selesai = () => {
     if (kunci) return;
-    sfx.plop();
+    sfxAkademi.taruh();
     setTerkirim(true);
     onJawab(urutan);
   };
@@ -520,7 +521,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
       return;
     }
     if (!terpilih || sisa(terpilih) <= 0) return;
-    sfx.plop();
+    sfxAkademi.taruh();
     setSlot((s) => s.map((v, k) => (k === i ? terpilih : v)));
     setTerpilih(null);
     if (hint?.slot === i) setHint(null);
@@ -552,7 +553,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
     const akhir = adegan.length * JEDA_ADEGAN;
     timers.current.push(setTimeout(() => {
       setCerita({ aktif: -1, berhenti, selesai: true });
-      if (berhenti !== null) { sfx.thud(); ucapkan("Lho, ceritanya berhenti di sini."); }
+      if (berhenti !== null) { sfxAkademi.tolak(); ucapkan("Lho, ceritanya berhenti di sini."); }
       else sfx.celebrate();
     }, akhir));
     timers.current.push(setTimeout(() => {

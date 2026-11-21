@@ -13,13 +13,13 @@ import { catatEvent } from "@/lib/akademi/jejak";
 import { kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { useBacksound } from "@/lib/akademi/backsound";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
-import { sfx } from "@/lib/sfx";
 import { useMe } from "@/lib/store";
 import { completeTool, useToolSession } from "@/lib/tool-session";
 import { uuid } from "@/lib/uuid";
 import { LatarWarnaProvider } from "./benda";
 import { PresenterDagang } from "./dagang";
-import { LayarAktivitas, UmpanBalik } from "./dunia";
+import { HujanKonfeti, LayarAktivitas, UmpanBalik } from "./dunia";
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { BALOO, INK } from "./jenis";
 import { PresenterNavigasi } from "./navigasi";
 import { PresenterPilah } from "./pilah";
@@ -87,6 +87,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
   const [beruntun, setBeruntun] = useState({ benar: 0, salah: 0 });
   const [selesai, setSelesai] = useState(false);
+  /** jumlah jawaban benar berturut-turut (untuk umpan balik yang makin meriah) */
+  const [streak, setStreak] = useState(0);
   // backsound sesuai jenjang anak; diam di layar selesai (dan tidak ada di Ruang Ujian)
   const musik = useBacksound(learnerId, levelAnak(learnerId), !selesai);
   const mulai = useRef(Date.now());
@@ -126,7 +128,7 @@ function Runner({ paket }: { paket: ContentPack }) {
   const onHint = () => {
     setHint(true);
     setSkor((s) => ({ ...s, hint: s.hint + 1 }));
-    sfx.pick();
+    sfxAkademi.ambil();
     catatEvent({ learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "hint", payload: { ronde: idx } });
   };
 
@@ -135,8 +137,10 @@ function Runner({ paket }: { paket: ContentPack }) {
     const h = nilai(paket, ronde, j);
     const latencyMs = Date.now() - mulaiRonde.current;
     setHasil(h);
-    if (h.benar) sfx.celebrate();
-    else sfx.thud();
+    const streakBaru = h.benar ? streak + 1 : 0;
+    setStreak(streakBaru);
+    if (h.benar) sfxAkademi.benar(streakBaru);
+    else sfxAkademi.salah();
     catatEvent({
       learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "attempt",
       payload: { itemId: `${paket.id}#${idx}`, correct: h.benar, hintUsed: hint, latencyMs, knobs, competencyIds: kompetensiIds, detail: { mode: (paket as { mode?: string }).mode ?? (paket as { execMode?: string }).execMode, ...h.detail } },
@@ -184,7 +188,7 @@ function Runner({ paket }: { paket: ContentPack }) {
         {paket.mechanic === "simulasi" && ronde.mechanic === "simulasi" && <PresenterSimulasi {...props} paket={paket} ronde={ronde.ronde} />}
         </LatarWarnaProvider>
       </div>
-      {hasil && <UmpanBalik benar={hasil.benar} />}
+      {hasil && <UmpanBalik key={`umpan-${idx}`} benar={hasil.benar} beruntun={streak} />}
     </LayarAktivitas>
   );
 }
@@ -199,16 +203,24 @@ export function judulPaket(p: ContentPack, bahasa: BahasaAnak = "id") {
 function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: ContentPack; bahasa: BahasaAnak; skor: { benar: number; salah: number; hint: number }; onLagi: () => void; onKembali: () => void }) {
   const total = skor.benar + skor.salah;
   const bintang = skor.benar >= total ? 3 : skor.benar >= Math.ceil(total * 0.6) ? 2 : skor.benar > 0 ? 1 : 0;
+  // bintang muncul satu per satu (dengan bunyi), lalu fanfare
+  const [tampil, setTampil] = useState(0);
   useEffect(() => {
-    if (bintang >= 2) sfx.celebrate();
+    const t: ReturnType<typeof setTimeout>[] = [];
+    for (let k = 0; k < bintang; k++) t.push(setTimeout(() => { setTampil(k + 1); sfxAkademi.bintang(k); }, 350 + k * 330));
+    t.push(setTimeout(() => sfxAkademi.selesai(bintang), 350 + bintang * 330 + 120));
     ucapkan(bintang >= 2 ? "Hebat! Kamu dapat stiker baru." : "Bagus, kamu sudah mencoba. Ayo main lagi.");
+    return () => t.forEach(clearTimeout);
   }, [bintang]);
   return (
     <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#bfe9ff,#d8f3c4)", fontFamily: BALOO, color: INK }}>
+      {bintang >= 2 && <HujanKonfeti jumlah={bintang >= 3 ? 60 : 36} />}
       <div className="akademi-pop w-full max-w-[380px] rounded-[28px] bg-white p-6 text-center shadow-[0_8px_0_rgba(11,37,69,.12)]">
         <div className="flex justify-center gap-1">
           {[1, 2, 3].map((k) => (
-            <Icon key={k} name="star" size={54} className={bintang >= k ? "text-[#f2b705]" : "text-[#e2dccd]"} />
+            <span key={k} className={tampil >= k ? "akademi-bintang" : ""} style={{ display: "inline-flex" }}>
+              <Icon name="star" size={54} className={tampil >= k ? "text-[#f2b705]" : "text-[#e2dccd]"} />
+            </span>
           ))}
         </div>
         <div style={{ fontSize: 72, lineHeight: 1 }} className="my-2">{bintang >= 2 ? "🏅" : "🌱"}</div>

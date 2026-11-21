@@ -4,6 +4,7 @@
 // menara, bantuan, telusur) lewat switch `ronde.mode` → sub-komponen. Presenter hanya menampilkan dan mengirim jawaban; kebenaran dinilai runner
 // (nilaiSimulasi). Setelah `hasil` terisi interaksi dikunci dan jawaban benar ditunjukkan.
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent, type ReactNode } from "react";
 import type { PaketSimulasi } from "@akademi/schema";
 import type { JawabanSimulasi, RondeSimulasi } from "@akademi/mechanics";
@@ -589,13 +590,13 @@ function ModeJengkal(c: Ctx) {
 
   const tambah = () => {
     if (telapak.length >= maxSpans) return;
-    sfx.plop();
+    sfxAkademi.taruh();
     setTelapak((tp) => {
       const akhir = tp.length ? tp[tp.length - 1] + 1 : 0;
       return [...tp, ronde.snap ? tp.length : Math.min(akhir, maxSpans - 1)];
     });
   };
-  const ambil = () => { sfx.thud(); setTelapak((tp) => tp.slice(0, -1)); };
+  const ambil = () => { sfxAkademi.tolak(); setTelapak((tp) => tp.slice(0, -1)); };
 
   const mulaiSeret = (e: RPointerEvent<HTMLButtonElement>) => {
     if (ronde.snap || terkunci) return;
@@ -965,7 +966,7 @@ function ModeTaksir(c: Ctx) {
     let k = 0;
     const id = setInterval(() => {
       k++;
-      sfx.coin();
+      sfxAkademi.koin();
       setTerhitung(k);
       if (k >= ronde.target) clearInterval(id);
     }, 380);
@@ -1057,7 +1058,7 @@ function ModeTombol(c: Ctx) {
       setDicoba((d) => new Set(d).add(tombolId));
       return;
     }
-    if (langkah !== "tekan" || tombolId !== ronde.urutan[giliran]) { sfx.thud(); return; }
+    if (langkah !== "tekan" || tombolId !== ronde.urutan[giliran]) { sfxAkademi.tolak(); return; }
     sfx.tap();
     if (tujuan) nyalakan(tujuan);
     setLangkah("nyala");
@@ -1070,7 +1071,7 @@ function ModeTombol(c: Ctx) {
 
   const tunjuk = (alatId: string) => {
     if (fase !== "tebak" || langkah !== "tunjuk" || terkunci) return;
-    sfx.pick();
+    sfxAkademi.ambil();
     const tb = ronde.urutan[giliran];
     const baru = { ...tebakanRef.current, [tb]: alatId };
     tebakanRef.current = baru;
@@ -1194,7 +1195,7 @@ function ModeAlat(c: Ctx) {
   const pilih = (id: string) => {
     if (terkunci || dipilih) return;
     setDipilih(id);
-    sfx.pick();
+    sfxAkademi.ambil();
     timer.current = setTimeout(() => onJawab({ pilih: id }), 1500);
   };
 
@@ -1278,7 +1279,7 @@ function ModeBagi(c: Ctx) {
   const pindah = (i: number) => {
     if (terkunci) return;
     setTempat((tp) => tp.map((x, k) => (k !== i ? x : x === "keranjang" ? aktif : "keranjang")));
-    if (tempat[i] === "keranjang") sfx.pick(); else sfx.plop();
+    if (tempat[i] === "keranjang") sfxAkademi.ambil(); else sfxAkademi.taruh();
   };
 
   const piring = (sisi: "kiri" | "kanan") => {
@@ -1363,13 +1364,13 @@ function ModeMenara(c: Ctx) {
     if (terkunci || jatuh || penuh) return;
     if (nilaiBenda(id) === 0) {
       // bola: naik sebentar, lalu menggelinding jatuh — tumpukan tidak berubah, boleh coba lagi
-      sfx.thud();
+      sfxAkademi.tolak();
       setJatuh({ id, fase: "atas" });
       timers.current.push(setTimeout(() => { setJatuh({ id, fase: "gelinding" }); sfx.whoosh(); }, 420));
       timers.current.push(setTimeout(() => setJatuh(null), 1400));
       return;
     }
-    if (nilaiBenda(id) === 2) sfx.sparkle(); else sfx.plop();
+    if (nilaiBenda(id) === 2) sfx.sparkle(); else sfxAkademi.taruh();
     setTumpukan((tp) => [...tp, id]);
   };
   const ambilAtas = () => { if (terkunci || !tumpukan.length || jatuh) return; sfx.whoosh(); setTumpukan((tp) => tp.slice(0, -1)); };
